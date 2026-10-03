@@ -1,0 +1,1 @@
+{"git_commit":"anonymous","openai_model":"unknown","src_root":"sample-project/src","main_class":"sample.Main","max_invariants":"5","paths":{"registry":"registry.jsonl","run_log":"oca-run.log","injected_src":"injected-src","workcopy":"workcopy","console_log":"app-console.log"}}

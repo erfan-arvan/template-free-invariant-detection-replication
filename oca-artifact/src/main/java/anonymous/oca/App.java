@@ -1,0 +1,1768 @@
+package anonymous.oca;
+
+import com.github.javaparser.StaticJavaParser;
+import com.github.javaparser.symbolsolver.JavaSymbolSolver;
+import com.github.javaparser.symbolsolver.resolution.typesolvers.*;
+import anonymous.oca.config.*;
+import anonymous.oca.filter.TestFailureLogParser;
+import anonymous.oca.filter.TestInvariantFilter;
+import anonymous.oca.inject.DpRuntimeWriter;
+import anonymous.oca.inject.FileWriteCoordinator;
+import anonymous.oca.inject.JavaParserInjector;
+import anonymous.oca.llm.LlmInvariantGenerator;
+import anonymous.oca.model.*;
+import anonymous.oca.parse.JavaProjectScanner;
+import anonymous.oca.parse.context.ContextKind;
+import anonymous.oca.parse.context.ContextUtils;
+import anonymous.oca.results.InvariantMetrics;
+import anonymous.oca.results.InvariantRegistry;
+import anonymous.oca.results.LogParser;
+import anonymous.oca.results.ProjectMethodIndex;
+import anonymous.oca.util.PhaseTimer;
+import java.io.IOException;
+import java.nio.file.FileVisitResult;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.StandardCopyOption;
+import java.nio.file.attribute.BasicFileAttributes;
+import java.time.Instant;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicReference;
+
+/**
+ * Entry point for the Oca pipeline.
+ *
+ * <p>This class orchestrates the full end-to-end workflow of LLM-guided invariant inference,
+ * including:
+ *
+ * <ol>
+ *   <li><b>Program analysis:</b> Scanning Java source files to extract program points (currently
+ *       method ENTRY and EXIT).
+ *   <li><b>Invariant proposal:</b> Querying an LLM to generate candidate invariants for each
+ *       program point using configurable context.
+ *   <li><b>Injection:</b> Instrumenting source files by inserting invariant checks as guard code.
+ *   <li><b>Compilation and execution:</b> Compiling the instrumented project and executing it
+ *       (either natively or via an external project runner such as Gradle).
+ *   <li><b>Dynamic validation:</b> Observing invariant outcomes (held, falsified, non-compiled, or
+ *       never executed) from execution logs.
+ *   <li><b>Optional test-based filtering:</b> Removing spurious invariants using test-driven
+ *       refinement.
+ * </ol>
+ *
+ * <h2>Execution Modes</h2>
+ *
+ * <ul>
+ *   <li><b>NATIVE:</b> Compiles and runs Java sources directly using {@code javac/java}.
+ *   <li><b>EXTERNAL_PROJECT:</b> Operates on a full project (e.g., Gradle/Maven) using a
+ *       user-provided runner script.
+ * </ul>
+ *
+ * <h2>Key Design Properties</h2>
+ *
+ * <ul>
+ *   <li><b>Soundness-oriented filtering:</b> Invariants are validated by execution; any invariant
+ *       that is falsified is discarded.
+ *   <li><b>Compilation-aware filtering:</b> Invariants that fail to compile are automatically
+ *       removed through iterative recompilation.
+ *   <li><b>Deterministic tracking:</b> Each invariant is assigned a unique identifier and tracked
+ *       across compilation and execution phases via a registry.
+ *   <li><b>Isolation via working copies:</b> All transformations occur on temporary copies of the
+ *       input project to avoid modifying the original sources.
+ * </ul>
+ *
+ * <h2>Pipeline Overview</h2>
+ *
+ * <pre>
+ * scan → LLM proposal → inject → compile (auto-filter) → execute → log parsing → outcome classification
+ * </pre>
+ *
+ * <p>The final output includes per-invariant outcomes and grouped summaries by method.
+ *
+ * <h2>Usage</h2>
+ *
+ * <pre>{@code
+ * java -jar oca.jar <srcRoot> <classpath> <mainClass> [maxK] [-- program args...]
+ * }</pre>
+ *
+ * <p>See CLI help for full invocation formats including external-project mode.
+ */
+public final class App {
+
+  private enum ExecMode {
+    NATIVE,
+    EXTERNAL_PROJECT
+  }
+
+  private static final java.util.Set<String> RUN_DEDUP =
+      java.util.concurrent.ConcurrentHashMap.newKeySet();
+
+  public static final class FilterStats {
+    public final AtomicLong rawFromLlm = new AtomicLong();
+    public final AtomicLong dropEmpty = new AtomicLong();
+    public final AtomicLong dropParse = new AtomicLong();
+    public final AtomicLong dropQuality = new AtomicLong();
+    public final AtomicLong dropPerPointDedup = new AtomicLong();
+    public final AtomicLong dropMaxK = new AtomicLong();
+    public final AtomicLong dropRunDedup = new AtomicLong();
+    public final AtomicLong dropRegistryDedup = new AtomicLong();
+    public final AtomicLong pointsWithCallSiteContext = new AtomicLong();
+    public final AtomicLong pointsWithIoExamples = new AtomicLong();
+  }
+
+  private static String keyFor(ProgramPoint pt, String expr) {
+    String norm = expr.trim().replaceAll("\\s+", " "); // normalize whitespace
+    return pt.kind().name() + "|" + pt.elementId().toString() + "|" + norm;
+  }
+
+  public static void main(String[] args) throws Exception {
+    // Read config fresh each invocation so in-process test runs pick up updated system properties.
+    final DpConfig BASE_CFG = DpConfig.fromEnv();
+    // reset per pipeline invocation
+    RUN_DEDUP.clear();
+    BASE_CFG.printSummary();
+
+    final Path externalMainCompileScript =
+        Optional.ofNullable(BASE_CFG.compileMainScript()).map(Path::of).orElse(null);
+
+    final Path externalTestCompileScript =
+        Optional.ofNullable(BASE_CFG.compileTestScript()).map(Path::of).orElse(null);
+
+    // Detect external-project mode early so we don't enforce args.length>=3 for that mode.
+    final boolean externalMode =
+        java.util.Arrays.asList(args).contains("--cmd")
+            || java.util.Arrays.asList(args).contains("--external-project");
+
+    if (!externalMode && args.length < 3) {
+      System.err.println(
+          "Usage:\n"
+              + "  Single-root (legacy):\n"
+              + "    java -jar oca.jar <srcRoot> <classpath> <mainClass> [maxK] [-- program args...]\n"
+              + "  Split main/test:\n"
+              + "    java -jar oca.jar <mainSrcRoot> <testSrcRoot> "
+              + "<mainClasspath> <testClasspath> <testMainClass> [maxK] [-- program args...]\n"
+              + "  External-project:\n"
+              + "    java -jar oca.jar --external-project "
+              + "--project-root <projectRoot> --main-src <relMainSrc> "
+              + "[--test-src <relTestSrc>] --runner-script <script.sh> "
+              + "[maxK] [-- program args...]");
+      System.exit(2);
+    }
+
+    ExecMode execMode = externalMode ? ExecMode.EXTERNAL_PROJECT : ExecMode.NATIVE;
+    System.out.println("🔥 EXEC MODE = " + execMode);
+
+    // ============================================================
+    // External-project arguments (ONLY used/declared as non-null in external branch)
+    // ============================================================
+    final Path userProjectRoot;
+    final Path relMainSrc;
+    final Path relTestSrcOrNull;
+    final Path runnerScriptPath; // may be relative to project root or absolute
+
+    // ============================================================
+    // Native mode variables (kept exactly as your original semantics)
+    // ============================================================
+    boolean splitMode = false;
+    int i = 0;
+
+    Path userMainSrcRoot_tmp = Path.of(".").toAbsolutePath().normalize();
+    Path userTestSrcRoot_tmp = userMainSrcRoot_tmp;
+    String mainClasspath_tmp = "";
+    String testClasspath_tmp = "";
+    String entryClass_tmp = "";
+
+    // We'll build a mutable argv view for BOTH modes so we can keep maxK + "-- args" behavior.
+    final java.util.List<String> argv = new java.util.ArrayList<>(java.util.List.of(args));
+
+    if (execMode == ExecMode.EXTERNAL_PROJECT) {
+      // --- E2E / simple external mode: <inputDir> --cmd <script> [args...]
+      if (argv.contains("--cmd") && !argv.contains("--project-root")) {
+        int cmdIdx = argv.indexOf("--cmd");
+
+        Path inputDir = Path.of(argv.get(0)).toAbsolutePath().normalize();
+        List<String> cmd = new ArrayList<>(argv.subList(cmdIdx + 1, argv.size()));
+
+        if (cmd.isEmpty()) {
+          throw new IllegalArgumentException("--cmd requires a command");
+        }
+
+        userProjectRoot = inputDir;
+        relMainSrc = Path.of(".");
+        relTestSrcOrNull = null;
+        runnerScriptPath = Path.of(cmd.get(0));
+
+        argv.subList(cmdIdx, argv.size()).clear(); // remove --cmd + command
+        argv.remove(0); // remove inputDir
+
+      } else {
+        // ----- FLAG-BASED external mode (existing logic) -----
+        argv.remove("--external-project");
+
+        Path pr = null;
+        Path ms = null;
+        Path ts = null;
+        Path rs = null;
+
+        for (int k = 0; k < argv.size(); k++) {
+          String a = argv.get(k);
+          if ("--project-root".equals(a) && k + 1 < argv.size()) {
+            pr = Path.of(argv.get(k + 1)).toAbsolutePath().normalize();
+            argv.remove(k);
+            argv.remove(k);
+            k--;
+          } else if ("--main-src".equals(a) && k + 1 < argv.size()) {
+            ms = Path.of(argv.get(k + 1));
+            argv.remove(k);
+            argv.remove(k);
+            k--;
+          } else if ("--test-src".equals(a) && k + 1 < argv.size()) {
+            ts = Path.of(argv.get(k + 1));
+            argv.remove(k);
+            argv.remove(k);
+            k--;
+          } else if ("--runner-script".equals(a) && k + 1 < argv.size()) {
+            rs = Path.of(argv.get(k + 1));
+            argv.remove(k);
+            argv.remove(k);
+            k--;
+          }
+        }
+
+        if (pr == null || ms == null || rs == null) {
+          throw new IllegalArgumentException("Invalid external-project invocation");
+        }
+
+        userProjectRoot = pr;
+        relMainSrc = ms;
+        relTestSrcOrNull = ts;
+        runnerScriptPath = rs;
+      }
+
+    } else {
+      // ============================
+      // Native mode parsing (UNCHANGED)
+      // ============================
+      userProjectRoot = Path.of("."); // unused in native mode (non-null)
+      relMainSrc = Path.of("."); // unused in native mode (non-null)
+      relTestSrcOrNull = null; // unused
+      runnerScriptPath = Path.of("."); // unused in native mode (non-null)
+
+      // Decide whether we are in split main/test mode or single-root mode.
+      if (argv.size() >= 5) {
+        Path maybeMain = Path.of(argv.get(0)).toAbsolutePath().normalize();
+        Path maybeTest = Path.of(argv.get(1)).toAbsolutePath().normalize();
+        if (Files.isDirectory(maybeMain) && Files.isDirectory(maybeTest)) {
+          splitMode = true;
+        }
+      }
+
+      if (splitMode) {
+        userMainSrcRoot_tmp = Path.of(argv.get(i++)).toAbsolutePath().normalize();
+        userTestSrcRoot_tmp = Path.of(argv.get(i++)).toAbsolutePath().normalize();
+        if (!Files.isDirectory(userMainSrcRoot_tmp)) {
+          System.err.println("Not a directory (main sources): " + userMainSrcRoot_tmp);
+          System.exit(2);
+        }
+        if (!Files.isDirectory(userTestSrcRoot_tmp)) {
+          System.err.println("Not a directory (test sources): " + userTestSrcRoot_tmp);
+          System.exit(2);
+        }
+
+        mainClasspath_tmp = argv.get(i++);
+        testClasspath_tmp = argv.get(i++);
+        entryClass_tmp = argv.get(i++);
+      } else {
+        userMainSrcRoot_tmp = Path.of(argv.get(i++)).toAbsolutePath().normalize();
+        if (!Files.isDirectory(userMainSrcRoot_tmp)) {
+          System.err.println("Not a directory: " + userMainSrcRoot_tmp);
+          System.exit(2);
+        }
+        userTestSrcRoot_tmp = userMainSrcRoot_tmp;
+        mainClasspath_tmp = argv.get(i++);
+        testClasspath_tmp = "";
+        entryClass_tmp = argv.get(i++);
+      }
+    }
+
+    // Freeze native-mode finals (same names as your original)
+    final Path userMainSrcRoot = userMainSrcRoot_tmp;
+    final Path userTestSrcRoot = userTestSrcRoot_tmp;
+    final String mainClasspath = mainClasspath_tmp;
+    final String testClasspath = testClasspath_tmp;
+    final String entryClass = entryClass_tmp;
+
+    // ============================================================
+    // maxK + program args (UNCHANGED semantics)
+    // (Works in both modes: external mode still uses maxK for LLM proposals)
+    // ============================================================
+    final int maxK;
+
+    if (execMode == ExecMode.EXTERNAL_PROJECT) {
+      // External mode: maxK may appear as a trailing integer, otherwise default
+      int parsed = 5;
+      if (!argv.isEmpty() && argv.get(0).matches("\\d+")) {
+        parsed = Math.max(1, Integer.parseInt(argv.remove(0)));
+      }
+      maxK = parsed;
+    } else {
+      // Native mode (unchanged)
+      maxK =
+          (i < argv.size() && !argv.get(i).equals("--"))
+              ? Math.max(1, Integer.parseInt(argv.get(i++)))
+              : 5;
+    }
+
+    final List<String> programArgs = new ArrayList<>();
+    if (i < argv.size() && argv.get(i).equals("--")) {
+      for (i = i + 1; i < argv.size(); i++) {
+        programArgs.add(argv.get(i));
+      }
+    }
+
+    // Dry run: build and count the LLM prompts only. Nothing is copied, sent, injected or run, so
+    // the user's sources are scanned in place (read-only).
+    final boolean dryRun = BASE_CFG.llmDryRun();
+    if (dryRun) {
+      System.out.println(">>> LLM DRY RUN: prompts are counted, not sent; stopping after LM phase");
+    }
+
+    // ============================================================
+    // Prepare working copies
+    // ============================================================
+    final Path mainSrcRoot;
+    final Path testSrcRoot;
+    final Path workProjectRoot; // non-null in external mode; equals mainSrcRoot in native mode for
+    // simplicity
+
+    if (execMode == ExecMode.EXTERNAL_PROJECT) {
+      // FIX: external E2E runs should copy ONLY the provided input directory
+      // NOT the entire project root
+
+      // CORRECT: copy the ENTIRE project
+      workProjectRoot = dryRun ? userProjectRoot : prepareWorkingCopy(userProjectRoot, BASE_CFG);
+
+      // Main/test roots are SUBPATHS inside the copied project
+      mainSrcRoot = workProjectRoot.resolve(relMainSrc).normalize();
+
+      testSrcRoot =
+          (relTestSrcOrNull == null)
+              ? mainSrcRoot
+              : workProjectRoot.resolve(relTestSrcOrNull).normalize();
+
+      if (!Files.isDirectory(mainSrcRoot)) {
+        throw new IllegalStateException("Main src not found in working project: " + mainSrcRoot);
+      }
+      if (!Files.isDirectory(testSrcRoot)) {
+        throw new IllegalStateException("Test src not found in working project: " + testSrcRoot);
+      }
+
+      if (!Files.isDirectory(mainSrcRoot)) {
+        System.err.println("Not a directory (main src under project working copy): " + mainSrcRoot);
+        System.exit(2);
+      }
+      if (!Files.isDirectory(testSrcRoot)) {
+        System.err.println("Not a directory (test src under project working copy): " + testSrcRoot);
+        System.exit(2);
+      }
+
+    } else {
+      // Native behavior: copy source trees (exactly as before)
+      mainSrcRoot = dryRun ? userMainSrcRoot : prepareWorkingCopy(userMainSrcRoot, BASE_CFG);
+      testSrcRoot =
+          !splitMode
+              ? mainSrcRoot
+              : dryRun ? userTestSrcRoot : prepareWorkingCopy(userTestSrcRoot, BASE_CFG);
+      workProjectRoot =
+          mainSrcRoot; // non-null placeholder; not used as "project root" in native mode
+
+      if (!Files.isDirectory(mainSrcRoot)) {
+        System.err.println("Not a directory (main working copy): " + mainSrcRoot);
+        System.exit(2);
+      }
+      if (!Files.isDirectory(testSrcRoot)) {
+        System.err.println("Not a directory (test working copy): " + testSrcRoot);
+        System.exit(2);
+      }
+    }
+
+    final DpConfig cfg = DpConfig.fromEnv();
+    if (!cfg.scanIncludes().isEmpty()) {
+      System.out.println(">>> Scan include filter: " + cfg.scanIncludes());
+    }
+    if (BASE_CFG.registryReset() && !dryRun) {
+      try {
+        java.nio.file.Files.deleteIfExists(BASE_CFG.registryPath());
+        System.out.println(">>> Registry reset: " + BASE_CFG.registryPath().toAbsolutePath());
+      } catch (java.io.IOException ioe) {
+        System.err.println("Warning: couldn't delete registry: " + ioe.getMessage());
+      }
+    }
+
+    final JavaProjectScanner scanner = new JavaProjectScanner();
+    final LlmInvariantGenerator llm = new LlmInvariantGenerator(BASE_CFG, maxK);
+    final InvariantRegistry registry = new InvariantRegistry(cfg.registryPath());
+    final JavaParserInjector injector = new JavaParserInjector(new FileWriteCoordinator());
+
+    System.out.println("[DP-PATHS] execMode=" + execMode);
+    System.out.println("[DP-PATHS] userProjectRoot=" + userProjectRoot);
+    System.out.println("[DP-PATHS] mainSrcRoot=" + mainSrcRoot);
+    System.out.println("[DP-PATHS] testSrcRoot=" + testSrcRoot);
+
+    // ============================================================
+    // 🔥 SETUP SYMBOL SOLVER (REQUIRED FOR TYPE RESOLUTION)
+    // ============================================================
+
+    CombinedTypeSolver solver = new CombinedTypeSolver();
+
+    solver.add(new ReflectionTypeSolver());
+    solver.add(new JavaParserTypeSolver(mainSrcRoot.toFile()));
+
+    JavaSymbolSolver symbolSolver = new JavaSymbolSolver(solver);
+
+    com.github.javaparser.ParserConfiguration config =
+        new com.github.javaparser.ParserConfiguration()
+            .setSymbolResolver(symbolSolver)
+            .setLanguageLevel(
+                com.github.javaparser.ParserConfiguration.LanguageLevel.BLEEDING_EDGE);
+
+    StaticJavaParser.setConfiguration(config);
+
+    // Scan only MAIN sources for program points
+    System.out.println(">>> Scanning MAIN sources under (WORKING COPY): " + mainSrcRoot);
+    final Instant scanPhaseStart = PhaseTimer.start("Scan phase");
+    final List<ProgramPoint> allPoints = scanner.scanMethodEntryExit(mainSrcRoot);
+    PhaseTimer.finish("Scan phase", scanPhaseStart);
+
+    final Set<String> scanIncludes = cfg.scanIncludes();
+
+    final List<ProgramPoint> points =
+        scanIncludes.isEmpty()
+            ? allPoints
+            : allPoints.stream()
+                .filter(pt -> isIncludedByScanFilter(pt.elementId().filePath(), scanIncludes))
+                .toList();
+
+    if (!scanIncludes.isEmpty()) {
+      System.out.println(">>> Scan include filter: " + scanIncludes);
+      System.out.println(">>> Points before filter: " + allPoints.size());
+      System.out.println(">>> Points after filter: " + points.size());
+    }
+
+    long nEntry = points.stream().filter(p -> p.kind() == ProgramPointKind.METHOD_ENTRY).count();
+    long nExit = points.stream().filter(p -> p.kind() == ProgramPointKind.METHOD_EXIT).count();
+
+    System.out.println(
+        ">>> Points — ENTRY: " + nEntry + "  EXIT: " + nExit + "  TOTAL: " + points.size());
+
+    // --- Phase 1: parallel LLM proposals ---
+    final Instant lmPhaseStart = PhaseTimer.start("LM phase");
+    final ExecutorService pool = Executors.newFixedThreadPool(cfg.threads());
+    final CompletionService<List<InvariantRecord>> ecs = new ExecutorCompletionService<>(pool);
+    final List<Future<List<InvariantRecord>>> allFutures = new ArrayList<>();
+
+    final FilterStats filterStats = new FilterStats();
+    for (ProgramPoint pt : points) {
+      allFutures.add(
+          ecs.submit(() -> processPoint(pt, mainSrcRoot, llm, registry, BASE_CFG, filterStats)));
+    }
+
+    final Map<Path, List<InvariantRecord>> byFile = new ConcurrentHashMap<>();
+    int submitted = allFutures.size();
+    int received = 0;
+    int totalSpecs = 0;
+
+    final long totalTimeoutSec = BASE_CFG.llmTotalTimeoutSec();
+    final long pollStepMs = BASE_CFG.llmPollStepMs();
+    final long deadlineNs = System.nanoTime() + TimeUnit.SECONDS.toNanos(totalTimeoutSec);
+    while (received < submitted) {
+      long remainingNs = deadlineNs - System.nanoTime();
+      if (remainingNs <= 0) {
+        System.err.println(
+            "LLM phase timed out; proceeding with completed tasks: " + received + "/" + submitted);
+        break;
+      }
+      Future<List<InvariantRecord>> f =
+          ecs.poll(
+              Math.min(remainingNs, TimeUnit.MILLISECONDS.toNanos(pollStepMs)),
+              TimeUnit.NANOSECONDS);
+
+      if (f == null) {
+        System.out.println(
+            "... waiting on LLM tasks: "
+                + received
+                + "/"
+                + submitted
+                + " done ("
+                + TimeUnit.NANOSECONDS.toSeconds(remainingNs)
+                + "s left)");
+        continue;
+      }
+
+      try {
+        List<InvariantRecord> recs = f.get();
+        received++;
+        if (recs == null || recs.isEmpty()) continue;
+        totalSpecs += recs.size();
+        Path file = mainSrcRoot.resolve(recs.get(0).sourceFile()).normalize();
+        byFile
+            .computeIfAbsent(file, __ -> Collections.synchronizedList(new ArrayList<>()))
+            .addAll(recs);
+      } catch (ExecutionException ee) {
+        received++;
+        Throwable cause = ee.getCause();
+        String msg =
+            (cause == null)
+                ? ee.toString()
+                : (cause.getMessage() == null ? cause.toString() : cause.getMessage());
+        System.err.println("LLM task failed: " + msg);
+      }
+    }
+
+    for (Future<List<InvariantRecord>> f : allFutures) {
+      if (!f.isDone()) f.cancel(true);
+    }
+    pool.shutdownNow();
+
+    final anonymous.oca.llm.DryRunTokenCounter dryRunCounter = llm.dryRunCounter();
+    if (dryRunCounter != null) {
+      PhaseTimer.finish("LM phase", lmPhaseStart);
+      dryRunCounter.printSummary(System.out, points.size());
+      Path tsv = BASE_CFG.outcomesPath().resolveSibling("oca_dry_run_tokens.tsv");
+      try {
+        dryRunCounter.writeTsv(tsv);
+        System.out.println(">>> Per-prompt token counts: " + tsv);
+      } catch (IOException ioe) {
+        System.err.println("Warning: couldn't write " + tsv + ": " + ioe.getMessage());
+      }
+      System.out.println(">>> LLM DRY RUN finished; injection, compilation and tests skipped.");
+      return;
+    }
+
+    long passedLlm =
+        filterStats.rawFromLlm.get()
+            - filterStats.dropEmpty.get()
+            - filterStats.dropParse.get()
+            - filterStats.dropQuality.get()
+            - filterStats.dropPerPointDedup.get()
+            - filterStats.dropMaxK.get();
+    long totalDropped =
+        filterStats.dropEmpty.get()
+            + filterStats.dropParse.get()
+            + filterStats.dropQuality.get()
+            + filterStats.dropPerPointDedup.get()
+            + filterStats.dropMaxK.get()
+            + filterStats.dropRunDedup.get()
+            + filterStats.dropRegistryDedup.get();
+    System.out.println(">>> LLM filter breakdown:");
+    System.out.println("    raw from LLM:              " + filterStats.rawFromLlm.get());
+    System.out.println("    dropped (empty expr):      " + filterStats.dropEmpty.get());
+    System.out.println("    dropped (parse fail):      " + filterStats.dropParse.get());
+    System.out.println("    dropped (quality filter):  " + filterStats.dropQuality.get());
+    System.out.println("    dropped (per-point dedup): " + filterStats.dropPerPointDedup.get());
+    System.out.println("    dropped (maxK cap):        " + filterStats.dropMaxK.get());
+    System.out.println("    → passed LLM filters:      " + passedLlm);
+    System.out.println("    dropped (run dedup):       " + filterStats.dropRunDedup.get());
+    System.out.println("    dropped (registry dedup):  " + filterStats.dropRegistryDedup.get());
+    System.out.println("    → total dropped:           " + totalDropped);
+    System.out.println("    → proposed (into injection): " + totalSpecs);
+    System.out.println(
+        ">>> Points with non-empty call-site context: "
+            + filterStats.pointsWithCallSiteContext.get());
+    System.out.println(
+        ">>> Points with non-empty I/O examples:      " + filterStats.pointsWithIoExamples.get());
+    System.out.println(">>> Files to inject (MAIN only): " + byFile.size());
+
+    long injectEntry =
+        byFile.values().stream()
+            .flatMap(List::stream)
+            .filter(r -> r.point().kind() == ProgramPointKind.METHOD_ENTRY)
+            .count();
+    long injectExit =
+        byFile.values().stream()
+            .flatMap(List::stream)
+            .filter(r -> r.point().kind() == ProgramPointKind.METHOD_EXIT)
+            .count();
+    System.out.println(">>> To inject — ENTRY: " + injectEntry + "  EXIT: " + injectExit);
+    PhaseTimer.finish("LM phase", lmPhaseStart);
+
+    // --- Phase 2: Injection on MAIN working copy ---
+    final Instant injectionPhaseStart = PhaseTimer.start("Injection phase");
+    final ExecutorService injPool = Executors.newFixedThreadPool(Math.min(cfg.threads(), 8));
+    final Map<Path, Future<Set<UUID>>> injFutures = new LinkedHashMap<>();
+    // Candidates whose guard could not be generated; they are never injected anywhere.
+    final Set<UUID> failedToInject = new HashSet<>();
+    for (Map.Entry<Path, List<InvariantRecord>> e : byFile.entrySet()) {
+      Path file = e.getKey();
+      List<InvariantRecord> recs = e.getValue();
+      injFutures.put(file, injPool.submit(() -> injector.injectGuards(file, recs)));
+    }
+    int injectedFiles = 0;
+    for (Map.Entry<Path, Future<Set<UUID>>> e : injFutures.entrySet()) {
+      try {
+        failedToInject.addAll(e.getValue().get());
+        injectedFiles++;
+      } catch (ExecutionException ee) {
+        Throwable cause = ee.getCause();
+        String msg =
+            (cause == null)
+                ? ee.toString()
+                : (cause.getMessage() == null ? cause.toString() : cause.getMessage());
+        System.err.println("Injection error in " + e.getKey() + ": " + msg);
+      }
+    }
+    injPool.shutdown();
+    System.out.println(">>> Injection done. Updated MAIN files: " + injectedFiles);
+    System.out.println(">>> Candidates failed to inject: " + failedToInject.size());
+    PhaseTimer.finish("Injection phase", injectionPhaseStart);
+
+    // Write DpRuntime helper so injected guards can compile without System.getProperties()
+    DpRuntimeWriter.write(mainSrcRoot);
+
+    // File accumulating disabled invariant UUIDs across timeout-recovery iterations
+    final Path disabledFile = workProjectRoot.resolve(".oca-disabled-invariants.txt");
+
+    // --- Phase 3: compile and run ---
+
+    final Path runLog;
+    // Set in external-project mode; null in native mode and when /dev/shm is unavailable.
+    Path shmDir = null;
+    // Set when BASE_CFG.enableTestFilter() catches a recognized test failure live, as it streams
+    // from *any* run (including the very first one) — rather than discovering it only after that
+    // run finishes by scanning its completed log.
+    Optional<TestFailureLogParser.FailureMatch> onlineDetectedFailure = Optional.empty();
+
+    if (execMode == ExecMode.EXTERNAL_PROJECT) {
+      // Run from PROJECT ROOT so ./gradlew works
+      runLog = workProjectRoot.resolve("oca-run.log");
+
+      final Path resolvedScript =
+          runnerScriptPath.isAbsolute()
+              ? runnerScriptPath.toAbsolutePath().normalize()
+              : workProjectRoot.resolve(runnerScriptPath).normalize();
+
+      System.out.println("[DP] External-project mode enabled");
+      System.out.println("[DP] Working project root: " + workProjectRoot);
+      System.out.println("[DP] Instrumented main src: " + mainSrcRoot);
+      System.out.println("[DP] Runner script: " + resolvedScript);
+
+      // 🔥 NEW: run invariant auto-filter BEFORE Gradle
+      final Path classesDir = workProjectRoot.resolve(".oca-classes");
+
+      runAutoFilterCompile(
+          "Invariant auto-filter compilation phase",
+          workProjectRoot,
+          mainSrcRoot,
+          userProjectRoot.resolve(relMainSrc),
+          classesDir,
+          BASE_CFG.externalCompileClasspath(),
+          BASE_CFG.autofilterMaxModifyPasses(),
+          BASE_CFG.autofilterMaxExtraPasses(),
+          externalMainCompileScript);
+
+      System.out.println(">>> Invariant auto-filter finished (external-project mode)");
+      System.out.println(">>> Running Tests!");
+
+      // Recovery loop: run the external test script, removing stuck invariants until
+      // the suite completes normally.
+      //
+      // Shm-based invariant tracking: each child JVM receives DP_SHM_DIR pointing to a
+      // shared-memory directory. Execution events are written as files (shm/ex/<uuid>)
+      // and survive SIGKILL. On JVM restart, DpRuntime pre-populates SEEN from shm/ex/
+      // so already-checked invariants are skipped without re-evaluation.
+      //
+      // On STALE_KILLED: the stuck UUID is read from shm/current/ (written before eval,
+      // deleted after) and added to the disabled list. Since it's also in shm/ex/ the
+      // SEEN guard would skip it anyway, but DISABLED ensures it's skipped even if shm
+      // is unavailable on a future run.
+      //
+      // On HARD_TIMEOUT: only disable if readCurrentInvariantFromShm finds a stuck UUID
+      // in shm/current/; if nothing is found (process was between invariant checks) just
+      // rerun — SEEN pre-population ensures the suite makes forward progress.
+      //
+      // All disabled UUIDs are recorded in .oca-stale-removed.txt for stats.
+      final String fullRunCp = "";
+      long currentTimeoutMinutes = JavaRunner.EXTERNAL_RUN_TIMEOUT_MINUTES;
+      final long maxTimeoutMinutes = BASE_CFG.maxTimeoutMinutes();
+      final long staleCheckMinutes = BASE_CFG.staleCheckMinutes();
+      long currentStaleCheckMinutes = staleCheckMinutes;
+      final long maxStaleCheckMinutes = 10L;
+
+      // Auto-detect shm directory: DP_SHM_BASE env, or /dev/shm if writable
+      {
+        String shmBase = System.getenv("DP_SHM_BASE");
+        if (shmBase != null && !shmBase.isBlank()) {
+          shmDir = Path.of(shmBase).resolve("oca-" + ProcessHandle.current().pid());
+        } else {
+          Path devShm = Path.of("/dev/shm");
+          if (Files.isDirectory(devShm) && Files.isWritable(devShm)) {
+            shmDir = devShm.resolve("oca-" + ProcessHandle.current().pid());
+          }
+        }
+        if (shmDir != null) {
+          System.out.println("[DP] SHM directory: " + shmDir);
+        } else {
+          System.out.println("[DP] SHM not available; using log-only fallback");
+        }
+      }
+
+      final Set<UUID> staleRemovedIds = new java.util.LinkedHashSet<>();
+      final Path staleRecordFile = workProjectRoot.resolve(".oca-stale-removed.txt");
+      int runIteration = 0;
+
+      final Instant executionPhaseStart = PhaseTimer.start("Execution phase");
+      while (true) {
+        runIteration++;
+        // Rotate the previous run's log to an intermediate file so each call to
+        // runExternalScript starts with a fresh log and the log parser is never
+        // confused by entries from earlier iterations.
+        if (runIteration > 1 && Files.exists(runLog)) {
+          Path archivedLog = workProjectRoot.resolve("oca-run-" + (runIteration - 1) + ".log");
+          Files.move(runLog, archivedLog, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+          System.out.println(
+              "[DP] Archived run " + (runIteration - 1) + " log → " + archivedLog.getFileName());
+        }
+
+        // With test filtering enabled, every run — including this very first one — is watched
+        // online for a recognized test-failure signature as its output streams, so a failure is
+        // caught (and the run killed) the instant it appears rather than only discovered after
+        // the run finishes and its completed log is scanned.
+        boolean watchForAnyFailure = BASE_CFG.enableTestFilter();
+        AtomicReference<TestFailureLogParser.FailureMatch> matchedFailureOut =
+            watchForAnyFailure ? new AtomicReference<>() : null;
+
+        JavaRunner.RunResult result =
+            watchForAnyFailure
+                ? JavaRunner.runExternalScript(
+                    resolvedScript,
+                    workProjectRoot,
+                    fullRunCp,
+                    runLog,
+                    currentTimeoutMinutes,
+                    currentStaleCheckMinutes,
+                    disabledFile,
+                    shmDir,
+                    null,
+                    true,
+                    matchedFailureOut)
+                : JavaRunner.runExternalScript(
+                    resolvedScript,
+                    workProjectRoot,
+                    fullRunCp,
+                    runLog,
+                    currentTimeoutMinutes,
+                    currentStaleCheckMinutes,
+                    disabledFile,
+                    shmDir);
+
+        if (result == JavaRunner.RunResult.TEST_FAILURE_KILLED) {
+          onlineDetectedFailure =
+              matchedFailureOut == null
+                  ? Optional.empty()
+                  : Optional.ofNullable(matchedFailureOut.get());
+          System.out.println(
+              "[DP] Test failure detected online during run "
+                  + runIteration
+                  + " — stopping this run immediately: "
+                  + onlineDetectedFailure.map(TestFailureLogParser.FailureMatch::line).orElse("?"));
+          break;
+        }
+
+        if (result == JavaRunner.RunResult.NORMAL) break;
+
+        // Identify stuck invariant via shm/current/ (written before eval, deleted after).
+        // Fall back to log-based detection if shm not available.
+        Optional<UUID> stuckId =
+            (shmDir != null)
+                ? LogParser.readCurrentInvariantFromShm(shmDir)
+                : LogParser.readLastExecutedId(runLog);
+
+        if (result == JavaRunner.RunResult.STALE_KILLED) {
+          System.err.println("[DP] Stale kill (" + currentStaleCheckMinutes + " min no progress)");
+          if (stuckId.isPresent()) {
+            System.out.println("[DP] Disabling stuck invariant: " + stuckId.get());
+            JavaRunner.disableInvariant(disabledFile, stuckId.get());
+            // Clean up the current/ marker so next iteration doesn't re-detect it
+            if (shmDir != null) {
+              try {
+                Files.deleteIfExists(shmDir.resolve("current").resolve(stuckId.get().toString()));
+              } catch (IOException ignored) {
+              }
+            }
+            staleRemovedIds.add(stuckId.get());
+            try {
+              Files.writeString(
+                  staleRecordFile,
+                  stuckId.get().toString() + "\n",
+                  java.nio.file.StandardOpenOption.CREATE,
+                  java.nio.file.StandardOpenOption.APPEND);
+            } catch (IOException ignore) {
+            }
+            System.out.println(
+                "[DP] Stale record updated: " + staleRemovedIds.size() + " invariant(s) recorded");
+          } else {
+            System.err.println(
+                "[DP] No stuck invariant identified — SEEN pre-population will skip "
+                    + "already-checked invariants on rerun");
+          }
+          currentStaleCheckMinutes = Math.min(currentStaleCheckMinutes * 2, maxStaleCheckMinutes);
+          System.out.println("[DP] Next stale threshold: " + currentStaleCheckMinutes + " min");
+
+        } else { // HARD_TIMEOUT
+          System.err.println("[DP] Hard timeout (" + currentTimeoutMinutes + " min)");
+          if (stuckId.isPresent()) {
+            // A specific invariant was mid-evaluation when the timeout fired — disable it
+            System.out.println("[DP] Disabling stuck invariant: " + stuckId.get());
+            JavaRunner.disableInvariant(disabledFile, stuckId.get());
+            if (shmDir != null) {
+              try {
+                Files.deleteIfExists(shmDir.resolve("current").resolve(stuckId.get().toString()));
+              } catch (IOException ignored) {
+              }
+            }
+            staleRemovedIds.add(stuckId.get());
+            try {
+              Files.writeString(
+                  staleRecordFile,
+                  stuckId.get().toString() + "\n",
+                  java.nio.file.StandardOpenOption.CREATE,
+                  java.nio.file.StandardOpenOption.APPEND);
+            } catch (IOException ignore) {
+            }
+          } else {
+            // Timeout between invariant checks: SEEN pre-population ensures the suite
+            // makes forward progress without disabling any invariant
+            System.out.println(
+                "[DP] No invariant mid-evaluation at timeout — rerunning with SEEN recovery");
+          }
+          currentTimeoutMinutes = Math.min(currentTimeoutMinutes * 2, maxTimeoutMinutes);
+          System.out.println("[DP] Next timeout: " + currentTimeoutMinutes + " min");
+          currentStaleCheckMinutes = Math.min(currentStaleCheckMinutes * 2, maxStaleCheckMinutes);
+          System.out.println("[DP] Next stale threshold: " + currentStaleCheckMinutes + " min");
+        }
+      }
+      PhaseTimer.finish("Execution phase", executionPhaseStart);
+
+      System.out.println(">>> Stale-removed invariants this run: " + staleRemovedIds.size());
+      if (!staleRemovedIds.isEmpty()) {
+        for (UUID id : staleRemovedIds) {
+          System.out.println("    stale: " + id);
+        }
+        System.out.println(">>> Stale record: " + staleRecordFile.toAbsolutePath());
+      }
+    } else {
+      // Native mode (UNCHANGED)
+      final Path classesDir = mainSrcRoot.resolve("oca-classes");
+      final String selfCp = System.getProperty("java.class.path");
+
+      final String fullRunCp;
+      if (splitMode) {
+        runAutoFilterCompile(
+            "Main compilation phase",
+            workProjectRoot,
+            mainSrcRoot,
+            userMainSrcRoot,
+            classesDir,
+            mainClasspath,
+            BASE_CFG.autofilterMaxModifyPasses(),
+            BASE_CFG.autofilterMaxExtraPasses(),
+            externalMainCompileScript);
+
+        System.out.println(">>> Main compilation phase finished successfully");
+
+        final String testCompileCp =
+            JavaRunner.joinCp(classesDir.toString(), mainClasspath, testClasspath);
+        runAutoFilterCompile(
+            "Test compilation phase",
+            workProjectRoot,
+            testSrcRoot,
+            userTestSrcRoot,
+            classesDir,
+            testCompileCp,
+            0,
+            BASE_CFG.autofilterMaxExtraPasses(),
+            externalTestCompileScript);
+
+        System.out.println(">>> Test compilation phase finished successfully");
+
+        fullRunCp = JavaRunner.joinCp(selfCp, classesDir.toString(), mainClasspath, testClasspath);
+      } else {
+        runAutoFilterCompile(
+            "Compilation phase",
+            workProjectRoot,
+            mainSrcRoot,
+            userMainSrcRoot,
+            classesDir,
+            mainClasspath,
+            BASE_CFG.autofilterMaxModifyPasses(),
+            BASE_CFG.autofilterMaxExtraPasses(),
+            externalMainCompileScript);
+
+        System.out.println(">>> Compilation phase finished successfully");
+        fullRunCp = JavaRunner.joinCp(selfCp, classesDir.toString(), mainClasspath);
+      }
+
+      runLog = mainSrcRoot.resolve("oca-run.log");
+      final Instant executionPhaseStart = PhaseTimer.start("Execution phase");
+      JavaRunner.run(entryClass, fullRunCp, programArgs, runLog, disabledFile);
+      PhaseTimer.finish("Execution phase", executionPhaseStart);
+    }
+
+    if (execMode == ExecMode.NATIVE) {
+      long exitLines = 0;
+      try {
+        exitLines = Files.lines(runLog).filter(s -> s.contains("\"phase\":\"EXIT\"")).count();
+      } catch (IOException ioe) {
+        // ignore
+      }
+      System.out.println(">>> Run log — EXIT events: " + exitLines);
+    }
+
+    // --- Phase 4: parse run log and generate the results ---
+    // Prefer shm-based reading in external mode (survives SIGKILL; more complete than log).
+    // Fall back to log-based reading for native mode or when shm is unavailable.
+    final Instant resultsPhaseStart = PhaseTimer.start("Results phase");
+
+    final Set<UUID> falsified;
+    final Set<UUID> executed;
+    if (execMode == ExecMode.EXTERNAL_PROJECT
+        && shmDir != null
+        && Files.isDirectory(shmDir.resolve("ex"))) {
+      executed = LogParser.readExecutedIdsFromShm(shmDir);
+      falsified = LogParser.readFalsifiedIdsFromShm(shmDir);
+      // Also merge any sidecar events from normally-exiting JVMs (belt-and-suspenders)
+      executed.addAll(LogParser.readExecutedIds(runLog));
+      falsified.addAll(LogParser.readFalsifiedIds(runLog));
+      System.out.println(
+          "[DP] Results read from shm ("
+              + executed.size()
+              + " executed, "
+              + falsified.size()
+              + " falsified) + log fallback");
+    } else {
+      falsified = LogParser.readFalsifiedIds(runLog);
+      executed = LogParser.readExecutedIds(runLog);
+    }
+    final Set<UUID> nonCompiled = LogParser.readNonCompiledIds(mainSrcRoot);
+    final Set<UUID> disabledByStale = readDisabledIds(disabledFile);
+
+    final Map<UUID, anonymous.oca.App.RecordLite> all =
+        parseRegistryLite(cfg.registryPath());
+
+    final Set<UUID> compiledIds = new HashSet<>(all.keySet());
+    compiledIds.removeAll(nonCompiled);
+    compiledIds.removeAll(failedToInject);
+
+    Map<UUID, InvariantRegistry.Outcome> outcomes = new HashMap<>();
+    for (var e : all.entrySet()) {
+      UUID id = e.getKey();
+      boolean compiled = compiledIds.contains(id);
+      boolean exec = executed.contains(id);
+
+      InvariantRegistry.Verdict verdict;
+      if (failedToInject.contains(id)) {
+        // Never injected, so it can be neither held nor falsified.
+        exec = false;
+        verdict = InvariantRegistry.Verdict.FAILED_TO_INJECT;
+      } else if (nonCompiled.contains(id)) {
+        verdict = InvariantRegistry.Verdict.FAILED_TO_COMPILE;
+      } else if (exec && falsified.contains(id)) {
+        verdict = InvariantRegistry.Verdict.FALSIFIED;
+      } else if (exec) {
+        verdict = InvariantRegistry.Verdict.HELD;
+      } else if (compiled) {
+        verdict = InvariantRegistry.Verdict.NEVER_EXECUTED;
+      } else {
+        verdict = InvariantRegistry.Verdict.PROPOSED;
+      }
+
+      outcomes.put(id, new InvariantRegistry.Outcome(compiled, exec, verdict));
+    }
+
+    InvariantRegistry.writeOutcomes(cfg.outcomesPath(), outcomes);
+    System.out.println(">>> Outcomes: " + cfg.outcomesPath().toAbsolutePath());
+
+    Map<String, List<anonymous.oca.App.RecordLite>> heldByMethod = new TreeMap<>();
+    Map<String, List<anonymous.oca.App.RecordLite>> falsByMethod = new TreeMap<>();
+    Map<String, List<anonymous.oca.App.RecordLite>> neverExecByMethod =
+        new TreeMap<>();
+    Map<String, List<anonymous.oca.App.RecordLite>> execByMethod = new TreeMap<>();
+    Map<String, List<anonymous.oca.App.RecordLite>> compiledByMethod =
+        new TreeMap<>();
+    Map<String, List<anonymous.oca.App.RecordLite>> failedCompileByMethod =
+        new TreeMap<>();
+
+    int disabledStaleNeverExecCount = 0;
+
+    for (var r : all.values()) {
+      if (failedToInject.contains(r.id)) {
+        continue;
+      }
+      boolean isCompiled = compiledIds.contains(r.id);
+      boolean wasExecuted = executed.contains(r.id);
+      boolean wasFalsified = falsified.contains(r.id);
+
+      if (isCompiled) {
+        compiledByMethod.computeIfAbsent(r.element, __ -> new ArrayList<>()).add(r);
+      } else if (nonCompiled.contains(r.id)) {
+        failedCompileByMethod.computeIfAbsent(r.element, __ -> new ArrayList<>()).add(r);
+      }
+
+      if (wasExecuted) {
+        execByMethod.computeIfAbsent(r.element, __ -> new ArrayList<>()).add(r);
+      }
+
+      if (wasExecuted && !wasFalsified) {
+        heldByMethod.computeIfAbsent(r.element, __ -> new ArrayList<>()).add(r);
+      } else if (wasFalsified) {
+        falsByMethod.computeIfAbsent(r.element, __ -> new ArrayList<>()).add(r);
+      } else if (isCompiled && !wasExecuted) {
+        neverExecByMethod.computeIfAbsent(r.element, __ -> new ArrayList<>()).add(r);
+        if (disabledByStale.contains(r.id)) {
+          disabledStaleNeverExecCount++;
+        }
+      }
+    }
+
+    int heldCount = heldByMethod.values().stream().mapToInt(List::size).sum();
+    int falsCount = falsByMethod.values().stream().mapToInt(List::size).sum();
+    int neverExecCount = neverExecByMethod.values().stream().mapToInt(List::size).sum();
+    int compiledCount = compiledByMethod.values().stream().mapToInt(List::size).sum();
+    int executedCount = execByMethod.values().stream().mapToInt(List::size).sum();
+    int unreachedCount = neverExecCount - disabledStaleNeverExecCount;
+
+    System.out.println(
+        ">>> Totals: "
+            + "all="
+            + all.size()
+            + " compiled="
+            + compiledCount
+            + " non-compiled="
+            + nonCompiled.size()
+            + " failed-to-inject="
+            + failedToInject.size()
+            + " executed="
+            + executedCount
+            + " falsified="
+            + falsCount
+            + " observed-held="
+            + heldCount
+            + " never-executed="
+            + neverExecCount
+            + " (disabled-stale="
+            + disabledStaleNeverExecCount
+            + " unreached="
+            + unreachedCount
+            + ")");
+
+    Set<String> heldInvariantProjectMethods = ProjectMethodIndex.collect(mainSrcRoot);
+
+    System.out.println(">>> OBSERVED-HELD invariants by method (ENTRY & EXIT):");
+    for (var e : heldByMethod.entrySet()) {
+      System.out.println("  - " + e.getKey());
+      for (var r : e.getValue()) {
+        InvariantMetrics m = InvariantMetrics.compute(r.expr, heldInvariantProjectMethods);
+        System.out.println(
+            "      ["
+                + r.kind
+                + "] "
+                + r.id
+                + " :: "
+                + r.expr
+                + "   (varCount1="
+                + m.varCount1()
+                + ", varCount2="
+                + m.varCount2()
+                + ", pspmCount="
+                + m.pspmCount()
+                + ", pspmCallCount="
+                + m.pspmCallCount()
+                + ", pspmCalls="
+                + m.pspmCalls()
+                + ", allCallCount="
+                + m.allCallCount()
+                + ", allCalls="
+                + m.allCalls()
+                + ")");
+      }
+    }
+
+    writeInvariantMetrics(heldByMethod, heldInvariantProjectMethods, cfg.outcomesPath());
+
+    System.out.println(">>> FALSIFIED invariants by method (ENTRY & EXIT):");
+    for (var e : falsByMethod.entrySet()) {
+      System.out.println("  - " + e.getKey());
+      for (var r : e.getValue()) {
+        System.out.println("      [" + r.kind + "] " + r.id + " :: " + r.expr);
+      }
+    }
+
+    System.out.println(">>> FAILED-TO-COMPILE invariants by method:");
+    for (var e : failedCompileByMethod.entrySet()) {
+      System.out.println("  - " + e.getKey());
+      for (var r : e.getValue()) {
+        System.out.println("      [" + r.kind + "] " + r.id + " :: " + r.expr);
+      }
+    }
+
+    System.out.println(">>> NEVER-EXECUTED invariants by method (compiled but never observed):");
+    for (var e : neverExecByMethod.entrySet()) {
+      System.out.println("  - " + e.getKey());
+      for (var r : e.getValue()) {
+        System.out.println("      [" + r.kind + "] " + r.id + " :: " + r.expr);
+      }
+    }
+
+    Set<UUID> heldExecCompiled = new HashSet<>(compiledIds);
+    heldExecCompiled.retainAll(executed);
+    heldExecCompiled.removeAll(falsified);
+
+    java.util.function.Function<Set<UUID>, String> idsToLine =
+        s ->
+            s.stream().map(UUID::toString).sorted().reduce((a, b) -> a + ", " + b).orElse("(none)");
+
+    System.out.println(">>> SUMMARY (IDs)");
+    System.out.println("  COMPILED IDs: " + idsToLine.apply(compiledIds));
+    System.out.println("  EXECUTED IDs: " + idsToLine.apply(executed));
+    System.out.println("  HELD∩EXECUTED∩COMPILED IDs: " + idsToLine.apply(heldExecCompiled));
+
+    System.out.println(">>> Registry: " + cfg.registryPath().toAbsolutePath());
+    System.out.println(">>> Outcomes: " + cfg.outcomesPath().toAbsolutePath());
+    System.out.println(">>> Run log: " + runLog.toAbsolutePath());
+    PhaseTimer.finish("Results phase", resultsPhaseStart);
+
+    if (execMode == ExecMode.EXTERNAL_PROJECT && BASE_CFG.enableTestFilter()) {
+      final Instant testFilterPhaseStart = PhaseTimer.start("Test-filter phase");
+      final Path resolvedScript =
+          runnerScriptPath.isAbsolute()
+              ? runnerScriptPath.toAbsolutePath().normalize()
+              : workProjectRoot.resolve(runnerScriptPath).normalize();
+
+      TestInvariantFilter.Result filterResult =
+          TestInvariantFilter.run(
+              workProjectRoot,
+              mainSrcRoot,
+              cfg.registryPath(),
+              runLog,
+              resolvedScript,
+              BASE_CFG.testFilterMethodBatchSize(),
+              JavaRunner.EXTERNAL_RUN_TIMEOUT_MINUTES,
+              BASE_CFG.staleCheckMinutes(),
+              onlineDetectedFailure,
+              shmDir);
+
+      System.out.println(
+          ">>> TEST-FILTER: "
+              + filterResult.removedIds.size()
+              + " invariant(s) disabled due to test failures");
+
+      System.out.println(">>> TEST-FILTER REMOVED IDS:");
+      for (UUID id : filterResult.removedIds.stream().sorted().toList()) {
+        System.out.println("  " + id);
+      }
+
+      System.out.println(">>> TEST-FILTER REMOVAL REASONS (one per disabled invariant):");
+      for (String m : filterResult.removedMethodBatches) {
+        System.out.println("  " + m);
+      }
+
+      System.out.println(">>> TEST-FILTER FINAL PROJECT: " + filterResult.finalProjectRoot);
+      System.out.println(">>> TEST-FILTER FINAL LOG: " + filterResult.finalRunLog);
+
+      // Prefer shm-based reading (survives SIGKILL; more complete than the log's shutdown-hook
+      // sidecar, which never runs on a stale/hard-timeout-killed final rerun) — same pattern used
+      // for the initial run above.
+      final Set<UUID> filteredFalsified;
+      final Set<UUID> filteredExecuted;
+      if (filterResult.finalShmDir != null
+          && Files.isDirectory(filterResult.finalShmDir.resolve("ex"))) {
+        filteredExecuted = LogParser.readExecutedIdsFromShm(filterResult.finalShmDir);
+        filteredFalsified = LogParser.readFalsifiedIdsFromShm(filterResult.finalShmDir);
+        filteredExecuted.addAll(LogParser.readExecutedIds(filterResult.finalRunLog));
+        filteredFalsified.addAll(LogParser.readFalsifiedIds(filterResult.finalRunLog));
+        System.out.println(
+            "[DP] Filtered results read from shm ("
+                + filteredExecuted.size()
+                + " executed, "
+                + filteredFalsified.size()
+                + " falsified) + log fallback");
+      } else {
+        filteredFalsified = LogParser.readFalsifiedIds(filterResult.finalRunLog);
+        filteredExecuted = LogParser.readExecutedIds(filterResult.finalRunLog);
+      }
+      Set<UUID> filteredNonCompiled = LogParser.readNonCompiledIds(filterResult.finalMainSrcRoot);
+
+      System.out.println(">>> TEST-FILTER FINAL TOTALS:");
+      System.out.println("  executed=" + filteredExecuted.size());
+      System.out.println("  falsified=" + filteredFalsified.size());
+      System.out.println("  non-compiled=" + filteredNonCompiled.size());
+      System.out.println("  removed-by-test-filter=" + filterResult.removedIds.size());
+      System.out.println(
+          "  final test run: "
+              + (filterResult.finalExitCode == 0 ? "PASSED" : "FAILED")
+              + " (exit="
+              + filterResult.finalExitCode
+              + ")");
+
+      // Full post-filter breakdown, in the same shape as the pre-filter ">>> Totals:" line
+      // above, but recomputed against the final (filtered) run so it reflects invariants
+      // disabled due to test failures the same way the pre-filter line reflects
+      // stale/timeout-disabled invariants.
+      Set<UUID> filteredCompiledIds = new HashSet<>(all.keySet());
+      filteredCompiledIds.removeAll(filteredNonCompiled);
+      filteredCompiledIds.removeAll(failedToInject);
+
+      int filteredHeldCount = 0;
+      int filteredFalsCount = 0;
+      int filteredNeverExecCount = 0;
+      int disabledTestFilterNeverExecCount = 0;
+
+      for (UUID id : all.keySet()) {
+        if (failedToInject.contains(id)) {
+          continue;
+        }
+        boolean isCompiled = filteredCompiledIds.contains(id);
+        boolean wasExecuted = filteredExecuted.contains(id);
+        boolean wasFalsified = filteredFalsified.contains(id);
+
+        if (wasExecuted && !wasFalsified) {
+          filteredHeldCount++;
+        } else if (wasFalsified) {
+          filteredFalsCount++;
+        } else if (isCompiled && !wasExecuted) {
+          filteredNeverExecCount++;
+          if (filterResult.removedIds.contains(id)) {
+            disabledTestFilterNeverExecCount++;
+          }
+        }
+      }
+
+      int filteredUnreachedCount = filteredNeverExecCount - disabledTestFilterNeverExecCount;
+
+      System.out.println(
+          ">>> TEST-FILTER Totals: "
+              + "all="
+              + all.size()
+              + " compiled="
+              + filteredCompiledIds.size()
+              + " non-compiled="
+              + filteredNonCompiled.size()
+              + " failed-to-inject="
+              + failedToInject.size()
+              + " executed="
+              + filteredExecuted.size()
+              + " falsified="
+              + filteredFalsCount
+              + " observed-held="
+              + filteredHeldCount
+              + " never-executed="
+              + filteredNeverExecCount
+              + " (disabled-test-filter="
+              + disabledTestFilterNeverExecCount
+              + " unreached="
+              + filteredUnreachedCount
+              + ")");
+      PhaseTimer.finish("Test-filter phase", testFilterPhaseStart);
+    }
+
+    if (!BASE_CFG.keepWork()) {
+      try {
+        if (execMode == ExecMode.EXTERNAL_PROJECT) {
+          deleteTree(workProjectRoot);
+          System.out.println(">>> Cleaned working project copy");
+        } else {
+          deleteTree(mainSrcRoot);
+          if (splitMode && !testSrcRoot.equals(mainSrcRoot)) {
+            deleteTree(testSrcRoot);
+          }
+          System.out.println(">>> Cleaned working copy(ies)");
+        }
+        if (shmDir != null && Files.exists(shmDir)) {
+          deleteTree(shmDir);
+          System.out.println(">>> Cleaned shm directory: " + shmDir);
+        }
+      } catch (IOException ioe) {
+        System.err.println("Warning: failed to delete working copy: " + ioe.getMessage());
+      }
+    } else {
+      System.out.println(">>> Keeping working copy(ies) (DP_KEEP_WORK=1):");
+      if (execMode == ExecMode.EXTERNAL_PROJECT) {
+        System.out.println("    project: " + workProjectRoot);
+        System.out.println("    main: " + mainSrcRoot);
+        System.out.println("    test: " + testSrcRoot);
+      } else {
+        System.out.println("    main: " + mainSrcRoot);
+        if (splitMode) {
+          System.out.println("    test: " + testSrcRoot);
+        }
+      }
+    }
+  }
+
+  // ----- helpers -----
+
+  /**
+   * Processes a single program point by generating, deduplicating, and registering candidate
+   * invariants.
+   *
+   * <p>This method:
+   *
+   * <ol>
+   *   <li>Extracts in-scope variables and optional contextual information (e.g., method body,
+   *       Javadoc, type documentation) based on configuration.
+   *   <li>Invokes the LLM to propose candidate invariants.
+   *   <li>Performs <b>run-level deduplication</b> to avoid duplicate expressions within the same
+   *       run.
+   *   <li>Assigns a fresh UUID to each invariant and appends it to the registry if not already
+   *       present.
+   * </ol>
+   *
+   * <p>Failures during processing are caught and result in no invariants for the given point.
+   *
+   * @param point the program point (e.g., method ENTRY or EXIT)
+   * @param srcRoot root of the source tree used for context extraction
+   * @param llm the invariant generator backed by an LLM
+   * @param registry the global registry for storing invariant records
+   * @return a list of newly generated invariant records (may be empty)
+   */
+  private static List<InvariantRecord> processPoint(
+      ProgramPoint point,
+      Path srcRoot,
+      LlmInvariantGenerator llm,
+      InvariantRegistry registry,
+      DpConfig BASE_CFG,
+      FilterStats stats) {
+
+    try {
+      Map<String, String> inScope = ContextUtils.extractScope(point, srcRoot);
+
+      Set<ContextKind> enabled = BASE_CFG.enabledContexts();
+
+      String methodBody =
+          enabled.contains(ContextKind.METHOD_BODY)
+              ? ContextUtils.extractMethodBodyRaw(point, srcRoot).orElse("")
+              : "";
+
+      String methodJavadoc =
+          enabled.contains(ContextKind.METHOD_JAVADOC)
+              ? ContextUtils.extractMethodJavadoc(point, srcRoot).orElse("")
+              : "";
+
+      String classDoc =
+          enabled.contains(ContextKind.CLASS_DOC)
+              ? ContextUtils.extractClassDocumentation(point, srcRoot).orElse("")
+              : "";
+
+      String typeDoc =
+          enabled.contains(ContextKind.TYPE_DOC)
+              ? ContextUtils.extractTypeDocumentation(point, srcRoot).orElse("")
+              : "";
+
+      String callSite =
+          enabled.contains(ContextKind.CALL_SITE)
+              ? ContextUtils.extractCallSiteContext(point, srcRoot, BASE_CFG.callSitesIndexPath())
+                  .orElse("")
+              : "";
+      if (!callSite.isBlank()) stats.pointsWithCallSiteContext.incrementAndGet();
+
+      String ioExamples =
+          enabled.contains(ContextKind.IO_EXAMPLES)
+              ? ContextUtils.extractIOExamples(point, srcRoot, BASE_CFG.ioExamplesIndexPath())
+                  .orElse("")
+              : "";
+      if (!ioExamples.isBlank()) stats.pointsWithIoExamples.incrementAndGet();
+
+      String calleeDoc =
+          enabled.contains(ContextKind.CALLEE_DOC)
+              ? ContextUtils.extractCalleeDocumentation(point, srcRoot).orElse("")
+              : "";
+
+      List<InvariantSpec> specs =
+          llm.proposeInvariants(
+              point,
+              inScope,
+              methodBody,
+              methodJavadoc,
+              classDoc,
+              typeDoc,
+              callSite,
+              ioExamples,
+              calleeDoc,
+              stats);
+
+      if (specs.isEmpty()) return List.of();
+
+      List<InvariantRecord> out = new ArrayList<>(specs.size());
+      java.time.Instant now = java.time.Instant.now();
+      String fileRel = point.elementId().filePath();
+
+      for (InvariantSpec spec : specs) {
+        // run-level dedup
+        String key = keyFor(point, spec.expression());
+        if (!RUN_DEDUP.add(key)) {
+          stats.dropRunDedup.incrementAndGet();
+          continue;
+        }
+
+        InvariantRecord rec =
+            new InvariantRecord(java.util.UUID.randomUUID(), spec, point, fileRel, now);
+
+        // registry-level dedup
+        if (!registry.appendIfNew(rec)) {
+          stats.dropRegistryDedup.incrementAndGet();
+        }
+        out.add(rec);
+      }
+
+      return out;
+
+    } catch (Exception e) {
+      System.err.println("processPoint error for " + point.elementId() + ": " + e.getMessage());
+      return List.of();
+    }
+  }
+
+  /**
+   * Parses the invariant registry file into a lightweight in-memory representation.
+   *
+   * <p>This method avoids full object deserialization and instead extracts only essential fields
+   * (ID, expression, kind, and element) for reporting purposes.
+   *
+   * @param registryJsonl path to the registry file (JSONL format)
+   * @return map from invariant UUID to lightweight record
+   */
+  private static Set<UUID> readDisabledIds(Path disabledFile) {
+    Set<UUID> out = new HashSet<>();
+    if (!Files.exists(disabledFile)) return out;
+    try {
+      for (String line : Files.readAllLines(disabledFile)) {
+        if (line.isBlank()) continue;
+        try {
+          out.add(UUID.fromString(line.trim()));
+        } catch (IllegalArgumentException ignore) {
+        }
+      }
+    } catch (IOException e) {
+      System.err.println("[DP] Warning: could not read disabled file: " + e.getMessage());
+    }
+    return out;
+  }
+
+  /**
+   * Computes variable-count and project-specific-method-call metrics for every observed-held
+   * invariant and writes them to their own JSONL file, sibling to (but separate from) the outcomes
+   * file — one JSON object per invariant: {@code id}, {@code kind}, {@code element}, {@code expr},
+   * {@code varCount1} (distinct variables), {@code varCount2} (total variable occurrences), {@code
+   * pspmCount}, and {@code pspmCalls}.
+   */
+  private static void writeInvariantMetrics(
+      Map<String, List<anonymous.oca.App.RecordLite>> heldByMethod,
+      Set<String> projectMethods,
+      Path outcomesPath) {
+    Path metricsPath = outcomesPath.resolveSibling("oca_invariant_metrics.jsonl");
+
+    try {
+      Path parent = metricsPath.getParent();
+      if (parent != null) Files.createDirectories(parent);
+
+      try (var w =
+          Files.newBufferedWriter(
+              metricsPath,
+              java.nio.charset.StandardCharsets.UTF_8,
+              java.nio.file.StandardOpenOption.CREATE,
+              java.nio.file.StandardOpenOption.TRUNCATE_EXISTING)) {
+        for (var e : heldByMethod.entrySet()) {
+          for (var r : e.getValue()) {
+            InvariantMetrics m = InvariantMetrics.compute(r.expr, projectMethods);
+            w.write(
+                "{"
+                    + jsonKv("id", r.id.toString())
+                    + ","
+                    + jsonKv("kind", r.kind)
+                    + ","
+                    + jsonKv("element", r.element)
+                    + ","
+                    + jsonKv("expr", r.expr)
+                    + ",\"varCount1\":"
+                    + m.varCount1()
+                    + ",\"varCount2\":"
+                    + m.varCount2()
+                    + ",\"pspmCount\":"
+                    + m.pspmCount()
+                    + ",\"pspmCallCount\":"
+                    + m.pspmCallCount()
+                    + ",\"pspmCalls\":"
+                    + jsonStringArray(m.pspmCalls())
+                    + ",\"allCallCount\":"
+                    + m.allCallCount()
+                    + ",\"allCalls\":"
+                    + jsonStringArray(m.allCalls())
+                    + "}");
+            w.newLine();
+          }
+        }
+      }
+    } catch (IOException ioe) {
+      throw new RuntimeException("Failed to write invariant metrics: " + ioe.getMessage(), ioe);
+    }
+
+    System.out.println(">>> Invariant metrics: " + metricsPath.toAbsolutePath());
+  }
+
+  private static String jsonKv(String k, String v) {
+    return "\"" + jsonEsc(k) + "\":\"" + jsonEsc(v) + "\"";
+  }
+
+  private static String jsonStringArray(Set<String> values) {
+    return "["
+        + values.stream()
+            .map(s -> "\"" + jsonEsc(s) + "\"")
+            .reduce((a, b) -> a + "," + b)
+            .orElse("")
+        + "]";
+  }
+
+  private static String jsonEsc(String s) {
+    return s.replace("\\", "\\\\").replace("\"", "\\\"");
+  }
+
+  private static Map<UUID, anonymous.oca.App.RecordLite> parseRegistryLite(
+      Path registryJsonl) {
+    Map<UUID, anonymous.oca.App.RecordLite> out = new HashMap<>();
+    if (!Files.exists(registryJsonl)) return out;
+    try {
+      for (String line : Files.readAllLines(registryJsonl)) {
+        if (line.isBlank()) continue;
+        UUID id = extract(line, "\"id\":\"", "\"").map(UUID::fromString).orElse(null);
+        String expr = extract(line, "\"expr\":\"", "\"").orElse(null);
+        String kind = extract(line, "\"kind\":\"", "\"").orElse("METHOD_ENTRY");
+        String element = extract(line, "\"element\":\"", "\"").orElse("<?>");
+        if (id != null && expr != null)
+          out.put(id, new anonymous.oca.App.RecordLite(id, expr, kind, element));
+      }
+    } catch (IOException e) {
+      throw new RuntimeException("Failed reading registry: " + e.getMessage(), e);
+    }
+    return out;
+  }
+
+  private static Optional<String> extract(String s, String start, String end) {
+    int i = s.indexOf(start);
+    if (i < 0) return Optional.empty();
+    int j = s.indexOf(end, i + start.length());
+    if (j < 0) return Optional.empty();
+    return Optional.of(
+        s.substring(i + start.length(), j).replace("\\\"", "\"").replace("\\\\", "\\"));
+  }
+
+  private static final class RecordLite {
+    final UUID id;
+    final String expr;
+    final String kind;
+    final String element;
+
+    RecordLite(UUID id, String expr, String kind, String element) {
+      this.id = id;
+      this.expr = expr;
+      this.kind = kind;
+      this.element = element;
+    }
+  }
+
+  /**
+   * Creates an isolated working copy of a source tree for instrumentation and execution.
+   *
+   * <p>The copy is placed under a timestamped directory inside the configured working directory.
+   * All transformations (injection, compilation, filtering) are applied to this copy to ensure that
+   * the original source tree remains unchanged.
+   *
+   * @param userSrcRoot the original source or project root
+   * @return path to the newly created working copy
+   * @throws IOException if copying fails
+   */
+  private static Path prepareWorkingCopy(Path userSrcRoot, DpConfig BASE_CFG) throws IOException {
+    String base = BASE_CFG.workDir();
+    Path baseDir = Path.of(base).toAbsolutePath().normalize();
+    Files.createDirectories(baseDir);
+
+    String stamp =
+        java.time.format.DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss")
+            .withZone(java.time.ZoneId.systemDefault())
+            .format(java.time.Instant.now());
+
+    Path workRoot = baseDir.resolve("project-" + stamp);
+
+    copyTree(userSrcRoot, workRoot);
+    System.out.println(">>> Working project copy created at: " + workRoot);
+    return workRoot;
+  }
+
+  /**
+   * Recursively copies a directory tree from a source location to a destination.
+   *
+   * <p>This method preserves file attributes and prevents accidental recursive self-copy (i.e.,
+   * copying a directory into itself or vice versa).
+   *
+   * @param from source directory
+   * @param to destination directory
+   * @throws IOException if an I/O error occurs during copying
+   * @throws IllegalStateException if the source and destination overlap
+   */
+  private static void copyTree(Path from, Path to) throws IOException {
+
+    Path src = from.toAbsolutePath().normalize();
+    Path dst = to.toAbsolutePath().normalize();
+
+    // Prevent recursive self-copy
+    if (dst.startsWith(src) || src.startsWith(dst)) {
+      throw new IllegalStateException(
+          "Refusing to copy overlapping trees:\n  from=" + src + "\n  to=" + dst);
+    }
+    Files.createDirectories(to);
+    Files.walkFileTree(
+        from,
+        new SimpleFileVisitor<>() {
+          @Override
+          public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs)
+              throws IOException {
+            Path target = to.resolve(from.relativize(dir).toString());
+            Files.createDirectories(target);
+            return FileVisitResult.CONTINUE;
+          }
+
+          @Override
+          public FileVisitResult visitFile(Path file, BasicFileAttributes attrs)
+              throws IOException {
+            Path target = to.resolve(from.relativize(file).toString());
+            Files.copy(
+                file,
+                target,
+                StandardCopyOption.REPLACE_EXISTING,
+                StandardCopyOption.COPY_ATTRIBUTES);
+            return FileVisitResult.CONTINUE;
+          }
+        });
+  }
+
+  /**
+   * Recursively deletes a directory tree.
+   *
+   * <p>This method is used to clean up working copies after execution unless explicitly disabled
+   * via configuration.
+   *
+   * @param root root of the directory tree to delete
+   * @throws IOException if deletion fails
+   */
+  private static void deleteTree(Path root) throws IOException {
+    if (!Files.exists(root)) return;
+    Files.walkFileTree(
+        root,
+        new SimpleFileVisitor<>() {
+          @Override
+          public FileVisitResult visitFile(Path file, BasicFileAttributes attrs)
+              throws IOException {
+            Files.deleteIfExists(file);
+            return FileVisitResult.CONTINUE;
+          }
+
+          @Override
+          public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
+            Files.deleteIfExists(dir);
+            return FileVisitResult.CONTINUE;
+          }
+        });
+  }
+
+  /**
+   * Compiles instrumented code with automatic invariant filtering.
+   *
+   * <p>This method ensures that only compilable invariants remain in the code by iteratively
+   * removing invariants that cause compilation failures.
+   *
+   * <p>Two modes are supported:
+   *
+   * <ul>
+   *   <li><b>External compilation:</b> Uses a user-provided script (e.g., Gradle build).
+   *   <li><b>Native compilation:</b> Uses an internal {@code javac}-based compilation pipeline.
+   * </ul>
+   *
+   * <p>The process may run for multiple passes until compilation succeeds or a maximum number of
+   * passes is reached.
+   *
+   * @param workProjectRoot root of the working project copy
+   * @param srcRoot instrumented source root
+   * @param userSrcRoot original source root (used for reference)
+   * @param classesDir output directory for compiled classes (native mode)
+   * @param classpath classpath used for compilation
+   * @param maxPasses maximum number of filtering passes that attempt invariant-level removal
+   * @param maxExtraPasses additional passes allotted to the restore-only fallback phase, on top of
+   *     {@code maxPasses}
+   * @param externalCompileScript optional external compile script (null for native mode)
+   * @throws Exception if compilation fails irrecoverably
+   */
+  private static void runAutoFilterCompile(
+      String phaseLabel,
+      Path workProjectRoot,
+      Path srcRoot,
+      Path userSrcRoot,
+      Path classesDir,
+      String classpath,
+      int maxPasses,
+      int maxExtraPasses,
+      @org.checkerframework.checker.nullness.qual.Nullable Path externalCompileScript)
+      throws Exception {
+
+    final Instant compilePhaseStart = PhaseTimer.start(phaseLabel);
+    if (externalCompileScript != null) {
+      // User-provided compile script IS the compiler
+      ExternalCompileRunner.compileWithAutoFilter(
+          workProjectRoot, srcRoot, userSrcRoot, externalCompileScript, maxPasses, maxExtraPasses);
+    } else {
+      // Native javac-based autofilter
+      JavaRunner.compileWithAutoFilter(
+          srcRoot, userSrcRoot, classesDir, classpath, maxPasses, maxExtraPasses);
+    }
+    PhaseTimer.finish(phaseLabel, compilePhaseStart);
+  }
+
+  /**
+   * Determines whether a source file should be included based on configured scan filters.
+   *
+   * <p>Supports both:
+   *
+   * <ul>
+   *   <li>Path-based filters (e.g., {@code com/example/utils})
+   *   <li>Package-style filters (e.g., {@code com.example.utils})
+   * </ul>
+   *
+   * @param filePath relative path of the source file
+   * @param includes set of include filters
+   * @return true if the file matches any filter; false otherwise
+   */
+  private static boolean isIncludedByScanFilter(String filePath, Set<String> includes) {
+    String normalizedFile = filePath.replace("\\", "/");
+
+    for (String rawInclude : includes) {
+      String include = rawInclude.replace("\\", "/").trim();
+      if (include.isEmpty()) continue;
+
+      // Supports path-style filters:
+      //   com/badlogic/gdx/utils
+      //   src/com/badlogic/gdx/utils
+      if (normalizedFile.contains(include)) {
+        return true;
+      }
+
+      // Supports package-style filters:
+      //   com.badlogic.gdx.utils
+      String packageAsPath = include.replace(".", "/");
+      if (normalizedFile.contains(packageAsPath)) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+}

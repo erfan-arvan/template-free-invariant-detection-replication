@@ -1,0 +1,24 @@
+{
+  "invariants" : [ {
+    "expression" : "args != null",
+    "rationale" : "The main method in Java is invoked with a non-null String array, even if empty.",
+    "meta" : [ {
+      "key" : "significance",
+      "value" : "args must not be null at method entry for a main method."
+    } ]
+  }, {
+    "expression" : "args.length >= 0",
+    "rationale" : "Array lengths in Java are always non-negative.",
+    "meta" : [ {
+      "key" : "nature",
+      "value" : "array length"
+    } ]
+  }, {
+    "expression" : "args.length >= 0 && args != null",
+    "rationale" : "Defensive check for args array length only when args is not null.",
+    "meta" : [ {
+      "key" : "combined",
+      "value" : "safe to check length after null check"
+    } ]
+  } ]
+}

@@ -1,0 +1,31 @@
+{
+  "invariants" : [ {
+    "expression" : "name == null || name.length() >= 0",
+    "rationale" : "If name is not null, its length is nonnegative.",
+    "meta" : [ {
+      "key" : "nullness",
+      "value" : "name may be null"
+    }, {
+      "key" : "property",
+      "value" : "string length nonnegative"
+    } ]
+  }, {
+    "expression" : "x >= Integer.MIN_VALUE",
+    "rationale" : "x is an int, so within full integer range.",
+    "meta" : [ {
+      "key" : "range",
+      "value" : "x is int"
+    } ]
+  }, {
+    "expression" : "x <= Integer.MAX_VALUE",
+    "rationale" : "x is an int, so within full integer range.",
+    "meta" : [ {
+      "key" : "range",
+      "value" : "x is int"
+    } ]
+  }, {
+    "expression" : "name != null || name == null",
+    "rationale" : "name is either null or not null; this is tautological but valid.",
+    "meta" : [ ]
+  } ]
+}
