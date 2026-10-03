@@ -1,11 +1,11 @@
-# Oca Token Usage and API Cost
+# Oca Token Usage and API Cost (Section 5.5)
 
-Pricing used throughout:
+LLM token usage of the Oca runs used for RQ3 and RQ6, with `gpt-4.1-mini` pricing:
 
 - Input: **$0.40 per 1M tokens**
 - Output: **$1.60 per 1M tokens**
 
-## Prompt / Context Study
+## Benchmark Projects (Prompt/Context Study)
 
 | Project | Input tokens | Output tokens | Total tokens | Cost |
 |---|---:|---:|---:|---:|
@@ -17,24 +17,19 @@ Pricing used throughout:
 | Spring | 14,266,704 | 1,725,218 | 15,991,922 | $8.4670 |
 | **Subtotal** | **63,871,513** | **7,493,794** | **71,365,307** | **$37.5387** |
 
-## Usefulness Study
-
-JxPath is excluded.
+## Defects4J Projects (Fixed Versions)
 
 | Project | Input tokens | Output tokens | Total tokens | Cost |
 |---|---:|---:|---:|---:|
-| Cli_40f | 1,288,979 | 84,818 | 1,373,797 | $0.6513 |
-| Codec_18f | 3,742,282 | 223,507 | 3,965,789 | $1.8545 |
-| Collections_28f | 19,864,845 | 1,595,817 | 21,460,662 | $10.4992 |
-| Gson_18f | 3,103,251 | 223,456 | 3,326,707 | $1.5988 |
-| Math_106f | 4,750,652 | 404,883 | 5,155,535 | $2.5481 |
+| Cli | 1,288,979 | 84,818 | 1,373,797 | $0.6513 |
+| Codec | 3,742,282 | 223,507 | 3,965,789 | $1.8545 |
+| Collections | 19,864,845 | 1,595,817 | 21,460,662 | $10.4992 |
+| Gson | 3,103,251 | 223,456 | 3,326,707 | $1.5988 |
+| Math | 4,750,652 | 404,883 | 5,155,535 | $2.5481 |
 | **Subtotal** | **32,750,009** | **2,532,481** | **35,282,490** | **$17.1520** |
 
-## Combined Total
+## All 11 Projects
 
 | Input tokens | Output tokens | Total tokens | Total cost |
 |---:|---:|---:|---:|
 | **96,621,522** | **10,026,275** | **106,647,797** | **$54.6906** |
-
-The usefulness-study output-token counts include the estimation procedure used by
-`summarize_oca_token_cost.py` for prompts without a recorded cassette response.

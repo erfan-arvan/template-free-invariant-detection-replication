@@ -5,9 +5,9 @@ Every count is the number of coded papers that use the node's code or any code b
 so a paper with several codes in one family counts once for that family.
 
 Usage:
-  python3 build_taxonomy.py            # tree as printed in the paper (HIST and SEM collapsed)
-  python3 build_taxonomy.py --full     # also list the HIST and SEM subcodes
-  python3 build_taxonomy.py --check    # also compare every number with the paper; exit 1 on mismatch
+  python3 build_taxonomy.py           tree as printed in the paper
+  python3 build_taxonomy.py --full    also list the HIST and SEM subcodes
+  python3 build_taxonomy.py --check   also compare every number with the paper
 """
 import argparse
 import re
@@ -18,7 +18,6 @@ import openpyxl
 
 XLSX = Path(__file__).resolve().parent / "papers_screened_open_coding.xlsx"
 
-# (code, label, description, children, collapsed in the paper)
 TREE = [
     ("LC", "Local Code Context (LC)", "Program code given directly to the model.", [
         ("LC-SUBSRC", "partial function code", []),
@@ -56,7 +55,6 @@ TREE = [
     ], False),
 ]
 
-# Numbers reported in the paper (section 3.3.1 and Fig. 3).
 PAPER = {
     "search results": 332, "candidate papers": 184, "not codable": 3, "coded papers": 181,
     "LC": 155, "LC-SUBSRC": 73, "LC-FUNC": 76, "LC-STRUCT": 43, "LC-IR": 4,
@@ -106,15 +104,13 @@ def load(xlsx):
 
     screened = [r for r in rows(wb["papers"]) if r.get("title")]
     include_rows = [r for r in screened if r.get("decision") == "include"]
-    included = {norm_link(r["link"]) for r in include_rows}  # three papers are listed twice
+    included = {norm_link(r["link"]) for r in include_rows}
 
     coded, not_codable, rounds = {}, [], [0, 0]
-    # First round: the 40 randomly sampled papers coded to derive the taxonomy.
     for r in rows(wb["coded"]):
         if r.get("title"):
             coded[norm_link(r["link"])] = (r["title"], parse_codes(r.get("Tags")))
             rounds[0] += 1
-    # Second round: the remaining 144 candidate papers.
     for r in rows(wb["Remaining 144 coded"]):
         if not r.get("Title"):
             continue
@@ -187,8 +183,7 @@ def main():
     candidates = len(coded) + len(not_codable)
 
     print(f"Search results (LLM in title or abstract): {len(screened)}")
-    print(f"Candidate papers (LLM performs a task on source code): {candidates}"
-          f"  ({len(include_rows)} 'include' rows, {len(include_rows) - candidates} of them duplicates)")
+    print(f"Candidate papers (LLM performs a task on source code): {candidates}")
     print(f"  round 1, random sample that derived the taxonomy: {rounds[0]}")
     print(f"  round 2, remaining papers: {rounds[1]}")
     print(f"  not codable at study level: {len(not_codable)}")

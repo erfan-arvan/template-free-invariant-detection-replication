@@ -14,11 +14,11 @@ ICSE, ASE, and ISSTA.
 
 Requires Python 3 and `openpyxl` (`pip install openpyxl`).
 
-```bash
-python3 build_taxonomy.py            # tree as in the paper
-python3 build_taxonomy.py --full     # also list the HIST and SEM subcodes
-python3 build_taxonomy.py --check    # also compare every number with the paper (exit 1 on mismatch)
-```
+| Command | Prints |
+|---|---|
+| `python3 build_taxonomy.py` | Tree as in the paper |
+| `python3 build_taxonomy.py --full` | Also list the HIST and SEM subcodes |
+| `python3 build_taxonomy.py --check` | Also compare every number with the paper; exits with status 1 on a mismatch |
 
 A node's count is the number of coded papers that use its code or any code below it, so a paper
 with several codes in one family counts once for that family, and the parent counts are unions,
@@ -30,7 +30,7 @@ TEST-RENDER under TEST-EXEC; `--full` prints the HIST and SEM subcodes too.
 1. **Search** (sheet `papers`): 332 papers with "LLM" or "large language model" in their title or abstract.
 2. **Screening** (column `decision`): `include` when an LLM performs a task on source code
    (e.g., program repair, refactoring, code generation, reasoning about program behavior).
-   This gives 184 candidate papers; three of them appear twice in the sheet, hence 187 `include` rows.
+   This gives 184 candidate papers.
 3. **Round 1: deriving the codes** (sheets `+randomNum`, `sampled`, `coded`, `freq`). Each paper got a
    frozen random number (`random_freezed`). Starting with 20 papers (about 10%) and adding five at a time
    in random order until a batch of five produced no new category gave 40 papers. Their context
