@@ -1,0 +1,48 @@
+tool,project,bug,program_point,method,invariant
+Oca,Codec,Codec_17,ENTRY,StringUtils#newStringIso8859_1(byte[]),bytes != null && bytes.length >= 0
+Oca,Codec,Codec_18,EXIT,"StringUtils#equals(CharSequence,CharSequence)",(cs1 == cs2) == result
+Oca,Codec,Codec_18,EXIT,"StringUtils#equals(CharSequence,CharSequence)",result == (cs1 == null ? cs2 == null : cs1.equals(cs2))
+Oca,Collections,Collections_24,ENTRY,AbstractMapBag#addAll(Collection),coll != null
+Oca,Collections,Collections_24,ENTRY,AbstractMapBag#addAll(Collection),coll.iterator() != null
+Oca,Collections,Collections_24,ENTRY,AbstractMapBag#addAll(Collection),coll.size() >= 0
+Oca,Collections,Collections_25,ENTRY,Inverse#getKey(Object),value == null || TreeBidiMap.this.containsValue(value)
+Oca,Collections,Collections_25,ENTRY,TreeBidiMap#getKey(Object),value == null || TreeBidiMap.this.containsValue(value)
+Oca,Collections,Collections_25,ENTRY,TreeBidiMap#getKey(Object),value == null || TreeBidiMap.this.valuesSet.contains(value)
+Oca,Collections,Collections_25,ENTRY,LazyIteratorChain#hasNext(),chainExhausted == true || currentIterator != null
+Oca,Collections,Collections_25,ENTRY,LazyIteratorChain#updateCurrentIterator(),chainExhausted == (nextIterator(callCounter + 1) == null)
+Oca,Collections,Collections_25,ENTRY,LazyIteratorChain#updateCurrentIterator(),chainExhausted || currentIterator != null
+Oca,Collections,Collections_25,ENTRY,LazyIteratorChain#updateCurrentIterator(),currentIterator == null || currentIterator.hasNext() || chainExhausted
+Oca,Collections,Collections_25,ENTRY,TreeList#iterator(),toArray().length == size()
+Oca,Collections,Collections_25,EXIT,Inverse#getKey(Object),result == null || TreeBidiMap.this.containsValue(value)
+Oca,Collections,Collections_25,EXIT,Inverse#inverseBidiMap(),result.containsValue((K) null) == false
+Oca,Collections,Collections_25,EXIT,TreeBidiMap#doRemoveKey(Object),(result == null) == (key == null || lookupKey(key) == null)
+Oca,Collections,Collections_25,EXIT,TreeBidiMap#getKey(Object),value == null || (result != null && this.get(result).equals(value))
+Oca,Collections,Collections_25,EXIT,LazyIteratorChain#updateCurrentIterator(),chainExhausted == (nextIterator(callCounter + 1) == null) || !currentIterator.hasNext()
+Oca,Collections,Collections_25,EXIT,LazyIteratorChain#updateCurrentIterator(),lastUsedIterator == currentIterator
+Oca,Collections,Collections_26,ENTRY,"PassiveExpiringMap#removeIfExpired(Object,long)","isExpired(now, expirationMap.get(key)) == (expirationMap.get(key) != null && expirationMap.get(key) >= 0 && expirationMap.get(key) < now)"
+Oca,Collections,Collections_26,EXIT,"AVLNode#indexOf(Object,int)",result == -1 || result >= index
+Oca,Collections,Collections_26,EXIT,AVLNode#rotateLeft(),result == this.right
+Oca,Collections,Collections_26,EXIT,"TreeList#indexOf(Object,int)",(result == -1) || (result >= 0 && result >= index)
+Oca,Collections,Collections_26,EXIT,"TreeList#indexOf(Object,int)",result == -1 || index <= result
+Oca,Collections,Collections_26,EXIT,TreeList#recalcHeight(),!(getLeftSubTree() != null && getRightSubTree() != null && Math.abs(getLeftSubTree().height - getRightSubTree().height) > 1)
+Oca,Collections,Collections_26,EXIT,TreeList#rotateLeft(),result == this.right
+Oca,Collections,Collections_27,ENTRY,"IterableUtils#chainedIterable(Iterable,Iterable)",!(a instanceof Collection) || !(b instanceof Collection) || !((Collection<?>)a).isEmpty() || !((Collection<?>)b).isEmpty()
+Oca,Collections,Collections_27,ENTRY,"IterableUtils#forEach(Iterable,Closure)",!(iterable == null) || iterable instanceof Iterable
+Oca,Collections,Collections_27,ENTRY,"MultiKeyMap#get(Object,Object,Object)",!(key1 == null && key2 == null && key3 == null)
+Oca,Collections,Collections_27,ENTRY,"MultiKeyMap#get(Object,Object,Object,Object)",key1 != key2 || key2 != key3 || key3 != key4 || key4 != key1
+Oca,Collections,Collections_27,ENTRY,"MultiKeyMap#get(Object,Object,Object,Object,Object)",key1 != null
+Oca,Collections,Collections_27,ENTRY,"MultiKeyMap#get(Object,Object,Object,Object,Object)",key2 != null
+Oca,Collections,Collections_27,EXIT,"IterableUtils#chainedIterable(Iterable,Iterable)",!IterableUtils.isEmpty(result)
+Oca,Collections,Collections_27,EXIT,"TreeBidiMap#put(K,V)",result == null || containsValue(result)
+Oca,Collections,Collections_27,EXIT,"TreeBidiMap#put(K,V)",result == null || result.equals(get(key))
+Oca,Collections,Collections_27,EXIT,LazyIteratorChain#next(),result != null
+Oca,Collections,Collections_27,EXIT,"MultiKeyMap#get(Object,Object,Object,Object)","result == null || isEqualKey(decorated().data[decorated().hashIndex(hash(key1, key2, key3, key4), decorated().data.length)], key1, key2, key3, key4)"
+Oca,Collections,Collections_28,ENTRY,AVLNode#setValue(E),this.value != null || obj == null
+Oca,Collections,Collections_28,ENTRY,"TreeList#set(int,E)",index < size()
+Oca,Collections,Collections_28,ENTRY,"TreeList#set(int,E)",index >= 0
+Oca,Collections,Collections_28,ENTRY,"TreeList#set(int,E)",root != null
+Oca,Math,Math_105,ENTRY,SimpleRegression#getSumSquaredErrors(),Double.isNaN(getSumSquaredErrors()) || getSumSquaredErrors() >= 0
+Daikon,Collections,Collections_24,ENTER,UnmodifiableBoundedCollection(BoundedCollection),coll.getClass().getName() == FixedSizeList.class
+Daikon,Collections,Collections_24,OBJECT,UnmodifiableBoundedCollection,this.collection.getClass().getName() == FixedSizeList.class
+Daikon,Math,Math_102,EXIT,"ChiSquareTestImpl.chiSquare(double[], long[])",expected[] elements > return
+Daikon,Math,Math_105,EXIT,SimpleRegression.getSumSquaredErrors(),return >= 0.0
