@@ -1,0 +1,687 @@
+==============================================================================================================
+SAMPLE 1/10
+==============================================================================================================
+PROJECT: netty
+
+OCA METHOD: io.netty.util.concurrent.FastThreadLocalThread#setThreadLocalMap(InternalThreadLocalMap):void
+DAIKON METHOD: io.netty.util.concurrent.FastThreadLocalThread.setThreadLocalMap(io.netty.util.internal.InternalThreadLocalMap)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_ENTRY] threadLocalMap != null || threadLocalMap == null
+ID: 9a79b88d-f720-48b2-b5ed-e311afb01747
+Rationale: The parameter threadLocalMap can be null or non-null when the method is called.
+Source file: io/netty/util/concurrent/FastThreadLocalThread.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+io.netty.util.concurrent.FastThreadLocalThread.setThreadLocalMap(io.netty.util.internal.InternalThreadLocalMap):::ENTER
+io.netty.util.internal.InternalThreadLocalMap.VARIABLES_TO_REMOVE_INDEX == threadLocalMap.futureListenerStackDepth
+threadLocalMap.futureListenerStackDepth == threadLocalMap.localChannelReaderStackDepth
+threadLocalMap.futureListenerStackDepth == threadLocalMap.rp1
+threadLocalMap.futureListenerStackDepth == threadLocalMap.rp2
+threadLocalMap.futureListenerStackDepth == threadLocalMap.rp3
+threadLocalMap.futureListenerStackDepth == threadLocalMap.rp4
+threadLocalMap.futureListenerStackDepth == threadLocalMap.rp5
+threadLocalMap.futureListenerStackDepth == threadLocalMap.rp6
+threadLocalMap.futureListenerStackDepth == threadLocalMap.rp7
+threadLocalMap.futureListenerStackDepth == threadLocalMap.rp8
+threadLocalMap.handlerSharableCache == threadLocalMap.typeParameterMatcherGetCache
+threadLocalMap.handlerSharableCache == threadLocalMap.typeParameterMatcherFindCache
+threadLocalMap.handlerSharableCache == threadLocalMap.charsetEncoderCache
+threadLocalMap.handlerSharableCache == threadLocalMap.charsetDecoderCache
+this.cleanupFastThreadLocals == true
+this.threadLocalMap.indexedVariables[] elements != null
+this.threadLocalMap.indexedVariables[].getClass().getName() one of { [java.util.Collections.SetFromMap, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object], [java.util.Collections.SetFromMap, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object] }
+threadLocalMap.indexedVariables.getClass().getName() == java.lang.Object[].class
+threadLocalMap.indexedVariables[] contains no nulls and has only one value, of length 32
+threadLocalMap.indexedVariables[] elements has only one value
+threadLocalMap.indexedVariables[].getClass().getName() == [java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object]
+threadLocalMap.indexedVariables[].getClass().getName() elements == java.lang.Object.class
+threadLocalMap.futureListenerStackDepth == 0
+threadLocalMap.handlerSharableCache == null
+threadLocalMap.stringBuilder == null
+threadLocalMap.arrayList == null
+threadLocalMap.cleanerFlags == null
+io.netty.util.internal.InternalThreadLocalMap.UNSET in threadLocalMap.indexedVariables[]
+threadLocalMap.indexedVariables[] elements == io.netty.util.internal.InternalThreadLocalMap.UNSET
+io.netty.util.internal.InternalThreadLocalMap.UNSET.getClass().getName() in threadLocalMap.indexedVariables[].getClass().getName()
+
+===========================================================================
+io.netty.util.concurrent.FastThreadLocalThread.setThreadLocalMap(io.netty.util.internal.InternalThreadLocalMap):::EXIT
+io.netty.util.concurrent.FastThreadLocalThread.logger == orig(io.netty.util.concurrent.FastThreadLocalThread.logger)
+io.netty.util.concurrent.FastThreadLocalThread.logger.getClass().getName() == orig(io.netty.util.concurrent.FastThreadLocalThread.logger.getClass().getName())
+io.netty.util.concurrent.FastThreadLocalThread.logger.getClass().getName() == orig(io.netty.util.internal.InternalThreadLocalMap.logger.getClass().getName())
+io.netty.util.concurrent.FastThreadLocalThread.fallbackThreads == orig(io.netty.util.concurrent.FastThreadLocalThread.fallbackThreads)
+this.cleanupFastThreadLocals == orig(this.cleanupFastThreadLocals)
+this.threadLocalMap == orig(threadLocalMap)
+io.netty.util.internal.InternalThreadLocalMap.slowThreadLocalMap == orig(io.netty.util.internal.InternalThreadLocalMap.slowThreadLocalMap)
+io.netty.util.internal.InternalThreadLocalMap.nextIndex == orig(io.netty.util.internal.InternalThreadLocalMap.nextIndex)
+io.netty.util.internal.InternalThreadLocalMap.VARIABLES_TO_REMOVE_INDEX == threadLocalMap.futureListenerStackDepth
+io.netty.util.internal.InternalThreadLocalMap.VARIABLES_TO_REMOVE_INDEX == orig(io.netty.util.internal.InternalThreadLocalMap.VARIABLES_TO_REMOVE_INDEX)
+io.netty.util.internal.InternalThreadLocalMap.VARIABLES_TO_REMOVE_INDEX == orig(this.threadLocalMap.futureListenerStackDepth)
+io.netty.util.internal.InternalThreadLocalMap.STRING_BUILDER_INITIAL_SIZE == orig(io.netty.util.internal.InternalThreadLocalMap.STRING_BUILDER_INITIAL_SIZE)
+io.netty.util.internal.InternalThreadLocalMap.STRING_BUILDER_MAX_SIZE == orig(io.netty.util.internal.InternalThreadLocalMap.STRING_BUILDER_MAX_SIZE)
+io.netty.util.internal.InternalThreadLocalMap.logger == orig(io.netty.util.internal.InternalThreadLocalMap.logger)
+io.netty.util.internal.InternalThreadLocalMap.UNSET == orig(io.netty.util.internal.InternalThreadLocalMap.UNSET)
+io.netty.util.internal.InternalThreadLocalMap.UNSET.getClass().getName() == orig(io.netty.util.internal.InternalThreadLocalMap.UNSET.getClass().getName())
+this.threadLocalMap.indexedVariables == threadLocalMap.indexedVariables
+this.threadLocalMap.indexedVariables.getClass().getName() == threadLocalMap.indexedVariables.getClass().getName()
+this.threadLocalMap.indexedVariables[] == threadLocalMap.indexedVariables[]
+this.threadLocalMap.futureListenerStackDepth == threadLocalMap.futureListenerStackDepth
+this.threadLocalMap.localChannelReaderStackDepth == threadLocalMap.futureListenerStackDepth
+this.threadLocalMap.handlerSharableCache == threadLocalMap.handlerSharableCache
+this.threadLocalMap.typeParameterMatcherGetCache == threadLocalMap.handlerSharableCache
+this.threadLocalMap.typeParameterMatcherFindCache == threadLocalMap.handlerSharableCache
+this.threadLocalMap.stringBuilder == threadLocalMap.stringBuilder
+this.threadLocalMap.charsetEncoderCache == threadLocalMap.handlerSharableCache
+this.threadLocalMap.charsetDecoderCache == threadLocalMap.handlerSharableCache
+this.threadLocalMap.arrayList == threadLocalMap.arrayList
+this.threadLocalMap.cleanerFlags == threadLocalMap.cleanerFlags
+this.threadLocalMap.rp1 == threadLocalMap.futureListenerStackDepth
+this.threadLocalMap.rp2 == threadLocalMap.futureListenerStackDepth
+this.threadLocalMap.rp3 == threadLocalMap.futureListenerStackDepth
+this.threadLocalMap.rp4 == threadLocalMap.futureListenerStackDepth
+this.threadLocalMap.rp5 == threadLocalMap.futureListenerStackDepth
+this.threadLocalMap.rp6 == threadLocalMap.futureListenerStackDepth
+this.threadLocalMap.rp7 == threadLocalMap.futureListenerStackDepth
+this.threadLocalMap.rp8 == threadLocalMap.futureListenerStackDepth
+threadLocalMap.indexedVariables == orig(threadLocalMap.indexedVariables)
+threadLocalMap.indexedVariables.getClass().getName() == orig(threadLocalMap.indexedVariables.getClass().getName())
+threadLocalMap.indexedVariables[] == orig(threadLocalMap.indexedVariables[])
+threadLocalMap.futureListenerStackDepth == threadLocalMap.localChannelReaderStackDepth
+threadLocalMap.futureListenerStackDepth == threadLocalMap.rp1
+threadLocalMap.futureListenerStackDepth == threadLocalMap.rp2
+threadLocalMap.futureListenerStackDepth == threadLocalMap.rp3
+threadLocalMap.futureListenerStackDepth == threadLocalMap.rp4
+threadLocalMap.futureListenerStackDepth == threadLocalMap.rp5
+threadLocalMap.futureListenerStackDepth == threadLocalMap.rp6
+threadLocalMap.futureListenerStackDepth == threadLocalMap.rp7
+threadLocalMap.futureListenerStackDepth == threadLocalMap.rp8
+threadLocalMap.futureListenerStackDepth == orig(threadLocalMap.futureListenerStackDepth)
+threadLocalMap.futureListenerStackDepth == orig(threadLocalMap.localChannelReaderStackDepth)
+threadLocalMap.futureListenerStackDepth == orig(threadLocalMap.rp1)
+threadLocalMap.futureListenerStackDepth == orig(threadLocalMap.rp2)
+threadLocalMap.futureListenerStackDepth == orig(threadLocalMap.rp3)
+threadLocalMap.futureListenerStackDepth == orig(threadLocalMap.rp4)
+threadLocalMap.futureListenerStackDepth == orig(threadLocalMap.rp5)
+threadLocalMap.futureListenerStackDepth == orig(threadLocalMap.rp6)
+threadLocalMap.futureListenerStackDepth == orig(threadLocalMap.rp7)
+threadLocalMap.futureListenerStackDepth == orig(threadLocalMap.rp8)
+threadLocalMap.handlerSharableCache == threadLocalMap.typeParameterMatcherGetCache
+threadLocalMap.handlerSharableCache == threadLocalMap.typeParameterMatcherFindCache
+threadLocalMap.handlerSharableCache == threadLocalMap.charsetEncoderCache
+threadLocalMap.handlerSharableCache == threadLocalMap.charsetDecoderCache
+threadLocalMap.handlerSharableCache == orig(threadLocalMap.handlerSharableCache)
+threadLocalMap.handlerSharableCache == orig(threadLocalMap.typeParameterMatcherGetCache)
+threadLocalMap.handlerSharableCache == orig(threadLocalMap.typeParameterMatcherFindCache)
+threadLocalMap.handlerSharableCache == orig(threadLocalMap.charsetEncoderCache)
+threadLocalMap.handlerSharableCache == orig(threadLocalMap.charsetDecoderCache)
+threadLocalMap.stringBuilder == orig(threadLocalMap.stringBuilder)
+threadLocalMap.arrayList == orig(threadLocalMap.arrayList)
+threadLocalMap.cleanerFlags == orig(threadLocalMap.cleanerFlags)
+this.cleanupFastThreadLocals == true
+threadLocalMap.indexedVariables.getClass().getName() == java.lang.Object[].class
+threadLocalMap.indexedVariables[] contains no nulls and has only one value, of length 32
+threadLocalMap.indexedVariables[] elements has only one value
+threadLocalMap.indexedVariables[].getClass().getName() == [java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object]
+threadLocalMap.indexedVariables[].getClass().getName() elements == java.lang.Object.class
+threadLocalMap.futureListenerStackDepth == 0
+threadLocalMap.handlerSharableCache == null
+threadLocalMap.stringBuilder == null
+threadLocalMap.arrayList == null
+threadLocalMap.cleanerFlags == null
+io.netty.util.concurrent.FastThreadLocalThread.logger.getClass().getName() != orig(this.threadLocalMap.indexedVariables.getClass().getName())
+io.netty.util.internal.InternalThreadLocalMap.UNSET in threadLocalMap.indexedVariables[]
+threadLocalMap.indexedVariables[] elements == io.netty.util.internal.InternalThreadLocalMap.UNSET
+io.netty.util.internal.InternalThreadLocalMap.UNSET in orig(this.threadLocalMap.indexedVariables[])
+io.netty.util.internal.InternalThreadLocalMap.UNSET.getClass().getName() in threadLocalMap.indexedVariables[].getClass().getName()
+io.netty.util.internal.InternalThreadLocalMap.UNSET.getClass().getName() != orig(this.threadLocalMap.indexedVariables.getClass().getName())
+io.netty.util.internal.InternalThreadLocalMap.UNSET.getClass().getName() in orig(this.threadLocalMap.indexedVariables[].getClass().getName())
+
+
+==============================================================================================================
+SAMPLE 2/10
+==============================================================================================================
+PROJECT: netty
+
+OCA METHOD: io.netty.util.DomainNameMapping#needsNormalization(String):boolean
+DAIKON METHOD: io.netty.util.DomainNameMapping.needsNormalization(java.lang.String)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_ENTRY] hostname.equals(hostname.trim())
+ID: 273375fb-950a-4a29-8fb7-4013e0a1ed7c
+Rationale: Hostnames generally do not have leading or trailing whitespace
+Source file: io/netty/util/DomainNameMapping.java
+
+[METHOD_EXIT] !result || hostname.length() > 0
+ID: a2b246eb-4d46-4216-bc50-e58b95961102
+Rationale: To have result true, hostname must contain characters, so length > 0.
+Source file: io/netty/util/DomainNameMapping.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+io.netty.util.DomainNameMapping.needsNormalization(java.lang.String):::ENTER
+
+===========================================================================
+io.netty.util.DomainNameMapping.needsNormalization(java.lang.String):::EXIT124
+
+===========================================================================
+io.netty.util.DomainNameMapping.needsNormalization(java.lang.String):::EXIT124;condition="not(return == true)"
+
+===========================================================================
+io.netty.util.DomainNameMapping.needsNormalization(java.lang.String):::EXIT
+hostname.toString == orig(hostname.toString)
+return == false
+
+===========================================================================
+io.netty.util.DomainNameMapping.needsNormalization(java.lang.String):::EXIT;condition="not(return == true)"
+
+
+==============================================================================================================
+SAMPLE 3/10
+==============================================================================================================
+PROJECT: netty
+
+OCA METHOD: io.netty.util.AsciiStringUtil#toLowerCase(AsciiString):AsciiString
+DAIKON METHOD: io.netty.util.AsciiStringUtil.toLowerCase(io.netty.util.AsciiString)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_ENTRY] string != null
+ID: d8081fdc-b617-4a62-8f18-ce2f733cc75c
+Rationale: The method parameter must be non-null for the function to operate correctly.
+Source file: io/netty/util/AsciiStringUtil.java
+
+[METHOD_EXIT] result.length() == string.length()
+ID: 726f684d-a0c5-45cd-9d9e-9770c6ce23cc
+Rationale: The method returns a new AsciiString representing the lowercase version of the input, preserving length.
+Source file: io/netty/util/AsciiStringUtil.java
+
+[METHOD_ENTRY] string.arrayOffset() >= 0
+ID: 38b58399-66c3-47fe-b4ec-92588d00e23b
+Rationale: Array offset is non-negative as an index.
+Source file: io/netty/util/AsciiStringUtil.java
+
+[METHOD_EXIT] result.toString().equals(string.toString().toLowerCase())
+ID: bfa076eb-5802-407a-a239-b31e82cc581c
+Rationale: The result is the lowercase conversion of the input string.
+Source file: io/netty/util/AsciiStringUtil.java
+
+[METHOD_EXIT] result != null && string != null
+ID: c8020d5e-8401-4f0e-8ae9-4b898e316cbe
+Rationale: The method always returns a non-null AsciiString and input is also non-null.
+Source file: io/netty/util/AsciiStringUtil.java
+
+[METHOD_ENTRY] string.array() != null
+ID: 6faa3d9b-2e74-4656-aef0-898c43b43196
+Rationale: AsciiString backing byte array is expected to be non-null.
+Source file: io/netty/util/AsciiStringUtil.java
+
+[METHOD_ENTRY] string.length() >= 0
+ID: b9c962e3-5354-4870-abdc-bf74ee184d52
+Rationale: Length of string cannot be negative.
+Source file: io/netty/util/AsciiStringUtil.java
+
+[METHOD_ENTRY] string.arrayOffset() + string.length() <= string.array().length
+ID: d0a2665f-04a9-40c8-805b-6497b4371b02
+Rationale: The offset plus length fits within the backing byte array bounds.
+Source file: io/netty/util/AsciiStringUtil.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+io.netty.util.AsciiStringUtil.toLowerCase(io.netty.util.AsciiString):::ENTER
+io.netty.util.AsciiString.EMPTY_STRING.offset == io.netty.util.AsciiString.EMPTY_STRING.length
+io.netty.util.AsciiString.EMPTY_STRING.offset == io.netty.util.AsciiString.EMPTY_STRING.hash
+io.netty.util.AsciiString.EMPTY_STRING.offset == string.offset
+io.netty.util.AsciiString.EMPTY_STRING.offset == string.hash
+io.netty.util.AsciiString.EMPTY_STRING has only one value
+io.netty.util.AsciiString.EMPTY_STRING.value has only one value
+io.netty.util.AsciiString.EMPTY_STRING.value[] == []
+io.netty.util.AsciiString.EMPTY_STRING.offset == 0
+io.netty.util.AsciiString.EMPTY_STRING.string has only one value
+io.netty.util.AsciiString.EMPTY_STRING.string.toString == ""
+io.netty.util.AsciiString.CASE_INSENSITIVE_HASHER has only one value
+io.netty.util.AsciiString.CASE_INSENSITIVE_HASHER.getClass().getName() == io.netty.util.AsciiString$1.class
+io.netty.util.AsciiString.CASE_SENSITIVE_HASHER has only one value
+io.netty.util.AsciiString.CASE_SENSITIVE_HASHER.getClass().getName() == io.netty.util.AsciiString$2.class
+string.value[] one of { [84, 104, 105, 115, 32, 105, 115, 32, 97, 32, 116, 101, 115, 84], [84, 104, 105, 115, 32, 105, 115, 32, 97, 32, 116, 101, 115, 116, 32, 102, 111, 114, 32, 108, 111, 110, 103, 101, 114, 32, 115, 101, 113, 117, 101, 110, 99, 101, 115], [84, 104, 105, 115, 32, 105, 115, 32, 97, 32, 116, 101, 115, 116, 33] }
+string.length one of { 14, 15, 35 }
+string.string == null
+
+===========================================================================
+io.netty.util.AsciiStringUtil.toLowerCase(io.netty.util.AsciiString):::EXIT41
+
+===========================================================================
+io.netty.util.AsciiStringUtil.toLowerCase(io.netty.util.AsciiString):::EXIT
+io.netty.util.AsciiStringUtil.$assertionsDisabled == orig(io.netty.util.AsciiStringUtil.$assertionsDisabled)
+io.netty.util.AsciiString.EMPTY_STRING == orig(io.netty.util.AsciiString.EMPTY_STRING)
+io.netty.util.AsciiString.EMPTY_STRING.value == orig(io.netty.util.AsciiString.EMPTY_STRING.value)
+io.netty.util.AsciiString.EMPTY_STRING.value[] == orig(io.netty.util.AsciiString.EMPTY_STRING.value[])
+io.netty.util.AsciiString.EMPTY_STRING.offset == io.netty.util.AsciiString.EMPTY_STRING.length
+io.netty.util.AsciiString.EMPTY_STRING.offset == io.netty.util.AsciiString.EMPTY_STRING.hash
+io.netty.util.AsciiString.EMPTY_STRING.offset == string.offset
+io.netty.util.AsciiString.EMPTY_STRING.offset == string.hash
+io.netty.util.AsciiString.EMPTY_STRING.offset == return.offset
+io.netty.util.AsciiString.EMPTY_STRING.offset == return.hash
+io.netty.util.AsciiString.EMPTY_STRING.offset == orig(io.netty.util.AsciiString.EMPTY_STRING.offset)
+io.netty.util.AsciiString.EMPTY_STRING.offset == orig(io.netty.util.AsciiString.EMPTY_STRING.length)
+io.netty.util.AsciiString.EMPTY_STRING.offset == orig(io.netty.util.AsciiString.EMPTY_STRING.hash)
+io.netty.util.AsciiString.EMPTY_STRING.offset == orig(string.offset)
+io.netty.util.AsciiString.EMPTY_STRING.offset == orig(string.hash)
+io.netty.util.AsciiString.EMPTY_STRING.string == orig(io.netty.util.AsciiString.EMPTY_STRING.string)
+io.netty.util.AsciiString.EMPTY_STRING.string.toString == orig(io.netty.util.AsciiString.EMPTY_STRING.string.toString)
+io.netty.util.AsciiString.CASE_INSENSITIVE_HASHER == orig(io.netty.util.AsciiString.CASE_INSENSITIVE_HASHER)
+io.netty.util.AsciiString.CASE_INSENSITIVE_HASHER.getClass().getName() == orig(io.netty.util.AsciiString.CASE_INSENSITIVE_HASHER.getClass().getName())
+io.netty.util.AsciiString.CASE_SENSITIVE_HASHER == orig(io.netty.util.AsciiString.CASE_SENSITIVE_HASHER)
+io.netty.util.AsciiString.CASE_SENSITIVE_HASHER.getClass().getName() == orig(io.netty.util.AsciiString.CASE_SENSITIVE_HASHER.getClass().getName())
+string.value == orig(string.value)
+string.value[] == orig(string.value[])
+string.length == return.length
+string.length == orig(string.length)
+string.string == return.string
+string.string == orig(string.string)
+io.netty.util.AsciiString.EMPTY_STRING has only one value
+io.netty.util.AsciiString.EMPTY_STRING.value has only one value
+io.netty.util.AsciiString.EMPTY_STRING.value[] == []
+io.netty.util.AsciiString.EMPTY_STRING.offset == 0
+io.netty.util.AsciiString.EMPTY_STRING.string has only one value
+io.netty.util.AsciiString.EMPTY_STRING.string.toString == ""
+io.netty.util.AsciiString.CASE_INSENSITIVE_HASHER has only one value
+io.netty.util.AsciiString.CASE_INSENSITIVE_HASHER.getClass().getName() == io.netty.util.AsciiString$1.class
+io.netty.util.AsciiString.CASE_SENSITIVE_HASHER has only one value
+io.netty.util.AsciiString.CASE_SENSITIVE_HASHER.getClass().getName() == io.netty.util.AsciiString$2.class
+string.value[] one of { [84, 104, 105, 115, 32, 105, 115, 32, 97, 32, 116, 101, 115, 84], [84, 104, 105, 115, 32, 105, 115, 32, 97, 32, 116, 101, 115, 116, 32, 102, 111, 114, 32, 108, 111, 110, 103, 101, 114, 32, 115, 101, 113, 117, 101, 110, 99, 101, 115], [84, 104, 105, 115, 32, 105, 115, 32, 97, 32, 116, 101, 115, 116, 33] }
+string.length one of { 14, 15, 35 }
+string.string == null
+return.value[] one of { [116, 104, 105, 115, 32, 105, 115, 32, 97, 32, 116, 101, 115, 116], [116, 104, 105, 115, 32, 105, 115, 32, 97, 32, 116, 101, 115, 116, 32, 102, 111, 114, 32, 108, 111, 110, 103, 101, 114, 32, 115, 101, 113, 117, 101, 110, 99, 101, 115], [116, 104, 105, 115, 32, 105, 115, 32, 97, 32, 116, 101, 115, 116, 33] }
+
+
+==============================================================================================================
+SAMPLE 4/10
+==============================================================================================================
+PROJECT: netty
+
+OCA METHOD: io.netty.util.Signal#fillInStackTrace():Throwable
+DAIKON METHOD: io.netty.util.Signal.fillInStackTrace()
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_EXIT] result.getStackTrace().length == 0
+ID: 8c664588-c44d-479b-9ad1-c5d06d4572e1
+Rationale: The class Signal has an empty stack trace by design to save overhead.
+Source file: io/netty/util/Signal.java
+
+[METHOD_EXIT] result.getCause() == null
+ID: e9c60811-a3fe-4f6f-91bb-77a4388f0962
+Rationale: The Signal class has no cause, so getCause should return null.
+Source file: io/netty/util/Signal.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+io.netty.util.Signal.fillInStackTrace():::ENTER
+this.constant == null
+
+===========================================================================
+io.netty.util.Signal.fillInStackTrace():::EXIT
+io.netty.util.Signal.pool == orig(io.netty.util.Signal.pool)
+io.netty.util.Signal.pool.getClass().getName() == orig(io.netty.util.Signal.pool.getClass().getName())
+io.netty.util.Signal.pool.constants == orig(io.netty.util.Signal.pool.constants)
+io.netty.util.Signal.pool.constants.getClass().getName() == orig(io.netty.util.Signal.pool.constants.getClass().getName())
+io.netty.util.Signal.pool.nextId == orig(io.netty.util.Signal.pool.nextId)
+this.constant == orig(this.constant)
+io.netty.util.AbstractConstant.uniqueIdGenerator == orig(io.netty.util.AbstractConstant.uniqueIdGenerator)
+this.constant == null
+
+
+==============================================================================================================
+SAMPLE 5/10
+==============================================================================================================
+PROJECT: netty
+
+OCA METHOD: io.netty.util.internal.ReflectionUtil#trySetAccessible(AccessibleObject,boolean):Throwable
+DAIKON METHOD: io.netty.util.internal.ReflectionUtil.trySetAccessible(java.lang.reflect.AccessibleObject, boolean)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_EXIT] result == null || object != null
+ID: 220c2e94-0f68-426e-95d3-00824d2bd946
+Rationale: Since setAccessible(true) was called on object only if no exception was thrown, the object cannot be null when result is null.
+Source file: io/netty/util/internal/ReflectionUtil.java
+
+[METHOD_EXIT] result == null || object.isAccessible() || true
+ID: 8d8eee45-6c0f-4c7a-864d-55bdd0a6800c
+Rationale: Though object.isAccessible() is not guaranteed to be true (because setAccessible may not be supported), this invariant is a weak form acknowledging if result is null, setAccessible was successful.
+Source file: io/netty/util/internal/ReflectionUtil.java
+
+[METHOD_ENTRY] object != null || !checkAccessible
+ID: 2cd95885-b59c-425a-9b68-ad9cea22907a
+Rationale: If checkAccessible is true, object should not be null as setAccessible(true) will be called.
+Source file: io/netty/util/internal/ReflectionUtil.java
+
+[METHOD_ENTRY] checkAccessible == false || object != null
+ID: f743088c-0cbb-4c78-93c7-dd1ff2d68c47
+Rationale: If checkAccessible is true, object is expected to be non-null since setAccessible will be called.
+Source file: io/netty/util/internal/ReflectionUtil.java
+
+[METHOD_ENTRY] checkAccessible != true || object.getClass() != null
+ID: 40831774-c380-4e2a-bd3b-8fd803eaca34
+Rationale: If checkAccessible is true and object is not null, object.getClass() must exist.
+Source file: io/netty/util/internal/ReflectionUtil.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+io.netty.util.internal.ReflectionUtil.trySetAccessible(java.lang.reflect.AccessibleObject, boolean):::ENTER
+
+===========================================================================
+io.netty.util.internal.ReflectionUtil.trySetAccessible(java.lang.reflect.AccessibleObject, boolean):::EXIT36
+return has only one value
+orig(object) has only one value
+orig(checkAccessible) == true
+
+===========================================================================
+io.netty.util.internal.ReflectionUtil.trySetAccessible(java.lang.reflect.AccessibleObject, boolean):::EXIT40
+return == null
+orig(object) has only one value
+orig(checkAccessible) == false
+
+===========================================================================
+io.netty.util.internal.ReflectionUtil.trySetAccessible(java.lang.reflect.AccessibleObject, boolean):::EXIT
+
+
+==============================================================================================================
+SAMPLE 6/10
+==============================================================================================================
+PROJECT: netty
+
+OCA METHOD: io.netty.util.internal.ObjectUtil#checkNonEmpty(CharSequence,String):CharSequence
+DAIKON METHOD: io.netty.util.internal.ObjectUtil.checkNonEmpty(java.lang.CharSequence, java.lang.String)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_ENTRY] name.length() >= 0
+ID: b6e30770-b334-426a-a531-779c63d9b2a5
+Rationale: String length is always non-negative, so name.length() >= 0 is trivially true but informative.
+Source file: io/netty/util/internal/ObjectUtil.java
+
+[METHOD_EXIT] result != null
+ID: 124e05f5-7a83-4dac-a1b4-24482b4c0a4b
+Rationale: The method checkNotNull(value, name) throws NullPointerException if value is null, so at this program point result is guaranteed to be non-null.
+Source file: io/netty/util/internal/ObjectUtil.java
+
+[METHOD_EXIT] result == value
+ID: e20e0d59-3dba-48d7-b827-186e37a46cae
+Rationale: Since the method returns the value argument directly and does not create a new object, result == value must hold.
+Source file: io/netty/util/internal/ObjectUtil.java
+
+[METHOD_EXIT] result.length() == value.length()
+ID: ec1b4230-1926-4efa-a9eb-34f5afaf6d99
+Rationale: The method returns value directly without modification, so result and value are the same instance and have the same length.
+Source file: io/netty/util/internal/ObjectUtil.java
+
+[METHOD_EXIT] result.length() > 0
+ID: b01f1ecd-c8da-4dd7-b31a-8ca358ce248c
+Rationale: The method throws an exception if value.length() == 0, so any returned result must have length greater than zero.
+Source file: io/netty/util/internal/ObjectUtil.java
+
+[METHOD_ENTRY] name != null
+ID: 12d4bf67-c3e6-4133-92b9-6c52efdf53fc
+Rationale: The parameter name is used to format exception messages, so it should not be null.
+Source file: io/netty/util/internal/ObjectUtil.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+io.netty.util.internal.ObjectUtil.checkNonEmpty(java.lang.CharSequence, java.lang.String):::ENTER
+value.getClass().getName() == java.lang.String.class
+name.toString one of { "NOT_NULL", "NOT_NULL_BUT_EMPTY" }
+
+===========================================================================
+io.netty.util.internal.ObjectUtil.checkNonEmpty(java.lang.CharSequence, java.lang.String):::EXIT
+name.toString == orig(name.toString)
+return == orig(value)
+return.getClass().getName() == orig(value.getClass().getName())
+name.toString one of { "NOT_NULL", "NOT_NULL_BUT_EMPTY" }
+return.getClass().getName() == java.lang.String.class
+
+
+==============================================================================================================
+SAMPLE 7/10
+==============================================================================================================
+PROJECT: netty
+
+OCA METHOD: io.netty.util.AsciiStringUtil#isLowerCase(byte):boolean
+DAIKON METHOD: io.netty.util.AsciiStringUtil.isLowerCase(byte)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_ENTRY] value >= 0
+ID: 5ff6a526-83f3-482b-aa3e-17832838a5cd
+Rationale: Byte value is non-negative for ASCII range.
+Source file: io/netty/util/AsciiStringUtil.java
+
+[METHOD_EXIT] !result || (value >= 97 && value <= 122)
+ID: 51aa25f2-d3a5-4f15-9bfd-8cc718347505
+Rationale: The ASCII 'a' to 'z' range decimal equivalent supports the result when true.
+Source file: io/netty/util/AsciiStringUtil.java
+
+[METHOD_ENTRY] value != 0
+ID: 24d9cfe1-deac-481b-a23d-2d4c8db820bf
+Rationale: Value being non-zero may be typical for ASCII letters.
+Source file: io/netty/util/AsciiStringUtil.java
+
+[METHOD_ENTRY] value >= 0 && value <= 127
+ID: 909e6b6e-4892-493f-8906-d8307e0f3561
+Rationale: In ASCII context, byte values representing characters are often in 0 to 127 range.
+Source file: io/netty/util/AsciiStringUtil.java
+
+[METHOD_EXIT] result == (value >= 97 && value <= 122)
+ID: aea70b8d-ec78-49c9-91eb-d0c7609991ca
+Rationale: The result corresponds directly to the user's ASCII check using decimal codes.
+Source file: io/netty/util/AsciiStringUtil.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+io.netty.util.AsciiStringUtil.isLowerCase(byte):::ENTER
+
+===========================================================================
+io.netty.util.AsciiStringUtil.isLowerCase(byte):::EXIT
+io.netty.util.AsciiStringUtil.$assertionsDisabled == orig(io.netty.util.AsciiStringUtil.$assertionsDisabled)
+(return == false)  <==>  (orig(value) == 84)
+(return == false)  ==>  (io.netty.util.AsciiStringUtil.$assertionsDisabled == return)
+(return == true)  <==>  (orig(value) one of { 99, 101, 115 })
+
+===========================================================================
+io.netty.util.AsciiStringUtil.isLowerCase(byte):::EXIT;condition="return == true"
+return == true
+orig(value) one of { 99, 101, 115 }
+
+===========================================================================
+io.netty.util.AsciiStringUtil.isLowerCase(byte):::EXIT;condition="not(return == true)"
+io.netty.util.AsciiStringUtil.$assertionsDisabled == return
+orig(value) == 84
+
+
+==============================================================================================================
+SAMPLE 8/10
+==============================================================================================================
+PROJECT: netty
+
+OCA METHOD: io.netty.util.NetUtil#toAddressString(byte[],int,boolean):String
+DAIKON METHOD: io.netty.util.NetUtil.toAddressString(byte[], int, boolean)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_EXIT] result != null
+ID: 8e9afbe1-2f22-45fd-95ad-1bbeea46e6ef
+Rationale: According to the implementation, a string is always returned
+Source file: io/netty/util/NetUtil.java
+
+[METHOD_ENTRY] bytes != null
+ID: 3766c0f5-9299-4fe2-babd-16a74e73eecb
+Rationale: The bytes array must be non-null to avoid NullPointerException when accessing elements.
+Source file: io/netty/util/NetUtil.java
+
+[METHOD_ENTRY] offset >= 0
+ID: 3971bb3f-1a42-4339-bee2-3cd4d879a842
+Rationale: The offset must be non-negative as it is used as an index into the bytes array.
+Source file: io/netty/util/NetUtil.java
+
+[METHOD_ENTRY] bytes.length >= 16
+ID: fea4b1d0-5e67-4989-87e5-4fe8a712dcd2
+Rationale: At minimum, the bytes array should have length equal or larger than 16 to represent an IPv6 address.
+Source file: io/netty/util/NetUtil.java
+
+[METHOD_ENTRY] ipv4Mapped == true || ipv4Mapped == false
+ID: c8fadd10-a725-467c-b360-d48c9742b0c9
+Rationale: The parameter ipv4Mapped is a boolean, so this invariant always holds and is included for completeness.
+Source file: io/netty/util/NetUtil.java
+
+[METHOD_ENTRY] offset <= bytes.length - 16
+ID: 9e9a33f0-643f-43e1-92df-6c404788c973
+Rationale: To safely read 16 bytes for the IPv6 address starting from offset, offset must be less than or equal to bytes.length - 16.
+Source file: io/netty/util/NetUtil.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+io.netty.util.NetUtil.toAddressString(byte[], int, boolean):::ENTER
+offset == 0
+bytes[] elements < io.netty.util.NetUtil.SOMAXCONN
+offset in bytes[]
+
+===========================================================================
+io.netty.util.NetUtil.toAddressString(byte[], int, boolean):::EXIT
+io.netty.util.NetUtil.LOCALHOST4 == orig(io.netty.util.NetUtil.LOCALHOST4)
+io.netty.util.NetUtil.LOCALHOST6 == orig(io.netty.util.NetUtil.LOCALHOST6)
+io.netty.util.NetUtil.LOCALHOST == orig(io.netty.util.NetUtil.LOCALHOST)
+io.netty.util.NetUtil.LOOPBACK_IF == orig(io.netty.util.NetUtil.LOOPBACK_IF)
+io.netty.util.NetUtil.NETWORK_INTERFACES == orig(io.netty.util.NetUtil.NETWORK_INTERFACES)
+io.netty.util.NetUtil.NETWORK_INTERFACES.getClass().getName() == orig(io.netty.util.NetUtil.NETWORK_INTERFACES.getClass().getName())
+io.netty.util.NetUtil.SOMAXCONN == orig(io.netty.util.NetUtil.SOMAXCONN)
+io.netty.util.NetUtil.IPV4_PREFERRED == orig(io.netty.util.NetUtil.IPV4_PREFERRED)
+io.netty.util.NetUtil.IPV4_PREFERRED == orig(io.netty.util.NetUtil.IPV6_ADDRESSES_PREFERRED)
+io.netty.util.NetUtil.logger == orig(io.netty.util.NetUtil.logger)
+io.netty.util.NetUtil.logger.getClass().getName() == orig(io.netty.util.NetUtil.logger.getClass().getName())
+bytes[] == orig(bytes[])
+bytes[] elements < io.netty.util.NetUtil.SOMAXCONN
+orig(offset) in bytes[]
+
+
+==============================================================================================================
+SAMPLE 9/10
+==============================================================================================================
+PROJECT: netty
+
+OCA METHOD: io.netty.util.internal.ReflectionUtil#resolveTypeParameter(Object,Class<?>,String):Class<?>
+DAIKON METHOD: io.netty.util.internal.ReflectionUtil.resolveTypeParameter(java.lang.Object, java.lang.Class, java.lang.String)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_ENTRY] parametrizedSuperclass.isAssignableFrom(object.getClass())
+ID: 1e15da1f-283a-4e03-b790-d57af74272f6
+Rationale: The method resolves a type parameter of a class that is a subclass of the given parametrized superclass.
+Source file: io/netty/util/internal/ReflectionUtil.java
+
+[METHOD_ENTRY] object != null
+ID: f3c367ff-d87c-47fb-a2d1-ceddf6b24079
+Rationale: The method calls object.getClass() immediately, so object must be non-null.
+Source file: io/netty/util/internal/ReflectionUtil.java
+
+[METHOD_EXIT] result != null
+ID: 7ca95a56-2bca-4baf-931e-1c5244cd906d
+Rationale: The method returns a resolved class type parameter or throws exception; never returns null.
+Source file: io/netty/util/internal/ReflectionUtil.java
+
+[METHOD_ENTRY] parametrizedSuperclass.isInterface() || parametrizedSuperclass.getSuperclass() != null
+ID: 3dff1c80-fbe9-4dfb-92b9-a92331efe8e4
+Rationale: The parametrizedSuperclass is presumed to be a class or interface in a usable hierarchy.
+Source file: io/netty/util/internal/ReflectionUtil.java
+
+[METHOD_ENTRY] typeParamName != null
+ID: 5ee23978-0757-437d-9506-bf7c67751342
+Rationale: typeParamName is used in equals() calls and must be non-null.
+Source file: io/netty/util/internal/ReflectionUtil.java
+
+[METHOD_ENTRY] parametrizedSuperclass != null
+ID: 1fbebe7f-4e08-4320-9a43-1bf44fc9dc79
+Rationale: parametrizedSuperclass is used in class comparison and cannot be null.
+Source file: io/netty/util/internal/ReflectionUtil.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+io.netty.util.internal.ReflectionUtil.resolveTypeParameter(java.lang.Object, java.lang.Class, java.lang.String):::ENTER
+typeParamName.toString one of { "B", "C", "E" }
+
+===========================================================================
+io.netty.util.internal.ReflectionUtil.resolveTypeParameter(java.lang.Object, java.lang.Class, java.lang.String):::EXIT104
+
+===========================================================================
+io.netty.util.internal.ReflectionUtil.resolveTypeParameter(java.lang.Object, java.lang.Class, java.lang.String):::EXIT
+
+
+==============================================================================================================
+SAMPLE 10/10
+==============================================================================================================
+PROJECT: netty
+
+OCA METHOD: io.netty.util.AbstractConstant#hashCode():int
+DAIKON METHOD: io.netty.util.AbstractConstant.hashCode()
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_EXIT] result != 0
+ID: a9419243-6c3a-4dc7-9991-728cefcc2e74
+Rationale: The hash code is unlikely to be zero unless the superclass hashCode() returns zero.
+Source file: io/netty/util/AbstractConstant.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+io.netty.util.AbstractConstant.hashCode():::ENTER
+this.getClass().getName() == io.netty.util.ConstantPoolTest$TestConstant.class
+this.id one of { 3, 4, 6 }
+this.name.toString one of { "b_beta", "c_gamma", "e_epsilon" }
+this.uniquifier one of { 2, 3, 5 }
+
+===========================================================================
+io.netty.util.AbstractConstant.hashCode():::EXIT
+io.netty.util.AbstractConstant.uniqueIdGenerator == orig(io.netty.util.AbstractConstant.uniqueIdGenerator)
+this.id == orig(this.id)
+this.name == orig(this.name)
+this.name.toString == orig(this.name.toString)
+this.uniquifier == orig(this.uniquifier)
+this.id one of { 3, 4, 6 }
+this.name.toString one of { "b_beta", "c_gamma", "e_epsilon" }
+this.uniquifier one of { 2, 3, 5 }
+return one of { 191899223, 663243010, 936384215 }
+
+

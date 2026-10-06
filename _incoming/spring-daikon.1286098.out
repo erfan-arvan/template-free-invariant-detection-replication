@@ -1,0 +1,77 @@
+[TIMING] === spring-full daikon run started 2026-09-14T23:05:12-04:00 ===
+========================================
+Spring (full) Daikon invariant detection
+========================================
+JAVA:        /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+TRACE:       /scratch/mjk76/ea442/promptstudy/spring-full-chicory-out/latest/spring-full.dtrace.gz
+JAR:         /project/mjk76/ea442/promptstudy/daikon.jar
+CONFIG:      daikon.derive.Derivation.disable_derived_variables=true
+OUTPUT:      /project/mjk76/ea442/promptstudy/spring-daikon-out
+
+>>> Trace size:
+lrwxrwxrwx 1 ea442 ea442 73 Sep 14 23:05 /scratch/mjk76/ea442/promptstudy/spring-full-chicory-out/latest/spring-full.dtrace.gz -> /scratch/mjk76/ea442/promptstudy/spring-full-chicory-out/latest/dtrace.gz
+
+>>> Starting Daikon at 2026-09-14T23:05:12-04:00
+[TIMING] daikon.Daikon invariant detection 76s  (23:05:12 -> 23:06:28)
+
+>>> Daikon finished at 2026-09-14T23:06:28-04:00
+
+>>> Output files:
+-rw-r--r--+ 1 ea442 ea442 2.9M Sep 14 23:06 /project/mjk76/ea442/promptstudy/spring-daikon-out/spring-invariants.txt
+-rw-r--r--+ 1 ea442 ea442  44M Sep 14 23:06 /project/mjk76/ea442/promptstudy/spring-daikon-out/spring.inv.gz
+
+>>> First 50 lines of inferred invariants:
+Daikon version 5.8.24, released May 6, 2026; http://plse.cs.washington.edu/daikon.
+Reading declaration files Processing trace data; reading 1 dtrace file:
+
+No return from procedure observed 187 times.  Unmatched entries are ignored!
+Unterminated calls:
+  org.springframework.aot.generate.ClassNameGenerator.generateClassName(java.lang.String, org.springframework.javapoet.ClassName) : 1 invocation
+  org.springframework.aot.generate.ClassNameGenerator.getRootName(java.lang.String, org.springframework.javapoet.ClassName) : 1 invocation
+  org.springframework.util.Assert.hasLength(java.lang.String, java.lang.String) : 4 invocations
+  org.springframework.aot.generate.DefaultGenerationContext.DefaultGenerationContext(org.springframework.aot.generate.GeneratedClasses, org.springframework.aot.generate.GeneratedFiles, org.springframework.aot.hint.RuntimeHints) : 3 invocations
+  org.springframework.util.Assert.notNull(java.lang.Object, java.lang.String) : 19 invocations
+  org.springframework.aot.generate.MethodReference.toInvokeCodeBlock(org.springframework.aot.generate.MethodReference$ArgumentCodeGenerator) : 1 invocation
+  org.springframework.aot.generate.DefaultMethodReference.toInvokeCodeBlock(org.springframework.aot.generate.MethodReference$ArgumentCodeGenerator, org.springframework.javapoet.ClassName) : 1 invocation
+  org.springframework.aot.generate.DefaultMethodReference.addArguments(org.springframework.javapoet.CodeBlock$Builder, org.springframework.aot.generate.MethodReference$ArgumentCodeGenerator) : 1 invocation
+  org.springframework.aot.generate.DefaultMethodReference.toCodeBlock() : 1 invocation
+  org.springframework.util.Assert.state(boolean, java.lang.String) : 3 invocations
+  org.springframework.aot.generate.FileSystemGeneratedFiles.FileSystemGeneratedFiles(java.util.function.Function) : 2 invocations
+  org.springframework.util.Assert.isTrue(boolean, java.lang.String) : 5 invocations
+  org.springframework.aot.generate.FileSystemGeneratedFiles.handleFile(org.springframework.aot.generate.GeneratedFiles$Kind, java.lang.String, org.springframework.util.function.ThrowingConsumer) : 5 invocations
+  org.springframework.util.function.ThrowingConsumer.accept(java.lang.Object) : 4 invocations
+  org.springframework.util.function.ThrowingConsumer.accept(java.lang.Object, java.util.function.BiFunction) : 4 invocations
+  org.springframework.aot.generate.GeneratedFiles$FileHandler.create(org.springframework.core.io.InputStreamSource) : 4 invocations
+  org.springframework.aot.generate.GeneratedFiles.addResourceFile(java.lang.String, java.lang.CharSequence) : 5 invocations
+  org.springframework.aot.generate.GeneratedFiles.addResourceFile(java.lang.String, org.springframework.util.function.ThrowingConsumer) : 5 invocations
+  org.springframework.aot.generate.GeneratedFiles.addFile(org.springframework.aot.generate.GeneratedFiles$Kind, java.lang.String, org.springframework.util.function.ThrowingConsumer) : 5 invocations
+  org.springframework.aot.generate.GeneratedFiles.addFile(org.springframework.aot.generate.GeneratedFiles$Kind, java.lang.String, org.springframework.core.io.InputStreamSource) : 5 invocations
+  org.springframework.aot.generate.FileSystemGeneratedFiles.FileSystemGeneratedFiles(java.nio.file.Path) : 1 invocation
+  org.springframework.aot.generate.FileSystemGeneratedFiles.conventionRoots(java.nio.file.Path) : 1 invocation
+  org.springframework.aot.generate.FileSystemGeneratedFiles.toPath(org.springframework.aot.generate.GeneratedFiles$Kind, java.lang.String) : 3 invocations
+  org.springframework.aot.generate.GeneratedClass.generateJavaFile() : 1 invocation
+  org.springframework.aot.generate.GeneratedClass.reserveMethodNames(java.lang.String[]) : 1 invocation
+  org.springframework.util.Assert.state(boolean, java.util.function.Supplier) : 1 invocation
+  org.springframework.aot.generate.GeneratedClasses.GeneratedClasses(org.springframework.aot.generate.ClassNameGenerator) : 1 invocation
+  org.springframework.aot.generate.GeneratedClasses.GeneratedClasses(org.springframework.aot.generate.ClassNameGenerator, java.util.List, java.util.Map) : 1 invocation
+  org.springframework.aot.generate.GeneratedClasses.addForFeatureComponent(java.lang.String, java.lang.Class, java.util.function.Consumer) : 2 invocations
+  org.springframework.aot.generate.GeneratedClasses.addForFeatureComponent(java.lang.String, org.springframework.javapoet.ClassName, java.util.function.Consumer) : 2 invocations
+  org.springframework.aot.generate.GeneratedClasses.addForFeature(java.lang.String, java.util.function.Consumer) : 1 invocation
+  org.springframework.aot.generate.GeneratedFiles.addSourceFile(java.lang.String, java.lang.CharSequence) : 3 invocations
+  org.springframework.aot.generate.GeneratedFiles.addSourceFile(java.lang.String, org.springframework.util.function.ThrowingConsumer) : 3 invocations
+  org.springframework.aot.generate.GeneratedFiles.getClassNamePath(java.lang.String) : 3 invocations
+  org.springframework.aot.generate.GeneratedFiles.addSourceFile(org.springframework.javapoet.JavaFile) : 1 invocation
+  org.springframework.aot.generate.GeneratedFiles.validatePackage(java.lang.String, java.lang.String) : 2 invocations
+  org.springframework.aot.generate.GeneratedFilesTests$TestGeneratedFiles.handleFile(org.springframework.aot.generate.GeneratedFiles$Kind, java.lang.String, org.springframework.util.function.ThrowingConsumer) : 1 invocation
+  org.springframework.aot.generate.GeneratedMethodTests.create(java.util.function.Consumer) : 1 invocation
+  org.springframework.aot.generate.GeneratedMethod.GeneratedMethod(org.springframework.javapoet.ClassName, java.lang.String, java.util.function.Consumer) : 1 invocation
+  org.springframework.aot.generate.GeneratedMethods.GeneratedMethods(org.springframework.javapoet.ClassName, java.util.function.Function) : 2 invocations
+  org.springframework.aot.generate.GeneratedMethods.add(java.lang.String, java.util.function.Consumer) : 2 invocations
+  org.springframework.aot.generate.GeneratedMethods.add(java.lang.String[], java.util.function.Consumer) : 1 invocation
+  org.springframework.aot.generate.InMemoryGeneratedFiles.handleFile(org.springframework.aot.generate.GeneratedFiles$Kind, java.lang.String, org.springframework.util.function.ThrowingConsumer) : 1 invocation
+  org.springframework.aot.generate.MethodName.and(org.springframework.aot.generate.MethodName) : 1 invocation
+  org.springframework.aot.generate.MethodName.and(java.lang.String[]) : 1 invocation
+[TIMING] TOTAL (spring-full)          76s  (23:05:12 -> 23:06:28)
+[TIMING] === spring-full daikon run finished 2026-09-14T23:06:28-04:00 ===
+
+>>> Done.

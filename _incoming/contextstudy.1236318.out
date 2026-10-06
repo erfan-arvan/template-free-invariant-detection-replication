@@ -1,0 +1,57 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/23.0.2/bin/java
+MVN: /scratch/mjk76/ea442/apache-maven-3.9.9/bin/mvn
+######################################
+CONTEXT STUDY STARTED
+Prompt strategy (fixed): baseline
+Start time: 2026-09-07 15:48:25 EDT
+######################################
+>>> Building Daikon++ (once)
+======================================
+>>> CONTEXT CONFIG: io_examples
+>>> DP_CONTEXTS: METHOD_BODY,SCOPE, IO_EXAMPLES
+>>> Start time: 2026-09-07 15:50:58 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: apollo
+>>> Start time: 2026-09-07 15:50:58 EDT
+--------------------------------------
+>>> Finished apollo (context_config=io_examples)
+>>> Finish time: 2026-09-07 15:56:52 EDT
+>>> Duration: 00h:05m:54s
+>>> Duration in seconds: 354
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/io_examples/apollo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/io_examples/apollo/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: dubbo
+>>> Start time: 2026-09-07 15:56:52 EDT
+--------------------------------------
+>>> Finished dubbo (context_config=io_examples)
+>>> Finish time: 2026-09-07 16:15:17 EDT
+>>> Duration: 00h:18m:25s
+>>> Duration in seconds: 1105
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/io_examples/dubbo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/io_examples/dubbo/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: hudi
+>>> Start time: 2026-09-07 16:15:17 EDT
+--------------------------------------
+>>> Finished hudi (context_config=io_examples)
+>>> Finish time: 2026-09-07 16:42:33 EDT
+>>> Duration: 00h:27m:16s
+>>> Duration in seconds: 1636
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/io_examples/hudi/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/io_examples/hudi/daikonpp_registry.jsonl
+======================================
+DONE context config: io_examples
+Finish time: 2026-09-07 16:42:33 EDT
+Duration: 00h:51m:35s
+Duration in seconds: 3095
+Results in: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/io_examples
+======================================
+######################################
+ALL CONTEXT CONFIGS DONE
+Start time: 2026-09-07 15:48:25 EDT
+Finish time: 2026-09-07 16:42:33 EDT
+Total duration: 00h:54m:08s
+Total duration in seconds: 3248
+######################################

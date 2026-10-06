@@ -1,0 +1,993 @@
+============================================================
+netty Chicory trace
+============================================================
+RUN ID:             1233676
+JAVA:               /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+MVN:                /scratch/mjk76/ea442/apache-maven-3.9.9/bin/mvn
+PROJECT:            /project/mjk76/ea442/promptstudy/netty
+MODULE:             common
+WORK DIR:           /scratch/mjk76/ea442/promptstudy/netty-chicory
+TRACE BASE DIR:     /scratch/mjk76/ea442/promptstudy/netty-chicory-out
+TRACE OUTPUT DIR:   /scratch/mjk76/ea442/promptstudy/netty-chicory-out/1233676
+COMBINED TRACE:     /scratch/mjk76/ea442/promptstudy/netty-chicory-out/1233676/netty.dtrace
+============================================================
+
+[TIMING] === netty chicory trace run started 2026-09-04T23:22:00-04:00 ===
+[TIMING] rsync copy                   46s  (23:22:00 -> 23:22:46)
+
+>>> No CHICORY_PKG_PREFIX supplied.
+>>> Auto-detecting package prefix under:
+>>> /scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/main/java
+[TIMING] detect package prefix        2s  (23:22:46 -> 23:22:48)
+>>> Auto-detected package prefix: io.netty
+
+>>> Chicory configuration:
+>>> package prefix:     io.netty
+>>> select pattern:     ^io\.netty\..*
+>>> omit pattern:       com\.google\.protobuf
+>>> boot classes:       ^(?!io\.netty\.).*
+
+>>> Patching pom.xml argLine...
+Patched 1 argLine element(s) in /scratch/mjk76/ea442/promptstudy/netty-chicory/pom.xml (real checkout untouched -- this is an rsync copy)
+[TIMING] pom.xml argLine patch        0s  (23:22:48 -> 23:22:48)
+
+>>> mvn compile (-am, warms build with compatibility compiler flag)
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.bitness: 64
+[INFO] os.detected.version: 5.14
+[INFO] os.detected.version.major: 5
+[INFO] os.detected.version.minor: 14
+[INFO] os.detected.release: rhel
+[INFO] os.detected.release.version: 9.6
+[INFO] os.detected.release.like.rhel: true
+[INFO] os.detected.release.like.fedora: true
+[INFO] os.detected.classifier: linux-x86_64-fedora
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Netty                                                              [pom]
+[INFO] Netty/JFR Stub                                                     [jar]
+[INFO] Netty/VarHandle Stub                                               [jar]
+[INFO] Netty/Dev-Tools                                                    [jar]
+[INFO] Netty/Common                                                       [jar]
+[INFO] 
+[INFO] -----------------------< io.netty:netty-parent >------------------------
+[INFO] Building Netty 4.2.18.Final-SNAPSHOT                               [1/5]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-maven) @ netty-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-tools) @ netty-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- checkstyle:3.1.0:check (check-style) @ netty-parent ---
+[INFO] 
+[INFO] --- checkstyle:3.1.0:check (nohttp-checkstyle-validation) @ netty-parent ---
+[INFO] 
+[INFO] --- xml:1.0.1:check-format (check-style) @ netty-parent ---
+[INFO] 
+[INFO] --- build-helper:1.10:parse-version (parse-version) @ netty-parent ---
+[INFO] 
+[INFO] --- antrun:1.8:run (write-version-properties) @ netty-parent ---
+[INFO] Executing tasks
+
+main:
+     [echo] Current commit: 0 on 1970-01-01 00:00:00 +0000
+    [mkdir] Created dir: /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/target/classes/META-INF
+[propertyfile] Creating new property file: /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/target/classes/META-INF/io.netty.versions.properties
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- forbiddenapis:2.2:check (check-forbidden-apis) @ netty-parent ---
+[WARNING]  Parameter 'internalRuntimeForbidden' is deprecated: Use <a href="bundled-signatures.html">bundled signatures</a> {@code "jdk-non-portable"} or {@code "jdk-internal"} instead.
+[INFO] Skipping forbidden-apis checks.
+[INFO] 
+[INFO] ----------------------< io.netty:netty-jfr-stub >-----------------------
+[INFO] Building Netty/JFR Stub 4.2.18.Final-SNAPSHOT                      [2/5]
+[INFO]   from jfr-stub/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-maven) @ netty-jfr-stub ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-tools) @ netty-jfr-stub ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- checkstyle:3.1.0:check (check-style) @ netty-jfr-stub ---
+[INFO] 
+[INFO] --- xml:1.0.1:check-format (check-style) @ netty-jfr-stub ---
+[INFO] 
+[INFO] --- build-helper:1.10:parse-version (parse-version) @ netty-jfr-stub ---
+[INFO] 
+[INFO] --- antrun:1.8:run (write-version-properties) @ netty-jfr-stub ---
+[INFO] Executing tasks
+
+main:
+     [echo] Current commit: 0 on 1970-01-01 00:00:00 +0000
+    [mkdir] Created dir: /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/jfr-stub/target/classes/META-INF
+[propertyfile] Creating new property file: /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/jfr-stub/target/classes/META-INF/io.netty.versions.properties
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- resources:3.0.1:resources (default-resources) @ netty-jfr-stub ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/jfr-stub/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ netty-jfr-stub ---
+[WARNING]  Parameter 'compilerVersion' (user property 'maven.compiler.compilerVersion') is deprecated: This parameter is no longer evaluated by the underlying compilers, instead the actual version of the javac binary is automatically retrieved.
+[WARNING]  Parameter 'optimize' (user property 'maven.compiler.optimize') is deprecated: This property is a no-op in javac.
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 14 source files with javac [forked debug deprecation release 8] to target/classes
+[INFO] 
+[INFO] --- forbiddenapis:2.2:check (check-forbidden-apis) @ netty-jfr-stub ---
+[WARNING]  Parameter 'internalRuntimeForbidden' is deprecated: Use <a href="bundled-signatures.html">bundled signatures</a> {@code "jdk-non-portable"} or {@code "jdk-internal"} instead.
+[INFO] Skipping forbidden-apis checks.
+[INFO] 
+[INFO] -------------------< io.netty:netty-varhandle-stub >--------------------
+[INFO] Building Netty/VarHandle Stub 4.2.18.Final-SNAPSHOT                [3/5]
+[INFO]   from varhandle-stub/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-maven) @ netty-varhandle-stub ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-tools) @ netty-varhandle-stub ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- checkstyle:3.1.0:check (check-style) @ netty-varhandle-stub ---
+[INFO] 
+[INFO] --- xml:1.0.1:check-format (check-style) @ netty-varhandle-stub ---
+[INFO] 
+[INFO] --- build-helper:1.10:parse-version (parse-version) @ netty-varhandle-stub ---
+[INFO] 
+[INFO] --- antrun:1.8:run (write-version-properties) @ netty-varhandle-stub ---
+[INFO] Executing tasks
+
+main:
+     [echo] Current commit: 0 on 1970-01-01 00:00:00 +0000
+    [mkdir] Created dir: /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/varhandle-stub/target/classes/META-INF
+[propertyfile] Creating new property file: /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/varhandle-stub/target/classes/META-INF/io.netty.versions.properties
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- resources:3.0.1:resources (default-resources) @ netty-varhandle-stub ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/varhandle-stub/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ netty-varhandle-stub ---
+[WARNING]  Parameter 'compilerVersion' (user property 'maven.compiler.compilerVersion') is deprecated: This parameter is no longer evaluated by the underlying compilers, instead the actual version of the javac binary is automatically retrieved.
+[WARNING]  Parameter 'optimize' (user property 'maven.compiler.optimize') is deprecated: This property is a no-op in javac.
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 2 source files with javac [forked debug deprecation release 8] to target/classes
+[INFO] 
+[INFO] --- forbiddenapis:2.2:check (check-forbidden-apis) @ netty-varhandle-stub ---
+[WARNING]  Parameter 'internalRuntimeForbidden' is deprecated: Use <a href="bundled-signatures.html">bundled signatures</a> {@code "jdk-non-portable"} or {@code "jdk-internal"} instead.
+[INFO] Skipping forbidden-apis checks.
+[INFO] 
+[INFO] ----------------------< io.netty:netty-dev-tools >----------------------
+[INFO] Building Netty/Dev-Tools 4.2.18.Final-SNAPSHOT                     [4/5]
+[INFO]   from dev-tools/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-maven) @ netty-dev-tools ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-tools) @ netty-dev-tools ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- checkstyle:3.1.0:check (check-style) @ netty-dev-tools ---
+[INFO] 
+[INFO] --- xml:1.0.1:check-format (check-style) @ netty-dev-tools ---
+[INFO] 
+[INFO] --- build-helper:1.10:parse-version (parse-version) @ netty-dev-tools ---
+[INFO] 
+[INFO] --- antrun:1.8:run (write-version-properties) @ netty-dev-tools ---
+[INFO] Executing tasks
+
+main:
+     [echo] Current commit: 0 on 1970-01-01 00:00:00 +0000
+    [mkdir] Created dir: /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/dev-tools/target/classes/META-INF
+[propertyfile] Creating new property file: /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/dev-tools/target/classes/META-INF/io.netty.versions.properties
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- remote-resources:1.5:bundle (default) @ netty-dev-tools ---
+[INFO] 
+[INFO] --- resources:3.0.1:resources (default-resources) @ netty-dev-tools ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ netty-dev-tools ---
+[WARNING]  Parameter 'compilerVersion' (user property 'maven.compiler.compilerVersion') is deprecated: This parameter is no longer evaluated by the underlying compilers, instead the actual version of the javac binary is automatically retrieved.
+[WARNING]  Parameter 'optimize' (user property 'maven.compiler.optimize') is deprecated: This property is a no-op in javac.
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- forbiddenapis:2.2:check (check-forbidden-apis) @ netty-dev-tools ---
+[WARNING]  Parameter 'internalRuntimeForbidden' is deprecated: Use <a href="bundled-signatures.html">bundled signatures</a> {@code "jdk-non-portable"} or {@code "jdk-internal"} instead.
+[INFO] Skipping forbidden-apis checks.
+[INFO] 
+[INFO] -----------------------< io.netty:netty-common >------------------------
+[INFO] Building Netty/Common 4.2.18.Final-SNAPSHOT                        [5/5]
+[INFO]   from common/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-maven) @ netty-common ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-tools) @ netty-common ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- checkstyle:3.1.0:check (check-style) @ netty-common ---
+[INFO] 
+[INFO] --- xml:1.0.1:check-format (check-style) @ netty-common ---
+[INFO] 
+[INFO] --- build-helper:1.10:parse-version (parse-version) @ netty-common ---
+[INFO] 
+[INFO] --- antrun:1.8:run (write-version-properties) @ netty-common ---
+[INFO] Executing tasks
+
+main:
+     [echo] Current commit: 0 on 1970-01-01 00:00:00 +0000
+    [mkdir] Created dir: /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/target/classes/META-INF
+[propertyfile] Creating new property file: /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/target/classes/META-INF/io.netty.versions.properties
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- groovy:2.1.1:execute (generate-collections) @ netty-common ---
+Copying 3 files to /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/target/generated-sources/collections/java
+Copying 3 files to /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/target/generated-sources/collections/java
+Copying 3 files to /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/target/generated-sources/collections/java
+Copying 3 files to /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/target/generated-sources/collections/java
+Copying 3 files to /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/target/generated-sources/collections/java
+Copying 1 file to /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/target/generated-test-sources/collections/java
+Copying 1 file to /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/target/generated-test-sources/collections/java
+Copying 1 file to /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/target/generated-test-sources/collections/java
+Copying 1 file to /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/target/generated-test-sources/collections/java
+Copying 1 file to /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/target/generated-test-sources/collections/java
+[INFO] 
+[INFO] --- build-helper:1.10:add-source (add-source) @ netty-common ---
+[INFO] Source directory: /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/target/generated-sources/collections/java added.
+[INFO] 
+[INFO] --- resources:3.0.1:resources (default-resources) @ netty-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ netty-common ---
+[WARNING]  Parameter 'compilerVersion' (user property 'maven.compiler.compilerVersion') is deprecated: This parameter is no longer evaluated by the underlying compilers, instead the actual version of the javac binary is automatically retrieved.
+[WARNING]  Parameter 'optimize' (user property 'maven.compiler.optimize') is deprecated: This property is a no-op in javac.
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 203 source files with javac [forked debug deprecation release 8] to target/classes
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/main/java/io/netty/util/DefaultAttributeMap.java:[204,20] [deprecation] remove() in Attribute has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/main/java/io/netty/util/DefaultAttributeMap.java:[193,17] [deprecation] getAndRemove() in Attribute has been deprecated
+  where T is a type-variable:
+    T extends Object declared in interface Attribute
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/main/java/io/netty/util/internal/PlatformDependent.java:[165,20] [deprecation] freeDirectBuffer(ByteBuffer) in Cleaner has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/main/java/io/netty/util/internal/InternalThreadLocalMap.java:[41,50] [deprecation] UnpaddedInternalThreadLocalMap in io.netty.util.internal has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/main/java/io/netty/util/concurrent/ScheduledFutureTask.java:[100,38] [deprecation] getCurrentTimeNanos() in AbstractScheduledEventExecutor has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/main/java/io/netty/util/concurrent/ScheduledFutureTask.java:[109,45] [deprecation] getCurrentTimeNanos() in AbstractScheduledEventExecutor has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/main/java/io/netty/util/concurrent/ScheduledFutureTask.java:[171,63] [deprecation] getCurrentTimeNanos() in AbstractScheduledEventExecutor has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/main/java/io/netty/util/concurrent/SingleThreadEventExecutor.java:[366,24] [deprecation] getCurrentTimeNanos() in AbstractScheduledEventExecutor has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/main/java/io/netty/util/concurrent/SingleThreadEventExecutor.java:[443,32] [deprecation] getCurrentTimeNanos() in AbstractScheduledEventExecutor has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/main/java/io/netty/util/concurrent/SingleThreadEventExecutor.java:[468,32] [deprecation] getCurrentTimeNanos() in AbstractScheduledEventExecutor has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/main/java/io/netty/util/concurrent/SingleThreadEventExecutor.java:[529,49] [deprecation] getCurrentTimeNanos() in AbstractScheduledEventExecutor has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/main/java/io/netty/util/concurrent/SingleThreadEventExecutor.java:[542,36] [deprecation] getCurrentTimeNanos() in AbstractScheduledEventExecutor has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/main/java/io/netty/util/concurrent/SingleThreadEventExecutor.java:[550,36] [deprecation] getCurrentTimeNanos() in AbstractScheduledEventExecutor has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/main/java/io/netty/util/concurrent/SingleThreadEventExecutor.java:[590,19] [deprecation] getCurrentTimeNanos() in AbstractScheduledEventExecutor has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/main/java/io/netty/util/concurrent/SingleThreadEventExecutor.java:[603,19] [deprecation] getCurrentTimeNanos() in AbstractScheduledEventExecutor has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/main/java/io/netty/util/concurrent/SingleThreadEventExecutor.java:[776,32] [deprecation] getCurrentTimeNanos() in AbstractScheduledEventExecutor has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/main/java/io/netty/util/concurrent/SingleThreadEventExecutor.java:[935,40] [deprecation] getCurrentTimeNanos() in AbstractScheduledEventExecutor has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/main/java/io/netty/util/concurrent/SingleThreadEventExecutor.java:[954,30] [deprecation] getCurrentTimeNanos() in AbstractScheduledEventExecutor has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/main/java/io/netty/util/concurrent/GlobalEventExecutor.java:[71,26] [deprecation] getCurrentTimeNanos() in AbstractScheduledEventExecutor has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/main/java/io/netty/util/concurrent/GlobalEventExecutor.java:[140,24] [deprecation] getCurrentTimeNanos() in AbstractScheduledEventExecutor has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/main/java/io/netty/util/concurrent/NonStickyEventExecutorGroup.java:[317,20] [deprecation] shutdown() in AbstractEventExecutor has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/main/java/io/netty/util/concurrent/NonStickyEventExecutorGroup.java:[318,20] [deprecation] shutdown() in EventExecutorGroup has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/main/java/io/netty/util/internal/AtomicReferenceCountUpdater.java:[22,86] [deprecation] ReferenceCountUpdater in io.netty.util.internal has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/main/java/io/netty/util/internal/AtomicReferenceCountUpdater.java:[22,86] [deprecation] ReferenceCountUpdater in io.netty.util.internal has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/main/java/io/netty/util/internal/CleanerJava24Linker.java:[202,16] [deprecation] freeDirectBuffer(ByteBuffer) in Cleaner has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/main/java/io/netty/util/internal/CleanerJava25.java:[185,16] [deprecation] freeDirectBuffer(ByteBuffer) in Cleaner has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/main/java/io/netty/util/internal/DirectCleaner.java:[42,16] [deprecation] freeDirectBuffer(ByteBuffer) in Cleaner has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/main/java/io/netty/util/internal/UnsafeReferenceCountUpdater.java:[20,86] [deprecation] ReferenceCountUpdater in io.netty.util.internal has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/main/java/io/netty/util/internal/UnsafeReferenceCountUpdater.java:[20,86] [deprecation] ReferenceCountUpdater in io.netty.util.internal has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/main/java/io/netty/util/internal/VarHandleReferenceCountUpdater.java:[22,16] [deprecation] ReferenceCountUpdater in io.netty.util.internal has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/main/java/io/netty/util/internal/VarHandleReferenceCountUpdater.java:[22,16] [deprecation] ReferenceCountUpdater in io.netty.util.internal has been deprecated
+[INFO] 
+[INFO] --- forbiddenapis:2.2:check (check-forbidden-apis) @ netty-common ---
+[WARNING]  Parameter 'internalRuntimeForbidden' is deprecated: Use <a href="bundled-signatures.html">bundled signatures</a> {@code "jdk-non-portable"} or {@code "jdk-internal"} instead.
+[INFO] Skipping forbidden-apis checks.
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Netty 4.2.18.Final-SNAPSHOT:
+[INFO] 
+[INFO] Netty .............................................. SUCCESS [  2.111 s]
+[INFO] Netty/JFR Stub ..................................... SUCCESS [  1.830 s]
+[INFO] Netty/VarHandle Stub ............................... SUCCESS [  0.752 s]
+[INFO] Netty/Dev-Tools .................................... SUCCESS [  0.413 s]
+[INFO] Netty/Common ....................................... SUCCESS [  6.606 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  16.837 s
+[INFO] Finished at: 2026-09-04T23:23:07-04:00
+[INFO] ------------------------------------------------------------------------
+[TIMING] mvn compile (-am, no tests)  19s  (23:22:48 -> 23:23:07)
+
+>>> mvn test
+>>> Chicory javaagent is attached through patched argLine
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: linux
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.bitness: 64
+[INFO] os.detected.version: 5.14
+[INFO] os.detected.version.major: 5
+[INFO] os.detected.version.minor: 14
+[INFO] os.detected.release: rhel
+[INFO] os.detected.release.version: 9.6
+[INFO] os.detected.release.like.rhel: true
+[INFO] os.detected.release.like.fedora: true
+[INFO] os.detected.classifier: linux-x86_64-fedora
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Netty                                                              [pom]
+[INFO] Netty/JFR Stub                                                     [jar]
+[INFO] Netty/VarHandle Stub                                               [jar]
+[INFO] Netty/Dev-Tools                                                    [jar]
+[INFO] Netty/Common                                                       [jar]
+[INFO] 
+[INFO] -----------------------< io.netty:netty-parent >------------------------
+[INFO] Building Netty 4.2.18.Final-SNAPSHOT                               [1/5]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-maven) @ netty-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-tools) @ netty-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- checkstyle:3.1.0:check (check-style) @ netty-parent ---
+[INFO] 
+[INFO] --- checkstyle:3.1.0:check (nohttp-checkstyle-validation) @ netty-parent ---
+[INFO] 
+[INFO] --- xml:1.0.1:check-format (check-style) @ netty-parent ---
+[INFO] 
+[INFO] --- build-helper:1.10:parse-version (parse-version) @ netty-parent ---
+[INFO] 
+[INFO] --- antrun:1.8:run (write-version-properties) @ netty-parent ---
+[INFO] Executing tasks
+
+main:
+     [echo] Current commit: 0 on 1970-01-01 00:00:00 +0000
+   [delete] Deleting: /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/target/classes/META-INF/io.netty.versions.properties
+[propertyfile] Creating new property file: /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/target/classes/META-INF/io.netty.versions.properties
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- forbiddenapis:2.2:check (check-forbidden-apis) @ netty-parent ---
+[WARNING]  Parameter 'internalRuntimeForbidden' is deprecated: Use <a href="bundled-signatures.html">bundled signatures</a> {@code "jdk-non-portable"} or {@code "jdk-internal"} instead.
+[INFO] Skipping forbidden-apis checks.
+[INFO] 
+[INFO] --- bundle:5.1.8:manifest (generate-manifest) @ netty-parent ---
+[WARNING] Ignoring project type pom - supportedProjectTypes = [jar, bundle]
+[INFO] 
+[INFO] --- forbiddenapis:2.2:testCheck (check-forbidden-test-apis) @ netty-parent ---
+[WARNING]  Parameter 'internalRuntimeForbidden' is deprecated: Use <a href="bundled-signatures.html">bundled signatures</a> {@code "jdk-non-portable"} or {@code "jdk-internal"} instead.
+[INFO] Skipping forbidden-apis checks.
+[INFO] 
+[INFO] ----------------------< io.netty:netty-jfr-stub >-----------------------
+[INFO] Building Netty/JFR Stub 4.2.18.Final-SNAPSHOT                      [2/5]
+[INFO]   from jfr-stub/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-maven) @ netty-jfr-stub ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-tools) @ netty-jfr-stub ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- checkstyle:3.1.0:check (check-style) @ netty-jfr-stub ---
+[INFO] 
+[INFO] --- xml:1.0.1:check-format (check-style) @ netty-jfr-stub ---
+[INFO] 
+[INFO] --- build-helper:1.10:parse-version (parse-version) @ netty-jfr-stub ---
+[INFO] 
+[INFO] --- antrun:1.8:run (write-version-properties) @ netty-jfr-stub ---
+[INFO] Executing tasks
+
+main:
+     [echo] Current commit: 0 on 1970-01-01 00:00:00 +0000
+   [delete] Deleting: /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/jfr-stub/target/classes/META-INF/io.netty.versions.properties
+[propertyfile] Creating new property file: /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/jfr-stub/target/classes/META-INF/io.netty.versions.properties
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- resources:3.0.1:resources (default-resources) @ netty-jfr-stub ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/jfr-stub/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ netty-jfr-stub ---
+[WARNING]  Parameter 'compilerVersion' (user property 'maven.compiler.compilerVersion') is deprecated: This parameter is no longer evaluated by the underlying compilers, instead the actual version of the javac binary is automatically retrieved.
+[WARNING]  Parameter 'optimize' (user property 'maven.compiler.optimize') is deprecated: This property is a no-op in javac.
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- forbiddenapis:2.2:check (check-forbidden-apis) @ netty-jfr-stub ---
+[WARNING]  Parameter 'internalRuntimeForbidden' is deprecated: Use <a href="bundled-signatures.html">bundled signatures</a> {@code "jdk-non-portable"} or {@code "jdk-internal"} instead.
+[INFO] Skipping forbidden-apis checks.
+[INFO] 
+[INFO] --- bundle:5.1.8:manifest (generate-manifest) @ netty-jfr-stub ---
+[INFO] No MANIFEST.MF file found, generating manifest.
+[WARNING] Manifest io.netty:netty-jfr-stub:jar:4.2.18.Final-SNAPSHOT : Unused Export-Package instructions: [io.netty.*] 
+[WARNING] Manifest io.netty:netty-jfr-stub:jar:4.2.18.Final-SNAPSHOT : Unused Import-Package instructions: [sun.net.dns.*, sun.misc.*, sun.security.*] 
+[INFO] Writing manifest: /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/jfr-stub/target/classes/META-INF/MANIFEST.MF
+[INFO] 
+[INFO] --- resources:3.0.1:testResources (default-testResources) @ netty-jfr-stub ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/jfr-stub/src/test/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ netty-jfr-stub ---
+[WARNING]  Parameter 'compilerVersion' (user property 'maven.compiler.compilerVersion') is deprecated: This parameter is no longer evaluated by the underlying compilers, instead the actual version of the javac binary is automatically retrieved.
+[WARNING]  Parameter 'optimize' (user property 'maven.compiler.optimize') is deprecated: This property is a no-op in javac.
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- forbiddenapis:2.2:testCheck (check-forbidden-test-apis) @ netty-jfr-stub ---
+[WARNING]  Parameter 'internalRuntimeForbidden' is deprecated: Use <a href="bundled-signatures.html">bundled signatures</a> {@code "jdk-non-portable"} or {@code "jdk-internal"} instead.
+[INFO] Skipping forbidden-apis checks.
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ netty-jfr-stub ---
+[INFO] Tests will run in random order. To reproduce ordering use flag -Dsurefire.runOrder.random.seed=804280608044939
+[INFO] 
+[INFO] -------------------< io.netty:netty-varhandle-stub >--------------------
+[INFO] Building Netty/VarHandle Stub 4.2.18.Final-SNAPSHOT                [3/5]
+[INFO]   from varhandle-stub/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-maven) @ netty-varhandle-stub ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-tools) @ netty-varhandle-stub ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- checkstyle:3.1.0:check (check-style) @ netty-varhandle-stub ---
+[INFO] 
+[INFO] --- xml:1.0.1:check-format (check-style) @ netty-varhandle-stub ---
+[INFO] 
+[INFO] --- build-helper:1.10:parse-version (parse-version) @ netty-varhandle-stub ---
+[INFO] 
+[INFO] --- antrun:1.8:run (write-version-properties) @ netty-varhandle-stub ---
+[INFO] Executing tasks
+
+main:
+     [echo] Current commit: 0 on 1970-01-01 00:00:00 +0000
+   [delete] Deleting: /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/varhandle-stub/target/classes/META-INF/io.netty.versions.properties
+[propertyfile] Creating new property file: /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/varhandle-stub/target/classes/META-INF/io.netty.versions.properties
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- resources:3.0.1:resources (default-resources) @ netty-varhandle-stub ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/varhandle-stub/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ netty-varhandle-stub ---
+[WARNING]  Parameter 'compilerVersion' (user property 'maven.compiler.compilerVersion') is deprecated: This parameter is no longer evaluated by the underlying compilers, instead the actual version of the javac binary is automatically retrieved.
+[WARNING]  Parameter 'optimize' (user property 'maven.compiler.optimize') is deprecated: This property is a no-op in javac.
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- forbiddenapis:2.2:check (check-forbidden-apis) @ netty-varhandle-stub ---
+[WARNING]  Parameter 'internalRuntimeForbidden' is deprecated: Use <a href="bundled-signatures.html">bundled signatures</a> {@code "jdk-non-portable"} or {@code "jdk-internal"} instead.
+[INFO] Skipping forbidden-apis checks.
+[INFO] 
+[INFO] --- bundle:5.1.8:manifest (generate-manifest) @ netty-varhandle-stub ---
+[INFO] No MANIFEST.MF file found, generating manifest.
+[WARNING] Manifest io.netty:netty-varhandle-stub:jar:4.2.18.Final-SNAPSHOT : Unused Export-Package instructions: [io.netty.*] 
+[WARNING] Manifest io.netty:netty-varhandle-stub:jar:4.2.18.Final-SNAPSHOT : Unused Import-Package instructions: [sun.net.dns.*, sun.misc.*, sun.security.*] 
+[INFO] Writing manifest: /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/varhandle-stub/target/classes/META-INF/MANIFEST.MF
+[INFO] 
+[INFO] --- resources:3.0.1:testResources (default-testResources) @ netty-varhandle-stub ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/varhandle-stub/src/test/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ netty-varhandle-stub ---
+[WARNING]  Parameter 'compilerVersion' (user property 'maven.compiler.compilerVersion') is deprecated: This parameter is no longer evaluated by the underlying compilers, instead the actual version of the javac binary is automatically retrieved.
+[WARNING]  Parameter 'optimize' (user property 'maven.compiler.optimize') is deprecated: This property is a no-op in javac.
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- forbiddenapis:2.2:testCheck (check-forbidden-test-apis) @ netty-varhandle-stub ---
+[WARNING]  Parameter 'internalRuntimeForbidden' is deprecated: Use <a href="bundled-signatures.html">bundled signatures</a> {@code "jdk-non-portable"} or {@code "jdk-internal"} instead.
+[INFO] Skipping forbidden-apis checks.
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ netty-varhandle-stub ---
+[INFO] Tests will run in random order. To reproduce ordering use flag -Dsurefire.runOrder.random.seed=804280802160115
+[INFO] 
+[INFO] ----------------------< io.netty:netty-dev-tools >----------------------
+[INFO] Building Netty/Dev-Tools 4.2.18.Final-SNAPSHOT                     [4/5]
+[INFO]   from dev-tools/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-maven) @ netty-dev-tools ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-tools) @ netty-dev-tools ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- checkstyle:3.1.0:check (check-style) @ netty-dev-tools ---
+[INFO] 
+[INFO] --- xml:1.0.1:check-format (check-style) @ netty-dev-tools ---
+[INFO] 
+[INFO] --- build-helper:1.10:parse-version (parse-version) @ netty-dev-tools ---
+[INFO] 
+[INFO] --- antrun:1.8:run (write-version-properties) @ netty-dev-tools ---
+[INFO] Executing tasks
+
+main:
+     [echo] Current commit: 0 on 1970-01-01 00:00:00 +0000
+   [delete] Deleting: /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/dev-tools/target/classes/META-INF/io.netty.versions.properties
+[propertyfile] Creating new property file: /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/dev-tools/target/classes/META-INF/io.netty.versions.properties
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- remote-resources:1.5:bundle (default) @ netty-dev-tools ---
+[INFO] 
+[INFO] --- resources:3.0.1:resources (default-resources) @ netty-dev-tools ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ netty-dev-tools ---
+[WARNING]  Parameter 'compilerVersion' (user property 'maven.compiler.compilerVersion') is deprecated: This parameter is no longer evaluated by the underlying compilers, instead the actual version of the javac binary is automatically retrieved.
+[WARNING]  Parameter 'optimize' (user property 'maven.compiler.optimize') is deprecated: This property is a no-op in javac.
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- forbiddenapis:2.2:check (check-forbidden-apis) @ netty-dev-tools ---
+[WARNING]  Parameter 'internalRuntimeForbidden' is deprecated: Use <a href="bundled-signatures.html">bundled signatures</a> {@code "jdk-non-portable"} or {@code "jdk-internal"} instead.
+[INFO] Skipping forbidden-apis checks.
+[INFO] 
+[INFO] --- bundle:5.1.8:manifest (generate-manifest) @ netty-dev-tools ---
+[INFO] No MANIFEST.MF file found, generating manifest.
+[WARNING] Manifest io.netty:netty-dev-tools:jar:4.2.18.Final-SNAPSHOT : Unused Export-Package instructions: [io.netty.*] 
+[WARNING] Manifest io.netty:netty-dev-tools:jar:4.2.18.Final-SNAPSHOT : Unused Import-Package instructions: [sun.net.dns.*, sun.misc.*, sun.security.*] 
+[INFO] Writing manifest: /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/dev-tools/target/classes/META-INF/MANIFEST.MF
+[INFO] 
+[INFO] --- resources:3.0.1:testResources (default-testResources) @ netty-dev-tools ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/dev-tools/src/test/resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ netty-dev-tools ---
+[WARNING]  Parameter 'compilerVersion' (user property 'maven.compiler.compilerVersion') is deprecated: This parameter is no longer evaluated by the underlying compilers, instead the actual version of the javac binary is automatically retrieved.
+[WARNING]  Parameter 'optimize' (user property 'maven.compiler.optimize') is deprecated: This property is a no-op in javac.
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- forbiddenapis:2.2:testCheck (check-forbidden-test-apis) @ netty-dev-tools ---
+[WARNING]  Parameter 'internalRuntimeForbidden' is deprecated: Use <a href="bundled-signatures.html">bundled signatures</a> {@code "jdk-non-portable"} or {@code "jdk-internal"} instead.
+[INFO] Skipping forbidden-apis checks.
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ netty-dev-tools ---
+[INFO] Tests will run in random order. To reproduce ordering use flag -Dsurefire.runOrder.random.seed=804281063628367
+[INFO] 
+[INFO] -----------------------< io.netty:netty-common >------------------------
+[INFO] Building Netty/Common 4.2.18.Final-SNAPSHOT                        [5/5]
+[INFO]   from common/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-maven) @ netty-common ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- enforcer:3.0.0:enforce (enforce-tools) @ netty-common ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- checkstyle:3.1.0:check (check-style) @ netty-common ---
+[INFO] 
+[INFO] --- xml:1.0.1:check-format (check-style) @ netty-common ---
+[INFO] 
+[INFO] --- build-helper:1.10:parse-version (parse-version) @ netty-common ---
+[INFO] 
+[INFO] --- antrun:1.8:run (write-version-properties) @ netty-common ---
+[INFO] Executing tasks
+
+main:
+     [echo] Current commit: 0 on 1970-01-01 00:00:00 +0000
+   [delete] Deleting: /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/target/classes/META-INF/io.netty.versions.properties
+[propertyfile] Creating new property file: /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/target/classes/META-INF/io.netty.versions.properties
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- groovy:2.1.1:execute (generate-collections) @ netty-common ---
+[INFO] 
+[INFO] --- build-helper:1.10:add-source (add-source) @ netty-common ---
+[INFO] Source directory: /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/target/generated-sources/collections/java added.
+[INFO] 
+[INFO] --- resources:3.0.1:resources (default-resources) @ netty-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ netty-common ---
+[WARNING]  Parameter 'compilerVersion' (user property 'maven.compiler.compilerVersion') is deprecated: This parameter is no longer evaluated by the underlying compilers, instead the actual version of the javac binary is automatically retrieved.
+[WARNING]  Parameter 'optimize' (user property 'maven.compiler.optimize') is deprecated: This property is a no-op in javac.
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- forbiddenapis:2.2:check (check-forbidden-apis) @ netty-common ---
+[WARNING]  Parameter 'internalRuntimeForbidden' is deprecated: Use <a href="bundled-signatures.html">bundled signatures</a> {@code "jdk-non-portable"} or {@code "jdk-internal"} instead.
+[INFO] Skipping forbidden-apis checks.
+[INFO] 
+[INFO] --- bundle:5.1.8:manifest (generate-manifest) @ netty-common ---
+[INFO] No MANIFEST.MF file found, generating manifest.
+[INFO] Writing manifest: /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/target/classes/META-INF/MANIFEST.MF
+[INFO] 
+[INFO] --- module-info:2.2:generate (module-info) @ netty-common ---
+[INFO] Using source file: /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/main/java/module-info.yml
+[INFO] Using module name "io.netty.common"
+[INFO] Using module version "4.2.18.Final-SNAPSHOT"
+[INFO] Not adding export for private package "io.netty.util.internal.shaded.org.jctools.queues"
+[INFO] Not adding export for private package "io.netty.util.internal.svm"
+[INFO] Not adding export for private package "io.netty.util.internal.shaded.org.jctools.counters"
+[INFO] Automatically adding export for package "io.netty.util.collection"
+[INFO] Not adding export for private package "io.netty.util.internal.shaded.org.jctools.util"
+[INFO] Not adding export for private package "io.netty.util.internal.shaded.org.jctools.maps"
+[INFO] Automatically adding export for package "io.netty.util"
+[INFO] Not adding export for private package "io.netty.util.internal"
+[INFO] Not adding export for private package "io.netty.util.internal.logging"
+[INFO] Not adding export for private package "io.netty.util.internal.shaded.org.jctools.queues.unpadded"
+[INFO] Automatically adding export for package "io.netty.util.concurrent"
+[INFO] Not adding export for private package "io.netty.util.internal.shaded.org.jctools.queues.atomic.unpadded"
+[INFO] Not adding export for private package "io.netty.util.internal.shaded.org.jctools.queues.atomic"
+[INFO] Automatically adding mandatory "java.base" dependency
+[INFO] Wrote module descriptor "/mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/target/classes/META-INF/versions/11/module-info.class"
+[INFO] 
+[INFO] --- build-helper:1.10:add-test-source (add-test-source) @ netty-common ---
+[INFO] Test Source directory: /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/target/generated-test-sources/collections/java added.
+[INFO] 
+[INFO] --- resources:3.0.1:testResources (default-testResources) @ netty-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ netty-common ---
+[WARNING]  Parameter 'compilerVersion' (user property 'maven.compiler.compilerVersion') is deprecated: This parameter is no longer evaluated by the underlying compilers, instead the actual version of the javac binary is automatically retrieved.
+[WARNING]  Parameter 'optimize' (user property 'maven.compiler.optimize') is deprecated: This property is a no-op in javac.
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 70 source files with javac [forked debug deprecation release 8] to target/test-classes
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/FastThreadLocalTest.java:[20,29] [deprecation] ObjectCleaner in io.netty.util.internal has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/FastThreadLocalTest.java:[20,29] [deprecation] ObjectCleaner in io.netty.util.internal has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/FastThreadLocalTest.java:[20,29] [deprecation] ObjectCleaner in io.netty.util.internal has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/DefaultAttributeMapTest.java:[56,11] [deprecation] remove() in Attribute has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/DefaultAttributeMapTest.java:[73,11] [deprecation] remove() in Attribute has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/DefaultAttributeMapTest.java:[84,26] [deprecation] getAndRemove() in Attribute has been deprecated
+  where T is a type-variable:
+    T extends Object declared in interface Attribute
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/DefaultAttributeMapTest.java:[107,25] [deprecation] remove() in Attribute has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/DefaultAttributeMapTest.java:[113,25] [deprecation] remove() in Attribute has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/LeakPresenceDetectorTest.java:[41,47] [deprecation] <T>newResourceLeakDetector(Class<T>,int,long) in ResourceLeakDetectorFactory has been deprecated
+  where T is a type-variable:
+    T extends Object declared in method <T>newResourceLeakDetector(Class<T>,int,long)
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/ResourceLeakDetectorTest.java:[222,12] [deprecation] ResourceLeakDetector(Class<?>,int,long) in ResourceLeakDetector has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/ResourceLeakDetectorTest.java:[236,23] [deprecation] reportInstancesLeak(String) in ResourceLeakDetector has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/ThreadDeathWatcherTest.java:[61,12] [deprecation] ThreadDeathWatcher in io.netty.util has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/ThreadDeathWatcherTest.java:[68,8] [deprecation] ThreadDeathWatcher in io.netty.util has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/ThreadDeathWatcherTest.java:[107,8] [deprecation] ThreadDeathWatcher in io.netty.util has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/ThreadDeathWatcherTest.java:[108,8] [deprecation] ThreadDeathWatcher in io.netty.util has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/ThreadDeathWatcherTest.java:[117,19] [deprecation] ThreadDeathWatcher in io.netty.util has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/ThreadDeathWatcherTest.java:[131,33] [deprecation] ThreadDeathWatcher in io.netty.util has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/AbstractScheduledEventExecutorTest.java:[139,20] [deprecation] shutdown() in AbstractEventExecutor has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/DefaultPromiseTest.java:[90,20] [deprecation] shutdown() in AbstractEventExecutor has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/NonStickyEventExecutorGroupTest.java:[73,45] [deprecation] UnorderedThreadPoolEventExecutor in io.netty.util.concurrent has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/NonStickyEventExecutorGroupTest.java:[109,39] [deprecation] UnorderedThreadPoolEventExecutor in io.netty.util.concurrent has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/NonStickyEventExecutorGroupTest.java:[138,14] [deprecation] UnorderedThreadPoolEventExecutor in io.netty.util.concurrent has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/NonStickyEventExecutorGroupTest.java:[138,64] [deprecation] UnorderedThreadPoolEventExecutor in io.netty.util.concurrent has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/NonStickyEventExecutorGroupTest.java:[143,24] [deprecation] shutdown() in AbstractEventExecutorGroup has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/NonStickyEventExecutorGroupTest.java:[154,28] [deprecation] shutdown() in AbstractEventExecutor has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/PromiseAggregatorTest.java:[75,8] [deprecation] PromiseAggregator in io.netty.util.concurrent has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/PromiseAggregatorTest.java:[76,20] [deprecation] PromiseAggregator in io.netty.util.concurrent has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/PromiseAggregatorTest.java:[101,8] [deprecation] PromiseAggregator in io.netty.util.concurrent has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/PromiseAggregatorTest.java:[102,20] [deprecation] PromiseAggregator in io.netty.util.concurrent has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/PromiseAggregatorTest.java:[128,8] [deprecation] PromiseAggregator in io.netty.util.concurrent has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/PromiseAggregatorTest.java:[129,20] [deprecation] PromiseAggregator in io.netty.util.concurrent has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/PromiseCombinerTest.java:[61,26] [deprecation] initMocks(Object) in MockitoAnnotations has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/PromiseCombinerTest.java:[88,24] [deprecation] add(Promise) in PromiseCombiner has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/PromiseCombinerTest.java:[98,32] non-varargs call of varargs method with inexact argument type for last parameter;
+  cast to Promise for a varargs call
+  cast to Promise[] for a non-varargs call and to suppress this warning
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/PromiseCombinerTest.java:[98,24] [deprecation] addAll(Promise...) in PromiseCombiner has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/PromiseCombinerTest.java:[109,24] [deprecation] add(Promise) in PromiseCombiner has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/PromiseCombinerTest.java:[121,24] [deprecation] addAll(Promise...) in PromiseCombiner has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/PromiseCombinerTest.java:[142,16] [deprecation] addAll(Promise...) in PromiseCombiner has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/PromiseCombinerTest.java:[154,16] [deprecation] add(Promise) in PromiseCombiner has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/PromiseCombinerTest.java:[156,16] [deprecation] add(Promise) in PromiseCombiner has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/PromiseCombinerTest.java:[169,16] [deprecation] addAll(Promise...) in PromiseCombiner has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/PromiseCombinerTest.java:[183,16] [deprecation] add(Promise) in PromiseCombiner has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/PromiseCombinerTest.java:[185,16] [deprecation] add(Promise) in PromiseCombiner has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/UnorderedThreadPoolEventExecutorTest.java:[35,8] [deprecation] UnorderedThreadPoolEventExecutor in io.netty.util.concurrent has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/UnorderedThreadPoolEventExecutorTest.java:[35,56] [deprecation] UnorderedThreadPoolEventExecutor in io.netty.util.concurrent has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/UnorderedThreadPoolEventExecutorTest.java:[79,8] [deprecation] UnorderedThreadPoolEventExecutor in io.netty.util.concurrent has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/UnorderedThreadPoolEventExecutorTest.java:[79,56] [deprecation] UnorderedThreadPoolEventExecutor in io.netty.util.concurrent has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/UnorderedThreadPoolEventExecutorTest.java:[97,8] [deprecation] UnorderedThreadPoolEventExecutor in io.netty.util.concurrent has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/UnorderedThreadPoolEventExecutorTest.java:[97,56] [deprecation] UnorderedThreadPoolEventExecutor in io.netty.util.concurrent has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/UnorderedThreadPoolEventExecutorTest.java:[115,8] [deprecation] UnorderedThreadPoolEventExecutor in io.netty.util.concurrent has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/UnorderedThreadPoolEventExecutorTest.java:[115,56] [deprecation] UnorderedThreadPoolEventExecutor in io.netty.util.concurrent has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/UnorderedThreadPoolEventExecutorTest.java:[133,8] [deprecation] UnorderedThreadPoolEventExecutor in io.netty.util.concurrent has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/concurrent/UnorderedThreadPoolEventExecutorTest.java:[133,56] [deprecation] UnorderedThreadPoolEventExecutor in io.netty.util.concurrent has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/internal/ObjectCleanerTest.java:[52,8] [deprecation] ObjectCleaner in io.netty.util.internal has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/internal/ObjectCleanerTest.java:[90,8] [deprecation] ObjectCleaner in io.netty.util.internal has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/internal/ObjectCleanerTest.java:[97,8] [deprecation] ObjectCleaner in io.netty.util.internal has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/internal/ObjectCleanerTest.java:[124,8] [deprecation] ObjectCleaner in io.netty.util.internal has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/internal/ObjectCleanerTest.java:[134,40] [deprecation] ObjectCleaner in io.netty.util.internal has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/internal/ThreadExecutorMapTest.java:[36,20] [deprecation] shutdown() in AbstractEventExecutor has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/internal/ThreadLocalRandomTest.java:[30,12] [deprecation] ThreadLocalRandom in io.netty.util.internal has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/internal/logging/CommonsLoggerFactoryTest.java:[27,32] [deprecation] CommonsLoggerFactory in io.netty.util.internal.logging has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/internal/logging/CommonsLoggerFactoryTest.java:[28,37] [deprecation] CommonsLogger in io.netty.util.internal.logging has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/internal/logging/CommonsLoggerTest.java:[33,36] [deprecation] CommonsLogger in io.netty.util.internal.logging has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/internal/logging/CommonsLoggerTest.java:[45,36] [deprecation] CommonsLogger in io.netty.util.internal.logging has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/internal/logging/CommonsLoggerTest.java:[57,36] [deprecation] CommonsLogger in io.netty.util.internal.logging has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/internal/logging/CommonsLoggerTest.java:[69,36] [deprecation] CommonsLogger in io.netty.util.internal.logging has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/internal/logging/CommonsLoggerTest.java:[81,36] [deprecation] CommonsLogger in io.netty.util.internal.logging has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/internal/logging/CommonsLoggerTest.java:[91,36] [deprecation] CommonsLogger in io.netty.util.internal.logging has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/internal/logging/CommonsLoggerTest.java:[101,36] [deprecation] CommonsLogger in io.netty.util.internal.logging has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/internal/logging/CommonsLoggerTest.java:[111,36] [deprecation] CommonsLogger in io.netty.util.internal.logging has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/internal/logging/CommonsLoggerTest.java:[121,36] [deprecation] CommonsLogger in io.netty.util.internal.logging has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/internal/logging/CommonsLoggerTest.java:[131,36] [deprecation] CommonsLogger in io.netty.util.internal.logging has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/internal/logging/CommonsLoggerTest.java:[141,36] [deprecation] CommonsLogger in io.netty.util.internal.logging has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/internal/logging/CommonsLoggerTest.java:[151,36] [deprecation] CommonsLogger in io.netty.util.internal.logging has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/internal/logging/CommonsLoggerTest.java:[161,36] [deprecation] CommonsLogger in io.netty.util.internal.logging has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/internal/logging/CommonsLoggerTest.java:[171,36] [deprecation] CommonsLogger in io.netty.util.internal.logging has been deprecated
+[WARNING] /mmfs1/scratch/mjk76/ea442/promptstudy/netty-chicory/common/src/test/java/io/netty/util/internal/logging/CommonsLoggerTest.java:[181,36] [deprecation] CommonsLogger in io.netty.util.internal.logging has been deprecated
+[INFO] 
+[INFO] --- forbiddenapis:2.2:testCheck (check-forbidden-test-apis) @ netty-common ---
+[WARNING]  Parameter 'internalRuntimeForbidden' is deprecated: Use <a href="bundled-signatures.html">bundled signatures</a> {@code "jdk-non-portable"} or {@code "jdk-internal"} instead.
+[INFO] Skipping forbidden-apis checks.
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ netty-common ---
+[INFO] Tests will run in random order. To reproduce ordering use flag -Dsurefire.runOrder.random.seed=804288568064063
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running io.netty.util.concurrent.DefaultMockTickerTest
+[ERROR] Tests run: 6, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 1.415 s <<< FAILURE! -- in io.netty.util.concurrent.DefaultMockTickerTest
+[ERROR] io.netty.util.concurrent.DefaultMockTickerTest.advanceWithNegativeAmount -- Time elapsed: 0.014 s <<< ERROR!
+java.lang.VerifyError: 
+Expecting a stack map frame
+Exception Details:
+  Location:
+    io/netty/util/concurrent/ConcurrentSkipListIntObjMultimap.<clinit>()V @135: ldc_w
+  Reason:
+    Expected stackmap frame at this location.
+  Bytecode:
+    0000000: b800 f14b 1202 b800 f74c 1216 b800 f74d
+    0000010: 121c b800 f74e b800 fb99 0023 1301 01b8
+    0000020: 0103 b800 f73a 042a 1904 1301 09b2 010a
+    0000030: b801 10b6 0116 b300 dca7 0014 2a2b 1301
+    0000040: 1cb2 010a b801 10b6 0116 b300 dc2b 2c13
+    0000050: 011e b801 1fb3 005e 2d2d 1301 23b8 011f
+    0000060: b300 232d 1275 1301 24b8 011f b300 7a2c
+    0000070: 2c13 0125 b801 1fb3 0046 a700 134b bb01
+    0000080: 2859 2ab7 012a bf13 01e7 b801 ebb1     
+  Exception Handler Table:
+    bci [0, 122] => handler: 125
+  Stackmap Table:
+    full_frame(@60,{Object[#279],Object[#260],Object[#260],Object[#260]},{})
+    same_frame(@77)
+    full_frame(@125,{},{Object[#294]})
+    same_frame(@141)
+
+	at java.base/java.lang.Class.getDeclaredFields0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3297)
+	at java.base/java.lang.Class.getDeclaredFields(Class.java:2371)
+	at daikon.chicory.DaikonVariableInfo.addClassVars(DaikonVariableInfo.java:498)
+	at daikon.chicory.DaikonVariableInfo.addChildNodes(DaikonVariableInfo.java:1236)
+	at daikon.chicory.DaikonVariableInfo.addClassVars(DaikonVariableInfo.java:572)
+	at daikon.chicory.RootInfo.exit_process(RootInfo.java:79)
+	at daikon.chicory.Runtime.process_new_classes(Runtime.java:457)
+	at daikon.chicory.Runtime.enter(Runtime.java:253)
+	at io.netty.util.concurrent.DefaultMockTickerTest.<init>(DefaultMockTickerTest.java:32)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[ERROR] io.netty.util.concurrent.DefaultMockTickerTest.newMockTickerShouldReturnDefaultMockTicker -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.VerifyError: 
+Expecting a stack map frame
+Exception Details:
+  Location:
+    io/netty/util/concurrent/ConcurrentSkipListIntObjMultimap.<clinit>()V @135: ldc_w
+  Reason:
+    Expected stackmap frame at this location.
+  Bytecode:
+    0000000: b800 f14b 1202 b800 f74c 1216 b800 f74d
+    0000010: 121c b800 f74e b800 fb99 0023 1301 01b8
+    0000020: 0103 b800 f73a 042a 1904 1301 09b2 010a
+    0000030: b801 10b6 0116 b300 dca7 0014 2a2b 1301
+    0000040: 1cb2 010a b801 10b6 0116 b300 dc2b 2c13
+    0000050: 011e b801 1fb3 005e 2d2d 1301 23b8 011f
+    0000060: b300 232d 1275 1301 24b8 011f b300 7a2c
+    0000070: 2c13 0125 b801 1fb3 0046 a700 134b bb01
+    0000080: 2859 2ab7 012a bf13 01e7 b801 ebb1     
+  Exception Handler Table:
+    bci [0, 122] => handler: 125
+  Stackmap Table:
+    full_frame(@60,{Object[#279],Object[#260],Object[#260],Object[#260]},{})
+    same_frame(@77)
+    full_frame(@125,{},{Object[#294]})
+    same_frame(@141)
+
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402)
+	at java.base/java.lang.Class.getDeclaredMethod(Class.java:2673)
+	at daikon.chicory.MethodInfo.initViaReflection(MethodInfo.java:156)
+	at daikon.chicory.ClassInfo.initViaReflection(ClassInfo.java:91)
+	at daikon.chicory.Runtime.process_new_classes(Runtime.java:451)
+	at daikon.chicory.Runtime.enter(Runtime.java:253)
+	at io.netty.util.concurrent.DefaultMockTickerTest.<init>(DefaultMockTickerTest.java:32)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[INFO] Running io.netty.util.ConstantPoolTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s -- in io.netty.util.ConstantPoolTest
+[INFO] Running io.netty.util.internal.logging.CommonsLoggerFactoryTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.267 s -- in io.netty.util.internal.logging.CommonsLoggerFactoryTest
+[INFO] Running io.netty.util.concurrent.SingleThreadEventExecutorTest
+03:23:35.860 [pool-9-thread-1] WARN  i.n.u.c.SingleThreadEventExecutor - Unexpected exception from an event executor: 
+java.lang.IllegalStateException: null
+	at io.netty.util.concurrent.SingleThreadEventExecutorTest.testExceptionIsPropagatedToTerminationFuture(SingleThreadEventExecutorTest.java:641)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:786)
+	at org.junit.platform.commons.support.ReflectionSupport.invokeMethod(ReflectionSupport.java:514)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.SameThreadTimeoutInvocation.proceed(SameThreadTimeoutInvocation.java:49)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:161)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:152)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:91)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:112)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:94)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:87)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$4(TestMethodTestDescriptor.java:221)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:217)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:159)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:70)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:157)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:147)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:145)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:101)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:161)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:147)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:145)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:101)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:161)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:147)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:145)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:101)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.executeEngine(EngineExecutionOrchestrator.java:230)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.failOrExecuteEngine(EngineExecutionOrchestrator.java:204)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:172)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:101)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:64)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:150)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:63)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:109)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:91)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.junit.platform.launcher.core.InterceptingLauncher.lambda$execute$1(InterceptingLauncher.java:39)
+	at org.junit.platform.launcher.core.ClasspathAlignmentCheckingLauncherInterceptor.intercept(ClasspathAlignmentCheckingLauncherInterceptor.java:25)
+	at org.junit.platform.launcher.core.InterceptingLauncher.execute(InterceptingLauncher.java:38)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LauncherAdapter.executeWithoutCancellationToken(LauncherAdapter.java:60)
+	at org.apache.maven.surefire.junitplatform.LauncherAdapter.execute(LauncherAdapter.java:52)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:203)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:168)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:136)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+[INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.851 s -- in io.netty.util.concurrent.SingleThreadEventExecutorTest
+[INFO] Running io.netty.util.internal.PlatformDependent0Test
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in io.netty.util.internal.PlatformDependent0Test
+[INFO] Running io.netty.util.AttributeKeyTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in io.netty.util.AttributeKeyTest
+[INFO] Running io.netty.util.NettyRuntimeTests
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.408 s -- in io.netty.util.NettyRuntimeTests
+[INFO] Running io.netty.util.internal.ObjectCleanerTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.409 s -- in io.netty.util.internal.ObjectCleanerTest
+[INFO] Running io.netty.util.HashedWheelTimerTest
+[ERROR] Tests run: 14, Failures: 1, Errors: 3, Skipped: 0, Time elapsed: 17135 s <<< FAILURE! -- in io.netty.util.HashedWheelTimerTest
+[ERROR] io.netty.util.HashedWheelTimerTest.testExecutionOnTime -- Time elapsed: 16821 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Timeout + 100000 delay 670 must be 125 < 650 ==> expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:214)
+	at io.netty.util.HashedWheelTimerTest.testExecutionOnTime(HashedWheelTimerTest.java:162)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[ERROR] io.netty.util.HashedWheelTimerTest.testStopTimerCancelsPendingTasks -- Time elapsed: 75.08 s <<< ERROR!
+java.util.concurrent.TimeoutException: testStopTimerCancelsPendingTasks() timed out after 3000 milliseconds
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[ERROR] io.netty.util.HashedWheelTimerTest.testTimerShouldThrowExceptionAfterShutdownForNewTimeouts -- Time elapsed: 66.38 s <<< ERROR!
+java.util.concurrent.TimeoutException: testTimerShouldThrowExceptionAfterShutdownForNewTimeouts() timed out after 3000 milliseconds
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[ERROR] io.netty.util.HashedWheelTimerTest.testNewTimeoutShouldStopThrowingRejectedExecutionExceptionWhenExistingTimeoutIsExecuted -- Time elapsed: 25.57 s <<< ERROR!
+java.util.concurrent.TimeoutException: testNewTimeoutShouldStopThrowingRejectedExecutionExceptionWhenExistingTimeoutIsExecuted() timed out after 3000 milliseconds
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+[INFO] Running io.netty.util.internal.ThreadLocalRandomTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.12 s -- in io.netty.util.internal.ThreadLocalRandomTest
+[INFO] Running io.netty.util.internal.logging.Log4JLoggerFactoryTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.820 s -- in io.netty.util.internal.logging.Log4JLoggerFactoryTest
+[INFO] Running io.netty.util.internal.VirtualThreadCheckTest
+[WARNING] Tests run: 2, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 28.17 s -- in io.netty.util.internal.VirtualThreadCheckTest
+[INFO] Running io.netty.util.internal.logging.JdkLoggerFactoryTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.235 s -- in io.netty.util.internal.logging.JdkLoggerFactoryTest
+[INFO] Running io.netty.util.internal.MacAddressUtilTest
+[INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 97.72 s -- in io.netty.util.internal.MacAddressUtilTest
+[INFO] Running io.netty.util.internal.SWARUtilTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 252.7 s -- in io.netty.util.internal.SWARUtilTest
+[INFO] Running io.netty.util.collection.CharObjectHashMapTest
+[INFO] Tests run: 35, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 97929 s -- in io.netty.util.collection.CharObjectHashMapTest
+[INFO] Running io.netty.util.concurrent.UnorderedThreadPoolEventExecutorTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.180 s -- in io.netty.util.concurrent.UnorderedThreadPoolEventExecutorTest
+[INFO] Running io.netty.util.internal.NativeLibraryLoaderTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.165 s -- in io.netty.util.internal.NativeLibraryLoaderTest
+[INFO] Running io.netty.util.LeakPresenceDetectorTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.151 s -- in io.netty.util.LeakPresenceDetectorTest
+[INFO] Running io.netty.util.internal.LongLongHashMapTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 19667 s -- in io.netty.util.internal.LongLongHashMapTest
+[INFO] Running io.netty.util.collection.LongObjectHashMapTest
+[INFO] Tests run: 35, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 22210 s -- in io.netty.util.collection.LongObjectHashMapTest
+[INFO] Running io.netty.util.internal.OsClassifiersTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in io.netty.util.internal.OsClassifiersTest
+[INFO] Running io.netty.util.collection.ByteObjectHashMapTest
+[INFO] Tests run: 35, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4228 s -- in io.netty.util.collection.ByteObjectHashMapTest
+[INFO] Running io.netty.util.RecyclerFastThreadLocalTest
+[INFO] Tests run: 67, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 818.8 s -- in io.netty.util.RecyclerFastThreadLocalTest
+[INFO] Running io.netty.util.internal.logging.CommonsLoggerTest
+[INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.449 s -- in io.netty.util.internal.logging.CommonsLoggerTest
+[INFO] Running io.netty.util.concurrent.PromiseAggregatorTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.137 s -- in io.netty.util.concurrent.PromiseAggregatorTest
+[INFO] Running io.netty.util.DomainWildcardMappingBuilderTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s -- in io.netty.util.DomainWildcardMappingBuilderTest
+[INFO] Running io.netty.util.internal.PlatformDependentTest
+[WARNING] Tests run: 6, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 73.03 s -- in io.netty.util.internal.PlatformDependentTest
+[INFO] Running io.netty.util.internal.BoundedInputStreamTest
+[INFO] Tests run: 101, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.145 s -- in io.netty.util.internal.BoundedInputStreamTest
+[INFO] Running io.netty.util.concurrent.FastThreadLocalTest

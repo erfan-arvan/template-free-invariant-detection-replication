@@ -1,0 +1,56 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/23.0.2/bin/java
+MVN: /scratch/mjk76/ea442/apache-maven-3.9.9/bin/mvn
+######################################
+PROMPT STUDY STARTED
+Start time: 2026-09-08 01:52:41 EDT
+######################################
+>>> Building Daikon++ (once)
+======================================
+>>> STRATEGY: baseline
+>>> Start time: 2026-09-08 01:55:30 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: springReal
+>>> Start time: 2026-09-08 01:55:30 EDT
+--------------------------------------
+>>> Finished springReal (strategy=baseline)
+>>> Finish time: 2026-09-08 01:57:00 EDT
+>>> Duration: 00h:01m:30s
+>>> Duration in seconds: 90
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/baseline/springReal/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/baseline/springReal/daikonpp_registry.jsonl
+======================================
+DONE strategy: baseline
+Finish time: 2026-09-08 01:57:00 EDT
+Duration: 00h:01m:30s
+Duration in seconds: 90
+Results in: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/baseline
+======================================
+======================================
+>>> STRATEGY: fewshot
+>>> Start time: 2026-09-08 01:57:00 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: springReal
+>>> Start time: 2026-09-08 01:57:00 EDT
+--------------------------------------
+>>> Finished springReal (strategy=fewshot)
+>>> Finish time: 2026-09-08 01:58:05 EDT
+>>> Duration: 00h:01m:05s
+>>> Duration in seconds: 65
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/fewshot/springReal/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/fewshot/springReal/daikonpp_registry.jsonl
+======================================
+DONE strategy: fewshot
+Finish time: 2026-09-08 01:58:05 EDT
+Duration: 00h:01m:05s
+Duration in seconds: 65
+Results in: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/fewshot
+======================================
+######################################
+ALL STRATEGIES DONE
+Start time: 2026-09-08 01:52:41 EDT
+Finish time: 2026-09-08 01:58:05 EDT
+Total duration: 00h:05m:24s
+Total duration in seconds: 324
+######################################

@@ -1,0 +1,237 @@
+MVN: /scratch/mjk76/ea442/apache-maven-3.9.9/bin/mvn
+>>> Running Daikon++
+>>> CMD: java -jar /scratch/mjk76/ea442/daikonplusplus-token-cost/build/libs/daikonplusplus.jar --external-project --project-root /project/mjk76/ea442/promptstudy/dubbo --main-src dubbo-common/src/main/java --test-src dubbo-common/src/test/java --runner-script /scratch/mjk76/ea442/token_cost_fewshot_class_doc/dubbo_dubbo-common_run_tests.sh 5
+Picked up JAVA_TOOL_OPTIONS:  -Djava.io.tmpdir=/scratch/mjk76/ea442/token_cost_fewshot_class_doc/tmp -Djava.io.tmpdir=/scratch/mjk76/ea442/token_cost_fewshot_class_doc/tmp
+==== Daikon++ Config ====
+threads = 8
+registryPath = /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/dubbo/daikonpp_registry.jsonl
+outcomesPath = /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/dubbo/daikonpp_outcomes.jsonl
+includeBody = true
+registryReset = true
+debug = false
+keepWork = true
+noQualityFilter = false
+qualityFilterRules = {maxLength=true, alwaysTrueLiteral=true, tautologyNotXOrX=true, fullRangeComparison=true, selfComparison=false, trivialDisjunction=true, noStatements=true, noAssignment=true, forbiddenConstructs=true, requireInScopeName=false, requireResultAtExit=false, primitiveNullComparison=true, unknownIdentifier=false, parseCheck=true}
+llmTotalTimeoutSec = 180
+llmPerReqTimeoutSec = 45
+bodyMaxChars = 2000
+enabledContexts = [METHOD_BODY, SCOPE, CLASS_DOC]
+openaiModel = gpt-4.1-mini
+llmCassettesDir = /project/mjk76/ea442/promptstudy/daikonplusplus/src/test/cassettes
+disableRealLlm = false
+callSitesIndexPath = /project/mjk76/ea442/promptstudy/dubbo_callsites.json
+ioExamplesIndexPath = /project/mjk76/ea442/promptstudy/dubbo-s5_io_examples.json
+compileMainScript = /scratch/mjk76/ea442/token_cost_fewshot_class_doc/dubbo_dubbo-common_compile.sh
+compileTestScript = /scratch/mjk76/ea442/token_cost_fewshot_class_doc/dubbo_dubbo-common_compile.sh
+llmPollStepMs = 1500
+externalCompileClasspath = /project/mjk76/ea442/promptstudy/dubbo/dubbo-common/target/classes
+workDir = /scratch/mjk76/ea442/token_cost_fewshot_class_doc/daikonpp_work
+promptStrategy = fewshot
+scanIncludes = []
+llmProvider = openai
+llmLocalBackend = ollama
+llmLocalUrl = http://localhost:11434
+llmLocalModel = qwen2.5:7b
+enableTestFilter = false
+testFilterMethodBatchSize = 1
+staleCheckMinutes = 1
+maxTimeoutMinutes = 480
+autofilterMaxModifyPasses = 200
+autofilterMaxExtraPasses = 150
+llmDryRun = true
+llmPriceInputPerM = 0.4
+llmPriceOutputPerM = 1.6
+=========================
+🔥 EXEC MODE = EXTERNAL_PROJECT
+>>> LLM DRY RUN: prompts are counted, not sent; stopping after LM phase
+[DP] Using prompt strategy: fewshot
+[DP-PATHS] execMode=EXTERNAL_PROJECT
+[DP-PATHS] userProjectRoot=/project/mjk76/ea442/promptstudy/dubbo
+[DP-PATHS] mainSrcRoot=/project/mjk76/ea442/promptstudy/dubbo/dubbo-common/src/main/java
+[DP-PATHS] testSrcRoot=/project/mjk76/ea442/promptstudy/dubbo/dubbo-common/src/test/java
+>>> Scanning MAIN sources under (WORKING COPY): /project/mjk76/ea442/promptstudy/dubbo/dubbo-common/src/main/java
+>>> [Scan phase] started at 2026-10-02 19:24:55.223
+>>> [Scan phase] finished at 2026-10-02 19:24:59.669 (elapsed 4.446s)
+>>> Points — ENTRY: 4790  EXIT: 4790  TOTAL: 9580
+>>> [LM phase] started at 2026-10-02 19:24:59.709
+===== FIRST PROMPT =====
+----- SYSTEM -----
+You are a program analysis assistant.
+
+Task:
+Generate candidate invariants for a Java program point.
+
+Global rules:
+- Return ONLY JSON matching the required schema.
+- The JSON schema is:
+  {
+    "invariants": [
+      { "expression": "<Java boolean expression>" }
+    ]
+  }
+- Each invariant must be a valid Java boolean expression.
+- Expressions must be valid at the program point.
+- Use only the listed in-scope names.
+- Do not introduce new variables, helper functions, or APIs.
+- Expressions must be side-effect free.
+
+
+===== EXAMPLE 1 =====
+PROGRAM POINT: Example1 [METHOD_ENTRY]
+
+In-scope names:
+- order : Order
+- limit : int
+
+===== PROGRAM CONTEXT =====
+[Method Implementation]
+public void process(Order order, int limit) {
+  if (order.getQuantity() > limit) {
+    throw new IllegalArgumentException();
+  }
+}
+===========================
+
+Expected Output:
+{
+  "invariants": [
+    { "expression": "order != null" },
+    { "expression": "order.getQuantity() <= limit" },
+    { "expression": "order.getQuantity() >= 0" },
+    { "expression": "limit >= 0" }
+  ]
+}
+===== END EXAMPLE 1 =====
+
+===== EXAMPLE 2 =====
+PROGRAM POINT: Example2 [METHOD_ENTRY]
+
+In-scope names:
+- s : String
+- start : int
+- end : int
+
+===== PROGRAM CONTEXT =====
+[Method Implementation]
+public String sub(String s, int start, int end) {
+  if (start < 0 || end > s.length()) return "";
+  return s.substring(start, end);
+}
+===========================
+
+Expected Output:
+{
+  "invariants": [
+    { "expression": "s != null" },
+    { "expression": "start >= 0" },
+    { "expression": "end <= s.length()" },
+    { "expression": "start <= end" }
+  ]
+}
+===== END EXAMPLE 2 =====
+
+
+----- USER -----
+PROGRAM POINT: org.apache.dubbo.metadata.definition.util.JaketConfigurationUtils#isExcludedInterface(Class<?>):boolean [METHOD_ENTRY]
+
+This program point represents the state immediately BEFORE the method executes.
+Only parameters and object state are defined.
+
+In-scope names:
+- clazz : Class<?>
+
+Note:
+- These are base variables.
+- Expressions derived from them (e.g., field accesses and method calls) are allowed if valid at this program point.
+
+Constraints specific to this program point:
+- Single-line Java boolean expressions only.
+- Method calls are allowed and encouraged if callable using listed names.
+- Method calls may belong to the JDK or the project codebase.
+- Field accesses (e.g., obj.field) are allowed if accessible using listed names.
+- Do not invent methods or fields that are not available at this program point.
+- Add null checks ONLY when required for safe evaluation.
+- Do not use non-Java logical operators such as ==> or ⇒.
+- Logical implication (A ⇒ B) must be expressed as (!A || B) using standard Java boolean operators.
+- Prefer pure predicate-style method calls.
+- Avoid redundant or trivially true expressions.
+- Do NOT generate tautologies or self-comparisons (e.g., x == x, obj.method() == obj.method()).
+- Avoid semantically duplicate invariants that differ only by operand order or equivalent comparison form (e.g., a == b vs b == a, a <= b vs b >= a).
+- Do not focus solely on nullness-related invariants.
+- Prioritize invariants that capture meaningful relationships among the in-scope names and reflect the behavior of the method at this program point.
+
+===== PROGRAM CONTEXT =====
+Consider the following context when generating invariants.
+[Method Implementation]
+public static boolean isExcludedInterface(Class<?> clazz) {
+        if (includedInterfacePackages == null || includedInterfacePackages.length == 0) {
+            return false;
+        }
+
+        for (String packagePrefix : includedInterfacePackages) {
+            if (clazz.getCanonicalName().startsWith(packagePrefix)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+[Enclosing Class Documentation]
+[Class] JaketConfigurationUtils
+2015/1/27.
+
+[Field] CONFIGURATION_FILE : String
+[Field] includedInterfacePackages : String[]
+[Field] includedTypePackages : String[]
+[Field] closedTypes : String[]
+
+[Method] isExcludedInterface(Class<?>) : boolean
+
+[Method] isExcludedType(Class<?>) : boolean
+
+[Method] needAnalyzing(Class<?>) : boolean
+===========================
+
+Generate up to 5 candidate invariants that are valid at this program point.
+Return ONLY the JSON.
+
+========================
+
+>>> [LM phase] finished at 2026-10-02 19:25:26.238 (elapsed 26.529s)
+==== DRY RUN: LLM prompt token summary (nothing was sent) ====
+model / tokenizer       : gpt-4.1-mini / o200k_base
+program points in scope : 9580
+prompts built           : 9580  (METHOD_ENTRY 4790, METHOD_EXIT 4790)
+distinct prompts        : 9534  (identical system+user)
+system-prompt tokens    : 4157720
+user-prompt tokens      : 12255986
+chat framing tokens     : 105380  (11 per prompt)
+TOTAL input tokens      : 16519086
+  of distinct prompts   : 16457819
+per prompt (input)      : min 806 | mean 1724 | median 1425 | p90 2685 | p99 4874 | max 5124
+  METHOD_ENTRY          : 4790 prompts, 8023828 tokens, mean 1675
+  METHOD_EXIT           : 4790 prompts, 8495258 tokens, mean 1774
+cassettes               : /project/mjk76/ea442/promptstudy/daikonplusplus/src/test/cassettes
+  already recorded      : 9580 prompts, 16519086 tokens
+  NOT recorded (to send): 0 prompts (0 distinct), 0 tokens (distinct)
+output tokens (recorded): 2378921  (9580 recorded responses, mean 248)
+TOTAL output tokens     : 2378921
+COST (USD)              : input $6.61 (at $0.4/1M) + output $3.81 (at $1.6/1M) = $10.41
+  per program point     : $0.001087
+largest prompts:
+      5124  METHOD_EXIT  org.apache.dubbo.common.utils.StringUtils#tokenizeToList(String,char):List<String>
+      5121  METHOD_EXIT  org.apache.dubbo.common.URL#valueOf(URL,String[],String[]):URL
+      5117  METHOD_EXIT  org.apache.dubbo.common.utils.StringUtils#repeat(String,int):String
+      5099  METHOD_EXIT  org.apache.dubbo.common.URL#buildString(boolean,boolean,boolean,boolean,String):String
+      5079  METHOD_EXIT  org.apache.dubbo.common.utils.StringUtils#camelToSplitName(String,String):String
+      5071  METHOD_EXIT  org.apache.dubbo.common.utils.StringUtils#toBoolean(String):Boolean
+      5061  METHOD_EXIT  org.apache.dubbo.common.utils.StringUtils#delimitedListToStringArray(String,String,String):String[]
+      5061  METHOD_EXIT  org.apache.dubbo.common.utils.StringUtils#replace(String,String,String,int):String
+      5004  METHOD_ENTRY org.apache.dubbo.common.utils.StringUtils#tokenizeToList(String,char):List<String>
+      5002  METHOD_ENTRY org.apache.dubbo.common.URL#valueOf(URL,String[],String[]):URL
+not included: structured-output JSON schema sent with each request (input side)
+==============================================================
+>>> Per-prompt token counts: /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/dubbo/daikonpp_dry_run_tokens.tsv
+>>> LLM DRY RUN finished; injection, compilation and tests skipped.
+>>> Done.

@@ -1,0 +1,679 @@
+>>> Using JDK 25 at: /scratch/mjk76/ea442/promptstudy/jdk25
+>>> Stopping any leaked Gradle daemons from prior runs on this GRADLE_USER_HOME
+No Gradle daemons are running.
+>>> gradle compileJava (warm build, no agent)
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.7.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :buildSrc:compileJava
+> Task :buildSrc:compileGroovy NO-SOURCE
+> Task :buildSrc:pluginDescriptors
+> Task :buildSrc:processResources
+> Task :buildSrc:classes
+> Task :buildSrc:compileTestJava FROM-CACHE
+> Task :buildSrc:compileTestGroovy NO-SOURCE
+> Task :buildSrc:processTestResources NO-SOURCE
+> Task :buildSrc:testClasses UP-TO-DATE
+> Task :buildSrc:pluginUnderTestMetadata
+> Task :buildSrc:checkstyleTest
+> Task :buildSrc:checkstyleMain
+> Task :buildSrc:test
+> Task :buildSrc:validatePlugins
+> Task :buildSrc:check
+> Task :buildSrc:jar
+> Task :spring-core:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :spring-core:javapoetRepackJar
+> Task :spring-core:objenesisRepackJar
+> Task :spring-core:compileKotlin
+> Task :spring-core:compileJava
+
+[Incubating] Problems report is available at: file:///mmfs1/scratch/mjk76/ea442/promptstudy/spring-s5-chicory/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.7.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 1m 1s
+14 actionable tasks: 13 executed, 1 from cache
+Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.7.1/userguide/configuration_cache_enabling.html
+>>> gradle test (javaagent attached via init script) -- this is the actual Chicory-instrumented run
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.7.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :buildSrc:compileJava UP-TO-DATE
+> Task :buildSrc:compileGroovy NO-SOURCE
+> Task :buildSrc:pluginDescriptors UP-TO-DATE
+> Task :buildSrc:processResources UP-TO-DATE
+> Task :buildSrc:classes UP-TO-DATE
+> Task :buildSrc:checkstyleMain UP-TO-DATE
+> Task :buildSrc:compileTestJava UP-TO-DATE
+> Task :buildSrc:compileTestGroovy NO-SOURCE
+> Task :buildSrc:processTestResources NO-SOURCE
+> Task :buildSrc:testClasses UP-TO-DATE
+> Task :buildSrc:checkstyleTest UP-TO-DATE
+> Task :buildSrc:pluginUnderTestMetadata UP-TO-DATE
+> Task :buildSrc:test UP-TO-DATE
+> Task :buildSrc:validatePlugins UP-TO-DATE
+> Task :buildSrc:check UP-TO-DATE
+> Task :buildSrc:jar UP-TO-DATE
+> Task :spring-core:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :spring-core:javapoetRepackJar UP-TO-DATE
+> Task :spring-core:objenesisRepackJar UP-TO-DATE
+> Task :spring-core:compileKotlin UP-TO-DATE
+> Task :spring-core:compileJava UP-TO-DATE
+> Task :spring-core:processResources
+> Task :spring-core:classes
+> Task :spring-core:compileJava21Kotlin NO-SOURCE
+> Task :spring-core:compileJava21Java
+> Task :spring-core:compileJava24Kotlin NO-SOURCE
+> Task :spring-core:compileJava24Java
+> Task :spring-core:processJava21Resources NO-SOURCE
+> Task :spring-core:java21Classes
+> Task :spring-core:processJava24Resources NO-SOURCE
+> Task :spring-core:java24Classes
+> Task :spring-core:jar
+> Task :spring-core:compileTestFixturesKotlin NO-SOURCE
+> Task :spring-core:compileTestFixturesJava
+> Task :spring-core:processTestFixturesResources NO-SOURCE
+> Task :spring-core:testFixturesClasses
+> Task :spring-core:testFixturesJar
+> Task :spring-core:processTestResources
+> Task :spring-core:compileTestKotlin
+> Task :spring-core:compileTestJava
+> Task :spring-core:testClasses
+
+> Task :spring-core:test
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9
+FATAL ERROR in native method: processing of -javaagent failed, processJavaStart failed
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa4da7e]  JavaThread::print_jni_stack()+0xfe
+V  [libjvm.so+0xaf1296]  jni_FatalError+0x76
+V  [libjvm.so+0xc6adfc]  JvmtiExport::post_vm_initialized()+0x3dc
+V  [libjvm.so+0x1219898]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x928
+V  [libjvm.so+0xaf1aaf]  JNI_CreateJavaVM+0x4f
+C  [libjli.so+0xa9df]  JavaMain+0x8f
+C  [libjli.so+0xee09]  ThreadJavaMain+0x9

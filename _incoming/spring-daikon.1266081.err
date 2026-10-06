@@ -1,0 +1,28 @@
+Exception in thread "main" java.lang.Error: Error while processing trace file /scratch/mjk76/ea442/promptstudy/spring-full-chicory-out/1259757/spring-full.dtrace
+	at daikon.FileIO.read_data_trace_files(FileIO.java:1057)
+	at daikon.FileIO.read_data_trace_files(FileIO.java:1026)
+	at daikon.Daikon.process_data(Daikon.java:2329)
+	at daikon.Daikon.mainHelper(Daikon.java:805)
+	at daikon.Daikon.main(Daikon.java:680)
+Caused by: daikon.Daikon$UserError: Cannot invoke "daikon.VarInfoName$Elements.repr()" because "this.sequence" is null at line 773572 in file /scratch/mjk76/ea442/promptstudy/spring-full-chicory-out/1259757/spring-full.dtrace
+	at daikon.FileIO.decl_error(FileIO.java:3134)
+	at daikon.FileIO.read_data_trace_record(FileIO.java:1704)
+	at daikon.FileIO.read_data_trace_file(FileIO.java:1560)
+	at daikon.FileIO.read_data_trace_files(FileIO.java:1044)
+	... 4 more
+Caused by: java.lang.NullPointerException: Cannot invoke "daikon.VarInfoName$Elements.repr()" because "this.sequence" is null
+	at daikon.VarInfoName$Subscript.repr_impl(VarInfoName.java:2131)
+	at daikon.VarInfoName.repr(VarInfoName.java:431)
+	at daikon.VarInfoName.hashCode(VarInfoName.java:637)
+	at java.base/java.util.WeakHashMap.hash(WeakHashMap.java:303)
+	at java.base/java.util.WeakHashMap.get(WeakHashMap.java:402)
+	at daikon.VarInfoName.intern(VarInfoName.java:455)
+	at daikon.VarInfoName.applySubscript(VarInfoName.java:2092)
+	at daikon.VarInfo.make_subscript(VarInfo.java:4205)
+	at daikon.derive.binary.SequenceScalarSubscript.makeVarInfo(SequenceScalarSubscript.java:103)
+	at daikon.derive.Derivation.getVarInfo(Derivation.java:85)
+	at daikon.PptTopLevel.derive(PptTopLevel.java:879)
+	at daikon.PptTopLevel.create_derived_variables(PptTopLevel.java:1521)
+	at daikon.Daikon.init_ppt(Daikon.java:1840)
+	at daikon.FileIO.read_data_trace_record(FileIO.java:1702)
+	... 6 more

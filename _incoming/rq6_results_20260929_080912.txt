@@ -1,0 +1,100 @@
+====================================================================
+DAIKON SIDE (Chicory + daikon.Daikon), 6 benchmark projects
+====================================================================
+NOTE: Job IDs and sizes below are the ones confirmed this session.
+Several full-run trace directories were already deleted (logged in
+deleted-trace-sizes-20260927.txt) so their size is hardcoded, not
+re-measured live. If you re-trace any project, update the job IDs
+below accordingly.
+
+--- apollo (full) ---
+  chicory job=1260710 elapsed=87s ; daikon job=1266079 elapsed=399s
+  TOTAL TIME = 486s (8.10 min)
+  chicory size = 2.3G ; daikon output size = 270M
+--- apollo (s5) ---
+  no completed s5 daikon run recorded for apollo
+
+--- dubbo (full) ---
+  chicory: TIMEOUT / never completed (see deleted-trace log for last attempt)
+  daikon job=1294973 elapsed=248825s (4147.08 min) -- FAILED (check .err for exact error)
+  chicory size = 280G ; daikon output = none (failed, no usable output)
+--- dubbo (s5) ---
+  chicory job=1292749 elapsed=779s ; daikon job=1295049 elapsed=656s
+  TOTAL TIME = 1435s (23.92 min)
+  chicory size = 1.1G ; daikon output size = 245M
+
+--- netty (full) ---
+  chicory job=1295018 elapsed=215275s (COMPLETED)
+  daikon job=1350673 elapsed=37666s (627.77 min) -- FAILED (check .err for exact error)
+  chicory size = 2300G ; daikon output = none (failed, no usable output)
+--- netty (s5) ---
+  chicory job=1286082 elapsed=92909s ; daikon job=1295032 elapsed=73s
+  TOTAL TIME = 92982s (1549.70 min)
+  chicory size = 704M ; daikon output size = 75M
+
+--- hudi (full) ---
+  chicory job=1260713 elapsed=1330s ; daikon job=1266273 elapsed=297s
+  TOTAL TIME = 1627s (27.12 min)
+  chicory size = 683G ; daikon output size = 304M
+--- hudi (s5) ---
+  no completed s5 daikon run recorded for hudi
+
+--- libgdx (full) ---
+  chicory: TIMEOUT at 3 days, never completed (partial trace 1900G on disk before deletion)
+  daikon: never ran to completion on this project's full trace
+--- libgdx (s5) ---
+  chicory job=1281653 elapsed=15070s ; daikon job=1292486 elapsed=5964s
+  TOTAL TIME = 21034s (350.57 min)
+  chicory size = n/a (dir not found) ; daikon output size = 324M
+
+--- spring (full) ---
+  chicory job=1286325 elapsed=119s ; daikon job=1286328 elapsed=12s
+  TOTAL TIME = 131s (2.18 min)
+  chicory size = 2.2G ; daikon output size = 6.9M
+--- spring (s5) ---
+  no completed s5 daikon run recorded for spring
+
+====================================================================
+OCA (daikonplusplus) SIDE, 6 benchmark projects
+====================================================================
+Source: resultsOfContextStudyFewshot/class_doc/<project>/run.log
+
+--- apollo ---
+  start=2026-09-15 06:21:17  end=2026-09-15 06:24:08
+  TOTAL TIME = 171s (2.85 min)
+  working copy = /scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260915-062113
+  working copy size = 382M ; class_doc output size = 2.7M
+
+--- dubbo ---
+  start=2026-09-10 03:01:54  end=2026-09-10 05:11:47
+  TOTAL TIME = 7793s (129.88 min)
+  working copy = /scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260910-030149
+  working copy size = 786M ; class_doc output size = 17M
+
+--- hudi ---
+  start=2026-09-10 06:12:17  end=2026-09-10 06:23:36
+  TOTAL TIME = 679s (11.32 min)
+  working copy = /scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260910-061155
+  working copy size = 19G ; class_doc output size = 1.3M
+
+--- libgdx ---
+  start=2026-09-10 08:01:34  end=2026-09-10 09:24:33
+  TOTAL TIME = 4979s (82.98 min)
+  working copy = /scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260910-080036
+  working copy size = 2.8G ; class_doc output size = 8.2M
+
+--- netty ---
+  start=2026-09-10 05:11:54  end=2026-09-10 06:11:54
+  TOTAL TIME = 3600s (60.00 min)
+  working copy = /scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260910-051148
+  working copy size = 746M ; class_doc output size = 5.8M
+
+--- spring ---
+  start=2026-09-10 06:29:50  end=2026-09-10 08:00:35
+  TOTAL TIME = 5445s (90.75 min)
+  working copy = /scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260910-062933
+  working copy size = 2.6G ; class_doc output size = 23M
+
+====================================================================
+Results written to: rq6_results_20260929_080912.txt
+====================================================================

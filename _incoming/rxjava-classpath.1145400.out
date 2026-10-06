@@ -1,0 +1,5 @@
+DP_CLASSPATH_BEGIN
+
+DP_CLASSPATH_END
+>>> Done. Extract the classpath from this job's .out file with:
+    sed -n '/DP_CLASSPATH_BEGIN/,/DP_CLASSPATH_END/p' rxjava-classpath.<JOBID>.out | sed '1d;$d' > rxjava-cp.txt

@@ -1,0 +1,30 @@
+>>> lines 46759620-46759645 (around the reported error)
+this
+1527392311
+1
+this.indexedVariables
+1597355918
+1
+this.indexedVariables.getClass().getName()
+"java.lang.Object[]"
+1
+this.indexedVariables[..]
+org.apache.dubbo.common.threadlocal.InternalThreadLocalTest$7.run():::EXIT279
+this_invocation_nonce
+705042815
+this
+159970517
+1
+this.val$throwable
+373196456
+1
+org.apache.dubbo.common.threadlocal.InternalThreadLocalTest.this
+445428905
+1
+org.apache.dubbo.common.threadlocal.InternalThreadLocalTest.logger
+436225037
+1
+org.apache.dubbo.common.threadlocal.InternalThreadLocalTest.logger.getClass().getName()
+
+>>> total line count in file
+47629850

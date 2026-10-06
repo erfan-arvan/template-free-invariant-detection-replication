@@ -1,0 +1,71 @@
+Host: n0006
+Start time: Tue Sep 15 07:27:17 AM EDT 2026
+Python: /usr/bin/python
+Python 3.9.25
+Working directory: /mmfs1/project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot
+Created: /mmfs1/project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/context_study_results.csv
+Created: /mmfs1/project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/context_study_results_compact.csv
+Context configurations: 5
+Projects: apollo, dubbo, hudi, libgdx, netty, spring
+
+Observed-held totals by context configuration across all projects:
+  1. class_doc: 20539
+  2. call_site: 19161
+  3. io_examples: 18982
+  4. type_doc: 18417
+  5. method_javadoc: 18395
+
+Best context configuration across all projects: class_doc (20539)
+
+Observed-held rankings per project:
+
+apollo:
+  1. call_site: 1554
+  2. io_examples: 1548
+  3. class_doc: 1543
+  4. method_javadoc: 1401
+  5. type_doc: 1396
+  Best for apollo: call_site (1554)
+
+dubbo:
+  1. call_site: 9414
+  2. class_doc: 9390
+  3. type_doc: 9067
+  4. method_javadoc: 9045
+  5. io_examples: 8868
+  Best for dubbo: call_site (9414)
+
+hudi:
+  1. io_examples: 333
+  2. class_doc: 332
+  3. method_javadoc: 262
+  4. type_doc: 257
+  5. call_site: 255
+  Best for hudi: io_examples (333)
+
+libgdx:
+  1. class_doc: 1819
+  2. io_examples: 1046
+  3. call_site: 941
+  4. type_doc: 751
+  5. method_javadoc: 577
+  Best for libgdx: class_doc (1819)
+
+netty:
+  1. class_doc: 1021
+  2. type_doc: 908
+  3. method_javadoc: 880
+  4. io_examples: 872
+  5. call_site: 824
+  Best for netty: class_doc (1021)
+
+spring:
+  1. class_doc: 6434
+  2. io_examples: 6315
+  3. method_javadoc: 6230
+  4. call_site: 6173
+  5. type_doc: 6038
+  Best for spring: class_doc (6434)
+Created: /mmfs1/project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/context_study_results.csv
+Created: /mmfs1/project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/context_study_results_compact.csv
+End time: Tue Sep 15 07:27:19 AM EDT 2026

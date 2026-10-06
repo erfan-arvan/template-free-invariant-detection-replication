@@ -1,0 +1,67 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/23.0.2/bin/java
+MVN: /scratch/mjk76/ea442/apache-maven-3.9.9/bin/mvn
+######################################
+CONTEXT STUDY STARTED
+Prompt strategy (fixed): baseline
+Start time: 2026-09-07 17:32:57 EDT
+######################################
+>>> Building Daikon++ (once)
+======================================
+>>> CONTEXT CONFIG: call_site
+>>> DP_CONTEXTS: METHOD_BODY,SCOPE, CALL_SITE
+>>> Start time: 2026-09-07 17:33:27 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: apollo
+>>> Start time: 2026-09-07 17:33:27 EDT
+--------------------------------------
+>>> Finished apollo (context_config=call_site)
+>>> Finish time: 2026-09-07 17:41:46 EDT
+>>> Duration: 00h:08m:19s
+>>> Duration in seconds: 499
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/call_site/apollo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/call_site/apollo/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: dubbo
+>>> Start time: 2026-09-07 17:41:46 EDT
+--------------------------------------
+>>> Finished dubbo (context_config=call_site)
+>>> Finish time: 2026-09-07 18:12:27 EDT
+>>> Duration: 00h:30m:41s
+>>> Duration in seconds: 1841
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/call_site/dubbo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/call_site/dubbo/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: netty
+>>> Start time: 2026-09-07 18:12:27 EDT
+--------------------------------------
+>>> Finished netty (context_config=call_site)
+>>> Finish time: 2026-09-07 18:31:50 EDT
+>>> Duration: 00h:19m:23s
+>>> Duration in seconds: 1163
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/call_site/netty/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/call_site/netty/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: spring
+>>> Start time: 2026-09-07 18:31:50 EDT
+--------------------------------------
+>>> Finished spring (context_config=call_site)
+>>> Finish time: 2026-09-07 18:54:09 EDT
+>>> Duration: 00h:22m:19s
+>>> Duration in seconds: 1339
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/call_site/spring/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/call_site/spring/daikonpp_registry.jsonl
+======================================
+DONE context config: call_site
+Finish time: 2026-09-07 18:54:09 EDT
+Duration: 01h:20m:42s
+Duration in seconds: 4842
+Results in: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/call_site
+======================================
+######################################
+ALL CONTEXT CONFIGS DONE
+Start time: 2026-09-07 17:32:57 EDT
+Finish time: 2026-09-07 18:54:09 EDT
+Total duration: 01h:21m:12s
+Total duration in seconds: 4872
+######################################

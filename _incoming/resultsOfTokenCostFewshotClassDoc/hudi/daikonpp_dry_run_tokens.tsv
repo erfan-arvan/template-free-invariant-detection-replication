@@ -1,0 +1,427 @@
+kind	element	cassette_key	system_tokens	user_tokens	input_tokens	output_tokens
+METHOD_EXIT	org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#initRegistry():void	9ed648d96cf7610bc66d	455	879	1345	307
+METHOD_EXIT	org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#create(StorageConfiguration<?>,HoodieWriteConfig,HoodieFailedWritesCleaningPolicy,HoodieEngineContext,Option<String>):HoodieTableMetadataWriter	3fd16e99d06820e1731f	455	1036	1502	197
+METHOD_EXIT	org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#updateColumnsToIndexWithColStats(List<String>):void	477d61dd675dd8bdc1a1	455	868	1334	192
+METHOD_ENTRY	org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#create(StorageConfiguration<?>,HoodieWriteConfig,HoodieEngineContext,Option<String>):HoodieTableMetadataWriter	73aa62f5d6c968ab8ddf	413	924	1348	251
+METHOD_EXIT	org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#create(StorageConfiguration<?>,HoodieWriteConfig,HoodieEngineContext,Option<String>):HoodieTableMetadataWriter	6862a1f714aeca581b1d	455	1004	1470	328
+METHOD_ENTRY	org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#initRegistry():void	25a8ea85c79acf746be6	413	868	1292	5
+METHOD_ENTRY	org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#create(StorageConfiguration<?>,HoodieWriteConfig,HoodieFailedWritesCleaningPolicy,HoodieEngineContext,Option<String>):HoodieTableMetadataWriter	6a6a63914a6890742ea4	413	956	1380	206
+METHOD_ENTRY	org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#updateColumnsToIndexWithColStats(List<String>):void	9dccbf973c5713f14fba	413	857	1281	222
+METHOD_ENTRY	org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#commit(String,Map<String, HoodieData<HoodieRecord>>):void	79790142686dbebedec1	413	882	1306	268
+METHOD_EXIT	org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#commit(String,Map<String, HoodieData<HoodieRecord>>):void	4439f0575b6b66da0235	455	893	1359	300
+METHOD_EXIT	org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#convertHoodieDataToEngineSpecificData(HoodieData<HoodieRecord>):List<HoodieRecord>	bf7a8b0703b32d8fafba	455	958	1424	270
+METHOD_ENTRY	org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#convertHoodieDataToEngineSpecificData(HoodieData<HoodieRecord>):List<HoodieRecord>	5f9e47dad13acf2f8fb2	413	877	1301	219
+METHOD_ENTRY	org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#convertEngineSpecificDataToHoodieData(List<WriteStatus>):HoodieData<WriteStatus>	ea7684c4c6b44efaa5c3	413	870	1294	152
+METHOD_EXIT	org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#bulkInsertAndCommit(BaseHoodieWriteClient<?, List<HoodieRecord>, ?, List<WriteStatus>>,String,List<HoodieRecord>,Option<BulkInsertPartitioner>):void	5244a1e309acf158f0a3	455	1012	1478	311
+METHOD_ENTRY	org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#bulkCommit(String,String,HoodieData<HoodieRecord>,MetadataTableFileGroupIndexParser):void	4b22c44a83ed38da1b35	413	924	1348	130
+METHOD_EXIT	org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#convertEngineSpecificDataToHoodieData(List<WriteStatus>):HoodieData<WriteStatus>	0b8da6f2799fe3ad6047	455	951	1417	242
+METHOD_ENTRY	org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#upsertAndCommit(BaseHoodieWriteClient<?, List<HoodieRecord>, ?, List<WriteStatus>>,String,List<HoodieRecord>):void	4ac44545b77737205960	413	963	1387	290
+METHOD_EXIT	org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#bulkCommit(String,String,HoodieData<HoodieRecord>,MetadataTableFileGroupIndexParser):void	726ebd680dc12eef5446	455	935	1401	286
+METHOD_ENTRY	org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#upsertAndCommit(BaseHoodieWriteClient<?, List<HoodieRecord>, ?, List<WriteStatus>>,String,List<HoodieRecord>,List<HoodieFileGroupId>):void	a8c67e2d803bd4fdf7fe	413	976	1400	160
+METHOD_ENTRY	org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#initializeWriteClient():BaseHoodieWriteClient<?, List<HoodieRecord>, ?, List<WriteStatus>>	a32ceeb69147803d7354	413	873	1297	5
+METHOD_EXIT	org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#upsertAndCommit(BaseHoodieWriteClient<?, List<HoodieRecord>, ?, List<WriteStatus>>,String,List<HoodieRecord>,List<HoodieFileGroupId>):void	6614360c37e138619c95	455	987	1453	297
+METHOD_ENTRY	org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#bulkInsertAndCommit(BaseHoodieWriteClient<?, List<HoodieRecord>, ?, List<WriteStatus>>,String,List<HoodieRecord>,Option<BulkInsertPartitioner>):void	f291f5c6ddc0be7d043e	413	1001	1425	211
+METHOD_ENTRY	org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#deletePartitions(String,List<MetadataPartitionType>):void	c292744a06d3abc69d24	413	870	1294	258
+METHOD_EXIT	org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#deletePartitions(String,List<MetadataPartitionType>):void	23fc94da133bb12f97fe	455	881	1347	272
+METHOD_EXIT	org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#preWrite(String):void	450be8dafef4915447f6	455	867	1333	284
+METHOD_EXIT	org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#upsertAndCommit(BaseHoodieWriteClient<?, List<HoodieRecord>, ?, List<WriteStatus>>,String,List<HoodieRecord>):void	46d1b25c9d1f58834494	455	974	1440	277
+METHOD_ENTRY	org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#preWrite(String):void	91ed32a3321a0f4a2f75	413	856	1280	161
+METHOD_ENTRY	org.apache.hudi.metadata.JavaHoodieMetadataBulkInsertPartitioner#repartitionRecords(List<HoodieRecord<T>>,int):List<HoodieRecord<T>>	1be2b7d55bacd8e84f68	413	608	1032	283
+METHOD_EXIT	org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#getEngineType():EngineType	a37b885360234ea945c9	455	906	1372	47
+METHOD_ENTRY	org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#getExpressionIndexRecords(List<Pair<String, Pair<String, Long>>>,HoodieIndexDefinition,HoodieTableMetaClient,int,HoodieSchema,HoodieSchema,StorageConfiguration<?>,String):HoodieData<HoodieRecord>	c2c4956a47dcbaf25fda	413	1015	1439	206
+METHOD_EXIT	org.apache.hudi.metadata.JavaHoodieMetadataBulkInsertPartitioner#arePartitionRecordsSorted():boolean	294fabfdf2fba68d7ce9	455	583	1049	44
+METHOD_ENTRY	org.apache.hudi.metadata.JavaHoodieMetadataBulkInsertPartitioner#getFileIdPfx(int):String	5b0c0fe8251c73a4cac7	413	538	962	254
+METHOD_EXIT	org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#initializeWriteClient():BaseHoodieWriteClient<?, List<HoodieRecord>, ?, List<WriteStatus>>	5d13cd5f3809c6910394	455	964	1430	259
+METHOD_EXIT	org.apache.hudi.metadata.JavaHoodieMetadataBulkInsertPartitioner#repartitionRecords(List<HoodieRecord<T>>,int):List<HoodieRecord<T>>	42a3c6ffbb75b236be3f	455	690	1156	313
+METHOD_ENTRY	org.apache.hudi.metadata.JavaHoodieMetadataBulkInsertPartitioner#arePartitionRecordsSorted():boolean	bb17e395d7f1cc832f9a	413	509	933	98
+METHOD_ENTRY	org.apache.hudi.client.clustering.run.strategy.JavaSortAndSizeExecutionStrategy#performClusteringWithRecordList(List<HoodieRecord<T>>,int,String,Map<String, String>,HoodieSchema,List<HoodieFileGroupId>,boolean):List<WriteStatus>	bf59ea84a7a6ba780342	413	801	1225	264
+METHOD_EXIT	org.apache.hudi.client.clustering.run.strategy.JavaSortAndSizeExecutionStrategy#performClusteringWithRecordList(List<HoodieRecord<T>>,int,String,Map<String, String>,HoodieSchema,List<HoodieFileGroupId>,boolean):List<WriteStatus>	c9096e5aeffa0700e144	455	881	1347	334
+METHOD_ENTRY	org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#getEngineType():EngineType	d26c9c978c4f5ae5d52a	413	831	1255	58
+METHOD_EXIT	org.apache.hudi.metadata.JavaHoodieMetadataBulkInsertPartitioner#getFileIdPfx(int):String	fec3fa0f2c976e085d51	455	615	1081	230
+METHOD_EXIT	org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#getExpressionIndexRecords(List<Pair<String, Pair<String, Long>>>,HoodieIndexDefinition,HoodieTableMetaClient,int,HoodieSchema,HoodieSchema,StorageConfiguration<?>,String):HoodieData<HoodieRecord>	4feed6ac7b5627000fe5	455	1097	1563	264
+METHOD_ENTRY	org.apache.hudi.client.clustering.run.strategy.JavaExecutionStrategy#runClusteringForGroup(HoodieClusteringGroup,Map<String, String>,boolean,String):List<WriteStatus>	c65be9d59c2a4f9f3b65	413	995	1419	300
+METHOD_EXIT	org.apache.hudi.client.clustering.run.strategy.JavaExecutionStrategy#getPartitioner(Map<String, String>,HoodieSchema):BulkInsertPartitioner<List<HoodieRecord<T>>>	31b525cbbbdb777f396b	455	1000	1466	320
+METHOD_ENTRY	org.apache.hudi.client.clustering.plan.strategy.JavaSizeBasedClusteringPlanStrategy#buildClusteringGroupsForPartition(String,List<FileSlice>):Pair<Stream<HoodieClusteringGroup>, Boolean>	c9deb2ceb1fa616b5b08	413	574	998	239
+METHOD_EXIT	org.apache.hudi.client.clustering.plan.strategy.JavaSizeBasedClusteringPlanStrategy#buildClusteringGroupsForPartition(String,List<FileSlice>):Pair<Stream<HoodieClusteringGroup>, Boolean>	86094d3ad3b45e122661	455	661	1127	258
+METHOD_ENTRY	org.apache.hudi.client.clustering.run.strategy.JavaExecutionStrategy#getPartitioner(Map<String, String>,HoodieSchema):BulkInsertPartitioner<List<HoodieRecord<T>>>	440b521da88c5f73d105	413	913	1337	344
+METHOD_ENTRY	org.apache.hudi.client.clustering.run.strategy.JavaExecutionStrategy#readRecordsForGroup(HoodieClusteringGroup,String):List<HoodieRecord<T>>	2e3a219267e749b27622	413	1036	1460	230
+METHOD_EXIT	org.apache.hudi.client.clustering.run.strategy.JavaExecutionStrategy#runClusteringForGroup(HoodieClusteringGroup,Map<String, String>,boolean,String):List<WriteStatus>	e75556e26c1f79584416	455	1075	1541	202
+METHOD_ENTRY	org.apache.hudi.client.clustering.plan.strategy.JavaSizeBasedClusteringPlanStrategy#getStrategyParams():Map<String, String>	d317e8fce884874d5515	413	572	996	5
+METHOD_EXIT	org.apache.hudi.client.clustering.plan.strategy.JavaSizeBasedClusteringPlanStrategy#getStrategyParams():Map<String, String>	1b299bd7bc00b242ef50	455	649	1115	293
+METHOD_EXIT	org.apache.hudi.client.clustering.run.strategy.JavaExecutionStrategy#readRecordsForGroup(HoodieClusteringGroup,String):List<HoodieRecord<T>>	9ebdb127e0f23f905ddf	455	1118	1584	274
+METHOD_ENTRY	org.apache.hudi.client.clustering.run.strategy.JavaExecutionStrategy#performClustering(HoodieClusteringPlan,HoodieSchema,String):HoodieWriteMetadata<HoodieData<WriteStatus>>	3e80967ff0bef1146cb0	413	979	1403	246
+METHOD_EXIT	org.apache.hudi.client.clustering.run.strategy.JavaExecutionStrategy#performClustering(HoodieClusteringPlan,HoodieSchema,String):HoodieWriteMetadata<HoodieData<WriteStatus>>	76935ab1fc4248a3fed8	455	1065	1531	256
+METHOD_ENTRY	org.apache.hudi.client.clustering.plan.strategy.JavaSizeBasedClusteringPlanStrategy#getFileSlicesEligibleForClustering(String):Stream<FileSlice>	480e4645a2f6066f4222	413	593	1017	198
+METHOD_EXIT	org.apache.hudi.client.HoodieJavaWriteClient#updateColumnsToIndexWithColStats(HoodieTableMetaClient,List<String>):void	412c8e85a629dd7dadf2	455	891	1357	239
+METHOD_EXIT	org.apache.hudi.client.clustering.plan.strategy.JavaSizeBasedClusteringPlanStrategy#getFileSlicesEligibleForClustering(String):Stream<FileSlice>	5a87d4e9330dc111927f	455	672	1138	329
+METHOD_ENTRY	org.apache.hudi.client.HoodieJavaWriteClient#filterExists(List<HoodieRecord<T>>):List<HoodieRecord<T>>	358397c9c389e0f5da4a	413	995	1419	271
+METHOD_ENTRY	org.apache.hudi.client.HoodieJavaWriteClient#updateColumnsToIndexWithColStats(HoodieTableMetaClient,List<String>):void	1467fb17f66a82428406	413	880	1304	202
+METHOD_EXIT	org.apache.hudi.client.HoodieJavaWriteClient#commit(String,List<WriteStatus>,Option<Map<String, String>>,String,Map<String, List<String>>,Option<BiConsumer<HoodieTableMetaClient, HoodieCommitMetadata>>,Option<WriteStatusValidator>):boolean	4bf94d986ba833ca13b4	455	1152	1618	303
+METHOD_EXIT	org.apache.hudi.client.HoodieJavaWriteClient#createTable(HoodieWriteConfig):HoodieTable	476bbcb754f1760942e4	455	938	1404	282
+METHOD_ENTRY	org.apache.hudi.client.HoodieJavaWriteClient#createIndex(HoodieWriteConfig):HoodieIndex	80dbcb2fd002cd5258be	413	860	1284	268
+METHOD_EXIT	org.apache.hudi.client.HoodieJavaWriteClient#filterExists(List<HoodieRecord<T>>):List<HoodieRecord<T>>	21f1901931937614f6de	455	1077	1543	307
+METHOD_ENTRY	org.apache.hudi.client.HoodieJavaWriteClient#commit(String,List<WriteStatus>,Option<Map<String, String>>,String,Map<String, List<String>>,Option<BiConsumer<HoodieTableMetaClient, HoodieCommitMetadata>>,Option<WriteStatusValidator>):boolean	115ba781bf4466bbe741	413	1075	1499	203
+METHOD_EXIT	org.apache.hudi.client.HoodieJavaWriteClient#createIndex(HoodieWriteConfig):HoodieIndex	005a3c871f8595edd702	455	938	1404	275
+METHOD_ENTRY	org.apache.hudi.client.HoodieJavaWriteClient#createTable(HoodieWriteConfig,HoodieTableMetaClient):HoodieTable	0ef5f4c3b16a29cc9324	413	885	1309	275
+METHOD_EXIT	org.apache.hudi.client.HoodieJavaWriteClient#createTable(HoodieWriteConfig,HoodieTableMetaClient):HoodieTable	579873ef67b877a07f20	455	963	1429	253
+METHOD_ENTRY	org.apache.hudi.client.HoodieJavaWriteClient#upsert(List<HoodieRecord<T>>,String):List<WriteStatus>	d0b691af221776522eb9	413	1018	1442	213
+METHOD_EXIT	org.apache.hudi.client.HoodieJavaWriteClient#upsertPreppedRecords(List<HoodieRecord<T>>,String):List<WriteStatus>	46deb6a78e28cb98d426	455	1084	1550	298
+METHOD_EXIT	org.apache.hudi.client.HoodieJavaWriteClient#insert(List<HoodieRecord<T>>,String):List<WriteStatus>	74327f77a04175370871	455	1092	1558	254
+METHOD_ENTRY	org.apache.hudi.client.HoodieJavaWriteClient#insertPreppedRecords(List<HoodieRecord<T>>,String):List<WriteStatus>	280bdea275af0b4548fe	413	998	1422	300
+METHOD_EXIT	org.apache.hudi.client.HoodieJavaWriteClient#insertPreppedRecords(List<HoodieRecord<T>>,String):List<WriteStatus>	5f274aadd1f7d6447afa	455	1078	1544	302
+METHOD_EXIT	org.apache.hudi.client.HoodieJavaWriteClient#upsert(List<HoodieRecord<T>>,String):List<WriteStatus>	26df5a6f4bd9308e562a	455	1098	1564	330
+METHOD_ENTRY	org.apache.hudi.client.HoodieJavaWriteClient#bulkInsert(List<HoodieRecord<T>>,String):List<WriteStatus>	81c07fc2f5ce9c0db377	413	882	1306	210
+METHOD_ENTRY	org.apache.hudi.client.HoodieJavaWriteClient#upsertPreppedRecords(List<HoodieRecord<T>>,String):List<WriteStatus>	b509dd087db4a9ff90de	413	1004	1428	295
+METHOD_EXIT	org.apache.hudi.client.HoodieJavaWriteClient#bulkInsert(List<HoodieRecord<T>>,String):List<WriteStatus>	d882d5c38aaa27bae8fd	455	962	1428	295
+METHOD_ENTRY	org.apache.hudi.client.HoodieJavaWriteClient#insert(List<HoodieRecord<T>>,String):List<WriteStatus>	2ab47b55df0549872371	413	1012	1436	249
+METHOD_ENTRY	org.apache.hudi.client.HoodieJavaWriteClient#createTable(HoodieWriteConfig):HoodieTable	3acb028feb079c77392e	413	860	1284	218
+METHOD_ENTRY	org.apache.hudi.client.HoodieJavaWriteClient#bulkInsert(List<HoodieRecord<T>>,String,Option<BulkInsertPartitioner>):List<WriteStatus>	28366474586935e2e65a	413	1027	1451	276
+METHOD_EXIT	org.apache.hudi.client.HoodieJavaWriteClient#bulkInsert(List<HoodieRecord<T>>,String,Option<BulkInsertPartitioner>):List<WriteStatus>	986827e99277051fcaf7	455	1107	1573	274
+METHOD_EXIT	org.apache.hudi.client.HoodieJavaWriteClient#transitionInflight(String):void	a0025a7f106b5f0276d7	455	908	1374	307
+METHOD_ENTRY	org.apache.hudi.client.HoodieJavaWriteClient#transitionInflight(String):void	7c0054f6bb5eca5b1ca4	413	897	1321	181
+METHOD_EXIT	org.apache.hudi.client.HoodieJavaWriteClient#deletePrepped(List<HoodieRecord<T>>,String):List<WriteStatus>	0d5186d5d08488bae3b9	455	1068	1534	291
+METHOD_ENTRY	org.apache.hudi.client.HoodieJavaWriteClient#initMetadataTable(Option<String>,HoodieTableMetaClient):void	6766cc9875925dfc468a	413	924	1348	276
+METHOD_ENTRY	org.apache.hudi.client.HoodieJavaWriteClient#deletePrepped(List<HoodieRecord<T>>,String):List<WriteStatus>	f2112d7647c731093d59	413	988	1412	269
+METHOD_EXIT	org.apache.hudi.client.HoodieJavaWriteClient#bulkInsertPreppedRecords(List<HoodieRecord<T>>,String,Option<BulkInsertPartitioner>):List<WriteStatus>	38a0ef25f1141403631e	455	1123	1589	275
+METHOD_EXIT	org.apache.hudi.client.HoodieJavaWriteClient#initMetadataTable(Option<String>,HoodieTableMetaClient):void	8bb26cc401343cdecd15	455	935	1401	304
+METHOD_ENTRY	org.apache.hudi.client.HoodieJavaTableServiceClient#updateColumnsToIndexWithColStats(HoodieTableMetaClient,List<String>):void	843915efa7aea9b47db2	413	558	982	268
+METHOD_EXIT	org.apache.hudi.client.HoodieJavaWriteClient#delete(List<HoodieKey>,String):List<WriteStatus>	c52c641d82b42abbb56c	455	1034	1500	301
+METHOD_ENTRY	org.apache.hudi.client.HoodieJavaWriteClient#initializeMetadataTable(Option<String>,HoodieTableMetaClient):void	1236d643d8e8b1e7480c	413	983	1407	284
+METHOD_ENTRY	org.apache.hudi.client.HoodieJavaWriteClient#delete(List<HoodieKey>,String):List<WriteStatus>	0fb23d157f53673f77d2	413	954	1378	242
+METHOD_ENTRY	org.apache.hudi.client.HoodieJavaWriteClient#bulkInsertPreppedRecords(List<HoodieRecord<T>>,String,Option<BulkInsertPartitioner>):List<WriteStatus>	c9b9a019cb54f77bb60d	413	1043	1467	303
+METHOD_EXIT	org.apache.hudi.client.HoodieJavaTableServiceClient#triggerWritesAndFetchWriteStats(HoodieWriteMetadata<List<WriteStatus>>):TableWriteStats	141f8726329f4083f67a	455	656	1122	249
+METHOD_ENTRY	org.apache.hudi.client.HoodieJavaTableServiceClient#convertToOutputMetadata(HoodieWriteMetadata<List<WriteStatus>>):HoodieWriteMetadata<List<WriteStatus>>	ec11d7afdbac8884ad4a	413	562	986	269
+METHOD_EXIT	org.apache.hudi.client.HoodieJavaTableServiceClient#convertToOutputMetadata(HoodieWriteMetadata<List<WriteStatus>>):HoodieWriteMetadata<List<WriteStatus>>	857c98efee95a35c21aa	455	645	1111	142
+METHOD_ENTRY	org.apache.hudi.client.HoodieJavaTableServiceClient#triggerWritesAndFetchWriteStats(HoodieWriteMetadata<List<WriteStatus>>):TableWriteStats	992026e2579fe02d2710	413	577	1001	250
+METHOD_ENTRY	org.apache.hudi.client.common.JavaTaskContextSupplier#getPartitionIdSupplier():Supplier<Integer>	395a4984e8c5a251d1d0	413	485	909	127
+METHOD_EXIT	org.apache.hudi.client.common.JavaTaskContextSupplier#getPartitionIdSupplier():Supplier<Integer>	6cdd52cc7666cbe5b3bc	455	560	1026	111
+METHOD_ENTRY	org.apache.hudi.client.HoodieJavaTableServiceClient#createTable(HoodieWriteConfig,StorageConfiguration<?>,boolean):HoodieTable<?, List<HoodieRecord<T>>, ?, List<WriteStatus>>	7e85664f68a825a13870	413	599	1023	251
+METHOD_EXIT	org.apache.hudi.client.HoodieJavaTableServiceClient#updateColumnsToIndexWithColStats(HoodieTableMetaClient,List<String>):void	8a958ef7431f5c0c6f57	455	569	1035	263
+METHOD_EXIT	org.apache.hudi.client.HoodieJavaTableServiceClient#createTable(HoodieWriteConfig,StorageConfiguration<?>,boolean):HoodieTable<?, List<HoodieRecord<T>>, ?, List<WriteStatus>>	0126e4a88d5ac990705b	455	690	1156	218
+METHOD_EXIT	org.apache.hudi.client.HoodieJavaWriteClient#initializeMetadataTable(Option<String>,HoodieTableMetaClient):void	381760a2fc39aa5cdc0d	455	994	1460	277
+METHOD_EXIT	org.apache.hudi.client.common.JavaTaskContextSupplier#getStageIdSupplier():Supplier<Integer>	2a5a28f9f83affff0fa4	455	560	1026	199
+METHOD_ENTRY	org.apache.hudi.client.common.JavaTaskContextSupplier#getProperty(EngineProperty):Option<String>	ffe8b0b8ed464a7094f9	413	489	913	249
+METHOD_EXIT	org.apache.hudi.client.common.JavaTaskContextSupplier#getAttemptIdSupplier():Supplier<Long>	6a4bc2d43a7cbb1a47f2	455	561	1027	247
+METHOD_ENTRY	org.apache.hudi.client.common.JavaTaskContextSupplier#getStageIdSupplier():Supplier<Integer>	a70a91da02215552a5a3	413	485	909	69
+METHOD_ENTRY	org.apache.hudi.client.common.JavaTaskContextSupplier#getAttemptIdSupplier():Supplier<Long>	daf747778c9042b53861	413	486	910	125
+METHOD_ENTRY	org.apache.hudi.client.common.JavaTaskContextSupplier#getStageAttemptNumberSupplier():Supplier<Integer>	77b46561adf96384fbd2	413	487	911	85
+METHOD_EXIT	org.apache.hudi.client.common.JavaTaskContextSupplier#getStageAttemptNumberSupplier():Supplier<Integer>	5a39d476dce4040a361a	455	562	1028	185
+METHOD_ENTRY	org.apache.hudi.client.common.JavaTaskContextSupplier#getTaskAttemptNumberSupplier():Supplier<Integer>	64860013b9dc0ef7c14a	413	487	911	80
+METHOD_EXIT	org.apache.hudi.client.common.JavaTaskContextSupplier#getProperty(EngineProperty):Option<String>	fe7cadb46782550a6383	455	567	1033	196
+METHOD_EXIT	org.apache.hudi.client.common.JavaTaskContextSupplier#getTaskAttemptNumberSupplier():Supplier<Integer>	b6f1ae8a53c8a29528d2	455	562	1028	97
+METHOD_EXIT	org.apache.hudi.client.common.HoodieJavaEngineContext#newAccumulator():HoodieAccumulator	859b819baf05c56854f6	455	958	1424	288
+METHOD_ENTRY	org.apache.hudi.client.common.HoodieJavaEngineContext#newAccumulator():HoodieAccumulator	3868ff2cfe4c1eaf5ef4	413	883	1307	5
+METHOD_EXIT	org.apache.hudi.client.common.HoodieJavaEngineContext#emptyHoodieData():HoodieData<T>	ec4c7fe48e862e96c42e	455	975	1441	172
+METHOD_EXIT	org.apache.hudi.client.common.HoodieJavaEngineContext#emptyHoodiePairData():HoodiePairData<K, V>	a7b3e3e698d738c16bd8	455	989	1455	253
+METHOD_ENTRY	org.apache.hudi.client.common.HoodieJavaEngineContext#emptyHoodieData():HoodieData<T>	e3320e294f163d6a3403	413	899	1323	5
+METHOD_ENTRY	org.apache.hudi.client.common.HoodieJavaEngineContext#emptyHoodiePairData():HoodiePairData<K, V>	dd6aed61f5329d6d87de	413	910	1334	52
+METHOD_ENTRY	org.apache.hudi.client.common.HoodieJavaEngineContext#parallelize(List<T>,int):HoodieData<T>	a3d0ff574d2239dd7198	413	912	1336	272
+METHOD_EXIT	org.apache.hudi.client.common.HoodieJavaEngineContext#parallelize(List<T>,int):HoodieData<T>	ff329590bc5335948e87	455	991	1457	338
+METHOD_EXIT	org.apache.hudi.client.common.HoodieJavaEngineContext#mapToPairAndReduceByKey(List<I>,SerializablePairFunction<I, K, V>,SerializableBiFunction<V, V, V>,int):List<V>	d38897f7075876dcbd63	455	1134	1600	273
+METHOD_ENTRY	org.apache.hudi.client.common.HoodieJavaEngineContext#mapToPairAndReduceByKey(List<I>,SerializablePairFunction<I, K, V>,SerializableBiFunction<V, V, V>,int):List<V>	3ef7ecaed2b1cbf479bd	413	1056	1480	258
+METHOD_EXIT	org.apache.hudi.client.common.HoodieJavaEngineContext#map(List<I>,SerializableFunction<I, O>,int):List<O>	708c9d54429e2a399d52	455	1019	1485	273
+METHOD_ENTRY	org.apache.hudi.client.common.HoodieJavaEngineContext#mapPartitionsToPairAndReduceByKey(Stream<I>,SerializablePairFlatMapFunction<Iterator<I>, K, V>,SerializableBiFunction<V, V, V>,int):Stream<ImmutablePair<K, V>>	72b30a24d596e94fa935	413	1101	1525	217
+METHOD_ENTRY	org.apache.hudi.client.common.HoodieJavaEngineContext#flatMap(List<I>,SerializableFunction<I, Stream<O>>,int):List<O>	0d6e15d519947d872d98	413	948	1372	238
+METHOD_EXIT	org.apache.hudi.client.common.HoodieJavaEngineContext#mapPartitionsToPairAndReduceByKey(Stream<I>,SerializablePairFlatMapFunction<Iterator<I>, K, V>,SerializableBiFunction<V, V, V>,int):Stream<ImmutablePair<K, V>>	86e9232c09a1d489ac55	455	1184	1650	236
+METHOD_EXIT	org.apache.hudi.client.common.HoodieJavaEngineContext#flatMap(List<I>,SerializableFunction<I, Stream<O>>,int):List<O>	2125b9249998b0decfb9	455	1026	1492	253
+METHOD_ENTRY	org.apache.hudi.client.common.HoodieJavaEngineContext#foreach(List<I>,SerializableConsumer<I>,int):void	a3487b2269a8ce8bdd62	413	925	1349	239
+METHOD_ENTRY	org.apache.hudi.client.common.HoodieJavaEngineContext#map(List<I>,SerializableFunction<I, O>,int):List<O>	b5d170142f25acb7f32c	413	941	1365	222
+METHOD_ENTRY	org.apache.hudi.client.common.HoodieJavaEngineContext#mapToPair(List<I>,SerializablePairFunction<I, K, V>,Integer):Map<K, V>	ac34bbc9595d6b9583d2	413	987	1411	261
+METHOD_EXIT	org.apache.hudi.client.common.HoodieJavaEngineContext#reduceByKey(List<Pair<K, V>>,SerializableBiFunction<V, V, V>,int):List<V>	b5b1e8ff4ec940d6daff	455	1097	1563	252
+METHOD_ENTRY	org.apache.hudi.client.common.HoodieJavaEngineContext#setProperty(EngineProperty,String):void	95831779b0f698905988	413	896	1320	105
+METHOD_EXIT	org.apache.hudi.client.common.HoodieJavaEngineContext#setProperty(EngineProperty,String):void	6bf68e8085c3275ccb25	455	907	1373	128
+METHOD_ENTRY	org.apache.hudi.client.common.HoodieJavaEngineContext#reduceByKey(List<Pair<K, V>>,SerializableBiFunction<V, V, V>,int):List<V>	ceecd72c1df0c376eb6d	413	1019	1443	224
+METHOD_EXIT	org.apache.hudi.client.common.HoodieJavaEngineContext#foreach(List<I>,SerializableConsumer<I>,int):void	ef775b89b6c6199aaa81	455	936	1402	258
+METHOD_ENTRY	org.apache.hudi.client.common.HoodieJavaEngineContext#getProperty(EngineProperty):Option<String>	aca12f7cfd0c6a71177c	413	889	1313	161
+METHOD_EXIT	org.apache.hudi.client.common.HoodieJavaEngineContext#getProperty(EngineProperty):Option<String>	17ce80d6a2bb1e4b4e31	455	967	1433	49
+METHOD_EXIT	org.apache.hudi.client.common.HoodieJavaEngineContext#mapToPair(List<I>,SerializablePairFunction<I, K, V>,Integer):Map<K, V>	f25750ae73d82059093a	455	1067	1533	325
+METHOD_EXIT	org.apache.hudi.client.common.HoodieJavaEngineContext#setJobStatus(String,String):void	ced1721dd60bf7ebd2e5	455	908	1374	60
+METHOD_ENTRY	org.apache.hudi.client.common.HoodieJavaEngineContext#clearJobStatus():void	4fc7c6d68c60c7cf6f04	413	880	1304	5
+METHOD_EXIT	org.apache.hudi.client.common.HoodieJavaEngineContext#putCachedDataIds(HoodieDataCacheKey,int):void	5035612b8538b4a03091	455	923	1389	204
+METHOD_ENTRY	org.apache.hudi.client.common.HoodieJavaEngineContext#getCachedDataIds(HoodieDataCacheKey):List<Integer>	601eee32704108e6dd48	413	904	1328	54
+METHOD_ENTRY	org.apache.hudi.client.common.HoodieJavaEngineContext#removeCachedDataIds(HoodieDataCacheKey):List<Integer>	7da0e284c0030c54557f	413	905	1329	249
+METHOD_EXIT	org.apache.hudi.client.common.HoodieJavaEngineContext#removeCachedDataIds(HoodieDataCacheKey):List<Integer>	956160678fbe947deb86	455	983	1449	150
+METHOD_ENTRY	org.apache.hudi.client.common.HoodieJavaEngineContext#setJobStatus(String,String):void	003d304b87b220dd8961	413	897	1321	221
+METHOD_EXIT	org.apache.hudi.client.common.HoodieJavaEngineContext#cancelJob(String):void	b45c27f6e9e71627bab3	455	896	1362	307
+METHOD_EXIT	org.apache.hudi.client.common.HoodieJavaEngineContext#clearJobStatus():void	e58e86462571768dad81	455	891	1357	5
+METHOD_ENTRY	org.apache.hudi.client.common.HoodieJavaEngineContext#cancelAllJobs():void	491502840a63da7aeb17	413	880	1304	5
+METHOD_EXIT	org.apache.hudi.client.common.HoodieJavaEngineContext#cancelAllJobs():void	e86d883518656bc7e848	455	891	1357	5
+METHOD_ENTRY	org.apache.hudi.client.common.HoodieJavaEngineContext#cancelJob(String):void	d66914dab972a50238e1	413	885	1309	173
+METHOD_EXIT	org.apache.hudi.client.common.HoodieJavaEngineContext#getCachedDataIds(HoodieDataCacheKey):List<Integer>	c273a74de9f3899af58c	455	982	1448	218
+METHOD_EXIT	org.apache.hudi.client.common.HoodieJavaEngineContext#aggregate(HoodieData<I>,O,Functions.Function2<O, I, O>,Functions.Function2<O, O, O>):O	d1cfc842484308a20f5e	455	1071	1537	291
+METHOD_ENTRY	org.apache.hudi.client.common.HoodieJavaEngineContext#putCachedDataIds(HoodieDataCacheKey,int):void	6f4c430da9d5a64fd915	413	912	1336	110
+METHOD_ENTRY	org.apache.hudi.client.common.HoodieJavaEngineContext#getEngineReaderContextFactory(HoodieTableMetaClient):ReaderContextFactory<IndexedRecord>	7165b52fee8fa82fd9f7	413	923	1347	271
+METHOD_EXIT	org.apache.hudi.client.common.HoodieJavaEngineContext#getEngineReaderContextFactory(HoodieTableMetaClient):ReaderContextFactory<IndexedRecord>	1abd0703cb25921798fa	455	1005	1471	324
+METHOD_EXIT	org.apache.hudi.client.common.HoodieJavaEngineContext#getReaderContextFactory(HoodieTableMetaClient):ReaderContextFactory<IndexedRecord>	2038a8b0a2ef34b4d57e	455	998	1464	246
+METHOD_ENTRY	org.apache.hudi.client.common.HoodieJavaEngineContext#getReaderContextFactory(HoodieTableMetaClient):ReaderContextFactory<IndexedRecord>	6d5d88578fd3659494e5	413	916	1340	214
+METHOD_ENTRY	org.apache.hudi.client.common.HoodieJavaEngineContext#createKeyGenerator(TypedProperties):KeyGenerator	1394a24ab90cffbb7733	413	899	1323	266
+METHOD_EXIT	org.apache.hudi.client.common.HoodieJavaEngineContext#createKeyGenerator(TypedProperties):KeyGenerator	1de1cd3e5cb0a71aadc6	455	977	1443	227
+METHOD_ENTRY	org.apache.hudi.client.common.HoodieJavaEngineContext#aggregate(HoodieData<I>,O,Functions.Function2<O, I, O>,Functions.Function2<O, O, O>):O	b573b5680929c7bd9e9b	413	994	1418	189
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaMergeOnReadTable#upsert(HoodieEngineContext,String,List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>	8bc80e0101fec2173011	413	868	1292	250
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaMergeOnReadTable#insert(HoodieEngineContext,String,List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>	a211fa9fcfe364a460c5	413	865	1289	245
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaMergeOnReadTable#upsert(HoodieEngineContext,String,List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>	43f03000a3678429988f	455	951	1417	284
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaMergeOnReadTable#upsertPrepped(HoodieEngineContext,String,List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>	d4032f153b16d188624b	413	880	1304	256
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaMergeOnReadTable#delete(HoodieEngineContext,String,List<HoodieKey>):HoodieWriteMetadata<List<WriteStatus>>	1877caf86ccdca89a998	455	933	1399	260
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaMergeOnReadTable#deletePrepped(HoodieEngineContext,String,List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>	f3279c54074ef233089f	413	875	1299	255
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaMergeOnReadTable#deletePrepped(HoodieEngineContext,String,List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>	243cf745a8e177408b7a	455	958	1424	294
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaMergeOnReadTable#insert(HoodieEngineContext,String,List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>	5974db1e4e0047d91be6	455	948	1414	284
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaMergeOnReadTable#upsertPrepped(HoodieEngineContext,String,List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>	ccf955bd923e3d7627b3	455	963	1429	287
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaMergeOnReadTable#bulkInsertPrepped(HoodieEngineContext,String,List<HoodieRecord<T>>,Option<BulkInsertPartitioner>):HoodieWriteMetadata<List<WriteStatus>>	e443c291d7aa2193217c	413	916	1340	234
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaMergeOnReadTable#bulkInsertPrepped(HoodieEngineContext,String,List<HoodieRecord<T>>,Option<BulkInsertPartitioner>):HoodieWriteMetadata<List<WriteStatus>>	1d4b9acd5f190074b462	455	999	1465	275
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaMergeOnReadTable#scheduleCompaction(HoodieEngineContext,String,Option<Map<String, String>>):Option<HoodieCompactionPlan>	fcb18e4db8a66cb6848b	413	878	1302	291
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaMergeOnReadTable#bulkInsert(HoodieEngineContext,String,List<HoodieRecord<T>>,Option<BulkInsertPartitioner>):HoodieWriteMetadata<List<WriteStatus>>	f0e43e085a5853389ea9	413	904	1328	216
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaMergeOnReadTable#bulkInsert(HoodieEngineContext,String,List<HoodieRecord<T>>,Option<BulkInsertPartitioner>):HoodieWriteMetadata<List<WriteStatus>>	c38c30798471347b4c67	455	987	1453	317
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaMergeOnReadTable#delete(HoodieEngineContext,String,List<HoodieKey>):HoodieWriteMetadata<List<WriteStatus>>	ae8745db9cc90765cbde	413	850	1274	217
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaMergeOnReadTable#compact(HoodieEngineContext,String):HoodieWriteMetadata<List<WriteStatus>>	a9b6fde1285493265964	455	947	1413	281
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaMergeOnReadTable#scheduleLogCompaction(HoodieEngineContext,String,Option<Map<String, String>>):Option<HoodieCompactionPlan>	8a0b612c902a298f5499	413	883	1307	268
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaMergeOnReadTable#scheduleLogCompaction(HoodieEngineContext,String,Option<Map<String, String>>):Option<HoodieCompactionPlan>	f3c5b0a36612e96e32bb	455	966	1432	293
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaMergeOnReadTable#scheduleCompaction(HoodieEngineContext,String,Option<Map<String, String>>):Option<HoodieCompactionPlan>	be233b36a1f297d60def	455	961	1427	249
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaMergeOnReadTable#rollback(HoodieEngineContext,String,HoodieInstant,boolean,boolean):HoodieRollbackMetadata	2bb9990204da187762ce	455	955	1421	263
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaMergeOnReadTable#logCompact(HoodieEngineContext,String):HoodieWriteMetadata<List<WriteStatus>>	a4b10df95f1f6c185f5d	455	954	1420	304
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaMergeOnReadTable#restore(HoodieEngineContext,String,String):HoodieRestoreMetadata	859d946c50b05693841c	413	844	1268	270
+METHOD_EXIT	org.apache.hudi.table.upgrade.JavaUpgradeDowngradeHelper#getInstance():JavaUpgradeDowngradeHelper	063a9498b42259506e1c	455	585	1051	134
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaMergeOnReadTable#rollback(HoodieEngineContext,String,HoodieInstant,boolean,boolean):HoodieRollbackMetadata	2f34a9db032fd70f7b71	413	876	1300	255
+METHOD_EXIT	org.apache.hudi.table.upgrade.JavaUpgradeDowngradeHelper#getTable(HoodieWriteConfig,HoodieEngineContext):HoodieTable	f808a91faf22dcd1e6a6	455	616	1082	301
+METHOD_ENTRY	org.apache.hudi.table.upgrade.JavaUpgradeDowngradeHelper#getTable(HoodieWriteConfig,HoodieEngineContext):HoodieTable	20fd62167175db458ce2	413	538	962	107
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaMergeOnReadTable#compact(HoodieEngineContext,String):HoodieWriteMetadata<List<WriteStatus>>	b9202869cace76e1eca8	413	864	1288	290
+METHOD_ENTRY	org.apache.hudi.table.upgrade.JavaUpgradeDowngradeHelper#getPartitionColumns(HoodieWriteConfig):String	4b56dc908d9e5ebfb908	413	528	952	237
+METHOD_ENTRY	org.apache.hudi.table.upgrade.JavaUpgradeDowngradeHelper#getInstance():JavaUpgradeDowngradeHelper	b87e816d1a90fb7d53c0	413	506	930	65
+METHOD_ENTRY	org.apache.hudi.table.upgrade.JavaUpgradeDowngradeHelper#getWriteClient(HoodieWriteConfig,HoodieEngineContext):BaseHoodieWriteClient	4d92d918b9483897cb6a	413	547	971	265
+METHOD_EXIT	org.apache.hudi.table.upgrade.JavaUpgradeDowngradeHelper#getPartitionColumns(HoodieWriteConfig):String	69ef8be1eee3d3ac2863	455	605	1071	227
+METHOD_EXIT	org.apache.hudi.table.upgrade.JavaUpgradeDowngradeHelper#getWriteClient(HoodieWriteConfig,HoodieEngineContext):BaseHoodieWriteClient	44839567ead2401ddf1d	455	629	1095	262
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaMergeOnReadTable#logCompact(HoodieEngineContext,String):HoodieWriteMetadata<List<WriteStatus>>	09bcc97bdb9b8a944661	413	871	1295	280
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaMergeOnReadTable#restore(HoodieEngineContext,String,String):HoodieRestoreMetadata	6d08252466fe31a0f24e	455	923	1389	300
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaTable#create(HoodieWriteConfig,HoodieEngineContext):HoodieJavaTable<T>	7134d682c352dc30ac89	413	643	1067	260
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaTable#convertMetadata(HoodieWriteMetadata<HoodieData<WriteStatus>>):HoodieWriteMetadata<List<WriteStatus>>	e8282c5a7375476d76f7	413	588	1012	218
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaTable#create(HoodieWriteConfig,HoodieEngineContext):HoodieJavaTable<T>	af4b638eed57ced01d71	455	723	1189	239
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaTable#create(HoodieWriteConfig,HoodieEngineContext,HoodieTableMetaClient):HoodieJavaTable<T>	99013702915ad557e00e	413	666	1090	295
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaTable#getIndex(HoodieWriteConfig,HoodieEngineContext):HoodieIndex	0865e2ef94ce07dd43f6	455	648	1114	335
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaTable#getIndex(HoodieWriteConfig,HoodieEngineContext):HoodieIndex	cc971feac42cf5c4807d	413	570	994	248
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaTable#create(HoodieWriteConfig,HoodieEngineContext,HoodieTableMetaClient):HoodieJavaTable<T>	11eadfd46861b1e594c3	455	746	1212	389
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaTable#convertMetadata(HoodieWriteMetadata<HoodieData<WriteStatus>>):HoodieWriteMetadata<List<WriteStatus>>	76ad24de48143f75ec69	455	671	1137	251
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaInsertCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	d1641a7bb3a5c39e7a43	413	479	903	212
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaTable#getMetadataWriter(String,HoodieFailedWritesCleaningPolicy,boolean,boolean):Option<HoodieTableMetadataWriter>	2a321729298b491d0ccc	455	971	1437	382
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaBulkInsertPreppedCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	89fd65e2d3d76dbfe511	413	550	974	5
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaDeletePreppedCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	12c7d46d82e9558ba402	413	453	877	226
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaBulkInsertPreppedCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	8747fe6d1194b0c1ec58	455	630	1096	242
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaInsertCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	7d32d16eff966bcef4bc	455	559	1025	234
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaTable#getMetadataWriter(String,HoodieFailedWritesCleaningPolicy,boolean,boolean):Option<HoodieTableMetadataWriter>	d83e68777f7f974dbe0d	413	888	1312	260
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaDeletePreppedCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	fbbef1d47c3ae3ab656f	455	533	999	251
+METHOD_EXIT	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#execute(List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>	fb3098bd13a16ac0a225	455	963	1429	210
+METHOD_EXIT	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#updateIndex(List<WriteStatus>,HoodieWriteMetadata<List<WriteStatus>>):List<WriteStatus>	ff6633f1037e44d58d7e	455	1032	1498	303
+METHOD_EXIT	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#execute(List<HoodieRecord<T>>,Option<HoodieTimer>):HoodieWriteMetadata<List<WriteStatus>>	2138a2ef28066a029707	455	1378	1844	240
+METHOD_ENTRY	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#execute(List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>	c9794ebae3fe1e52822b	413	880	1304	267
+METHOD_ENTRY	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#getCommitActionType():String	c68dfd2ab4568d63ac16	413	848	1272	5
+METHOD_ENTRY	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#getPartitioner(WorkloadProfile):Partitioner	1988203e09d5de22451b	413	882	1306	310
+METHOD_ENTRY	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#execute(List<HoodieRecord<T>>,Option<HoodieTimer>):HoodieWriteMetadata<List<WriteStatus>>	9e85a5b76308ea604c66	413	1295	1719	263
+METHOD_EXIT	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#getPartitioner(WorkloadProfile):Partitioner	3a1867a208fcc3e467fe	455	960	1426	294
+METHOD_ENTRY	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#partition(List<HoodieRecord<T>>,Partitioner):Map<Integer, List<HoodieRecord<T>>>	dbf24fa0dd0d13f9b8ad	413	1021	1445	289
+METHOD_ENTRY	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#updateIndex(List<WriteStatus>,HoodieWriteMetadata<List<WriteStatus>>):List<WriteStatus>	a695260a7a5f63f7685b	413	1024	1448	202
+METHOD_ENTRY	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#buildProfile(List<HoodieRecord<T>>):Pair<Map<String, WorkloadStat>, WorkloadStat>	bf16bee64836e81c8d6b	413	1160	1584	252
+METHOD_EXIT	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#partition(List<HoodieRecord<T>>,Partitioner):Map<Integer, List<HoodieRecord<T>>>	4ff42f5f69db99b22961	455	1107	1573	305
+METHOD_ENTRY	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#commit(HoodieWriteMetadata<List<WriteStatus>>):void	5358e2e34f70d569c3c5	413	945	1369	295
+METHOD_ENTRY	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#setCommitMetadata(HoodieWriteMetadata<List<WriteStatus>>):void	5f0e69d6335c828aa3c7	413	981	1405	267
+METHOD_EXIT	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#commit(HoodieWriteMetadata<List<WriteStatus>>):void	63ad7f1381e45d543928	455	956	1422	235
+METHOD_EXIT	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#getCommitActionType():String	c04a3531b180b7efb69e	455	922	1388	289
+METHOD_ENTRY	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#getPartitionToReplacedFileIds(HoodieWriteMetadata<List<WriteStatus>>):Map<String, List<String>>	a6832ceec715c1deb84a	413	886	1310	245
+METHOD_EXIT	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#buildProfile(List<HoodieRecord<T>>):Pair<Map<String, WorkloadStat>, WorkloadStat>	f9f6a88490c9572e31a0	455	1247	1713	297
+METHOD_ENTRY	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#handleUpsertPartition(String,Integer,Iterator,Partitioner):Iterator<List<WriteStatus>>	308287f79116c02c92a5	413	1084	1508	233
+METHOD_ENTRY	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#handleInsertPartition(String,Integer,Iterator,Partitioner):Iterator<List<WriteStatus>>	1acd599c9e17e05d33fc	413	904	1328	270
+METHOD_EXIT	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#handleUpsertPartition(String,Integer,Iterator,Partitioner):Iterator<List<WriteStatus>>	c2460264f529a807696a	455	1165	1631	253
+METHOD_ENTRY	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#handleUpdate(String,String,Iterator<HoodieRecord<T>>):Iterator<List<WriteStatus>>	40df781abe08429aeb62	413	1007	1431	270
+METHOD_EXIT	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#getPartitionToReplacedFileIds(HoodieWriteMetadata<List<WriteStatus>>):Map<String, List<String>>	e236cf3af98bc80115be	455	967	1433	252
+METHOD_ENTRY	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#getUpdateHandle(String,String,Iterator<HoodieRecord<T>>):HoodieMergeHandle<?, ?, ?, ?>	06a8f2ca2fa73b9b7d78	413	1039	1463	291
+METHOD_EXIT	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#setCommitMetadata(HoodieWriteMetadata<List<WriteStatus>>):void	859a1f80d430c00ec716	455	992	1458	315
+METHOD_EXIT	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#getUpdateHandle(String,String,Iterator<HoodieRecord<T>>):HoodieMergeHandle<?, ?, ?, ?>	daae5e3fc9b79c104924	455	1121	1587	297
+METHOD_ENTRY	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#handleInsert(String,Iterator<HoodieRecord<T>>):Iterator<List<WriteStatus>>	be639acc2e0d7ac582b1	413	974	1398	208
+METHOD_EXIT	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#handleUpdate(String,String,Iterator<HoodieRecord<T>>):Iterator<List<WriteStatus>>	19dcf153075732f2a9fd	455	1088	1554	363
+METHOD_EXIT	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#handleInsert(String,Iterator<HoodieRecord<T>>):Iterator<List<WriteStatus>>	4545c490cdfb92d54011	455	1055	1521	295
+METHOD_EXIT	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#handleInsertPartition(String,Integer,Iterator,Partitioner):Iterator<List<WriteStatus>>	ac1031236dd7847d3cda	455	985	1451	247
+METHOD_EXIT	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#getUpsertPartitioner(WorkloadProfile):Partitioner	91dba69e384a862ce1fa	455	973	1439	175
+METHOD_EXIT	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#getInsertPartitioner(WorkloadProfile):Partitioner	b9f6a91751e51c9e43b3	455	935	1401	162
+METHOD_ENTRY	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#updateIndexAndMaybeRunPreCommitValidations(List<WriteStatus>,HoodieWriteMetadata):void	426cd8ec003c26b7b676	413	1036	1460	323
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaInsertPreppedCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	83f9341326de7c0f7f42	413	453	877	221
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaInsertPreppedCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	5f2531f86eb79db78b83	455	533	999	239
+METHOD_ENTRY	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#getUpsertPartitioner(WorkloadProfile):Partitioner	1d90c3e6d05e5f70ead3	413	895	1319	223
+METHOD_ENTRY	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#getInsertPartitioner(WorkloadProfile):Partitioner	6e9e90b873bbb0e29b91	413	857	1281	320
+METHOD_ENTRY	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#updateColumnsToIndexForColumnStats(HoodieTableMetaClient,List<String>):void	94b840b63d8eea273b47	413	891	1315	224
+METHOD_EXIT	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#updateIndexAndMaybeRunPreCommitValidations(List<WriteStatus>,HoodieWriteMetadata):void	51d9b85feeab05d871b7	455	1047	1513	230
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaUpsertPartitioner#addUpdateBucket(String,String):int	f1788531c5f96b33e4c2	413	787	1211	266
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaUpsertPartitioner#assignUpdates(WorkloadProfile):void	e52a3334a5311ce6efe8	413	949	1373	304
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaUpsertPartitioner#assignInserts(WorkloadProfile,HoodieEngineContext):void	6521b0e8e45f1321fbd8	413	1798	2222	299
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaUpsertPartitioner#assignUpdates(WorkloadProfile):void	191a8509b42f08926eba	455	960	1426	400
+METHOD_EXIT	org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#updateColumnsToIndexForColumnStats(HoodieTableMetaClient,List<String>):void	9fa0b431d87ecdf17c7a	455	902	1368	240
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaUpsertPartitioner#addUpdateBucket(String,String):int	28829bfff527eb41f1ec	455	864	1330	305
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaUpsertPartitioner#getSmallFilesForPartitions(List<String>,HoodieEngineContext):Map<String, List<SmallFile>>	901fb8f9e85d8fa4b85c	455	968	1434	342
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaUpsertPartitioner#getSmallFiles(String):List<SmallFile>	4cb25abc4e98d159b267	413	926	1350	271
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaUpsertPartitioner#getSmallFiles(String):List<SmallFile>	9a8f62011a139dc1137e	455	1006	1472	249
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaUpsertPartitioner#getBucketInfo(int):BucketInfo	9043856e41eeb0a733b8	413	725	1149	216
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaUpsertPartitioner#getSmallFilesForPartitions(List<String>,HoodieEngineContext):Map<String, List<SmallFile>>	dde9488f945cf84d8fbd	413	885	1309	319
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaUpsertPartitioner#assignInserts(WorkloadProfile,HoodieEngineContext):void	56aedfee47b25ceebd97	455	1809	2275	270
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaUpsertPartitioner#getNumPartitions():int	ed4641b3c4248abe5265	413	715	1139	276
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaUpsertPartitioner#getInsertBuckets(String):List<InsertBucketCumulativeWeightPair>	b561c0f22dc668da7e72	455	827	1293	299
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaUpsertPartitioner#getInsertBuckets(String):List<InsertBucketCumulativeWeightPair>	569f260258651735a751	413	743	1167	291
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaUpsertPartitioner#getPartition(Object):int	5e00d3e552d420281b68	413	1028	1452	328
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaInsertOverwriteCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	30e880a633eadd0c77e8	413	532	956	219
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaUpsertPartitioner#getPartition(Object):int	207adf1735135253fa91	455	1105	1571	381
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaInsertOverwriteCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	9345fab0e1ff6d259a95	455	612	1078	294
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaInsertOverwriteCommitActionExecutor#getCommitActionType():String	de29c72f72b9138e91c2	413	492	916	5
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaInsertOverwriteCommitActionExecutor#getCommitActionType():String	b4ade1db1eadc3e3db16	455	566	1032	159
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaUpsertPartitioner#averageBytesPerRecord(HoodieTimeline,HoodieWriteConfig):long	9c7c78eb70d81710be98	455	1068	1534	319
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaUpsertPartitioner#getNumPartitions():int	86641b56b47e86e317ec	455	789	1255	138
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaInsertOverwriteCommitActionExecutor#getPartitionToReplacedFileIds(HoodieWriteMetadata<List<WriteStatus>>):Map<String, List<String>>	56fca14ff1dfb0ce8e01	413	588	1012	327
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaInsertOverwriteCommitActionExecutor#getPartitionToReplacedFileIds(HoodieWriteMetadata<List<WriteStatus>>):Map<String, List<String>>	17c2b0f03c3c2ecdb6be	455	669	1135	332
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaInsertOverwriteCommitActionExecutor#getAllExistingFileIds(String):List<String>	b4b777a1f4786b375127	455	624	1090	283
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaInsertOverwriteCommitActionExecutor#getAllExistingFileIds(String):List<String>	aa6c92e86e8cec5384ba	413	546	970	249
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaUpsertCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	54e2e9a7c6c3d9160671	413	483	907	132
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaUpsertPartitioner#getSmallFileIds():List<String>	ecca774ae2bf4d06b049	413	738	1162	281
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaUpsertCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	3b36942c5cd8aac98725	455	563	1029	246
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaUpsertPartitioner#getSmallFileIds():List<String>	e69fc326afa7f3ffb4a8	455	813	1279	281
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaWriteHelper#newInstance():JavaWriteHelper	724b909173bd54a36490	455	586	1052	174
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaUpsertPartitioner#averageBytesPerRecord(HoodieTimeline,HoodieWriteConfig):long	e49af4dab183bc285b8a	413	991	1415	213
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaWriteHelper#tag(List<HoodieRecord<T>>,HoodieEngineContext,HoodieTable<T, List<HoodieRecord<T>>, List<HoodieKey>, List<WriteStatus>>):List<HoodieRecord<T>>	a1df47f5014ad14d22b9	413	654	1078	284
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaWriteHelper#newInstance():JavaWriteHelper	76bc5cef008049255821	413	510	934	69
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaDeleteCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	c99386016074ddb9deb6	413	461	885	136
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaWriteHelper#tag(List<HoodieRecord<T>>,HoodieEngineContext,HoodieTable<T, List<HoodieRecord<T>>, List<HoodieKey>, List<WriteStatus>>):List<HoodieRecord<T>>	f4f52cb002caa87cd1a3	455	736	1202	302
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaWriteHelper#deduplicateRecords(List<HoodieRecord<T>>,HoodieIndex<?, ?>,int,String,TypedProperties,BufferedRecordMerger<T>,HoodieReaderContext<T>,String[]):List<HoodieRecord<T>>	fbac5e2bc7f37c85c0cc	455	946	1412	279
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaWriteHelper#deduplicateRecords(List<HoodieRecord<T>>,HoodieIndex<?, ?>,int,String,TypedProperties,BufferedRecordMerger<T>,HoodieReaderContext<T>,String[]):List<HoodieRecord<T>>	df56b727ab3d73227871	413	864	1288	246
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaDeleteCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	966ee180fd6a7a50bb12	455	541	1007	300
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaInsertOverwriteTableCommitActionExecutor#getAllExistingFileIds(String):List<String>	3c69f50d8267d3169d49	455	567	1033	215
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaInsertOverwriteTableCommitActionExecutor#getPartitionToReplacedFileIds(HoodieWriteMetadata<List<WriteStatus>>):Map<String, List<String>>	61147b52ccf4e93d6512	413	600	1024	279
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaUpsertPreppedCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	5c23faf6bdd324546102	413	455	879	409
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaInsertOverwriteTableCommitActionExecutor#getPartitionToReplacedFileIds(HoodieWriteMetadata<List<WriteStatus>>):Map<String, List<String>>	5263af5370dee01bf911	455	681	1147	293
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaUpsertPreppedCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	442aa9ec0c3be093cc7a	455	535	1001	297
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaBulkInsertHelper#newInstance():JavaBulkInsertHelper	013bbe1fa71d5f00f6f8	413	589	1013	64
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaBulkInsertHelper#bulkInsert(List<HoodieRecord<T>>,String,HoodieTable<T, List<HoodieRecord<T>>, List<HoodieKey>, List<WriteStatus>>,HoodieWriteConfig,BaseCommitActionExecutor<T, List<HoodieRecord<T>>, List<HoodieKey>, List<WriteStatus>, R>,boolean,Option<BulkInsertPartitioner>):HoodieWriteMetadata<List<WriteStatus>>	58ce0e78cbd19bb10f47	413	1080	1504	210
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaBulkInsertHelper#newInstance():JavaBulkInsertHelper	4ee724334fda2ca22ccf	455	666	1132	125
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaBulkInsertHelper#bulkInsert(List<HoodieRecord<T>>,String,HoodieTable<T, List<HoodieRecord<T>>, List<HoodieKey>, List<WriteStatus>>,HoodieWriteConfig,boolean,BulkInsertPartitioner,boolean,int,WriteHandleFactory):List<WriteStatus>	0186acf15bde163b0b67	455	1207	1673	271
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaDeleteHelper#newInstance():JavaDeleteHelper	25100c20e96268dd9569	413	575	999	5
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaBulkInsertHelper#bulkInsert(List<HoodieRecord<T>>,String,HoodieTable<T, List<HoodieRecord<T>>, List<HoodieKey>, List<WriteStatus>>,HoodieWriteConfig,boolean,BulkInsertPartitioner,boolean,int,WriteHandleFactory):List<WriteStatus>	52a7902ce551adacd861	413	1127	1551	274
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaBulkInsertHelper#bulkInsert(List<HoodieRecord<T>>,String,HoodieTable<T, List<HoodieRecord<T>>, List<HoodieKey>, List<WriteStatus>>,HoodieWriteConfig,BaseCommitActionExecutor<T, List<HoodieRecord<T>>, List<HoodieKey>, List<WriteStatus>, R>,boolean,Option<BulkInsertPartitioner>):HoodieWriteMetadata<List<WriteStatus>>	720e0400525f2e7e08f2	455	1163	1629	258
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaUpsertPartitioner#getBucketInfo(int):BucketInfo	371d2b0de12c602cb47f	455	803	1269	254
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaInsertOverwriteTableCommitActionExecutor#getAllExistingFileIds(String):List<String>	51b0b6e1ac5ea6a2c98b	413	489	913	1483
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaDeleteHelper#newInstance():JavaDeleteHelper	16bee44100115a421039	455	651	1117	84
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaDeleteHelper#deduplicateKeys(List<HoodieKey>,HoodieTable<EmptyHoodieRecordPayload, List<HoodieRecord<EmptyHoodieRecordPayload>>, List<HoodieKey>, List<WriteStatus>>,int):List<HoodieKey>	bd8314b888e64bfc2641	413	858	1282	258
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaDeleteHelper#deduplicateKeys(List<HoodieKey>,HoodieTable<EmptyHoodieRecordPayload, List<HoodieRecord<EmptyHoodieRecordPayload>>, List<HoodieKey>, List<WriteStatus>>,int):List<HoodieKey>	888c36575c27338959e4	455	939	1405	224
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaDeleteHelper#execute(String,List<HoodieKey>,HoodieEngineContext,HoodieWriteConfig,HoodieTable<EmptyHoodieRecordPayload, List<HoodieRecord<EmptyHoodieRecordPayload>>, List<HoodieKey>, List<WriteStatus>>,BaseCommitActionExecutor<EmptyHoodieRecordPayload, List<HoodieRecord<EmptyHoodieRecordPayload>>, List<HoodieKey>, List<WriteStatus>, R>):HoodieWriteMetadata<List<WriteStatus>>	264789ba8ebb8399e31b	455	1383	1849	271
+METHOD_EXIT	org.apache.hudi.table.action.deltacommit.JavaUpsertPreppedDeltaCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	7a4da96cf14f4de4ddae	455	981	1447	280
+METHOD_ENTRY	org.apache.hudi.table.action.deltacommit.JavaDeletePreppedDeltaCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	e6d8d49b24a169392e5e	413	458	882	177
+METHOD_EXIT	org.apache.hudi.table.action.deltacommit.JavaDeletePreppedDeltaCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	467d1ab7e15700736953	455	538	1004	304
+METHOD_ENTRY	org.apache.hudi.table.action.deltacommit.JavaUpsertPreppedDeltaCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	6ae6911e29f7f0ed88d8	413	901	1325	265
+METHOD_ENTRY	org.apache.hudi.table.action.deltacommit.JavaBulkInsertDeltaCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	bb463cfab8346c1f9190	413	543	967	221
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaBulkInsertCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	267c101a17bf766623a0	413	538	962	271
+METHOD_EXIT	org.apache.hudi.table.action.deltacommit.JavaBulkInsertDeltaCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	6dccbc7768c3686ea870	455	623	1089	231
+METHOD_EXIT	org.apache.hudi.table.action.deltacommit.BaseJavaDeltaCommitActionExecutor#getUpsertPartitioner(WorkloadProfile):Partitioner	41fb1868e4d34cd885a2	455	601	1067	293
+METHOD_ENTRY	org.apache.hudi.table.action.commit.JavaDeleteHelper#execute(String,List<HoodieKey>,HoodieEngineContext,HoodieWriteConfig,HoodieTable<EmptyHoodieRecordPayload, List<HoodieRecord<EmptyHoodieRecordPayload>>, List<HoodieKey>, List<WriteStatus>>,BaseCommitActionExecutor<EmptyHoodieRecordPayload, List<HoodieRecord<EmptyHoodieRecordPayload>>, List<HoodieKey>, List<WriteStatus>, R>):HoodieWriteMetadata<List<WriteStatus>>	f48b7d2a494e7a6dd4a5	413	1300	1724	204
+METHOD_ENTRY	org.apache.hudi.table.action.deltacommit.BaseJavaDeltaCommitActionExecutor#getUpsertPartitioner(WorkloadProfile):Partitioner	cd2788898537d4cc64a2	413	523	947	213
+METHOD_EXIT	org.apache.hudi.table.action.commit.JavaBulkInsertCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	11a56b277f5e17752d4c	455	618	1084	288
+METHOD_ENTRY	org.apache.hudi.table.action.deltacommit.BaseJavaDeltaCommitActionExecutor#handleUpdate(String,String,Iterator<HoodieRecord<T>>):Iterator<List<WriteStatus>>	7196dc61c53c551b598a	413	690	1114	246
+METHOD_EXIT	org.apache.hudi.table.action.deltacommit.BaseJavaDeltaCommitActionExecutor#handleInsert(String,Iterator<HoodieRecord<T>>):Iterator<List<WriteStatus>>	c7e4bd3f591c572f26cc	455	691	1157	316
+METHOD_EXIT	org.apache.hudi.table.action.deltacommit.BaseJavaDeltaCommitActionExecutor#handleUpdate(String,String,Iterator<HoodieRecord<T>>):Iterator<List<WriteStatus>>	1a7f9ed551032497e452	455	771	1237	264
+METHOD_ENTRY	org.apache.hudi.table.action.deltacommit.JavaDeleteDeltaCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	d14d540e637d3a9199b6	413	466	890	190
+METHOD_ENTRY	org.apache.hudi.table.action.deltacommit.JavaBulkInsertPreppedDeltaCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	06c4f60f5eecd99a1077	413	555	979	300
+METHOD_EXIT	org.apache.hudi.table.action.deltacommit.JavaDeleteDeltaCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	7dded28d63a09920b04e	455	546	1012	279
+METHOD_ENTRY	org.apache.hudi.table.action.deltacommit.BaseJavaDeltaCommitActionExecutor#handleInsert(String,Iterator<HoodieRecord<T>>):Iterator<List<WriteStatus>>	376682890854f63d7c3d	413	610	1034	253
+METHOD_ENTRY	org.apache.hudi.table.action.cluster.JavaExecuteClusteringCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	1cde03fefd838b742934	413	505	929	128
+METHOD_EXIT	org.apache.hudi.table.action.deltacommit.JavaUpsertDeltaCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	dabf2b783dd561bd3c19	455	568	1034	261
+METHOD_EXIT	org.apache.hudi.table.action.deltacommit.JavaInsertDeltaCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	2b00a8a73bdd53eebd18	455	566	1032	299
+METHOD_EXIT	org.apache.hudi.table.action.cluster.JavaExecuteClusteringCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	0cbc66cab91aef396b88	455	585	1051	286
+METHOD_EXIT	org.apache.hudi.table.action.cluster.JavaExecuteClusteringCommitActionExecutor#getCommitActionType():String	7d993cfb07b18d1e7f2c	455	525	991	133
+METHOD_EXIT	org.apache.hudi.table.action.deltacommit.JavaBulkInsertPreppedDeltaCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	c6dcb662ffa731239750	455	635	1101	280
+METHOD_ENTRY	org.apache.hudi.table.action.compact.HoodieJavaMergeOnReadTableCompactor#maybePersist(HoodieData<WriteStatus>,HoodieEngineContext,HoodieWriteConfig,String):void	288a45b09d25968794a5	413	597	1021	238
+METHOD_EXIT	org.apache.hudi.table.action.compact.HoodieJavaMergeOnReadTableCompactor#preCompact(HoodieTable,HoodieTimeline,WriteOperationType,String):void	ed6226791c2316246aa8	455	712	1178	357
+METHOD_EXIT	org.apache.hudi.table.action.compact.HoodieJavaMergeOnReadTableCompactor#maybePersist(HoodieData<WriteStatus>,HoodieEngineContext,HoodieWriteConfig,String):void	494289a2d1f40d774bae	455	608	1074	267
+METHOD_ENTRY	org.apache.hudi.table.action.deltacommit.JavaInsertDeltaCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	be1980db79998cce67ef	413	486	910	45
+METHOD_ENTRY	org.apache.hudi.table.action.deltacommit.JavaUpsertDeltaCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>	486743f2032cb15534cc	413	488	912	262
+METHOD_EXIT	org.apache.hudi.table.action.compact.HoodieJavaMergeOnReadTableCompactor#getEngineRecordType():HoodieRecord.HoodieRecordType	1e919d2b07425bdbf967	455	632	1098	52
+METHOD_ENTRY	org.apache.hudi.table.action.compact.HoodieJavaMergeOnReadTableCompactor#preCompact(HoodieTable,HoodieTimeline,WriteOperationType,String):void	382d987fd173364cebad	413	701	1125	246
+METHOD_ENTRY	org.apache.hudi.table.action.cluster.JavaExecuteClusteringCommitActionExecutor#getCommitActionType():String	d6cf4c646ce4ff97d8e3	413	451	875	123
+METHOD_ENTRY	org.apache.hudi.table.action.compact.HoodieJavaMergeOnReadTableCompactor#getEngineRecordType():HoodieRecord.HoodieRecordType	a8764cc8d02c7d2be64d	413	552	976	54
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#upsert(HoodieEngineContext,String,List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>	b069a66707a9f9caf0b0	413	1285	1709	227
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#upsert(HoodieEngineContext,String,List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>	80ec4f810066d4f7d9ad	455	1368	1834	292
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#bulkInsert(HoodieEngineContext,String,List<HoodieRecord<T>>,Option<BulkInsertPartitioner>):HoodieWriteMetadata<List<WriteStatus>>	cbe7a90cef37c2812af0	413	1329	1753	267
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#deletePrepped(HoodieEngineContext,String,List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>	bb3d009af1daaed8c8e0	413	1300	1724	195
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#deletePrepped(HoodieEngineContext,String,List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>	721eca277f11467d3f0f	455	1383	1849	297
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#delete(HoodieEngineContext,String,List<HoodieKey>):HoodieWriteMetadata<List<WriteStatus>>	e542672e0df3115674e9	455	1360	1826	303
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#deletePartitions(HoodieEngineContext,String,List<String>):HoodieWriteMetadata	4a35478286389b30aa89	413	1251	1675	274
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#insert(HoodieEngineContext,String,List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>	261c0318752da74df538	413	1282	1706	266
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#bulkInsert(HoodieEngineContext,String,List<HoodieRecord<T>>,Option<BulkInsertPartitioner>):HoodieWriteMetadata<List<WriteStatus>>	fff87bb2e35a61e39b2d	455	1412	1878	299
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#insert(HoodieEngineContext,String,List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>	f1b3c7ec4bdf394c4154	455	1365	1831	271
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#delete(HoodieEngineContext,String,List<HoodieKey>):HoodieWriteMetadata<List<WriteStatus>>	448f3fb1006590323bd7	413	1277	1701	282
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#deletePartitions(HoodieEngineContext,String,List<String>):HoodieWriteMetadata	31698a7c737b16c13d2c	455	1330	1796	299
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#upsertPrepped(HoodieEngineContext,String,List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>	458eb0cfb7f260c7b785	413	1305	1729	283
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#insertPrepped(HoodieEngineContext,String,List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>	ad9bba49b9fc6e6b3164	413	1302	1726	216
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#bulkInsertPrepped(HoodieEngineContext,String,List<HoodieRecord<T>>,Option<BulkInsertPartitioner>):HoodieWriteMetadata<List<WriteStatus>>	77e1f12344ebbb3fd048	413	1341	1765	267
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#insertOverwrite(HoodieEngineContext,String,List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>	ed85799f5ccf2970e0fb	455	1368	1834	227
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#insertOverwriteTable(HoodieEngineContext,String,List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>	c04b2e5ed0bbaf7b5a1b	413	1288	1712	260
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#insertOverwriteTable(HoodieEngineContext,String,List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>	9e906a604ad7c2ec8da2	455	1371	1837	292
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#managePartitionTTL(HoodieEngineContext,String):HoodieWriteMetadata<List<WriteStatus>>	bd55bfbb33a56d95688f	413	1251	1675	162
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#managePartitionTTL(HoodieEngineContext,String):HoodieWriteMetadata<List<WriteStatus>>	3f0c0d832af725b544e2	455	1334	1800	57
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#scheduleCompaction(HoodieEngineContext,String,Option<Map<String, String>>):Option<HoodieCompactionPlan>	61ae21a27664b4a09eb9	413	1282	1706	273
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#scheduleCompaction(HoodieEngineContext,String,Option<Map<String, String>>):Option<HoodieCompactionPlan>	1a89723f9c663b8a97ac	455	1365	1831	244
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#upsertPrepped(HoodieEngineContext,String,List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>	a03a43c53392d7172428	455	1388	1854	352
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#bulkInsertPrepped(HoodieEngineContext,String,List<HoodieRecord<T>>,Option<BulkInsertPartitioner>):HoodieWriteMetadata<List<WriteStatus>>	277b4ce7149e26cd059d	455	1424	1890	278
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#insertPrepped(HoodieEngineContext,String,List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>	16b59faa0d51a7623c2c	455	1385	1851	271
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#compact(HoodieEngineContext,String):HoodieWriteMetadata<List<WriteStatus>>	233dcd0892bf4ddbff4b	455	1339	1805	68
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#scheduleClustering(HoodieEngineContext,String,Option<Map<String, String>>):Option<HoodieClusteringPlan>	f61304b60f716dad486d	413	1283	1707	202
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#scheduleClustering(HoodieEngineContext,String,Option<Map<String, String>>):Option<HoodieClusteringPlan>	194e4b804ce3ab7089ee	455	1366	1832	321
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#insertOverwrite(HoodieEngineContext,String,List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>	bb4a42dbedc89e95095e	413	1285	1709	264
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#bootstrap(HoodieEngineContext,Option<Map<String, String>>):HoodieBootstrapWriteMetadata<List<WriteStatus>>	68dc712ea0c41f54495a	455	1347	1813	62
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#rollbackBootstrap(HoodieEngineContext,String):void	3804bc01886a44fd5b53	413	1233	1657	161
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#rollbackBootstrap(HoodieEngineContext,String):void	72f522597d85e72f6a7d	455	1244	1710	220
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#scheduleRollback(HoodieEngineContext,String,HoodieInstant,boolean,boolean,boolean):Option<HoodieRollbackPlan>	bc391c0ea75b44013262	455	1408	1874	267
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#compact(HoodieEngineContext,String):HoodieWriteMetadata<List<WriteStatus>>	5294684bf9eeb3d32fe6	413	1256	1680	133
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#cluster(HoodieEngineContext,String):HoodieWriteMetadata<List<WriteStatus>>	e901280bb05d4d6d00b4	413	1256	1680	160
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#cluster(HoodieEngineContext,String):HoodieWriteMetadata<List<WriteStatus>>	10584c8e16a657ab65b1	455	1339	1805	270
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#createCleanerPlan(HoodieEngineContext,Option<Map<String, String>>):Option<HoodieCleanerPlan>	6f358c0eac9f904eeaba	413	1264	1688	178
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#createCleanerPlan(HoodieEngineContext,Option<Map<String, String>>):Option<HoodieCleanerPlan>	a64d6a28ad93a85bc59e	455	1346	1812	272
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#bootstrap(HoodieEngineContext,Option<Map<String, String>>):HoodieBootstrapWriteMetadata<List<WriteStatus>>	f30bb44ac65c1ab4a683	413	1263	1687	191
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#scheduleRollback(HoodieEngineContext,String,HoodieInstant,boolean,boolean,boolean):Option<HoodieRollbackPlan>	1a0da2526fe50f1c0b99	413	1326	1750	247
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#scheduleIndexing(HoodieEngineContext,String,List<MetadataPartitionType>,List<String>):Option<HoodieIndexPlan>	04c6e9b9bd230b97f271	413	1302	1726	273
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#clean(HoodieEngineContext,String):HoodieCleanMetadata	46ac92f36a16d4ccc797	413	1242	1666	219
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#clean(HoodieEngineContext,String):HoodieCleanMetadata	038276f88c635f1989a5	455	1321	1787	336
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#scheduleIndexing(HoodieEngineContext,String,List<MetadataPartitionType>,List<String>):Option<HoodieIndexPlan>	b1c8fc7f5e1a91dd3a86	455	1384	1850	298
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#rollback(HoodieEngineContext,String,HoodieInstant,boolean,boolean):HoodieRollbackMetadata	497bf12a4b9d555ddab9	455	1384	1850	229
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#savepoint(HoodieEngineContext,String,String,String):HoodieSavepointMetadata	3e407372ef91a61ae233	413	1276	1700	290
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#scheduleRestore(HoodieEngineContext,String,String):Option<HoodieRestorePlan>	91974715c9162bb6a784	455	1355	1821	283
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#rollback(HoodieEngineContext,String,HoodieInstant,boolean,boolean):HoodieRollbackMetadata	ca04306f95032193bd1d	413	1305	1729	222
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#scheduleRestore(HoodieEngineContext,String,String):Option<HoodieRestorePlan>	e6851ebaea3dc512331d	413	1273	1697	334
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#index(HoodieEngineContext,String):Option<HoodieIndexCommitMetadata>	6f859a47b43b8687212f	413	1250	1674	194
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#restore(HoodieEngineContext,String,String):HoodieRestoreMetadata	f3888ca52132fb1a9de9	455	1350	1816	351
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#handleUpdate(String,String,String,Map<String, HoodieRecord<T>>,HoodieBaseFile):Iterator<List<WriteStatus>>	70b35ce13b9a0e74b27d	413	1341	1765	315
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#restore(HoodieEngineContext,String,String):HoodieRestoreMetadata	e0503f00c8bb6ae2045d	413	1271	1695	267
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#getUpdateHandle(String,String,String,Map<String, HoodieRecord<T>>,HoodieBaseFile):HoodieMergeHandle	d60cb19eca64702f2cc5	413	1435	1859	197
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#index(HoodieEngineContext,String):Option<HoodieIndexCommitMetadata>	4b02a7f0df2fca90109f	455	1333	1799	271
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#savepoint(HoodieEngineContext,String,String,String):HoodieSavepointMetadata	44942e04ce1f62333ead	455	1356	1822	349
+METHOD_ENTRY	org.apache.hudi.index.JavaHoodieIndexFactory#createIndex(HoodieWriteConfig):HoodieIndex	89271592e07599147304	413	623	1047	417
+METHOD_ENTRY	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#handleInsert(String,String,String,Map<String, HoodieRecord<?>>):Iterator<List<WriteStatus>>	1bd9a6dc41140dc70fed	413	1312	1736	152
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#handleInsert(String,String,String,Map<String, HoodieRecord<?>>):Iterator<List<WriteStatus>>	00452e8f6c7af43ce7bd	455	1393	1859	292
+METHOD_EXIT	org.apache.hudi.index.JavaHoodieIndexFactory#createIndex(HoodieWriteConfig):HoodieIndex	045b158fc0c2bcda3e00	455	701	1167	445
+METHOD_ENTRY	org.apache.hudi.index.JavaHoodieIndex#tagLocation(HoodieData<HoodieRecord<R>>,HoodieEngineContext,HoodieTable):HoodieData<HoodieRecord<R>>	031e174dd4e7ef7b187f	413	674	1098	232
+METHOD_ENTRY	org.apache.hudi.index.JavaHoodieIndexFactory#getKeyGeneratorForSimpleIndex(HoodieWriteConfig):Option<BaseKeyGenerator>	c5ea95ba7a6ea52c3fec	413	534	958	243
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#handleUpdate(String,String,String,Map<String, HoodieRecord<T>>,HoodieBaseFile):Iterator<List<WriteStatus>>	101da2c709c5a028620a	455	1422	1888	331
+METHOD_EXIT	org.apache.hudi.index.JavaHoodieIndex#tagLocation(HoodieData<HoodieRecord<R>>,HoodieEngineContext,HoodieTable):HoodieData<HoodieRecord<R>>	bf364facb1edb6357908	455	757	1223	260
+METHOD_EXIT	org.apache.hudi.index.JavaHoodieIndexFactory#getKeyGeneratorForSimpleIndex(HoodieWriteConfig):Option<BaseKeyGenerator>	21e74aacb44508406d25	455	614	1080	219
+METHOD_ENTRY	org.apache.hudi.execution.JavaLazyInsertIterable#computeNext():List<WriteStatus>	57d4188268aebfbef8d1	413	558	982	5
+METHOD_ENTRY	org.apache.hudi.index.JavaHoodieIndex#updateLocation(HoodieData<WriteStatus>,HoodieEngineContext,HoodieTable):HoodieData<WriteStatus>	64fd13c491f61f41c837	413	618	1042	252
+METHOD_EXIT	org.apache.hudi.execution.bulkinsert.JavaBulkInsertInternalPartitionerFactory#get(BulkInsertSortMode):BulkInsertPartitioner	f8f22c430a6fca0c5000	455	614	1080	289
+METHOD_EXIT	org.apache.hudi.table.HoodieJavaCopyOnWriteTable#getUpdateHandle(String,String,String,Map<String, HoodieRecord<T>>,HoodieBaseFile):HoodieMergeHandle	43da1aa24bfbaa37a639	455	1514	1980	252
+METHOD_EXIT	org.apache.hudi.execution.bulkinsert.JavaNonSortPartitioner#repartitionRecords(List<HoodieRecord<T>>,int):List<HoodieRecord<T>>	0526487bea472d58f0c6	455	611	1077	231
+METHOD_EXIT	org.apache.hudi.execution.JavaLazyInsertIterable#computeNext():List<WriteStatus>	79bc770ba308973b3d0e	455	635	1101	252
+METHOD_EXIT	org.apache.hudi.execution.bulkinsert.JavaNonSortPartitioner#arePartitionRecordsSorted():boolean	7bbfe50895f3b456a1dc	455	559	1025	78
+METHOD_ENTRY	org.apache.hudi.execution.bulkinsert.JavaBulkInsertInternalPartitionerFactory#get(BulkInsertSortMode):BulkInsertPartitioner	48feadbdd265ff2ca567	413	534	958	285
+METHOD_EXIT	org.apache.hudi.index.JavaHoodieIndex#updateLocation(HoodieData<WriteStatus>,HoodieEngineContext,HoodieTable):HoodieData<WriteStatus>	a316435c64d81627035a	455	699	1165	255
+METHOD_ENTRY	org.apache.hudi.execution.bulkinsert.JavaNonSortPartitioner#arePartitionRecordsSorted():boolean	822432abb6c971072aea	413	485	909	52
+METHOD_EXIT	org.apache.hudi.execution.bulkinsert.JavaCustomColumnsSortPartitioner#arePartitionRecordsSorted():boolean	a8eefaa35c5be42e93e5	455	604	1070	45
+METHOD_EXIT	org.apache.hudi.execution.bulkinsert.JavaCustomColumnsSortPartitioner#repartitionRecords(List<HoodieRecord<T>>,int):List<HoodieRecord<T>>	732e5f2f9628647cd5c6	455	692	1158	309
+METHOD_ENTRY	org.apache.hudi.execution.bulkinsert.JavaNonSortPartitioner#repartitionRecords(List<HoodieRecord<T>>,int):List<HoodieRecord<T>>	db1017514d863670ea28	413	529	953	279
+METHOD_ENTRY	org.apache.hudi.execution.bulkinsert.JavaCustomColumnsSortPartitioner#arePartitionRecordsSorted():boolean	2c820a8797b3ac49c6a0	413	530	954	191
+METHOD_EXIT	org.apache.hudi.execution.bulkinsert.JavaCustomColumnsSortPartitioner#getComparableSortColumns(HoodieRecord):FlatLists.ComparableList<Comparable<HoodieRecord>>	36deadd782fef98ad15a	455	667	1133	276
+METHOD_EXIT	org.apache.hudi.execution.bulkinsert.JavaGlobalSortPartitioner#repartitionRecords(List<HoodieRecord<T>>,int):List<HoodieRecord<T>>	522074a398024e9a7467	455	738	1204	320
+METHOD_ENTRY	org.apache.hudi.execution.bulkinsert.JavaCustomColumnsSortPartitioner#getComparableSortColumns(HoodieRecord):FlatLists.ComparableList<Comparable<HoodieRecord>>	d3e47dd0117d182b95af	413	580	1004	236
+METHOD_ENTRY	org.apache.hudi.execution.bulkinsert.JavaGlobalSortPartitioner#arePartitionRecordsSorted():boolean	85ca95be0f3e69c118f9	413	492	916	53
+METHOD_ENTRY	org.apache.hudi.execution.bulkinsert.JavaCustomColumnsSortPartitioner#repartitionRecords(List<HoodieRecord<T>>,int):List<HoodieRecord<T>>	2f6d8c7f405d9c76ae0e	413	610	1034	239
+METHOD_EXIT	org.apache.hudi.execution.bulkinsert.JavaGlobalSortPartitioner#compare(Object,Object):int	bef57de80f84bb9bafff	455	481	947	149
+METHOD_ENTRY	org.apache.hudi.execution.bulkinsert.JavaGlobalSortPartitioner#compare(Object,Object):int	37e0767240dba022416b	413	470	894	5
+METHOD_ENTRY	org.apache.hudi.execution.bulkinsert.JavaGlobalSortPartitioner#repartitionRecords(List<HoodieRecord<T>>,int):List<HoodieRecord<T>>	484c9143768d2a67aae6	413	656	1080	280
+METHOD_EXIT	org.apache.hudi.execution.bulkinsert.JavaGlobalSortPartitioner#arePartitionRecordsSorted():boolean	e416eeb5f9d4081b0353	455	566	1032	44

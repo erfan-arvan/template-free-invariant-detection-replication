@@ -1,0 +1,35 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/23.0.2/bin/java
+MVN: /scratch/mjk76/ea442/apache-maven-3.9.9/bin/mvn
+######################################
+PROMPT STUDY STARTED
+Start time: 2026-09-11 05:08:08 EDT
+######################################
+>>> Building Daikon++ (once)
+======================================
+>>> STRATEGY: cot
+>>> Start time: 2026-09-11 05:11:36 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: netty
+>>> Start time: 2026-09-11 05:11:36 EDT
+--------------------------------------
+>>> Finished netty (strategy=cot)
+>>> Finish time: 2026-09-11 05:26:15 EDT
+>>> Duration: 00h:14m:39s
+>>> Duration in seconds: 879
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/cot/netty/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/cot/netty/daikonpp_registry.jsonl
+======================================
+DONE strategy: cot
+Finish time: 2026-09-11 05:26:15 EDT
+Duration: 00h:14m:39s
+Duration in seconds: 879
+Results in: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/cot
+======================================
+######################################
+ALL STRATEGIES DONE
+Start time: 2026-09-11 05:08:08 EDT
+Finish time: 2026-09-11 05:26:15 EDT
+Total duration: 00h:18m:07s
+Total duration in seconds: 1087
+######################################

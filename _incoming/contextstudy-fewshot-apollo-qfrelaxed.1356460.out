@@ -1,0 +1,44 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/23.0.2/bin/java
+MVN: /scratch/mjk76/ea442/apache-maven-3.9.9/bin/mvn
+######################################
+FEWSHOT CONTEXT STUDY STARTED
+Prompt strategy (fixed): fewshot
+Results base: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshotQfRelaxed
+Start time: 2026-09-29 16:03:17 EDT
+######################################
+>>> Building Daikon++ (once)
+======================================
+>>> CONTEXT CONFIG: class_doc
+>>> Prompt strategy: fewshot
+>>> DP_CONTEXTS: METHOD_BODY,SCOPE,CLASS_DOC
+>>> Start time: 2026-09-29 16:06:03 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: apollo
+>>> Context config: class_doc
+>>> Prompt strategy: fewshot
+>>> Start time: 2026-09-29 16:06:03 EDT
+--------------------------------------
+>>> Finished apollo (context_config=class_doc, prompt=fewshot)
+>>> Finish time: 2026-09-29 16:08:21 EDT
+>>> Duration: 00h:02m:18s
+>>> Duration in seconds: 138
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshotQfRelaxed/class_doc/apollo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshotQfRelaxed/class_doc/apollo/daikonpp_registry.jsonl
+======================================
+DONE context config: class_doc
+Prompt strategy: fewshot
+Finish time: 2026-09-29 16:08:21 EDT
+Duration: 00h:02m:18s
+Duration in seconds: 138
+Results in: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshotQfRelaxed/class_doc
+======================================
+######################################
+ALL FEWSHOT CONTEXT CONFIGS DONE
+Prompt strategy: fewshot
+Start time: 2026-09-29 16:03:17 EDT
+Finish time: 2026-09-29 16:08:21 EDT
+Total duration: 00h:05m:04s
+Total duration in seconds: 304
+Results base: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshotQfRelaxed
+######################################

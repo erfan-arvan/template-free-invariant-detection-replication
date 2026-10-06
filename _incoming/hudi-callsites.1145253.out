@@ -1,0 +1,14 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+CLASSES: hudi/hudi-client/hudi-java-client/target/classes
+SRC: hudi/hudi-client/hudi-java-client/src/main/java
+[callsite-tool] classes=hudi/hudi-client/hudi-java-client/target/classes
+[callsite-tool] src=hudi/hudi-client/hudi-java-client/src/main/java
+[callsite-tool] out=hudi_callsites.json
+[callsite-tool] classpath entries skipped=3
+[callsite-tool] entrypoints=427
+[callsite-tool] CG nodes=59286
+[callsite-tool] application call edges=306
+[callsite-tool] methods with recorded callers=112
+[callsite-tool] wrote hudi_callsites.json
+>>> Wrote hudi_callsites.json
+997 hudi_callsites.json

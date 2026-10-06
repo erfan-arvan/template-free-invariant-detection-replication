@@ -1,0 +1,12 @@
+========================================
+Apollo Daikon invariant detection
+========================================
+JAVA:   /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+TRACE:  /scratch/mjk76/ea442/promptstudy/apollo-chicory-out/1260710/apollo.dtrace
+JAR:    /project/mjk76/ea442/promptstudy/daikon.jar
+OUTPUT: /project/mjk76/ea442/promptstudy/apollo-daikon-out
+
+>>> Trace size:
+-rw-r--r--+ 1 ea442 ea442 773M Sep 10 19:16 /scratch/mjk76/ea442/promptstudy/apollo-chicory-out/1260710/apollo.dtrace
+
+>>> Starting Daikon at 2026-09-11T00:18:44-04:00

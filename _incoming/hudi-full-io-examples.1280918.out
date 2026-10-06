@@ -1,0 +1,6 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+DTRACE (original, read-only): /scratch/mjk76/ea442/promptstudy/hudi-chicory-out/1260714/dtrace.gz
+OUT:   /project/mjk76/ea442/promptstudy/hudi-full_io_examples.json
+[io-examples-tool] dtrace=/scratch/mjk76/ea442/promptstudy/hudi-chicory-out/1260714/dtrace.gz
+[io-examples-tool] src=/project/mjk76/ea442/promptstudy/hudi/hudi-client/hudi-java-client/src/main/java
+[io-examples-tool] out=/project/mjk76/ea442/promptstudy/hudi-full_io_examples.json

@@ -1,0 +1,101 @@
+review_id	project	class_name	method_name	parameters	program_point	invariant	source_tool
+INV-0001	dubbo	org.apache.dubbo.common.utils.LogHelper	error	org.apache.dubbo.common.logger.Logger, java.lang.String, java.lang.Throwable	EXIT	logger == null || msg != null || e != null	OCA
+INV-0002	dubbo	org.apache.dubbo.common.utils.LogHelper	error	org.apache.dubbo.common.logger.Logger, java.lang.String, java.lang.Throwable	EXIT	logger == null || logger.isErrorEnabled()	OCA
+INV-0003	dubbo	org.apache.dubbo.common.utils.LogHelper	error	org.apache.dubbo.common.logger.Logger, java.lang.String, java.lang.Throwable	ENTRY	"logger.getClass().getName().equals(""org.apache.dubbo.common.logger.Logger$MockitoMock$jZMOTlpe"")"	DAIKON
+INV-0004	dubbo	org.apache.dubbo.common.utils.LogHelper	error	org.apache.dubbo.common.logger.Logger, java.lang.String, java.lang.Throwable	ENTRY	"""error"".equals(msg)"	DAIKON
+INV-0005	dubbo	org.apache.dubbo.common.utils.LogHelper	error	org.apache.dubbo.common.logger.Logger, java.lang.String, java.lang.Throwable	EXIT	logger == null || (msg != null || e != null)	OCA
+INV-0006	dubbo	org.apache.dubbo.common.utils.LogHelper	error	org.apache.dubbo.common.logger.Logger, java.lang.String, java.lang.Throwable	EXIT	"""error"".equals(msg)"	DAIKON
+INV-0007	dubbo	org.apache.dubbo.common.utils.Stack	peek		ENTRY	this.mElements.stream().allMatch(e -> e.getClass() == java.lang.String.class)	DAIKON
+INV-0008	dubbo	org.apache.dubbo.common.utils.Stack	peek		EXIT	result != null	OCA
+INV-0009	apollo	com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceRegistryClearApplicationRunner	run	org.springframework.boot.ApplicationArguments	EXIT	args != null	OCA
+INV-0010	apollo	com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceRegistryClearApplicationRunner	run	org.springframework.boot.ApplicationArguments	ENTRY	args.getClass() == org.springframework.boot.DefaultApplicationArguments.class	DAIKON
+INV-0011	apollo	com.ctrip.framework.apollo.biz.registry.configuration.ApolloServiceDiscoveryAutoConfiguration	wrapMemoryCache	com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClient	ENTRY	discoveryClient != null	OCA
+INV-0012	apollo	com.ctrip.framework.apollo.biz.registry.configuration.ApolloServiceDiscoveryAutoConfiguration	wrapMemoryCache	com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClient	EXIT	result.getClass() == com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClientMemoryCacheDecoratorImpl.class	DAIKON
+INV-0013	apollo	com.ctrip.framework.apollo.biz.registry.configuration.ApolloServiceDiscoveryAutoConfiguration	wrapMemoryCache	com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClient	ENTRY	discoveryClient.getClass() == com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClientAlwaysAddSelfInstanceDecoratorImpl.class	DAIKON
+INV-0014	apollo	com.ctrip.framework.apollo.biz.registry.configuration.ApolloServiceDiscoveryAutoConfiguration	wrapMemoryCache	com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClient	EXIT	result != discoveryClient	OCA
+INV-0015	dubbo	org.apache.dubbo.common.utils.MethodUtils	excludedDeclaredClass	java.lang.Class	ENTRY	declaredClass.getName() != null	OCA
+INV-0016	dubbo	org.apache.dubbo.common.utils.MethodUtils	excludedDeclaredClass	java.lang.Class	EXIT	"result.getClass().getName().equals(""org.apache.dubbo.common.utils.MethodUtils$$Lambda$1023/0x00001548a54c6bf0"")"	DAIKON
+INV-0017	libgdx	com.badlogic.gdx.math.Polygon	setVertices	float[]	ENTRY	this.worldVertices == null	DAIKON
+INV-0018	libgdx	com.badlogic.gdx.math.Polygon	setVertices	float[]	EXIT	vertices != null	OCA
+INV-0019	libgdx	com.badlogic.gdx.math.Polygon	setVertices	float[]	EXIT	vertices.length == 8 && vertices[0] == 1.0f && vertices[1] == -2.0f && vertices[2] == 1.0f && vertices[3] == -1.5f && vertices[4] == 1.5f && vertices[5] == -1.5f && vertices[6] == 1.5f && vertices[7] == -2.0f	DAIKON
+INV-0020	libgdx	com.badlogic.gdx.math.Polygon	setVertices	float[]	ENTRY	(vertices.length % 2) == 0	OCA
+INV-0021	libgdx	com.badlogic.gdx.math.Polygon	setVertices	float[]	ENTRY	vertices != null	OCA
+INV-0022	libgdx	com.badlogic.gdx.math.Polygon	setVertices	float[]	EXIT	vertices.length >= 6	OCA
+INV-0023	libgdx	com.badlogic.gdx.math.Polygon	setVertices	float[]	ENTRY	this.x == this.originX	DAIKON
+INV-0024	libgdx	com.badlogic.gdx.math.Polygon	setVertices	float[]	ENTRY	this.x == 0.0f	DAIKON
+INV-0025	libgdx	com.badlogic.gdx.math.Polygon	setVertices	float[]	EXIT	java.util.Arrays.equals(this.localVertices, vertices)	DAIKON
+INV-0026	libgdx	com.badlogic.gdx.math.Polygon	setVertices	float[]	ENTRY	vertices.length >= 6	OCA
+INV-0027	libgdx	com.badlogic.gdx.math.Polygon	setVertices	float[]	EXIT	vertices.length % 2 == 0	OCA
+INV-0028	libgdx	com.badlogic.gdx.math.Polygon	setVertices	float[]	ENTRY	this.localVertices.length == 0	DAIKON
+INV-0037	libgdx	com.badlogic.gdx.utils.LongArray	incr	int, long	ENTRY	index >= 0	OCA
+INV-0038	libgdx	com.badlogic.gdx.utils.LongArray	incr	int, long	ENTRY	value == 45L	DAIKON
+INV-0087	apollo	com.ctrip.framework.apollo.biz.service.ItemSetService	updateSet	java.lang.String, java.lang.String, java.lang.String, com.ctrip.framework.apollo.common.dto.ItemChangeSets	ENTRY	this.bizConfig.propertySources == null	DAIKON
+INV-0088	apollo	com.ctrip.framework.apollo.biz.service.ItemSetService	updateSet	java.lang.String, java.lang.String, java.lang.String, com.ctrip.framework.apollo.common.dto.ItemChangeSets	ENTRY	namespaceName != null	OCA
+INV-0089	apollo	com.ctrip.framework.apollo.biz.service.ItemSetService	updateSet	java.lang.String, java.lang.String, java.lang.String, com.ctrip.framework.apollo.common.dto.ItemChangeSets	EXIT	changeSet.createItems.size() == result.createItems.size() && java.util.stream.IntStream.range(0, changeSet.createItems.size()).allMatch(i -> changeSet.createItems.get(i) == result.createItems.get(i))	DAIKON
+INV-0090	apollo	com.ctrip.framework.apollo.biz.service.ItemSetService	updateSet	java.lang.String, java.lang.String, java.lang.String, com.ctrip.framework.apollo.common.dto.ItemChangeSets	EXIT	changeSet.updateItems.size() == changeSet.deleteItems.size()	DAIKON
+INV-0091	apollo	com.ctrip.framework.apollo.biz.service.ItemSetService	updateSet	java.lang.String, java.lang.String, java.lang.String, com.ctrip.framework.apollo.common.dto.ItemChangeSets	ENTRY	changeSet != null && changeSet.getCreateItems() != null && changeSet.getDeleteItems() != null && changeSet.getUpdateItems() != null	OCA
+INV-0092	apollo	com.ctrip.framework.apollo.biz.service.ItemSetService	updateSet	java.lang.String, java.lang.String, java.lang.String, com.ctrip.framework.apollo.common.dto.ItemChangeSets	EXIT	changeSet != null && result == changeSet	OCA
+INV-0093	apollo	com.ctrip.framework.apollo.biz.service.ItemSetService	updateSet	java.lang.String, java.lang.String, java.lang.String, com.ctrip.framework.apollo.common.dto.ItemChangeSets	ENTRY	appId != null	OCA
+INV-0094	apollo	com.ctrip.framework.apollo.biz.service.ItemSetService	updateSet	java.lang.String, java.lang.String, java.lang.String, com.ctrip.framework.apollo.common.dto.ItemChangeSets	ENTRY	clusterName != null	OCA
+INV-0095	apollo	com.ctrip.framework.apollo.biz.service.ItemSetService	updateSet	java.lang.String, java.lang.String, java.lang.String, com.ctrip.framework.apollo.common.dto.ItemChangeSets	EXIT	this.bizConfig.splitter == null	DAIKON
+INV-0096	apollo	com.ctrip.framework.apollo.biz.service.ItemSetService	updateSet	java.lang.String, java.lang.String, java.lang.String, com.ctrip.framework.apollo.common.dto.ItemChangeSets	EXIT	java.util.Objects.equals(changeSet.dataChangeCreatedBy, result.dataChangeLastModifiedByDisplayName)	DAIKON
+INV-0139	libgdx	com.badlogic.gdx.utils.CharArray	substring	int, int	ENTRY	start >= 0	OCA
+INV-0140	libgdx	com.badlogic.gdx.utils.CharArray	substring	int, int	ENTRY	end >= start	OCA
+INV-0141	libgdx	com.badlogic.gdx.utils.CharArray	substring	int, int	EXIT	this.size == 4 || this.size == 12	DAIKON
+INV-0142	libgdx	com.badlogic.gdx.utils.CharArray	substring	int, int	EXIT	result.length() == end - start	OCA
+INV-0143	libgdx	com.badlogic.gdx.utils.CharArray	substring	int, int	EXIT	this.ordered == true	DAIKON
+INV-0144	libgdx	com.badlogic.gdx.utils.CharArray	substring	int, int	ENTRY	java.util.Arrays.equals(this.items, new char[] {72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100, 33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}) || java.util.Arrays.equals(this.items, new char[] {105, 72, 55357, 56832, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0})	DAIKON
+INV-0145	libgdx	com.badlogic.gdx.utils.CharArray	substring	int, int	ENTRY	start == 0 || start == 6	DAIKON
+INV-0146	libgdx	com.badlogic.gdx.utils.CharArray	substring	int, int	EXIT	start >= 0 && end >= start && result != null	OCA
+INV-0153	netty	io.netty.util.Signal	fillInStackTrace		EXIT	this.constant == null	DAIKON
+INV-0154	netty	io.netty.util.Signal	fillInStackTrace		ENTRY	this.constant == null	DAIKON
+INV-0155	netty	io.netty.util.Signal	fillInStackTrace		EXIT	result.getCause() == null	OCA
+INV-0156	netty	io.netty.util.Signal	fillInStackTrace		EXIT	result.getStackTrace().length == 0	OCA
+INV-0175	hudi	org.apache.hudi.table.HoodieJavaMergeOnReadTable	scheduleCompaction	org.apache.hudi.common.engine.HoodieEngineContext, java.lang.String, org.apache.hudi.common.util.Option	ENTRY	this.index == null	DAIKON
+INV-0176	hudi	org.apache.hudi.table.HoodieJavaMergeOnReadTable	scheduleCompaction	org.apache.hudi.common.engine.HoodieEngineContext, java.lang.String, org.apache.hudi.common.util.Option	ENTRY	extraMetadata != null	DAIKON
+INV-0177	hudi	org.apache.hudi.table.HoodieJavaMergeOnReadTable	scheduleCompaction	org.apache.hudi.common.engine.HoodieEngineContext, java.lang.String, org.apache.hudi.common.util.Option	ENTRY	(!extraMetadata.isPresent() || extraMetadata.get() != null)	OCA
+INV-0178	hudi	org.apache.hudi.table.HoodieJavaMergeOnReadTable	scheduleCompaction	org.apache.hudi.common.engine.HoodieEngineContext, java.lang.String, org.apache.hudi.common.util.Option	ENTRY	context != null	OCA
+INV-0179	hudi	org.apache.hudi.table.HoodieJavaMergeOnReadTable	scheduleCompaction	org.apache.hudi.common.engine.HoodieEngineContext, java.lang.String, org.apache.hudi.common.util.Option	EXIT	!result.isPresent() || result.get() != null	OCA
+INV-0180	hudi	org.apache.hudi.table.HoodieJavaMergeOnReadTable	scheduleCompaction	org.apache.hudi.common.engine.HoodieEngineContext, java.lang.String, org.apache.hudi.common.util.Option	ENTRY	this.context.getClass().getName().equals(context.getClass().getName())	DAIKON
+INV-0181	hudi	org.apache.hudi.table.HoodieJavaMergeOnReadTable	scheduleCompaction	org.apache.hudi.common.engine.HoodieEngineContext, java.lang.String, org.apache.hudi.common.util.Option	ENTRY	extraMetadata != null	OCA
+INV-0182	hudi	org.apache.hudi.table.HoodieJavaMergeOnReadTable	scheduleCompaction	org.apache.hudi.common.engine.HoodieEngineContext, java.lang.String, org.apache.hudi.common.util.Option	EXIT	this.storageLayout == null	DAIKON
+INV-0183	hudi	org.apache.hudi.table.HoodieJavaMergeOnReadTable	scheduleCompaction	org.apache.hudi.common.engine.HoodieEngineContext, java.lang.String, org.apache.hudi.common.util.Option	EXIT	result != null	OCA
+INV-0184	hudi	org.apache.hudi.table.HoodieJavaMergeOnReadTable	scheduleCompaction	org.apache.hudi.common.engine.HoodieEngineContext, java.lang.String, org.apache.hudi.common.util.Option	EXIT	this.isMetadataTableExists == false	DAIKON
+INV-0185	hudi	org.apache.hudi.table.HoodieJavaMergeOnReadTable	scheduleCompaction	org.apache.hudi.common.engine.HoodieEngineContext, java.lang.String, org.apache.hudi.common.util.Option	ENTRY	instantTime != null && !instantTime.isEmpty()	OCA
+INV-0186	hudi	org.apache.hudi.table.HoodieJavaMergeOnReadTable	scheduleCompaction	org.apache.hudi.common.engine.HoodieEngineContext, java.lang.String, org.apache.hudi.common.util.Option	EXIT	result.isPresent() || !result.isPresent()	OCA
+INV-0187	hudi	org.apache.hudi.table.HoodieJavaMergeOnReadTable	scheduleCompaction	org.apache.hudi.common.engine.HoodieEngineContext, java.lang.String, org.apache.hudi.common.util.Option	ENTRY	this.metadata == null	DAIKON
+INV-0188	hudi	org.apache.hudi.table.HoodieJavaMergeOnReadTable	scheduleCompaction	org.apache.hudi.common.engine.HoodieEngineContext, java.lang.String, org.apache.hudi.common.util.Option	EXIT	result != null	DAIKON
+INV-0189	hudi	org.apache.hudi.table.HoodieJavaTable	create	org.apache.hudi.config.HoodieWriteConfig, org.apache.hudi.common.engine.HoodieEngineContext	ENTRY	config != null	DAIKON
+INV-0190	hudi	org.apache.hudi.table.HoodieJavaTable	create	org.apache.hudi.config.HoodieWriteConfig, org.apache.hudi.common.engine.HoodieEngineContext	ENTRY	context != null	OCA
+INV-0191	hudi	org.apache.hudi.table.HoodieJavaTable	create	org.apache.hudi.config.HoodieWriteConfig, org.apache.hudi.common.engine.HoodieEngineContext	EXIT	result != null	DAIKON
+INV-0192	hudi	org.apache.hudi.table.HoodieJavaTable	create	org.apache.hudi.config.HoodieWriteConfig, org.apache.hudi.common.engine.HoodieEngineContext	EXIT	result != null	OCA
+INV-0193	hudi	org.apache.hudi.table.HoodieJavaTable	create	org.apache.hudi.config.HoodieWriteConfig, org.apache.hudi.common.engine.HoodieEngineContext	ENTRY	context != null	DAIKON
+INV-0194	hudi	org.apache.hudi.table.HoodieJavaTable	create	org.apache.hudi.config.HoodieWriteConfig, org.apache.hudi.common.engine.HoodieEngineContext	ENTRY	config.getConsistencyGuardConfig() != null	OCA
+INV-0195	hudi	org.apache.hudi.table.HoodieJavaTable	create	org.apache.hudi.config.HoodieWriteConfig, org.apache.hudi.common.engine.HoodieEngineContext	ENTRY	config != null	OCA
+INV-0196	hudi	org.apache.hudi.table.HoodieJavaTable	create	org.apache.hudi.config.HoodieWriteConfig, org.apache.hudi.common.engine.HoodieEngineContext	ENTRY	context.getClass() == org.apache.hudi.client.common.HoodieJavaEngineContext.class	DAIKON
+INV-0207	apollo	com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceDiscoveryProperties	getHealthCheckIntervalInSecond		EXIT	result >= 0L	OCA
+INV-0208	apollo	com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceDiscoveryProperties	getHealthCheckIntervalInSecond		EXIT	this.healthCheckIntervalInSecond == result	DAIKON
+INV-0209	spring	org.springframework.core.convert.support.StringToPropertiesConverter	convert	java.lang.String	ENTRY	"""   foo=bar\n    bar=baz\n     baz=boo"".equals(source) || ""a=b\nc=2\nd="".equals(source)"	DAIKON
+INV-0210	spring	org.springframework.core.convert.support.StringToPropertiesConverter	convert	java.lang.String	EXIT	result.isEmpty() == (source.isEmpty())	OCA
+INV-0211	spring	org.springframework.core.convert.support.StringToPropertiesConverter	convert	java.lang.String	EXIT	"""   foo=bar\n    bar=baz\n     baz=boo"".equals(source) || ""a=b\nc=2\nd="".equals(source)"	DAIKON
+INV-0212	spring	org.springframework.core.convert.support.StringToPropertiesConverter	convert	java.lang.String	EXIT	result != null	OCA
+INV-0213	netty	io.netty.util.DomainNameMapping	needsNormalization	java.lang.String	EXIT	result == false	DAIKON
+INV-0214	netty	io.netty.util.DomainNameMapping	needsNormalization	java.lang.String	EXIT	!result || hostname.length() > 0	OCA
+INV-0253	dubbo	org.apache.dubbo.common.io.UnsafeByteArrayOutputStream	toString		ENTRY	this.mCount == 3	DAIKON
+INV-0254	dubbo	org.apache.dubbo.common.io.UnsafeByteArrayOutputStream	toString		EXIT	result != null	OCA
+INV-0277	spring	org.springframework.core.convert.ConversionService	convert	java.lang.Object, org.springframework.core.convert.TypeDescriptor	EXIT	(source == null && result == null) || (source != null)	OCA
+INV-0278	spring	org.springframework.core.convert.ConversionService	convert	java.lang.Object, org.springframework.core.convert.TypeDescriptor	ENTRY	(source == null) || source.getClass() != null	OCA
+INV-0279	spring	org.springframework.core.convert.ConversionService	convert	java.lang.Object, org.springframework.core.convert.TypeDescriptor	ENTRY	targetType != null	DAIKON
+INV-0280	spring	org.springframework.core.convert.ConversionService	convert	java.lang.Object, org.springframework.core.convert.TypeDescriptor	ENTRY	targetType != null	OCA
+INV-0281	spring	org.springframework.core.convert.ConversionService	convert	java.lang.Object, org.springframework.core.convert.TypeDescriptor	ENTRY	!this.getClass().getName().equals(source.getClass().getName())	DAIKON
+INV-0282	spring	org.springframework.core.convert.ConversionService	convert	java.lang.Object, org.springframework.core.convert.TypeDescriptor	ENTRY	!((source != null) && (targetType.getObjectType() == null))	OCA
+INV-0283	spring	org.springframework.core.convert.ConversionService	convert	java.lang.Object, org.springframework.core.convert.TypeDescriptor	ENTRY	source != null	DAIKON
+INV-0284	spring	org.springframework.core.convert.ConversionService	convert	java.lang.Object, org.springframework.core.convert.TypeDescriptor	EXIT	result != null	DAIKON
+INV-0295	netty	io.netty.util.AsciiStringUtil	isLowerCase	byte	EXIT	result == true	DAIKON
+INV-0296	netty	io.netty.util.AsciiStringUtil	isLowerCase	byte	EXIT	result == (value >= 97 && value <= 122)	OCA
+INV-0297	netty	io.netty.util.AsciiStringUtil	isLowerCase	byte	EXIT	(result != false) || (io.netty.util.AsciiStringUtil.$assertionsDisabled == result)	DAIKON
+INV-0298	netty	io.netty.util.AsciiStringUtil	isLowerCase	byte	ENTRY	value != 0	OCA
+INV-0299	netty	io.netty.util.AsciiStringUtil	isLowerCase	byte	ENTRY	value >= 0	OCA
+INV-0300	netty	io.netty.util.AsciiStringUtil	isLowerCase	byte	EXIT	io.netty.util.AsciiStringUtil.$assertionsDisabled == result	DAIKON
+INV-0303	netty	io.netty.util.internal.ReflectionUtil	trySetAccessible	java.lang.reflect.AccessibleObject, boolean	EXIT	result == null	DAIKON
+INV-0304	netty	io.netty.util.internal.ReflectionUtil	trySetAccessible	java.lang.reflect.AccessibleObject, boolean	ENTRY	checkAccessible == false || object != null	OCA

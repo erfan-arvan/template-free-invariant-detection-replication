@@ -1,0 +1,74 @@
+======================================
+SLURM JOB ID: 1363821
+HOST: n0105
+START TIME: Thu Oct  1 06:18:34 PM EDT 2026
+WORKING DIRECTORY: /project/mjk76/ea442/promptstudy
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/23.0.2/bin/java
+JAVA VERSION:
+MVN: /scratch/mjk76/ea442/apache-maven-3.9.9/bin/mvn
+MVN VERSION:
+Apache Maven 3.9.9 (8e8579a9e76f7d015ee5ec7bfcdc97d260186937)
+Maven home: /scratch/mjk76/ea442/apache-maven-3.9.9
+Java version: 23.0.2, vendor: Eclipse Adoptium, runtime: /mmfs1/apps/easybuild/el9_5.x86_64/software/Java/23.0.2
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "5.14.0-503.11.1.el9_5.x86_64", arch: "amd64", family: "unix"
+======================================
+Starting relaxedAll prompt study...
+ROOT: /project/mjk76/ea442/promptstudy
+DPP_DIR: /project/mjk76/ea442/promptstudy/daikonplusplus
+SCRIPT: /project/mjk76/ea442/promptstudy/run_prompt_study_relaxedAll.sh
+
+Daikon++ commit: d7ea9f07b95233a46137b2b4b98faba03cb23dd8
+######################################
+PROMPT STUDY RELAXEDALL STARTED
+Start time: 2026-10-01 18:18:35 EDT
+Strategies: 6
+Benchmarks: 6
+Total planned runs: 36
+Results base: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll
+Scratch base: /scratch/mjk76/ea442/promptstudy_relaxedAll
+Cassette dir: /project/mjk76/ea442/promptstudy/daikonplusplus/src/test/cassettes
+Daikon++ jar: /project/mjk76/ea442/promptstudy/daikonplusplus/build/libs/daikonplusplus.jar
+Daikon++ commit: d7ea9f07b95233a46137b2b4b98faba03cb23dd8
+######################################
+======================================
+>>> STRATEGY: baseline
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-01 18:18:35 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: apollo
+>>> Strategy: baseline
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-01 18:18:35 EDT
+--------------------------------------
+>>> Finished apollo (strategy=baseline)
+>>> Exit status: 0
+>>> Finish time: 2026-10-01 18:18:58 EDT
+>>> Duration: 00h:00m:23s
+>>> Duration in seconds: 23
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/baseline/apollo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/baseline/apollo/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/baseline/apollo/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: dubbo
+>>> Strategy: baseline
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-01 18:18:58 EDT
+--------------------------------------
+>>> Finished dubbo (strategy=baseline)
+>>> Exit status: 0
+>>> Finish time: 2026-10-01 18:18:58 EDT
+>>> Duration: 00h:00m:00s
+>>> Duration in seconds: 0
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/baseline/dubbo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/baseline/dubbo/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/baseline/dubbo/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: netty
+>>> Strategy: baseline
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-01 18:18:58 EDT
+--------------------------------------

@@ -1,0 +1,534 @@
+Python: /mmfs1/project/mjk76/ea442/promptstudy/openai-env/bin/python
+Python 3.9.25
+OpenAI SDK: 2.48.0
+OPENAI_API_KEY received; length=164
+Methods with >=1 previously sampled FAIL: 54
+  apollo: 9
+  dubbo: 8
+  hudi: 9
+  libgdx: 9
+  netty: 9
+  spring: 10
+
+Parsing full Daikon output for apollo: /project/mjk76/ea442/promptstudy/apollo-daikon-out/apollo-invariants.txt
+  methods parsed: 1147
+  FAILED-SAMPLE METHOD: com.ctrip.framework.apollo.biz.entity.Item.setLineNum(java.lang.Integer)
+    full Daikon pool: 24
+  FAILED-SAMPLE METHOD: com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.convertToDatabaseColumn(java.util.Map)
+    full Daikon pool: 10
+  FAILED-SAMPLE METHOD: com.ctrip.framework.apollo.biz.entity.ReleaseHistory.getOperationContext()
+    full Daikon pool: 65
+  FAILED-SAMPLE METHOD: com.ctrip.framework.apollo.biz.registry.configuration.ApolloServiceDiscoveryAutoConfiguration.wrapMemoryCache(com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClient)
+    full Daikon pool: 4
+  FAILED-SAMPLE METHOD: com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceRegistryClearApplicationRunner.run(org.springframework.boot.ApplicationArguments)
+    full Daikon pool: 7
+  FAILED-SAMPLE METHOD: com.ctrip.framework.apollo.biz.service.InstanceService.findActiveInstanceConfigsByReleaseKey(java.lang.String, org.springframework.data.domain.Pageable)
+    full Daikon pool: 17
+  FAILED-SAMPLE METHOD: com.ctrip.framework.apollo.biz.service.ItemService.checkItemKeyLength(java.lang.String)
+    full Daikon pool: 92
+  FAILED-SAMPLE METHOD: com.ctrip.framework.apollo.biz.service.ItemService.getItemInfoBySearch(java.lang.String, java.lang.String, org.springframework.data.domain.Pageable)
+    full Daikon pool: 115
+  FAILED-SAMPLE METHOD: com.ctrip.framework.apollo.biz.service.ItemSetService.updateSet(java.lang.String, java.lang.String, java.lang.String, com.ctrip.framework.apollo.common.dto.ItemChangeSets)
+    full Daikon pool: 165
+
+Parsing full Daikon output for dubbo: /project/mjk76/ea442/promptstudy/dubbo-s5-daikon-quickfix-out/dubbo-s5-quickfix-invariants.txt
+  methods parsed: 1328
+  FAILED-SAMPLE METHOD: org.apache.dubbo.common.utils.ArrayUtils.isEmpty(java.lang.Object[])
+    full Daikon pool: 4
+  FAILED-SAMPLE METHOD: org.apache.dubbo.common.utils.CollectionUtils.isEmptyMap(java.util.Map)
+    full Daikon pool: 5
+  FAILED-SAMPLE METHOD: org.apache.dubbo.common.utils.FieldUtils.getFieldValue(java.lang.Object, java.lang.String)
+    full Daikon pool: 5
+  FAILED-SAMPLE METHOD: org.apache.dubbo.common.utils.IOUtils.readLines(java.io.File)
+    full Daikon pool: 2
+  FAILED-SAMPLE METHOD: org.apache.dubbo.common.utils.LogHelper.error(org.apache.dubbo.common.logger.Logger, java.lang.String, java.lang.Throwable)
+    full Daikon pool: 7
+  FAILED-SAMPLE METHOD: org.apache.dubbo.common.utils.MethodUtils.excludedDeclaredClass(java.lang.Class)
+    full Daikon pool: 3
+  FAILED-SAMPLE METHOD: org.apache.dubbo.common.utils.ReflectUtils.getName(java.lang.reflect.Method)
+    full Daikon pool: 25
+  FAILED-SAMPLE METHOD: org.apache.dubbo.common.utils.Stack.peek()
+    full Daikon pool: 16
+
+Parsing full Daikon output for hudi: /project/mjk76/ea442/promptstudy/hudi-daikon-out/hudi-invariants.txt
+  methods parsed: 7218
+  FAILED-SAMPLE METHOD: org.apache.hudi.client.common.HoodieJavaEngineContext.getReaderContextFactory(org.apache.hudi.common.table.HoodieTableMetaClient)
+    full Daikon pool: 7
+  FAILED-SAMPLE METHOD: org.apache.hudi.execution.JavaLazyInsertIterable.computeNext()
+    full Daikon pool: 27
+  FAILED-SAMPLE METHOD: org.apache.hudi.table.HoodieJavaMergeOnReadTable.scheduleCompaction(org.apache.hudi.common.engine.HoodieEngineContext, java.lang.String, org.apache.hudi.common.util.Option)
+    full Daikon pool: 37
+  FAILED-SAMPLE METHOD: org.apache.hudi.table.HoodieJavaTable.create(org.apache.hudi.config.HoodieWriteConfig, org.apache.hudi.common.engine.HoodieEngineContext)
+    full Daikon pool: 10
+  FAILED-SAMPLE METHOD: org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.getPartitionToReplacedFileIds(org.apache.hudi.table.action.HoodieWriteMetadata)
+    full Daikon pool: 50
+  FAILED-SAMPLE METHOD: org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.handleUpsertPartition(java.lang.String, java.lang.Integer, java.util.Iterator, org.apache.hudi.table.action.commit.Partitioner)
+    full Daikon pool: 116
+  FAILED-SAMPLE METHOD: org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.updateIndex(java.util.List, org.apache.hudi.table.action.HoodieWriteMetadata)
+    full Daikon pool: 77
+  FAILED-SAMPLE METHOD: org.apache.hudi.table.action.commit.JavaDeleteHelper.newInstance()
+    full Daikon pool: 1
+  FAILED-SAMPLE METHOD: org.apache.hudi.table.action.commit.JavaUpsertPartitioner.getSmallFilesForPartitions(java.util.List, org.apache.hudi.common.engine.HoodieEngineContext)
+    full Daikon pool: 42
+
+Parsing full Daikon output for libgdx: /project/mjk76/ea442/promptstudy/libgdx-s5-daikon-out/libgdx-s5-invariants.txt
+  methods parsed: 1055
+  FAILED-SAMPLE METHOD: com.badlogic.gdx.math.Polygon.setVertices(float[])
+    full Daikon pool: 36
+  FAILED-SAMPLE METHOD: com.badlogic.gdx.utils.CharArray.add(char, char)
+    full Daikon pool: 20
+  FAILED-SAMPLE METHOD: com.badlogic.gdx.utils.CharArray.append(char[])
+    full Daikon pool: 16
+  FAILED-SAMPLE METHOD: com.badlogic.gdx.utils.CharArray.incr(int, char)
+    full Daikon pool: 19
+  FAILED-SAMPLE METHOD: com.badlogic.gdx.utils.CharArray.substring(int, int)
+    full Daikon pool: 15
+  FAILED-SAMPLE METHOD: com.badlogic.gdx.utils.JsonReader.parse(char[], int, int)
+    full Daikon pool: 32
+  FAILED-SAMPLE METHOD: com.badlogic.gdx.utils.JsonValue.getString(java.lang.String, java.lang.String)
+    full Daikon pool: 36
+  FAILED-SAMPLE METHOD: com.badlogic.gdx.utils.LongArray.incr(int, long)
+    full Daikon pool: 16
+  FAILED-SAMPLE METHOD: com.badlogic.gdx.utils.reflect.Field.getType()
+    full Daikon pool: 1
+
+Parsing full Daikon output for netty: /project/mjk76/ea442/promptstudy/netty-s5-daikon-quickfix-out/netty-s5-quickfix-invariants.txt
+  methods parsed: 2554
+  FAILED-SAMPLE METHOD: io.netty.util.AbstractConstant.hashCode()
+    full Daikon pool: 13
+  FAILED-SAMPLE METHOD: io.netty.util.AsciiStringUtil.isLowerCase(byte)
+    full Daikon pool: 8
+  FAILED-SAMPLE METHOD: io.netty.util.AsciiStringUtil.toLowerCase(io.netty.util.AsciiString)
+    full Daikon pool: 58
+  FAILED-SAMPLE METHOD: io.netty.util.DomainNameMapping.needsNormalization(java.lang.String)
+    full Daikon pool: 2
+  FAILED-SAMPLE METHOD: io.netty.util.NetUtil.toAddressString(byte[], int, boolean)
+    full Daikon pool: 17
+  FAILED-SAMPLE METHOD: io.netty.util.Signal.fillInStackTrace()
+    full Daikon pool: 9
+  FAILED-SAMPLE METHOD: io.netty.util.concurrent.FastThreadLocalThread.setThreadLocalMap(io.netty.util.internal.InternalThreadLocalMap)
+    full Daikon pool: 119
+  FAILED-SAMPLE METHOD: io.netty.util.internal.ObjectUtil.checkNonEmpty(java.lang.CharSequence, java.lang.String)
+    full Daikon pool: 7
+  FAILED-SAMPLE METHOD: io.netty.util.internal.ReflectionUtil.trySetAccessible(java.lang.reflect.AccessibleObject, boolean)
+    full Daikon pool: 6
+
+Parsing full Daikon output for spring: /project/mjk76/ea442/promptstudy/spring-daikon-out/spring-invariants.txt
+  methods parsed: 754
+  FAILED-SAMPLE METHOD: org.springframework.core.convert.ConversionService.convert(java.lang.Object, org.springframework.core.convert.TypeDescriptor)
+    full Daikon pool: 5
+  FAILED-SAMPLE METHOD: org.springframework.core.convert.support.AbstractConditionalEnumConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor)
+    full Daikon pool: 3
+  FAILED-SAMPLE METHOD: org.springframework.core.convert.support.EnumToStringConverter.convert(java.lang.Enum)
+    full Daikon pool: 3
+  FAILED-SAMPLE METHOD: org.springframework.core.convert.support.IdToEntityConverter.getEntityName(java.lang.Class)
+    full Daikon pool: 5
+  FAILED-SAMPLE METHOD: org.springframework.core.convert.support.NumberToDataSizeConverter.convert(java.lang.Number)
+    full Daikon pool: 1
+  FAILED-SAMPLE METHOD: org.springframework.core.convert.support.ObjectToCollectionConverter.getConvertibleTypes()
+    full Daikon pool: 5
+  FAILED-SAMPLE METHOD: org.springframework.core.convert.support.ObjectToCollectionConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor)
+    full Daikon pool: 3
+  FAILED-SAMPLE METHOD: org.springframework.core.convert.support.StreamConverter.convertToStream(java.lang.Object, org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor)
+    full Daikon pool: 6
+  FAILED-SAMPLE METHOD: org.springframework.core.convert.support.StringToArrayConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor)
+    full Daikon pool: 13
+  FAILED-SAMPLE METHOD: org.springframework.core.convert.support.StringToPropertiesConverter.convert(java.lang.String)
+    full Daikon pool: 3
+
+Methods to normalize: 54
+Total pre-sampling Daikon invariants in those methods: 1410
+Previously completed methods: 0
+
+==========================================================================================
+[1/54] apollo
+com.ctrip.framework.apollo.biz.entity.Item.setLineNum(java.lang.Integer)
+Full candidate count: 24
+OK conversions: 8
+FAIL conversions: 16
+
+==========================================================================================
+[2/54] apollo
+com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.convertToDatabaseColumn(java.util.Map)
+Full candidate count: 10
+OK conversions: 3
+FAIL conversions: 7
+
+==========================================================================================
+[3/54] apollo
+com.ctrip.framework.apollo.biz.entity.ReleaseHistory.getOperationContext()
+Full candidate count: 65
+OK conversions: 41
+FAIL conversions: 24
+
+==========================================================================================
+[4/54] apollo
+com.ctrip.framework.apollo.biz.registry.configuration.ApolloServiceDiscoveryAutoConfiguration.wrapMemoryCache(com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClient)
+Full candidate count: 4
+OK conversions: 2
+FAIL conversions: 2
+
+==========================================================================================
+[5/54] apollo
+com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceRegistryClearApplicationRunner.run(org.springframework.boot.ApplicationArguments)
+Full candidate count: 7
+OK conversions: 1
+FAIL conversions: 6
+
+==========================================================================================
+[6/54] apollo
+com.ctrip.framework.apollo.biz.service.InstanceService.findActiveInstanceConfigsByReleaseKey(java.lang.String, org.springframework.data.domain.Pageable)
+Full candidate count: 17
+OK conversions: 4
+FAIL conversions: 13
+
+==========================================================================================
+[7/54] apollo
+com.ctrip.framework.apollo.biz.service.ItemService.checkItemKeyLength(java.lang.String)
+Full candidate count: 92
+OK conversions: 5
+FAIL conversions: 87
+
+==========================================================================================
+[8/54] apollo
+com.ctrip.framework.apollo.biz.service.ItemService.getItemInfoBySearch(java.lang.String, java.lang.String, org.springframework.data.domain.Pageable)
+Full candidate count: 115
+OK conversions: 7
+FAIL conversions: 108
+
+==========================================================================================
+[9/54] apollo
+com.ctrip.framework.apollo.biz.service.ItemSetService.updateSet(java.lang.String, java.lang.String, java.lang.String, com.ctrip.framework.apollo.common.dto.ItemChangeSets)
+Full candidate count: 165
+OK conversions: 64
+FAIL conversions: 101
+
+==========================================================================================
+[10/54] dubbo
+org.apache.dubbo.common.utils.ArrayUtils.isEmpty(java.lang.Object[])
+Full candidate count: 4
+OK conversions: 3
+FAIL conversions: 1
+
+==========================================================================================
+[11/54] dubbo
+org.apache.dubbo.common.utils.CollectionUtils.isEmptyMap(java.util.Map)
+Full candidate count: 5
+OK conversions: 3
+FAIL conversions: 2
+
+==========================================================================================
+[12/54] dubbo
+org.apache.dubbo.common.utils.FieldUtils.getFieldValue(java.lang.Object, java.lang.String)
+Full candidate count: 5
+OK conversions: 3
+FAIL conversions: 2
+
+==========================================================================================
+[13/54] dubbo
+org.apache.dubbo.common.utils.IOUtils.readLines(java.io.File)
+Full candidate count: 2
+OK conversions: 2
+FAIL conversions: 0
+
+==========================================================================================
+[14/54] dubbo
+org.apache.dubbo.common.utils.LogHelper.error(org.apache.dubbo.common.logger.Logger, java.lang.String, java.lang.Throwable)
+Full candidate count: 7
+OK conversions: 3
+FAIL conversions: 4
+
+==========================================================================================
+[15/54] dubbo
+org.apache.dubbo.common.utils.MethodUtils.excludedDeclaredClass(java.lang.Class)
+Full candidate count: 3
+OK conversions: 1
+FAIL conversions: 2
+
+==========================================================================================
+[16/54] dubbo
+org.apache.dubbo.common.utils.ReflectUtils.getName(java.lang.reflect.Method)
+Full candidate count: 25
+OK conversions: 1
+FAIL conversions: 24
+
+==========================================================================================
+[17/54] dubbo
+org.apache.dubbo.common.utils.Stack.peek()
+Full candidate count: 16
+OK conversions: 9
+FAIL conversions: 7
+
+==========================================================================================
+[18/54] hudi
+org.apache.hudi.client.common.HoodieJavaEngineContext.getReaderContextFactory(org.apache.hudi.common.table.HoodieTableMetaClient)
+Full candidate count: 7
+OK conversions: 3
+FAIL conversions: 4
+
+==========================================================================================
+[19/54] hudi
+org.apache.hudi.execution.JavaLazyInsertIterable.computeNext()
+Full candidate count: 27
+OK conversions: 10
+FAIL conversions: 17
+
+==========================================================================================
+[20/54] hudi
+org.apache.hudi.table.HoodieJavaMergeOnReadTable.scheduleCompaction(org.apache.hudi.common.engine.HoodieEngineContext, java.lang.String, org.apache.hudi.common.util.Option)
+Full candidate count: 37
+OK conversions: 12
+FAIL conversions: 25
+
+==========================================================================================
+[21/54] hudi
+org.apache.hudi.table.HoodieJavaTable.create(org.apache.hudi.config.HoodieWriteConfig, org.apache.hudi.common.engine.HoodieEngineContext)
+Full candidate count: 10
+OK conversions: 4
+FAIL conversions: 6
+
+==========================================================================================
+[22/54] hudi
+org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.getPartitionToReplacedFileIds(org.apache.hudi.table.action.HoodieWriteMetadata)
+Full candidate count: 50
+OK conversions: 22
+FAIL conversions: 28
+
+==========================================================================================
+[23/54] hudi
+org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.handleUpsertPartition(java.lang.String, java.lang.Integer, java.util.Iterator, org.apache.hudi.table.action.commit.Partitioner)
+Full candidate count: 116
+OK conversions: 59
+FAIL conversions: 57
+
+==========================================================================================
+[24/54] hudi
+org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.updateIndex(java.util.List, org.apache.hudi.table.action.HoodieWriteMetadata)
+Full candidate count: 77
+OK conversions: 28
+FAIL conversions: 49
+
+==========================================================================================
+[25/54] hudi
+org.apache.hudi.table.action.commit.JavaDeleteHelper.newInstance()
+Full candidate count: 1
+OK conversions: 0
+FAIL conversions: 1
+
+==========================================================================================
+[26/54] hudi
+org.apache.hudi.table.action.commit.JavaUpsertPartitioner.getSmallFilesForPartitions(java.util.List, org.apache.hudi.common.engine.HoodieEngineContext)
+Full candidate count: 42
+OK conversions: 23
+FAIL conversions: 19
+
+==========================================================================================
+[27/54] libgdx
+com.badlogic.gdx.math.Polygon.setVertices(float[])
+Full candidate count: 36
+OK conversions: 20
+FAIL conversions: 16
+
+==========================================================================================
+[28/54] libgdx
+com.badlogic.gdx.utils.CharArray.add(char, char)
+Full candidate count: 20
+OK conversions: 9
+FAIL conversions: 11
+
+==========================================================================================
+[29/54] libgdx
+com.badlogic.gdx.utils.CharArray.append(char[])
+Full candidate count: 16
+OK conversions: 9
+FAIL conversions: 7
+
+==========================================================================================
+[30/54] libgdx
+com.badlogic.gdx.utils.CharArray.incr(int, char)
+Full candidate count: 19
+OK conversions: 9
+FAIL conversions: 10
+
+==========================================================================================
+[31/54] libgdx
+com.badlogic.gdx.utils.CharArray.substring(int, int)
+Full candidate count: 15
+OK conversions: 7
+FAIL conversions: 8
+
+==========================================================================================
+[32/54] libgdx
+com.badlogic.gdx.utils.JsonReader.parse(char[], int, int)
+Full candidate count: 32
+OK conversions: 7
+FAIL conversions: 25
+
+==========================================================================================
+[33/54] libgdx
+com.badlogic.gdx.utils.JsonValue.getString(java.lang.String, java.lang.String)
+Full candidate count: 36
+OK conversions: 20
+FAIL conversions: 16
+
+==========================================================================================
+[34/54] libgdx
+com.badlogic.gdx.utils.LongArray.incr(int, long)
+Full candidate count: 16
+OK conversions: 9
+FAIL conversions: 7
+
+==========================================================================================
+[35/54] libgdx
+com.badlogic.gdx.utils.reflect.Field.getType()
+Full candidate count: 1
+OK conversions: 0
+FAIL conversions: 1
+
+==========================================================================================
+[36/54] netty
+io.netty.util.AbstractConstant.hashCode()
+Full candidate count: 13
+OK conversions: 8
+FAIL conversions: 5
+
+==========================================================================================
+[37/54] netty
+io.netty.util.AsciiStringUtil.isLowerCase(byte)
+Full candidate count: 8
+OK conversions: 3
+FAIL conversions: 5
+
+==========================================================================================
+[38/54] netty
+io.netty.util.AsciiStringUtil.toLowerCase(io.netty.util.AsciiString)
+Full candidate count: 58
+OK conversions: 19
+FAIL conversions: 39
+
+==========================================================================================
+[39/54] netty
+io.netty.util.DomainNameMapping.needsNormalization(java.lang.String)
+Full candidate count: 2
+OK conversions: 1
+FAIL conversions: 1
+
+==========================================================================================
+[40/54] netty
+io.netty.util.NetUtil.toAddressString(byte[], int, boolean)
+Full candidate count: 17
+OK conversions: 4
+FAIL conversions: 13
+
+==========================================================================================
+[41/54] netty
+io.netty.util.Signal.fillInStackTrace()
+Full candidate count: 9
+OK conversions: 2
+FAIL conversions: 7
+
+==========================================================================================
+[42/54] netty
+io.netty.util.concurrent.FastThreadLocalThread.setThreadLocalMap(io.netty.util.internal.InternalThreadLocalMap)
+Full candidate count: 119
+OK conversions: 74
+FAIL conversions: 45
+
+==========================================================================================
+[43/54] netty
+io.netty.util.internal.ObjectUtil.checkNonEmpty(java.lang.CharSequence, java.lang.String)
+Full candidate count: 7
+OK conversions: 4
+FAIL conversions: 3
+
+==========================================================================================
+[44/54] netty
+io.netty.util.internal.ReflectionUtil.trySetAccessible(java.lang.reflect.AccessibleObject, boolean)
+Full candidate count: 6
+OK conversions: 1
+FAIL conversions: 5
+
+==========================================================================================
+[45/54] spring
+org.springframework.core.convert.ConversionService.convert(java.lang.Object, org.springframework.core.convert.TypeDescriptor)
+Full candidate count: 5
+OK conversions: 4
+FAIL conversions: 1
+
+==========================================================================================
+[46/54] spring
+org.springframework.core.convert.support.AbstractConditionalEnumConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor)
+Full candidate count: 3
+OK conversions: 1
+FAIL conversions: 2
+
+==========================================================================================
+[47/54] spring
+org.springframework.core.convert.support.EnumToStringConverter.convert(java.lang.Enum)
+Full candidate count: 3
+OK conversions: 1
+FAIL conversions: 2
+
+==========================================================================================
+[48/54] spring
+org.springframework.core.convert.support.IdToEntityConverter.getEntityName(java.lang.Class)
+Full candidate count: 5
+OK conversions: 3
+FAIL conversions: 2
+
+==========================================================================================
+[49/54] spring
+org.springframework.core.convert.support.NumberToDataSizeConverter.convert(java.lang.Number)
+Full candidate count: 1
+OK conversions: 0
+FAIL conversions: 1
+
+==========================================================================================
+[50/54] spring
+org.springframework.core.convert.support.ObjectToCollectionConverter.getConvertibleTypes()
+Full candidate count: 5
+OK conversions: 3
+FAIL conversions: 2
+
+==========================================================================================
+[51/54] spring
+org.springframework.core.convert.support.ObjectToCollectionConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor)
+Full candidate count: 3
+OK conversions: 1
+FAIL conversions: 2
+
+==========================================================================================
+[52/54] spring
+org.springframework.core.convert.support.StreamConverter.convertToStream(java.lang.Object, org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor)
+Full candidate count: 6
+OK conversions: 1
+FAIL conversions: 5
+
+==========================================================================================
+[53/54] spring
+org.springframework.core.convert.support.StringToArrayConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor)
+Full candidate count: 13
+OK conversions: 4
+FAIL conversions: 9
+
+==========================================================================================
+[54/54] spring
+org.springframework.core.convert.support.StringToPropertiesConverter.convert(java.lang.String)
+Full candidate count: 3
+OK conversions: 2
+FAIL conversions: 1
+
+==========================================================================================
+DONE
+==========================================================================================
+Completed methods: 54 / 54
+Total full-pool invariants: 1410
+Convertible OK: 547
+Nonconvertible FAIL: 863
+Method-level API errors: 0
+
+Method JSONL: /project/mjk76/ea442/promptstudy/daikon_full_method_normalization/full-method-normalization.jsonl
+All candidates TSV: /project/mjk76/ea442/promptstudy/daikon_full_method_normalization/all-candidate-normalizations.tsv
+Convertible candidates: /project/mjk76/ea442/promptstudy/daikon_full_method_normalization/convertible-daikon-invariants.tsv
+Nonconvertible candidates: /project/mjk76/ea442/promptstudy/daikon_full_method_normalization/nonconvertible-daikon-invariants.tsv
+Summary: /project/mjk76/ea442/promptstudy/daikon_full_method_normalization/full-method-summary.tsv

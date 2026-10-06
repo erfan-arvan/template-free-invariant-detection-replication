@@ -1,0 +1,810 @@
+==============================================================================================================
+SAMPLE 1/10
+==============================================================================================================
+PROJECT: hudi
+
+OCA METHOD: org.apache.hudi.table.action.commit.JavaUpsertPartitioner#getSmallFilesForPartitions(List<String>,HoodieEngineContext):Map<String, List<SmallFile>>
+DAIKON METHOD: org.apache.hudi.table.action.commit.JavaUpsertPartitioner.getSmallFilesForPartitions(java.util.List, org.apache.hudi.common.engine.HoodieEngineContext)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_ENTRY] partitionPaths == null || !partitionPaths.contains(null)
+ID: 86743a58-b8b5-43a6-8dc9-2e9d09b5edd8
+Rationale: Null partition paths would be unsafe based on how these paths are used.
+Source file: org/apache/hudi/table/action/commit/JavaUpsertPartitioner.java
+
+[METHOD_ENTRY] context != null
+ID: 2a34056d-5b70-4039-9167-2216e0289771
+Rationale: The method calls mapToPair and setJobStatus on context, so it must be non-null.
+Source file: org/apache/hudi/table/action/commit/JavaUpsertPartitioner.java
+
+[METHOD_ENTRY] partitionPaths == null || partitionPaths.size() >= 0
+ID: 86d9f2b0-7483-4437-a5e8-ae993ba7ca12
+Rationale: By Java List definition, size should be zero or positive if list is not null.
+Source file: org/apache/hudi/table/action/commit/JavaUpsertPartitioner.java
+
+[METHOD_EXIT] result != null
+ID: d00716e6-0244-4b6d-b3ca-9e16150e79b1
+Rationale: result is never null because the method always returns a Map instance.
+Source file: org/apache/hudi/table/action/commit/JavaUpsertPartitioner.java
+
+[METHOD_EXIT] (partitionPaths == null || partitionPaths.isEmpty()) == result.isEmpty()
+ID: 5fef4143-ee13-4d1a-8149-1882b8f6a25b
+Rationale: If no partition paths are provided, the result map is empty; otherwise, result contains entries.
+Source file: org/apache/hudi/table/action/commit/JavaUpsertPartitioner.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+org.apache.hudi.table.action.commit.JavaUpsertPartitioner.getSmallFilesForPartitions(java.util.List, org.apache.hudi.common.engine.HoodieEngineContext):::ENTER
+this.smallFiles.getClass().getName() == partitionPaths.getClass().getName()
+this.smallFiles[] == []
+this.smallFiles[].getClass().getName() == []
+partitionPaths != null
+partitionPaths[] elements != null
+partitionPaths[].getClass().getName() elements == java.lang.String.class
+context != null
+context.getClass().getName() == org.apache.hudi.client.common.HoodieJavaEngineContext.class
+size(partitionPaths[]) one of { 1, 2, 3 }
+org.apache.hudi.table.action.commit.JavaUpsertPartitioner.log.getClass().getName() != context.getClass().getName()
+this.smallFiles.getClass().getName() != context.getClass().getName()
+this.table.getClass().getName() != context.getClass().getName()
+size(this.smallFiles[]) <= size(partitionPaths[])-1
+
+===========================================================================
+org.apache.hudi.table.action.commit.JavaUpsertPartitioner.getSmallFilesForPartitions(java.util.List, org.apache.hudi.common.engine.HoodieEngineContext):::EXIT234
+
+===========================================================================
+org.apache.hudi.table.action.commit.JavaUpsertPartitioner.getSmallFilesForPartitions(java.util.List, org.apache.hudi.common.engine.HoodieEngineContext):::EXIT
+org.apache.hudi.table.action.commit.JavaUpsertPartitioner.log == orig(org.apache.hudi.table.action.commit.JavaUpsertPartitioner.log)
+org.apache.hudi.table.action.commit.JavaUpsertPartitioner.log.getClass().getName() == orig(org.apache.hudi.table.action.commit.JavaUpsertPartitioner.log.getClass().getName())
+this.smallFiles == orig(this.smallFiles)
+this.smallFiles[] == orig(this.smallFiles[])
+this.smallFiles.getClass().getName() == orig(this.smallFiles.getClass().getName())
+this.smallFiles.getClass().getName() == orig(partitionPaths.getClass().getName())
+this.totalBuckets == orig(this.totalBuckets)
+this.workloadProfile == orig(this.workloadProfile)
+this.updateLocationToBucket == orig(this.updateLocationToBucket)
+this.partitionPathToInsertBucketInfos == orig(this.partitionPathToInsertBucketInfos)
+this.bucketInfoMap == orig(this.bucketInfoMap)
+this.table == orig(this.table)
+this.table.getClass().getName() == orig(this.table.getClass().getName())
+this.config == orig(this.config)
+partitionPaths[] == orig(partitionPaths[])
+this.smallFiles[] == []
+this.smallFiles[].getClass().getName() == []
+partitionPaths[] elements != null
+partitionPaths[].getClass().getName() elements == java.lang.String.class
+return != null
+return.getClass().getName() == java.util.HashMap.class
+org.apache.hudi.table.action.commit.JavaUpsertPartitioner.log.getClass().getName() != return.getClass().getName()
+org.apache.hudi.table.action.commit.JavaUpsertPartitioner.log.getClass().getName() != orig(context.getClass().getName())
+this.smallFiles.getClass().getName() != return.getClass().getName()
+this.smallFiles.getClass().getName() != orig(context.getClass().getName())
+this.table.getClass().getName() != return.getClass().getName()
+this.table.getClass().getName() != orig(context.getClass().getName())
+return.getClass().getName() != orig(context.getClass().getName())
+size(this.smallFiles[]) <= size(partitionPaths[])-1
+
+
+==============================================================================================================
+SAMPLE 2/10
+==============================================================================================================
+PROJECT: hudi
+
+OCA METHOD: org.apache.hudi.table.HoodieJavaMergeOnReadTable#scheduleCompaction(HoodieEngineContext,String,Option<Map<String, String>>):Option<HoodieCompactionPlan>
+DAIKON METHOD: org.apache.hudi.table.HoodieJavaMergeOnReadTable.scheduleCompaction(org.apache.hudi.common.engine.HoodieEngineContext, java.lang.String, org.apache.hudi.common.util.Option)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_EXIT] !result.isPresent() || result.get() != null
+ID: 7a88e29a-700b-4cdc-a84e-3b9979d9aed4
+Rationale: If the Option contains a HoodieCompactionPlan, that plan must not be null.
+Source file: org/apache/hudi/table/HoodieJavaMergeOnReadTable.java
+
+[METHOD_ENTRY] (!extraMetadata.isPresent() || extraMetadata.get() != null)
+ID: 3dfb692c-5178-404a-ad70-838650e3c9a4
+Rationale: The Option container may be empty or contain a non-null Map of metadata.
+Source file: org/apache/hudi/table/HoodieJavaMergeOnReadTable.java
+
+[METHOD_ENTRY] context != null
+ID: 59cc8ddc-4cb9-49dc-9c3e-478cf873d05b
+Rationale: The context parameter is essential for executing the compaction scheduling and is unlikely to be null.
+Source file: org/apache/hudi/table/HoodieJavaMergeOnReadTable.java
+
+[METHOD_ENTRY] instantTime != null && !instantTime.isEmpty()
+ID: 49ada360-b1eb-4ee0-a671-1dbb85d4002b
+Rationale: The instantTime string indicates the compaction instant and so must be non-null and non-empty.
+Source file: org/apache/hudi/table/HoodieJavaMergeOnReadTable.java
+
+[METHOD_ENTRY] extraMetadata != null
+ID: 22df319e-1786-46e2-a394-5fa043d55bdc
+Rationale: The extraMetadata parameter is an Option type and must be a valid object reference, even if empty.
+Source file: org/apache/hudi/table/HoodieJavaMergeOnReadTable.java
+
+[METHOD_EXIT] result.isPresent() || !result.isPresent()
+ID: 36ba5f43-ce0f-4399-b7ae-dc5eb4f28c4e
+Rationale: The result is an Option, which is either present or empty, so this covers both cases.
+Source file: org/apache/hudi/table/HoodieJavaMergeOnReadTable.java
+
+[METHOD_EXIT] result != null
+ID: 831d524a-c814-46bc-b127-18abad0bf439
+Rationale: The method returns an Option object which should never be null.
+Source file: org/apache/hudi/table/HoodieJavaMergeOnReadTable.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+org.apache.hudi.table.HoodieJavaMergeOnReadTable.scheduleCompaction(org.apache.hudi.common.engine.HoodieEngineContext, java.lang.String, org.apache.hudi.common.util.Option):::ENTER
+this.context == context
+this.context.getClass().getName() == context.getClass().getName()
+this.isMetadataTableExists == false
+this.index == null
+this.metadata == null
+this.storageLayout == null
+instantTime != null
+extraMetadata has only one value
+extraMetadata != null
+
+===========================================================================
+org.apache.hudi.table.HoodieJavaMergeOnReadTable.scheduleCompaction(org.apache.hudi.common.engine.HoodieEngineContext, java.lang.String, org.apache.hudi.common.util.Option):::EXIT
+org.apache.hudi.table.HoodieJavaCopyOnWriteTable.log == orig(org.apache.hudi.table.HoodieJavaCopyOnWriteTable.log)
+org.apache.hudi.table.HoodieJavaCopyOnWriteTable.log.getClass().getName() == orig(org.apache.hudi.table.HoodieJavaCopyOnWriteTable.log.getClass().getName())
+org.apache.hudi.table.HoodieJavaCopyOnWriteTable.log.getClass().getName() == orig(org.apache.hudi.table.HoodieTable.log.getClass().getName())
+this.isMetadataTableExists == orig(this.isMetadataTableExists)
+org.apache.hudi.table.HoodieTable.log == orig(org.apache.hudi.table.HoodieTable.log)
+this.config == orig(this.config)
+this.metaClient == orig(this.metaClient)
+this.index == orig(this.index)
+this.taskContextSupplier == orig(this.taskContextSupplier)
+this.taskContextSupplier.getClass().getName() == orig(this.taskContextSupplier.getClass().getName())
+this.storageLayout == orig(this.storageLayout)
+this.instantGenerator == orig(this.instantGenerator)
+this.instantGenerator.getClass().getName() == orig(this.instantGenerator.getClass().getName())
+this.instantFileNameGenerator == orig(this.instantFileNameGenerator)
+this.instantFileNameGenerator.getClass().getName() == orig(this.instantFileNameGenerator.getClass().getName())
+this.instantFileNameParser == orig(this.instantFileNameParser)
+this.instantFileNameParser.getClass().getName() == orig(this.instantFileNameParser.getClass().getName())
+this.isMetadataTable == orig(this.isMetadataTable)
+this.viewManager == orig(this.viewManager)
+this.context == orig(this.context)
+this.context == orig(context)
+this.context.getClass().getName() == orig(this.context.getClass().getName())
+this.context.getClass().getName() == orig(context.getClass().getName())
+instantTime.toString == orig(instantTime.toString)
+this.isMetadataTableExists == false
+this.index == null
+this.storageLayout == null
+return != null
+
+
+==============================================================================================================
+SAMPLE 3/10
+==============================================================================================================
+PROJECT: hudi
+
+OCA METHOD: org.apache.hudi.execution.JavaLazyInsertIterable#computeNext():List<WriteStatus>
+DAIKON METHOD: org.apache.hudi.execution.JavaLazyInsertIterable.computeNext()
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_EXIT] !result.isEmpty()
+ID: edfe8cb9-9b29-444e-904e-2f14a640767d
+Rationale: The method's checkState verifies result must not be empty at return.
+Source file: org/apache/hudi/execution/JavaLazyInsertIterable.java
+
+[METHOD_EXIT] result.size() > 0
+ID: f33cbedb-ffd2-4eb2-a167-21ccb7ab71e9
+Rationale: A non-empty collection must have size strictly greater than zero.
+Source file: org/apache/hudi/execution/JavaLazyInsertIterable.java
+
+[METHOD_EXIT] result != null
+ID: 6e6a4886-ee20-4e06-a6be-48262561a86d
+Rationale: The method returns result only after confirming it is not null.
+Source file: org/apache/hudi/execution/JavaLazyInsertIterable.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+org.apache.hudi.execution.JavaLazyInsertIterable.computeNext():::ENTER
+this.areRecordsSorted == this.startCalled
+
+===========================================================================
+org.apache.hudi.execution.JavaLazyInsertIterable.computeNext():::EXIT
+this.hoodieConfig == orig(this.hoodieConfig)
+this.instantTime == orig(this.instantTime)
+this.instantTime.toString == orig(this.instantTime.toString)
+this.areRecordsSorted == this.startCalled
+this.areRecordsSorted == orig(this.areRecordsSorted)
+this.areRecordsSorted == orig(this.startCalled)
+this.hoodieTable == orig(this.hoodieTable)
+this.hoodieTable.getClass().getName() == orig(this.hoodieTable.getClass().getName())
+this.idPrefix == orig(this.idPrefix)
+this.idPrefix.toString == orig(this.idPrefix.toString)
+this.taskContextSupplier == orig(this.taskContextSupplier)
+this.taskContextSupplier.getClass().getName() == orig(this.taskContextSupplier.getClass().getName())
+this.writeHandleFactory == orig(this.writeHandleFactory)
+this.writeHandleFactory.getClass().getName() == orig(this.writeHandleFactory.getClass().getName())
+this.inputItr == orig(this.inputItr)
+this.inputItr.getClass().getName() == orig(this.inputItr.getClass().getName())
+this.consumed == orig(this.consumed)
+this.consumed == orig(this.endCalled)
+return != null
+return[] elements != null
+return.getClass().getName() == java.util.ArrayList.class
+size(return[]) >= 1
+this.hoodieTable.getClass().getName() != return.getClass().getName()
+this.taskContextSupplier.getClass().getName() != return.getClass().getName()
+this.writeHandleFactory.getClass().getName() != return.getClass().getName()
+this.inputItr.getClass().getName() != return.getClass().getName()
+
+
+==============================================================================================================
+SAMPLE 4/10
+==============================================================================================================
+PROJECT: hudi
+
+OCA METHOD: org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#handleUpsertPartition(String,Integer,Iterator,Partitioner):Iterator<List<WriteStatus>>
+DAIKON METHOD: org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.handleUpsertPartition(java.lang.String, java.lang.Integer, java.util.Iterator, org.apache.hudi.table.action.commit.Partitioner)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_ENTRY] partitioner != null
+ID: 670f26aa-d475-4cae-8e4e-47523a8c7084
+Rationale: Partitioner instance must be non-null to select the bucket info for the given partition.
+Source file: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+[METHOD_EXIT] result != null
+ID: f90fb5f5-95fe-4d77-b13c-7255a1b725be
+Rationale: The method returns an Iterator representing the operation results; it should not be null.
+Source file: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+[METHOD_ENTRY] recordItr != null
+ID: fcc6b0a6-5ead-49ce-a56b-2d25ef5b3f5c
+Rationale: Record iterator must be non-null to consume records for the upsert operation.
+Source file: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+[METHOD_ENTRY] instantTime != null
+ID: e707b829-9e99-49f1-a687-c0c1a705e2f2
+Rationale: instantTime represents a timestamp string and should be non-null when performing upsert operations.
+Source file: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+[METHOD_ENTRY] partition != null
+ID: e2c1c412-9016-4de0-aeef-636360430b64
+Rationale: Partition index must be non-null to fetch bucket info safely.
+Source file: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.handleUpsertPartition(java.lang.String, java.lang.Integer, java.util.Iterator, org.apache.hudi.table.action.commit.Partitioner):::ENTER
+this.instantTime == instantTime
+this.instantTime.toString == instantTime.toString
+this.taskContextSupplier.getClass().getName() == org.apache.hudi.testutils.HoodieJavaClientTestHarness$TestJavaTaskContextSupplier.class
+this.instantGenerator has only one value
+this.instantGenerator.getClass().getName() == org.apache.hudi.common.table.timeline.versioning.v2.InstantGeneratorV2.class
+this.instantFileNameParser has only one value
+this.instantFileNameGenerator has only one value
+this.instantFileNameGenerator.getClass().getName() == org.apache.hudi.common.table.timeline.versioning.v2.InstantFileNameGeneratorV2.class
+partition != null
+recordItr != null
+recordItr.getClass().getName() == java.util.ArrayList$Itr.class
+partitioner != null
+partitioner.getClass().getName() == org.apache.hudi.table.action.commit.JavaUpsertPartitioner.class
+this.getClass().getName() != recordItr.getClass().getName()
+this.getClass().getName() != partitioner.getClass().getName()
+org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log.getClass().getName() != recordItr.getClass().getName()
+org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log.getClass().getName() != partitioner.getClass().getName()
+this.taskContextSupplier.getClass().getName() != recordItr.getClass().getName()
+this.taskContextSupplier.getClass().getName() != partitioner.getClass().getName()
+this.pendingInflightAndRequestedInstants.getClass().getName() != recordItr.getClass().getName()
+this.pendingInflightAndRequestedInstants.getClass().getName() != partitioner.getClass().getName()
+this.context.getClass().getName() != recordItr.getClass().getName()
+this.context.getClass().getName() != partitioner.getClass().getName()
+this.storageConf.getClass().getName() != recordItr.getClass().getName()
+this.storageConf.getClass().getName() != partitioner.getClass().getName()
+this.table.getClass().getName() != recordItr.getClass().getName()
+this.table.getClass().getName() != partitioner.getClass().getName()
+this.instantGenerator.getClass().getName() != recordItr.getClass().getName()
+this.instantGenerator.getClass().getName() != partitioner.getClass().getName()
+this.instantFileNameParser.getClass().getName() != recordItr.getClass().getName()
+this.instantFileNameParser.getClass().getName() != partitioner.getClass().getName()
+this.instantFileNameGenerator.getClass().getName() != recordItr.getClass().getName()
+this.instantFileNameGenerator.getClass().getName() != partitioner.getClass().getName()
+recordItr.getClass().getName() != partitioner.getClass().getName()
+
+===========================================================================
+org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.handleUpsertPartition(java.lang.String, java.lang.Integer, java.util.Iterator, org.apache.hudi.table.action.commit.Partitioner):::EXIT215
+this.operationType has only one value
+instantTime.toString one of { "20260910231650466", "20260910232623113" }
+return.getClass().getName() == org.apache.hudi.execution.JavaLazyInsertIterable.class
+
+===========================================================================
+org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.handleUpsertPartition(java.lang.String, java.lang.Integer, java.util.Iterator, org.apache.hudi.table.action.commit.Partitioner):::EXIT217
+return.getClass().getName() == java.util.Collections$1.class
+
+===========================================================================
+org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.handleUpsertPartition(java.lang.String, java.lang.Integer, java.util.Iterator, org.apache.hudi.table.action.commit.Partitioner):::EXIT
+org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log == orig(org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log)
+org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log.getClass().getName() == orig(org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log.getClass().getName())
+org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log.getClass().getName() == orig(org.apache.hudi.table.action.commit.BaseCommitActionExecutor.log.getClass().getName())
+org.apache.hudi.table.action.commit.BaseCommitActionExecutor.log == orig(org.apache.hudi.table.action.commit.BaseCommitActionExecutor.log)
+this.extraMetadata == orig(this.extraMetadata)
+this.extraMetadata == orig(this.txnManagerOption)
+this.extraMetadata == orig(this.lastCompletedTxn)
+this.operationType == orig(this.operationType)
+this.taskContextSupplier == orig(this.taskContextSupplier)
+this.taskContextSupplier.getClass().getName() == orig(this.taskContextSupplier.getClass().getName())
+this.pendingInflightAndRequestedInstants == orig(this.pendingInflightAndRequestedInstants)
+this.pendingInflightAndRequestedInstants.getClass().getName() == orig(this.pendingInflightAndRequestedInstants.getClass().getName())
+this.context == orig(this.context)
+this.context.getClass().getName() == orig(this.context.getClass().getName())
+this.storageConf == orig(this.storageConf)
+this.storageConf.getClass().getName() == orig(this.storageConf.getClass().getName())
+this.config == orig(this.config)
+this.table == orig(this.table)
+this.table.getClass().getName() == orig(this.table.getClass().getName())
+this.instantGenerator == orig(this.instantGenerator)
+this.instantGenerator.getClass().getName() == orig(this.instantGenerator.getClass().getName())
+this.instantFileNameParser == orig(this.instantFileNameParser)
+this.instantFileNameParser.getClass().getName() == orig(this.instantFileNameParser.getClass().getName())
+this.instantFileNameGenerator == orig(this.instantFileNameGenerator)
+this.instantFileNameGenerator.getClass().getName() == orig(this.instantFileNameGenerator.getClass().getName())
+this.instantTime == orig(this.instantTime)
+this.instantTime == orig(instantTime)
+this.instantTime.toString == instantTime.toString
+instantTime.toString == orig(this.instantTime.toString)
+instantTime.toString == orig(instantTime.toString)
+(return.getClass().getName() == org.apache.hudi.execution.JavaLazyInsertIterable.class)  ==>  (instantTime.toString one of { "20260910231650466", "20260910232623113" })
+(return.getClass().getName() == org.apache.hudi.execution.JavaLazyInsertIterable.class)  ==>  (this.operationType has only one value)
+this.taskContextSupplier.getClass().getName() == org.apache.hudi.testutils.HoodieJavaClientTestHarness$TestJavaTaskContextSupplier.class
+this.instantGenerator has only one value
+this.instantGenerator.getClass().getName() == org.apache.hudi.common.table.timeline.versioning.v2.InstantGeneratorV2.class
+this.instantFileNameParser has only one value
+this.instantFileNameGenerator has only one value
+this.instantFileNameGenerator.getClass().getName() == org.apache.hudi.common.table.timeline.versioning.v2.InstantFileNameGeneratorV2.class
+return != null
+org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log.getClass().getName() != return.getClass().getName()
+org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log.getClass().getName() != orig(this.getClass().getName())
+org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log.getClass().getName() != orig(recordItr.getClass().getName())
+org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log.getClass().getName() != orig(partitioner.getClass().getName())
+this.taskContextSupplier.getClass().getName() != return.getClass().getName()
+this.taskContextSupplier.getClass().getName() != orig(this.getClass().getName())
+this.taskContextSupplier.getClass().getName() != orig(recordItr.getClass().getName())
+this.taskContextSupplier.getClass().getName() != orig(partitioner.getClass().getName())
+this.pendingInflightAndRequestedInstants.getClass().getName() != return.getClass().getName()
+this.pendingInflightAndRequestedInstants.getClass().getName() != orig(this.getClass().getName())
+this.pendingInflightAndRequestedInstants.getClass().getName() != orig(recordItr.getClass().getName())
+this.pendingInflightAndRequestedInstants.getClass().getName() != orig(partitioner.getClass().getName())
+this.context.getClass().getName() != return.getClass().getName()
+this.context.getClass().getName() != orig(this.getClass().getName())
+this.context.getClass().getName() != orig(recordItr.getClass().getName())
+this.context.getClass().getName() != orig(partitioner.getClass().getName())
+this.storageConf.getClass().getName() != return.getClass().getName()
+this.storageConf.getClass().getName() != orig(this.getClass().getName())
+this.storageConf.getClass().getName() != orig(recordItr.getClass().getName())
+this.storageConf.getClass().getName() != orig(partitioner.getClass().getName())
+this.table.getClass().getName() != return.getClass().getName()
+this.table.getClass().getName() != orig(this.getClass().getName())
+this.table.getClass().getName() != orig(recordItr.getClass().getName())
+this.table.getClass().getName() != orig(partitioner.getClass().getName())
+this.instantGenerator.getClass().getName() != return.getClass().getName()
+this.instantGenerator.getClass().getName() != orig(this.getClass().getName())
+this.instantGenerator.getClass().getName() != orig(recordItr.getClass().getName())
+this.instantGenerator.getClass().getName() != orig(partitioner.getClass().getName())
+this.instantFileNameParser.getClass().getName() != return.getClass().getName()
+this.instantFileNameParser.getClass().getName() != orig(this.getClass().getName())
+this.instantFileNameParser.getClass().getName() != orig(recordItr.getClass().getName())
+this.instantFileNameParser.getClass().getName() != orig(partitioner.getClass().getName())
+this.instantFileNameGenerator.getClass().getName() != return.getClass().getName()
+this.instantFileNameGenerator.getClass().getName() != orig(this.getClass().getName())
+this.instantFileNameGenerator.getClass().getName() != orig(recordItr.getClass().getName())
+this.instantFileNameGenerator.getClass().getName() != orig(partitioner.getClass().getName())
+return.getClass().getName() != orig(this.getClass().getName())
+return.getClass().getName() != orig(recordItr.getClass().getName())
+return.getClass().getName() != orig(partitioner.getClass().getName())
+
+
+==============================================================================================================
+SAMPLE 5/10
+==============================================================================================================
+PROJECT: hudi
+
+OCA METHOD: org.apache.hudi.table.upgrade.JavaUpgradeDowngradeHelper#getInstance():JavaUpgradeDowngradeHelper
+DAIKON METHOD: org.apache.hudi.table.upgrade.JavaUpgradeDowngradeHelper.getInstance()
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_EXIT] result != null
+ID: 91728d5e-169e-4125-8d36-4643842c013f
+Rationale: getInstance() returns the singleton instance, which should never be null.
+Source file: org/apache/hudi/table/upgrade/JavaUpgradeDowngradeHelper.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+org.apache.hudi.table.upgrade.JavaUpgradeDowngradeHelper.getInstance():::ENTER
+
+===========================================================================
+org.apache.hudi.table.upgrade.JavaUpgradeDowngradeHelper.getInstance():::EXIT
+org.apache.hudi.table.upgrade.JavaUpgradeDowngradeHelper.SINGLETON_INSTANCE == return
+org.apache.hudi.table.upgrade.JavaUpgradeDowngradeHelper.SINGLETON_INSTANCE == orig(org.apache.hudi.table.upgrade.JavaUpgradeDowngradeHelper.SINGLETON_INSTANCE)
+
+
+==============================================================================================================
+SAMPLE 6/10
+==============================================================================================================
+PROJECT: hudi
+
+OCA METHOD: org.apache.hudi.table.HoodieJavaTable#create(HoodieWriteConfig,HoodieEngineContext):HoodieJavaTable<T>
+DAIKON METHOD: org.apache.hudi.table.HoodieJavaTable.create(org.apache.hudi.config.HoodieWriteConfig, org.apache.hudi.common.engine.HoodieEngineContext)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_ENTRY] config.getConsistencyGuardConfig() != null
+ID: b06ad641-22cd-4961-b98c-63a0e47e03c1
+Rationale: The method uses config.getConsistencyGuardConfig() as a parameter in metaClient builder.
+Source file: org/apache/hudi/table/HoodieJavaTable.java
+
+[METHOD_ENTRY] config.getBasePath() != null
+ID: b56b7b84-7477-4c74-be38-bd7de7fa3030
+Rationale: Since basePath is passed to the metaClient builder, it must not be null.
+Source file: org/apache/hudi/table/HoodieJavaTable.java
+
+[METHOD_EXIT] result != null
+ID: 89aae113-45da-4a41-b699-683cb1ac6ada
+Rationale: The create method returns a new HoodieJavaTable instance, which should not be null.
+Source file: org/apache/hudi/table/HoodieJavaTable.java
+
+[METHOD_ENTRY] context != null
+ID: 12a53414-9162-4164-9ef6-3912d9d9d390
+Rationale: The method uses context to getStorageConf and build metaClient; thus context must not be null.
+Source file: org/apache/hudi/table/HoodieJavaTable.java
+
+[METHOD_ENTRY] context.getStorageConf() != null
+ID: 0269dec3-4acc-4f97-a9c7-61e3ae0ddbf0
+Rationale: The method calls context.getStorageConf().newInstance(); thus getStorageConf must not return null.
+Source file: org/apache/hudi/table/HoodieJavaTable.java
+
+[METHOD_ENTRY] config != null
+ID: 35ffe3a9-1307-4599-81c9-663f31141b99
+Rationale: The method uses config to build the metaClient; thus config must not be null.
+Source file: org/apache/hudi/table/HoodieJavaTable.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+org.apache.hudi.table.HoodieJavaTable.create(org.apache.hudi.config.HoodieWriteConfig, org.apache.hudi.common.engine.HoodieEngineContext):::ENTER
+config != null
+context != null
+context.getClass().getName() == org.apache.hudi.client.common.HoodieJavaEngineContext.class
+org.apache.hudi.table.HoodieTable.log.getClass().getName() != context.getClass().getName()
+
+===========================================================================
+org.apache.hudi.table.HoodieJavaTable.create(org.apache.hudi.config.HoodieWriteConfig, org.apache.hudi.common.engine.HoodieEngineContext):::EXIT
+org.apache.hudi.table.HoodieTable.log == orig(org.apache.hudi.table.HoodieTable.log)
+org.apache.hudi.table.HoodieTable.log.getClass().getName() == orig(org.apache.hudi.table.HoodieTable.log.getClass().getName())
+return != null
+org.apache.hudi.table.HoodieTable.log.getClass().getName() != return.getClass().getName()
+org.apache.hudi.table.HoodieTable.log.getClass().getName() != orig(context.getClass().getName())
+return.getClass().getName() != orig(context.getClass().getName())
+
+
+==============================================================================================================
+SAMPLE 7/10
+==============================================================================================================
+PROJECT: hudi
+
+OCA METHOD: org.apache.hudi.table.action.commit.JavaDeleteHelper#newInstance():JavaDeleteHelper
+DAIKON METHOD: org.apache.hudi.table.action.commit.JavaDeleteHelper.newInstance()
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_EXIT] result != null
+ID: 1fe17d1a-350f-48f3-89e8-4f6160e16385
+Rationale: The method returns a singleton instance, which is never null.
+Source file: org/apache/hudi/table/action/commit/JavaDeleteHelper.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+org.apache.hudi.table.action.commit.JavaDeleteHelper.newInstance():::EXIT
+return has only one value
+
+
+==============================================================================================================
+SAMPLE 8/10
+==============================================================================================================
+PROJECT: hudi
+
+OCA METHOD: org.apache.hudi.client.common.HoodieJavaEngineContext#getReaderContextFactory(HoodieTableMetaClient):ReaderContextFactory<IndexedRecord>
+DAIKON METHOD: org.apache.hudi.client.common.HoodieJavaEngineContext.getReaderContextFactory(org.apache.hudi.common.table.HoodieTableMetaClient)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_ENTRY] metaClient.getTableConfig() != null
+ID: 4d67bf60-035a-4b92-a32a-5f0b7226a5c5
+Rationale: To create a proper ReaderContextFactory, metaClient's table configuration is expected to be non-null.
+Source file: org/apache/hudi/client/common/HoodieJavaEngineContext.java
+
+[METHOD_EXIT] result != null
+ID: e3d854a4-361b-4149-bf54-59df60cedf39
+Rationale: The method returns getEngineReaderContextFactory(metaClient), which likely returns a non-null ReaderContextFactory object.
+Source file: org/apache/hudi/client/common/HoodieJavaEngineContext.java
+
+[METHOD_ENTRY] metaClient.getTableType() != null
+ID: 0ca12583-2d59-413a-ac50-2bd079e3e031
+Rationale: The metaClient must represent a valid table with defined type for constructing the ReaderContextFactory.
+Source file: org/apache/hudi/client/common/HoodieJavaEngineContext.java
+
+[METHOD_ENTRY] metaClient.getBasePath() != null
+ID: 7cc89421-da9b-4ec7-9b93-41ffc008a596
+Rationale: To obtain context factory, metaClient's basePath is expected to be set and non-null.
+Source file: org/apache/hudi/client/common/HoodieJavaEngineContext.java
+
+[METHOD_ENTRY] metaClient != null
+ID: 088c670c-79a6-4000-a792-ef087c4985aa
+Rationale: The metaClient is required for obtaining ReaderContextFactory and must not be null.
+Source file: org/apache/hudi/client/common/HoodieJavaEngineContext.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+org.apache.hudi.client.common.HoodieJavaEngineContext.getReaderContextFactory(org.apache.hudi.common.table.HoodieTableMetaClient):::ENTER
+
+===========================================================================
+org.apache.hudi.client.common.HoodieJavaEngineContext.getReaderContextFactory(org.apache.hudi.common.table.HoodieTableMetaClient):::EXIT
+this.storageConf == orig(this.storageConf)
+this.storageConf.getClass().getName() == orig(this.storageConf.getClass().getName())
+this.taskContextSupplier == orig(this.taskContextSupplier)
+this.taskContextSupplier.getClass().getName() == orig(this.taskContextSupplier.getClass().getName())
+return.getClass().getName() == org.apache.hudi.common.engine.AvroReaderContextFactory.class
+this.storageConf.getClass().getName() != return.getClass().getName()
+this.taskContextSupplier.getClass().getName() != return.getClass().getName()
+
+
+==============================================================================================================
+SAMPLE 9/10
+==============================================================================================================
+PROJECT: hudi
+
+OCA METHOD: org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#getPartitionToReplacedFileIds(HoodieWriteMetadata<List<WriteStatus>>):Map<String, List<String>>
+DAIKON METHOD: org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.getPartitionToReplacedFileIds(org.apache.hudi.table.action.HoodieWriteMetadata)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_ENTRY] writeMetadata != null
+ID: 9a6991c9-81e7-481d-8700-37221925bb4f
+Rationale: The parameter writeMetadata should not be null when the method is entered.
+Source file: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+[METHOD_EXIT] result.isEmpty()
+ID: ccc88933-df12-4671-9f29-386ff6422d1f
+Rationale: Since the method returns Collections.emptyMap(), the map must be empty.
+Source file: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+[METHOD_ENTRY] writeMetadata.getWriteStatuses() != null
+ID: cd8ba76c-86e3-4cf8-9552-f76b2a479bc4
+Rationale: The writeMetadata object typically contains a list of WriteStatus objects, expected to be non-null.
+Source file: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+[METHOD_EXIT] !result.containsKey(null)
+ID: b73e1127-2d89-47f8-8e53-165e7e78df7a
+Rationale: An empty map cannot contain any key, including null.
+Source file: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+[METHOD_EXIT] result != null
+ID: 8af73c84-04b5-4d42-accf-8427ce6e94be
+Rationale: The method returns Collections.emptyMap(), so result is guaranteed to be non-null.
+Source file: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+[METHOD_EXIT] result.keySet().isEmpty()
+ID: eb9db836-d3ef-4c5d-b220-3ad327b56dc6
+Rationale: Empty map's key set is empty.
+Source file: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.getPartitionToReplacedFileIds(org.apache.hudi.table.action.HoodieWriteMetadata):::ENTER
+writeMetadata != null
+
+===========================================================================
+org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.getPartitionToReplacedFileIds(org.apache.hudi.table.action.HoodieWriteMetadata):::EXIT
+org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log == orig(org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log)
+org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log.getClass().getName() == orig(org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log.getClass().getName())
+org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log.getClass().getName() == orig(org.apache.hudi.table.action.commit.BaseCommitActionExecutor.log.getClass().getName())
+org.apache.hudi.table.action.commit.BaseCommitActionExecutor.log == orig(org.apache.hudi.table.action.commit.BaseCommitActionExecutor.log)
+this.extraMetadata == orig(this.extraMetadata)
+this.extraMetadata == orig(this.txnManagerOption)
+this.extraMetadata == orig(this.lastCompletedTxn)
+this.operationType == orig(this.operationType)
+this.taskContextSupplier == orig(this.taskContextSupplier)
+this.taskContextSupplier.getClass().getName() == orig(this.taskContextSupplier.getClass().getName())
+this.pendingInflightAndRequestedInstants == orig(this.pendingInflightAndRequestedInstants)
+this.pendingInflightAndRequestedInstants.getClass().getName() == orig(this.pendingInflightAndRequestedInstants.getClass().getName())
+this.context == orig(this.context)
+this.context.getClass().getName() == orig(this.context.getClass().getName())
+this.storageConf == orig(this.storageConf)
+this.storageConf.getClass().getName() == orig(this.storageConf.getClass().getName())
+this.config == orig(this.config)
+this.table == orig(this.table)
+this.table.getClass().getName() == orig(this.table.getClass().getName())
+this.instantGenerator == orig(this.instantGenerator)
+this.instantGenerator.getClass().getName() == orig(this.instantGenerator.getClass().getName())
+this.instantFileNameParser == orig(this.instantFileNameParser)
+this.instantFileNameParser.getClass().getName() == orig(this.instantFileNameParser.getClass().getName())
+this.instantFileNameGenerator == orig(this.instantFileNameGenerator)
+this.instantFileNameGenerator.getClass().getName() == orig(this.instantFileNameGenerator.getClass().getName())
+this.instantTime == orig(this.instantTime)
+this.instantTime.toString == orig(this.instantTime.toString)
+return has only one value
+return != null
+return.getClass().getName() == java.util.Collections$EmptyMap.class
+org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log.getClass().getName() != return.getClass().getName()
+org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log.getClass().getName() != orig(this.getClass().getName())
+this.taskContextSupplier.getClass().getName() != return.getClass().getName()
+this.taskContextSupplier.getClass().getName() != orig(this.getClass().getName())
+this.pendingInflightAndRequestedInstants.getClass().getName() != return.getClass().getName()
+this.pendingInflightAndRequestedInstants.getClass().getName() != orig(this.getClass().getName())
+this.context.getClass().getName() != return.getClass().getName()
+this.context.getClass().getName() != orig(this.getClass().getName())
+this.storageConf.getClass().getName() != return.getClass().getName()
+this.storageConf.getClass().getName() != orig(this.getClass().getName())
+this.table.getClass().getName() != return.getClass().getName()
+this.table.getClass().getName() != orig(this.getClass().getName())
+this.instantGenerator.getClass().getName() != return.getClass().getName()
+this.instantGenerator.getClass().getName() != orig(this.getClass().getName())
+this.instantFileNameParser.getClass().getName() != return.getClass().getName()
+this.instantFileNameParser.getClass().getName() != orig(this.getClass().getName())
+this.instantFileNameGenerator.getClass().getName() != return.getClass().getName()
+this.instantFileNameGenerator.getClass().getName() != orig(this.getClass().getName())
+return.getClass().getName() != orig(this.getClass().getName())
+
+
+==============================================================================================================
+SAMPLE 10/10
+==============================================================================================================
+PROJECT: hudi
+
+OCA METHOD: org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#updateIndex(List<WriteStatus>,HoodieWriteMetadata<List<WriteStatus>>):List<WriteStatus>
+DAIKON METHOD: org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.updateIndex(java.util.List, org.apache.hudi.table.action.HoodieWriteMetadata)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_ENTRY] writeStatuses != null
+ID: 6dce2905-b559-4f3b-8e2c-0dceeb45c649
+Rationale: The method parameter writeStatuses should be non-null as it's the input list being updated.
+Source file: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+[METHOD_ENTRY] (!writeStatuses.isEmpty() || writeStatuses.isEmpty())
+ID: c54569dc-b4d7-43dc-9b67-b830bca225e9
+Rationale: Avoid generating this kind of trivial invariant.
+Source file: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+[METHOD_EXIT] result != null
+ID: 5b31711e-9826-4405-ad01-ad1bb69a6ba2
+Rationale: The result parameter must be non-null as it is used to set index update duration and write statuses.
+Source file: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+[METHOD_ENTRY] result.getWriteStatuses() == null
+ID: 62b5f4eb-d313-4109-9905-cd1064dbd9ac
+Rationale: At method entry, the writeStatuses inside result may not be set yet.
+Source file: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+[METHOD_ENTRY] writeStatuses.size() >= 0
+ID: 3568575e-d7d6-4ec6-a2dd-7d413f1c4edc
+Rationale: List sizes are always non-negative.
+Source file: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+[METHOD_ENTRY] result != null
+ID: c98aac4f-5e84-45b3-aeed-72b43611c102
+Rationale: The result object should be non-null since it is being updated and returned later.
+Source file: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.updateIndex(java.util.List, org.apache.hudi.table.action.HoodieWriteMetadata):::ENTER
+writeStatuses != null
+writeStatuses[] elements != null
+writeStatuses.getClass().getName() == java.util.LinkedList.class
+result != null
+size(writeStatuses[]) >= 1
+this.getClass().getName() != writeStatuses.getClass().getName()
+org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log.getClass().getName() != writeStatuses.getClass().getName()
+this.taskContextSupplier.getClass().getName() != writeStatuses.getClass().getName()
+this.pendingInflightAndRequestedInstants.getClass().getName() != writeStatuses.getClass().getName()
+org.apache.hudi.table.action.BaseActionExecutor.serialVersionUID <= size(writeStatuses[])
+this.context.getClass().getName() != writeStatuses.getClass().getName()
+this.storageConf.getClass().getName() != writeStatuses.getClass().getName()
+this.table.getClass().getName() != writeStatuses.getClass().getName()
+this.instantGenerator.getClass().getName() != writeStatuses.getClass().getName()
+this.instantFileNameParser.getClass().getName() != writeStatuses.getClass().getName()
+this.instantFileNameGenerator.getClass().getName() != writeStatuses.getClass().getName()
+
+===========================================================================
+org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.updateIndex(java.util.List, org.apache.hudi.table.action.HoodieWriteMetadata):::EXIT
+org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log == orig(org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log)
+org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log.getClass().getName() == orig(org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log.getClass().getName())
+org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log.getClass().getName() == orig(org.apache.hudi.table.action.commit.BaseCommitActionExecutor.log.getClass().getName())
+org.apache.hudi.table.action.commit.BaseCommitActionExecutor.log == orig(org.apache.hudi.table.action.commit.BaseCommitActionExecutor.log)
+this.extraMetadata == orig(this.extraMetadata)
+this.extraMetadata == orig(this.txnManagerOption)
+this.extraMetadata == orig(this.lastCompletedTxn)
+this.operationType == orig(this.operationType)
+this.taskContextSupplier == orig(this.taskContextSupplier)
+this.taskContextSupplier.getClass().getName() == orig(this.taskContextSupplier.getClass().getName())
+this.pendingInflightAndRequestedInstants == orig(this.pendingInflightAndRequestedInstants)
+this.pendingInflightAndRequestedInstants.getClass().getName() == orig(this.pendingInflightAndRequestedInstants.getClass().getName())
+this.context == orig(this.context)
+this.context.getClass().getName() == orig(this.context.getClass().getName())
+this.storageConf == orig(this.storageConf)
+this.storageConf.getClass().getName() == orig(this.storageConf.getClass().getName())
+this.config == orig(this.config)
+this.table == orig(this.table)
+this.table.getClass().getName() == orig(this.table.getClass().getName())
+this.instantGenerator == orig(this.instantGenerator)
+this.instantGenerator.getClass().getName() == orig(this.instantGenerator.getClass().getName())
+this.instantFileNameParser == orig(this.instantFileNameParser)
+this.instantFileNameParser.getClass().getName() == orig(this.instantFileNameParser.getClass().getName())
+this.instantFileNameGenerator == orig(this.instantFileNameGenerator)
+this.instantFileNameGenerator.getClass().getName() == orig(this.instantFileNameGenerator.getClass().getName())
+this.instantTime == orig(this.instantTime)
+this.instantTime.toString == orig(this.instantTime.toString)
+writeStatuses[] == return[]
+writeStatuses[] == orig(writeStatuses[])
+writeStatuses[] elements != null
+return != null
+size(return[]) >= 1
+org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log.getClass().getName() != return.getClass().getName()
+org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log.getClass().getName() != orig(this.getClass().getName())
+org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log.getClass().getName() != orig(writeStatuses.getClass().getName())
+this.taskContextSupplier.getClass().getName() != return.getClass().getName()
+this.taskContextSupplier.getClass().getName() != orig(this.getClass().getName())
+this.taskContextSupplier.getClass().getName() != orig(writeStatuses.getClass().getName())
+this.pendingInflightAndRequestedInstants.getClass().getName() != return.getClass().getName()
+this.pendingInflightAndRequestedInstants.getClass().getName() != orig(this.getClass().getName())
+this.pendingInflightAndRequestedInstants.getClass().getName() != orig(writeStatuses.getClass().getName())
+org.apache.hudi.table.action.BaseActionExecutor.serialVersionUID <= size(return[])
+this.context.getClass().getName() != return.getClass().getName()
+this.context.getClass().getName() != orig(this.getClass().getName())
+this.context.getClass().getName() != orig(writeStatuses.getClass().getName())
+this.storageConf.getClass().getName() != return.getClass().getName()
+this.storageConf.getClass().getName() != orig(this.getClass().getName())
+this.storageConf.getClass().getName() != orig(writeStatuses.getClass().getName())
+this.table.getClass().getName() != return.getClass().getName()
+this.table.getClass().getName() != orig(this.getClass().getName())
+this.table.getClass().getName() != orig(writeStatuses.getClass().getName())
+this.instantGenerator.getClass().getName() != return.getClass().getName()
+this.instantGenerator.getClass().getName() != orig(this.getClass().getName())
+this.instantGenerator.getClass().getName() != orig(writeStatuses.getClass().getName())
+this.instantFileNameParser.getClass().getName() != return.getClass().getName()
+this.instantFileNameParser.getClass().getName() != orig(this.getClass().getName())
+this.instantFileNameParser.getClass().getName() != orig(writeStatuses.getClass().getName())
+this.instantFileNameGenerator.getClass().getName() != return.getClass().getName()
+this.instantFileNameGenerator.getClass().getName() != orig(this.getClass().getName())
+this.instantFileNameGenerator.getClass().getName() != orig(writeStatuses.getClass().getName())
+return.getClass().getName() != orig(this.getClass().getName())
+
+

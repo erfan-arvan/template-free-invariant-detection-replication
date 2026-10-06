@@ -1,0 +1,12 @@
+======================================
+SLURM JOB ID: 1363871
+HOST: n0036
+START TIME: Thu Oct  1 06:34:19 PM EDT 2026
+ROOT: /project/mjk76/ea442/promptstudy
+DPP_DIR: /scratch/mjk76/ea442/daikonplusplus-relaxedAll
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/23.0.2/bin/java
+MVN: /scratch/mjk76/ea442/apache-maven-3.9.9/bin/mvn
+======================================
+>>> Building isolated Daikon++ worktree
+>>> DPP_DIR: /scratch/mjk76/ea442/daikonplusplus-relaxedAll
+>>> Commit:  d7ea9f07b95233a46137b2b4b98faba03cb23dd8

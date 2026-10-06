@@ -1,0 +1,21 @@
+
+The following have been reloaded with a version change:
+  1) Java/17.0.15 => Java/23.0.2
+
+Picked up JAVA_TOOL_OPTIONS:  -Djava.io.tmpdir=/scratch/mjk76/ea442/contextstudy_fewshot_qfrelaxed/tmp
+Picked up JAVA_TOOL_OPTIONS:  -Djava.io.tmpdir=/scratch/mjk76/ea442/contextstudy_fewshot_qfrelaxed/tmp
+Picked up JAVA_TOOL_OPTIONS:  -Djava.io.tmpdir=/scratch/mjk76/ea442/contextstudy_fewshot_qfrelaxed/tmp
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+
+87 tests completed, 6 failed, 2 skipped
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':test'.
+> There were failing tests. See the report at: file:///mmfs1/project/mjk76/ea442/promptstudy/daikonplusplus/build/reports/tests/test/index.html
+
+* Try:
+> Run with --scan to get full insights.
+
+BUILD FAILED in 3m 8s

@@ -1,0 +1,249 @@
+
+
+====================================================================================================
+SAMPLE 1/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: spring
+METHOD: org.springframework.core.convert.support.ObjectToArrayConverter.ObjectToArrayConverter(org.springframework.core.convert.ConversionService)
+####################################################################################################
+
+===========================================================================
+org.springframework.core.convert.support.ObjectToArrayConverter.ObjectToArrayConverter(org.springframework.core.convert.ConversionService):::ENTER
+conversionService != null
+
+===========================================================================
+org.springframework.core.convert.support.ObjectToArrayConverter.ObjectToArrayConverter(org.springframework.core.convert.ConversionService):::EXIT
+this.conversionService == orig(conversionService)
+this.conversionService.getClass().getName() == orig(conversionService.getClass().getName())
+
+
+
+====================================================================================================
+SAMPLE 2/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: spring
+METHOD: org.springframework.core.convert.support.GenericConversionServiceTests.removeConvertible()
+####################################################################################################
+
+===========================================================================
+org.springframework.core.convert.support.GenericConversionServiceTests.removeConvertible():::ENTER
+this has only one value
+this.conversionService has only one value
+
+===========================================================================
+org.springframework.core.convert.support.GenericConversionServiceTests.removeConvertible():::EXIT
+this.conversionService == orig(this.conversionService)
+this.annotatedString == orig(this.annotatedString)
+this.activeColor == orig(this.activeColor)
+this.activeColor == orig(this.inactiveColor)
+this.wildcardMap == orig(this.wildcardMap)
+this.rawCollection == orig(this.rawCollection)
+this.rawCollection == orig(this.genericCollection)
+this.rawCollection == orig(this.stringCollection)
+this.rawCollection == orig(this.integerCollection)
+org.springframework.core.convert.support.GenericConversionServiceTests.$assertionsDisabled == orig(org.springframework.core.convert.support.GenericConversionServiceTests.$assertionsDisabled)
+this.conversionService has only one value
+
+
+
+====================================================================================================
+SAMPLE 3/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: spring
+METHOD: org.springframework.core.convert.support.MapToMapConverterTests.noDefaultConstructorCopyNotRequired()
+####################################################################################################
+
+===========================================================================
+org.springframework.core.convert.support.MapToMapConverterTests.noDefaultConstructorCopyNotRequired():::ENTER
+this has only one value
+this.conversionService has only one value
+
+===========================================================================
+org.springframework.core.convert.support.MapToMapConverterTests.noDefaultConstructorCopyNotRequired():::EXIT
+this.conversionService == orig(this.conversionService)
+this.scalarMapTarget == orig(this.scalarMapTarget)
+this.scalarMapTarget == orig(this.collectionMapTarget)
+this.scalarMapTarget == orig(this.sourceCollectionMapTarget)
+this.scalarMapTarget == orig(this.emptyMapTarget)
+this.scalarMapTarget == orig(this.notGenericMapSource)
+this.emptyMapDifferentTarget == orig(this.emptyMapDifferentTarget)
+this.multiValueMapTarget == orig(this.multiValueMapTarget)
+this.enumMap == orig(this.enumMap)
+this.conversionService has only one value
+
+
+
+====================================================================================================
+SAMPLE 4/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: spring
+METHOD: org.springframework.core.convert.support.GenericConversionServiceTests$GenericBaseClass.GenericBaseClass()
+####################################################################################################
+
+===========================================================================
+org.springframework.core.convert.support.GenericConversionServiceTests$GenericBaseClass.GenericBaseClass():::EXIT
+
+
+
+====================================================================================================
+SAMPLE 5/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: spring
+METHOD: org.springframework.core.convert.support.ByteBufferConverterTests$ByteArrayToOtherTypeConverter.ByteArrayToOtherTypeConverter()
+####################################################################################################
+
+===========================================================================
+org.springframework.core.convert.support.ByteBufferConverterTests$ByteArrayToOtherTypeConverter.ByteArrayToOtherTypeConverter():::EXIT
+
+
+
+====================================================================================================
+SAMPLE 6/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: spring
+METHOD: org.springframework.core.convert.converter.DefaultConversionServiceTests$ListWrapper.ListWrapper(java.util.List)
+####################################################################################################
+
+===========================================================================
+org.springframework.core.convert.converter.DefaultConversionServiceTests$ListWrapper.ListWrapper(java.util.List):::ENTER
+list has only one value
+list[] contains no nulls and has only one value, of length 2
+list[].getClass().getName() == [java.lang.String, java.lang.String]
+list[].getClass().getName() elements == java.lang.String.class
+list.getClass().getName() == java.util.ImmutableCollections$List12.class
+
+===========================================================================
+org.springframework.core.convert.converter.DefaultConversionServiceTests$ListWrapper.ListWrapper(java.util.List):::EXIT
+this.list == orig(list)
+this.list[] == list[]
+this.list.getClass().getName() == orig(list.getClass().getName())
+list[] == orig(list[])
+list[] contains no nulls and has only one value, of length 2
+list[].getClass().getName() == [java.lang.String, java.lang.String]
+list[].getClass().getName() elements == java.lang.String.class
+
+
+
+====================================================================================================
+SAMPLE 7/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: spring
+METHOD: org.springframework.core.convert.support.CollectionToCollectionConverterTests.arrayCollectionToObjectInteraction()
+####################################################################################################
+
+===========================================================================
+org.springframework.core.convert.support.CollectionToCollectionConverterTests.arrayCollectionToObjectInteraction():::ENTER
+this has only one value
+this.conversionService has only one value
+
+===========================================================================
+org.springframework.core.convert.support.CollectionToCollectionConverterTests.arrayCollectionToObjectInteraction():::EXIT
+this.conversionService == orig(this.conversionService)
+this.scalarListTarget == orig(this.scalarListTarget)
+this.scalarListTarget == orig(this.emptyListDifferentTarget)
+this.emptyListTarget == orig(this.emptyListTarget)
+this.emptyListTarget == orig(this.objectToCollection)
+this.emptyListTarget == orig(this.strings)
+this.emptyListTarget == orig(this.resources)
+this.list == orig(this.list)
+this.wildcardCollection == orig(this.wildcardCollection)
+this.enumSet == orig(this.enumSet)
+this.conversionService has only one value
+
+
+
+====================================================================================================
+SAMPLE 8/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: spring
+METHOD: org.springframework.core.convert.support.GenericConversionServiceTests$StringToListOfMapConverter.StringToListOfMapConverter()
+####################################################################################################
+
+===========================================================================
+org.springframework.core.convert.support.GenericConversionServiceTests$StringToListOfMapConverter.StringToListOfMapConverter():::EXIT
+
+
+
+====================================================================================================
+SAMPLE 9/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: spring
+METHOD: org.springframework.core.convert.converter.DefaultConversionServiceTests.convertCollectionToCollectionSpecialCaseSourceImpl()
+####################################################################################################
+
+===========================================================================
+org.springframework.core.convert.converter.DefaultConversionServiceTests.convertCollectionToCollectionSpecialCaseSourceImpl():::ENTER
+this has only one value
+this.conversionService has only one value
+this.genericList has only one value
+this.genericMap has only one value
+
+===========================================================================
+org.springframework.core.convert.converter.DefaultConversionServiceTests.convertCollectionToCollectionSpecialCaseSourceImpl():::EXIT
+this.conversionService == orig(this.conversionService)
+this.genericList == orig(this.genericList)
+this.genericList[] == orig(this.genericList[])
+this.genericList.getClass().getName() == orig(this.genericList.getClass().getName())
+this.genericStream == orig(this.genericStream)
+this.genericMap == orig(this.genericMap)
+this.genericMap.getClass().getName() == orig(this.genericMap.getClass().getName())
+this.enumSet == orig(this.enumSet)
+this.assignableTarget == orig(this.assignableTarget)
+this.conversionService has only one value
+this.genericList has only one value
+this.genericMap has only one value
+
+
+
+====================================================================================================
+SAMPLE 10/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: spring
+METHOD: org.springframework.core.convert.support.StringToRegexConverter.convert(java.lang.String)
+####################################################################################################
+
+===========================================================================
+org.springframework.core.convert.support.StringToRegexConverter.convert(java.lang.String):::ENTER
+source.toString one of { "", "\\w+" }
+
+===========================================================================
+org.springframework.core.convert.support.StringToRegexConverter.convert(java.lang.String):::EXIT36
+source.toString == ""
+return == null
+orig(this) has only one value
+orig(source) has only one value
+
+===========================================================================
+org.springframework.core.convert.support.StringToRegexConverter.convert(java.lang.String):::EXIT38
+source.toString == "\\w+"
+return has only one value
+orig(this) has only one value
+orig(source) has only one value
+
+===========================================================================
+org.springframework.core.convert.support.StringToRegexConverter.convert(java.lang.String):::EXIT
+source.toString == orig(source.toString)
+(source.toString == "")  <==>  (return == null)
+(source.toString == "\\w+")  <==>  (return has only one value)
+source.toString one of { "", "\\w+" }
+

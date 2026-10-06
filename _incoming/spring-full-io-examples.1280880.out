@@ -1,0 +1,17 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+TOOL_JAR: /project/mjk76/ea442/promptstudy/daikon-trace-tools/io-examples-tool/target/io-examples-tool-1.0.0.jar
+DTRACE:   /scratch/mjk76/ea442/promptstudy/spring-full-chicory-out/1280660/dtrace.gz
+SRC_ROOT: /project/mjk76/ea442/promptstudy/spring-framework/spring-core/src/main/java
+OUT:      /project/mjk76/ea442/promptstudy/spring-full-1280660_io_examples_FIXED.json
+[io-examples-tool] dtrace=/scratch/mjk76/ea442/promptstudy/spring-full-chicory-out/1280660/dtrace.gz
+[io-examples-tool] src=/project/mjk76/ea442/promptstudy/spring-framework/spring-core/src/main/java
+[io-examples-tool] out=/project/mjk76/ea442/promptstudy/spring-full-1280660_io_examples_FIXED.json
+[io-examples-tool] ENTER records=139213
+[io-examples-tool] paired ENTER/EXIT examples=18464
+[io-examples-tool] truncated lines=0
+[io-examples-tool] distinct program points=1883
+[io-examples-tool] resolved program points=365
+[io-examples-tool] unresolved program points=1518
+[io-examples-tool] wrote /project/mjk76/ea442/promptstudy/spring-full-1280660_io_examples_FIXED.json
+>>> Wrote /project/mjk76/ea442/promptstudy/spring-full-1280660_io_examples_FIXED.json
+-rw-r--r--+ 1 ea442 ea442 3.8M Sep 13 19:14 /project/mjk76/ea442/promptstudy/spring-full-1280660_io_examples_FIXED.json

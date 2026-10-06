@@ -1,0 +1,7 @@
+project	oca_eligible_methods	daikon_methods	random_attempts	rejected	selected
+apollo	323	1209	11	1	10
+hudi	65	7502	10	0	10
+spring	1568	835	100	90	10
+libgdx	515	1097	16	6	10
+dubbo	2330	1570	26	16	10
+netty	263	2711	16	6	10

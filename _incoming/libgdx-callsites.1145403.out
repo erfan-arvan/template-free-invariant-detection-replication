@@ -1,0 +1,14 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+CLASSES: libgdx/gdx/build/classes/java/main
+SRC: libgdx/gdx/src
+[callsite-tool] classes=libgdx/gdx/build/classes/java/main
+[callsite-tool] src=libgdx/gdx/src
+[callsite-tool] out=libgdx_callsites.json
+[callsite-tool] classpath entries skipped=1
+[callsite-tool] entrypoints=12460
+[callsite-tool] CG nodes=29004
+[callsite-tool] application call edges=27048
+[callsite-tool] methods with recorded callers=4512
+[callsite-tool] wrote libgdx_callsites.json
+>>> Wrote libgdx_callsites.json
+95437 libgdx_callsites.json

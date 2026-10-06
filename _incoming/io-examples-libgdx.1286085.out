@@ -1,0 +1,16 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+[io-examples-tool] dtrace=/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory-out/dtrace.gz
+[io-examples-tool] src=/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/gdx/src
+[io-examples-tool] out=/scratch/mjk76/ea442/promptstudy/libgdx-s5_io_examples.json
+[io-examples-tool] ENTER records=10565
+[io-examples-tool] paired ENTER/EXIT examples=5505
+[io-examples-tool] truncated lines=30620
+[io-examples-tool] distinct program points=1097
+[io-examples-tool] scanning source tree to build forward index...
+[io-examples-tool] forward index built: 12095 declared members
+[io-examples-tool] resolved program points=719
+[io-examples-tool] unresolved program points=378
+[io-examples-tool] wrote /scratch/mjk76/ea442/promptstudy/libgdx-s5_io_examples.json
+[TIMING] io-examples-tool extract (libgdx-s5) 2894s  (22:57:45 -> 23:45:59)
+>>> Wrote /scratch/mjk76/ea442/promptstudy/libgdx-s5_io_examples.json
+66456 /scratch/mjk76/ea442/promptstudy/libgdx-s5_io_examples.json

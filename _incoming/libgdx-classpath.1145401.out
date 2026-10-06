@@ -1,0 +1,5 @@
+DP_CLASSPATH_BEGIN
+/mmfs1/home/ea442/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-jnigen-loader/2.5.2/f35e90affe07c46b4f5e5958a1a4c1820c4890e2/gdx-jnigen-loader-2.5.2.jar
+DP_CLASSPATH_END
+>>> Done. Extract the classpath from this job's .out file with:
+    sed -n '/DP_CLASSPATH_BEGIN/,/DP_CLASSPATH_END/p' libgdx-classpath.<JOBID>.out | sed '1d;$d' > libgdx-cp.txt

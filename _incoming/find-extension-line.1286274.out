@@ -1,0 +1,61 @@
+>>> searching for malformed 'parent' decl lines containing 'extension'
+
+ppt org.springframework.aot.hint.JdkProxyHintExtensionsTests$proxiedInterfaces_builder_extension$lambda$0$$inlined$anyVararg$1.():::EXIT1
+ppt-type subexit
+parent parent org.springframework.aot.hint.JdkProxyHintExtensionsTests$proxiedInterfaces_builder_extension$lambda$0$$inlined$anyVararg$1:::OBJECT 1
+variable this
+--
+
+ppt org.springframework.aot.hint.JdkProxyHintExtensionsTests$proxiedInterfaces_builder_extension$lambda$0$$inlined$anyVararg$1.invoke(io.mockk.MockKMatcherScope$MockKVarargScope,\_java.lang.Object):::ENTER
+ppt-type enter
+parent parent org.springframework.aot.hint.JdkProxyHintExtensionsTests$proxiedInterfaces_builder_extension$lambda$0$$inlined$anyVararg$1:::OBJECT 1
+variable this
+--
+
+ppt org.springframework.aot.hint.JdkProxyHintExtensionsTests$proxiedInterfaces_builder_extension$lambda$0$$inlined$anyVararg$1.invoke(io.mockk.MockKMatcherScope$MockKVarargScope,\_java.lang.Object):::EXIT884
+ppt-type subexit
+parent parent org.springframework.aot.hint.JdkProxyHintExtensionsTests$proxiedInterfaces_builder_extension$lambda$0$$inlined$anyVararg$1:::OBJECT 1
+variable this
+--
+
+ppt org.springframework.aot.hint.JdkProxyHintExtensionsTests$proxiedInterfaces_builder_extension$lambda$0$$inlined$anyVararg$1:::OBJECT
+ppt-type object
+parent parent org.springframework.aot.hint.JdkProxyHintExtensionsTests$proxiedInterfaces_builder_extension$lambda$0$$inlined$anyVararg$1:::CLASS 1
+variable this
+--
+
+ppt org.springframework.aot.hint.ProxyHintsExtensionsTests$registerJdkProxy_extension$lambda$0$$inlined$anyVararg$1.():::EXIT1
+ppt-type subexit
+parent parent org.springframework.aot.hint.ProxyHintsExtensionsTests$registerJdkProxy_extension$lambda$0$$inlined$anyVararg$1:::OBJECT 1
+variable this
+--
+
+ppt org.springframework.aot.hint.ProxyHintsExtensionsTests$registerJdkProxy_extension$lambda$0$$inlined$anyVararg$1.invoke(io.mockk.MockKMatcherScope$MockKVarargScope,\_java.lang.Object):::ENTER
+ppt-type enter
+parent parent org.springframework.aot.hint.ProxyHintsExtensionsTests$registerJdkProxy_extension$lambda$0$$inlined$anyVararg$1:::OBJECT 1
+variable this
+--
+
+ppt org.springframework.aot.hint.ProxyHintsExtensionsTests$registerJdkProxy_extension$lambda$0$$inlined$anyVararg$1.invoke(io.mockk.MockKMatcherScope$MockKVarargScope,\_java.lang.Object):::EXIT884
+ppt-type subexit
+parent parent org.springframework.aot.hint.ProxyHintsExtensionsTests$registerJdkProxy_extension$lambda$0$$inlined$anyVararg$1:::OBJECT 1
+variable this
+--
+
+ppt org.springframework.aot.hint.ProxyHintsExtensionsTests$registerJdkProxy_extension$lambda$0$$inlined$anyVararg$1:::OBJECT
+ppt-type object
+parent parent org.springframework.aot.hint.ProxyHintsExtensionsTests$registerJdkProxy_extension$lambda$0$$inlined$anyVararg$1:::CLASS 1
+variable this
+--
+
+ppt org.springframework.aot.hint.ReflectionHintsExtensionsTests$registerType\_extension\_with\_Consumer$$inlined$registerType$1.(kotlin.jvm.functions.Function1):::EXIT1
+ppt-type subexit
+parent parent org.springframework.aot.hint.ReflectionHintsExtensionsTests$registerType extension with Consumer$$inlined$registerType$1:::OBJECT 1
+variable this
+--
+
+ppt org.springframework.aot.hint.ReflectionHintsExtensionsTests$registerType\_extension\_with\_Consumer$$inlined$registerType$1.accept(org.springframework.aot.hint.TypeHint$Builder):::ENTER
+ppt-type enter
+parent parent org.springframework.aot.hint.ReflectionHintsExtensionsTests$registerType extension with Consumer$$inlined$registerType$1:::OBJECT 1
+variable this
+--

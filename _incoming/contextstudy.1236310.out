@@ -1,0 +1,27 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/23.0.2/bin/java
+MVN: /scratch/mjk76/ea442/apache-maven-3.9.9/bin/mvn
+######################################
+CONTEXT STUDY STARTED
+Prompt strategy (fixed): baseline
+Start time: 2026-09-07 15:33:08 EDT
+######################################
+>>> Building Daikon++ (once)
+======================================
+>>> CONTEXT CONFIG: io_examples
+>>> DP_CONTEXTS: METHOD_BODY,SCOPE, METHOD_JAVADOC
+>>> Start time: 2026-09-07 15:33:27 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: apollo
+>>> Start time: 2026-09-07 15:33:27 EDT
+--------------------------------------
+>>> Finished apollo (context_config=io_examples)
+>>> Finish time: 2026-09-07 15:35:13 EDT
+>>> Duration: 00h:01m:46s
+>>> Duration in seconds: 106
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/io_examples/apollo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/io_examples/apollo/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: dubbo
+>>> Start time: 2026-09-07 15:35:13 EDT
+--------------------------------------

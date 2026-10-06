@@ -1,0 +1,256 @@
+MVN: /scratch/mjk76/ea442/apache-maven-3.9.9/bin/mvn
+>>> Running Daikon++
+>>> CMD: java -jar /scratch/mjk76/ea442/daikonplusplus-token-cost/build/libs/daikonplusplus.jar --external-project --project-root /project/mjk76/ea442/promptstudy/netty --main-src common/src/main/java --test-src common/src/test/java --runner-script /scratch/mjk76/ea442/token_cost_fewshot_class_doc/netty_common_run_tests.sh 5
+Picked up JAVA_TOOL_OPTIONS:  -Djava.io.tmpdir=/scratch/mjk76/ea442/token_cost_fewshot_class_doc/tmp -Djava.io.tmpdir=/scratch/mjk76/ea442/token_cost_fewshot_class_doc/tmp
+==== Daikon++ Config ====
+threads = 8
+registryPath = /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/netty/daikonpp_registry.jsonl
+outcomesPath = /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/netty/daikonpp_outcomes.jsonl
+includeBody = true
+registryReset = true
+debug = false
+keepWork = true
+noQualityFilter = false
+qualityFilterRules = {maxLength=true, alwaysTrueLiteral=true, tautologyNotXOrX=true, fullRangeComparison=true, selfComparison=false, trivialDisjunction=true, noStatements=true, noAssignment=true, forbiddenConstructs=true, requireInScopeName=false, requireResultAtExit=false, primitiveNullComparison=true, unknownIdentifier=false, parseCheck=true}
+llmTotalTimeoutSec = 180
+llmPerReqTimeoutSec = 45
+bodyMaxChars = 2000
+enabledContexts = [METHOD_BODY, SCOPE, CLASS_DOC]
+openaiModel = gpt-4.1-mini
+llmCassettesDir = /project/mjk76/ea442/promptstudy/daikonplusplus/src/test/cassettes
+disableRealLlm = false
+callSitesIndexPath = /project/mjk76/ea442/promptstudy/netty_callsites.json
+ioExamplesIndexPath = /project/mjk76/ea442/promptstudy/netty-s5_io_examples.json
+compileMainScript = /scratch/mjk76/ea442/token_cost_fewshot_class_doc/netty_common_compile.sh
+compileTestScript = /scratch/mjk76/ea442/token_cost_fewshot_class_doc/netty_common_compile.sh
+llmPollStepMs = 1500
+externalCompileClasspath = /project/mjk76/ea442/promptstudy/netty/common/target/classes
+workDir = /scratch/mjk76/ea442/token_cost_fewshot_class_doc/daikonpp_work
+promptStrategy = fewshot
+scanIncludes = []
+llmProvider = openai
+llmLocalBackend = ollama
+llmLocalUrl = http://localhost:11434
+llmLocalModel = qwen2.5:7b
+enableTestFilter = false
+testFilterMethodBatchSize = 1
+staleCheckMinutes = 1
+maxTimeoutMinutes = 480
+autofilterMaxModifyPasses = 200
+autofilterMaxExtraPasses = 150
+llmDryRun = true
+llmPriceInputPerM = 0.4
+llmPriceOutputPerM = 1.6
+=========================
+🔥 EXEC MODE = EXTERNAL_PROJECT
+>>> LLM DRY RUN: prompts are counted, not sent; stopping after LM phase
+[DP] Using prompt strategy: fewshot
+[DP-PATHS] execMode=EXTERNAL_PROJECT
+[DP-PATHS] userProjectRoot=/project/mjk76/ea442/promptstudy/netty
+[DP-PATHS] mainSrcRoot=/project/mjk76/ea442/promptstudy/netty/common/src/main/java
+[DP-PATHS] testSrcRoot=/project/mjk76/ea442/promptstudy/netty/common/src/test/java
+>>> Scanning MAIN sources under (WORKING COPY): /project/mjk76/ea442/promptstudy/netty/common/src/main/java
+>>> [Scan phase] started at 2026-10-02 19:25:27.707
+>>> [Scan phase] finished at 2026-10-02 19:25:30.163 (elapsed 2.456s)
+>>> Points — ENTRY: 2255  EXIT: 2255  TOTAL: 4510
+>>> [LM phase] started at 2026-10-02 19:25:30.176
+===== FIRST PROMPT =====
+----- SYSTEM -----
+You are a program analysis assistant.
+
+Task:
+Generate candidate invariants for a Java program point.
+
+Global rules:
+- Return ONLY JSON matching the required schema.
+- The JSON schema is:
+  {
+    "invariants": [
+      { "expression": "<Java boolean expression>" }
+    ]
+  }
+- Each invariant must be a valid Java boolean expression.
+- Expressions must be valid at the program point.
+- Use only the listed in-scope names.
+- Do not introduce new variables, helper functions, or APIs.
+- Expressions must be side-effect free.
+
+
+===== EXAMPLE 1 =====
+PROGRAM POINT: Example1 [METHOD_ENTRY]
+
+In-scope names:
+- order : Order
+- limit : int
+
+===== PROGRAM CONTEXT =====
+[Method Implementation]
+public void process(Order order, int limit) {
+  if (order.getQuantity() > limit) {
+    throw new IllegalArgumentException();
+  }
+}
+===========================
+
+Expected Output:
+{
+  "invariants": [
+    { "expression": "order != null" },
+    { "expression": "order.getQuantity() <= limit" },
+    { "expression": "order.getQuantity() >= 0" },
+    { "expression": "limit >= 0" }
+  ]
+}
+===== END EXAMPLE 1 =====
+
+===== EXAMPLE 2 =====
+PROGRAM POINT: Example2 [METHOD_ENTRY]
+
+In-scope names:
+- s : String
+- start : int
+- end : int
+
+===== PROGRAM CONTEXT =====
+[Method Implementation]
+public String sub(String s, int start, int end) {
+  if (start < 0 || end > s.length()) return "";
+  return s.substring(start, end);
+}
+===========================
+
+Expected Output:
+{
+  "invariants": [
+    { "expression": "s != null" },
+    { "expression": "start >= 0" },
+    { "expression": "end <= s.length()" },
+    { "expression": "start <= end" }
+  ]
+}
+===== END EXAMPLE 2 =====
+
+
+----- USER -----
+PROGRAM POINT: io.netty.util.ResourceLeakDetectorFactory#instance():ResourceLeakDetectorFactory [METHOD_ENTRY]
+
+This program point represents the state immediately BEFORE the method executes.
+Only parameters and object state are defined.
+
+In-scope names:
+(none)
+
+Note:
+- These are base variables.
+- Expressions derived from them (e.g., field accesses and method calls) are allowed if valid at this program point.
+
+Constraints specific to this program point:
+- Single-line Java boolean expressions only.
+- Method calls are allowed and encouraged if callable using listed names.
+- Method calls may belong to the JDK or the project codebase.
+- Field accesses (e.g., obj.field) are allowed if accessible using listed names.
+- Do not invent methods or fields that are not available at this program point.
+- Add null checks ONLY when required for safe evaluation.
+- Do not use non-Java logical operators such as ==> or ⇒.
+- Logical implication (A ⇒ B) must be expressed as (!A || B) using standard Java boolean operators.
+- Prefer pure predicate-style method calls.
+- Avoid redundant or trivially true expressions.
+- Do NOT generate tautologies or self-comparisons (e.g., x == x, obj.method() == obj.method()).
+- Avoid semantically duplicate invariants that differ only by operand order or equivalent comparison form (e.g., a == b vs b == a, a <= b vs b >= a).
+- Do not focus solely on nullness-related invariants.
+- Prioritize invariants that capture meaningful relationships among the in-scope names and reflect the behavior of the method at this program point.
+
+===== PROGRAM CONTEXT =====
+Consider the following context when generating invariants.
+[Method Implementation]
+public static ResourceLeakDetectorFactory instance() {
+        return factoryInstance;
+    }
+
+[Enclosing Class Documentation]
+[Class] ResourceLeakDetectorFactory
+This static factory should be used to load {@link ResourceLeakDetector}s as needed
+
+[Field] logger : InternalLogger
+[Field] factoryInstance : ResourceLeakDetectorFactory
+
+[Method] instance() : ResourceLeakDetectorFactory
+Get the singleton instance of this factory class.
+
+@return the current {@link ResourceLeakDetectorFactory}
+
+[Method] setResourceLeakDetectorFactory(ResourceLeakDetectorFactory) : void
+Set the factory's singleton instance. This has to be called before the static initializer of the
+{@link ResourceLeakDetector} is called by all the callers of this factory. That is, before initializing a
+Netty Bootstrap.
+
+@param factory the instance that will become the current {@link ResourceLeakDetectorFactory}'s singleton
+
+[Method] newResourceLeakDetector(Class<T>) : ResourceLeakDetector<T>
+Returns a new instance of a {@link ResourceLeakDetector} with the given resource class.
+
+@param resource the resource class used to initialize the {@link ResourceLeakDetector}
+@param <T> the type of the resource class
+@return a new instance of {@link ResourceLeakDetector}
+
+[Method] newResourceLeakDetector(Class<T>, int, long) : ResourceLeakDetector<T>
+@deprecated Use {@link #newResourceLeakDetector(Class, int)} instead.
+<p>
+Returns a new instance of a {@link ResourceLeakDetector} with the given resource class.
+@param resource the resource class used to initialize the {@link ResourceLeakDetector}
+@param samplingInterval the interval on which sampling takes place
+@param maxActive This is deprecated and will be ignored.
+@param <T> the type of the resource class
+@return a new instance of {@link ResourceLeakDetector}
+
+[Method] newResourceLeakDetector(Class<T>, int) : ResourceLeakDetector<T>
+Returns a new instance of a {@link ResourceLeakDetector} with the given resource class.
+
+@param resource the resource class used to initialize the {@link ResourceLeakDetector}
+@param samplingInterval the interval on which sampling takes place
+@param <T> the type of the resource class
+@return a new instance of {@link ResourceLeakDetector}
+===========================
+
+Generate up to 5 candidate invariants that are valid at this program point.
+Return ONLY the JSON.
+
+========================
+
+>>> [LM phase] finished at 2026-10-02 19:25:49.568 (elapsed 19.392s)
+==== DRY RUN: LLM prompt token summary (nothing was sent) ====
+model / tokenizer       : gpt-4.1-mini / o200k_base
+program points in scope : 4510
+prompts built           : 4510  (METHOD_ENTRY 2255, METHOD_EXIT 2255)
+distinct prompts        : 4242  (identical system+user)
+system-prompt tokens    : 1957340
+user-prompt tokens      : 8114824
+chat framing tokens     : 49610  (11 per prompt)
+TOTAL input tokens      : 10121774
+  of distinct prompts   : 9596534
+per prompt (input)      : min 789 | mean 2244 | median 1470 | p90 5715 | p99 6661 | max 6857
+  METHOD_ENTRY          : 2255 prompts, 4951132 tokens, mean 2196
+  METHOD_EXIT           : 2255 prompts, 5170642 tokens, mean 2293
+cassettes               : /project/mjk76/ea442/promptstudy/daikonplusplus/src/test/cassettes
+  already recorded      : 4510 prompts, 10121774 tokens
+  NOT recorded (to send): 0 prompts (0 distinct), 0 tokens (distinct)
+output tokens (recorded): 1112694  (4510 recorded responses, mean 247)
+TOTAL output tokens     : 1112694
+COST (USD)              : input $4.05 (at $0.4/1M) + output $1.78 (at $1.6/1M) = $5.83
+  per program point     : $0.001292
+largest prompts:
+      6857  METHOD_EXIT  io.netty.util.AsciiString#regionMatches(boolean,int,CharSequence,int,int):boolean
+      6834  METHOD_EXIT  io.netty.util.AsciiString#split(char):AsciiString[]
+      6830  METHOD_EXIT  io.netty.util.AsciiString#regionMatchesAscii(CharSequence,boolean,int,CharSequence,int,int):boolean
+      6819  METHOD_EXIT  io.netty.util.AsciiString#indexOf(CharSequence,int):int
+      6816  METHOD_EXIT  io.netty.util.AsciiString#concat(CharSequence):AsciiString
+      6805  METHOD_EXIT  io.netty.util.AsciiString#parseLong(int,int,int,boolean):long
+      6805  METHOD_EXIT  io.netty.util.AsciiString#parseInt(int,int,int,boolean):int
+      6801  METHOD_EXIT  io.netty.util.AsciiString#regionMatches(int,CharSequence,int,int):boolean
+      6797  METHOD_EXIT  io.netty.util.AsciiString#lastIndexOf(CharSequence,int):int
+      6793  METHOD_EXIT  io.netty.util.AsciiString#contentEqualsIgnoreCase(CharSequence):boolean
+not included: structured-output JSON schema sent with each request (input side)
+==============================================================
+>>> Per-prompt token counts: /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/netty/daikonpp_dry_run_tokens.tsv
+>>> LLM DRY RUN finished; injection, compilation and tests skipped.
+>>> Done.

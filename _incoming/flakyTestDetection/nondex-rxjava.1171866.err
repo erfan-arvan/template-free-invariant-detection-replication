@@ -1,0 +1,175 @@
+Picked up JAVA_TOOL_OPTIONS:  -Djava.io.tmpdir=/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/tmp
+openjdk version "17.0.15" 2025-04-15
+OpenJDK Runtime Environment Temurin-17.0.15+6 (build 17.0.15+6)
+OpenJDK 64-Bit Server VM Temurin-17.0.15+6 (build 17.0.15+6, mixed mode, sharing)
+Picked up JAVA_TOOL_OPTIONS:  -Djava.io.tmpdir=/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/tmp
+Picked up JAVA_TOOL_OPTIONS:  -Djava.io.tmpdir=/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/tmp
+Picked up JAVA_TOOL_OPTIONS:  -Djava.io.tmpdir=/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/tmp
+/mmfs1/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/rxjava/src/main/java/io/reactivex/rxjava4/core/Flowable.java:21076: error: cannot find symbol
+        return toStreamable(Executors.newVirtualThreadPerTaskExecutor());
+                                     ^
+  symbol:   method newVirtualThreadPerTaskExecutor()
+  location: class Executors
+/mmfs1/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/rxjava/src/main/java/io/reactivex/rxjava4/core/Streamable.java:103: error: cannot find symbol
+        return fromPublisher(source, Executors.newVirtualThreadPerTaskExecutor());
+                                              ^
+  symbol:   method newVirtualThreadPerTaskExecutor()
+  location: class Executors
+/mmfs1/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/rxjava/src/main/java/io/reactivex/rxjava4/core/Streamable.java:185: error: cannot find symbol
+        return toFlowable(Executors.newVirtualThreadPerTaskExecutor());
+                                   ^
+  symbol:   method newVirtualThreadPerTaskExecutor()
+  location: class Executors
+/mmfs1/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/rxjava/src/main/java/io/reactivex/rxjava4/core/Streamable.java:213: error: cannot find symbol
+        return transform(transformer, Executors.newVirtualThreadPerTaskExecutor());
+                                               ^
+  symbol:   method newVirtualThreadPerTaskExecutor()
+  location: class Executors
+/mmfs1/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/rxjava/src/main/java/io/reactivex/rxjava4/core/Streamable.java:252: error: cannot find symbol
+        return forEach(consumer, canceller, Executors.newVirtualThreadPerTaskExecutor());
+                                                     ^
+  symbol:   method newVirtualThreadPerTaskExecutor()
+  location: class Executors
+/mmfs1/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/rxjava/src/main/java/io/reactivex/rxjava4/core/Streamable.java:264: error: cannot find symbol
+        return forEach(consumer, canceller, Executors.newVirtualThreadPerTaskExecutor());
+                                                     ^
+  symbol:   method newVirtualThreadPerTaskExecutor()
+  location: class Executors
+/mmfs1/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/rxjava/src/main/java/io/reactivex/rxjava4/core/Streamer.java:271: error: cannot find symbol
+        return runStage(function, canceller, Executors.newVirtualThreadPerTaskExecutor());
+                                                      ^
+  symbol:   method newVirtualThreadPerTaskExecutor()
+  location: class Executors
+/mmfs1/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/rxjava/src/main/java/io/reactivex/rxjava4/internal/schedulers/SchedulerToExecutorService.java:36: error: expression type Worker is a subtype of pattern type Worker
+        if (workerStore.get() instanceof Worker w) {
+                              ^
+/mmfs1/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/rxjava/src/main/java/io/reactivex/rxjava4/internal/schedulers/SchedulerToExecutorService.java:45: error: expression type Worker is a subtype of pattern type Worker
+        if (workerStore.get() instanceof Worker w) {
+                              ^
+/mmfs1/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/rxjava/src/main/java/io/reactivex/rxjava4/internal/schedulers/SchedulerToExecutorService.java:59: error: expression type Worker is a subtype of pattern type Worker
+        if (workerStore.get() instanceof Worker w) {
+                              ^
+/mmfs1/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/rxjava/src/main/java/io/reactivex/rxjava4/internal/schedulers/SchedulerToExecutorService.java:192: error: cannot find symbol
+                if (f.isDone() && !f.isCancelled() && f.exceptionNow() == null) {
+                                                       ^
+  symbol:   method exceptionNow()
+  location: variable f of type Future<T>
+  where T is a type-variable:
+    T extends Object declared in method <T>invokeAny(Collection<? extends Callable<T>>)
+/mmfs1/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/rxjava/src/main/java/io/reactivex/rxjava4/internal/schedulers/SchedulerToExecutorService.java:194: error: cannot find symbol
+                    var v = f.resultNow();
+                             ^
+  symbol:   method resultNow()
+  location: variable f of type Future<T>
+  where T is a type-variable:
+    T extends Object declared in method <T>invokeAny(Collection<? extends Callable<T>>)
+/mmfs1/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/rxjava/src/main/java/io/reactivex/rxjava4/internal/schedulers/SchedulerToExecutorService.java:227: error: cannot find symbol
+                if (f.isDone() && !f.isCancelled() && f.exceptionNow() == null) {
+                                                       ^
+  symbol:   method exceptionNow()
+  location: variable f of type Future<T>
+  where T is a type-variable:
+    T extends Object declared in method <T>invokeAny(Collection<? extends Callable<T>>,long,TimeUnit)
+/mmfs1/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/rxjava/src/main/java/io/reactivex/rxjava4/internal/schedulers/SchedulerToExecutorService.java:229: error: cannot find symbol
+                    var v = f.resultNow();
+                             ^
+  symbol:   method resultNow()
+  location: variable f of type Future<T>
+  where T is a type-variable:
+    T extends Object declared in method <T>invokeAny(Collection<? extends Callable<T>>,long,TimeUnit)
+/mmfs1/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/rxjava/src/main/java/io/reactivex/rxjava4/schedulers/Schedulers.java:81: error: cannot find symbol
+        static final Scheduler DEFAULT = new DeferredExecutorScheduler(() -> Executors.newVirtualThreadPerTaskExecutor(), true, true);
+                                                                                      ^
+  symbol:   method newVirtualThreadPerTaskExecutor()
+  location: class Executors
+15 errors
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileJava'.
+> Compilation failed; see the compiler output below.
+  /mmfs1/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/rxjava/src/main/java/io/reactivex/rxjava4/internal/schedulers/SchedulerToExecutorService.java:36: error: expression type Worker is a subtype of pattern type Worker
+          if (workerStore.get() instanceof Worker w) {
+                                ^
+  /mmfs1/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/rxjava/src/main/java/io/reactivex/rxjava4/internal/schedulers/SchedulerToExecutorService.java:45: error: expression type Worker is a subtype of pattern type Worker
+          if (workerStore.get() instanceof Worker w) {
+                                ^
+  /mmfs1/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/rxjava/src/main/java/io/reactivex/rxjava4/internal/schedulers/SchedulerToExecutorService.java:59: error: expression type Worker is a subtype of pattern type Worker
+          if (workerStore.get() instanceof Worker w) {
+                                ^
+  /mmfs1/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/rxjava/src/main/java/io/reactivex/rxjava4/core/Flowable.java:21076: error: cannot find symbol
+          return toStreamable(Executors.newVirtualThreadPerTaskExecutor());
+                                       ^
+    symbol:   method newVirtualThreadPerTaskExecutor()
+    location: class Executors
+  /mmfs1/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/rxjava/src/main/java/io/reactivex/rxjava4/core/Streamable.java:103: error: cannot find symbol
+          return fromPublisher(source, Executors.newVirtualThreadPerTaskExecutor());
+                                                ^
+    symbol:   method newVirtualThreadPerTaskExecutor()
+    location: class Executors
+  /mmfs1/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/rxjava/src/main/java/io/reactivex/rxjava4/core/Streamable.java:185: error: cannot find symbol
+          return toFlowable(Executors.newVirtualThreadPerTaskExecutor());
+                                     ^
+    symbol:   method newVirtualThreadPerTaskExecutor()
+    location: class Executors
+  /mmfs1/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/rxjava/src/main/java/io/reactivex/rxjava4/core/Streamable.java:213: error: cannot find symbol
+          return transform(transformer, Executors.newVirtualThreadPerTaskExecutor());
+                                                 ^
+    symbol:   method newVirtualThreadPerTaskExecutor()
+    location: class Executors
+  /mmfs1/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/rxjava/src/main/java/io/reactivex/rxjava4/core/Streamable.java:252: error: cannot find symbol
+          return forEach(consumer, canceller, Executors.newVirtualThreadPerTaskExecutor());
+                                                       ^
+    symbol:   method newVirtualThreadPerTaskExecutor()
+    location: class Executors
+  /mmfs1/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/rxjava/src/main/java/io/reactivex/rxjava4/core/Streamable.java:264: error: cannot find symbol
+          return forEach(consumer, canceller, Executors.newVirtualThreadPerTaskExecutor());
+                                                       ^
+    symbol:   method newVirtualThreadPerTaskExecutor()
+    location: class Executors
+  /mmfs1/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/rxjava/src/main/java/io/reactivex/rxjava4/core/Streamer.java:271: error: cannot find symbol
+          return runStage(function, canceller, Executors.newVirtualThreadPerTaskExecutor());
+                                                        ^
+    symbol:   method newVirtualThreadPerTaskExecutor()
+    location: class Executors
+  /mmfs1/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/rxjava/src/main/java/io/reactivex/rxjava4/internal/schedulers/SchedulerToExecutorService.java:192: error: cannot find symbol
+                  if (f.isDone() && !f.isCancelled() && f.exceptionNow() == null) {
+                                                         ^
+    symbol:   method exceptionNow()
+    location: variable f of type Future<T>
+    where T is a type-variable:
+      T extends Object declared in method <T>invokeAny(Collection<? extends Callable<T>>)
+  /mmfs1/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/rxjava/src/main/java/io/reactivex/rxjava4/internal/schedulers/SchedulerToExecutorService.java:194: error: cannot find symbol
+                      var v = f.resultNow();
+                               ^
+    symbol:   method resultNow()
+    location: variable f of type Future<T>
+    where T is a type-variable:
+      T extends Object declared in method <T>invokeAny(Collection<? extends Callable<T>>)
+  /mmfs1/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/rxjava/src/main/java/io/reactivex/rxjava4/internal/schedulers/SchedulerToExecutorService.java:227: error: cannot find symbol
+                  if (f.isDone() && !f.isCancelled() && f.exceptionNow() == null) {
+                                                         ^
+    symbol:   method exceptionNow()
+    location: variable f of type Future<T>
+    where T is a type-variable:
+      T extends Object declared in method <T>invokeAny(Collection<? extends Callable<T>>,long,TimeUnit)
+  /mmfs1/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/rxjava/src/main/java/io/reactivex/rxjava4/internal/schedulers/SchedulerToExecutorService.java:229: error: cannot find symbol
+                      var v = f.resultNow();
+                               ^
+    symbol:   method resultNow()
+    location: variable f of type Future<T>
+    where T is a type-variable:
+      T extends Object declared in method <T>invokeAny(Collection<? extends Callable<T>>,long,TimeUnit)
+  /mmfs1/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/rxjava/src/main/java/io/reactivex/rxjava4/schedulers/Schedulers.java:81: error: cannot find symbol
+          static final Scheduler DEFAULT = new DeferredExecutorScheduler(() -> Executors.newVirtualThreadPerTaskExecutor(), true, true);
+                                                                                        ^
+    symbol:   method newVirtualThreadPerTaskExecutor()
+    location: class Executors
+  15 errors
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+
+BUILD FAILED in 16s

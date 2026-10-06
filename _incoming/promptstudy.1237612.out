@@ -1,0 +1,36 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/23.0.2/bin/java
+MVN: /scratch/mjk76/ea442/apache-maven-3.9.9/bin/mvn
+######################################
+PROMPT STUDY STARTED
+Start time: 2026-09-08 02:11:18 EDT
+######################################
+>>> Building Daikon++ (once)
+======================================
+>>> STRATEGY: baseline
+>>> Start time: 2026-09-08 02:11:39 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: springReal
+>>> Start time: 2026-09-08 02:11:39 EDT
+--------------------------------------
+>>> Finished springReal (strategy=baseline)
+>>> Finish time: 2026-09-08 02:20:16 EDT
+>>> Duration: 00h:08m:37s
+>>> Duration in seconds: 517
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/baseline/springReal/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/baseline/springReal/daikonpp_registry.jsonl
+======================================
+DONE strategy: baseline
+Finish time: 2026-09-08 02:20:16 EDT
+Duration: 00h:08m:37s
+Duration in seconds: 517
+Results in: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/baseline
+======================================
+======================================
+>>> STRATEGY: fewshot
+>>> Start time: 2026-09-08 02:20:16 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: springReal
+>>> Start time: 2026-09-08 02:20:16 EDT
+--------------------------------------

@@ -1,0 +1,84 @@
+============================================================
+dubbo Chicory trace
+============================================================
+RUN ID:             1219831
+JAVA:               /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+MVN:                /scratch/mjk76/ea442/apache-maven-3.9.9/bin/mvn
+PROJECT:            /project/mjk76/ea442/promptstudy/dubbo
+MODULE:             dubbo-common
+WORK DIR:           /project/mjk76/ea442/promptstudy/dubbo-chicory
+TRACE BASE DIR:     /project/mjk76/ea442/promptstudy/dubbo-chicory-out
+TRACE OUTPUT DIR:   /project/mjk76/ea442/promptstudy/dubbo-chicory-out/1219831
+COMBINED TRACE:     /project/mjk76/ea442/promptstudy/dubbo-chicory-out/1219831/dubbo.dtrace
+============================================================
+
+[TIMING] === dubbo chicory trace run started 2026-09-04T12:55:35-04:00 ===
+[TIMING] rsync copy                   7s  (12:55:35 -> 12:55:42)
+
+>>> Using explicitly configured package prefix:
+>>> org.apache.dubbo
+
+>>> Chicory configuration:
+>>> package prefix:     org.apache.dubbo
+>>> select pattern:     ^org\.apache\.dubbo\..*
+>>> omit pattern:       com\.google\.protobuf
+>>> boot classes:       ^(?!org\.apache\.dubbo\.).*
+
+>>> Patching pom.xml argLine...
+Patched 2 argLine element(s) in /project/mjk76/ea442/promptstudy/dubbo-chicory/pom.xml (real checkout untouched -- this is an rsync copy)
+[TIMING] pom.xml argLine patch        1s  (12:55:42 -> 12:55:43)
+
+>>> mvn compile (-am, warms build with compatibility compiler flag)
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] dubbo-parent                                                       [pom]
+[INFO] dubbo-common                                                       [jar]
+[INFO] 
+[INFO] -------------------< org.apache.dubbo:dubbo-parent >--------------------
+[INFO] Building dubbo-parent 3.3.7-SNAPSHOT                               [1/2]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.4.1:enforce (enforce-maven-version) @ dubbo-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- enforcer:3.4.1:enforce (enforce-java-version) @ dubbo-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ dubbo-parent ---
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-unix-validation) @ dubbo-parent ---
+[INFO] 
+[INFO] --- jacoco:0.8.15:prepare-agent (jacoco-initialize) @ dubbo-parent ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- spotless:2.46.1:check (default) @ dubbo-parent ---
+[INFO] Spotless check skipped
+[INFO] 
+[INFO] --- remote-resources:3.1.0:process (process-resource-bundles) @ dubbo-parent ---
+[INFO] Preparing remote bundle org.apache.apache.resources:apache-jar-resource-bundle:1.5
+[INFO] Copying 3 resources from 1 bundle.
+[INFO] 
+[INFO] --- flatten:1.7.3:flatten (flatten) @ dubbo-parent ---
+[INFO] Generating flattened POM of project org.apache.dubbo:dubbo-parent:pom:3.3.7-SNAPSHOT...
+[INFO] 
+[INFO] --- antrun:3.2.0:run (get-version-infos) @ dubbo-parent ---
+[INFO] Executing tasks
+[INFO]      [exec] Result: 128
+[INFO] Executed tasks
+[INFO] 
+[INFO] -------------------< org.apache.dubbo:dubbo-common >--------------------
+[INFO] Building dubbo-common 3.3.7-SNAPSHOT                               [2/2]
+[INFO]   from dubbo-common/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- enforcer:3.4.1:enforce (enforce-maven-version) @ dubbo-common ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- enforcer:3.4.1:enforce (enforce-java-version) @ dubbo-common ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (checkstyle-validation) @ dubbo-common ---
+[INFO] 

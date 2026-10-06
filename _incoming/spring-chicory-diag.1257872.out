@@ -1,0 +1,62 @@
+>>> [1/2] Checking spring-core testRuntimeClasspath for any daikon/chicory/bcel artifact
+[Incubating] Problems report is available at: file:///mmfs1/scratch/mjk76/ea442/promptstudy/spring-s5-chicory/build/reports/problems/problems-report.html
+>>> [2/2] Printing actual jvmArgs for one Test Executor, running a single tiny test class
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.7.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :buildSrc:compileJava UP-TO-DATE
+> Task :buildSrc:compileGroovy NO-SOURCE
+> Task :buildSrc:pluginDescriptors UP-TO-DATE
+> Task :buildSrc:processResources UP-TO-DATE
+> Task :buildSrc:classes UP-TO-DATE
+> Task :buildSrc:checkstyleMain UP-TO-DATE
+> Task :buildSrc:compileTestJava UP-TO-DATE
+> Task :buildSrc:compileTestGroovy NO-SOURCE
+> Task :buildSrc:processTestResources NO-SOURCE
+> Task :buildSrc:testClasses UP-TO-DATE
+> Task :buildSrc:checkstyleTest UP-TO-DATE
+> Task :buildSrc:pluginUnderTestMetadata UP-TO-DATE
+> Task :buildSrc:test UP-TO-DATE
+> Task :buildSrc:validatePlugins UP-TO-DATE
+> Task :buildSrc:check UP-TO-DATE
+> Task :buildSrc:jar UP-TO-DATE
+> Task :spring-core:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :spring-core:javapoetRepackJar UP-TO-DATE
+> Task :spring-core:objenesisRepackJar UP-TO-DATE
+> Task :spring-core:compileKotlin UP-TO-DATE
+> Task :spring-core:compileJava UP-TO-DATE
+> Task :spring-core:processResources UP-TO-DATE
+> Task :spring-core:classes UP-TO-DATE
+> Task :spring-core:compileJava21Kotlin NO-SOURCE
+> Task :spring-core:compileJava21Java UP-TO-DATE
+> Task :spring-core:compileJava24Kotlin NO-SOURCE
+> Task :spring-core:compileJava24Java UP-TO-DATE
+> Task :spring-core:processJava21Resources NO-SOURCE
+> Task :spring-core:java21Classes UP-TO-DATE
+> Task :spring-core:processJava24Resources NO-SOURCE
+> Task :spring-core:java24Classes UP-TO-DATE
+> Task :spring-core:jar UP-TO-DATE
+> Task :spring-core:compileTestFixturesKotlin NO-SOURCE
+> Task :spring-core:compileTestFixturesJava UP-TO-DATE
+> Task :spring-core:processTestFixturesResources NO-SOURCE
+> Task :spring-core:testFixturesClasses UP-TO-DATE
+> Task :spring-core:testFixturesJar UP-TO-DATE
+> Task :spring-core:compileTestKotlin UP-TO-DATE
+> Task :spring-core:compileTestJava UP-TO-DATE
+> Task :spring-core:processTestResources UP-TO-DATE
+> Task :spring-core:testClasses UP-TO-DATE
+
+> Task :spring-core:test
+>>> ACTUAL jvmArgs: [--add-opens=java.base/java.lang=ALL-UNNAMED, --add-opens=java.base/java.util=ALL-UNNAMED, -Xshare:off, -javaagent:/project/mjk76/ea442/promptstudy/daikon-spring-jdk25.jar=--output_dir=/scratch/mjk76/ea442/promptstudy/spring-s5-chicory-out --ppt-select-pattern=^org\.springframework\..* --ppt-omit-pattern=com\.google\.protobuf --boot-classes=^(?!org\.springframework\.).* --sample-start=5 --nesting-depth=0, -XX:+AllowRedefinitionToAddDeleteMethods, -javaagent:/mmfs1/scratch/mjk76/ea442/promptstudy/spring-s5-gradle-home-diag/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.17.6/17b32fd9f57deef02842f7f05abc4ad8127fe34e/byte-buddy-agent-1.17.6.jar]
+
+[Incubating] Problems report is available at: file:///mmfs1/scratch/mjk76/ea442/promptstudy/spring-s5-chicory/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.7.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 38s
+24 actionable tasks: 1 executed, 23 up-to-date
+Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.7.1/userguide/configuration_cache_enabling.html
+>>> Diagnostic job done

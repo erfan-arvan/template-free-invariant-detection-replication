@@ -1,0 +1,148 @@
+Node:             n0054
+Original RxJava:  /project/mjk76/ea442/promptstudy/rxjava
+Working copy:     /scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/rxjava
+Results:          /project/mjk76/ea442/promptstudy/flakyTestDetection/results/nondex-1171866
+JDK_EXPERIMENTAL: 17
+
+=== Copying RxJava ===
+
+=== Adding NonDex plugin to disposable copy ===
+Injected NonDex plugin.
+
+=== build.gradle diff ===
+diff --git a/build.gradle b/build.gradle
+index bda04d745..55261ef69 100644
+--- a/build.gradle
++++ b/build.gradle
+@@ -1,5 +1,6 @@
+ 
+ plugins {
++    id("edu.illinois.nondex") version "2.2.5"
+     id("java-library")
+     id("checkstyle")
+     id("eclipse")
+@@ -61,12 +62,14 @@ if (experimental != null && !experimental.trim().isEmpty()) {
+     toolchainJdk = experimental  // e.g. "27"
+ }
+ 
++def javaVersionEnum = JavaVersion.toVersion(toolchainJdk)
++
+ java {
+     toolchain {
+         languageVersion = JavaLanguageVersion.of(toolchainJdk)
+     }
+-    sourceCompatibility = JavaVersion.VERSION_26
+-    targetCompatibility = JavaVersion.VERSION_26
++    sourceCompatibility = javaVersionEnum
++    targetCompatibility = javaVersionEnum
+ }
+ 
+ tasks.withType(JavaCompile) {
+@@ -175,22 +178,26 @@ jmh {
+ }
+ 
+ def isCI = System.getenv("CI") != null
+-def testLoggingConfig = ["skipped", "failed"]
+-if (!isCI) {
+-    testLoggingConfig = ["failed"]
+-}
++def testLoggingConfig = ["passed", "skipped", "failed", "standardOut", "standardError"]
+ 
+ test {
+     maxHeapSize = "1200m"
++    jvmArgs "-Drx4.cached-keep-alive-time=600"
++
+     if (System.getenv("CI") != null) {
+         maxParallelForks = Runtime.runtime.availableProcessors()
+     } else {
+-        maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
++        maxParallelForks = Integer.getInteger("maxParallelForks", Runtime.runtime.availableProcessors().intdiv(2) ?: 1)
+     }
+-    useJUnitPlatform()
+-}
+ 
++    useJUnitPlatform()
+ 
++    testLogging {
++        events = testLoggingConfig
++        showStandardStreams = true
++        exceptionFormat = "full"
++    }
++}
+ tasks.register('testNG', Test) {
+     description = 'Runs TestNG tests'
+     group = 'verification'
+@@ -246,21 +253,6 @@ tasks.register('testNG', Test) {
+ 
+ check.dependsOn testNG
+ 
+-tasks.withType(Test) {
+-    testLogging {
+-        events = testLoggingConfig
+-        exceptionFormat = "full"
+-
+-        debug.events = testLoggingConfig
+-        debug.exceptionFormat = "full"
+-
+-        info.events = testLoggingConfig
+-        info.exceptionFormat = "full"
+-
+-        warn.events = testLoggingConfig
+-        warn.exceptionFormat = "full"
+-    }
+-}
+ 
+ if (experimental == null || "".equals(experimental)) {
+     apply plugin: "jacoco"
+@@ -309,3 +301,5 @@ if (project.hasProperty("releaseMode")) {
+       // signAllPublications()
+   }
+ }
++
++
+
+=== Gradle version ===
+Downloading https://services.gradle.org/distributions/gradle-9.4.1-bin.zip
+.............10%.............20%.............30%.............40%.............50%.............60%..............70%.............80%.............90%.............100%
+
+Welcome to Gradle 9.4.1!
+
+Here are the highlights of this release:
+ - Java 26 support
+ - Non-class-based JVM tests
+ - Enhanced console progress bar
+
+For more details see https://docs.gradle.org/9.4.1/release-notes.html
+
+
+------------------------------------------------------------
+Gradle 9.4.1
+------------------------------------------------------------
+
+Build time:    2026-03-19 08:46:28 UTC
+Revision:      2d6327017519d23b96af35865dc997fcb544fb40
+
+Kotlin:        2.3.0
+Groovy:        4.0.29
+Ant:           Apache Ant(TM) version 1.10.15 compiled on August 25 2024
+Launcher JVM:  17.0.15 (Eclipse Adoptium 17.0.15+6)
+Daemon JVM:    /mmfs1/apps/easybuild/el9_5.x86_64/software/Java/17.0.15 (no Daemon JVM specified, using current Java home)
+OS:            Linux 5.14.0-503.11.1.el9_5.x86_64 amd64
+
+
+=== Checking NonDex tasks ===
+NonDex tasks
+nondexClean - Clean Nondex jar and directory
+nondexDebug - Debug with NonDex
+nondexTest - Test with NonDex
+
+=== Running ordinary RxJava tests first ===
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.4.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Task :compileJava
+
+> Task :compileJava FAILED
+
+[Incubating] Problems report is available at: file:///mmfs1/scratch/mjk76/ea442/flakyTestDetection/nondex/1171866/rxjava/build/reports/problems/problems-report.html
+1 actionable task: 1 executed

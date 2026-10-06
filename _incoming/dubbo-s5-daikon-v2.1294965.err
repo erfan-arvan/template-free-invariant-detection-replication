@@ -1,0 +1,11 @@
+Exception in thread "main" java.lang.Error: Error while processing trace file /scratch/mjk76/ea442/promptstudy/dubbo-s5-chicory-out/latest/dubbo-s5-v2.dtrace.gz
+	at daikon.FileIO.read_data_trace_files(FileIO.java:1057)
+	at daikon.FileIO.read_data_trace_files(FileIO.java:1026)
+	at daikon.Daikon.process_data(Daikon.java:2329)
+	at daikon.Daikon.mainHelper(Daikon.java:805)
+	at daikon.Daikon.main(Daikon.java:680)
+Caused by: daikon.Daikon$UserError: Error at line 47610827 in file /scratch/mjk76/ea442/promptstudy/dubbo-s5-chicory-out/latest/dubbo-s5-v2.dtrace.gz: No declaration was provided for program point org.apache.dubbo.common.compiler.support.HelloServiceImpl12.<clinit>:::ENTER
+	at daikon.FileIO.read_data_trace_record(FileIO.java:1773)
+	at daikon.FileIO.read_data_trace_file(FileIO.java:1560)
+	at daikon.FileIO.read_data_trace_files(FileIO.java:1044)
+	... 4 more

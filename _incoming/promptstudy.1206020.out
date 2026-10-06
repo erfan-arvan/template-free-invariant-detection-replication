@@ -1,0 +1,116 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/23.0.2/bin/java
+MVN: /scratch/mjk76/ea442/apache-maven-3.9.9/bin/mvn
+######################################
+PROMPT STUDY STARTED
+Start time: 2026-08-30 22:03:09 EDT
+######################################
+>>> Building Daikon++ (once)
+======================================
+>>> STRATEGY: baseline
+>>> Start time: 2026-08-30 22:03:40 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: hudi
+>>> Start time: 2026-08-30 22:03:40 EDT
+--------------------------------------
+>>> Finished hudi (strategy=baseline)
+>>> Finish time: 2026-08-31 00:47:47 EDT
+>>> Duration: 02h:44m:07s
+>>> Duration in seconds: 9847
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/baseline/hudi/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/baseline/hudi/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: libgdx
+>>> Start time: 2026-08-31 00:47:47 EDT
+--------------------------------------
+>>> Finished libgdx (strategy=baseline)
+>>> Finish time: 2026-08-31 00:55:13 EDT
+>>> Duration: 00h:07m:26s
+>>> Duration in seconds: 446
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/baseline/libgdx/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/baseline/libgdx/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: rxjava
+>>> Start time: 2026-08-31 00:55:13 EDT
+--------------------------------------
+>>> Finished rxjava (strategy=baseline)
+>>> Finish time: 2026-08-31 01:07:46 EDT
+>>> Duration: 00h:12m:33s
+>>> Duration in seconds: 753
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/baseline/rxjava/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/baseline/rxjava/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: netty
+>>> Start time: 2026-08-31 01:07:46 EDT
+--------------------------------------
+>>> Finished netty (strategy=baseline)
+>>> Finish time: 2026-08-31 01:15:21 EDT
+>>> Duration: 00h:07m:35s
+>>> Duration in seconds: 455
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/baseline/netty/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/baseline/netty/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: springReal
+>>> Start time: 2026-08-31 01:15:21 EDT
+--------------------------------------
+>>> Finished springReal (strategy=baseline)
+>>> Finish time: 2026-08-31 01:24:00 EDT
+>>> Duration: 00h:08m:39s
+>>> Duration in seconds: 519
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/baseline/springReal/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/baseline/springReal/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: apollo
+>>> Start time: 2026-08-31 01:24:00 EDT
+--------------------------------------
+>>> Finished apollo (strategy=baseline)
+>>> Finish time: 2026-08-31 01:25:56 EDT
+>>> Duration: 00h:01m:56s
+>>> Duration in seconds: 116
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/baseline/apollo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/baseline/apollo/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: dubbo
+>>> Start time: 2026-08-31 01:25:56 EDT
+--------------------------------------
+>>> Finished dubbo (strategy=baseline)
+>>> Finish time: 2026-08-31 01:36:11 EDT
+>>> Duration: 00h:10m:15s
+>>> Duration in seconds: 615
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/baseline/dubbo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/baseline/dubbo/daikonpp_registry.jsonl
+======================================
+DONE strategy: baseline
+Finish time: 2026-08-31 01:36:11 EDT
+Duration: 03h:32m:31s
+Duration in seconds: 12751
+Results in: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/baseline
+======================================
+======================================
+>>> STRATEGY: fewshot
+>>> Start time: 2026-08-31 01:36:11 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: hudi
+>>> Start time: 2026-08-31 01:36:11 EDT
+--------------------------------------
+>>> Finished hudi (strategy=fewshot)
+>>> Finish time: 2026-08-31 01:43:58 EDT
+>>> Duration: 00h:07m:47s
+>>> Duration in seconds: 467
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/fewshot/hudi/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/fewshot/hudi/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: libgdx
+>>> Start time: 2026-08-31 01:43:58 EDT
+--------------------------------------
+>>> Finished libgdx (strategy=fewshot)
+>>> Finish time: 2026-08-31 01:52:55 EDT
+>>> Duration: 00h:08m:57s
+>>> Duration in seconds: 537
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/fewshot/libgdx/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/fewshot/libgdx/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: rxjava
+>>> Start time: 2026-08-31 01:52:55 EDT
+--------------------------------------

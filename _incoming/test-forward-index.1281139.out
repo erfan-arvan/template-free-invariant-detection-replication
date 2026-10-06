@@ -1,0 +1,14 @@
+[io-examples-tool] dtrace=/scratch/mjk76/ea442/promptstudy/apollo-chicory-out/latest/dtrace.gz
+[io-examples-tool] src=/project/mjk76/ea442/promptstudy/apollo/apollo-biz/src/main/java
+[io-examples-tool] out=/project/mjk76/ea442/promptstudy/apollo-full_io_examples_FORWARD.json
+[io-examples-tool] ENTER records=386900
+[io-examples-tool] paired ENTER/EXIT examples=8320
+[io-examples-tool] truncated lines=0
+[io-examples-tool] distinct program points=1255
+[io-examples-tool] scanning source tree to build forward index...
+[io-examples-tool] forward index built: 642 declared members
+[io-examples-tool] resolved program points=387
+[io-examples-tool] unresolved program points=868
+[io-examples-tool] wrote /project/mjk76/ea442/promptstudy/apollo-full_io_examples_FORWARD.json
+>>> Wrote /project/mjk76/ea442/promptstudy/apollo-full_io_examples_FORWARD.json
+-rw-r--r--+ 1 ea442 ea442 13M Sep 13 22:20 /project/mjk76/ea442/promptstudy/apollo-full_io_examples_FORWARD.json

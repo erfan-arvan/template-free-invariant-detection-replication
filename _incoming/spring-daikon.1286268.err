@@ -1,0 +1,16 @@
+Exception in thread "main" java.lang.Error: Error while processing trace file /scratch/mjk76/ea442/promptstudy/spring-full-chicory-out/latest/spring-full.dtrace.gz
+	at daikon.FileIO.read_data_trace_files(FileIO.java:1057)
+	at daikon.FileIO.read_data_trace_files(FileIO.java:1026)
+	at daikon.Daikon.process_data(Daikon.java:2329)
+	at daikon.Daikon.mainHelper(Daikon.java:805)
+	at daikon.Daikon.main(Daikon.java:680)
+Caused by: java.lang.NumberFormatException: For input string: "extension"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:668)
+	at java.base/java.lang.Integer.parseInt(Integer.java:786)
+	at daikon.FileIO.parse_ppt_parent(FileIO.java:517)
+	at daikon.FileIO.read_ppt_decl(FileIO.java:393)
+	at daikon.FileIO.read_data_trace_record(FileIO.java:1691)
+	at daikon.FileIO.read_data_trace_file(FileIO.java:1560)
+	at daikon.FileIO.read_data_trace_files(FileIO.java:1044)
+	... 4 more

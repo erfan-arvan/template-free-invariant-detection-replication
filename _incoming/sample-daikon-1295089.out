@@ -1,0 +1,50 @@
+
+Reading apollo:
+  /project/mjk76/ea442/promptstudy/apollo-daikon-out/apollo-invariants.txt
+  Found 1209 methods
+  Sampled 10 methods
+  Output: daikon_samples/apollo-sample.txt
+
+Reading hudi:
+  /project/mjk76/ea442/promptstudy/hudi-daikon-out/hudi-invariants.txt
+  Found 7502 methods
+  Sampled 10 methods
+  Output: daikon_samples/hudi-sample.txt
+
+Reading spring:
+  /project/mjk76/ea442/promptstudy/spring-daikon-out/spring-invariants.txt
+  Found 835 methods
+  Sampled 10 methods
+  Output: daikon_samples/spring-sample.txt
+
+Reading libgdx:
+  /project/mjk76/ea442/promptstudy/libgdx-s5-daikon-out/libgdx-s5-invariants.txt
+  Found 1097 methods
+  Sampled 10 methods
+  Output: daikon_samples/libgdx-sample.txt
+
+Reading dubbo:
+  /project/mjk76/ea442/promptstudy/dubbo-s5-daikon-quickfix-out/dubbo-s5-quickfix-invariants.txt
+  Found 1570 methods
+  Sampled 10 methods
+  Output: daikon_samples/dubbo-sample.txt
+
+Reading netty:
+  /project/mjk76/ea442/promptstudy/netty-s5-daikon-quickfix-out/netty-s5-quickfix-invariants.txt
+  Found 2711 methods
+  Sampled 10 methods
+  Output: daikon_samples/netty-sample.txt
+
+================================================================================
+DONE
+================================================================================
+Combined sample: daikon_samples/all-projects-sample.txt
+Summary:         daikon_samples/sampling-summary.tsv
+
+Summary:
+  apollo     total=1209   sampled=10   OK
+  hudi       total=7502   sampled=10   OK
+  spring     total=835    sampled=10   OK
+  libgdx     total=1097   sampled=10   OK
+  dubbo      total=1570   sampled=10   OK
+  netty      total=2711   sampled=10   OK

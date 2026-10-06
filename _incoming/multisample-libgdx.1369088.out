@@ -1,0 +1,68 @@
+======================================
+SLURM JOB ID: 1369088
+HOST: n0039
+START TIME: Fri Oct  2 11:55:02 PM EDT 2026
+ROOT: /project/mjk76/ea442/promptstudy
+DPP_DIR: /scratch/mjk76/ea442/daikonplusplus-relaxedAll
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/23.0.2/bin/java
+MVN: /scratch/mjk76/ea442/apache-maven-3.9.9/bin/mvn
+======================================
+>>> Building isolated Daikon++ worktree
+>>> DPP_DIR: /scratch/mjk76/ea442/daikonplusplus-relaxedAll
+>>> Commit:  d7ea9f07b95233a46137b2b4b98faba03cb23dd8
+######################################
+PROMPT STUDY RELAXEDALL STARTED
+Start time: 2026-10-02 23:55:16 EDT
+Strategies: 1
+Benchmarks: 1
+Total planned runs: 1
+Results base: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll
+Scratch base: /scratch/mjk76/ea442/promptstudy_relaxedAll
+Daikon++ dir: /scratch/mjk76/ea442/daikonplusplus-relaxedAll
+Daikon++ jar: /scratch/mjk76/ea442/daikonplusplus-relaxedAll/build/libs/daikonplusplus.jar
+Daikon++ commit: d7ea9f07b95233a46137b2b4b98faba03cb23dd8
+Cassette dir: /project/mjk76/ea442/promptstudy/daikonplusplus/src/test/cassettes
+######################################
+======================================
+>>> STRATEGY: multi_sample
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 23:55:16 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: libgdx
+>>> Strategy: multi_sample
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 23:55:16 EDT
+--------------------------------------
+>>> Finished libgdx (strategy=multi_sample)
+>>> Exit status: 0
+>>> Finish time: 2026-10-03 00:54:35 EDT
+>>> Duration: 00h:59m:19s
+>>> Duration in seconds: 3559
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/multi_sample/libgdx/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/multi_sample/libgdx/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/multi_sample/libgdx/daikonpp_outcomes.jsonl
+
+======================================
+DONE strategy: multi_sample
+Finish time: 2026-10-03 00:54:35 EDT
+Duration: 00h:59m:19s
+Duration in seconds: 3559
+Results in: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/multi_sample
+======================================
+######################################
+ALL RELAXEDALL PROMPT STUDY RUNS DONE
+Number of strategies: 1
+Number of benchmarks: 1
+Total runs: 1
+Start time: 2026-10-02 23:55:16 EDT
+Finish time: 2026-10-03 00:54:35 EDT
+Total duration: 00h:59m:19s
+Total duration in seconds: 3559
+Results base: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll
+######################################
+
+======================================
+RELAXEDALL PROMPT STUDY JOB FINISHED
+FINISH TIME: Sat Oct  3 12:54:35 AM EDT 2026
+======================================

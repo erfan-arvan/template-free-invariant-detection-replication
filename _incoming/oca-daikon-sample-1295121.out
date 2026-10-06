@@ -1,0 +1,92 @@
+
+================================================================================
+PROJECT: apollo
+================================================================================
+OCA held invariants: 1543
+OCA eligible methods: 323
+HELD metadata via registry: 1543
+HELD metadata via metrics fallback: 0
+HELD IDs without metadata: 0
+Daikon methods: 1209
+Random candidates attempted: 11
+Rejected before reaching target: 1
+Matched methods selected: 10
+Output: oca_daikon_matched_samples/apollo-matched-sample.txt
+
+================================================================================
+PROJECT: hudi
+================================================================================
+OCA held invariants: 332
+OCA eligible methods: 65
+HELD metadata via registry: 332
+HELD metadata via metrics fallback: 0
+HELD IDs without metadata: 0
+Daikon methods: 7502
+Random candidates attempted: 10
+Rejected before reaching target: 0
+Matched methods selected: 10
+Output: oca_daikon_matched_samples/hudi-matched-sample.txt
+
+================================================================================
+PROJECT: spring
+================================================================================
+OCA held invariants: 6419
+OCA eligible methods: 1568
+HELD metadata via registry: 6419
+HELD metadata via metrics fallback: 0
+HELD IDs without metadata: 0
+Daikon methods: 835
+Random candidates attempted: 100
+Rejected before reaching target: 90
+Matched methods selected: 10
+Output: oca_daikon_matched_samples/spring-matched-sample.txt
+
+================================================================================
+PROJECT: libgdx
+================================================================================
+OCA held invariants: 1819
+OCA eligible methods: 515
+HELD metadata via registry: 1819
+HELD metadata via metrics fallback: 0
+HELD IDs without metadata: 0
+Daikon methods: 1097
+Random candidates attempted: 16
+Rejected before reaching target: 6
+Matched methods selected: 10
+Output: oca_daikon_matched_samples/libgdx-matched-sample.txt
+
+================================================================================
+PROJECT: dubbo
+================================================================================
+OCA held invariants: 9384
+OCA eligible methods: 2330
+HELD metadata via registry: 9384
+HELD metadata via metrics fallback: 0
+HELD IDs without metadata: 0
+Daikon methods: 1570
+Random candidates attempted: 26
+Rejected before reaching target: 16
+Matched methods selected: 10
+Output: oca_daikon_matched_samples/dubbo-matched-sample.txt
+
+================================================================================
+PROJECT: netty
+================================================================================
+OCA held invariants: 1021
+OCA eligible methods: 263
+HELD metadata via registry: 1021
+HELD metadata via metrics fallback: 0
+HELD IDs without metadata: 0
+Daikon methods: 2711
+Random candidates attempted: 16
+Rejected before reaching target: 6
+Matched methods selected: 10
+Output: oca_daikon_matched_samples/netty-matched-sample.txt
+
+================================================================================
+DONE
+================================================================================
+Combined sample: oca_daikon_matched_samples/all-projects-matched-sample.txt
+Selected-method manifest: oca_daikon_matched_samples/selected-methods.tsv
+Rejected methods: oca_daikon_matched_samples/rejected-oca-methods.tsv
+Summary: oca_daikon_matched_samples/sampling-summary.tsv

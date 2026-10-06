@@ -1,0 +1,125 @@
+[TIMING] === spring-full chicory trace run started 2026-09-15T00:35:32-04:00 ===
+>>> Using JDK 25 at: /scratch/mjk76/ea442/promptstudy/jdk25
+>>> Stopping any leaked Gradle daemons from prior runs on this GRADLE_USER_HOME
+No Gradle daemons are running.
+[TIMING] === gradle compileJava (warm build, no agent) STARTING 2026-09-15T00:36:30-04:00 ===
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.7.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :buildSrc:compileJava FROM-CACHE
+> Task :buildSrc:compileGroovy NO-SOURCE
+> Task :buildSrc:pluginDescriptors
+> Task :buildSrc:processResources
+> Task :buildSrc:classes
+> Task :buildSrc:checkstyleMain FROM-CACHE
+> Task :buildSrc:compileTestJava FROM-CACHE
+> Task :buildSrc:compileTestGroovy NO-SOURCE
+> Task :buildSrc:processTestResources NO-SOURCE
+> Task :buildSrc:testClasses UP-TO-DATE
+> Task :buildSrc:checkstyleTest FROM-CACHE
+> Task :buildSrc:pluginUnderTestMetadata
+> Task :buildSrc:test FROM-CACHE
+> Task :buildSrc:validatePlugins FROM-CACHE
+> Task :buildSrc:check UP-TO-DATE
+> Task :buildSrc:jar
+> Task :spring-core:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :spring-core:javapoetRepackJar FROM-CACHE
+> Task :spring-core:objenesisRepackJar FROM-CACHE
+> Task :spring-core:compileKotlin FROM-CACHE
+> Task :spring-core:compileJava FROM-CACHE
+
+[Incubating] Problems report is available at: file:///mmfs1/scratch/mjk76/ea442/promptstudy/spring-full-chicory/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.7.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 14s
+14 actionable tasks: 4 executed, 10 from cache
+Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.7.1/userguide/configuration_cache_enabling.html
+[TIMING] gradle compileJava (warm build, no agent) 15s  (00:36:30 -> 00:36:45)
+[TIMING] === gradle test (Chicory instrumented) STARTING 2026-09-15T00:36:45-04:00 ===
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.7.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :buildSrc:compileJava UP-TO-DATE
+> Task :buildSrc:compileGroovy NO-SOURCE
+> Task :buildSrc:pluginDescriptors UP-TO-DATE
+> Task :buildSrc:processResources UP-TO-DATE
+> Task :buildSrc:classes UP-TO-DATE
+> Task :buildSrc:checkstyleMain UP-TO-DATE
+> Task :buildSrc:compileTestJava UP-TO-DATE
+> Task :buildSrc:compileTestGroovy NO-SOURCE
+> Task :buildSrc:processTestResources NO-SOURCE
+> Task :buildSrc:testClasses UP-TO-DATE
+> Task :buildSrc:checkstyleTest UP-TO-DATE
+> Task :buildSrc:pluginUnderTestMetadata UP-TO-DATE
+> Task :buildSrc:test UP-TO-DATE
+> Task :buildSrc:validatePlugins UP-TO-DATE
+> Task :buildSrc:check UP-TO-DATE
+> Task :buildSrc:jar UP-TO-DATE
+> Task :spring-core:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :spring-core:javapoetRepackJar UP-TO-DATE
+> Task :spring-core:objenesisRepackJar UP-TO-DATE
+> Task :spring-core:compileKotlin UP-TO-DATE
+> Task :spring-core:compileJava UP-TO-DATE
+> Task :spring-core:processResources
+> Task :spring-core:classes
+> Task :spring-core:compileJava21Kotlin NO-SOURCE
+> Task :spring-core:compileJava21Java FROM-CACHE
+> Task :spring-core:compileJava24Kotlin NO-SOURCE
+> Task :spring-core:compileJava24Java FROM-CACHE
+> Task :spring-core:processJava21Resources NO-SOURCE
+> Task :spring-core:java21Classes UP-TO-DATE
+> Task :spring-core:processJava24Resources NO-SOURCE
+> Task :spring-core:java24Classes UP-TO-DATE
+> Task :spring-core:jar
+> Task :spring-core:compileTestFixturesKotlin NO-SOURCE
+> Task :spring-core:compileTestFixturesJava FROM-CACHE
+> Task :spring-core:processTestFixturesResources NO-SOURCE
+> Task :spring-core:testFixturesClasses UP-TO-DATE
+> Task :spring-core:testFixturesJar
+> Task :spring-core:compileTestKotlin FROM-CACHE
+> Task :spring-core:compileTestJava FROM-CACHE
+> Task :spring-core:processTestResources
+> Task :spring-core:testClasses
+
+> Task :spring-core:test
+
+PathMatchingResourcePatternResolverTests > ClassPathManifestEntries > javaDashJarFindsClassPathManifestEntries() FAILED
+    java.io.IOException at PathMatchingResourcePatternResolverTests.java:383
+        Caused by: java.io.IOException at PathMatchingResourcePatternResolverTests.java:383
+
+PathMatchingResourcePatternResolverTests > ClassPathManifestEntries > javaDashJarFindsAbsoluteClassPathManifestEntries() FAILED
+    java.io.IOException at PathMatchingResourcePatternResolverTests.java:398
+        Caused by: java.io.IOException at PathMatchingResourcePatternResolverTests.java:398
+
+
+> Task :spring-core:test
+There were failing tests. See the report at: file:///mmfs1/scratch/mjk76/ea442/promptstudy/spring-full-chicory/spring-core/build/reports/tests/test/index.html
+
+[Incubating] Problems report is available at: file:///mmfs1/scratch/mjk76/ea442/promptstudy/spring-full-chicory/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.7.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 44s
+24 actionable tasks: 5 executed, 5 from cache, 14 up-to-date
+Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.7.1/userguide/configuration_cache_enabling.html
+[TIMING] gradle test (Chicory instrumented) 45s  (00:36:45 -> 00:37:30)
+No Gradle daemons are running.
+>>> Chicory trace output directory:
+total 14594
+drwxr-xr-x+ 2 ea442 ea442    4096 Sep 15 00:37 .
+drwxr-xr-x+ 7 ea442 ea442    4096 Sep 15 00:35 ..
+-rw-r--r--+ 1 ea442 ea442 7468275 Sep 15 00:37 dtrace.gz
+[TIMING] TOTAL (spring-full)          119s  (00:35:32 -> 00:37:31)
+[TIMING] === spring-full chicory trace run finished 2026-09-15T00:37:31-04:00 ===
+
+>>> Original Chicory-generated dtrace.gz files preserved in:
+>>> /scratch/mjk76/ea442/promptstudy/spring-full-chicory-out/1286325
+>>> Convenient newest-run path:
+>>> /scratch/mjk76/ea442/promptstudy/spring-full-chicory-out/latest

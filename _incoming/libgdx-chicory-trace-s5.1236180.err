@@ -1,0 +1,27 @@
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Initialization script '/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/daikon-agent-init.gradle' line: 3
+
+* What went wrong:
+Could not compile initialization script '/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/daikon-agent-init.gradle'.
+> startup failed:
+  initialization script '/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/daikon-agent-init.gradle': 3: Unexpected character: '\'' @ line 3, column 21.
+             jvmArgs += ['-javaagent:/project/mjk76/ea442/promptstudy/daikon.jar=--output_dir=/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory-out --ppt-select-pattern=^com\.badlogic\.gdx\.(utils|math)\..* --ppt-omit-pattern=com\.google\.protobuf --boot-classes=^(?!com\.badlogic\.gdx\.).* --sample-start=5 --nesting-depth=0', '-Xmx48g']
+                         ^
+  
+  1 error
+
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 3s

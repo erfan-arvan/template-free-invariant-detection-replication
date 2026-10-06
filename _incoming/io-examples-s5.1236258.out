@@ -1,0 +1,39 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+[io-examples-tool] dtrace=/scratch/mjk76/ea442/promptstudy/apollo-s5.dtrace
+[io-examples-tool] src=/scratch/mjk76/ea442/promptstudy/apollo-s5-chicory/apollo-biz/src/main/java
+[io-examples-tool] out=/scratch/mjk76/ea442/promptstudy/apollo-s5_io_examples.json
+[io-examples-tool] ENTER records=5558
+[io-examples-tool] paired ENTER/EXIT examples=5366
+[io-examples-tool] distinct program points=1286
+[io-examples-tool] resolved program points=356
+[io-examples-tool] unresolved program points=930
+[io-examples-tool] wrote /scratch/mjk76/ea442/promptstudy/apollo-s5_io_examples.json
+[TIMING] io-examples-tool extract (apollo-s5) 2s  (14:18:32 -> 14:18:34)
+>>> Wrote /scratch/mjk76/ea442/promptstudy/apollo-s5_io_examples.json
+37420 /scratch/mjk76/ea442/promptstudy/apollo-s5_io_examples.json
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+[io-examples-tool] dtrace=/scratch/mjk76/ea442/promptstudy/dubbo-s5.dtrace
+[io-examples-tool] src=/scratch/mjk76/ea442/promptstudy/dubbo-s5-chicory/dubbo-common/src/main/java
+[io-examples-tool] out=/scratch/mjk76/ea442/promptstudy/dubbo-s5_io_examples.json
+[io-examples-tool] ENTER records=505719
+[io-examples-tool] paired ENTER/EXIT examples=4600
+[io-examples-tool] distinct program points=1572
+[io-examples-tool] resolved program points=647
+[io-examples-tool] unresolved program points=925
+[io-examples-tool] wrote /scratch/mjk76/ea442/promptstudy/dubbo-s5_io_examples.json
+[TIMING] io-examples-tool extract (dubbo-s5) 17s  (14:18:34 -> 14:18:51)
+>>> Wrote /scratch/mjk76/ea442/promptstudy/dubbo-s5_io_examples.json
+26948 /scratch/mjk76/ea442/promptstudy/dubbo-s5_io_examples.json
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+[io-examples-tool] dtrace=/scratch/mjk76/ea442/promptstudy/hudi-s5.dtrace
+[io-examples-tool] src=/scratch/mjk76/ea442/promptstudy/hudi-s5-chicory/hudi-client/hudi-java-client/src/main/java
+[io-examples-tool] out=/scratch/mjk76/ea442/promptstudy/hudi-s5_io_examples.json
+[io-examples-tool] ENTER records=149399
+[io-examples-tool] paired ENTER/EXIT examples=95298
+[io-examples-tool] distinct program points=7516
+[io-examples-tool] resolved program points=157
+[io-examples-tool] unresolved program points=7359
+[io-examples-tool] wrote /scratch/mjk76/ea442/promptstudy/hudi-s5_io_examples.json
+[TIMING] io-examples-tool extract (hudi-s5) 5s  (14:18:51 -> 14:18:56)
+>>> Wrote /scratch/mjk76/ea442/promptstudy/hudi-s5_io_examples.json
+44553 /scratch/mjk76/ea442/promptstudy/hudi-s5_io_examples.json

@@ -1,0 +1,223 @@
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/mmfs1/scratch/mjk76/ea442/.m2/org/apache/logging/log4j/log4j-slf4j-impl/2.25.4/log4j-slf4j-impl-2.25.4.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/mmfs1/scratch/mjk76/ea442/.m2/org/slf4j/slf4j-reload4j/1.7.36/slf4j-reload4j-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/mmfs1/scratch/mjk76/ea442/.m2/org/apache/logging/log4j/log4j-slf4j-impl/2.25.4/log4j-slf4j-impl-2.25.4.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/mmfs1/scratch/mjk76/ea442/.m2/org/slf4j/slf4j-reload4j/1.7.36/slf4j-reload4j-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/mmfs1/scratch/mjk76/ea442/.m2/org/apache/logging/log4j/log4j-slf4j-impl/2.25.4/log4j-slf4j-impl-2.25.4.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/mmfs1/scratch/mjk76/ea442/.m2/org/slf4j/slf4j-reload4j/1.7.36/slf4j-reload4j-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/mmfs1/scratch/mjk76/ea442/.m2/org/apache/logging/log4j/log4j-slf4j-impl/2.25.4/log4j-slf4j-impl-2.25.4.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/mmfs1/scratch/mjk76/ea442/.m2/org/slf4j/slf4j-reload4j/1.7.36/slf4j-reload4j-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/mmfs1/scratch/mjk76/ea442/.m2/org/apache/logging/log4j/log4j-slf4j-impl/2.25.4/log4j-slf4j-impl-2.25.4.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/mmfs1/scratch/mjk76/ea442/.m2/org/slf4j/slf4j-reload4j/1.7.36/slf4j-reload4j-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/mmfs1/scratch/mjk76/ea442/.m2/org/apache/logging/log4j/log4j-slf4j-impl/2.25.4/log4j-slf4j-impl-2.25.4.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/mmfs1/scratch/mjk76/ea442/.m2/org/slf4j/slf4j-reload4j/1.7.36/slf4j-reload4j-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/mmfs1/scratch/mjk76/ea442/.m2/org/apache/logging/log4j/log4j-slf4j-impl/2.25.4/log4j-slf4j-impl-2.25.4.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/mmfs1/scratch/mjk76/ea442/.m2/org/slf4j/slf4j-reload4j/1.7.36/slf4j-reload4j-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/mmfs1/scratch/mjk76/ea442/.m2/org/apache/logging/log4j/log4j-slf4j-impl/2.25.4/log4j-slf4j-impl-2.25.4.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/mmfs1/scratch/mjk76/ea442/.m2/org/slf4j/slf4j-reload4j/1.7.36/slf4j-reload4j-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/mmfs1/scratch/mjk76/ea442/.m2/org/apache/logging/log4j/log4j-slf4j-impl/2.25.4/log4j-slf4j-impl-2.25.4.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/mmfs1/scratch/mjk76/ea442/.m2/org/slf4j/slf4j-reload4j/1.7.36/slf4j-reload4j-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+org.apache.bcel.classfile.ClassFormatException: Invalid constant pool reference using index: 259. Constant pool size is: 256
+	at org.apache.bcel.classfile.ConstantPool.getConstant(ConstantPool.java:310)
+	at org.apache.bcel.classfile.ConstantPool.getConstant(ConstantPool.java:263)
+	at org.apache.bcel.generic.FieldOrMethod.getSignature(FieldOrMethod.java:133)
+	at org.apache.bcel.generic.FieldInstruction.getFieldSize(FieldInstruction.java:54)
+	at org.apache.bcel.generic.GETSTATIC.produceStack(GETSTATIC.java:77)
+	at org.apache.bcel.generic.MethodGen.getMaxStack(MethodGen.java:164)
+	at org.apache.bcel.generic.MethodGen.setMaxStack(MethodGen.java:1113)
+	at daikon.chicory.Instrument.instrument_all_methods(Instrument.java:645)
+	at daikon.chicory.Instrument.instrumentClass(Instrument.java:318)
+	at daikon.chicory.Instrument.transform(Instrument.java:286)
+	at java.instrument/java.lang.instrument.ClassFileTransformer.transform(ClassFileTransformer.java:244)
+	at java.instrument/sun.instrument.TransformerManager.transform(TransformerManager.java:188)
+	at java.instrument/sun.instrument.InstrumentationImpl.transform(InstrumentationImpl.java:541)
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1017)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:862)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:760)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:681)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402)
+	at java.base/java.lang.Class.getDeclaredMethod(Class.java:2673)
+	at daikon.chicory.MethodInfo.initViaReflection(MethodInfo.java:156)
+	at daikon.chicory.ClassInfo.initViaReflection(ClassInfo.java:91)
+	at daikon.chicory.Runtime.process_new_classes(Runtime.java:451)
+	at daikon.chicory.Runtime.enter(Runtime.java:253)
+	at org.apache.hudi.common.schema.HoodieSchema.fromAvroSchema(HoodieSchema.java:292)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at org.apache.hudi.common.schema.HoodieSchema.getTypes(HoodieSchema.java:1194)
+	at org.apache.hudi.common.schema.HoodieSchema.getNonNullType(HoodieSchema.java:1296)
+	at org.apache.hudi.common.schema.HoodieSchema.validateNoVectorInNestedRecord(HoodieSchema.java:506)
+	at org.apache.hudi.common.schema.HoodieSchema.createRecord(HoodieSchema.java:484)
+	at org.apache.hudi.common.schema.HoodieSchema.createRecord(HoodieSchema.java:467)
+	at org.apache.hudi.common.schema.HoodieSchemaUtils.createNewSchemaFromFieldsWithReference(HoodieSchemaUtils.java:580)
+	at org.apache.hudi.common.schema.HoodieSchemaUtils.addMetadataFields(HoodieSchemaUtils.java:152)
+	at org.apache.hudi.io.HoodieWriteHandle.<init>(HoodieWriteHandle.java:124)
+	at org.apache.hudi.io.BaseCreateHandle.<init>(BaseCreateHandle.java:63)
+	at org.apache.hudi.io.HoodieCreateHandle.<init>(HoodieCreateHandle.java:65)
+	at org.apache.hudi.io.HoodieCreateHandle.<init>(HoodieCreateHandle.java:52)
+	at org.apache.hudi.io.CreateHandleFactory.create(CreateHandleFactory.java:45)
+	at org.apache.hudi.execution.CopyOnWriteInsertHandler.consume(CopyOnWriteInsertHandler.java:100)
+	at org.apache.hudi.execution.CopyOnWriteInsertHandler.consume(CopyOnWriteInsertHandler.java:44)
+	at org.apache.hudi.common.util.queue.SimpleExecutor.execute(SimpleExecutor.java:67)
+	at org.apache.hudi.execution.JavaLazyInsertIterable.computeNext(JavaLazyInsertIterable.java:68)
+	at org.apache.hudi.execution.JavaLazyInsertIterable.computeNext(JavaLazyInsertIterable.java:38)
+	at org.apache.hudi.client.utils.LazyIterableIterator.next(LazyIterableIterator.java:121)
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+	at org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.lambda$execute$0(BaseJavaCommitActionExecutor.java:119)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721)
+	at org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.execute(BaseJavaCommitActionExecutor.java:117)
+	at org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.execute(BaseJavaCommitActionExecutor.java:65)
+	at org.apache.hudi.table.action.commit.BaseWriteHelper.write(BaseWriteHelper.java:77)
+	at org.apache.hudi.table.action.commit.JavaUpsertCommitActionExecutor.execute(JavaUpsertCommitActionExecutor.java:46)
+	at org.apache.hudi.table.HoodieJavaCopyOnWriteTable.upsert(HoodieJavaCopyOnWriteTable.java:98)
+	at org.apache.hudi.table.HoodieJavaCopyOnWriteTable.upsert(HoodieJavaCopyOnWriteTable.java:83)
+	at org.apache.hudi.client.HoodieJavaWriteClient.upsert(HoodieJavaWriteClient.java:117)
+	at org.apache.hudi.client.common.TestMultipleHoodieJavaWriteClient.lambda$testOccWithMultipleWriters$2(TestMultipleHoodieJavaWriteClient.java:208)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.ForEachOps$ForEachTask.compute(ForEachOps.java:290)
+	at java.base/java.util.concurrent.CountedCompleter.exec(CountedCompleter.java:754)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+java.lang.RuntimeException: Error org.apache.bcel.classfile.ClassFormatException: Invalid constant pool reference using index: 297. Constant pool size is: 256 in transform of org.apache.hudi.avro.model.IntWrapper$Builder
+	at daikon.chicory.Instrument.transform(Instrument.java:290)
+	at java.instrument/java.lang.instrument.ClassFileTransformer.transform(ClassFileTransformer.java:244)
+	at java.instrument/sun.instrument.TransformerManager.transform(TransformerManager.java:188)
+	at java.instrument/sun.instrument.InstrumentationImpl.transform(InstrumentationImpl.java:541)
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1017)
+	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:862)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:760)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:681)
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402)
+	at java.base/java.lang.Class.getDeclaredMethod(Class.java:2673)
+	at daikon.chicory.MethodInfo.initViaReflection(MethodInfo.java:156)
+	at daikon.chicory.ClassInfo.initViaReflection(ClassInfo.java:91)
+	at daikon.chicory.Runtime.process_new_classes(Runtime.java:451)
+	at daikon.chicory.Runtime.enter(Runtime.java:253)
+	at org.apache.hudi.common.schema.HoodieSchema.fromAvroSchema(HoodieSchema.java:292)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at org.apache.hudi.common.schema.HoodieSchema.getTypes(HoodieSchema.java:1194)
+	at org.apache.hudi.common.schema.HoodieSchema.getNonNullType(HoodieSchema.java:1296)
+	at org.apache.hudi.common.schema.HoodieSchema.validateNoVectorInNestedRecord(HoodieSchema.java:506)
+	at org.apache.hudi.common.schema.HoodieSchema.createRecord(HoodieSchema.java:484)
+	at org.apache.hudi.common.schema.HoodieSchema.createRecord(HoodieSchema.java:467)
+	at org.apache.hudi.common.schema.HoodieSchemaUtils.createNewSchemaFromFieldsWithReference(HoodieSchemaUtils.java:580)
+	at org.apache.hudi.common.schema.HoodieSchemaUtils.addMetadataFields(HoodieSchemaUtils.java:152)
+	at org.apache.hudi.io.HoodieWriteHandle.<init>(HoodieWriteHandle.java:124)
+	at org.apache.hudi.io.BaseCreateHandle.<init>(BaseCreateHandle.java:63)
+	at org.apache.hudi.io.HoodieCreateHandle.<init>(HoodieCreateHandle.java:65)
+	at org.apache.hudi.io.HoodieCreateHandle.<init>(HoodieCreateHandle.java:52)
+	at org.apache.hudi.io.CreateHandleFactory.create(CreateHandleFactory.java:45)
+	at org.apache.hudi.execution.CopyOnWriteInsertHandler.consume(CopyOnWriteInsertHandler.java:100)
+	at org.apache.hudi.execution.CopyOnWriteInsertHandler.consume(CopyOnWriteInsertHandler.java:44)
+	at org.apache.hudi.common.util.queue.SimpleExecutor.execute(SimpleExecutor.java:67)
+	at org.apache.hudi.execution.JavaLazyInsertIterable.computeNext(JavaLazyInsertIterable.java:68)
+	at org.apache.hudi.execution.JavaLazyInsertIterable.computeNext(JavaLazyInsertIterable.java:38)
+	at org.apache.hudi.client.utils.LazyIterableIterator.next(LazyIterableIterator.java:121)
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+	at org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.lambda$execute$0(BaseJavaCommitActionExecutor.java:119)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721)
+	at org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.execute(BaseJavaCommitActionExecutor.java:117)
+	at org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.execute(BaseJavaCommitActionExecutor.java:65)
+	at org.apache.hudi.table.action.commit.BaseWriteHelper.write(BaseWriteHelper.java:77)
+	at org.apache.hudi.table.action.commit.JavaUpsertCommitActionExecutor.execute(JavaUpsertCommitActionExecutor.java:46)
+	at org.apache.hudi.table.HoodieJavaCopyOnWriteTable.upsert(HoodieJavaCopyOnWriteTable.java:98)
+	at org.apache.hudi.table.HoodieJavaCopyOnWriteTable.upsert(HoodieJavaCopyOnWriteTable.java:83)
+	at org.apache.hudi.client.HoodieJavaWriteClient.upsert(HoodieJavaWriteClient.java:117)
+	at org.apache.hudi.client.common.TestMultipleHoodieJavaWriteClient.lambda$testOccWithMultipleWriters$2(TestMultipleHoodieJavaWriteClient.java:208)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.ForEachOps$ForEachTask.compute(ForEachOps.java:290)
+	at java.base/java.util.concurrent.CountedCompleter.exec(CountedCompleter.java:754)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+Caused by: org.apache.bcel.classfile.ClassFormatException: Invalid constant pool reference using index: 297. Constant pool size is: 256
+	at org.apache.bcel.classfile.ConstantPool.getConstant(ConstantPool.java:310)
+	at org.apache.bcel.classfile.ConstantPool.getConstant(ConstantPool.java:263)
+	at org.apache.bcel.generic.FieldOrMethod.getSignature(FieldOrMethod.java:133)
+	at org.apache.bcel.generic.InvokeInstruction.produceStack(InvokeInstruction.java:121)
+	at org.apache.bcel.generic.MethodGen.getMaxStack(MethodGen.java:164)
+	at org.apache.bcel.generic.MethodGen.setMaxStack(MethodGen.java:1113)
+	at daikon.chicory.Instrument.createClinit(Instrument.java:450)
+	at daikon.chicory.Instrument.instrumentClass(Instrument.java:344)
+	at daikon.chicory.Instrument.transform(Instrument.java:286)
+	... 66 more
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/mmfs1/scratch/mjk76/ea442/.m2/org/apache/logging/log4j/log4j-slf4j-impl/2.25.4/log4j-slf4j-impl-2.25.4.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/mmfs1/scratch/mjk76/ea442/.m2/org/slf4j/slf4j-reload4j/1.7.36/slf4j-reload4j-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/mmfs1/scratch/mjk76/ea442/.m2/org/apache/logging/log4j/log4j-slf4j-impl/2.25.4/log4j-slf4j-impl-2.25.4.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/mmfs1/scratch/mjk76/ea442/.m2/org/slf4j/slf4j-reload4j/1.7.36/slf4j-reload4j-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/mmfs1/scratch/mjk76/ea442/.m2/org/apache/logging/log4j/log4j-slf4j-impl/2.25.4/log4j-slf4j-impl-2.25.4.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/mmfs1/scratch/mjk76/ea442/.m2/org/slf4j/slf4j-reload4j/1.7.36/slf4j-reload4j-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+
+gzip: /scratch/mjk76/ea442/promptstudy/hudi-chicory-out/1260425/dtrace.gz: invalid compressed data--crc error
+
+gzip: /scratch/mjk76/ea442/promptstudy/hudi-chicory-out/1260425/dtrace.gz: invalid compressed data--length error

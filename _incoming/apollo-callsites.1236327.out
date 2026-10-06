@@ -1,0 +1,14 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+CLASSES: apollo/apollo-biz/target/classes
+SRC: apollo/apollo-biz/src/main/java
+[callsite-tool] classes=apollo/apollo-biz/target/classes
+[callsite-tool] src=apollo/apollo-biz/src/main/java
+[callsite-tool] out=apollo_callsites.json
+[callsite-tool] classpath entries skipped=0
+[callsite-tool] entrypoints=619
+[callsite-tool] CG nodes=22012
+[callsite-tool] application call edges=547
+[callsite-tool] methods with recorded callers=260
+[callsite-tool] wrote apollo_callsites.json
+>>> Wrote apollo_callsites.json
+2293 apollo_callsites.json

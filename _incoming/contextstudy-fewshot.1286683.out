@@ -1,0 +1,92 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/23.0.2/bin/java
+MVN: /scratch/mjk76/ea442/apache-maven-3.9.9/bin/mvn
+######################################
+FEWSHOT CONTEXT STUDY STARTED
+Prompt strategy (fixed): fewshot
+Results base: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot
+Start time: 2026-09-15 07:58:26 EDT
+######################################
+>>> Building Daikon++ (once)
+======================================
+>>> CONTEXT CONFIG: io_examples
+>>> Prompt strategy: fewshot
+>>> DP_CONTEXTS: METHOD_BODY,SCOPE,IO_EXAMPLES
+>>> Start time: 2026-09-15 07:58:56 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: apollo
+>>> Context config: io_examples
+>>> Prompt strategy: fewshot
+>>> Start time: 2026-09-15 07:58:56 EDT
+--------------------------------------
+>>> Finished apollo (context_config=io_examples, prompt=fewshot)
+>>> Finish time: 2026-09-15 08:07:45 EDT
+>>> Duration: 00h:08m:49s
+>>> Duration in seconds: 529
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/io_examples/apollo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/io_examples/apollo/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: dubbo
+>>> Context config: io_examples
+>>> Prompt strategy: fewshot
+>>> Start time: 2026-09-15 08:07:45 EDT
+--------------------------------------
+>>> Finished dubbo (context_config=io_examples, prompt=fewshot)
+>>> Finish time: 2026-09-15 08:38:45 EDT
+>>> Duration: 00h:31m:00s
+>>> Duration in seconds: 1860
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/io_examples/dubbo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/io_examples/dubbo/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: hudi
+>>> Context config: io_examples
+>>> Prompt strategy: fewshot
+>>> Start time: 2026-09-15 08:38:45 EDT
+--------------------------------------
+>>> Finished hudi (context_config=io_examples, prompt=fewshot)
+>>> Finish time: 2026-09-15 11:46:33 EDT
+>>> Duration: 03h:07m:48s
+>>> Duration in seconds: 11268
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/io_examples/hudi/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/io_examples/hudi/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: spring
+>>> Context config: io_examples
+>>> Prompt strategy: fewshot
+>>> Start time: 2026-09-15 11:46:33 EDT
+--------------------------------------
+>>> Finished spring (context_config=io_examples, prompt=fewshot)
+>>> Finish time: 2026-09-15 12:04:37 EDT
+>>> Duration: 00h:18m:04s
+>>> Duration in seconds: 1084
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/io_examples/spring/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/io_examples/spring/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: libgdx
+>>> Context config: io_examples
+>>> Prompt strategy: fewshot
+>>> Start time: 2026-09-15 12:04:37 EDT
+--------------------------------------
+>>> Finished libgdx (context_config=io_examples, prompt=fewshot)
+>>> Finish time: 2026-09-15 12:08:58 EDT
+>>> Duration: 00h:04m:21s
+>>> Duration in seconds: 261
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/io_examples/libgdx/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/io_examples/libgdx/daikonpp_registry.jsonl
+======================================
+DONE context config: io_examples
+Prompt strategy: fewshot
+Finish time: 2026-09-15 12:08:58 EDT
+Duration: 04h:10m:02s
+Duration in seconds: 15002
+Results in: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/io_examples
+======================================
+######################################
+ALL FEWSHOT CONTEXT CONFIGS DONE
+Prompt strategy: fewshot
+Start time: 2026-09-15 07:58:26 EDT
+Finish time: 2026-09-15 12:08:58 EDT
+Total duration: 04h:10m:32s
+Total duration in seconds: 15032
+Results base: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot
+######################################

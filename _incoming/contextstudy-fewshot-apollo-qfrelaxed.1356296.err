@@ -1,0 +1,62 @@
+
+The following have been reloaded with a version change:
+  1) Java/17.0.15 => Java/23.0.2
+
+Picked up JAVA_TOOL_OPTIONS:  -Djava.io.tmpdir=/scratch/mjk76/ea442/contextstudy_fewshot_qfrelaxed/tmp
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'daikonplusplus'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > java.io.IOException: Disk quota exceeded
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 14s
+
+FAILURE: Build completed with 2 failures.
+
+1: Task failed with an exception.
+-----------
+* What went wrong:
+A problem occurred configuring root project 'daikonplusplus'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > java.io.IOException: Disk quota exceeded
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+==============================================================================
+
+2: Task failed with an exception.
+-----------
+* What went wrong:
+java.io.IOException: Disk quota exceeded
+> Disk quota exceeded
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+==============================================================================
+
+BUILD FAILED in 14s
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Could not receive a message from the daemon.
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.

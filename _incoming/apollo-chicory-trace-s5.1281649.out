@@ -1,0 +1,1080 @@
+============================================================
+apollo-s5 Chicory trace
+============================================================
+RUN ID:             1281649
+JAVA:               /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+MVN:                /scratch/mjk76/ea442/apache-maven-3.9.9/bin/mvn
+PROJECT:            /project/mjk76/ea442/promptstudy/apollo
+MODULE:             apollo-biz
+WORK DIR:           /scratch/mjk76/ea442/promptstudy/apollo-s5-chicory
+TRACE BASE DIR:     /scratch/mjk76/ea442/promptstudy/apollo-s5-chicory-out
+TRACE OUTPUT DIR:   /scratch/mjk76/ea442/promptstudy/apollo-s5-chicory-out/1281649
+============================================================
+
+[TIMING] === apollo-s5 chicory trace run started 2026-09-14T01:02:47-04:00 ===
+[TIMING] rsync copy                   1s  (01:02:47 -> 01:02:48)
+
+>>> No CHICORY_PKG_PREFIX supplied.
+>>> Auto-detecting package prefix under:
+>>> /scratch/mjk76/ea442/promptstudy/apollo-s5-chicory/apollo-biz/src/main/java
+[TIMING] detect package prefix        1s  (01:02:48 -> 01:02:49)
+>>> Auto-detected package prefix: com.ctrip
+
+>>> Chicory configuration:
+>>> package prefix:     com.ctrip
+>>> select pattern:     ^com\.ctrip\..*
+>>> omit pattern:       com\.google\.protobuf
+>>> boot classes:       ^(?!com\.ctrip\.).*
+
+>>> Patching pom.xml argLine...
+Patched 1 argLine element(s) in /scratch/mjk76/ea442/promptstudy/apollo-s5-chicory/pom.xml (real checkout untouched -- this is an rsync copy)
+[TIMING] pom.xml argLine patch        0s  (01:02:49 -> 01:02:49)
+
+>>> mvn compile (-am, warms build with compatibility compiler flag)
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Apollo                                                             [pom]
+[INFO] Apollo Audit                                                       [pom]
+[INFO] apollo-audit-annotation                                            [jar]
+[INFO] apollo-audit-api                                                   [jar]
+[INFO] Apollo Common                                                      [jar]
+[INFO] apollo-audit-impl                                                  [jar]
+[INFO] apollo-audit-spring-boot-starter                                   [jar]
+[INFO] Apollo Biz                                                         [jar]
+[INFO] 
+[INFO] -----------------< com.ctrip.framework.apollo:apollo >------------------
+[INFO] Building Apollo 3.0.0-SNAPSHOT                                     [1/8]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- git-commit-id:2.2.6:revision (default) @ apollo ---
+[INFO] isPomProject is true and skipPoms is true, return
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ apollo ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ apollo ---
+[INFO] Generating flattened POM of project com.ctrip.framework.apollo:apollo:pom:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --------------< com.ctrip.framework.apollo:apollo-audit >---------------
+[INFO] Building Apollo Audit 3.0.0-SNAPSHOT                               [2/8]
+[INFO]   from apollo-audit/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- git-commit-id:2.2.6:revision (default) @ apollo-audit ---
+[INFO] isPomProject is true and skipPoms is true, return
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ apollo-audit ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ apollo-audit ---
+[INFO] Generating flattened POM of project com.ctrip.framework.apollo:apollo-audit:pom:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] ---------< com.ctrip.framework.apollo:apollo-audit-annotation >---------
+[INFO] Building apollo-audit-annotation 3.0.0-SNAPSHOT                    [3/8]
+[INFO]   from apollo-audit/apollo-audit-annotation/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- git-commit-id:2.2.6:revision (default) @ apollo-audit-annotation ---
+[INFO] dotGitDirectory is null, aborting execution!
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ apollo-audit-annotation ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ apollo-audit-annotation ---
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-s5-chicory/apollo-audit/apollo-audit-annotation/src/main/resources
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-s5-chicory/apollo-audit/apollo-audit-annotation/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ apollo-audit-annotation ---
+[INFO] Generating flattened POM of project com.ctrip.framework.apollo:apollo-audit-annotation:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ apollo-audit-annotation ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] ------------< com.ctrip.framework.apollo:apollo-audit-api >-------------
+[INFO] Building apollo-audit-api 3.0.0-SNAPSHOT                           [4/8]
+[INFO]   from apollo-audit/apollo-audit-api/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- git-commit-id:2.2.6:revision (default) @ apollo-audit-api ---
+[INFO] dotGitDirectory is null, aborting execution!
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ apollo-audit-api ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ apollo-audit-api ---
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-s5-chicory/apollo-audit/apollo-audit-api/src/main/resources
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-s5-chicory/apollo-audit/apollo-audit-api/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ apollo-audit-api ---
+[INFO] Generating flattened POM of project com.ctrip.framework.apollo:apollo-audit-api:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ apollo-audit-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --------------< com.ctrip.framework.apollo:apollo-common >--------------
+[INFO] Building Apollo Common 3.0.0-SNAPSHOT                              [5/8]
+[INFO]   from apollo-common/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- git-commit-id:2.2.6:revision (default) @ apollo-common ---
+[INFO] dotGitDirectory is null, aborting execution!
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ apollo-common ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ apollo-common ---
+[INFO] Copying 4 resources from src/main/resources to target/classes
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ apollo-common ---
+[INFO] Generating flattened POM of project com.ctrip.framework.apollo:apollo-common:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ apollo-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] ------------< com.ctrip.framework.apollo:apollo-audit-impl >------------
+[INFO] Building apollo-audit-impl 3.0.0-SNAPSHOT                          [6/8]
+[INFO]   from apollo-audit/apollo-audit-impl/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- git-commit-id:2.2.6:revision (default) @ apollo-audit-impl ---
+[INFO] dotGitDirectory is null, aborting execution!
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ apollo-audit-impl ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ apollo-audit-impl ---
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-s5-chicory/apollo-audit/apollo-audit-impl/src/main/resources
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-s5-chicory/apollo-audit/apollo-audit-impl/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ apollo-audit-impl ---
+[INFO] Generating flattened POM of project com.ctrip.framework.apollo:apollo-audit-impl:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ apollo-audit-impl ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] ----< com.ctrip.framework.apollo:apollo-audit-spring-boot-starter >-----
+[INFO] Building apollo-audit-spring-boot-starter 3.0.0-SNAPSHOT           [7/8]
+[INFO]   from apollo-audit/apollo-audit-spring-boot-starter/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- git-commit-id:2.2.6:revision (default) @ apollo-audit-spring-boot-starter ---
+[INFO] dotGitDirectory is null, aborting execution!
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ apollo-audit-spring-boot-starter ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ apollo-audit-spring-boot-starter ---
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] Copying 2 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ apollo-audit-spring-boot-starter ---
+[INFO] Generating flattened POM of project com.ctrip.framework.apollo:apollo-audit-spring-boot-starter:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ apollo-audit-spring-boot-starter ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] ---------------< com.ctrip.framework.apollo:apollo-biz >----------------
+[INFO] Building Apollo Biz 3.0.0-SNAPSHOT                                 [8/8]
+[INFO]   from apollo-biz/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- git-commit-id:2.2.6:revision (default) @ apollo-biz ---
+[INFO] dotGitDirectory is null, aborting execution!
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ apollo-biz ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ apollo-biz ---
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-s5-chicory/apollo-biz/src/main/resources
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-s5-chicory/apollo-biz/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ apollo-biz ---
+[INFO] Generating flattened POM of project com.ctrip.framework.apollo:apollo-biz:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ apollo-biz ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Apollo 3.0.0-SNAPSHOT:
+[INFO] 
+[INFO] Apollo ............................................. SUCCESS [  1.195 s]
+[INFO] Apollo Audit ....................................... SUCCESS [  0.089 s]
+[INFO] apollo-audit-annotation ............................ SUCCESS [  0.301 s]
+[INFO] apollo-audit-api ................................... SUCCESS [  0.128 s]
+[INFO] Apollo Common ...................................... SUCCESS [  0.724 s]
+[INFO] apollo-audit-impl .................................. SUCCESS [  0.150 s]
+[INFO] apollo-audit-spring-boot-starter ................... SUCCESS [  0.111 s]
+[INFO] Apollo Biz ......................................... SUCCESS [  0.607 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.824 s
+[INFO] Finished at: 2026-09-14T01:02:54-04:00
+[INFO] ------------------------------------------------------------------------
+[TIMING] mvn compile (-am, no tests)  5s  (01:02:49 -> 01:02:54)
+
+>>> mvn test
+>>> Chicory javaagent is attached through patched argLine
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Apollo                                                             [pom]
+[INFO] Apollo Audit                                                       [pom]
+[INFO] apollo-audit-annotation                                            [jar]
+[INFO] apollo-audit-api                                                   [jar]
+[INFO] Apollo Common                                                      [jar]
+[INFO] apollo-audit-impl                                                  [jar]
+[INFO] apollo-audit-spring-boot-starter                                   [jar]
+[INFO] Apollo Biz                                                         [jar]
+[INFO] 
+[INFO] -----------------< com.ctrip.framework.apollo:apollo >------------------
+[INFO] Building Apollo 3.0.0-SNAPSHOT                                     [1/8]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- git-commit-id:2.2.6:revision (default) @ apollo ---
+[INFO] isPomProject is true and skipPoms is true, return
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ apollo ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ apollo ---
+[INFO] Generating flattened POM of project com.ctrip.framework.apollo:apollo:pom:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --------------< com.ctrip.framework.apollo:apollo-audit >---------------
+[INFO] Building Apollo Audit 3.0.0-SNAPSHOT                               [2/8]
+[INFO]   from apollo-audit/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- git-commit-id:2.2.6:revision (default) @ apollo-audit ---
+[INFO] isPomProject is true and skipPoms is true, return
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ apollo-audit ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ apollo-audit ---
+[INFO] Generating flattened POM of project com.ctrip.framework.apollo:apollo-audit:pom:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] ---------< com.ctrip.framework.apollo:apollo-audit-annotation >---------
+[INFO] Building apollo-audit-annotation 3.0.0-SNAPSHOT                    [3/8]
+[INFO]   from apollo-audit/apollo-audit-annotation/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- git-commit-id:2.2.6:revision (default) @ apollo-audit-annotation ---
+[INFO] dotGitDirectory is null, aborting execution!
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ apollo-audit-annotation ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ apollo-audit-annotation ---
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-s5-chicory/apollo-audit/apollo-audit-annotation/src/main/resources
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-s5-chicory/apollo-audit/apollo-audit-annotation/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ apollo-audit-annotation ---
+[INFO] Generating flattened POM of project com.ctrip.framework.apollo:apollo-audit-annotation:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ apollo-audit-annotation ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ apollo-audit-annotation ---
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-s5-chicory/apollo-audit/apollo-audit-annotation/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ apollo-audit-annotation ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ apollo-audit-annotation ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] ------------< com.ctrip.framework.apollo:apollo-audit-api >-------------
+[INFO] Building apollo-audit-api 3.0.0-SNAPSHOT                           [4/8]
+[INFO]   from apollo-audit/apollo-audit-api/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- git-commit-id:2.2.6:revision (default) @ apollo-audit-api ---
+[INFO] dotGitDirectory is null, aborting execution!
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ apollo-audit-api ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ apollo-audit-api ---
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-s5-chicory/apollo-audit/apollo-audit-api/src/main/resources
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-s5-chicory/apollo-audit/apollo-audit-api/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ apollo-audit-api ---
+[INFO] Generating flattened POM of project com.ctrip.framework.apollo:apollo-audit-api:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ apollo-audit-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ apollo-audit-api ---
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-s5-chicory/apollo-audit/apollo-audit-api/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ apollo-audit-api ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ apollo-audit-api ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --------------< com.ctrip.framework.apollo:apollo-common >--------------
+[INFO] Building Apollo Common 3.0.0-SNAPSHOT                              [5/8]
+[INFO]   from apollo-common/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- git-commit-id:2.2.6:revision (default) @ apollo-common ---
+[INFO] dotGitDirectory is null, aborting execution!
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ apollo-common ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ apollo-common ---
+[INFO] Copying 4 resources from src/main/resources to target/classes
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ apollo-common ---
+[INFO] Generating flattened POM of project com.ctrip.framework.apollo:apollo-common:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ apollo-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ apollo-common ---
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-s5-chicory/apollo-common/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ apollo-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ apollo-common ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.ctrip.framework.apollo.common.exception.NotFoundExceptionTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.160 s -- in com.ctrip.framework.apollo.common.exception.NotFoundExceptionTest
+[INFO] Running com.ctrip.framework.apollo.common.controller.HttpMessageConverterConfigurationTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.123 s -- in com.ctrip.framework.apollo.common.controller.HttpMessageConverterConfigurationTest
+[INFO] Running com.ctrip.framework.apollo.common.dto.ItemInfoDTOTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.020 s -- in com.ctrip.framework.apollo.common.dto.ItemInfoDTOTest
+[INFO] Running com.ctrip.framework.apollo.common.exception.BadRequestExceptionTest
+[INFO] Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 s -- in com.ctrip.framework.apollo.common.exception.BadRequestExceptionTest
+[INFO] Running com.ctrip.framework.apollo.common.conditional.ConditionalOnProfileTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.551 s -- in com.ctrip.framework.apollo.common.conditional.ConditionalOnProfileTest
+[INFO] Running com.ctrip.framework.apollo.common.utils.BeanUtilsTest
+[INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 s -- in com.ctrip.framework.apollo.common.utils.BeanUtilsTest
+[INFO] Running com.ctrip.framework.apollo.common.utils.InputValidatorTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s -- in com.ctrip.framework.apollo.common.utils.InputValidatorTest
+[INFO] Running com.ctrip.framework.apollo.common.utils.WebUtilsTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.067 s -- in com.ctrip.framework.apollo.common.utils.WebUtilsTest
+[INFO] Running com.ctrip.framework.apollo.common.http.SearchResponseEntityTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.040 s -- in com.ctrip.framework.apollo.common.http.SearchResponseEntityTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 55, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] ------------< com.ctrip.framework.apollo:apollo-audit-impl >------------
+[INFO] Building apollo-audit-impl 3.0.0-SNAPSHOT                          [6/8]
+[INFO]   from apollo-audit/apollo-audit-impl/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- git-commit-id:2.2.6:revision (default) @ apollo-audit-impl ---
+[INFO] dotGitDirectory is null, aborting execution!
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ apollo-audit-impl ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ apollo-audit-impl ---
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-s5-chicory/apollo-audit/apollo-audit-impl/src/main/resources
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-s5-chicory/apollo-audit/apollo-audit-impl/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ apollo-audit-impl ---
+[INFO] Generating flattened POM of project com.ctrip.framework.apollo:apollo-audit-impl:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ apollo-audit-impl ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ apollo-audit-impl ---
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-s5-chicory/apollo-audit/apollo-audit-impl/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ apollo-audit-impl ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ apollo-audit-impl ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.ctrip.framework.apollo.audit.component.ApolloAuditScopeManagerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.5)
+
+2026-09-14T05:03:06.139Z  INFO 1779618 --- [           main] c.c.f.a.a.c.ApolloAuditScopeManagerTest  : Starting ApolloAuditScopeManagerTest using Java 17.0.15 with PID 1779618 (started by ea442 in /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-s5-chicory/apollo-audit/apollo-audit-impl)
+2026-09-14T05:03:06.142Z  INFO 1779618 --- [           main] c.c.f.a.a.c.ApolloAuditScopeManagerTest  : No active profile set, falling back to 1 default profile: "default"
+2026-09-14T05:03:06.948Z  INFO 1779618 --- [           main] c.c.f.a.a.c.ApolloAuditScopeManagerTest  : Started ApolloAuditScopeManagerTest in 1.059 seconds (process running for 3.019)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.796 s -- in com.ctrip.framework.apollo.audit.component.ApolloAuditScopeManagerTest
+[INFO] Running com.ctrip.framework.apollo.audit.component.ApolloAuditLogApiJpaImplTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.5)
+
+2026-09-14T05:03:07.131Z  INFO 1779618 --- [           main] c.c.f.a.a.c.ApolloAuditLogApiJpaImplTest : Starting ApolloAuditLogApiJpaImplTest using Java 17.0.15 with PID 1779618 (started by ea442 in /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-s5-chicory/apollo-audit/apollo-audit-impl)
+2026-09-14T05:03:07.132Z  INFO 1779618 --- [           main] c.c.f.a.a.c.ApolloAuditLogApiJpaImplTest : No active profile set, falling back to 1 default profile: "default"
+2026-09-14T05:03:07.287Z  INFO 1779618 --- [           main] c.c.f.a.a.c.ApolloAuditLogApiJpaImplTest : Started ApolloAuditLogApiJpaImplTest in 0.189 seconds (process running for 3.358)
+[INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.427 s -- in com.ctrip.framework.apollo.audit.component.ApolloAuditLogApiJpaImplTest
+[INFO] Running com.ctrip.framework.apollo.audit.component.ApolloAuditHttpInterceptorTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.5)
+
+2026-09-14T05:03:07.547Z  INFO 1779618 --- [           main] c.f.a.a.c.ApolloAuditHttpInterceptorTest : Starting ApolloAuditHttpInterceptorTest using Java 17.0.15 with PID 1779618 (started by ea442 in /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-s5-chicory/apollo-audit/apollo-audit-impl)
+2026-09-14T05:03:07.547Z  INFO 1779618 --- [           main] c.f.a.a.c.ApolloAuditHttpInterceptorTest : No active profile set, falling back to 1 default profile: "default"
+2026-09-14T05:03:07.599Z  INFO 1779618 --- [           main] c.f.a.a.c.ApolloAuditHttpInterceptorTest : Started ApolloAuditHttpInterceptorTest in 0.08 seconds (process running for 3.67)
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.244 s -- in com.ctrip.framework.apollo.audit.component.ApolloAuditHttpInterceptorTest
+[INFO] Running com.ctrip.framework.apollo.audit.context.ApolloAuditTraceContextTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.5)
+
+2026-09-14T05:03:07.785Z  INFO 1779618 --- [           main] c.c.f.a.a.c.ApolloAuditTraceContextTest  : Starting ApolloAuditTraceContextTest using Java 17.0.15 with PID 1779618 (started by ea442 in /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-s5-chicory/apollo-audit/apollo-audit-impl)
+2026-09-14T05:03:07.785Z  INFO 1779618 --- [           main] c.c.f.a.a.c.ApolloAuditTraceContextTest  : No active profile set, falling back to 1 default profile: "default"
+2026-09-14T05:03:07.825Z  INFO 1779618 --- [           main] c.c.f.a.a.c.ApolloAuditTraceContextTest  : Started ApolloAuditTraceContextTest in 0.061 seconds (process running for 3.896)
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.125 s -- in com.ctrip.framework.apollo.audit.context.ApolloAuditTraceContextTest
+[INFO] Running com.ctrip.framework.apollo.audit.context.ApolloAuditTracerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.5)
+
+2026-09-14T05:03:07.908Z  INFO 1779618 --- [           main] c.c.f.a.a.context.ApolloAuditTracerTest  : Starting ApolloAuditTracerTest using Java 17.0.15 with PID 1779618 (started by ea442 in /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-s5-chicory/apollo-audit/apollo-audit-impl)
+2026-09-14T05:03:07.908Z  INFO 1779618 --- [           main] c.c.f.a.a.context.ApolloAuditTracerTest  : No active profile set, falling back to 1 default profile: "default"
+2026-09-14T05:03:07.916Z  INFO 1779618 --- [           main] c.c.f.a.a.context.ApolloAuditTracerTest  : Started ApolloAuditTracerTest in 0.025 seconds (process running for 3.987)
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.209 s -- in com.ctrip.framework.apollo.audit.context.ApolloAuditTracerTest
+[INFO] Running com.ctrip.framework.apollo.audit.aop.ApolloAuditSpanAspectTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.5)
+
+2026-09-14T05:03:08.118Z  INFO 1779618 --- [           main] c.c.f.a.a.aop.ApolloAuditSpanAspectTest  : Starting ApolloAuditSpanAspectTest using Java 17.0.15 with PID 1779618 (started by ea442 in /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-s5-chicory/apollo-audit/apollo-audit-impl)
+2026-09-14T05:03:08.119Z  INFO 1779618 --- [           main] c.c.f.a.a.aop.ApolloAuditSpanAspectTest  : No active profile set, falling back to 1 default profile: "default"
+2026-09-14T05:03:08.184Z  INFO 1779618 --- [           main] c.c.f.a.a.aop.ApolloAuditSpanAspectTest  : Started ApolloAuditSpanAspectTest in 0.083 seconds (process running for 4.255)
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.241 s -- in com.ctrip.framework.apollo.audit.aop.ApolloAuditSpanAspectTest
+[INFO] Running com.ctrip.framework.apollo.audit.controller.ApolloAuditControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.5)
+
+2026-09-14T05:03:08.393Z  INFO 1779618 --- [           main] c.c.f.a.a.c.ApolloAuditControllerTest    : Starting ApolloAuditControllerTest using Java 17.0.15 with PID 1779618 (started by ea442 in /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-s5-chicory/apollo-audit/apollo-audit-impl)
+2026-09-14T05:03:08.393Z  INFO 1779618 --- [           main] c.c.f.a.a.c.ApolloAuditControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2026-09-14T05:03:08.980Z  INFO 1779618 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-09-14T05:03:08.981Z  INFO 1779618 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-09-14T05:03:08.983Z  INFO 1779618 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-09-14T05:03:08.997Z  INFO 1779618 --- [           main] c.c.f.a.a.c.ApolloAuditControllerTest    : Started ApolloAuditControllerTest in 0.625 seconds (process running for 5.068)
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.905 s -- in com.ctrip.framework.apollo.audit.controller.ApolloAuditControllerTest
+[INFO] Running com.ctrip.framework.apollo.audit.spi.ApolloAuditOperatorSupplierTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in com.ctrip.framework.apollo.audit.spi.ApolloAuditOperatorSupplierTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 43, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] ----< com.ctrip.framework.apollo:apollo-audit-spring-boot-starter >-----
+[INFO] Building apollo-audit-spring-boot-starter 3.0.0-SNAPSHOT           [7/8]
+[INFO]   from apollo-audit/apollo-audit-spring-boot-starter/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- git-commit-id:2.2.6:revision (default) @ apollo-audit-spring-boot-starter ---
+[INFO] dotGitDirectory is null, aborting execution!
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ apollo-audit-spring-boot-starter ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ apollo-audit-spring-boot-starter ---
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] Copying 2 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ apollo-audit-spring-boot-starter ---
+[INFO] Generating flattened POM of project com.ctrip.framework.apollo:apollo-audit-spring-boot-starter:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ apollo-audit-spring-boot-starter ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ apollo-audit-spring-boot-starter ---
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-s5-chicory/apollo-audit/apollo-audit-spring-boot-starter/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ apollo-audit-spring-boot-starter ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ apollo-audit-spring-boot-starter ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] ---------------< com.ctrip.framework.apollo:apollo-biz >----------------
+[INFO] Building Apollo Biz 3.0.0-SNAPSHOT                                 [8/8]
+[INFO]   from apollo-biz/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- git-commit-id:2.2.6:revision (default) @ apollo-biz ---
+[INFO] dotGitDirectory is null, aborting execution!
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ apollo-biz ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ apollo-biz ---
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-s5-chicory/apollo-biz/src/main/resources
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-s5-chicory/apollo-biz/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ apollo-biz ---
+[INFO] Generating flattened POM of project com.ctrip.framework.apollo:apollo-biz:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ apollo-biz ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ apollo-biz ---
+[INFO] Copying 14 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ apollo-biz ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ apollo-biz ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.ctrip.framework.apollo.biz.repository.ReleaseHistoryRetentionMigrationSqlTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.440 s -- in com.ctrip.framework.apollo.biz.repository.ReleaseHistoryRetentionMigrationSqlTest
+[INFO] Running com.ctrip.framework.apollo.biz.registry.configuration.ApolloServiceRegistryAutoConfigurationNotEnabledTest
+     _                _ _
+    / \   _ __   ___ | | | ___
+   / _ \ | '_ \ / _ \| | |/ _ \
+  / ___ \| |_) | (_) | | | (_) |
+ /_/   \_\ .__/ \___/|_|_|\___/
+         |_|
+
+:: Spring Boot ::  (v4.0.5)
+
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.750 s -- in com.ctrip.framework.apollo.biz.registry.configuration.ApolloServiceRegistryAutoConfigurationNotEnabledTest
+[INFO] Running com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClientMemoryCacheDecoratorImplTest
+[ERROR] com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClientMemoryCacheDecoratorImpl - fail to read service instances from database
+java.lang.OutOfMemoryError
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.244 s -- in com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClientMemoryCacheDecoratorImplTest
+[INFO] Running com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClientAlwaysAddSelfInstanceDecoratorImplTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClientAlwaysAddSelfInstanceDecoratorImplTest
+[INFO] Running com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClientImplTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.149 s -- in com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClientImplTest
+[INFO] Running com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverterTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.053 s -- in com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverterTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.ItemServiceGrayNamespaceLimitTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.503 s -- in com.ctrip.framework.apollo.biz.service.ItemServiceGrayNamespaceLimitTest
+[INFO] Running com.ctrip.framework.apollo.biz.repository.AppRepositoryTest
+     _                _ _
+    / \   _ __   ___ | | | ___
+   / _ \ | '_ \ / _ \| | |/ _ \
+  / ___ \| |_) | (_) | | | (_) |
+ /_/   \_\ .__/ \___/|_|_|\___/
+         |_|
+
+:: Spring Boot ::  (v4.0.5)
+
+[WARN] com.ctrip.framework.foundation.internals.provider.DefaultApplicationProvider - app.id is not available from System Property and /META-INF/app.properties. It is set to null
+[WARN] com.ctrip.framework.foundation.internals.provider.DefaultApplicationProvider - app.label is not available from System Property and /META-INF/app.properties. It is set to null
+[WARN] org.springframework.boot.jpa.autoconfigure.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[WARN] org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 17.93 s -- in com.ctrip.framework.apollo.biz.repository.AppRepositoryTest
+[INFO] Running com.ctrip.framework.apollo.biz.repository.AccessKeyRepositoryTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.172 s -- in com.ctrip.framework.apollo.biz.repository.AccessKeyRepositoryTest
+[INFO] Running com.ctrip.framework.apollo.biz.repository.InstanceConfigRepositoryTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.083 s -- in com.ctrip.framework.apollo.biz.repository.InstanceConfigRepositoryTest
+[INFO] Running com.ctrip.framework.apollo.biz.repository.AppNamespaceRepositoryTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in com.ctrip.framework.apollo.biz.repository.AppNamespaceRepositoryTest
+[INFO] Running com.ctrip.framework.apollo.biz.repository.ReleaseHistoryRepositoryTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.063 s -- in com.ctrip.framework.apollo.biz.repository.ReleaseHistoryRepositoryTest
+[INFO] Running com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceRegistryClearApplicationRunnerIntegrationTest
+     _                _ _
+    / \   _ __   ___ | | | ___
+   / _ \ | '_ \ / _ \| | |/ _ \
+  / ___ \| |_) | (_) | | | (_) |
+ /_/   \_\ .__/ \___/|_|_|\___/
+         |_|
+
+:: Spring Boot ::  (v4.0.5)
+
+[WARN] org.springframework.boot.jpa.autoconfigure.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[WARN] org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.647 s -- in com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceRegistryClearApplicationRunnerIntegrationTest
+[INFO] Running com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryWithoutDecoratorIntegrationTest
+     _                _ _
+    / \   _ __   ___ | | | ___
+   / _ \ | '_ \ / _ \| | |/ _ \
+  / ___ \| |_) | (_) | | | (_) |
+ /_/   \_\ .__/ \___/|_|_|\___/
+         |_|
+
+:: Spring Boot ::  (v4.0.5)
+
+[WARN] org.springframework.boot.jpa.autoconfigure.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[WARN] org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.391 s -- in com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryWithoutDecoratorIntegrationTest
+[INFO] Running com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryIntegrationTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 s -- in com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryIntegrationTest
+[INFO] Running com.ctrip.framework.apollo.biz.grayReleaseRule.GrayReleaseRulesHolderTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.234 s -- in com.ctrip.framework.apollo.biz.grayReleaseRule.GrayReleaseRulesHolderTest
+[INFO] Running com.ctrip.framework.apollo.biz.utils.ConfigChangeContentBuilderTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 s -- in com.ctrip.framework.apollo.biz.utils.ConfigChangeContentBuilderTest
+[INFO] Running com.ctrip.framework.apollo.biz.utils.ReleaseKeyGeneratorTest
+[ERROR] com.ctrip.framework.apollo.biz.utils.ReleaseMessageKeyGenerator - message format invalid - appId+cluster
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.431 s -- in com.ctrip.framework.apollo.biz.utils.ReleaseKeyGeneratorTest
+[INFO] Running com.ctrip.framework.apollo.biz.config.BizConfigTest
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '1' is out of bounds [2 - 2147483647]. Using default value '10'.
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '2' is out of bounds [-2147483648 - 1]. Using default value '10'.
+[ERROR] com.ctrip.framework.apollo.biz.config.BizConfig - Invalid override config value: invalid json
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at com.google.gson.Gson.fromJson(Gson.java:1381)
+	at com.google.gson.Gson.fromJson(Gson.java:1259)
+	at com.google.gson.Gson.fromJson(Gson.java:1169)
+	at com.google.gson.Gson.fromJson(Gson.java:1135)
+	at com.ctrip.framework.apollo.biz.config.BizConfig.parseOverrideConfig(BizConfig.java:308)
+	at com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthLimitOverride(BizConfig.java:125)
+	at com.ctrip.framework.apollo.biz.config.BizConfigTest.testAppIdValueLengthLimitOverride(BizConfigTest.java:132)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.mockito.internal.runners.DefaultInternalRunner$1$1.evaluate(DefaultInternalRunner.java:55)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.mockito.internal.runners.DefaultInternalRunner$1.run(DefaultInternalRunner.java:100)
+	at org.mockito.internal.runners.DefaultInternalRunner.run(DefaultInternalRunner.java:107)
+	at org.mockito.internal.runners.StrictRunner.run(StrictRunner.java:42)
+	at org.mockito.junit.MockitoJUnitRunner.run(MockitoJUnitRunner.java:163)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:52)
+	at org.junit.vintage.engine.execution.VintageExecutor.executeClassesAndMethodsSequentially(VintageExecutor.java:92)
+	at org.junit.vintage.engine.execution.VintageExecutor.executeAllChildren(VintageExecutor.java:72)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:74)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.executeEngine(EngineExecutionOrchestrator.java:246)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.failOrExecuteEngine(EngineExecutionOrchestrator.java:218)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:179)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:66)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:157)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:65)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:125)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:93)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:48)
+	at org.junit.platform.launcher.core.InterceptingLauncher.lambda$execute$0(InterceptingLauncher.java:41)
+	at org.junit.platform.launcher.core.ClasspathAlignmentCheckingLauncherInterceptor.intercept(ClasspathAlignmentCheckingLauncherInterceptor.java:25)
+	at org.junit.platform.launcher.core.InterceptingLauncher.execute(InterceptingLauncher.java:40)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:48)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+See https://github.com/google/gson/blob/main/Troubleshooting.md#unexpected-json-structure
+	at com.google.gson.stream.JsonReader.unexpectedTokenError(JsonReader.java:1831)
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:509)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:199)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:161)
+	at com.google.gson.Gson.fromJson(Gson.java:1358)
+	... 59 common frames omitted
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-20' is out of bounds [1 - 2147483647]. Using default value '100'.
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.353 s -- in com.ctrip.framework.apollo.biz.config.BizConfigTest
+[INFO] Running com.ctrip.framework.apollo.biz.message.ReleaseMessageScannerTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.854 s -- in com.ctrip.framework.apollo.biz.message.ReleaseMessageScannerTest
+[INFO] Running com.ctrip.framework.apollo.biz.message.DatabaseMessageSenderTest
+[WARN] com.ctrip.framework.apollo.biz.message.DatabaseMessageSender - Channel some-invalid-topic not supported by DatabaseMessageSender!
+[ERROR] com.ctrip.framework.apollo.biz.message.DatabaseMessageSender - Sending message to database failed
+java.lang.RuntimeException
+	at com.ctrip.framework.apollo.biz.message.DatabaseMessageSender.sendMessage(DatabaseMessageSender.java:72)
+	at com.ctrip.framework.apollo.biz.message.DatabaseMessageSenderTest.testSendMessageFailed(DatabaseMessageSenderTest.java:75)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.mockito.internal.runners.DefaultInternalRunner$1$1.evaluate(DefaultInternalRunner.java:55)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.mockito.internal.runners.DefaultInternalRunner$1.run(DefaultInternalRunner.java:100)
+	at org.mockito.internal.runners.DefaultInternalRunner.run(DefaultInternalRunner.java:107)
+	at org.mockito.internal.runners.StrictRunner.run(StrictRunner.java:42)
+	at org.mockito.junit.MockitoJUnitRunner.run(MockitoJUnitRunner.java:163)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:52)
+	at org.junit.vintage.engine.execution.VintageExecutor.executeClassesAndMethodsSequentially(VintageExecutor.java:92)
+	at org.junit.vintage.engine.execution.VintageExecutor.executeAllChildren(VintageExecutor.java:72)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:74)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.executeEngine(EngineExecutionOrchestrator.java:246)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.failOrExecuteEngine(EngineExecutionOrchestrator.java:218)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:179)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:66)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:157)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:65)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:125)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:93)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:48)
+	at org.junit.platform.launcher.core.InterceptingLauncher.lambda$execute$0(InterceptingLauncher.java:41)
+	at org.junit.platform.launcher.core.ClasspathAlignmentCheckingLauncherInterceptor.intercept(ClasspathAlignmentCheckingLauncherInterceptor.java:25)
+	at org.junit.platform.launcher.core.InterceptingLauncher.execute(InterceptingLauncher.java:40)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:48)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.085 s -- in com.ctrip.framework.apollo.biz.message.DatabaseMessageSenderTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.AdminServiceTransactionTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.089 s -- in com.ctrip.framework.apollo.biz.service.AdminServiceTransactionTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.InstanceServiceTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.094 s -- in com.ctrip.framework.apollo.biz.service.InstanceServiceTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.ItemServiceTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.147 s -- in com.ctrip.framework.apollo.biz.service.ItemServiceTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.NamespacePublishInfoTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.380 s -- in com.ctrip.framework.apollo.biz.service.NamespacePublishInfoTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.NamespaceServiceTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.083 s -- in com.ctrip.framework.apollo.biz.service.NamespaceServiceTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.ReleaseHistoryServiceTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.412 s -- in com.ctrip.framework.apollo.biz.service.ReleaseHistoryServiceTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.AdminServiceUnitTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.082 s -- in com.ctrip.framework.apollo.biz.service.AdminServiceUnitTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.BizDBPropertySourceTest
+[WARN] org.hibernate.orm.jdbc.error - HHH000247: ErrorCode: 42104, SQLState: 42S04
+[WARN] org.hibernate.orm.jdbc.error - Table "ServiceRegistry" not found (this database is empty); SQL statement:
+select sr1_0."Id",sr1_0."Cluster",sr1_0."DataChange_CreatedTime",sr1_0."DataChange_LastTime",sr1_0."Metadata",sr1_0."ServiceName",sr1_0."Uri" from "ServiceRegistry" sr1_0 where sr1_0."ServiceName"=? and sr1_0."DataChange_LastTime">? [42104-240]
+[ERROR] com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClientMemoryCacheDecoratorImpl - fail to read service instances from database
+org.springframework.dao.InvalidDataAccessResourceUsageException: Could not prepare statement [Table "ServiceRegistry" not found (this database is empty); SQL statement:
+select sr1_0."Id",sr1_0."Cluster",sr1_0."DataChange_CreatedTime",sr1_0."DataChange_LastTime",sr1_0."Metadata",sr1_0."ServiceName",sr1_0."Uri" from "ServiceRegistry" sr1_0 where sr1_0."ServiceName"=? and sr1_0."DataChange_LastTime">? [42104-240]] [select sr1_0."Id",sr1_0."Cluster",sr1_0."DataChange_CreatedTime",sr1_0."DataChange_LastTime",sr1_0."Metadata",sr1_0."ServiceName",sr1_0."Uri" from "ServiceRegistry" sr1_0 where sr1_0."ServiceName"=? and sr1_0."DataChange_LastTime">?]; SQL [select sr1_0."Id",sr1_0."Cluster",sr1_0."DataChange_CreatedTime",sr1_0."DataChange_LastTime",sr1_0."Metadata",sr1_0."ServiceName",sr1_0."Uri" from "ServiceRegistry" sr1_0 where sr1_0."ServiceName"=? and sr1_0."DataChange_LastTime">?]
+	at org.springframework.orm.jpa.hibernate.HibernateExceptionTranslator.convertHibernateAccessException(HibernateExceptionTranslator.java:156)
+	at org.springframework.orm.jpa.hibernate.HibernateExceptionTranslator.convertHibernateAccessException(HibernateExceptionTranslator.java:131)
+	at org.springframework.orm.jpa.hibernate.HibernateExceptionTranslator.translateExceptionIfPossible(HibernateExceptionTranslator.java:105)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:223)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:576)
+	at org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61)
+	at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:346)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:157)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:222)
+	at jdk.proxy2/jdk.proxy2.$Proxy277.findByServiceNameAndDataChangeLastModifiedTimeGreaterThan(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:82)
+	at com.ctrip.framework.apollo.common.aop.RepositoryAspect.invokeWithCatTransaction(RepositoryAspect.java:41)
+	at jdk.internal.reflect.GeneratedMethodAccessor91.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:648)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:630)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:222)
+	at jdk.proxy2/jdk.proxy2.$Proxy277.findByServiceNameAndDataChangeLastModifiedTimeGreaterThan(Unknown Source)
+	at com.ctrip.framework.apollo.biz.service.ServiceRegistryService.findByServiceNameDataChangeLastModifiedTimeGreaterThan(ServiceRegistryService.java:59)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:715)
+	at com.ctrip.framework.apollo.biz.service.ServiceRegistryService$$SpringCGLIB$$0.findByServiceNameDataChangeLastModifiedTimeGreaterThan(<generated>)
+	at com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClientImpl.getInstances(DatabaseDiscoveryClientImpl.java:52)
+	at com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClientAlwaysAddSelfInstanceDecoratorImpl.getInstances(DatabaseDiscoveryClientAlwaysAddSelfInstanceDecoratorImpl.java:79)
+	at com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClientMemoryCacheDecoratorImpl.lambda$updateCacheTask$0(DatabaseDiscoveryClientMemoryCacheDecoratorImpl.java:81)
+	at java.base/java.util.concurrent.ConcurrentHashMap.replaceAll(ConcurrentHashMap.java:1616)
+	at com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClientMemoryCacheDecoratorImpl.updateCacheTask(DatabaseDiscoveryClientMemoryCacheDecoratorImpl.java:81)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.hibernate.exception.SQLGrammarException: Could not prepare statement [Table "ServiceRegistry" not found (this database is empty); SQL statement:
+select sr1_0."Id",sr1_0."Cluster",sr1_0."DataChange_CreatedTime",sr1_0."DataChange_LastTime",sr1_0."Metadata",sr1_0."ServiceName",sr1_0."Uri" from "ServiceRegistry" sr1_0 where sr1_0."ServiceName"=? and sr1_0."DataChange_LastTime">? [42104-240]] [select sr1_0."Id",sr1_0."Cluster",sr1_0."DataChange_CreatedTime",sr1_0."DataChange_LastTime",sr1_0."Metadata",sr1_0."ServiceName",sr1_0."Uri" from "ServiceRegistry" sr1_0 where sr1_0."ServiceName"=? and sr1_0."DataChange_LastTime">?]
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:64)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:34)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:115)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:194)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:157)
+	at org.hibernate.sql.exec.internal.StandardStatementCreator.createStatement(StandardStatementCreator.java:46)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:257)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:190)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.<init>(JdbcValuesResultSetImpl.java:71)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.resolveJdbcValues(JdbcSelectExecutorStandardImpl.java:393)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.resolveJdbcValuesSource(JdbcSelectExecutorStandardImpl.java:354)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:135)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:100)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.executeQuery(JdbcSelectExecutor.java:63)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:137)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$1(ConcreteSqmSelectQueryPlan.java:128)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:427)
+	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:355)
+	at org.hibernate.query.sqm.internal.SqmQueryImpl.doList(SqmQueryImpl.java:374)
+	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:153)
+	at org.hibernate.query.Query.getResultList(Query.java:121)
+	at jdk.internal.reflect.GeneratedMethodAccessor150.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$DeferredQueryInvocationHandler.invoke(SharedEntityManagerCreator.java:557)
+	at jdk.proxy2/jdk.proxy2.$Proxy282.getResultList(Unknown Source)
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution$CollectionExecution.doExecute(JpaQueryExecution.java:132)
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:99)
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:164)
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:154)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:169)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:167)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:146)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:69)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:133)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:371)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:130)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:135)
+	... 44 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ServiceRegistry" not found (this database is empty); SQL statement:
+select sr1_0."Id",sr1_0."Cluster",sr1_0."DataChange_CreatedTime",sr1_0."DataChange_LastTime",sr1_0."Metadata",sr1_0."ServiceName",sr1_0."Uri" from "ServiceRegistry" sr1_0 where sr1_0."ServiceName"=? and sr1_0."DataChange_LastTime">? [42104-240]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:8036)
+	at org.h2.command.Parser.getTableOrViewNotFoundDbException(Parser.java:8020)
+	at org.h2.command.Parser.readTableOrView(Parser.java:7999)
+	at org.h2.command.Parser.readTablePrimary(Parser.java:1772)
+	at org.h2.command.Parser.readTableReference(Parser.java:2252)
+	at org.h2.command.Parser.parseSelectFromPart(Parser.java:2705)
+	at org.h2.command.Parser.parseSelect(Parser.java:2813)
+	at org.h2.command.Parser.parseQueryPrimary(Parser.java:2695)
+	at org.h2.command.Parser.parseQueryTerm(Parser.java:2550)
+	at org.h2.command.Parser.parseQueryExpressionBody(Parser.java:2529)
+	at org.h2.command.Parser.parseQueryExpressionBodyAndEndOfQuery(Parser.java:2522)
+	at org.h2.command.Parser.parseQueryExpression(Parser.java:2515)
+	at org.h2.command.Parser.parseQuery(Parser.java:2482)
+	at org.h2.command.Parser.parsePrepared(Parser.java:613)
+	at org.h2.command.Parser.parse(Parser.java:584)
+	at org.h2.command.Parser.parse(Parser.java:559)
+	at org.h2.command.Parser.prepareCommand(Parser.java:487)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:647)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:563)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1160)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:93)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:686)
+	at com.zaxxer.hikari.pool.ProxyConnection.prepareStatement(ProxyConnection.java:342)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.prepareStatement(HikariProxyConnection.java)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$4.doPrepare(StatementPreparerImpl.java:155)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:183)
+	... 82 common frames omitted
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.089 s -- in com.ctrip.framework.apollo.biz.service.BizDBPropertySourceTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.AdminServiceTest
+     _                _ _
+    / \   _ __   ___ | | | ___
+   / _ \ | '_ \ / _ \| | |/ _ \
+  / ___ \| |_) | (_) | | | (_) |
+ /_/   \_\ .__/ \___/|_|_|\___/
+         |_|
+
+:: Spring Boot ::  (v4.0.5)
+
+[WARN] org.springframework.boot.jpa.autoconfigure.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[WARN] org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.323 s -- in com.ctrip.framework.apollo.biz.service.AdminServiceTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.NamespaceServiceIntegrationTest
+     _                _ _
+    / \   _ __   ___ | | | ___
+   / _ \ | '_ \ / _ \| | |/ _ \
+  / ___ \| |_) | (_) | | | (_) |
+ /_/   \_\ .__/ \___/|_|_|\___/
+         |_|
+
+:: Spring Boot ::  (v4.0.5)
+
+[WARN] org.springframework.boot.jpa.autoconfigure.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[WARN] org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.409 s -- in com.ctrip.framework.apollo.biz.service.NamespaceServiceIntegrationTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.AccessKeyServiceTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.030 s -- in com.ctrip.framework.apollo.biz.service.AccessKeyServiceTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.ServerConfigServiceTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 s -- in com.ctrip.framework.apollo.biz.service.ServerConfigServiceTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.NamespaceBranchServiceTest
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.180 s -- in com.ctrip.framework.apollo.biz.service.NamespaceBranchServiceTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.ClusterServiceTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s -- in com.ctrip.framework.apollo.biz.service.ClusterServiceTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.ItemSetServiceTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.107 s -- in com.ctrip.framework.apollo.biz.service.ItemSetServiceTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.ReleaseServiceTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.291 s -- in com.ctrip.framework.apollo.biz.service.ReleaseServiceTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.ReleaseCreationTest
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.311 s -- in com.ctrip.framework.apollo.biz.service.ReleaseCreationTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 144, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Apollo 3.0.0-SNAPSHOT:
+[INFO] 
+[INFO] Apollo ............................................. SUCCESS [  0.771 s]
+[INFO] Apollo Audit ....................................... SUCCESS [  0.092 s]
+[INFO] apollo-audit-annotation ............................ SUCCESS [  0.422 s]
+[INFO] apollo-audit-api ................................... SUCCESS [  0.106 s]
+[INFO] Apollo Common ...................................... SUCCESS [  6.081 s]
+[INFO] apollo-audit-impl .................................. SUCCESS [  5.614 s]
+[INFO] apollo-audit-spring-boot-starter ................... SUCCESS [  0.122 s]
+[INFO] Apollo Biz ......................................... SUCCESS [ 37.208 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  50.743 s
+[INFO] Finished at: 2026-09-14T05:03:46Z
+[INFO] ------------------------------------------------------------------------
+[TIMING] mvn test (Chicory instrumented) 52s  (01:02:54 -> 01:03:46)
+
+============================================================
+>>> Chicory trace output directory:
+/scratch/mjk76/ea442/promptstudy/apollo-s5-chicory-out/1281649
+============================================================
+
+>>> Complete directory listing:
+total 33M
+drwxr-xr-x+ 2 ea442 ea442 4.0K Sep 14 01:02 .
+drwxr-xr-x+ 4 ea442 ea442 4.0K Sep 14 01:02 ..
+-rw-r--r--+ 1 ea442 ea442  14M Sep 14 01:03 dtrace.gz
+
+>>> Individual Chicory-generated trace files:
+-rw-r--r--+ 1 ea442 ea442 14M Sep 14 01:03 /scratch/mjk76/ea442/promptstudy/apollo-s5-chicory-out/1281649/dtrace.gz
+
+>>> Number of original Chicory trace files: 1
+
+>>> Latest-run symlink:
+lrwxrwxrwx 1 ea442 ea442 62 Sep 14 01:03 /scratch/mjk76/ea442/promptstudy/apollo-s5-chicory-out/latest -> /scratch/mjk76/ea442/promptstudy/apollo-s5-chicory-out/1281649
+
+>>> Final contents of this run:
+total 33M
+drwxr-xr-x+ 2 ea442 ea442 4.0K Sep 14 01:02 .
+drwxr-xr-x+ 4 ea442 ea442 4.0K Sep 14 01:03 ..
+-rw-r--r--+ 1 ea442 ea442  14M Sep 14 01:03 dtrace.gz
+
+>>> Original Chicory-generated files are preserved in:
+>>> /scratch/mjk76/ea442/promptstudy/apollo-s5-chicory-out/1281649
+
+>>> Convenient newest-run path:
+>>> /scratch/mjk76/ea442/promptstudy/apollo-s5-chicory-out/latest
+[TIMING] TOTAL (apollo-s5)            59s  (01:02:47 -> 01:03:46)
+
+[TIMING] === apollo-s5 chicory trace run finished 2026-09-14T01:03:46-04:00 ===

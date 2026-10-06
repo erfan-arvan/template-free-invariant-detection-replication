@@ -1,0 +1,245 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/23.0.2/bin/java
+MVN: /scratch/mjk76/ea442/apache-maven-3.9.9/bin/mvn
+>>> Running Daikon++
+>>> CMD: java -jar /scratch/mjk76/ea442/daikonplusplus-token-cost/build/libs/daikonplusplus.jar --external-project --project-root /project/mjk76/ea442/promptstudy/hudi --main-src hudi-client/hudi-java-client/src/main/java --test-src hudi-client/hudi-java-client/src/test/java --runner-script /scratch/mjk76/ea442/token_cost_fewshot_class_doc/hudi_run_tests.sh 5
+Picked up JAVA_TOOL_OPTIONS:  -Djava.io.tmpdir=/scratch/mjk76/ea442/token_cost_fewshot_class_doc/tmp -Djava.io.tmpdir=/scratch/mjk76/ea442/token_cost_fewshot_class_doc/tmp
+==== Daikon++ Config ====
+threads = 8
+registryPath = /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/hudi/daikonpp_registry.jsonl
+outcomesPath = /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/hudi/daikonpp_outcomes.jsonl
+includeBody = true
+registryReset = true
+debug = false
+keepWork = true
+noQualityFilter = false
+qualityFilterRules = {maxLength=true, alwaysTrueLiteral=true, tautologyNotXOrX=true, fullRangeComparison=true, selfComparison=false, trivialDisjunction=true, noStatements=true, noAssignment=true, forbiddenConstructs=true, requireInScopeName=false, requireResultAtExit=false, primitiveNullComparison=true, unknownIdentifier=false, parseCheck=true}
+llmTotalTimeoutSec = 180
+llmPerReqTimeoutSec = 45
+bodyMaxChars = 2000
+enabledContexts = [METHOD_BODY, SCOPE, CLASS_DOC]
+openaiModel = gpt-4.1-mini
+llmCassettesDir = /project/mjk76/ea442/promptstudy/daikonplusplus/src/test/cassettes
+disableRealLlm = false
+callSitesIndexPath = /project/mjk76/ea442/promptstudy/hudi_callsites.json
+ioExamplesIndexPath = /project/mjk76/ea442/promptstudy/hudi-s5_io_examples.json
+compileMainScript = /scratch/mjk76/ea442/token_cost_fewshot_class_doc/hudi_compile.sh
+compileTestScript = /scratch/mjk76/ea442/token_cost_fewshot_class_doc/hudi_compile.sh
+llmPollStepMs = 1500
+externalCompileClasspath = /project/mjk76/ea442/promptstudy/hudi/hudi-client/hudi-java-client/target/classes
+workDir = /scratch/mjk76/ea442/token_cost_fewshot_class_doc/daikonpp_work
+promptStrategy = fewshot
+scanIncludes = []
+llmProvider = openai
+llmLocalBackend = ollama
+llmLocalUrl = http://localhost:11434
+llmLocalModel = qwen2.5:7b
+enableTestFilter = false
+testFilterMethodBatchSize = 1
+staleCheckMinutes = 1
+maxTimeoutMinutes = 480
+autofilterMaxModifyPasses = 200
+autofilterMaxExtraPasses = 150
+llmDryRun = true
+llmPriceInputPerM = 0.4
+llmPriceOutputPerM = 1.6
+=========================
+🔥 EXEC MODE = EXTERNAL_PROJECT
+>>> LLM DRY RUN: prompts are counted, not sent; stopping after LM phase
+[DP] Using prompt strategy: fewshot
+[DP-PATHS] execMode=EXTERNAL_PROJECT
+[DP-PATHS] userProjectRoot=/project/mjk76/ea442/promptstudy/hudi
+[DP-PATHS] mainSrcRoot=/project/mjk76/ea442/promptstudy/hudi/hudi-client/hudi-java-client/src/main/java
+[DP-PATHS] testSrcRoot=/project/mjk76/ea442/promptstudy/hudi/hudi-client/hudi-java-client/src/test/java
+>>> Scanning MAIN sources under (WORKING COPY): /project/mjk76/ea442/promptstudy/hudi/hudi-client/hudi-java-client/src/main/java
+>>> [Scan phase] started at 2026-10-02 19:25:51.027
+>>> [Scan phase] finished at 2026-10-02 19:25:51.732 (elapsed 0.704s)
+>>> Points — ENTRY: 213  EXIT: 213  TOTAL: 426
+>>> [LM phase] started at 2026-10-02 19:25:51.739
+===== FIRST PROMPT =====
+----- SYSTEM -----
+You are a program analysis assistant.
+
+Task:
+Generate candidate invariants for a Java program point.
+
+Global rules:
+- Return ONLY JSON matching the required schema.
+- The JSON schema is:
+  {
+    "invariants": [
+      { "expression": "<Java boolean expression>" }
+    ]
+  }
+- Each invariant must be a valid Java boolean expression.
+- Expressions must be valid at the program point.
+- Use only the listed in-scope names.
+- Do not introduce new variables, helper functions, or APIs.
+- Expressions must be side-effect free.
+
+
+===== EXAMPLE 1 =====
+PROGRAM POINT: Example1 [METHOD_EXIT]
+
+In-scope names:
+- order : Order
+- result : double
+
+===== PROGRAM CONTEXT =====
+[Method Implementation]
+public double total(Order order) {
+  return order.getQuantity() * order.getUnitPrice();
+}
+===========================
+
+Expected Output:
+{
+  "invariants": [
+    { "expression": "order != null" },
+    { "expression": "result == order.getQuantity() * order.getUnitPrice()" },
+    { "expression": "order.getQuantity() == 0 || result / order.getQuantity() == order.getUnitPrice()" },
+    { "expression": "!(result < 0 && order.getQuantity() >= 0 && order.getUnitPrice() >= 0)" }
+  ]
+}
+===== END EXAMPLE 1 =====
+
+===== EXAMPLE 2 =====
+PROGRAM POINT: Example2 [METHOD_EXIT]
+
+In-scope names:
+- card : String
+- expiry : String
+- result : boolean
+
+===== PROGRAM CONTEXT =====
+[Method Implementation]
+public boolean valid(String card, String expiry) {
+  if (card == null || expiry == null) return false;
+  return card.length() == 16 && expiry.length() == 5 && expiry.charAt(2) == '/';
+}
+===========================
+
+Expected Output:
+{
+  "invariants": [
+    { "expression": "!result || (card != null && expiry != null)" },
+    { "expression": "!result || (card.length() == 16 && expiry.length() == 5 && expiry.charAt(2) == '/')" }
+  ]
+}
+===== END EXAMPLE 2 =====
+
+
+----- USER -----
+PROGRAM POINT: org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#updateColumnsToIndexWithColStats(List<String>):void [METHOD_EXIT]
+
+This program point represents the state immediately BEFORE the method returns.
+Parameters, object state, and 'result' (if non-void) may be referenced.
+
+In-scope names:
+- columnsToIndex : List<String>
+
+Note:
+- These are base variables.
+- Expressions derived from them (e.g., field accesses and method calls) are allowed if valid at this program point.
+
+Constraints specific to this program point:
+- Single-line Java boolean expressions only.
+- Method calls are allowed and encouraged if callable using listed names.
+- Method calls may belong to the JDK or the project codebase.
+- Field accesses (e.g., obj.field) are allowed if accessible using listed names.
+- Do not invent methods or fields that are not available at this program point.
+- Add null checks ONLY when required for safe evaluation.
+- Do not use non-Java logical operators such as ==> or ⇒.
+- Logical implication (A ⇒ B) must be expressed as (!A || B) using standard Java boolean operators.
+- Prefer pure predicate-style method calls.
+- Avoid redundant or trivially true expressions.
+- Do NOT generate tautologies or self-comparisons (e.g., x == x, obj.method() == obj.method()).
+- Avoid semantically duplicate invariants that differ only by operand order or equivalent comparison form (e.g., a == b vs b == a, a <= b vs b >= a).
+- Do not focus solely on nullness-related invariants.
+- Prioritize invariants that capture meaningful relationships among the in-scope names and reflect the behavior of the method at this program point.
+
+===== PROGRAM CONTEXT =====
+Consider the following context when generating invariants.
+[Method Implementation]
+@Override
+  protected void updateColumnsToIndexWithColStats(List<String> columnsToIndex) {
+    // no op. HUDI-8801 to fix.
+  }
+
+[Enclosing Class Documentation]
+[Class] JavaHoodieBackedTableMetadataWriter
+
+[Method] create(StorageConfiguration<?>, HoodieWriteConfig, HoodieEngineContext, Option<String>) : HoodieTableMetadataWriter
+
+[Method] create(StorageConfiguration<?>, HoodieWriteConfig, HoodieFailedWritesCleaningPolicy, HoodieEngineContext, Option<String>) : HoodieTableMetadataWriter
+
+[Method] initRegistry() : void
+
+[Method] updateColumnsToIndexWithColStats(List<String>) : void
+
+[Method] commit(String, Map<String, HoodieData<HoodieRecord>>) : void
+
+[Method] convertHoodieDataToEngineSpecificData(HoodieData<HoodieRecord>) : List<HoodieRecord>
+
+[Method] convertEngineSpecificDataToHoodieData(List<WriteStatus>) : HoodieData<WriteStatus>
+
+[Method] bulkCommit(String, String, HoodieData<HoodieRecord>, MetadataTableFileGroupIndexParser) : void
+
+[Method] bulkInsertAndCommit(BaseHoodieWriteClient<?, List<HoodieRecord>, ?, List<WriteStatus>>, String, List<HoodieRecord>, Option<BulkInsertPartitioner>) : void
+
+[Method] upsertAndCommit(BaseHoodieWriteClient<?, List<HoodieRecord>, ?, List<WriteStatus>>, String, List<HoodieRecord>) : void
+
+[Method] upsertAndCommit(BaseHoodieWriteClient<?, List<HoodieRecord>, ?, List<WriteStatus>>, String, List<HoodieRecord>, List<HoodieFileGroupId>) : void
+
+[Method] initializeWriteClient() : BaseHoodieWriteClient<?,List<HoodieRecord>,?,List<WriteStatus>>
+
+[Method] deletePartitions(String, List<MetadataPartitionType>) : void
+
+[Method] preWrite(String) : void
+
+[Method] getExpressionIndexRecords(List<Pair<String, Pair<String, Long>>>, HoodieIndexDefinition, HoodieTableMetaClient, int, HoodieSchema, HoodieSchema, StorageConfiguration<?>, String) : HoodieData<HoodieRecord>
+
+[Method] getEngineType() : EngineType
+===========================
+
+Generate up to 5 candidate invariants that are valid at this program point.
+Return ONLY the JSON.
+
+========================
+
+>>> [LM phase] finished at 2026-10-02 19:25:54.272 (elapsed 2.532s)
+==== DRY RUN: LLM prompt token summary (nothing was sent) ====
+model / tokenizer       : gpt-4.1-mini / o200k_base
+program points in scope : 426
+prompts built           : 426  (METHOD_ENTRY 213, METHOD_EXIT 213)
+distinct prompts        : 426  (identical system+user)
+system-prompt tokens    : 184884
+user-prompt tokens      : 380923
+chat framing tokens     : 4686  (11 per prompt)
+TOTAL input tokens      : 570493
+  of distinct prompts   : 570493
+per prompt (input)      : min 875 | mean 1339 | median 1347 | p90 1726 | p99 1888 | max 2275
+  METHOD_ENTRY          : 213 prompts, 273337 tokens, mean 1283
+  METHOD_EXIT           : 213 prompts, 297156 tokens, mean 1395
+cassettes               : /project/mjk76/ea442/promptstudy/daikonplusplus/src/test/cassettes
+  already recorded      : 426 prompts, 570493 tokens
+  NOT recorded (to send): 0 prompts (0 distinct), 0 tokens (distinct)
+output tokens (recorded): 101514  (426 recorded responses, mean 238)
+TOTAL output tokens     : 101514
+COST (USD)              : input $0.23 (at $0.4/1M) + output $0.16 (at $1.6/1M) = $0.39
+  per program point     : $0.000917
+largest prompts:
+      2275  METHOD_EXIT  org.apache.hudi.table.action.commit.JavaUpsertPartitioner#assignInserts(WorkloadProfile,HoodieEngineContext):void
+      2222  METHOD_ENTRY org.apache.hudi.table.action.commit.JavaUpsertPartitioner#assignInserts(WorkloadProfile,HoodieEngineContext):void
+      1980  METHOD_EXIT  org.apache.hudi.table.HoodieJavaCopyOnWriteTable#getUpdateHandle(String,String,String,Map<String, HoodieRecord<T>>,HoodieBaseFile):HoodieMergeHandle
+      1890  METHOD_EXIT  org.apache.hudi.table.HoodieJavaCopyOnWriteTable#bulkInsertPrepped(HoodieEngineContext,String,List<HoodieRecord<T>>,Option<BulkInsertPartitioner>):HoodieWriteMetadata<List<WriteStatus>>
+      1888  METHOD_EXIT  org.apache.hudi.table.HoodieJavaCopyOnWriteTable#handleUpdate(String,String,String,Map<String, HoodieRecord<T>>,HoodieBaseFile):Iterator<List<WriteStatus>>
+      1878  METHOD_EXIT  org.apache.hudi.table.HoodieJavaCopyOnWriteTable#bulkInsert(HoodieEngineContext,String,List<HoodieRecord<T>>,Option<BulkInsertPartitioner>):HoodieWriteMetadata<List<WriteStatus>>
+      1874  METHOD_EXIT  org.apache.hudi.table.HoodieJavaCopyOnWriteTable#scheduleRollback(HoodieEngineContext,String,HoodieInstant,boolean,boolean,boolean):Option<HoodieRollbackPlan>
+      1859  METHOD_EXIT  org.apache.hudi.table.HoodieJavaCopyOnWriteTable#handleInsert(String,String,String,Map<String, HoodieRecord<?>>):Iterator<List<WriteStatus>>
+      1859  METHOD_ENTRY org.apache.hudi.table.HoodieJavaCopyOnWriteTable#getUpdateHandle(String,String,String,Map<String, HoodieRecord<T>>,HoodieBaseFile):HoodieMergeHandle
+      1854  METHOD_EXIT  org.apache.hudi.table.HoodieJavaCopyOnWriteTable#upsertPrepped(HoodieEngineContext,String,List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>
+not included: structured-output JSON schema sent with each request (input side)
+==============================================================
+>>> Per-prompt token counts: /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/hudi/daikonpp_dry_run_tokens.tsv
+>>> LLM DRY RUN finished; injection, compilation and tests skipped.
+>>> Done.

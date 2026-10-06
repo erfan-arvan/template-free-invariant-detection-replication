@@ -1,0 +1,8 @@
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOfRange(Arrays.java:3822)
+	at java.base/java.lang.StringLatin1.newString(StringLatin1.java:769)
+	at java.base/java.lang.StringBuilder.toString(StringBuilder.java:453)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:365)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:396)
+	at tool.IOExamplesExtractor.readBlocks(IOExamplesExtractor.java:139)
+	at tool.IOExamplesExtractor.main(IOExamplesExtractor.java:64)

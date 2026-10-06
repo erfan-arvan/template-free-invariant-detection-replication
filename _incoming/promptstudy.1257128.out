@@ -1,0 +1,218 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/23.0.2/bin/java
+MVN: /scratch/mjk76/ea442/apache-maven-3.9.9/bin/mvn
+######################################
+PROMPT STUDY STARTED
+Start time: 2026-09-10 16:08:58 EDT
+######################################
+>>> Building Daikon++ (once)
+======================================
+>>> STRATEGY: cot
+>>> Start time: 2026-09-10 16:09:41 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: apollo
+>>> Start time: 2026-09-10 16:09:41 EDT
+--------------------------------------
+>>> Finished apollo (strategy=cot)
+>>> Finish time: 2026-09-10 16:12:44 EDT
+>>> Duration: 00h:03m:03s
+>>> Duration in seconds: 183
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/cot/apollo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/cot/apollo/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: dubbo
+>>> Start time: 2026-09-10 16:12:44 EDT
+--------------------------------------
+>>> Finished dubbo (strategy=cot)
+>>> Finish time: 2026-09-10 16:26:21 EDT
+>>> Duration: 00h:13m:37s
+>>> Duration in seconds: 817
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/cot/dubbo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/cot/dubbo/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: netty
+>>> Start time: 2026-09-10 16:26:21 EDT
+--------------------------------------
+>>> Finished netty (strategy=cot)
+>>> Finish time: 2026-09-10 17:31:03 EDT
+>>> Duration: 01h:04m:42s
+>>> Duration in seconds: 3882
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/cot/netty/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/cot/netty/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: springReal
+>>> Start time: 2026-09-10 17:31:03 EDT
+--------------------------------------
+>>> Finished springReal (strategy=cot)
+>>> Finish time: 2026-09-10 19:28:15 EDT
+>>> Duration: 01h:57m:12s
+>>> Duration in seconds: 7032
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/cot/springReal/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/cot/springReal/daikonpp_registry.jsonl
+======================================
+DONE strategy: cot
+Finish time: 2026-09-10 19:28:15 EDT
+Duration: 03h:18m:34s
+Duration in seconds: 11914
+Results in: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/cot
+======================================
+======================================
+>>> STRATEGY: stepwise
+>>> Start time: 2026-09-10 19:28:15 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: apollo
+>>> Start time: 2026-09-10 19:28:15 EDT
+--------------------------------------
+>>> Finished apollo (strategy=stepwise)
+>>> Finish time: 2026-09-10 19:30:34 EDT
+>>> Duration: 00h:02m:19s
+>>> Duration in seconds: 139
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/stepwise/apollo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/stepwise/apollo/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: dubbo
+>>> Start time: 2026-09-10 19:30:34 EDT
+--------------------------------------
+>>> Finished dubbo (strategy=stepwise)
+>>> Finish time: 2026-09-10 19:45:01 EDT
+>>> Duration: 00h:14m:27s
+>>> Duration in seconds: 867
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/stepwise/dubbo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/stepwise/dubbo/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: netty
+>>> Start time: 2026-09-10 19:45:01 EDT
+--------------------------------------
+>>> Finished netty (strategy=stepwise)
+>>> Finish time: 2026-09-10 20:33:24 EDT
+>>> Duration: 00h:48m:23s
+>>> Duration in seconds: 2903
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/stepwise/netty/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/stepwise/netty/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: springReal
+>>> Start time: 2026-09-10 20:33:24 EDT
+--------------------------------------
+>>> Finished springReal (strategy=stepwise)
+>>> Finish time: 2026-09-10 22:14:09 EDT
+>>> Duration: 01h:40m:45s
+>>> Duration in seconds: 6045
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/stepwise/springReal/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/stepwise/springReal/daikonpp_registry.jsonl
+======================================
+DONE strategy: stepwise
+Finish time: 2026-09-10 22:14:09 EDT
+Duration: 02h:45m:54s
+Duration in seconds: 9954
+Results in: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/stepwise
+======================================
+======================================
+>>> STRATEGY: self_refine
+>>> Start time: 2026-09-10 22:14:09 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: apollo
+>>> Start time: 2026-09-10 22:14:09 EDT
+--------------------------------------
+>>> Finished apollo (strategy=self_refine)
+>>> Finish time: 2026-09-10 22:16:35 EDT
+>>> Duration: 00h:02m:26s
+>>> Duration in seconds: 146
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/self_refine/apollo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/self_refine/apollo/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: dubbo
+>>> Start time: 2026-09-10 22:16:35 EDT
+--------------------------------------
+>>> Finished dubbo (strategy=self_refine)
+>>> Finish time: 2026-09-10 22:28:58 EDT
+>>> Duration: 00h:12m:23s
+>>> Duration in seconds: 743
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/self_refine/dubbo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/self_refine/dubbo/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: netty
+>>> Start time: 2026-09-10 22:28:58 EDT
+--------------------------------------
+>>> Finished netty (strategy=self_refine)
+>>> Finish time: 2026-09-10 23:13:06 EDT
+>>> Duration: 00h:44m:08s
+>>> Duration in seconds: 2648
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/self_refine/netty/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/self_refine/netty/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: springReal
+>>> Start time: 2026-09-10 23:13:06 EDT
+--------------------------------------
+>>> Finished springReal (strategy=self_refine)
+>>> Finish time: 2026-09-11 00:35:03 EDT
+>>> Duration: 01h:21m:57s
+>>> Duration in seconds: 4917
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/self_refine/springReal/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/self_refine/springReal/daikonpp_registry.jsonl
+======================================
+DONE strategy: self_refine
+Finish time: 2026-09-11 00:35:03 EDT
+Duration: 02h:20m:54s
+Duration in seconds: 8454
+Results in: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/self_refine
+======================================
+======================================
+>>> STRATEGY: multi_sample
+>>> Start time: 2026-09-11 00:35:03 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: apollo
+>>> Start time: 2026-09-11 00:35:03 EDT
+--------------------------------------
+>>> Finished apollo (strategy=multi_sample)
+>>> Finish time: 2026-09-11 00:41:54 EDT
+>>> Duration: 00h:06m:51s
+>>> Duration in seconds: 411
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/multi_sample/apollo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/multi_sample/apollo/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: dubbo
+>>> Start time: 2026-09-11 00:41:54 EDT
+--------------------------------------
+>>> Finished dubbo (strategy=multi_sample)
+>>> Finish time: 2026-09-11 00:53:31 EDT
+>>> Duration: 00h:11m:37s
+>>> Duration in seconds: 697
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/multi_sample/dubbo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/multi_sample/dubbo/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: netty
+>>> Start time: 2026-09-11 00:53:31 EDT
+--------------------------------------
+>>> Finished netty (strategy=multi_sample)
+>>> Finish time: 2026-09-11 02:13:20 EDT
+>>> Duration: 01h:19m:49s
+>>> Duration in seconds: 4789
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/multi_sample/netty/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/multi_sample/netty/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: springReal
+>>> Start time: 2026-09-11 02:13:20 EDT
+--------------------------------------
+>>> Finished springReal (strategy=multi_sample)
+>>> Finish time: 2026-09-11 04:35:30 EDT
+>>> Duration: 02h:22m:10s
+>>> Duration in seconds: 8530
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/multi_sample/springReal/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/multi_sample/springReal/daikonpp_registry.jsonl
+======================================
+DONE strategy: multi_sample
+Finish time: 2026-09-11 04:35:31 EDT
+Duration: 04h:00m:28s
+Duration in seconds: 14428
+Results in: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/multi_sample
+======================================
+######################################
+ALL STRATEGIES DONE
+Start time: 2026-09-10 16:08:58 EDT
+Finish time: 2026-09-11 04:35:31 EDT
+Total duration: 12h:26m:33s
+Total duration in seconds: 44793
+######################################

@@ -1,0 +1,16 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+[io-examples-tool] dtrace=/scratch/mjk76/ea442/promptstudy/spring-s5-chicory-out/dtrace.gz
+[io-examples-tool] src=/scratch/mjk76/ea442/promptstudy/spring-s5-chicory/spring-core/src/main/java
+[io-examples-tool] out=/scratch/mjk76/ea442/promptstudy/spring-s5_io_examples.json
+[io-examples-tool] ENTER records=43396
+[io-examples-tool] paired ENTER/EXIT examples=42161
+[io-examples-tool] truncated lines=0
+[io-examples-tool] distinct program points=10015
+[io-examples-tool] scanning source tree to build forward index...
+[io-examples-tool] forward index built: 4001 declared members
+[io-examples-tool] resolved program points=1749
+[io-examples-tool] unresolved program points=8266
+[io-examples-tool] wrote /scratch/mjk76/ea442/promptstudy/spring-s5_io_examples.json
+[TIMING] io-examples-tool extract (spring-s5) 6s  (00:50:18 -> 00:50:24)
+>>> Wrote /scratch/mjk76/ea442/promptstudy/spring-s5_io_examples.json
+166098 /scratch/mjk76/ea442/promptstudy/spring-s5_io_examples.json

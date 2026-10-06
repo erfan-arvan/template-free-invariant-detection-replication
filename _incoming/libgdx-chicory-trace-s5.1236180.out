@@ -1,0 +1,90 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+>>> gradle compileJava (warm build, no agent)
+Downloading https://services.gradle.org/distributions/gradle-8.14.3-bin.zip
+.............10%.............20%.............30%.............40%.............50%.............60%.............70%.............80%.............90%..............100%
+
+Welcome to Gradle 8.14.3!
+
+Here are the highlights of this release:
+ - Java 24 support
+ - GraalVM Native Image toolchain selection
+ - Enhancements to test reporting
+ - Build Authoring improvements
+
+For more details see https://docs.gradle.org/8.14.3/release-notes.html
+
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :tests:gdx-tests-android
+==============================================================================================
+sdk.dir/ANDROID_HOME/ANDROID_SDK_ROOT are unset, gdx-tests-android will not be properly setup.
+==============================================================================================
+
+> Task :clean
+> Task :backends:clean
+> Task :extensions:clean
+> Task :gdx:clean
+> Task :tests:clean
+> Task :backends:gdx-backend-android:clean
+> Task :backends:gdx-backend-gwt:clean
+> Task :backends:gdx-backend-headless:clean
+> Task :backends:gdx-backend-lwjgl:clean
+> Task :backends:gdx-backend-lwjgl3:clean
+> Task :backends:gdx-backend-robovm:clean
+> Task :backends:gdx-backend-robovm-metalangle:clean
+> Task :extensions:gdx-box2d-parent:clean
+> Task :extensions:gdx-bullet:clean
+> Task :extensions:gdx-freetype:clean
+> Task :extensions:gdx-lwjgl3-angle:clean
+> Task :extensions:gdx-tools:clean
+> Task :tests:gdx-tests:clean
+> Task :tests:gdx-tests-android:clean
+> Task :tests:gdx-tests-gwt:clean
+> Task :tests:gdx-tests-iosrobovm:clean
+> Task :tests:gdx-tests-lwjgl:clean
+> Task :tests:gdx-tests-lwjgl3:clean
+> Task :extensions:gdx-box2d-parent:gdx-box2d:clean
+> Task :extensions:gdx-box2d-parent:gdx-box2d-gwt:clean
+
+> Task :gdx:compileJava
+
+[Incubating] Problems report is available at: file:///mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 56s
+26 actionable tasks: 26 executed
+>>> gradle test (javaagent attached via init script) -- this is the actual Chicory-instrumented run
+Initialized native services in: /scratch/mjk76/ea442/promptstudy/libgdx-s5-gradle-home/native
+Initialized jansi services in: /scratch/mjk76/ea442/promptstudy/libgdx-s5-gradle-home/native
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Starting process 'Gradle build daemon'. Working directory: /scratch/mjk76/ea442/promptstudy/libgdx-s5-gradle-home/daemon/8.14.3 Command: /mmfs1/apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-opens=java.base/java.nio.charset=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.xml/javax.xml.namespace=ALL-UNNAMED -Xms128m -Xmx2000m -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -cp /scratch/mjk76/ea442/promptstudy/libgdx-s5-gradle-home/wrapper/dists/gradle-8.14.3-bin/cv11ve7ro1n3o1j4so8xd9n66/gradle-8.14.3/lib/gradle-daemon-main-8.14.3.jar -javaagent:/scratch/mjk76/ea442/promptstudy/libgdx-s5-gradle-home/wrapper/dists/gradle-8.14.3-bin/cv11ve7ro1n3o1j4so8xd9n66/gradle-8.14.3/lib/agents/gradle-instrumentation-agent-8.14.3.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 8.14.3
+Successfully started process 'Gradle build daemon'
+An attempt to start the daemon took 0.991 secs.
+The client will now receive all logging from the daemon (pid: 1624714). The daemon log file: /scratch/mjk76/ea442/promptstudy/libgdx-s5-gradle-home/daemon/8.14.3/daemon-1624714.out.log
+Daemon will be stopped at the end of the build 
+Using 8 worker leases.
+Received JVM installation metadata from '/mmfs1/apps/easybuild/el9_5.x86_64/software/Java/17.0.15': {JAVA_HOME=/mmfs1/apps/easybuild/el9_5.x86_64/software/Java/17.0.15, JAVA_VERSION=17.0.15, JAVA_VENDOR=Eclipse Adoptium, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=17.0.15+6, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=17.0.15+6, VM_VENDOR=Eclipse Adoptium, OS_ARCH=amd64}
+Watching the file system is configured to be enabled if available
+Not watching /mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory since the file system is not supported
+File system watching is active
+Caching disabled for Groovy DSL script compilation (cp_init) because:
+  Build cache is disabled
+  Not worth caching.
+Compiling initialization script '/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/daikon-agent-init.gradle' using SubsetScriptTransformer.
+
+[Incubating] Problems report is available at: file:///mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/build/reports/problems/problems-report.html
+Some of the file system contents retained in the virtual file system are on file systems that Gradle doesn't support watching. The relevant state was discarded to ensure changes to these locations are properly detected. You can override this by explicitly enabling file system watching.
+No Gradle daemons are running.
+>>> Chicory trace output directory:
+total 17
+drwxr-xr-x+  2 ea442 ea442 4096 Sep  7 12:46 .
+drwxr-xr-x+ 28 ea442 ea442 8192 Sep  7 12:46 ..
+>>> Combining dtrace files...
+>>> Combined trace: /scratch/mjk76/ea442/promptstudy/libgdx-s5.dtrace
+0 /scratch/mjk76/ea442/promptstudy/libgdx-s5.dtrace

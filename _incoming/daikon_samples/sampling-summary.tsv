@@ -1,0 +1,7 @@
+project	total_methods	sampled_methods	status
+apollo	1209	10	OK
+hudi	7502	10	OK
+spring	835	10	OK
+libgdx	1097	10	OK
+dubbo	1570	10	OK
+netty	2711	10	OK

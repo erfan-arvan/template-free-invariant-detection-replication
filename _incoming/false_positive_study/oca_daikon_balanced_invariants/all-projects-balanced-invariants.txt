@@ -1,0 +1,3709 @@
+==============================================================================================================
+PROJECT: apollo
+SAMPLE INDEX: 1/10
+
+OCA METHOD: com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceRegistryClearApplicationRunner#run(ApplicationArguments):void
+DAIKON METHOD: com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceRegistryClearApplicationRunner.run(org.springframework.boot.ApplicationArguments)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 5
+DAIKON ORIGINAL INVARIANT COUNT: 7
+BALANCED COUNT PER TOOL: 5
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (5)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: args.getSourceArgs() != null
+ID: 4c039444-35bf-4e2e-a3ab-a8027e43f5f8
+RATIONALE: The source arguments array should not be null to reflect typical Spring Boot ApplicationArguments behavior.
+SOURCE FILE: com/ctrip/framework/apollo/biz/registry/configuration/support/ApolloServiceRegistryClearApplicationRunner.java
+
+OCA 2/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: args.getOptionNames() != null
+ID: 98b66b55-4916-4e34-bf60-1a94179bb065
+RATIONALE: The option names collection inside ApplicationArguments is expected to be non-null.
+SOURCE FILE: com/ctrip/framework/apollo/biz/registry/configuration/support/ApolloServiceRegistryClearApplicationRunner.java
+
+OCA 3/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: !args.getOptionNames().isEmpty() || args.getNonOptionArgs().isEmpty()
+ID: e1975d33-9e05-4bfd-9c1e-75e034aa630b
+RATIONALE: Either option names are not empty or non-option arguments can be empty or non-empty; this captures possible typical states of ApplicationArguments.
+SOURCE FILE: com/ctrip/framework/apollo/biz/registry/configuration/support/ApolloServiceRegistryClearApplicationRunner.java
+
+OCA 4/5
+PROGRAM POINT: METHOD_EXIT
+EXPR: args != null
+ID: e08d4873-745b-4810-8d14-a8e7c0912622
+RATIONALE: The method run receives ApplicationArguments which is expected to be non-null when method exits.
+SOURCE FILE: com/ctrip/framework/apollo/biz/registry/configuration/support/ApolloServiceRegistryClearApplicationRunner.java
+
+OCA 5/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: args != null
+ID: 96a55798-54fa-484e-8ff4-335eb939852e
+RATIONALE: The method expects a non-null ApplicationArguments object as its parameter.
+SOURCE FILE: com/ctrip/framework/apollo/biz/registry/configuration/support/ApolloServiceRegistryClearApplicationRunner.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (5)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/5
+PROGRAM POINT: com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceRegistryClearApplicationRunner.run(org.springframework.boot.ApplicationArguments):::ENTER
+EXPR: args.getClass().getName() == org.springframework.boot.DefaultApplicationArguments.class
+
+DAIKON 2/5
+PROGRAM POINT: com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceRegistryClearApplicationRunner.run(org.springframework.boot.ApplicationArguments):::EXIT
+EXPR: com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceRegistryClearApplicationRunner.log.getClass().getName() == orig(com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceRegistryClearApplicationRunner.log.getClass().getName())
+
+DAIKON 3/5
+PROGRAM POINT: com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceRegistryClearApplicationRunner.run(org.springframework.boot.ApplicationArguments):::EXIT
+EXPR: com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceRegistryClearApplicationRunner.log == orig(com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceRegistryClearApplicationRunner.log)
+
+DAIKON 4/5
+PROGRAM POINT: com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceRegistryClearApplicationRunner.run(org.springframework.boot.ApplicationArguments):::EXIT
+EXPR: this.instanceClearScheduledExecutorService == orig(this.instanceClearScheduledExecutorService)
+
+DAIKON 5/5
+PROGRAM POINT: com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceRegistryClearApplicationRunner.run(org.springframework.boot.ApplicationArguments):::EXIT
+EXPR: this.instanceClearScheduledExecutorService.getClass().getName() == orig(this.instanceClearScheduledExecutorService.getClass().getName())
+
+
+==============================================================================================================
+PROJECT: apollo
+SAMPLE INDEX: 2/10
+
+OCA METHOD: com.ctrip.framework.apollo.biz.service.InstanceService#findActiveInstanceConfigsByReleaseKey(String,Pageable):Page<InstanceConfig>
+DAIKON METHOD: com.ctrip.framework.apollo.biz.service.InstanceService.findActiveInstanceConfigsByReleaseKey(java.lang.String, org.springframework.data.domain.Pageable)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 9
+DAIKON ORIGINAL INVARIANT COUNT: 17
+BALANCED COUNT PER TOOL: 9
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (9)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/9
+PROGRAM POINT: METHOD_ENTRY
+EXPR: releaseKey != null
+ID: bd35fff5-ec6a-4792-9078-122569b98217
+RATIONALE: releaseKey being non-null is likely required for repository query to find active instance configs.
+SOURCE FILE: com/ctrip/framework/apollo/biz/service/InstanceService.java
+
+OCA 2/9
+PROGRAM POINT: METHOD_EXIT
+EXPR: result != null
+ID: d70ecf27-2533-4cda-8b2f-4a9d4c41edfb
+RATIONALE: The method returns a Page instance and based on typical repository behavior, the result is expected to be non-null.
+SOURCE FILE: com/ctrip/framework/apollo/biz/service/InstanceService.java
+
+OCA 3/9
+PROGRAM POINT: METHOD_ENTRY
+EXPR: pageable.getPageSize() > 0
+ID: aa604c7d-a0cb-455c-9f22-3716fcdb2552
+RATIONALE: Pageable with zero or negative size would not make sense for querying pages.
+SOURCE FILE: com/ctrip/framework/apollo/biz/service/InstanceService.java
+
+OCA 4/9
+PROGRAM POINT: METHOD_EXIT
+EXPR: result.getPageable().equals(pageable)
+ID: 1ab338d4-390a-48f1-8920-22a43964a487
+RATIONALE: The returned Page object's Pageable should match the requested Pageable parameter.
+SOURCE FILE: com/ctrip/framework/apollo/biz/service/InstanceService.java
+
+OCA 5/9
+PROGRAM POINT: METHOD_ENTRY
+EXPR: releaseKey.length() > 0
+ID: a47ad589-884f-46fa-8247-617d42ac2883
+RATIONALE: Empty release key may not be valid or useful for querying active instance configs.
+SOURCE FILE: com/ctrip/framework/apollo/biz/service/InstanceService.java
+
+OCA 6/9
+PROGRAM POINT: METHOD_EXIT
+EXPR: result.getNumber() >= 0
+ID: 5740a4a3-7265-4dbf-989f-eba3b89a91ca
+RATIONALE: Page interface defines the current page number as non-negative.
+SOURCE FILE: com/ctrip/framework/apollo/biz/service/InstanceService.java
+
+OCA 7/9
+PROGRAM POINT: METHOD_ENTRY
+EXPR: pageable.getPageNumber() >= 0
+ID: 56d20d08-3d10-4a4e-8e12-2ec47057dac9
+RATIONALE: Page numbers are expected to start at zero; negative page number is invalid.
+SOURCE FILE: com/ctrip/framework/apollo/biz/service/InstanceService.java
+
+OCA 8/9
+PROGRAM POINT: METHOD_EXIT
+EXPR: result.getContent() != null
+ID: e7921cb3-8289-40e7-990c-d0e85e99f78a
+RATIONALE: The Page result returned by the repository call typically has a non-null content list.
+SOURCE FILE: com/ctrip/framework/apollo/biz/service/InstanceService.java
+
+OCA 9/9
+PROGRAM POINT: METHOD_ENTRY
+EXPR: pageable != null
+ID: 10c0d6e1-1394-499d-b9e4-32eac5197fa4
+RATIONALE: pageable parameter is needed to define paging for the query, must be non-null.
+SOURCE FILE: com/ctrip/framework/apollo/biz/service/InstanceService.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (9)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/9
+PROGRAM POINT: com.ctrip.framework.apollo.biz.service.InstanceService.findActiveInstanceConfigsByReleaseKey(java.lang.String, org.springframework.data.domain.Pageable):::ENTER
+EXPR: releaseKey has only one value
+
+DAIKON 2/9
+PROGRAM POINT: com.ctrip.framework.apollo.biz.service.InstanceService.findActiveInstanceConfigsByReleaseKey(java.lang.String, org.springframework.data.domain.Pageable):::EXIT
+EXPR: releaseKey.toString == "someReleaseKey"
+
+DAIKON 3/9
+PROGRAM POINT: com.ctrip.framework.apollo.biz.service.InstanceService.findActiveInstanceConfigsByReleaseKey(java.lang.String, org.springframework.data.domain.Pageable):::EXIT
+EXPR: this.instanceConfigRepository == orig(this.instanceConfigRepository)
+
+DAIKON 4/9
+PROGRAM POINT: com.ctrip.framework.apollo.biz.service.InstanceService.findActiveInstanceConfigsByReleaseKey(java.lang.String, org.springframework.data.domain.Pageable):::EXIT
+EXPR: this.instanceRepository == orig(this.instanceRepository)
+
+DAIKON 5/9
+PROGRAM POINT: com.ctrip.framework.apollo.biz.service.InstanceService.findActiveInstanceConfigsByReleaseKey(java.lang.String, org.springframework.data.domain.Pageable):::EXIT
+EXPR: return has only one value
+
+DAIKON 6/9
+PROGRAM POINT: com.ctrip.framework.apollo.biz.service.InstanceService.findActiveInstanceConfigsByReleaseKey(java.lang.String, org.springframework.data.domain.Pageable):::ENTER
+EXPR: this has only one value
+
+DAIKON 7/9
+PROGRAM POINT: com.ctrip.framework.apollo.biz.service.InstanceService.findActiveInstanceConfigsByReleaseKey(java.lang.String, org.springframework.data.domain.Pageable):::EXIT
+EXPR: this.instanceRepository.getClass().getName() == orig(this.instanceRepository.getClass().getName())
+
+DAIKON 8/9
+PROGRAM POINT: com.ctrip.framework.apollo.biz.service.InstanceService.findActiveInstanceConfigsByReleaseKey(java.lang.String, org.springframework.data.domain.Pageable):::ENTER
+EXPR: pageable.getClass().getName() == org.springframework.data.domain.PageRequest.class
+
+DAIKON 9/9
+PROGRAM POINT: com.ctrip.framework.apollo.biz.service.InstanceService.findActiveInstanceConfigsByReleaseKey(java.lang.String, org.springframework.data.domain.Pageable):::ENTER
+EXPR: pageable has only one value
+
+
+==============================================================================================================
+PROJECT: apollo
+SAMPLE INDEX: 3/10
+
+OCA METHOD: com.ctrip.framework.apollo.biz.entity.ReleaseHistory#getOperationContext():String
+DAIKON METHOD: com.ctrip.framework.apollo.biz.entity.ReleaseHistory.getOperationContext()
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 3
+DAIKON ORIGINAL INVARIANT COUNT: 65
+BALANCED COUNT PER TOOL: 3
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (3)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/3
+PROGRAM POINT: METHOD_EXIT
+EXPR: result == null || result.length() >= 0
+ID: db5d5725-88a1-414d-8062-f1eb1e61087b
+RATIONALE: Ensures that if result is not null, the length property holds as expected for strings.
+SOURCE FILE: com/ctrip/framework/apollo/biz/entity/ReleaseHistory.java
+
+OCA 2/3
+PROGRAM POINT: METHOD_EXIT
+EXPR: result == null || !result.isEmpty() || result.isEmpty()
+ID: a9d8edeb-07e4-48b8-865c-61f4c003077e
+RATIONALE: Trivially true string property, no contradiction but included for completeness.
+SOURCE FILE: com/ctrip/framework/apollo/biz/entity/ReleaseHistory.java
+
+OCA 3/3
+PROGRAM POINT: METHOD_EXIT
+EXPR: result == null || result.contains("")
+ID: d981f0ac-107f-453a-8b7e-f805616e70e7
+RATIONALE: Basic property of strings, confirming result is a valid string if non-null.
+SOURCE FILE: com/ctrip/framework/apollo/biz/entity/ReleaseHistory.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (3)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/3
+PROGRAM POINT: com.ctrip.framework.apollo.biz.entity.ReleaseHistory.getOperationContext():::EXIT
+EXPR: this.branchName.toString < return.toString
+
+DAIKON 2/3
+PROGRAM POINT: com.ctrip.framework.apollo.biz.entity.ReleaseHistory.getOperationContext():::EXIT
+EXPR: return != null
+
+DAIKON 3/3
+PROGRAM POINT: com.ctrip.framework.apollo.biz.entity.ReleaseHistory.getOperationContext():::EXIT
+EXPR: this.namespaceName == orig(this.namespaceName)
+
+
+==============================================================================================================
+PROJECT: apollo
+SAMPLE INDEX: 4/10
+
+OCA METHOD: com.ctrip.framework.apollo.biz.entity.Item#setLineNum(Integer):void
+DAIKON METHOD: com.ctrip.framework.apollo.biz.entity.Item.setLineNum(java.lang.Integer)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 3
+DAIKON ORIGINAL INVARIANT COUNT: 24
+BALANCED COUNT PER TOOL: 3
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (3)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/3
+PROGRAM POINT: METHOD_EXIT
+EXPR: lineNum == null || lineNum.compareTo(0) >= 0
+ID: 3b2511d2-4b9a-4998-b25c-0be294e886c4
+RATIONALE: Ensures lineNum represents a non-negative integer value at method exit, using compareTo.
+SOURCE FILE: com/ctrip/framework/apollo/biz/entity/Item.java
+
+OCA 2/3
+PROGRAM POINT: METHOD_ENTRY
+EXPR: lineNum == null || lineNum.intValue() >= 0
+ID: 910026ae-39e8-429f-87e9-2cc2259f2a76
+RATIONALE: Line number, if provided, should be non-negative.
+SOURCE FILE: com/ctrip/framework/apollo/biz/entity/Item.java
+
+OCA 3/3
+PROGRAM POINT: METHOD_EXIT
+EXPR: lineNum == null || lineNum.intValue() >= 0
+ID: 83b602a2-6fec-40ef-92bb-b53759764b74
+RATIONALE: The lineNum parameter, if set, likely corresponds to a valid non-negative line number.
+SOURCE FILE: com/ctrip/framework/apollo/biz/entity/Item.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (3)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/3
+PROGRAM POINT: com.ctrip.framework.apollo.biz.entity.Item.setLineNum(java.lang.Integer):::ENTER
+EXPR: this.key != null
+
+DAIKON 2/3
+PROGRAM POINT: com.ctrip.framework.apollo.biz.entity.Item.setLineNum(java.lang.Integer):::ENTER
+EXPR: this.dataChangeCreatedBy == null
+
+DAIKON 3/3
+PROGRAM POINT: com.ctrip.framework.apollo.biz.entity.Item.setLineNum(java.lang.Integer):::EXIT
+EXPR: this.lineNum == orig(lineNum)
+
+
+==============================================================================================================
+PROJECT: apollo
+SAMPLE INDEX: 5/10
+
+OCA METHOD: com.ctrip.framework.apollo.biz.service.ItemService#checkItemKeyLength(String):boolean
+DAIKON METHOD: com.ctrip.framework.apollo.biz.service.ItemService.checkItemKeyLength(java.lang.String)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 4
+DAIKON ORIGINAL INVARIANT COUNT: 92
+BALANCED COUNT PER TOOL: 4
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (4)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/4
+PROGRAM POINT: METHOD_ENTRY
+EXPR: key != null || key == null
+ID: 5048c8a8-fc7f-4778-a9eb-168e034eae36
+RATIONALE: This is trivially true and can be omitted; shown here for completeness.
+SOURCE FILE: com/ctrip/framework/apollo/biz/service/ItemService.java
+
+OCA 2/4
+PROGRAM POINT: METHOD_EXIT
+EXPR: result == true
+ID: c98d5a69-0e14-4921-9921-dffb60a4d03e
+RATIONALE: The method returns true unless it throws a BadRequestException when key is not empty and key.length() exceeds bizConfig.itemKeyLengthLimit().
+SOURCE FILE: com/ctrip/framework/apollo/biz/service/ItemService.java
+
+OCA 3/4
+PROGRAM POINT: METHOD_ENTRY
+EXPR: key == null || !key.isEmpty() || !key.isEmpty()
+ID: 04f67f03-a20e-4b38-bf4e-15365ddb67bf
+RATIONALE: Key can be null or empty to satisfy the initial check
+SOURCE FILE: com/ctrip/framework/apollo/biz/service/ItemService.java
+
+OCA 4/4
+PROGRAM POINT: METHOD_ENTRY
+EXPR: key == null || key.length() >= 0
+ID: e04b29c0-b664-4a92-8ad1-19b67115f9fe
+RATIONALE: String length is always non-negative, key may be null so need null check.
+SOURCE FILE: com/ctrip/framework/apollo/biz/service/ItemService.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (4)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/4
+PROGRAM POINT: com.ctrip.framework.apollo.biz.service.ItemService.checkItemKeyLength(java.lang.String):::EXIT
+EXPR: com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger)
+
+DAIKON 2/4
+PROGRAM POINT: com.ctrip.framework.apollo.biz.service.ItemService.checkItemKeyLength(java.lang.String):::EXIT
+EXPR: this.itemRepository == orig(this.itemRepository)
+
+DAIKON 3/4
+PROGRAM POINT: com.ctrip.framework.apollo.biz.service.ItemService.checkItemKeyLength(java.lang.String):::EXIT
+EXPR: com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger.getClass().getName() == com.ctrip.framework.apollo.common.config.RefreshableConfig.logger.getClass().getName()
+
+DAIKON 4/4
+PROGRAM POINT: com.ctrip.framework.apollo.biz.service.ItemService.checkItemKeyLength(java.lang.String):::EXIT
+EXPR: this.bizConfig == orig(this.bizConfig)
+
+
+==============================================================================================================
+PROJECT: apollo
+SAMPLE INDEX: 6/10
+
+OCA METHOD: com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceDiscoveryProperties#getHealthCheckIntervalInSecond():long
+DAIKON METHOD: com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceDiscoveryProperties.getHealthCheckIntervalInSecond()
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 1
+DAIKON ORIGINAL INVARIANT COUNT: 6
+BALANCED COUNT PER TOOL: 1
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (1)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/1
+PROGRAM POINT: METHOD_EXIT
+EXPR: result >= 0L
+ID: 3dc5f883-5419-4773-9d52-a579a771b1a3
+RATIONALE: Health check interval being a time duration likely cannot be negative.
+SOURCE FILE: com/ctrip/framework/apollo/biz/registry/configuration/support/ApolloServiceDiscoveryProperties.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (1)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/1
+PROGRAM POINT: com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceDiscoveryProperties.getHealthCheckIntervalInSecond():::EXIT
+EXPR: this.healthCheckIntervalInSecond == return
+
+
+==============================================================================================================
+PROJECT: apollo
+SAMPLE INDEX: 7/10
+
+OCA METHOD: com.ctrip.framework.apollo.biz.registry.configuration.ApolloServiceDiscoveryAutoConfiguration#wrapMemoryCache(DatabaseDiscoveryClient):DatabaseDiscoveryClient
+DAIKON METHOD: com.ctrip.framework.apollo.biz.registry.configuration.ApolloServiceDiscoveryAutoConfiguration.wrapMemoryCache(com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClient)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 3
+DAIKON ORIGINAL INVARIANT COUNT: 4
+BALANCED COUNT PER TOOL: 3
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (3)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/3
+PROGRAM POINT: METHOD_EXIT
+EXPR: result != null
+ID: fe88bc9b-af25-41ad-9e7a-6299ba28a0c3
+RATIONALE: The method creates and returns a new decorator, so result should never be null.
+SOURCE FILE: com/ctrip/framework/apollo/biz/registry/configuration/ApolloServiceDiscoveryAutoConfiguration.java
+
+OCA 2/3
+PROGRAM POINT: METHOD_ENTRY
+EXPR: discoveryClient != null
+ID: 1b8716e1-d124-41f1-bab5-713cfda795de
+RATIONALE: The method wraps the given discoveryClient, so it should not be null.
+SOURCE FILE: com/ctrip/framework/apollo/biz/registry/configuration/ApolloServiceDiscoveryAutoConfiguration.java
+
+OCA 3/3
+PROGRAM POINT: METHOD_EXIT
+EXPR: result != discoveryClient
+ID: ef2a9841-7b93-4a16-9171-4e626bee2c4b
+RATIONALE: The method returns a new wrapped object distinct from the original client.
+SOURCE FILE: com/ctrip/framework/apollo/biz/registry/configuration/ApolloServiceDiscoveryAutoConfiguration.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (3)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/3
+PROGRAM POINT: com.ctrip.framework.apollo.biz.registry.configuration.ApolloServiceDiscoveryAutoConfiguration.wrapMemoryCache(com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClient):::ENTER
+EXPR: discoveryClient.getClass().getName() == com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClientAlwaysAddSelfInstanceDecoratorImpl.class
+
+DAIKON 2/3
+PROGRAM POINT: com.ctrip.framework.apollo.biz.registry.configuration.ApolloServiceDiscoveryAutoConfiguration.wrapMemoryCache(com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClient):::EXIT
+EXPR: return.getClass().getName() == com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClientMemoryCacheDecoratorImpl.class
+
+DAIKON 3/3
+PROGRAM POINT: com.ctrip.framework.apollo.biz.registry.configuration.ApolloServiceDiscoveryAutoConfiguration.wrapMemoryCache(com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClient):::EXIT
+EXPR: return has only one value
+
+
+==============================================================================================================
+PROJECT: apollo
+SAMPLE INDEX: 8/10
+
+OCA METHOD: com.ctrip.framework.apollo.biz.service.ItemSetService#updateSet(String,String,String,ItemChangeSets):ItemChangeSets
+DAIKON METHOD: com.ctrip.framework.apollo.biz.service.ItemSetService.updateSet(java.lang.String, java.lang.String, java.lang.String, com.ctrip.framework.apollo.common.dto.ItemChangeSets)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 5
+DAIKON ORIGINAL INVARIANT COUNT: 165
+BALANCED COUNT PER TOOL: 5
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (5)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: clusterName != null
+ID: 756d9a89-ebf5-4ff9-ba0a-132afeef6c21
+RATIONALE: ClusterName is a required identifier to lookup namespaces and likely non-null.
+SOURCE FILE: com/ctrip/framework/apollo/biz/service/ItemSetService.java
+
+OCA 2/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: appId != null
+ID: 6ece2e0c-3608-481d-8cbf-d2540901a932
+RATIONALE: AppId is a required identifier to lookup namespaces and likely non-null.
+SOURCE FILE: com/ctrip/framework/apollo/biz/service/ItemSetService.java
+
+OCA 3/5
+PROGRAM POINT: METHOD_EXIT
+EXPR: changeSet != null && result == changeSet
+ID: d54c1616-5e6f-408b-9ad3-6ce8d66f1dcb
+RATIONALE: The method always returns the same 'changeSet' instance passed as a parameter.
+SOURCE FILE: com/ctrip/framework/apollo/biz/service/ItemSetService.java
+
+OCA 4/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: namespaceName != null
+ID: 0f9f6b8f-c71c-4f6b-8bfb-44e20a68a86b
+RATIONALE: NamespaceName is a required identifier to lookup namespaces and likely non-null.
+SOURCE FILE: com/ctrip/framework/apollo/biz/service/ItemSetService.java
+
+OCA 5/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: changeSet != null && changeSet.getCreateItems() != null && changeSet.getDeleteItems() != null && changeSet.getUpdateItems() != null
+ID: 21c91e04-c54c-43d6-b618-d994d7cc34f5
+RATIONALE: ChangeSet must be non-null and its create, update, and delete item lists should be non-null collections.
+SOURCE FILE: com/ctrip/framework/apollo/biz/service/ItemSetService.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (5)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/5
+PROGRAM POINT: com.ctrip.framework.apollo.biz.service.ItemSetService.updateSet(java.lang.String, java.lang.String, java.lang.String, com.ctrip.framework.apollo.common.dto.ItemChangeSets):::EXIT
+EXPR: this.bizConfig.splitter == null
+
+DAIKON 2/5
+PROGRAM POINT: com.ctrip.framework.apollo.biz.service.ItemSetService.updateSet(java.lang.String, java.lang.String, java.lang.String, com.ctrip.framework.apollo.common.dto.ItemChangeSets):::EXIT
+EXPR: this.itemService.bizConfig == orig(this.itemService.bizConfig)
+
+DAIKON 3/5
+PROGRAM POINT: com.ctrip.framework.apollo.biz.service.ItemSetService.updateSet(java.lang.String, java.lang.String, java.lang.String, com.ctrip.framework.apollo.common.dto.ItemChangeSets):::EXIT
+EXPR: this.bizConfig.propertySources == orig(this.bizConfig.propertySources)
+
+DAIKON 4/5
+PROGRAM POINT: com.ctrip.framework.apollo.biz.service.ItemSetService.updateSet(java.lang.String, java.lang.String, java.lang.String, com.ctrip.framework.apollo.common.dto.ItemChangeSets):::ENTER
+EXPR: this.bizConfig.propertySources == null
+
+DAIKON 5/5
+PROGRAM POINT: com.ctrip.framework.apollo.biz.service.ItemSetService.updateSet(java.lang.String, java.lang.String, java.lang.String, com.ctrip.framework.apollo.common.dto.ItemChangeSets):::ENTER
+EXPR: this.bizConfig has only one value
+
+
+==============================================================================================================
+PROJECT: apollo
+SAMPLE INDEX: 9/10
+
+OCA METHOD: com.ctrip.framework.apollo.biz.service.ItemService#getItemInfoBySearch(String,String,Pageable):Page<ItemInfoDTO>
+DAIKON METHOD: com.ctrip.framework.apollo.biz.service.ItemService.getItemInfoBySearch(java.lang.String, java.lang.String, org.springframework.data.domain.Pageable)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 8
+DAIKON ORIGINAL INVARIANT COUNT: 115
+BALANCED COUNT PER TOOL: 8
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (8)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/8
+PROGRAM POINT: METHOD_ENTRY
+EXPR: value != null
+ID: 18fc64e2-a341-41fc-80e6-59b6de338af0
+RATIONALE: The method calls value.isEmpty(), so value must be non-null.
+SOURCE FILE: com/ctrip/framework/apollo/biz/service/ItemService.java
+
+OCA 2/8
+PROGRAM POINT: METHOD_ENTRY
+EXPR: !(key.isEmpty() && value.isEmpty())
+ID: cd17e483-17c0-4327-8fbb-210d75be1204
+RATIONALE: The method does not handle the case where both key and value are empty, so it is presumably disallowed.
+SOURCE FILE: com/ctrip/framework/apollo/biz/service/ItemService.java
+
+OCA 3/8
+PROGRAM POINT: METHOD_ENTRY
+EXPR: limit != null
+ID: d03089e4-36bb-4970-b11e-28909249eafc
+RATIONALE: limit is passed to repository methods and should be non-null.
+SOURCE FILE: com/ctrip/framework/apollo/biz/service/ItemService.java
+
+OCA 4/8
+PROGRAM POINT: METHOD_EXIT
+EXPR: result != null
+ID: 54764273-9360-49b0-93a8-a08c37d130ae
+RATIONALE: The method assigns the result of repository calls which likely never return null.
+SOURCE FILE: com/ctrip/framework/apollo/biz/service/ItemService.java
+
+OCA 5/8
+PROGRAM POINT: METHOD_ENTRY
+EXPR: key != null
+ID: c7dc5321-0b0f-428c-84dd-5e10ce34c063
+RATIONALE: The method calls key.isEmpty(), so key must be non-null.
+SOURCE FILE: com/ctrip/framework/apollo/biz/service/ItemService.java
+
+OCA 6/8
+PROGRAM POINT: METHOD_ENTRY
+EXPR: (key.isEmpty() && !value.isEmpty()) || (!key.isEmpty() && value.isEmpty()) || (!key.isEmpty() && !value.isEmpty())
+ID: 123e5ed4-4a9d-459f-a40d-a9828f1ccb0d
+RATIONALE: Reflects the mutually exclusive conditional branches in method: key empty & value not, or value empty & key not, or both non-empty.
+SOURCE FILE: com/ctrip/framework/apollo/biz/service/ItemService.java
+
+OCA 7/8
+PROGRAM POINT: METHOD_EXIT
+EXPR: (key.isEmpty() || !value.isEmpty() || !result.isEmpty())
+ID: 344ccc7b-afc0-4283-87c1-cbb9f35731ed
+RATIONALE: The result page content relates to the input parameters key and value.
+SOURCE FILE: com/ctrip/framework/apollo/biz/service/ItemService.java
+
+OCA 8/8
+PROGRAM POINT: METHOD_EXIT
+EXPR: (result.getSize() == limit.getPageSize())
+ID: be6b0eec-c33b-4dd8-b5c0-6f6fb88772c9
+RATIONALE: The pageable parameter limit relates directly to the size of the page returned.
+SOURCE FILE: com/ctrip/framework/apollo/biz/service/ItemService.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (8)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/8
+PROGRAM POINT: com.ctrip.framework.apollo.biz.service.ItemService.getItemInfoBySearch(java.lang.String, java.lang.String, org.springframework.data.domain.Pageable):::EXIT
+EXPR: com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY[] == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY[])
+
+DAIKON 2/8
+PROGRAM POINT: com.ctrip.framework.apollo.biz.service.ItemService.getItemInfoBySearch(java.lang.String, java.lang.String, org.springframework.data.domain.Pageable):::ENTER
+EXPR: this.namespaceService has only one value
+
+DAIKON 3/8
+PROGRAM POINT: com.ctrip.framework.apollo.biz.service.ItemService.getItemInfoBySearch(java.lang.String, java.lang.String, org.springframework.data.domain.Pageable):::EXIT
+EXPR: this.itemRepository == orig(this.itemRepository)
+
+DAIKON 4/8
+PROGRAM POINT: com.ctrip.framework.apollo.biz.service.ItemService.getItemInfoBySearch(java.lang.String, java.lang.String, org.springframework.data.domain.Pageable):::EXIT
+EXPR: this.bizConfig.environment has only one value
+
+DAIKON 5/8
+PROGRAM POINT: com.ctrip.framework.apollo.biz.service.ItemService.getItemInfoBySearch(java.lang.String, java.lang.String, org.springframework.data.domain.Pageable):::ENTER
+EXPR: value.toString one of { "", "v1" }
+
+DAIKON 6/8
+PROGRAM POINT: com.ctrip.framework.apollo.biz.service.ItemService.getItemInfoBySearch(java.lang.String, java.lang.String, org.springframework.data.domain.Pageable):::EXIT
+EXPR: this.namespaceService.itemService == orig(this.namespaceService.itemService)
+
+DAIKON 7/8
+PROGRAM POINT: com.ctrip.framework.apollo.biz.service.ItemService.getItemInfoBySearch(java.lang.String, java.lang.String, org.springframework.data.domain.Pageable):::EXIT
+EXPR: com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger.getClass().getName() == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.logger.getClass().getName())
+
+DAIKON 8/8
+PROGRAM POINT: com.ctrip.framework.apollo.biz.service.ItemService.getItemInfoBySearch(java.lang.String, java.lang.String, org.springframework.data.domain.Pageable):::EXIT
+EXPR: value.toString one of { "", "v1" }
+
+
+==============================================================================================================
+PROJECT: apollo
+SAMPLE INDEX: 10/10
+
+OCA METHOD: com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter#convertToDatabaseColumn(Map<String, String>):String
+DAIKON METHOD: com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.convertToDatabaseColumn(java.util.Map)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 4
+DAIKON ORIGINAL INVARIANT COUNT: 10
+BALANCED COUNT PER TOOL: 4
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (4)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/4
+PROGRAM POINT: METHOD_EXIT
+EXPR: attribute == null || result.length() >= 2
+ID: 8dfd135d-58f4-4d9c-b24b-062f4cffd24d
+RATIONALE: Even for empty map serialization, the result string is at least '{}', hence length at least 2.
+SOURCE FILE: com/ctrip/framework/apollo/biz/entity/JpaMapFieldJsonConverter.java
+
+OCA 2/4
+PROGRAM POINT: METHOD_EXIT
+EXPR: (attribute == null) || (!result.contains("null"))
+ID: 5ac7cae3-52f4-4248-bbe8-49cb943e8327
+RATIONALE: If attribute is non-null, its JSON serialization string does not contain standalone null literals.
+SOURCE FILE: com/ctrip/framework/apollo/biz/entity/JpaMapFieldJsonConverter.java
+
+OCA 3/4
+PROGRAM POINT: METHOD_EXIT
+EXPR: !result.isEmpty() || (attribute == null || attribute.isEmpty())
+ID: 5daf8356-b28d-4a0d-bf2f-d6e336cbaf84
+RATIONALE: If the attribute map is null or empty, the JSON output might be empty or "null" but result is never invalid.
+SOURCE FILE: com/ctrip/framework/apollo/biz/entity/JpaMapFieldJsonConverter.java
+
+OCA 4/4
+PROGRAM POINT: METHOD_EXIT
+EXPR: result != null
+ID: e0fd86af-ea0f-49ad-931d-6b51019df216
+RATIONALE: Since Gson.toJson serializes the attribute map to JSON string representation, the result should never be null.
+SOURCE FILE: com/ctrip/framework/apollo/biz/entity/JpaMapFieldJsonConverter.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (4)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/4
+PROGRAM POINT: com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.convertToDatabaseColumn(java.util.Map):::ENTER
+EXPR: com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.TYPE.getClass().getName() != attribute.getClass().getName()
+
+DAIKON 2/4
+PROGRAM POINT: com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.convertToDatabaseColumn(java.util.Map):::EXIT
+EXPR: com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.TYPE_TOKEN.getClass().getName() != orig(attribute.getClass().getName())
+
+DAIKON 3/4
+PROGRAM POINT: com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.convertToDatabaseColumn(java.util.Map):::EXIT
+EXPR: com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.TYPE.getClass().getName() != orig(attribute.getClass().getName())
+
+DAIKON 4/4
+PROGRAM POINT: com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.convertToDatabaseColumn(java.util.Map):::EXIT
+EXPR: com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.TYPE.getClass().getName() == orig(com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.TYPE.getClass().getName())
+
+
+==============================================================================================================
+PROJECT: hudi
+SAMPLE INDEX: 1/10
+
+OCA METHOD: org.apache.hudi.table.action.commit.JavaUpsertPartitioner#getSmallFilesForPartitions(List<String>,HoodieEngineContext):Map<String, List<SmallFile>>
+DAIKON METHOD: org.apache.hudi.table.action.commit.JavaUpsertPartitioner.getSmallFilesForPartitions(java.util.List, org.apache.hudi.common.engine.HoodieEngineContext)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 5
+DAIKON ORIGINAL INVARIANT COUNT: 42
+BALANCED COUNT PER TOOL: 5
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (5)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: partitionPaths == null || !partitionPaths.contains(null)
+ID: 86743a58-b8b5-43a6-8dc9-2e9d09b5edd8
+RATIONALE: Null partition paths would be unsafe based on how these paths are used.
+SOURCE FILE: org/apache/hudi/table/action/commit/JavaUpsertPartitioner.java
+
+OCA 2/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: context != null
+ID: 2a34056d-5b70-4039-9167-2216e0289771
+RATIONALE: The method calls mapToPair and setJobStatus on context, so it must be non-null.
+SOURCE FILE: org/apache/hudi/table/action/commit/JavaUpsertPartitioner.java
+
+OCA 3/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: partitionPaths == null || partitionPaths.size() >= 0
+ID: 86d9f2b0-7483-4437-a5e8-ae993ba7ca12
+RATIONALE: By Java List definition, size should be zero or positive if list is not null.
+SOURCE FILE: org/apache/hudi/table/action/commit/JavaUpsertPartitioner.java
+
+OCA 4/5
+PROGRAM POINT: METHOD_EXIT
+EXPR: result != null
+ID: d00716e6-0244-4b6d-b3ca-9e16150e79b1
+RATIONALE: result is never null because the method always returns a Map instance.
+SOURCE FILE: org/apache/hudi/table/action/commit/JavaUpsertPartitioner.java
+
+OCA 5/5
+PROGRAM POINT: METHOD_EXIT
+EXPR: (partitionPaths == null || partitionPaths.isEmpty()) == result.isEmpty()
+ID: 5fef4143-ee13-4d1a-8149-1882b8f6a25b
+RATIONALE: If no partition paths are provided, the result map is empty; otherwise, result contains entries.
+SOURCE FILE: org/apache/hudi/table/action/commit/JavaUpsertPartitioner.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (5)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/5
+PROGRAM POINT: org.apache.hudi.table.action.commit.JavaUpsertPartitioner.getSmallFilesForPartitions(java.util.List, org.apache.hudi.common.engine.HoodieEngineContext):::EXIT
+EXPR: this.smallFiles.getClass().getName() != orig(context.getClass().getName())
+
+DAIKON 2/5
+PROGRAM POINT: org.apache.hudi.table.action.commit.JavaUpsertPartitioner.getSmallFilesForPartitions(java.util.List, org.apache.hudi.common.engine.HoodieEngineContext):::EXIT
+EXPR: size(this.smallFiles[]) <= size(partitionPaths[])-1
+
+DAIKON 3/5
+PROGRAM POINT: org.apache.hudi.table.action.commit.JavaUpsertPartitioner.getSmallFilesForPartitions(java.util.List, org.apache.hudi.common.engine.HoodieEngineContext):::ENTER
+EXPR: partitionPaths != null
+
+DAIKON 4/5
+PROGRAM POINT: org.apache.hudi.table.action.commit.JavaUpsertPartitioner.getSmallFilesForPartitions(java.util.List, org.apache.hudi.common.engine.HoodieEngineContext):::ENTER
+EXPR: context != null
+
+DAIKON 5/5
+PROGRAM POINT: org.apache.hudi.table.action.commit.JavaUpsertPartitioner.getSmallFilesForPartitions(java.util.List, org.apache.hudi.common.engine.HoodieEngineContext):::EXIT
+EXPR: this.table.getClass().getName() != orig(context.getClass().getName())
+
+
+==============================================================================================================
+PROJECT: hudi
+SAMPLE INDEX: 2/10
+
+OCA METHOD: org.apache.hudi.table.HoodieJavaMergeOnReadTable#scheduleCompaction(HoodieEngineContext,String,Option<Map<String, String>>):Option<HoodieCompactionPlan>
+DAIKON METHOD: org.apache.hudi.table.HoodieJavaMergeOnReadTable.scheduleCompaction(org.apache.hudi.common.engine.HoodieEngineContext, java.lang.String, org.apache.hudi.common.util.Option)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 7
+DAIKON ORIGINAL INVARIANT COUNT: 37
+BALANCED COUNT PER TOOL: 7
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (7)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/7
+PROGRAM POINT: METHOD_EXIT
+EXPR: !result.isPresent() || result.get() != null
+ID: 7a88e29a-700b-4cdc-a84e-3b9979d9aed4
+RATIONALE: If the Option contains a HoodieCompactionPlan, that plan must not be null.
+SOURCE FILE: org/apache/hudi/table/HoodieJavaMergeOnReadTable.java
+
+OCA 2/7
+PROGRAM POINT: METHOD_ENTRY
+EXPR: (!extraMetadata.isPresent() || extraMetadata.get() != null)
+ID: 3dfb692c-5178-404a-ad70-838650e3c9a4
+RATIONALE: The Option container may be empty or contain a non-null Map of metadata.
+SOURCE FILE: org/apache/hudi/table/HoodieJavaMergeOnReadTable.java
+
+OCA 3/7
+PROGRAM POINT: METHOD_ENTRY
+EXPR: context != null
+ID: 59cc8ddc-4cb9-49dc-9c3e-478cf873d05b
+RATIONALE: The context parameter is essential for executing the compaction scheduling and is unlikely to be null.
+SOURCE FILE: org/apache/hudi/table/HoodieJavaMergeOnReadTable.java
+
+OCA 4/7
+PROGRAM POINT: METHOD_ENTRY
+EXPR: instantTime != null && !instantTime.isEmpty()
+ID: 49ada360-b1eb-4ee0-a671-1dbb85d4002b
+RATIONALE: The instantTime string indicates the compaction instant and so must be non-null and non-empty.
+SOURCE FILE: org/apache/hudi/table/HoodieJavaMergeOnReadTable.java
+
+OCA 5/7
+PROGRAM POINT: METHOD_ENTRY
+EXPR: extraMetadata != null
+ID: 22df319e-1786-46e2-a394-5fa043d55bdc
+RATIONALE: The extraMetadata parameter is an Option type and must be a valid object reference, even if empty.
+SOURCE FILE: org/apache/hudi/table/HoodieJavaMergeOnReadTable.java
+
+OCA 6/7
+PROGRAM POINT: METHOD_EXIT
+EXPR: result.isPresent() || !result.isPresent()
+ID: 36ba5f43-ce0f-4399-b7ae-dc5eb4f28c4e
+RATIONALE: The result is an Option, which is either present or empty, so this covers both cases.
+SOURCE FILE: org/apache/hudi/table/HoodieJavaMergeOnReadTable.java
+
+OCA 7/7
+PROGRAM POINT: METHOD_EXIT
+EXPR: result != null
+ID: 831d524a-c814-46bc-b127-18abad0bf439
+RATIONALE: The method returns an Option object which should never be null.
+SOURCE FILE: org/apache/hudi/table/HoodieJavaMergeOnReadTable.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (7)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/7
+PROGRAM POINT: org.apache.hudi.table.HoodieJavaMergeOnReadTable.scheduleCompaction(org.apache.hudi.common.engine.HoodieEngineContext, java.lang.String, org.apache.hudi.common.util.Option):::EXIT
+EXPR: this.context == orig(context)
+
+DAIKON 2/7
+PROGRAM POINT: org.apache.hudi.table.HoodieJavaMergeOnReadTable.scheduleCompaction(org.apache.hudi.common.engine.HoodieEngineContext, java.lang.String, org.apache.hudi.common.util.Option):::EXIT
+EXPR: this.instantGenerator.getClass().getName() == orig(this.instantGenerator.getClass().getName())
+
+DAIKON 3/7
+PROGRAM POINT: org.apache.hudi.table.HoodieJavaMergeOnReadTable.scheduleCompaction(org.apache.hudi.common.engine.HoodieEngineContext, java.lang.String, org.apache.hudi.common.util.Option):::EXIT
+EXPR: this.storageLayout == null
+
+DAIKON 4/7
+PROGRAM POINT: org.apache.hudi.table.HoodieJavaMergeOnReadTable.scheduleCompaction(org.apache.hudi.common.engine.HoodieEngineContext, java.lang.String, org.apache.hudi.common.util.Option):::EXIT
+EXPR: this.isMetadataTableExists == false
+
+DAIKON 5/7
+PROGRAM POINT: org.apache.hudi.table.HoodieJavaMergeOnReadTable.scheduleCompaction(org.apache.hudi.common.engine.HoodieEngineContext, java.lang.String, org.apache.hudi.common.util.Option):::EXIT
+EXPR: this.context == orig(this.context)
+
+DAIKON 6/7
+PROGRAM POINT: org.apache.hudi.table.HoodieJavaMergeOnReadTable.scheduleCompaction(org.apache.hudi.common.engine.HoodieEngineContext, java.lang.String, org.apache.hudi.common.util.Option):::EXIT
+EXPR: org.apache.hudi.table.HoodieJavaCopyOnWriteTable.log.getClass().getName() == orig(org.apache.hudi.table.HoodieJavaCopyOnWriteTable.log.getClass().getName())
+
+DAIKON 7/7
+PROGRAM POINT: org.apache.hudi.table.HoodieJavaMergeOnReadTable.scheduleCompaction(org.apache.hudi.common.engine.HoodieEngineContext, java.lang.String, org.apache.hudi.common.util.Option):::ENTER
+EXPR: this.metadata == null
+
+
+==============================================================================================================
+PROJECT: hudi
+SAMPLE INDEX: 3/10
+
+OCA METHOD: org.apache.hudi.execution.JavaLazyInsertIterable#computeNext():List<WriteStatus>
+DAIKON METHOD: org.apache.hudi.execution.JavaLazyInsertIterable.computeNext()
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 3
+DAIKON ORIGINAL INVARIANT COUNT: 27
+BALANCED COUNT PER TOOL: 3
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (3)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/3
+PROGRAM POINT: METHOD_EXIT
+EXPR: !result.isEmpty()
+ID: edfe8cb9-9b29-444e-904e-2f14a640767d
+RATIONALE: The method's checkState verifies result must not be empty at return.
+SOURCE FILE: org/apache/hudi/execution/JavaLazyInsertIterable.java
+
+OCA 2/3
+PROGRAM POINT: METHOD_EXIT
+EXPR: result.size() > 0
+ID: f33cbedb-ffd2-4eb2-a167-21ccb7ab71e9
+RATIONALE: A non-empty collection must have size strictly greater than zero.
+SOURCE FILE: org/apache/hudi/execution/JavaLazyInsertIterable.java
+
+OCA 3/3
+PROGRAM POINT: METHOD_EXIT
+EXPR: result != null
+ID: 6e6a4886-ee20-4e06-a6be-48262561a86d
+RATIONALE: The method returns result only after confirming it is not null.
+SOURCE FILE: org/apache/hudi/execution/JavaLazyInsertIterable.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (3)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/3
+PROGRAM POINT: org.apache.hudi.execution.JavaLazyInsertIterable.computeNext():::EXIT
+EXPR: this.instantTime == orig(this.instantTime)
+
+DAIKON 2/3
+PROGRAM POINT: org.apache.hudi.execution.JavaLazyInsertIterable.computeNext():::EXIT
+EXPR: this.taskContextSupplier.getClass().getName() != return.getClass().getName()
+
+DAIKON 3/3
+PROGRAM POINT: org.apache.hudi.execution.JavaLazyInsertIterable.computeNext():::EXIT
+EXPR: this.idPrefix.toString == orig(this.idPrefix.toString)
+
+
+==============================================================================================================
+PROJECT: hudi
+SAMPLE INDEX: 4/10
+
+OCA METHOD: org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#handleUpsertPartition(String,Integer,Iterator,Partitioner):Iterator<List<WriteStatus>>
+DAIKON METHOD: org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.handleUpsertPartition(java.lang.String, java.lang.Integer, java.util.Iterator, org.apache.hudi.table.action.commit.Partitioner)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 5
+DAIKON ORIGINAL INVARIANT COUNT: 116
+BALANCED COUNT PER TOOL: 5
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (5)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: partitioner != null
+ID: 670f26aa-d475-4cae-8e4e-47523a8c7084
+RATIONALE: Partitioner instance must be non-null to select the bucket info for the given partition.
+SOURCE FILE: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+OCA 2/5
+PROGRAM POINT: METHOD_EXIT
+EXPR: result != null
+ID: f90fb5f5-95fe-4d77-b13c-7255a1b725be
+RATIONALE: The method returns an Iterator representing the operation results; it should not be null.
+SOURCE FILE: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+OCA 3/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: recordItr != null
+ID: fcc6b0a6-5ead-49ce-a56b-2d25ef5b3f5c
+RATIONALE: Record iterator must be non-null to consume records for the upsert operation.
+SOURCE FILE: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+OCA 4/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: instantTime != null
+ID: e707b829-9e99-49f1-a687-c0c1a705e2f2
+RATIONALE: instantTime represents a timestamp string and should be non-null when performing upsert operations.
+SOURCE FILE: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+OCA 5/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: partition != null
+ID: e2c1c412-9016-4de0-aeef-636360430b64
+RATIONALE: Partition index must be non-null to fetch bucket info safely.
+SOURCE FILE: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (5)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/5
+PROGRAM POINT: org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.handleUpsertPartition(java.lang.String, java.lang.Integer, java.util.Iterator, org.apache.hudi.table.action.commit.Partitioner):::ENTER
+EXPR: this.instantFileNameGenerator has only one value
+
+DAIKON 2/5
+PROGRAM POINT: org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.handleUpsertPartition(java.lang.String, java.lang.Integer, java.util.Iterator, org.apache.hudi.table.action.commit.Partitioner):::EXIT
+EXPR: this.instantFileNameGenerator.getClass().getName() != orig(partitioner.getClass().getName())
+
+DAIKON 3/5
+PROGRAM POINT: org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.handleUpsertPartition(java.lang.String, java.lang.Integer, java.util.Iterator, org.apache.hudi.table.action.commit.Partitioner):::EXIT
+EXPR: this.instantFileNameGenerator.getClass().getName() == org.apache.hudi.common.table.timeline.versioning.v2.InstantFileNameGeneratorV2.class
+
+DAIKON 4/5
+PROGRAM POINT: org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.handleUpsertPartition(java.lang.String, java.lang.Integer, java.util.Iterator, org.apache.hudi.table.action.commit.Partitioner):::EXIT215
+EXPR: this.operationType has only one value
+
+DAIKON 5/5
+PROGRAM POINT: org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.handleUpsertPartition(java.lang.String, java.lang.Integer, java.util.Iterator, org.apache.hudi.table.action.commit.Partitioner):::EXIT
+EXPR: this.taskContextSupplier.getClass().getName() == orig(this.taskContextSupplier.getClass().getName())
+
+
+==============================================================================================================
+PROJECT: hudi
+SAMPLE INDEX: 5/10
+
+OCA METHOD: org.apache.hudi.table.upgrade.JavaUpgradeDowngradeHelper#getInstance():JavaUpgradeDowngradeHelper
+DAIKON METHOD: org.apache.hudi.table.upgrade.JavaUpgradeDowngradeHelper.getInstance()
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 1
+DAIKON ORIGINAL INVARIANT COUNT: 2
+BALANCED COUNT PER TOOL: 1
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (1)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/1
+PROGRAM POINT: METHOD_EXIT
+EXPR: result != null
+ID: 91728d5e-169e-4125-8d36-4643842c013f
+RATIONALE: getInstance() returns the singleton instance, which should never be null.
+SOURCE FILE: org/apache/hudi/table/upgrade/JavaUpgradeDowngradeHelper.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (1)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/1
+PROGRAM POINT: org.apache.hudi.table.upgrade.JavaUpgradeDowngradeHelper.getInstance():::EXIT
+EXPR: org.apache.hudi.table.upgrade.JavaUpgradeDowngradeHelper.SINGLETON_INSTANCE == return
+
+
+==============================================================================================================
+PROJECT: hudi
+SAMPLE INDEX: 6/10
+
+OCA METHOD: org.apache.hudi.table.HoodieJavaTable#create(HoodieWriteConfig,HoodieEngineContext):HoodieJavaTable<T>
+DAIKON METHOD: org.apache.hudi.table.HoodieJavaTable.create(org.apache.hudi.config.HoodieWriteConfig, org.apache.hudi.common.engine.HoodieEngineContext)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 6
+DAIKON ORIGINAL INVARIANT COUNT: 10
+BALANCED COUNT PER TOOL: 6
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (6)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/6
+PROGRAM POINT: METHOD_ENTRY
+EXPR: config.getConsistencyGuardConfig() != null
+ID: b06ad641-22cd-4961-b98c-63a0e47e03c1
+RATIONALE: The method uses config.getConsistencyGuardConfig() as a parameter in metaClient builder.
+SOURCE FILE: org/apache/hudi/table/HoodieJavaTable.java
+
+OCA 2/6
+PROGRAM POINT: METHOD_ENTRY
+EXPR: config.getBasePath() != null
+ID: b56b7b84-7477-4c74-be38-bd7de7fa3030
+RATIONALE: Since basePath is passed to the metaClient builder, it must not be null.
+SOURCE FILE: org/apache/hudi/table/HoodieJavaTable.java
+
+OCA 3/6
+PROGRAM POINT: METHOD_EXIT
+EXPR: result != null
+ID: 89aae113-45da-4a41-b699-683cb1ac6ada
+RATIONALE: The create method returns a new HoodieJavaTable instance, which should not be null.
+SOURCE FILE: org/apache/hudi/table/HoodieJavaTable.java
+
+OCA 4/6
+PROGRAM POINT: METHOD_ENTRY
+EXPR: context != null
+ID: 12a53414-9162-4164-9ef6-3912d9d9d390
+RATIONALE: The method uses context to getStorageConf and build metaClient; thus context must not be null.
+SOURCE FILE: org/apache/hudi/table/HoodieJavaTable.java
+
+OCA 5/6
+PROGRAM POINT: METHOD_ENTRY
+EXPR: context.getStorageConf() != null
+ID: 0269dec3-4acc-4f97-a9c7-61e3ae0ddbf0
+RATIONALE: The method calls context.getStorageConf().newInstance(); thus getStorageConf must not return null.
+SOURCE FILE: org/apache/hudi/table/HoodieJavaTable.java
+
+OCA 6/6
+PROGRAM POINT: METHOD_ENTRY
+EXPR: config != null
+ID: 35ffe3a9-1307-4599-81c9-663f31141b99
+RATIONALE: The method uses config to build the metaClient; thus config must not be null.
+SOURCE FILE: org/apache/hudi/table/HoodieJavaTable.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (6)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/6
+PROGRAM POINT: org.apache.hudi.table.HoodieJavaTable.create(org.apache.hudi.config.HoodieWriteConfig, org.apache.hudi.common.engine.HoodieEngineContext):::EXIT
+EXPR: return.getClass().getName() != orig(context.getClass().getName())
+
+DAIKON 2/6
+PROGRAM POINT: org.apache.hudi.table.HoodieJavaTable.create(org.apache.hudi.config.HoodieWriteConfig, org.apache.hudi.common.engine.HoodieEngineContext):::ENTER
+EXPR: context != null
+
+DAIKON 3/6
+PROGRAM POINT: org.apache.hudi.table.HoodieJavaTable.create(org.apache.hudi.config.HoodieWriteConfig, org.apache.hudi.common.engine.HoodieEngineContext):::EXIT
+EXPR: org.apache.hudi.table.HoodieTable.log.getClass().getName() != orig(context.getClass().getName())
+
+DAIKON 4/6
+PROGRAM POINT: org.apache.hudi.table.HoodieJavaTable.create(org.apache.hudi.config.HoodieWriteConfig, org.apache.hudi.common.engine.HoodieEngineContext):::ENTER
+EXPR: context.getClass().getName() == org.apache.hudi.client.common.HoodieJavaEngineContext.class
+
+DAIKON 5/6
+PROGRAM POINT: org.apache.hudi.table.HoodieJavaTable.create(org.apache.hudi.config.HoodieWriteConfig, org.apache.hudi.common.engine.HoodieEngineContext):::ENTER
+EXPR: org.apache.hudi.table.HoodieTable.log.getClass().getName() != context.getClass().getName()
+
+DAIKON 6/6
+PROGRAM POINT: org.apache.hudi.table.HoodieJavaTable.create(org.apache.hudi.config.HoodieWriteConfig, org.apache.hudi.common.engine.HoodieEngineContext):::EXIT
+EXPR: return != null
+
+
+==============================================================================================================
+PROJECT: hudi
+SAMPLE INDEX: 7/10
+
+OCA METHOD: org.apache.hudi.table.action.commit.JavaDeleteHelper#newInstance():JavaDeleteHelper
+DAIKON METHOD: org.apache.hudi.table.action.commit.JavaDeleteHelper.newInstance()
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 1
+DAIKON ORIGINAL INVARIANT COUNT: 1
+BALANCED COUNT PER TOOL: 1
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (1)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/1
+PROGRAM POINT: METHOD_EXIT
+EXPR: result != null
+ID: 1fe17d1a-350f-48f3-89e8-4f6160e16385
+RATIONALE: The method returns a singleton instance, which is never null.
+SOURCE FILE: org/apache/hudi/table/action/commit/JavaDeleteHelper.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (1)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/1
+PROGRAM POINT: org.apache.hudi.table.action.commit.JavaDeleteHelper.newInstance():::EXIT
+EXPR: return has only one value
+
+
+==============================================================================================================
+PROJECT: hudi
+SAMPLE INDEX: 8/10
+
+OCA METHOD: org.apache.hudi.client.common.HoodieJavaEngineContext#getReaderContextFactory(HoodieTableMetaClient):ReaderContextFactory<IndexedRecord>
+DAIKON METHOD: org.apache.hudi.client.common.HoodieJavaEngineContext.getReaderContextFactory(org.apache.hudi.common.table.HoodieTableMetaClient)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 5
+DAIKON ORIGINAL INVARIANT COUNT: 7
+BALANCED COUNT PER TOOL: 5
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (5)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: metaClient.getTableConfig() != null
+ID: 4d67bf60-035a-4b92-a32a-5f0b7226a5c5
+RATIONALE: To create a proper ReaderContextFactory, metaClient's table configuration is expected to be non-null.
+SOURCE FILE: org/apache/hudi/client/common/HoodieJavaEngineContext.java
+
+OCA 2/5
+PROGRAM POINT: METHOD_EXIT
+EXPR: result != null
+ID: e3d854a4-361b-4149-bf54-59df60cedf39
+RATIONALE: The method returns getEngineReaderContextFactory(metaClient), which likely returns a non-null ReaderContextFactory object.
+SOURCE FILE: org/apache/hudi/client/common/HoodieJavaEngineContext.java
+
+OCA 3/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: metaClient.getTableType() != null
+ID: 0ca12583-2d59-413a-ac50-2bd079e3e031
+RATIONALE: The metaClient must represent a valid table with defined type for constructing the ReaderContextFactory.
+SOURCE FILE: org/apache/hudi/client/common/HoodieJavaEngineContext.java
+
+OCA 4/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: metaClient.getBasePath() != null
+ID: 7cc89421-da9b-4ec7-9b93-41ffc008a596
+RATIONALE: To obtain context factory, metaClient's basePath is expected to be set and non-null.
+SOURCE FILE: org/apache/hudi/client/common/HoodieJavaEngineContext.java
+
+OCA 5/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: metaClient != null
+ID: 088c670c-79a6-4000-a792-ef087c4985aa
+RATIONALE: The metaClient is required for obtaining ReaderContextFactory and must not be null.
+SOURCE FILE: org/apache/hudi/client/common/HoodieJavaEngineContext.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (5)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/5
+PROGRAM POINT: org.apache.hudi.client.common.HoodieJavaEngineContext.getReaderContextFactory(org.apache.hudi.common.table.HoodieTableMetaClient):::EXIT
+EXPR: this.storageConf.getClass().getName() != return.getClass().getName()
+
+DAIKON 2/5
+PROGRAM POINT: org.apache.hudi.client.common.HoodieJavaEngineContext.getReaderContextFactory(org.apache.hudi.common.table.HoodieTableMetaClient):::EXIT
+EXPR: this.taskContextSupplier.getClass().getName() == orig(this.taskContextSupplier.getClass().getName())
+
+DAIKON 3/5
+PROGRAM POINT: org.apache.hudi.client.common.HoodieJavaEngineContext.getReaderContextFactory(org.apache.hudi.common.table.HoodieTableMetaClient):::EXIT
+EXPR: this.storageConf == orig(this.storageConf)
+
+DAIKON 4/5
+PROGRAM POINT: org.apache.hudi.client.common.HoodieJavaEngineContext.getReaderContextFactory(org.apache.hudi.common.table.HoodieTableMetaClient):::EXIT
+EXPR: this.taskContextSupplier.getClass().getName() != return.getClass().getName()
+
+DAIKON 5/5
+PROGRAM POINT: org.apache.hudi.client.common.HoodieJavaEngineContext.getReaderContextFactory(org.apache.hudi.common.table.HoodieTableMetaClient):::EXIT
+EXPR: this.storageConf.getClass().getName() == orig(this.storageConf.getClass().getName())
+
+
+==============================================================================================================
+PROJECT: hudi
+SAMPLE INDEX: 9/10
+
+OCA METHOD: org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#getPartitionToReplacedFileIds(HoodieWriteMetadata<List<WriteStatus>>):Map<String, List<String>>
+DAIKON METHOD: org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.getPartitionToReplacedFileIds(org.apache.hudi.table.action.HoodieWriteMetadata)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 6
+DAIKON ORIGINAL INVARIANT COUNT: 50
+BALANCED COUNT PER TOOL: 6
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (6)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/6
+PROGRAM POINT: METHOD_ENTRY
+EXPR: writeMetadata != null
+ID: 9a6991c9-81e7-481d-8700-37221925bb4f
+RATIONALE: The parameter writeMetadata should not be null when the method is entered.
+SOURCE FILE: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+OCA 2/6
+PROGRAM POINT: METHOD_EXIT
+EXPR: result.isEmpty()
+ID: ccc88933-df12-4671-9f29-386ff6422d1f
+RATIONALE: Since the method returns Collections.emptyMap(), the map must be empty.
+SOURCE FILE: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+OCA 3/6
+PROGRAM POINT: METHOD_ENTRY
+EXPR: writeMetadata.getWriteStatuses() != null
+ID: cd8ba76c-86e3-4cf8-9552-f76b2a479bc4
+RATIONALE: The writeMetadata object typically contains a list of WriteStatus objects, expected to be non-null.
+SOURCE FILE: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+OCA 4/6
+PROGRAM POINT: METHOD_EXIT
+EXPR: !result.containsKey(null)
+ID: b73e1127-2d89-47f8-8e53-165e7e78df7a
+RATIONALE: An empty map cannot contain any key, including null.
+SOURCE FILE: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+OCA 5/6
+PROGRAM POINT: METHOD_EXIT
+EXPR: result != null
+ID: 8af73c84-04b5-4d42-accf-8427ce6e94be
+RATIONALE: The method returns Collections.emptyMap(), so result is guaranteed to be non-null.
+SOURCE FILE: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+OCA 6/6
+PROGRAM POINT: METHOD_EXIT
+EXPR: result.keySet().isEmpty()
+ID: eb9db836-d3ef-4c5d-b220-3ad327b56dc6
+RATIONALE: Empty map's key set is empty.
+SOURCE FILE: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (6)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/6
+PROGRAM POINT: org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.getPartitionToReplacedFileIds(org.apache.hudi.table.action.HoodieWriteMetadata):::EXIT
+EXPR: this.context.getClass().getName() != orig(this.getClass().getName())
+
+DAIKON 2/6
+PROGRAM POINT: org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.getPartitionToReplacedFileIds(org.apache.hudi.table.action.HoodieWriteMetadata):::EXIT
+EXPR: this.extraMetadata == orig(this.extraMetadata)
+
+DAIKON 3/6
+PROGRAM POINT: org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.getPartitionToReplacedFileIds(org.apache.hudi.table.action.HoodieWriteMetadata):::EXIT
+EXPR: this.instantFileNameParser == orig(this.instantFileNameParser)
+
+DAIKON 4/6
+PROGRAM POINT: org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.getPartitionToReplacedFileIds(org.apache.hudi.table.action.HoodieWriteMetadata):::EXIT
+EXPR: this.operationType == orig(this.operationType)
+
+DAIKON 5/6
+PROGRAM POINT: org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.getPartitionToReplacedFileIds(org.apache.hudi.table.action.HoodieWriteMetadata):::EXIT
+EXPR: this.table.getClass().getName() != return.getClass().getName()
+
+DAIKON 6/6
+PROGRAM POINT: org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.getPartitionToReplacedFileIds(org.apache.hudi.table.action.HoodieWriteMetadata):::EXIT
+EXPR: this.instantFileNameGenerator.getClass().getName() != orig(this.getClass().getName())
+
+
+==============================================================================================================
+PROJECT: hudi
+SAMPLE INDEX: 10/10
+
+OCA METHOD: org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#updateIndex(List<WriteStatus>,HoodieWriteMetadata<List<WriteStatus>>):List<WriteStatus>
+DAIKON METHOD: org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.updateIndex(java.util.List, org.apache.hudi.table.action.HoodieWriteMetadata)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 6
+DAIKON ORIGINAL INVARIANT COUNT: 77
+BALANCED COUNT PER TOOL: 6
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (6)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/6
+PROGRAM POINT: METHOD_ENTRY
+EXPR: writeStatuses != null
+ID: 6dce2905-b559-4f3b-8e2c-0dceeb45c649
+RATIONALE: The method parameter writeStatuses should be non-null as it's the input list being updated.
+SOURCE FILE: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+OCA 2/6
+PROGRAM POINT: METHOD_ENTRY
+EXPR: (!writeStatuses.isEmpty() || writeStatuses.isEmpty())
+ID: c54569dc-b4d7-43dc-9b67-b830bca225e9
+RATIONALE: Avoid generating this kind of trivial invariant.
+SOURCE FILE: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+OCA 3/6
+PROGRAM POINT: METHOD_EXIT
+EXPR: result != null
+ID: 5b31711e-9826-4405-ad01-ad1bb69a6ba2
+RATIONALE: The result parameter must be non-null as it is used to set index update duration and write statuses.
+SOURCE FILE: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+OCA 4/6
+PROGRAM POINT: METHOD_ENTRY
+EXPR: result.getWriteStatuses() == null
+ID: 62b5f4eb-d313-4109-9905-cd1064dbd9ac
+RATIONALE: At method entry, the writeStatuses inside result may not be set yet.
+SOURCE FILE: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+OCA 5/6
+PROGRAM POINT: METHOD_ENTRY
+EXPR: writeStatuses.size() >= 0
+ID: 3568575e-d7d6-4ec6-a2dd-7d413f1c4edc
+RATIONALE: List sizes are always non-negative.
+SOURCE FILE: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+OCA 6/6
+PROGRAM POINT: METHOD_ENTRY
+EXPR: result != null
+ID: c98aac4f-5e84-45b3-aeed-72b43611c102
+RATIONALE: The result object should be non-null since it is being updated and returned later.
+SOURCE FILE: org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (6)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/6
+PROGRAM POINT: org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.updateIndex(java.util.List, org.apache.hudi.table.action.HoodieWriteMetadata):::EXIT
+EXPR: org.apache.hudi.table.action.commit.BaseCommitActionExecutor.log == orig(org.apache.hudi.table.action.commit.BaseCommitActionExecutor.log)
+
+DAIKON 2/6
+PROGRAM POINT: org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.updateIndex(java.util.List, org.apache.hudi.table.action.HoodieWriteMetadata):::EXIT
+EXPR: this.instantFileNameGenerator.getClass().getName() != return.getClass().getName()
+
+DAIKON 3/6
+PROGRAM POINT: org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.updateIndex(java.util.List, org.apache.hudi.table.action.HoodieWriteMetadata):::EXIT
+EXPR: this.instantFileNameGenerator == orig(this.instantFileNameGenerator)
+
+DAIKON 4/6
+PROGRAM POINT: org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.updateIndex(java.util.List, org.apache.hudi.table.action.HoodieWriteMetadata):::ENTER
+EXPR: this.instantGenerator.getClass().getName() != writeStatuses.getClass().getName()
+
+DAIKON 5/6
+PROGRAM POINT: org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.updateIndex(java.util.List, org.apache.hudi.table.action.HoodieWriteMetadata):::EXIT
+EXPR: this.instantGenerator.getClass().getName() != orig(this.getClass().getName())
+
+DAIKON 6/6
+PROGRAM POINT: org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.updateIndex(java.util.List, org.apache.hudi.table.action.HoodieWriteMetadata):::EXIT
+EXPR: this.pendingInflightAndRequestedInstants.getClass().getName() != return.getClass().getName()
+
+
+==============================================================================================================
+PROJECT: spring
+SAMPLE INDEX: 1/10
+
+OCA METHOD: org.springframework.core.convert.support.NumberToDataSizeConverter#convert(Number):DataSize
+DAIKON METHOD: org.springframework.core.convert.support.NumberToDataSizeConverter.convert(java.lang.Number)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 3
+DAIKON ORIGINAL INVARIANT COUNT: 1
+BALANCED COUNT PER TOOL: 1
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (1)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/1
+PROGRAM POINT: METHOD_ENTRY
+EXPR: source != null
+ID: 496c853a-b263-4380-a771-eb6a697fbc7d
+RATIONALE: The method expects a non-null Number as input.
+SOURCE FILE: org/springframework/core/convert/support/NumberToDataSizeConverter.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (1)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/1
+PROGRAM POINT: org.springframework.core.convert.support.NumberToDataSizeConverter.convert(java.lang.Number):::ENTER
+EXPR: this has only one value
+
+
+==============================================================================================================
+PROJECT: spring
+SAMPLE INDEX: 2/10
+
+OCA METHOD: org.springframework.core.convert.support.StringToArrayConverter#matches(TypeDescriptor,TypeDescriptor):boolean
+DAIKON METHOD: org.springframework.core.convert.support.StringToArrayConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 5
+DAIKON ORIGINAL INVARIANT COUNT: 13
+BALANCED COUNT PER TOOL: 5
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (5)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: sourceType != null
+ID: 145e5a41-ca22-4486-abb2-80ad65ad0513
+RATIONALE: The sourceType must be non-null to attempt any conversion.
+SOURCE FILE: org/springframework/core/convert/support/StringToArrayConverter.java
+
+OCA 2/5
+PROGRAM POINT: METHOD_EXIT
+EXPR: !result || targetType.getElementTypeDescriptor() != null
+ID: cf67e802-7b27-431f-94c6-4a2b3b7b6e43
+RATIONALE: If result is true, then the targetType must have a non-null element type descriptor.
+SOURCE FILE: org/springframework/core/convert/support/StringToArrayConverter.java
+
+OCA 3/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: targetType.getElementTypeDescriptor() != null
+ID: 11909d00-9ba1-47b2-8528-71a6f631f1ed
+RATIONALE: The target type should be an array type, so getElementTypeDescriptor returns non-null.
+SOURCE FILE: org/springframework/core/convert/support/StringToArrayConverter.java
+
+OCA 4/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: targetType.isArray()
+ID: 95dce833-5891-4363-904c-210c8b2d389c
+RATIONALE: For conversion to succeed, the target type should be an array.
+SOURCE FILE: org/springframework/core/convert/support/StringToArrayConverter.java
+
+OCA 5/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: targetType != null
+ID: 5dd729fb-22c1-45a6-a4c3-916da91c7139
+RATIONALE: The targetType must be non-null to appropriately handle conversion.
+SOURCE FILE: org/springframework/core/convert/support/StringToArrayConverter.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (5)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/5
+PROGRAM POINT: org.springframework.core.convert.support.StringToArrayConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor):::EXIT;condition="not(return == true)"
+EXPR: this.conversionService.getClass().getName() == org.springframework.core.convert.support.GenericConversionService.class
+
+DAIKON 2/5
+PROGRAM POINT: org.springframework.core.convert.support.StringToArrayConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor):::ENTER
+EXPR: sourceType has only one value
+
+DAIKON 3/5
+PROGRAM POINT: org.springframework.core.convert.support.StringToArrayConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor):::EXIT
+EXPR: this.conversionService.getClass().getName() == orig(this.conversionService.getClass().getName())
+
+DAIKON 4/5
+PROGRAM POINT: org.springframework.core.convert.support.StringToArrayConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor):::EXIT;condition="not(return == true)"
+EXPR: orig(this) has only one value
+
+DAIKON 5/5
+PROGRAM POINT: org.springframework.core.convert.support.StringToArrayConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor):::EXIT
+EXPR: this.conversionService == orig(this.conversionService)
+
+
+==============================================================================================================
+PROJECT: spring
+SAMPLE INDEX: 3/10
+
+OCA METHOD: org.springframework.core.convert.ConversionService#convert(Object,TypeDescriptor):Object
+DAIKON METHOD: org.springframework.core.convert.ConversionService.convert(java.lang.Object, org.springframework.core.convert.TypeDescriptor)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 6
+DAIKON ORIGINAL INVARIANT COUNT: 5
+BALANCED COUNT PER TOOL: 5
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (5)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: targetType != null
+ID: 3ec6fb5f-16ad-469a-846b-c3ffdc9a0e9c
+RATIONALE: The target type descriptor must be non-null for any conversion to proceed.
+SOURCE FILE: org/springframework/core/convert/ConversionService.java
+
+OCA 2/5
+PROGRAM POINT: METHOD_EXIT
+EXPR: (source == null && result == null) || (source != null)
+ID: e12f934f-21ed-4201-903e-04464777c260
+RATIONALE: If the source is null, conversion may yield null result; otherwise source is non-null.
+SOURCE FILE: org/springframework/core/convert/ConversionService.java
+
+OCA 3/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: !((source != null) && (targetType.getObjectType() == null))
+ID: c3fe7f12-7941-42ac-930e-61768cc927f4
+RATIONALE: TargetType's object type must be non-null if source is non-null, because conversion to a meaningful target type is expected.
+SOURCE FILE: org/springframework/core/convert/ConversionService.java
+
+OCA 4/5
+PROGRAM POINT: METHOD_EXIT
+EXPR: (result == null) || targetType.getObjectType().isInstance(result)
+ID: a7c36d55-5a64-484d-a7b1-7fba7aa82e0e
+RATIONALE: The converted result, if not null, should be an instance of the target type as per conversion contract.
+SOURCE FILE: org/springframework/core/convert/ConversionService.java
+
+OCA 5/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: (source == null) || source.getClass() != null
+ID: d94e5ac3-138c-486b-a4cf-d7b7ee629755
+RATIONALE: If source is not null, its class can be retrieved to infer source type descriptor.
+SOURCE FILE: org/springframework/core/convert/ConversionService.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (5)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/5
+PROGRAM POINT: org.springframework.core.convert.ConversionService.convert(java.lang.Object, org.springframework.core.convert.TypeDescriptor):::ENTER
+EXPR: source != null
+
+DAIKON 2/5
+PROGRAM POINT: org.springframework.core.convert.ConversionService.convert(java.lang.Object, org.springframework.core.convert.TypeDescriptor):::ENTER
+EXPR: targetType != null
+
+DAIKON 3/5
+PROGRAM POINT: org.springframework.core.convert.ConversionService.convert(java.lang.Object, org.springframework.core.convert.TypeDescriptor):::ENTER
+EXPR: this.getClass().getName() != source.getClass().getName()
+
+DAIKON 4/5
+PROGRAM POINT: org.springframework.core.convert.ConversionService.convert(java.lang.Object, org.springframework.core.convert.TypeDescriptor):::EXIT
+EXPR: return != null
+
+DAIKON 5/5
+PROGRAM POINT: org.springframework.core.convert.ConversionService.convert(java.lang.Object, org.springframework.core.convert.TypeDescriptor):::EXIT
+EXPR: return.getClass().getName() != orig(this.getClass().getName())
+
+
+==============================================================================================================
+PROJECT: spring
+SAMPLE INDEX: 4/10
+
+OCA METHOD: org.springframework.core.convert.support.StringToPropertiesConverter#convert(String):Properties
+DAIKON METHOD: org.springframework.core.convert.support.StringToPropertiesConverter.convert(java.lang.String)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 4
+DAIKON ORIGINAL INVARIANT COUNT: 3
+BALANCED COUNT PER TOOL: 3
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (3)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/3
+PROGRAM POINT: METHOD_EXIT
+EXPR: result.isEmpty() == (source.isEmpty())
+ID: 5d6b9490-3a16-4c5a-81e1-f153b849a999
+RATIONALE: If source is empty, no properties can be loaded, so result is empty; otherwise, result may have entries.
+SOURCE FILE: org/springframework/core/convert/support/StringToPropertiesConverter.java
+
+OCA 2/3
+PROGRAM POINT: METHOD_EXIT
+EXPR: result != null
+ID: cf732a4e-5fae-43f9-9cc5-45eb0c6f9492
+RATIONALE: The method creates and returns a new Properties object loaded from the source string.
+SOURCE FILE: org/springframework/core/convert/support/StringToPropertiesConverter.java
+
+OCA 3/3
+PROGRAM POINT: METHOD_ENTRY
+EXPR: source.trim().length() > 0
+ID: efff9d93-ab4f-4ac8-8441-372c0dd41193
+RATIONALE: Properties.load expects meaningful content, so source should not be just whitespace.
+SOURCE FILE: org/springframework/core/convert/support/StringToPropertiesConverter.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (3)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/3
+PROGRAM POINT: org.springframework.core.convert.support.StringToPropertiesConverter.convert(java.lang.String):::ENTER
+EXPR: source.toString one of { "   foo=bar\n    bar=baz\n     baz=boo", "a=b\nc=2\nd=" }
+
+DAIKON 2/3
+PROGRAM POINT: org.springframework.core.convert.support.StringToPropertiesConverter.convert(java.lang.String):::EXIT
+EXPR: source.toString == orig(source.toString)
+
+DAIKON 3/3
+PROGRAM POINT: org.springframework.core.convert.support.StringToPropertiesConverter.convert(java.lang.String):::EXIT
+EXPR: source.toString one of { "   foo=bar\n    bar=baz\n     baz=boo", "a=b\nc=2\nd=" }
+
+
+==============================================================================================================
+PROJECT: spring
+SAMPLE INDEX: 5/10
+
+OCA METHOD: org.springframework.core.convert.support.StreamConverter#convertToStream(Object,TypeDescriptor,TypeDescriptor):Object
+DAIKON METHOD: org.springframework.core.convert.support.StreamConverter.convertToStream(java.lang.Object, org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 6
+DAIKON ORIGINAL INVARIANT COUNT: 6
+BALANCED COUNT PER TOOL: 6
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (6)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/6
+PROGRAM POINT: METHOD_ENTRY
+EXPR: sourceType != null
+ID: 8bdfa35c-87bb-494e-ba3d-a3cd2dfc53ac
+RATIONALE: The sourceType parameter describes the type of the source object, so it should not be null since conversion depends on it.
+SOURCE FILE: org/springframework/core/convert/support/StreamConverter.java
+
+OCA 2/6
+PROGRAM POINT: METHOD_ENTRY
+EXPR: !streamType.isCollection()
+ID: 2dee54c1-d452-43ad-aecf-a0d7127ff11e
+RATIONALE: The method converts to a stream, so the streamType should not be a collection type.
+SOURCE FILE: org/springframework/core/convert/support/StreamConverter.java
+
+OCA 3/6
+PROGRAM POINT: METHOD_EXIT
+EXPR: result != null
+ID: 1aaf9c84-140b-4ae2-aa2c-46341e509a56
+RATIONALE: The method ensures target is never null, so result is never null.
+SOURCE FILE: org/springframework/core/convert/support/StreamConverter.java
+
+OCA 4/6
+PROGRAM POINT: METHOD_EXIT
+EXPR: !result.equals(null)
+ID: 5eddddff-c443-44d6-aec2-97de7c86ffa3
+RATIONALE: The method returns a stream from a non-null List (emptyList if null), so result is never null.
+SOURCE FILE: org/springframework/core/convert/support/StreamConverter.java
+
+OCA 5/6
+PROGRAM POINT: METHOD_ENTRY
+EXPR: streamType != null
+ID: d1d9350b-263a-4817-8037-725eef4ff51c
+RATIONALE: streamType is the TypeDescriptor for the stream target; it must be non-null to define element and collection types.
+SOURCE FILE: org/springframework/core/convert/support/StreamConverter.java
+
+OCA 6/6
+PROGRAM POINT: METHOD_ENTRY
+EXPR: streamType.getElementTypeDescriptor() != null
+ID: 3a830c42-fe9f-44c8-bf0c-b1250af77e2b
+RATIONALE: The streamType's element type descriptor is used in constructing the target collection type descriptor.
+SOURCE FILE: org/springframework/core/convert/support/StreamConverter.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (6)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/6
+PROGRAM POINT: org.springframework.core.convert.support.StreamConverter.convertToStream(java.lang.Object, org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor):::EXIT
+EXPR: org.springframework.core.convert.support.StreamConverter.STREAM_TYPE == orig(org.springframework.core.convert.support.StreamConverter.STREAM_TYPE)
+
+DAIKON 2/6
+PROGRAM POINT: org.springframework.core.convert.support.StreamConverter.convertToStream(java.lang.Object, org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor):::EXIT
+EXPR: org.springframework.core.convert.support.StreamConverter.CONVERTIBLE_TYPES == orig(org.springframework.core.convert.support.StreamConverter.CONVERTIBLE_TYPES)
+
+DAIKON 3/6
+PROGRAM POINT: org.springframework.core.convert.support.StreamConverter.convertToStream(java.lang.Object, org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor):::EXIT
+EXPR: org.springframework.core.convert.support.StreamConverter.CONVERTIBLE_TYPES.getClass().getName() == orig(org.springframework.core.convert.support.StreamConverter.CONVERTIBLE_TYPES.getClass().getName())
+
+DAIKON 4/6
+PROGRAM POINT: org.springframework.core.convert.support.StreamConverter.convertToStream(java.lang.Object, org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor):::EXIT
+EXPR: this.conversionService == orig(this.conversionService)
+
+DAIKON 5/6
+PROGRAM POINT: org.springframework.core.convert.support.StreamConverter.convertToStream(java.lang.Object, org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor):::EXIT
+EXPR: this.conversionService.getClass().getName() == orig(this.conversionService.getClass().getName())
+
+DAIKON 6/6
+PROGRAM POINT: org.springframework.core.convert.support.StreamConverter.convertToStream(java.lang.Object, org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor):::EXIT
+EXPR: return.getClass().getName() == java.util.stream.ReferencePipeline$Head.class
+
+
+==============================================================================================================
+PROJECT: spring
+SAMPLE INDEX: 6/10
+
+OCA METHOD: org.springframework.core.convert.support.ObjectToCollectionConverter#getConvertibleTypes():Set<ConvertiblePair>
+DAIKON METHOD: org.springframework.core.convert.support.ObjectToCollectionConverter.getConvertibleTypes()
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 3
+DAIKON ORIGINAL INVARIANT COUNT: 5
+BALANCED COUNT PER TOOL: 3
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (3)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/3
+PROGRAM POINT: METHOD_EXIT
+EXPR: result.size() == 1
+ID: 03244b36-ff2d-4ef3-9933-ac31ac8ce0df
+RATIONALE: Collections.singleton creates a Set with exactly one element.
+SOURCE FILE: org/springframework/core/convert/support/ObjectToCollectionConverter.java
+
+OCA 2/3
+PROGRAM POINT: METHOD_EXIT
+EXPR: !result.isEmpty()
+ID: e59cfba8-22f7-450f-82f6-f106bb2673df
+RATIONALE: The result always contains exactly one ConvertiblePair, thus cannot be empty.
+SOURCE FILE: org/springframework/core/convert/support/ObjectToCollectionConverter.java
+
+OCA 3/3
+PROGRAM POINT: METHOD_EXIT
+EXPR: result != null
+ID: 16d9a685-ae74-4d63-a956-aa4c57096ac5
+RATIONALE: Since the result is populated using Collections.singleton, it is guaranteed non-null.
+SOURCE FILE: org/springframework/core/convert/support/ObjectToCollectionConverter.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (3)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/3
+PROGRAM POINT: org.springframework.core.convert.support.ObjectToCollectionConverter.getConvertibleTypes():::EXIT
+EXPR: return != null
+
+DAIKON 2/3
+PROGRAM POINT: org.springframework.core.convert.support.ObjectToCollectionConverter.getConvertibleTypes():::EXIT
+EXPR: return.getClass().getName() == java.util.Collections$SingletonSet.class
+
+DAIKON 3/3
+PROGRAM POINT: org.springframework.core.convert.support.ObjectToCollectionConverter.getConvertibleTypes():::EXIT
+EXPR: this.conversionService == orig(this.conversionService)
+
+
+==============================================================================================================
+PROJECT: spring
+SAMPLE INDEX: 7/10
+
+OCA METHOD: org.springframework.core.convert.support.IdToEntityConverter#getEntityName(Class<?>):String
+DAIKON METHOD: org.springframework.core.convert.support.IdToEntityConverter.getEntityName(java.lang.Class)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 3
+DAIKON ORIGINAL INVARIANT COUNT: 5
+BALANCED COUNT PER TOOL: 3
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (3)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/3
+PROGRAM POINT: METHOD_EXIT
+EXPR: result.indexOf('.') == -1
+ID: ec6fbd55-0b50-4300-9919-88650fc914e7
+RATIONALE: Because result is the substring of shortName after the last dot, it cannot contain any dots.
+SOURCE FILE: org/springframework/core/convert/support/IdToEntityConverter.java
+
+OCA 2/3
+PROGRAM POINT: METHOD_ENTRY
+EXPR: entityClass != null
+ID: 4b2c7b9c-0b0e-468f-a1e6-d3e6bb3a0c3e
+RATIONALE: The method relies on entityClass to get its short name, so it must be non-null.
+SOURCE FILE: org/springframework/core/convert/support/IdToEntityConverter.java
+
+OCA 3/3
+PROGRAM POINT: METHOD_EXIT
+EXPR: result != null
+ID: 11f450bd-3355-41e3-9c66-cb5beace7aed
+RATIONALE: Because ClassUtils.getShortName(entityClass) returns a non-null string, and result is either a substring or the full short name, result cannot be null.
+SOURCE FILE: org/springframework/core/convert/support/IdToEntityConverter.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (3)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/3
+PROGRAM POINT: org.springframework.core.convert.support.IdToEntityConverter.getEntityName(java.lang.Class):::ENTER
+EXPR: entityClass != null
+
+DAIKON 2/3
+PROGRAM POINT: org.springframework.core.convert.support.IdToEntityConverter.getEntityName(java.lang.Class):::EXIT
+EXPR: return != null
+
+DAIKON 3/3
+PROGRAM POINT: org.springframework.core.convert.support.IdToEntityConverter.getEntityName(java.lang.Class):::EXIT
+EXPR: this.conversionService == orig(this.conversionService)
+
+
+==============================================================================================================
+PROJECT: spring
+SAMPLE INDEX: 8/10
+
+OCA METHOD: org.springframework.core.convert.support.AbstractConditionalEnumConverter#matches(TypeDescriptor,TypeDescriptor):boolean
+DAIKON METHOD: org.springframework.core.convert.support.AbstractConditionalEnumConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 5
+DAIKON ORIGINAL INVARIANT COUNT: 3
+BALANCED COUNT PER TOOL: 3
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (3)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/3
+PROGRAM POINT: METHOD_EXIT
+EXPR: result == true || (sourceType != null && targetType != null)
+ID: 161bd64f-3db2-4d76-a630-d8ee62fba70f
+RATIONALE: If result is false, then conversionService.canConvert returned true for some interface of sourceType.
+SOURCE FILE: org/springframework/core/convert/support/AbstractConditionalEnumConverter.java
+
+OCA 2/3
+PROGRAM POINT: METHOD_ENTRY
+EXPR: targetType != null
+ID: bc640ddf-a1d4-4b44-af52-a2173210d4b8
+RATIONALE: Target type is used for conversion checks and should not be null.
+SOURCE FILE: org/springframework/core/convert/support/AbstractConditionalEnumConverter.java
+
+OCA 3/3
+PROGRAM POINT: METHOD_ENTRY
+EXPR: sourceType != null
+ID: 67553617-6576-4b08-9fbf-e06cb2e832b3
+RATIONALE: The method accesses sourceType.getType(), so sourceType must not be null.
+SOURCE FILE: org/springframework/core/convert/support/AbstractConditionalEnumConverter.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (3)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/3
+PROGRAM POINT: org.springframework.core.convert.support.AbstractConditionalEnumConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor):::EXIT
+EXPR: this.conversionService == orig(this.conversionService)
+
+DAIKON 2/3
+PROGRAM POINT: org.springframework.core.convert.support.AbstractConditionalEnumConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor):::EXIT
+EXPR: this.conversionService.getClass().getName() == orig(this.conversionService.getClass().getName())
+
+DAIKON 3/3
+PROGRAM POINT: org.springframework.core.convert.support.AbstractConditionalEnumConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor):::EXIT
+EXPR: return == true
+
+
+==============================================================================================================
+PROJECT: spring
+SAMPLE INDEX: 9/10
+
+OCA METHOD: org.springframework.core.convert.support.ObjectToCollectionConverter#matches(TypeDescriptor,TypeDescriptor):boolean
+DAIKON METHOD: org.springframework.core.convert.support.ObjectToCollectionConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 3
+DAIKON ORIGINAL INVARIANT COUNT: 3
+BALANCED COUNT PER TOOL: 3
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (3)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/3
+PROGRAM POINT: METHOD_ENTRY
+EXPR: targetType != null
+ID: 19866ef5-c119-4d03-8020-b939dd59bc95
+RATIONALE: The method call on targetType requires it to be not null to avoid NullPointerException.
+SOURCE FILE: org/springframework/core/convert/support/ObjectToCollectionConverter.java
+
+OCA 2/3
+PROGRAM POINT: METHOD_EXIT
+EXPR: !result || (sourceType != null)
+ID: cdfc94bf-02c6-43cd-af00-5c27ccd1603c
+RATIONALE: If matches returns true, sourceType is expected to be non-null.
+SOURCE FILE: org/springframework/core/convert/support/ObjectToCollectionConverter.java
+
+OCA 3/3
+PROGRAM POINT: METHOD_ENTRY
+EXPR: sourceType != null
+ID: 36dba803-cc9d-43e7-9890-a7409b525ea9
+RATIONALE: sourceType is used to determine convertibility of its elements.
+SOURCE FILE: org/springframework/core/convert/support/ObjectToCollectionConverter.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (3)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/3
+PROGRAM POINT: org.springframework.core.convert.support.ObjectToCollectionConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor):::EXIT
+EXPR: this.conversionService == orig(this.conversionService)
+
+DAIKON 2/3
+PROGRAM POINT: org.springframework.core.convert.support.ObjectToCollectionConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor):::EXIT
+EXPR: this.conversionService.getClass().getName() == orig(this.conversionService.getClass().getName())
+
+DAIKON 3/3
+PROGRAM POINT: org.springframework.core.convert.support.ObjectToCollectionConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor):::EXIT
+EXPR: return == true
+
+
+==============================================================================================================
+PROJECT: spring
+SAMPLE INDEX: 10/10
+
+OCA METHOD: org.springframework.core.convert.support.EnumToStringConverter#convert(Enum<?>):String
+DAIKON METHOD: org.springframework.core.convert.support.EnumToStringConverter.convert(java.lang.Enum)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 8
+DAIKON ORIGINAL INVARIANT COUNT: 3
+BALANCED COUNT PER TOOL: 3
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (3)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/3
+PROGRAM POINT: METHOD_ENTRY
+EXPR: source.name().length() > 0
+ID: 922624df-2479-4bc1-9719-98e66e53d2ed
+RATIONALE: Enum constant names are guaranteed to be non-empty strings.
+SOURCE FILE: org/springframework/core/convert/support/EnumToStringConverter.java
+
+OCA 2/3
+PROGRAM POINT: METHOD_EXIT
+EXPR: result.equals(source.name())
+ID: 1680d128-f49d-4d41-bd0a-4d23ac20739a
+RATIONALE: The method returns source.name(), so result equals source.name()
+SOURCE FILE: org/springframework/core/convert/support/EnumToStringConverter.java
+
+OCA 3/3
+PROGRAM POINT: METHOD_EXIT
+EXPR: result.length() > 0
+ID: dde913a6-b77c-4d98-b5cf-aaca9b87e975
+RATIONALE: Enum names are identifiers so the returned string is non-empty
+SOURCE FILE: org/springframework/core/convert/support/EnumToStringConverter.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (3)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/3
+PROGRAM POINT: org.springframework.core.convert.support.EnumToStringConverter.convert(java.lang.Enum):::EXIT
+EXPR: this.conversionService == orig(this.conversionService)
+
+DAIKON 2/3
+PROGRAM POINT: org.springframework.core.convert.support.EnumToStringConverter.convert(java.lang.Enum):::EXIT
+EXPR: this.conversionService.getClass().getName() == orig(this.conversionService.getClass().getName())
+
+DAIKON 3/3
+PROGRAM POINT: org.springframework.core.convert.support.EnumToStringConverter.convert(java.lang.Enum):::EXIT
+EXPR: return.toString one of { "A", "BAR", "FIRST" }
+
+
+==============================================================================================================
+PROJECT: libgdx
+SAMPLE INDEX: 1/10
+
+OCA METHOD: com.badlogic.gdx.utils.CharArray#add(char,char):void
+DAIKON METHOD: com.badlogic.gdx.utils.CharArray.add(char, char)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 7
+DAIKON ORIGINAL INVARIANT COUNT: 20
+BALANCED COUNT PER TOOL: 7
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (7)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/7
+PROGRAM POINT: METHOD_EXIT
+EXPR: Character.isValidCodePoint(value2)
+ID: d0c62bd0-6e88-493a-b904-090166714e6a
+RATIONALE: value2 is a char and must be a valid Unicode code point.
+SOURCE FILE: com/badlogic/gdx/utils/CharArray.java
+
+OCA 2/7
+PROGRAM POINT: METHOD_EXIT
+EXPR: Character.isValidCodePoint(value1)
+ID: 5d221539-5dfe-48f7-96a6-a812de23fa7b
+RATIONALE: value1 is a char, so it must be a valid Unicode code point within the char range.
+SOURCE FILE: com/badlogic/gdx/utils/CharArray.java
+
+OCA 3/7
+PROGRAM POINT: METHOD_EXIT
+EXPR: value1 != value2
+ID: e3a318f1-fd6c-49e0-bdfa-b34339956859
+RATIONALE: No explicit method contracts indicate values must differ, but added values may be distinct.
+SOURCE FILE: com/badlogic/gdx/utils/CharArray.java
+
+OCA 4/7
+PROGRAM POINT: METHOD_ENTRY
+EXPR: Character.isDefined(value2)
+ID: f76d6a43-f798-41aa-9039-8310ed1e336c
+RATIONALE: value2 should be a valid defined Unicode character.
+SOURCE FILE: com/badlogic/gdx/utils/CharArray.java
+
+OCA 5/7
+PROGRAM POINT: METHOD_ENTRY
+EXPR: Character.isDefined(value1)
+ID: ea00f8e8-fa2d-4e6c-868c-5190c6ad1973
+RATIONALE: value1 should be a valid defined Unicode character.
+SOURCE FILE: com/badlogic/gdx/utils/CharArray.java
+
+OCA 6/7
+PROGRAM POINT: METHOD_ENTRY
+EXPR: value1 != value2
+ID: 7655ed1b-a449-4fde-bf52-eb5854ee8763
+RATIONALE: It is plausible that value1 and value2 are not equal, capturing a non-equality relationship.
+SOURCE FILE: com/badlogic/gdx/utils/CharArray.java
+
+OCA 7/7
+PROGRAM POINT: METHOD_EXIT
+EXPR: !(value1 < 0)
+ID: 6e68152e-0dac-4cca-8f5d-3e9af775c2df
+RATIONALE: char type is non-negative by Java definition.
+SOURCE FILE: com/badlogic/gdx/utils/CharArray.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (7)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/7
+PROGRAM POINT: com.badlogic.gdx.utils.CharArray.add(char, char):::EXIT
+EXPR: orig(value1) in this.items[]
+
+DAIKON 2/7
+PROGRAM POINT: com.badlogic.gdx.utils.CharArray.add(char, char):::EXIT
+EXPR: this.ordered == orig(this.ordered)
+
+DAIKON 3/7
+PROGRAM POINT: com.badlogic.gdx.utils.CharArray.add(char, char):::EXIT
+EXPR: com.badlogic.gdx.utils.CharArray.DIGITS == orig(com.badlogic.gdx.utils.CharArray.DIGITS)
+
+DAIKON 4/7
+PROGRAM POINT: com.badlogic.gdx.utils.CharArray.add(char, char):::EXIT
+EXPR: this.items == orig(this.items)
+
+DAIKON 5/7
+PROGRAM POINT: com.badlogic.gdx.utils.CharArray.add(char, char):::EXIT
+EXPR: com.badlogic.gdx.utils.CharArray.DIGITS[] == orig(com.badlogic.gdx.utils.CharArray.DIGITS[])
+
+DAIKON 6/7
+PROGRAM POINT: com.badlogic.gdx.utils.CharArray.add(char, char):::ENTER
+EXPR: this has only one value
+
+DAIKON 7/7
+PROGRAM POINT: com.badlogic.gdx.utils.CharArray.add(char, char):::ENTER
+EXPR: this.items[] == [97, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+
+==============================================================================================================
+PROJECT: libgdx
+SAMPLE INDEX: 2/10
+
+OCA METHOD: com.badlogic.gdx.utils.JsonValue#getString(String,String):String
+DAIKON METHOD: com.badlogic.gdx.utils.JsonValue.getString(java.lang.String, java.lang.String)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 8
+DAIKON ORIGINAL INVARIANT COUNT: 36
+BALANCED COUNT PER TOOL: 8
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (8)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/8
+PROGRAM POINT: METHOD_EXIT
+EXPR: (result == defaultValue) || (result != null && !result.isEmpty())
+ID: b82dfa8c-857c-4322-b8a3-bd7678f6fa28
+RATIONALE: If result is not defaultValue, it must be a string value of the child JsonValue that is neither null nor empty.
+SOURCE FILE: com/badlogic/gdx/utils/JsonValue.java
+
+OCA 2/8
+PROGRAM POINT: METHOD_ENTRY
+EXPR: defaultValue == null || true
+ID: 4754ffc4-543b-43bb-b411-b935f00d9aa8
+RATIONALE: defaultValue is annotated @Null, so it may be null or non-null.
+SOURCE FILE: com/badlogic/gdx/utils/JsonValue.java
+
+OCA 3/8
+PROGRAM POINT: METHOD_EXIT
+EXPR: defaultValue == null || result != null
+ID: 5fa07b53-835d-438c-a72b-82de0a15c1e1
+RATIONALE: If defaultValue is non-null, result cannot be null due to return logic.
+SOURCE FILE: com/badlogic/gdx/utils/JsonValue.java
+
+OCA 4/8
+PROGRAM POINT: METHOD_ENTRY
+EXPR: name.trim().length() > 0
+ID: 29ba8bc9-b591-48e1-9dab-07516d4cf12f
+RATIONALE: Name string keys for JSON must have some content after trimming whitespace.
+SOURCE FILE: com/badlogic/gdx/utils/JsonValue.java
+
+OCA 5/8
+PROGRAM POINT: METHOD_ENTRY
+EXPR: defaultValue == null || defaultValue.length() >= 0
+ID: 46387b98-b4d8-47da-951d-b3f9e256166b
+RATIONALE: If defaultValue is non-null, it is a valid string with a non-negative length.
+SOURCE FILE: com/badlogic/gdx/utils/JsonValue.java
+
+OCA 6/8
+PROGRAM POINT: METHOD_ENTRY
+EXPR: name != null
+ID: 2bc97220-9c13-4c47-b806-465082cd9d76
+RATIONALE: The parameter name must be non-null for get(name) to work properly.
+SOURCE FILE: com/badlogic/gdx/utils/JsonValue.java
+
+OCA 7/8
+PROGRAM POINT: METHOD_EXIT
+EXPR: result == defaultValue || (result != null && !result.isEmpty())
+ID: 17717268-a849-489f-8d59-22fe2967e942
+RATIONALE: If a child JsonValue is found, result is its string representation; otherwise, it's the defaultValue. Thus, result equals defaultValue or a non-null string.
+SOURCE FILE: com/badlogic/gdx/utils/JsonValue.java
+
+OCA 8/8
+PROGRAM POINT: METHOD_ENTRY
+EXPR: !name.isEmpty()
+ID: d7e1e9be-978c-4e95-b07e-5e348d5cb15f
+RATIONALE: It's likely that name is expected to be a non-empty string as a key in JSON.
+SOURCE FILE: com/badlogic/gdx/utils/JsonValue.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (8)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/8
+PROGRAM POINT: com.badlogic.gdx.utils.JsonValue.getString(java.lang.String, java.lang.String):::EXIT
+EXPR: name.toString == "class"
+
+DAIKON 2/8
+PROGRAM POINT: com.badlogic.gdx.utils.JsonValue.getString(java.lang.String, java.lang.String):::ENTER
+EXPR: name.toString == "class"
+
+DAIKON 3/8
+PROGRAM POINT: com.badlogic.gdx.utils.JsonValue.getString(java.lang.String, java.lang.String):::EXIT
+EXPR: this.type == orig(this.type)
+
+DAIKON 4/8
+PROGRAM POINT: com.badlogic.gdx.utils.JsonValue.getString(java.lang.String, java.lang.String):::ENTER
+EXPR: this.parent == this.prev
+
+DAIKON 5/8
+PROGRAM POINT: com.badlogic.gdx.utils.JsonValue.getString(java.lang.String, java.lang.String):::EXIT
+EXPR: this.doubleValue == orig(this.doubleValue)
+
+DAIKON 6/8
+PROGRAM POINT: com.badlogic.gdx.utils.JsonValue.getString(java.lang.String, java.lang.String):::EXIT
+EXPR: this.doubleValue == 0.0
+
+DAIKON 7/8
+PROGRAM POINT: com.badlogic.gdx.utils.JsonValue.getString(java.lang.String, java.lang.String):::ENTER
+EXPR: this.size == 2
+
+DAIKON 8/8
+PROGRAM POINT: com.badlogic.gdx.utils.JsonValue.getString(java.lang.String, java.lang.String):::ENTER
+EXPR: this.longValue == 0
+
+
+==============================================================================================================
+PROJECT: libgdx
+SAMPLE INDEX: 3/10
+
+OCA METHOD: com.badlogic.gdx.utils.CharArray#incr(int,char):void
+DAIKON METHOD: com.badlogic.gdx.utils.CharArray.incr(int, char)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 3
+DAIKON ORIGINAL INVARIANT COUNT: 19
+BALANCED COUNT PER TOOL: 3
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (3)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/3
+PROGRAM POINT: METHOD_ENTRY
+EXPR: value >= 0
+ID: c0e19344-2458-4348-ae0a-f3255268f4e1
+RATIONALE: The value is a char, which is unsigned 16-bit, so it must be >= 0.
+SOURCE FILE: com/badlogic/gdx/utils/CharArray.java
+
+OCA 2/3
+PROGRAM POINT: METHOD_ENTRY
+EXPR: index >= 0
+ID: a91c8272-7f74-4088-ba87-11a6681685f0
+RATIONALE: The index should be non-negative as it is used to access elements in the array.
+SOURCE FILE: com/badlogic/gdx/utils/CharArray.java
+
+OCA 3/3
+PROGRAM POINT: METHOD_ENTRY
+EXPR: value <= Character.MAX_VALUE
+ID: b6c05956-4d8c-4740-9040-3c088519255b
+RATIONALE: The value is a char, so it cannot exceed Character.MAX_VALUE.
+SOURCE FILE: com/badlogic/gdx/utils/CharArray.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (3)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/3
+PROGRAM POINT: com.badlogic.gdx.utils.CharArray.incr(int, char):::EXIT
+EXPR: com.badlogic.gdx.utils.CharArray.DIGITS == orig(com.badlogic.gdx.utils.CharArray.DIGITS)
+
+DAIKON 2/3
+PROGRAM POINT: com.badlogic.gdx.utils.CharArray.incr(int, char):::ENTER
+EXPR: value == 1
+
+DAIKON 3/3
+PROGRAM POINT: com.badlogic.gdx.utils.CharArray.incr(int, char):::EXIT
+EXPR: this.ordered == true
+
+
+==============================================================================================================
+PROJECT: libgdx
+SAMPLE INDEX: 4/10
+
+OCA METHOD: com.badlogic.gdx.utils.CharArray#substring(int,int):String
+DAIKON METHOD: com.badlogic.gdx.utils.CharArray.substring(int, int)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 4
+DAIKON ORIGINAL INVARIANT COUNT: 15
+BALANCED COUNT PER TOOL: 4
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (4)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/4
+PROGRAM POINT: METHOD_ENTRY
+EXPR: start >= 0
+ID: aa6b71cc-6e66-4405-ae58-00f36ff13fd0
+RATIONALE: start is used as the start index of substring, must be non-negative
+SOURCE FILE: com/badlogic/gdx/utils/CharArray.java
+
+OCA 2/4
+PROGRAM POINT: METHOD_ENTRY
+EXPR: end >= start
+ID: a707093f-cbf1-436e-bddd-afe09932fe84
+RATIONALE: end index must be at least start index to form a valid substring range
+SOURCE FILE: com/badlogic/gdx/utils/CharArray.java
+
+OCA 3/4
+PROGRAM POINT: METHOD_EXIT
+EXPR: result.length() == end - start
+ID: 4d543aa2-9728-454d-b694-da6c267ff9fd
+RATIONALE: The substring method constructs a new String from items from start with length (end - start). Thus the result length matches end - start.
+SOURCE FILE: com/badlogic/gdx/utils/CharArray.java
+
+OCA 4/4
+PROGRAM POINT: METHOD_EXIT
+EXPR: start >= 0 && end >= start && result != null
+ID: 8f1bf9f9-0c60-4da7-9b0f-d1834f9c06f6
+RATIONALE: Since the method returns a new String, result should never be null and indices are validated.
+SOURCE FILE: com/badlogic/gdx/utils/CharArray.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (4)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/4
+PROGRAM POINT: com.badlogic.gdx.utils.CharArray.substring(int, int):::EXIT
+EXPR: com.badlogic.gdx.utils.CharArray.DIGITS == orig(com.badlogic.gdx.utils.CharArray.DIGITS)
+
+DAIKON 2/4
+PROGRAM POINT: com.badlogic.gdx.utils.CharArray.substring(int, int):::EXIT
+EXPR: this.size one of { 4, 12 }
+
+DAIKON 3/4
+PROGRAM POINT: com.badlogic.gdx.utils.CharArray.substring(int, int):::EXIT
+EXPR: this.ordered == true
+
+DAIKON 4/4
+PROGRAM POINT: com.badlogic.gdx.utils.CharArray.substring(int, int):::ENTER
+EXPR: start one of { 0, 6 }
+
+
+==============================================================================================================
+PROJECT: libgdx
+SAMPLE INDEX: 5/10
+
+OCA METHOD: com.badlogic.gdx.utils.LongArray#incr(int,long):void
+DAIKON METHOD: com.badlogic.gdx.utils.LongArray.incr(int, long)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 1
+DAIKON ORIGINAL INVARIANT COUNT: 16
+BALANCED COUNT PER TOOL: 1
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (1)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/1
+PROGRAM POINT: METHOD_ENTRY
+EXPR: index >= 0
+ID: b2a2b3df-6dce-4917-970f-524b7ebbf317
+RATIONALE: The index used for array access must be non-negative.
+SOURCE FILE: com/badlogic/gdx/utils/LongArray.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (1)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/1
+PROGRAM POINT: com.badlogic.gdx.utils.LongArray.incr(int, long):::ENTER
+EXPR: this.items has only one value
+
+
+==============================================================================================================
+PROJECT: libgdx
+SAMPLE INDEX: 6/10
+
+OCA METHOD: com.badlogic.gdx.utils.JsonReader#parse(char[],int,int):JsonValue
+DAIKON METHOD: com.badlogic.gdx.utils.JsonReader.parse(char[], int, int)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 5
+DAIKON ORIGINAL INVARIANT COUNT: 32
+BALANCED COUNT PER TOOL: 5
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (5)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: length >= offset
+ID: 5ea7e90b-b120-477a-b4f9-2b419ea011f2
+RATIONALE: Length should be greater or equal to offset as it represents an end index or length of data slice.
+SOURCE FILE: com/badlogic/gdx/utils/JsonReader.java
+
+OCA 2/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: data.length >= 0
+ID: 673ec0ca-e2a2-4098-96ea-bc8aa356dfdf
+RATIONALE: Data array length is always non-negative.
+SOURCE FILE: com/badlogic/gdx/utils/JsonReader.java
+
+OCA 3/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: data != null
+ID: 03f54e1d-212e-4ca6-83dd-a86da90203bd
+RATIONALE: Data array must be non-null for parsing JSON characters from it.
+SOURCE FILE: com/badlogic/gdx/utils/JsonReader.java
+
+OCA 4/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: length <= data.length
+ID: 279c5299-4e9a-498f-8fe5-abbc39cf18d5
+RATIONALE: Length must be within data array bounds to avoid out-of-range access.
+SOURCE FILE: com/badlogic/gdx/utils/JsonReader.java
+
+OCA 5/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: offset >= 0
+ID: d4d1ad03-d7e9-462c-81d3-ebd6bc7b46ef
+RATIONALE: Offset must be non-negative as it denotes a position in the data array.
+SOURCE FILE: com/badlogic/gdx/utils/JsonReader.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (5)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/5
+PROGRAM POINT: com.badlogic.gdx.utils.JsonReader.parse(char[], int, int):::EXIT
+EXPR: data[] == orig(data[])
+
+DAIKON 2/5
+PROGRAM POINT: com.badlogic.gdx.utils.JsonReader.parse(char[], int, int):::ENTER
+EXPR: data[] elements >= 0
+
+DAIKON 3/5
+PROGRAM POINT: com.badlogic.gdx.utils.JsonReader.parse(char[], int, int):::EXIT
+EXPR: com.badlogic.gdx.utils.JsonReader._json_key_offsets == orig(com.badlogic.gdx.utils.JsonReader._json_key_offsets)
+
+DAIKON 4/5
+PROGRAM POINT: com.badlogic.gdx.utils.JsonReader.parse(char[], int, int):::ENTER
+EXPR: this.root == this.current
+
+DAIKON 5/5
+PROGRAM POINT: com.badlogic.gdx.utils.JsonReader.parse(char[], int, int):::EXIT
+EXPR: com.badlogic.gdx.utils.JsonReader._json_key_offsets[] == orig(com.badlogic.gdx.utils.JsonReader._json_key_offsets[])
+
+
+==============================================================================================================
+PROJECT: libgdx
+SAMPLE INDEX: 7/10
+
+OCA METHOD: com.badlogic.gdx.utils.LongQueue#equals(Object):boolean
+DAIKON METHOD: com.badlogic.gdx.utils.LongQueue.equals(java.lang.Object)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 1
+DAIKON ORIGINAL INVARIANT COUNT: 33
+BALANCED COUNT PER TOOL: 1
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (1)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/1
+PROGRAM POINT: METHOD_ENTRY
+EXPR: o != null
+ID: b057b2bf-512e-4665-92b0-67de49911496
+RATIONALE: Safe to check for instanceof only if o is not null
+SOURCE FILE: com/badlogic/gdx/utils/LongQueue.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (1)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/1
+PROGRAM POINT: com.badlogic.gdx.utils.LongQueue.equals(java.lang.Object):::EXIT
+EXPR: (return == false)  ==>  (this.values[] elements one of { 0, 1, 2 })
+
+
+==============================================================================================================
+PROJECT: libgdx
+SAMPLE INDEX: 8/10
+
+OCA METHOD: com.badlogic.gdx.utils.CharArray#append(char[]):CharArray
+DAIKON METHOD: com.badlogic.gdx.utils.CharArray.append(char[])
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 6
+DAIKON ORIGINAL INVARIANT COUNT: 16
+BALANCED COUNT PER TOOL: 6
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (6)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/6
+PROGRAM POINT: METHOD_ENTRY
+EXPR: ch == null || ch.getClass().isArray()
+ID: 35831913-d624-4dd1-9c43-e34fffa0f3a0
+RATIONALE: The parameter ch is declared as a char array, so if not null, it is an array.
+SOURCE FILE: com/badlogic/gdx/utils/CharArray.java
+
+OCA 2/6
+PROGRAM POINT: METHOD_EXIT
+EXPR: (ch == null) || (ch.length == 0) || (result.size >= ch.length)
+ID: 58008470-0cd0-4ea6-b2ec-27f18d301225
+RATIONALE: If input array is null, appendNull() is called; else if non-empty, size increases to accommodate ch.length.
+SOURCE FILE: com/badlogic/gdx/utils/CharArray.java
+
+OCA 3/6
+PROGRAM POINT: METHOD_EXIT
+EXPR: ch == null || result.items != null
+ID: 75c2e392-3af1-4f93-b9bc-c94a708d9325
+RATIONALE: After appending, the internal items array remains non-null if input array is not null.
+SOURCE FILE: com/badlogic/gdx/utils/CharArray.java
+
+OCA 4/6
+PROGRAM POINT: METHOD_ENTRY
+EXPR: ch == null || ch.length == (ch.length)
+ID: ff9d178a-cadb-4fac-8871-42836f34b808
+RATIONALE: Property of arrays: length is fixed and consistent.
+SOURCE FILE: com/badlogic/gdx/utils/CharArray.java
+
+OCA 5/6
+PROGRAM POINT: METHOD_ENTRY
+EXPR: ch == null || ch.length >= 0
+ID: 0705446e-acdd-4b5a-8381-e855e69dd849
+RATIONALE: In Java, arrays have non-negative lengths; ch can be null or a char array with length >= 0.
+SOURCE FILE: com/badlogic/gdx/utils/CharArray.java
+
+OCA 6/6
+PROGRAM POINT: METHOD_EXIT
+EXPR: ch != null || result != null
+ID: cbef1b69-fa4e-4799-b548-5b9ab5010db4
+RATIONALE: The method returns a non-null CharArray regardless of the input.
+SOURCE FILE: com/badlogic/gdx/utils/CharArray.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (6)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/6
+PROGRAM POINT: com.badlogic.gdx.utils.CharArray.append(char[]):::EXIT
+EXPR: this.items == orig(this.items)
+
+DAIKON 2/6
+PROGRAM POINT: com.badlogic.gdx.utils.CharArray.append(char[]):::ENTER
+EXPR: ch[] one of { [49, 50, 51], [55357, 56832] }
+
+DAIKON 3/6
+PROGRAM POINT: com.badlogic.gdx.utils.CharArray.append(char[]):::ENTER
+EXPR: this.ordered == true
+
+DAIKON 4/6
+PROGRAM POINT: com.badlogic.gdx.utils.CharArray.append(char[]):::EXIT
+EXPR: com.badlogic.gdx.utils.CharArray.DIGITS[] == orig(com.badlogic.gdx.utils.CharArray.DIGITS[])
+
+DAIKON 5/6
+PROGRAM POINT: com.badlogic.gdx.utils.CharArray.append(char[]):::EXIT
+EXPR: com.badlogic.gdx.utils.CharArray.DIGITS == orig(com.badlogic.gdx.utils.CharArray.DIGITS)
+
+DAIKON 6/6
+PROGRAM POINT: com.badlogic.gdx.utils.CharArray.append(char[]):::EXIT
+EXPR: this.size one of { 2, 8 }
+
+
+==============================================================================================================
+PROJECT: libgdx
+SAMPLE INDEX: 9/10
+
+OCA METHOD: com.badlogic.gdx.utils.reflect.Field#getType():Class
+DAIKON METHOD: com.badlogic.gdx.utils.reflect.Field.getType()
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 2
+DAIKON ORIGINAL INVARIANT COUNT: 1
+BALANCED COUNT PER TOOL: 1
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (1)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/1
+PROGRAM POINT: METHOD_EXIT
+EXPR: result.isAssignableFrom(result)
+ID: ef94dd8a-3b01-4441-80f8-f2e49a3babbc
+RATIONALE: Reflexive property of Class objects.
+SOURCE FILE: com/badlogic/gdx/utils/reflect/Field.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (1)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/1
+PROGRAM POINT: com.badlogic.gdx.utils.reflect.Field.getType():::EXIT
+EXPR: this.field == orig(this.field)
+
+
+==============================================================================================================
+PROJECT: libgdx
+SAMPLE INDEX: 10/10
+
+OCA METHOD: com.badlogic.gdx.math.Polygon#setVertices(float[]):void
+DAIKON METHOD: com.badlogic.gdx.math.Polygon.setVertices(float[])
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 6
+DAIKON ORIGINAL INVARIANT COUNT: 36
+BALANCED COUNT PER TOOL: 6
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (6)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/6
+PROGRAM POINT: METHOD_ENTRY
+EXPR: vertices != null
+ID: 92dcc2bf-a34c-4bbd-8ab8-9fc9cb647278
+RATIONALE: The vertices parameter should not be null to represent polygon points.
+SOURCE FILE: com/badlogic/gdx/math/Polygon.java
+
+OCA 2/6
+PROGRAM POINT: METHOD_EXIT
+EXPR: vertices.length >= 6
+ID: 6a06891d-4907-495c-837a-0655daa79dc2
+RATIONALE: Polygon must have at least 3 points, which means 6 floats (x,y pairs).
+SOURCE FILE: com/badlogic/gdx/math/Polygon.java
+
+OCA 3/6
+PROGRAM POINT: METHOD_EXIT
+EXPR: vertices.length % 2 == 0
+ID: 5b61ed37-1d1c-47dc-b557-a74a033fcddb
+RATIONALE: Vertices array length must be even to represent x,y pairs.
+SOURCE FILE: com/badlogic/gdx/math/Polygon.java
+
+OCA 4/6
+PROGRAM POINT: METHOD_ENTRY
+EXPR: vertices.length >= 6
+ID: ee54bba4-f198-4ec5-a454-d96e75ed5325
+RATIONALE: The vertices array must have length at least 6 representing at least 3 points.
+SOURCE FILE: com/badlogic/gdx/math/Polygon.java
+
+OCA 5/6
+PROGRAM POINT: METHOD_ENTRY
+EXPR: (vertices.length % 2) == 0
+ID: c20dbbb6-d8ec-4f85-8ed6-b4c1a04b0639
+RATIONALE: The vertices array length is an even number because points are stored as pairs of floats (x,y).
+SOURCE FILE: com/badlogic/gdx/math/Polygon.java
+
+OCA 6/6
+PROGRAM POINT: METHOD_EXIT
+EXPR: vertices != null
+ID: ec3d7181-6615-4fb8-b2b5-d52485c66b51
+RATIONALE: The method requires a valid array of vertices, and null would cause an exception or invalid state.
+SOURCE FILE: com/badlogic/gdx/math/Polygon.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (6)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/6
+PROGRAM POINT: com.badlogic.gdx.math.Polygon.setVertices(float[]):::ENTER
+EXPR: this.x == this.originX
+
+DAIKON 2/6
+PROGRAM POINT: com.badlogic.gdx.math.Polygon.setVertices(float[]):::ENTER
+EXPR: this.worldVertices == null
+
+DAIKON 3/6
+PROGRAM POINT: com.badlogic.gdx.math.Polygon.setVertices(float[]):::EXIT
+EXPR: this.localVertices[] == vertices[]
+
+DAIKON 4/6
+PROGRAM POINT: com.badlogic.gdx.math.Polygon.setVertices(float[]):::ENTER
+EXPR: this.x == 0.0
+
+DAIKON 5/6
+PROGRAM POINT: com.badlogic.gdx.math.Polygon.setVertices(float[]):::EXIT
+EXPR: this.dirty == orig(this.dirty)
+
+DAIKON 6/6
+PROGRAM POINT: com.badlogic.gdx.math.Polygon.setVertices(float[]):::EXIT
+EXPR: vertices[] == [1.0, -2.0, 1.0, -1.5, 1.5, -1.5, 1.5, -2.0]
+
+
+==============================================================================================================
+PROJECT: dubbo
+SAMPLE INDEX: 1/10
+
+OCA METHOD: org.apache.dubbo.common.utils.IOUtils#readLines(File):String[]
+DAIKON METHOD: org.apache.dubbo.common.utils.IOUtils.readLines(java.io.File)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 9
+DAIKON ORIGINAL INVARIANT COUNT: 2
+BALANCED COUNT PER TOOL: 2
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (2)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/2
+PROGRAM POINT: METHOD_ENTRY
+EXPR: !file.isDirectory()
+ID: 55d09b2a-9e58-4c28-b786-585b13c00048
+RATIONALE: Since the method reads lines from a file, the file argument should not be a directory.
+SOURCE FILE: org/apache/dubbo/common/utils/IOUtils.java
+
+OCA 2/2
+PROGRAM POINT: METHOD_ENTRY
+EXPR: file.exists()
+ID: 12fd70d5-6bcd-4e75-ad92-b4b796b43e09
+RATIONALE: The method returns an empty array if the file does not exist, so logically this should be true at the entry point for reading lines.
+SOURCE FILE: org/apache/dubbo/common/utils/IOUtils.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (2)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/2
+PROGRAM POINT: org.apache.dubbo.common.utils.IOUtils.readLines(java.io.File):::EXIT
+EXPR: return.getClass().getName() == java.lang.String[].class
+
+DAIKON 2/2
+PROGRAM POINT: org.apache.dubbo.common.utils.IOUtils.readLines(java.io.File):::EXIT
+EXPR: return[].toString one of { [ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890], [a, b, c] }
+
+
+==============================================================================================================
+PROJECT: dubbo
+SAMPLE INDEX: 2/10
+
+OCA METHOD: org.apache.dubbo.common.utils.ReflectUtils#getName(Method):String
+DAIKON METHOD: org.apache.dubbo.common.utils.ReflectUtils.getName(java.lang.reflect.Method)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 8
+DAIKON ORIGINAL INVARIANT COUNT: 25
+BALANCED COUNT PER TOOL: 8
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (8)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/8
+PROGRAM POINT: METHOD_ENTRY
+EXPR: m.getParameterTypes() != null
+ID: 5cc99032-a9db-4b7b-a6ea-21d1501ef682
+RATIONALE: The parameter types array returned by Method m is never null.
+SOURCE FILE: org/apache/dubbo/common/utils/ReflectUtils.java
+
+OCA 2/8
+PROGRAM POINT: METHOD_ENTRY
+EXPR: m.getParameterTypes().length >= 0
+ID: 52133e61-174e-45cd-90ed-63389e88cb33
+RATIONALE: Parameter types array length is always zero or more.
+SOURCE FILE: org/apache/dubbo/common/utils/ReflectUtils.java
+
+OCA 3/8
+PROGRAM POINT: METHOD_EXIT
+EXPR: result.endsWith(")")
+ID: 664f58ec-f0db-4b8d-b72e-d8058a2924e3
+RATIONALE: The result string ends with the closing parenthesis after parameters list.
+SOURCE FILE: org/apache/dubbo/common/utils/ReflectUtils.java
+
+OCA 4/8
+PROGRAM POINT: METHOD_ENTRY
+EXPR: m != null
+ID: 8bc86658-85d9-445d-940f-5e8ebd4e1639
+RATIONALE: The input Method object 'm' must be non-null for the method to operate.
+SOURCE FILE: org/apache/dubbo/common/utils/ReflectUtils.java
+
+OCA 5/8
+PROGRAM POINT: METHOD_EXIT
+EXPR: result != null
+ID: efbc4075-a26c-46f8-819f-d5a78e7cc75e
+RATIONALE: The returned String result is a constructed method signature, which should never be null.
+SOURCE FILE: org/apache/dubbo/common/utils/ReflectUtils.java
+
+OCA 6/8
+PROGRAM POINT: METHOD_ENTRY
+EXPR: m.getName() != null
+ID: 0ec7e000-cbfd-4814-a868-cff577f09f18
+RATIONALE: The method name string returned by Method m is never null.
+SOURCE FILE: org/apache/dubbo/common/utils/ReflectUtils.java
+
+OCA 7/8
+PROGRAM POINT: METHOD_EXIT
+EXPR: result.contains(m.getName())
+ID: 30346aa9-64c3-4d56-b2d5-28415c2bd3d2
+RATIONALE: The method name is appended directly after the return type and space.
+SOURCE FILE: org/apache/dubbo/common/utils/ReflectUtils.java
+
+OCA 8/8
+PROGRAM POINT: METHOD_ENTRY
+EXPR: m.getReturnType() != null
+ID: aa22c214-d6c5-4315-a60e-55d0ba38d9ca
+RATIONALE: The return type Class object from Method m is never null.
+SOURCE FILE: org/apache/dubbo/common/utils/ReflectUtils.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (8)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/8
+PROGRAM POINT: org.apache.dubbo.common.utils.ReflectUtils.getName(java.lang.reflect.Method):::EXIT
+EXPR: org.apache.dubbo.common.utils.ReflectUtils.EMPTY_CLASS_ARRAY[] == orig(org.apache.dubbo.common.utils.ReflectUtils.EMPTY_CLASS_ARRAY[])
+
+DAIKON 2/8
+PROGRAM POINT: org.apache.dubbo.common.utils.ReflectUtils.getName(java.lang.reflect.Method):::ENTER
+EXPR: m has only one value
+
+DAIKON 3/8
+PROGRAM POINT: org.apache.dubbo.common.utils.ReflectUtils.getName(java.lang.reflect.Method):::EXIT
+EXPR: org.apache.dubbo.common.utils.ReflectUtils.JAVA_IDENT_REGEX.toString == orig(org.apache.dubbo.common.utils.ReflectUtils.JAVA_IDENT_REGEX.toString)
+
+DAIKON 4/8
+PROGRAM POINT: org.apache.dubbo.common.utils.ReflectUtils.getName(java.lang.reflect.Method):::EXIT
+EXPR: org.apache.dubbo.common.utils.ReflectUtils.DESC_REGEX == orig(org.apache.dubbo.common.utils.ReflectUtils.DESC_REGEX)
+
+DAIKON 5/8
+PROGRAM POINT: org.apache.dubbo.common.utils.ReflectUtils.getName(java.lang.reflect.Method):::EXIT
+EXPR: return.toString == "java.util.List hello(int[])"
+
+DAIKON 6/8
+PROGRAM POINT: org.apache.dubbo.common.utils.ReflectUtils.getName(java.lang.reflect.Method):::EXIT
+EXPR: org.apache.dubbo.common.utils.ReflectUtils.ARRAY_DESC == orig(org.apache.dubbo.common.utils.ReflectUtils.ARRAY_DESC)
+
+DAIKON 7/8
+PROGRAM POINT: org.apache.dubbo.common.utils.ReflectUtils.getName(java.lang.reflect.Method):::EXIT
+EXPR: org.apache.dubbo.common.utils.ReflectUtils.SETTER_METHOD_DESC_PATTERN == orig(org.apache.dubbo.common.utils.ReflectUtils.SETTER_METHOD_DESC_PATTERN)
+
+DAIKON 8/8
+PROGRAM POINT: org.apache.dubbo.common.utils.ReflectUtils.getName(java.lang.reflect.Method):::EXIT
+EXPR: org.apache.dubbo.common.utils.ReflectUtils.CLASS_DESC == orig(org.apache.dubbo.common.utils.ReflectUtils.CLASS_DESC)
+
+
+==============================================================================================================
+PROJECT: dubbo
+SAMPLE INDEX: 3/10
+
+OCA METHOD: org.apache.dubbo.common.utils.FieldUtils#getFieldValue(Object,String):Object
+DAIKON METHOD: org.apache.dubbo.common.utils.FieldUtils.getFieldValue(java.lang.Object, java.lang.String)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 8
+DAIKON ORIGINAL INVARIANT COUNT: 5
+BALANCED COUNT PER TOOL: 5
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (5)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: (object == null) || (!fieldName.isEmpty())
+ID: 972f8069-bb94-413e-a598-8a7c6a93bcde
+RATIONALE: If the object is null, fieldName's emptiness is irrelevant; otherwise, fieldName should be non-empty.
+SOURCE FILE: org/apache/dubbo/common/utils/FieldUtils.java
+
+OCA 2/5
+PROGRAM POINT: METHOD_EXIT
+EXPR: object != null || result == null
+ID: 5cf3517e-08d8-46de-b0ab-f8eae63d5d1f
+RATIONALE: Ensures that if object is null, then result is null; otherwise method attempts to get field from a non-null object.
+SOURCE FILE: org/apache/dubbo/common/utils/FieldUtils.java
+
+OCA 3/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: fieldName != null
+ID: 0db5eeea-3a40-4504-bcbb-8a706c3183e2
+RATIONALE: The method expects a valid field name string to find the field.
+SOURCE FILE: org/apache/dubbo/common/utils/FieldUtils.java
+
+OCA 4/5
+PROGRAM POINT: METHOD_EXIT
+EXPR: fieldName != null || result == null
+ID: 20c0bfb2-5a7a-40ec-a7e4-e61ff7c93ddb
+RATIONALE: If there is no valid field name, method returns null for field value.
+SOURCE FILE: org/apache/dubbo/common/utils/FieldUtils.java
+
+OCA 5/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: object == null || object.getClass() != null
+ID: 2928a7f4-d510-402c-8c0b-ff6417783fd2
+RATIONALE: If object is not null, it must have a non-null class.
+SOURCE FILE: org/apache/dubbo/common/utils/FieldUtils.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (5)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/5
+PROGRAM POINT: org.apache.dubbo.common.utils.FieldUtils.getFieldValue(java.lang.Object, java.lang.String):::ENTER
+EXPR: fieldName.toString one of { "a", "b" }
+
+DAIKON 2/5
+PROGRAM POINT: org.apache.dubbo.common.utils.FieldUtils.getFieldValue(java.lang.Object, java.lang.String):::EXIT
+EXPR: fieldName.toString == orig(fieldName.toString)
+
+DAIKON 3/5
+PROGRAM POINT: org.apache.dubbo.common.utils.FieldUtils.getFieldValue(java.lang.Object, java.lang.String):::EXIT
+EXPR: return == orig(fieldName)
+
+DAIKON 4/5
+PROGRAM POINT: org.apache.dubbo.common.utils.FieldUtils.getFieldValue(java.lang.Object, java.lang.String):::EXIT
+EXPR: fieldName.toString one of { "a", "b" }
+
+DAIKON 5/5
+PROGRAM POINT: org.apache.dubbo.common.utils.FieldUtils.getFieldValue(java.lang.Object, java.lang.String):::EXIT
+EXPR: return.getClass().getName() == java.lang.String.class
+
+
+==============================================================================================================
+PROJECT: dubbo
+SAMPLE INDEX: 4/10
+
+OCA METHOD: org.apache.dubbo.common.utils.CollectionUtils#isEmptyMap(Map):boolean
+DAIKON METHOD: org.apache.dubbo.common.utils.CollectionUtils.isEmptyMap(java.util.Map)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 3
+DAIKON ORIGINAL INVARIANT COUNT: 5
+BALANCED COUNT PER TOOL: 3
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (3)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/3
+PROGRAM POINT: METHOD_EXIT
+EXPR: map == null || map.isEmpty() || !result
+ID: 04db74e4-adc5-4b6a-bb06-8a8a3183a6db
+RATIONALE: One of the reasons result is true is because either the map is null or empty.
+SOURCE FILE: org/apache/dubbo/common/utils/CollectionUtils.java
+
+OCA 2/3
+PROGRAM POINT: METHOD_EXIT
+EXPR: result || (map != null && !map.isEmpty())
+ID: 86c8f4ca-85ce-4529-82b7-198964f3080c
+RATIONALE: The negation condition of result matches map not being null and not empty.
+SOURCE FILE: org/apache/dubbo/common/utils/CollectionUtils.java
+
+OCA 3/3
+PROGRAM POINT: METHOD_EXIT
+EXPR: result == (map == null || map.isEmpty())
+ID: 2731ec36-5638-4946-af7e-e14abc69fbd9
+RATIONALE: The method implementation returns true if the map is null or empty, so result should equal this condition.
+SOURCE FILE: org/apache/dubbo/common/utils/CollectionUtils.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (3)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/3
+PROGRAM POINT: org.apache.dubbo.common.utils.CollectionUtils.isEmptyMap(java.util.Map):::EXIT
+EXPR: org.apache.dubbo.common.utils.CollectionUtils.SIMPLE_NAME_COMPARATOR == orig(org.apache.dubbo.common.utils.CollectionUtils.SIMPLE_NAME_COMPARATOR)
+
+DAIKON 2/3
+PROGRAM POINT: org.apache.dubbo.common.utils.CollectionUtils.isEmptyMap(java.util.Map):::EXIT;condition="not(return == true)"
+EXPR: return == false
+
+DAIKON 3/3
+PROGRAM POINT: org.apache.dubbo.common.utils.CollectionUtils.isEmptyMap(java.util.Map):::ENTER
+EXPR: map.getClass().getName() == java.util.HashMap.class
+
+
+==============================================================================================================
+PROJECT: dubbo
+SAMPLE INDEX: 5/10
+
+OCA METHOD: org.apache.dubbo.common.utils.MethodUtils#excludedDeclaredClass(Class<?>):Predicate<Method>
+DAIKON METHOD: org.apache.dubbo.common.utils.MethodUtils.excludedDeclaredClass(java.lang.Class)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 3
+DAIKON ORIGINAL INVARIANT COUNT: 3
+BALANCED COUNT PER TOOL: 3
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (3)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/3
+PROGRAM POINT: METHOD_ENTRY
+EXPR: declaredClass.getName() != null
+ID: f4197640-a9c9-46b2-9ab7-459eb5468ca8
+RATIONALE: The class must have a valid non-null name.
+SOURCE FILE: org/apache/dubbo/common/utils/MethodUtils.java
+
+OCA 2/3
+PROGRAM POINT: METHOD_ENTRY
+EXPR: declaredClass.getPackage() != null
+ID: 1231a27e-fe30-41f4-b61c-b5fb480091c0
+RATIONALE: declaredClass may or may not be in a named package, but getPackage() call is safe.
+SOURCE FILE: org/apache/dubbo/common/utils/MethodUtils.java
+
+OCA 3/3
+PROGRAM POINT: METHOD_ENTRY
+EXPR: declaredClass != null
+ID: 86810556-f01c-4586-ba2c-21a202c4ce3f
+RATIONALE: The method expects a Predicate to exclude methods declared by a specific non-null class.
+SOURCE FILE: org/apache/dubbo/common/utils/MethodUtils.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (3)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/3
+PROGRAM POINT: org.apache.dubbo.common.utils.MethodUtils.excludedDeclaredClass(java.lang.Class):::ENTER
+EXPR: declaredClass has only one value
+
+DAIKON 2/3
+PROGRAM POINT: org.apache.dubbo.common.utils.MethodUtils.excludedDeclaredClass(java.lang.Class):::EXIT
+EXPR: return has only one value
+
+DAIKON 3/3
+PROGRAM POINT: org.apache.dubbo.common.utils.MethodUtils.excludedDeclaredClass(java.lang.Class):::EXIT
+EXPR: return.getClass().getName() == org.apache.dubbo.common.utils.MethodUtils$$Lambda$1023/0x00001548a54c6bf0.class
+
+
+==============================================================================================================
+PROJECT: dubbo
+SAMPLE INDEX: 6/10
+
+OCA METHOD: org.apache.dubbo.common.compiler.support.ClassUtils#getSize(Object):int
+DAIKON METHOD: org.apache.dubbo.common.compiler.support.ClassUtils.getSize(java.lang.Object)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 1
+DAIKON ORIGINAL INVARIANT COUNT: 19
+BALANCED COUNT PER TOOL: 1
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (1)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/1
+PROGRAM POINT: METHOD_EXIT
+EXPR: result == 0 || result > 0 || result == -1
+ID: be817705-fb20-4e04-af69-d3f6a8e9b887
+RATIONALE: The result represents size which is either 0, a positive integer, or -1.
+SOURCE FILE: org/apache/dubbo/common/compiler/support/ClassUtils.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (1)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/1
+PROGRAM POINT: org.apache.dubbo.common.compiler.support.ClassUtils.getSize(java.lang.Object):::EXIT241
+EXPR: return == 1
+
+
+==============================================================================================================
+PROJECT: dubbo
+SAMPLE INDEX: 7/10
+
+OCA METHOD: org.apache.dubbo.common.io.UnsafeByteArrayOutputStream#toString():String
+DAIKON METHOD: org.apache.dubbo.common.io.UnsafeByteArrayOutputStream.toString()
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 1
+DAIKON ORIGINAL INVARIANT COUNT: 14
+BALANCED COUNT PER TOOL: 1
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (1)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/1
+PROGRAM POINT: METHOD_EXIT
+EXPR: result != null
+ID: cebc4b47-3f3d-4aec-a5f1-93546eb4f9f4
+RATIONALE: The toString() method constructs a new String from a byte array and count, so the result is always non-null.
+SOURCE FILE: org/apache/dubbo/common/io/UnsafeByteArrayOutputStream.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (1)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/1
+PROGRAM POINT: org.apache.dubbo.common.io.UnsafeByteArrayOutputStream.toString():::ENTER
+EXPR: this.mCount == 3
+
+
+==============================================================================================================
+PROJECT: dubbo
+SAMPLE INDEX: 8/10
+
+OCA METHOD: org.apache.dubbo.common.utils.ArrayUtils#isEmpty(Object[]):boolean
+DAIKON METHOD: org.apache.dubbo.common.utils.ArrayUtils.isEmpty(java.lang.Object[])
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 6
+DAIKON ORIGINAL INVARIANT COUNT: 4
+BALANCED COUNT PER TOOL: 4
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (4)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/4
+PROGRAM POINT: METHOD_EXIT
+EXPR: result || (array != null && array.length > 0)
+ID: e62de2f6-3319-4ce0-a315-ba4ac2e2f842
+RATIONALE: If result is false, then array must be non-null and non-empty.
+SOURCE FILE: org/apache/dubbo/common/utils/ArrayUtils.java
+
+OCA 2/4
+PROGRAM POINT: METHOD_EXIT
+EXPR: !result || array == null || array.length == 0
+ID: 93ea9ea8-bc2c-452e-9ae6-07e8f77031f2
+RATIONALE: If result is true, then array is either null or empty.
+SOURCE FILE: org/apache/dubbo/common/utils/ArrayUtils.java
+
+OCA 3/4
+PROGRAM POINT: METHOD_EXIT
+EXPR: result == (array == null || array.length == 0)
+ID: ea827388-2c07-4d04-a69c-d6cf69b9755f
+RATIONALE: The method returns true if the array is null or has zero length.
+SOURCE FILE: org/apache/dubbo/common/utils/ArrayUtils.java
+
+OCA 4/4
+PROGRAM POINT: METHOD_ENTRY
+EXPR: array == null || array.length == 0 || array.length > 0
+ID: 5d4fb6b2-d75b-4cd3-bdbc-2b37ad09e2b5
+RATIONALE: If array is not null, length can be zero or positive.
+SOURCE FILE: org/apache/dubbo/common/utils/ArrayUtils.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (4)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/4
+PROGRAM POINT: org.apache.dubbo.common.utils.ArrayUtils.isEmpty(java.lang.Object[]):::ENTER
+EXPR: array[] == []
+
+DAIKON 2/4
+PROGRAM POINT: org.apache.dubbo.common.utils.ArrayUtils.isEmpty(java.lang.Object[]):::EXIT
+EXPR: array[] == orig(array[])
+
+DAIKON 3/4
+PROGRAM POINT: org.apache.dubbo.common.utils.ArrayUtils.isEmpty(java.lang.Object[]):::EXIT
+EXPR: array[] == []
+
+DAIKON 4/4
+PROGRAM POINT: org.apache.dubbo.common.utils.ArrayUtils.isEmpty(java.lang.Object[]):::EXIT
+EXPR: return == true
+
+
+==============================================================================================================
+PROJECT: dubbo
+SAMPLE INDEX: 9/10
+
+OCA METHOD: org.apache.dubbo.common.utils.Stack#peek():E
+DAIKON METHOD: org.apache.dubbo.common.utils.Stack.peek()
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 1
+DAIKON ORIGINAL INVARIANT COUNT: 16
+BALANCED COUNT PER TOOL: 1
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (1)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/1
+PROGRAM POINT: METHOD_EXIT
+EXPR: result != null
+ID: 6c9a7977-1ca2-4a3c-a9e5-646ab6e55a9b
+RATIONALE: Result is very likely non-null because it is an element returned from the stack.
+SOURCE FILE: org/apache/dubbo/common/utils/Stack.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (1)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/1
+PROGRAM POINT: org.apache.dubbo.common.utils.Stack.peek():::EXIT
+EXPR: this.mElements has only one value
+
+
+==============================================================================================================
+PROJECT: dubbo
+SAMPLE INDEX: 10/10
+
+OCA METHOD: org.apache.dubbo.common.utils.LogHelper#error(Logger,String,Throwable):void
+DAIKON METHOD: org.apache.dubbo.common.utils.LogHelper.error(org.apache.dubbo.common.logger.Logger, java.lang.String, java.lang.Throwable)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 10
+DAIKON ORIGINAL INVARIANT COUNT: 7
+BALANCED COUNT PER TOOL: 7
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (7)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/7
+PROGRAM POINT: METHOD_EXIT
+EXPR: logger != null || (msg == null && e == null)
+ID: 74a78e7c-c19f-47bf-a49b-f9593729199d
+RATIONALE: If logger is null then msg and e are both null or irrelevant.
+SOURCE FILE: org/apache/dubbo/common/utils/LogHelper.java
+
+OCA 2/7
+PROGRAM POINT: METHOD_ENTRY
+EXPR: msg != null || msg == null
+ID: 5b7689d8-df0b-4da0-8b90-6dc2fcaaf9bf
+RATIONALE: No explicit check or assumption on msg nullness, so msg can be null or not.
+SOURCE FILE: org/apache/dubbo/common/utils/LogHelper.java
+
+OCA 3/7
+PROGRAM POINT: METHOD_EXIT
+EXPR: logger == null || msg != null || e != null
+ID: 5d65191a-9d5d-43ad-8e65-be80921aac91
+RATIONALE: At least one of the message or throwable should be non-null to have meaningful log entry.
+SOURCE FILE: org/apache/dubbo/common/utils/LogHelper.java
+
+OCA 4/7
+PROGRAM POINT: METHOD_EXIT
+EXPR: logger == null || logger.isErrorEnabled()
+ID: 272fc480-ad68-4b45-a855-bd9634d1208c
+RATIONALE: Because the method returns early if logger is null, and logs error only if isErrorEnabled() is true.
+SOURCE FILE: org/apache/dubbo/common/utils/LogHelper.java
+
+OCA 5/7
+PROGRAM POINT: METHOD_ENTRY
+EXPR: logger.isErrorEnabled() == true || msg != null || e != null
+ID: 4ccd6bb7-345b-4fa6-8352-966c751fd7ef
+RATIONALE: When error is logged, isErrorEnabled must be true, but message or exception may be null.
+SOURCE FILE: org/apache/dubbo/common/utils/LogHelper.java
+
+OCA 6/7
+PROGRAM POINT: METHOD_ENTRY
+EXPR: e != null || e == null
+ID: e99287a0-f0bd-4a4e-b67d-a930528c94eb
+RATIONALE: Throwable e can be null or not; no explicit requirement.
+SOURCE FILE: org/apache/dubbo/common/utils/LogHelper.java
+
+OCA 7/7
+PROGRAM POINT: METHOD_EXIT
+EXPR: logger == null || (msg != null || e != null)
+ID: 4d5a53ac-a810-4618-bb06-177cb8945e80
+RATIONALE: This invariant expresses that if logger is non-null then either message or throwable is provided.
+SOURCE FILE: org/apache/dubbo/common/utils/LogHelper.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (7)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/7
+PROGRAM POINT: org.apache.dubbo.common.utils.LogHelper.error(org.apache.dubbo.common.logger.Logger, java.lang.String, java.lang.Throwable):::ENTER
+EXPR: logger has only one value
+
+DAIKON 2/7
+PROGRAM POINT: org.apache.dubbo.common.utils.LogHelper.error(org.apache.dubbo.common.logger.Logger, java.lang.String, java.lang.Throwable):::ENTER
+EXPR: logger.getClass().getName() == org.apache.dubbo.common.logger.Logger$MockitoMock$jZMOTlpe.class
+
+DAIKON 3/7
+PROGRAM POINT: org.apache.dubbo.common.utils.LogHelper.error(org.apache.dubbo.common.logger.Logger, java.lang.String, java.lang.Throwable):::ENTER
+EXPR: msg has only one value
+
+DAIKON 4/7
+PROGRAM POINT: org.apache.dubbo.common.utils.LogHelper.error(org.apache.dubbo.common.logger.Logger, java.lang.String, java.lang.Throwable):::ENTER
+EXPR: msg.toString == "error"
+
+DAIKON 5/7
+PROGRAM POINT: org.apache.dubbo.common.utils.LogHelper.error(org.apache.dubbo.common.logger.Logger, java.lang.String, java.lang.Throwable):::ENTER
+EXPR: e has only one value
+
+DAIKON 6/7
+PROGRAM POINT: org.apache.dubbo.common.utils.LogHelper.error(org.apache.dubbo.common.logger.Logger, java.lang.String, java.lang.Throwable):::EXIT
+EXPR: msg.toString == orig(msg.toString)
+
+DAIKON 7/7
+PROGRAM POINT: org.apache.dubbo.common.utils.LogHelper.error(org.apache.dubbo.common.logger.Logger, java.lang.String, java.lang.Throwable):::EXIT
+EXPR: msg.toString == "error"
+
+
+==============================================================================================================
+PROJECT: netty
+SAMPLE INDEX: 1/10
+
+OCA METHOD: io.netty.util.concurrent.FastThreadLocalThread#setThreadLocalMap(InternalThreadLocalMap):void
+DAIKON METHOD: io.netty.util.concurrent.FastThreadLocalThread.setThreadLocalMap(io.netty.util.internal.InternalThreadLocalMap)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 1
+DAIKON ORIGINAL INVARIANT COUNT: 119
+BALANCED COUNT PER TOOL: 1
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (1)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/1
+PROGRAM POINT: METHOD_ENTRY
+EXPR: threadLocalMap != null || threadLocalMap == null
+ID: 9a79b88d-f720-48b2-b5ed-e311afb01747
+RATIONALE: The parameter threadLocalMap can be null or non-null when the method is called.
+SOURCE FILE: io/netty/util/concurrent/FastThreadLocalThread.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (1)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/1
+PROGRAM POINT: io.netty.util.concurrent.FastThreadLocalThread.setThreadLocalMap(io.netty.util.internal.InternalThreadLocalMap):::EXIT
+EXPR: threadLocalMap.futureListenerStackDepth == orig(threadLocalMap.rp1)
+
+
+==============================================================================================================
+PROJECT: netty
+SAMPLE INDEX: 2/10
+
+OCA METHOD: io.netty.util.DomainNameMapping#needsNormalization(String):boolean
+DAIKON METHOD: io.netty.util.DomainNameMapping.needsNormalization(java.lang.String)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 2
+DAIKON ORIGINAL INVARIANT COUNT: 2
+BALANCED COUNT PER TOOL: 2
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (2)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/2
+PROGRAM POINT: METHOD_ENTRY
+EXPR: hostname.equals(hostname.trim())
+ID: 273375fb-950a-4a29-8fb7-4013e0a1ed7c
+RATIONALE: Hostnames generally do not have leading or trailing whitespace
+SOURCE FILE: io/netty/util/DomainNameMapping.java
+
+OCA 2/2
+PROGRAM POINT: METHOD_EXIT
+EXPR: !result || hostname.length() > 0
+ID: a2b246eb-4d46-4216-bc50-e58b95961102
+RATIONALE: To have result true, hostname must contain characters, so length > 0.
+SOURCE FILE: io/netty/util/DomainNameMapping.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (2)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/2
+PROGRAM POINT: io.netty.util.DomainNameMapping.needsNormalization(java.lang.String):::EXIT
+EXPR: hostname.toString == orig(hostname.toString)
+
+DAIKON 2/2
+PROGRAM POINT: io.netty.util.DomainNameMapping.needsNormalization(java.lang.String):::EXIT
+EXPR: return == false
+
+
+==============================================================================================================
+PROJECT: netty
+SAMPLE INDEX: 3/10
+
+OCA METHOD: io.netty.util.AsciiStringUtil#toLowerCase(AsciiString):AsciiString
+DAIKON METHOD: io.netty.util.AsciiStringUtil.toLowerCase(io.netty.util.AsciiString)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 8
+DAIKON ORIGINAL INVARIANT COUNT: 58
+BALANCED COUNT PER TOOL: 8
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (8)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/8
+PROGRAM POINT: METHOD_ENTRY
+EXPR: string != null
+ID: d8081fdc-b617-4a62-8f18-ce2f733cc75c
+RATIONALE: The method parameter must be non-null for the function to operate correctly.
+SOURCE FILE: io/netty/util/AsciiStringUtil.java
+
+OCA 2/8
+PROGRAM POINT: METHOD_EXIT
+EXPR: result.length() == string.length()
+ID: 726f684d-a0c5-45cd-9d9e-9770c6ce23cc
+RATIONALE: The method returns a new AsciiString representing the lowercase version of the input, preserving length.
+SOURCE FILE: io/netty/util/AsciiStringUtil.java
+
+OCA 3/8
+PROGRAM POINT: METHOD_ENTRY
+EXPR: string.arrayOffset() >= 0
+ID: 38b58399-66c3-47fe-b4ec-92588d00e23b
+RATIONALE: Array offset is non-negative as an index.
+SOURCE FILE: io/netty/util/AsciiStringUtil.java
+
+OCA 4/8
+PROGRAM POINT: METHOD_EXIT
+EXPR: result.toString().equals(string.toString().toLowerCase())
+ID: bfa076eb-5802-407a-a239-b31e82cc581c
+RATIONALE: The result is the lowercase conversion of the input string.
+SOURCE FILE: io/netty/util/AsciiStringUtil.java
+
+OCA 5/8
+PROGRAM POINT: METHOD_EXIT
+EXPR: result != null && string != null
+ID: c8020d5e-8401-4f0e-8ae9-4b898e316cbe
+RATIONALE: The method always returns a non-null AsciiString and input is also non-null.
+SOURCE FILE: io/netty/util/AsciiStringUtil.java
+
+OCA 6/8
+PROGRAM POINT: METHOD_ENTRY
+EXPR: string.array() != null
+ID: 6faa3d9b-2e74-4656-aef0-898c43b43196
+RATIONALE: AsciiString backing byte array is expected to be non-null.
+SOURCE FILE: io/netty/util/AsciiStringUtil.java
+
+OCA 7/8
+PROGRAM POINT: METHOD_ENTRY
+EXPR: string.length() >= 0
+ID: b9c962e3-5354-4870-abdc-bf74ee184d52
+RATIONALE: Length of string cannot be negative.
+SOURCE FILE: io/netty/util/AsciiStringUtil.java
+
+OCA 8/8
+PROGRAM POINT: METHOD_ENTRY
+EXPR: string.arrayOffset() + string.length() <= string.array().length
+ID: d0a2665f-04a9-40c8-805b-6497b4371b02
+RATIONALE: The offset plus length fits within the backing byte array bounds.
+SOURCE FILE: io/netty/util/AsciiStringUtil.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (8)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/8
+PROGRAM POINT: io.netty.util.AsciiStringUtil.toLowerCase(io.netty.util.AsciiString):::ENTER
+EXPR: io.netty.util.AsciiString.EMPTY_STRING.string.toString == ""
+
+DAIKON 2/8
+PROGRAM POINT: io.netty.util.AsciiStringUtil.toLowerCase(io.netty.util.AsciiString):::EXIT
+EXPR: io.netty.util.AsciiString.EMPTY_STRING == orig(io.netty.util.AsciiString.EMPTY_STRING)
+
+DAIKON 3/8
+PROGRAM POINT: io.netty.util.AsciiStringUtil.toLowerCase(io.netty.util.AsciiString):::EXIT
+EXPR: io.netty.util.AsciiString.CASE_SENSITIVE_HASHER == orig(io.netty.util.AsciiString.CASE_SENSITIVE_HASHER)
+
+DAIKON 4/8
+PROGRAM POINT: io.netty.util.AsciiStringUtil.toLowerCase(io.netty.util.AsciiString):::EXIT
+EXPR: string.string == return.string
+
+DAIKON 5/8
+PROGRAM POINT: io.netty.util.AsciiStringUtil.toLowerCase(io.netty.util.AsciiString):::EXIT
+EXPR: io.netty.util.AsciiString.EMPTY_STRING.offset == orig(io.netty.util.AsciiString.EMPTY_STRING.length)
+
+DAIKON 6/8
+PROGRAM POINT: io.netty.util.AsciiStringUtil.toLowerCase(io.netty.util.AsciiString):::EXIT
+EXPR: io.netty.util.AsciiString.EMPTY_STRING.value == orig(io.netty.util.AsciiString.EMPTY_STRING.value)
+
+DAIKON 7/8
+PROGRAM POINT: io.netty.util.AsciiStringUtil.toLowerCase(io.netty.util.AsciiString):::EXIT
+EXPR: io.netty.util.AsciiString.EMPTY_STRING.value[] == []
+
+DAIKON 8/8
+PROGRAM POINT: io.netty.util.AsciiStringUtil.toLowerCase(io.netty.util.AsciiString):::EXIT
+EXPR: io.netty.util.AsciiString.EMPTY_STRING.offset == orig(string.offset)
+
+
+==============================================================================================================
+PROJECT: netty
+SAMPLE INDEX: 4/10
+
+OCA METHOD: io.netty.util.Signal#fillInStackTrace():Throwable
+DAIKON METHOD: io.netty.util.Signal.fillInStackTrace()
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 2
+DAIKON ORIGINAL INVARIANT COUNT: 9
+BALANCED COUNT PER TOOL: 2
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (2)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/2
+PROGRAM POINT: METHOD_EXIT
+EXPR: result.getStackTrace().length == 0
+ID: 8c664588-c44d-479b-9ad1-c5d06d4572e1
+RATIONALE: The class Signal has an empty stack trace by design to save overhead.
+SOURCE FILE: io/netty/util/Signal.java
+
+OCA 2/2
+PROGRAM POINT: METHOD_EXIT
+EXPR: result.getCause() == null
+ID: e9c60811-a3fe-4f6f-91bb-77a4388f0962
+RATIONALE: The Signal class has no cause, so getCause should return null.
+SOURCE FILE: io/netty/util/Signal.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (2)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/2
+PROGRAM POINT: io.netty.util.Signal.fillInStackTrace():::EXIT
+EXPR: io.netty.util.AbstractConstant.uniqueIdGenerator == orig(io.netty.util.AbstractConstant.uniqueIdGenerator)
+
+DAIKON 2/2
+PROGRAM POINT: io.netty.util.Signal.fillInStackTrace():::EXIT
+EXPR: io.netty.util.Signal.pool.constants.getClass().getName() == orig(io.netty.util.Signal.pool.constants.getClass().getName())
+
+
+==============================================================================================================
+PROJECT: netty
+SAMPLE INDEX: 5/10
+
+OCA METHOD: io.netty.util.internal.ReflectionUtil#trySetAccessible(AccessibleObject,boolean):Throwable
+DAIKON METHOD: io.netty.util.internal.ReflectionUtil.trySetAccessible(java.lang.reflect.AccessibleObject, boolean)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 5
+DAIKON ORIGINAL INVARIANT COUNT: 6
+BALANCED COUNT PER TOOL: 5
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (5)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/5
+PROGRAM POINT: METHOD_EXIT
+EXPR: result == null || object != null
+ID: 220c2e94-0f68-426e-95d3-00824d2bd946
+RATIONALE: Since setAccessible(true) was called on object only if no exception was thrown, the object cannot be null when result is null.
+SOURCE FILE: io/netty/util/internal/ReflectionUtil.java
+
+OCA 2/5
+PROGRAM POINT: METHOD_EXIT
+EXPR: result == null || object.isAccessible() || true
+ID: 8d8eee45-6c0f-4c7a-864d-55bdd0a6800c
+RATIONALE: Though object.isAccessible() is not guaranteed to be true (because setAccessible may not be supported), this invariant is a weak form acknowledging if result is null, setAccessible was successful.
+SOURCE FILE: io/netty/util/internal/ReflectionUtil.java
+
+OCA 3/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: object != null || !checkAccessible
+ID: 2cd95885-b59c-425a-9b68-ad9cea22907a
+RATIONALE: If checkAccessible is true, object should not be null as setAccessible(true) will be called.
+SOURCE FILE: io/netty/util/internal/ReflectionUtil.java
+
+OCA 4/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: checkAccessible == false || object != null
+ID: f743088c-0cbb-4c78-93c7-dd1ff2d68c47
+RATIONALE: If checkAccessible is true, object is expected to be non-null since setAccessible will be called.
+SOURCE FILE: io/netty/util/internal/ReflectionUtil.java
+
+OCA 5/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: checkAccessible != true || object.getClass() != null
+ID: 40831774-c380-4e2a-bd3b-8fd803eaca34
+RATIONALE: If checkAccessible is true and object is not null, object.getClass() must exist.
+SOURCE FILE: io/netty/util/internal/ReflectionUtil.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (5)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/5
+PROGRAM POINT: io.netty.util.internal.ReflectionUtil.trySetAccessible(java.lang.reflect.AccessibleObject, boolean):::EXIT40
+EXPR: orig(checkAccessible) == false
+
+DAIKON 2/5
+PROGRAM POINT: io.netty.util.internal.ReflectionUtil.trySetAccessible(java.lang.reflect.AccessibleObject, boolean):::EXIT40
+EXPR: orig(object) has only one value
+
+DAIKON 3/5
+PROGRAM POINT: io.netty.util.internal.ReflectionUtil.trySetAccessible(java.lang.reflect.AccessibleObject, boolean):::EXIT40
+EXPR: return == null
+
+DAIKON 4/5
+PROGRAM POINT: io.netty.util.internal.ReflectionUtil.trySetAccessible(java.lang.reflect.AccessibleObject, boolean):::EXIT36
+EXPR: orig(checkAccessible) == true
+
+DAIKON 5/5
+PROGRAM POINT: io.netty.util.internal.ReflectionUtil.trySetAccessible(java.lang.reflect.AccessibleObject, boolean):::EXIT36
+EXPR: orig(object) has only one value
+
+
+==============================================================================================================
+PROJECT: netty
+SAMPLE INDEX: 6/10
+
+OCA METHOD: io.netty.util.internal.ObjectUtil#checkNonEmpty(CharSequence,String):CharSequence
+DAIKON METHOD: io.netty.util.internal.ObjectUtil.checkNonEmpty(java.lang.CharSequence, java.lang.String)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 6
+DAIKON ORIGINAL INVARIANT COUNT: 7
+BALANCED COUNT PER TOOL: 6
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (6)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/6
+PROGRAM POINT: METHOD_ENTRY
+EXPR: name.length() >= 0
+ID: b6e30770-b334-426a-a531-779c63d9b2a5
+RATIONALE: String length is always non-negative, so name.length() >= 0 is trivially true but informative.
+SOURCE FILE: io/netty/util/internal/ObjectUtil.java
+
+OCA 2/6
+PROGRAM POINT: METHOD_EXIT
+EXPR: result != null
+ID: 124e05f5-7a83-4dac-a1b4-24482b4c0a4b
+RATIONALE: The method checkNotNull(value, name) throws NullPointerException if value is null, so at this program point result is guaranteed to be non-null.
+SOURCE FILE: io/netty/util/internal/ObjectUtil.java
+
+OCA 3/6
+PROGRAM POINT: METHOD_EXIT
+EXPR: result == value
+ID: e20e0d59-3dba-48d7-b827-186e37a46cae
+RATIONALE: Since the method returns the value argument directly and does not create a new object, result == value must hold.
+SOURCE FILE: io/netty/util/internal/ObjectUtil.java
+
+OCA 4/6
+PROGRAM POINT: METHOD_EXIT
+EXPR: result.length() == value.length()
+ID: ec1b4230-1926-4efa-a9eb-34f5afaf6d99
+RATIONALE: The method returns value directly without modification, so result and value are the same instance and have the same length.
+SOURCE FILE: io/netty/util/internal/ObjectUtil.java
+
+OCA 5/6
+PROGRAM POINT: METHOD_EXIT
+EXPR: result.length() > 0
+ID: b01f1ecd-c8da-4dd7-b31a-8ca358ce248c
+RATIONALE: The method throws an exception if value.length() == 0, so any returned result must have length greater than zero.
+SOURCE FILE: io/netty/util/internal/ObjectUtil.java
+
+OCA 6/6
+PROGRAM POINT: METHOD_ENTRY
+EXPR: name != null
+ID: 12d4bf67-c3e6-4133-92b9-6c52efdf53fc
+RATIONALE: The parameter name is used to format exception messages, so it should not be null.
+SOURCE FILE: io/netty/util/internal/ObjectUtil.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (6)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/6
+PROGRAM POINT: io.netty.util.internal.ObjectUtil.checkNonEmpty(java.lang.CharSequence, java.lang.String):::EXIT
+EXPR: name.toString one of { "NOT_NULL", "NOT_NULL_BUT_EMPTY" }
+
+DAIKON 2/6
+PROGRAM POINT: io.netty.util.internal.ObjectUtil.checkNonEmpty(java.lang.CharSequence, java.lang.String):::EXIT
+EXPR: return == orig(value)
+
+DAIKON 3/6
+PROGRAM POINT: io.netty.util.internal.ObjectUtil.checkNonEmpty(java.lang.CharSequence, java.lang.String):::EXIT
+EXPR: return.getClass().getName() == orig(value.getClass().getName())
+
+DAIKON 4/6
+PROGRAM POINT: io.netty.util.internal.ObjectUtil.checkNonEmpty(java.lang.CharSequence, java.lang.String):::ENTER
+EXPR: value.getClass().getName() == java.lang.String.class
+
+DAIKON 5/6
+PROGRAM POINT: io.netty.util.internal.ObjectUtil.checkNonEmpty(java.lang.CharSequence, java.lang.String):::EXIT
+EXPR: return.getClass().getName() == java.lang.String.class
+
+DAIKON 6/6
+PROGRAM POINT: io.netty.util.internal.ObjectUtil.checkNonEmpty(java.lang.CharSequence, java.lang.String):::EXIT
+EXPR: name.toString == orig(name.toString)
+
+
+==============================================================================================================
+PROJECT: netty
+SAMPLE INDEX: 7/10
+
+OCA METHOD: io.netty.util.AsciiStringUtil#isLowerCase(byte):boolean
+DAIKON METHOD: io.netty.util.AsciiStringUtil.isLowerCase(byte)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 5
+DAIKON ORIGINAL INVARIANT COUNT: 8
+BALANCED COUNT PER TOOL: 5
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (5)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: value >= 0
+ID: 5ff6a526-83f3-482b-aa3e-17832838a5cd
+RATIONALE: Byte value is non-negative for ASCII range.
+SOURCE FILE: io/netty/util/AsciiStringUtil.java
+
+OCA 2/5
+PROGRAM POINT: METHOD_EXIT
+EXPR: !result || (value >= 97 && value <= 122)
+ID: 51aa25f2-d3a5-4f15-9bfd-8cc718347505
+RATIONALE: The ASCII 'a' to 'z' range decimal equivalent supports the result when true.
+SOURCE FILE: io/netty/util/AsciiStringUtil.java
+
+OCA 3/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: value != 0
+ID: 24d9cfe1-deac-481b-a23d-2d4c8db820bf
+RATIONALE: Value being non-zero may be typical for ASCII letters.
+SOURCE FILE: io/netty/util/AsciiStringUtil.java
+
+OCA 4/5
+PROGRAM POINT: METHOD_ENTRY
+EXPR: value >= 0 && value <= 127
+ID: 909e6b6e-4892-493f-8906-d8307e0f3561
+RATIONALE: In ASCII context, byte values representing characters are often in 0 to 127 range.
+SOURCE FILE: io/netty/util/AsciiStringUtil.java
+
+OCA 5/5
+PROGRAM POINT: METHOD_EXIT
+EXPR: result == (value >= 97 && value <= 122)
+ID: aea70b8d-ec78-49c9-91eb-d0c7609991ca
+RATIONALE: The result corresponds directly to the user's ASCII check using decimal codes.
+SOURCE FILE: io/netty/util/AsciiStringUtil.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (5)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/5
+PROGRAM POINT: io.netty.util.AsciiStringUtil.isLowerCase(byte):::EXIT
+EXPR: io.netty.util.AsciiStringUtil.$assertionsDisabled == orig(io.netty.util.AsciiStringUtil.$assertionsDisabled)
+
+DAIKON 2/5
+PROGRAM POINT: io.netty.util.AsciiStringUtil.isLowerCase(byte):::EXIT;condition="return == true"
+EXPR: orig(value) one of { 99, 101, 115 }
+
+DAIKON 3/5
+PROGRAM POINT: io.netty.util.AsciiStringUtil.isLowerCase(byte):::EXIT;condition="not(return == true)"
+EXPR: orig(value) == 84
+
+DAIKON 4/5
+PROGRAM POINT: io.netty.util.AsciiStringUtil.isLowerCase(byte):::EXIT;condition="not(return == true)"
+EXPR: io.netty.util.AsciiStringUtil.$assertionsDisabled == return
+
+DAIKON 5/5
+PROGRAM POINT: io.netty.util.AsciiStringUtil.isLowerCase(byte):::EXIT
+EXPR: (return == false)  <==>  (orig(value) == 84)
+
+
+==============================================================================================================
+PROJECT: netty
+SAMPLE INDEX: 8/10
+
+OCA METHOD: io.netty.util.NetUtil#toAddressString(byte[],int,boolean):String
+DAIKON METHOD: io.netty.util.NetUtil.toAddressString(byte[], int, boolean)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 6
+DAIKON ORIGINAL INVARIANT COUNT: 17
+BALANCED COUNT PER TOOL: 6
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (6)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/6
+PROGRAM POINT: METHOD_EXIT
+EXPR: result != null
+ID: 8e9afbe1-2f22-45fd-95ad-1bbeea46e6ef
+RATIONALE: According to the implementation, a string is always returned
+SOURCE FILE: io/netty/util/NetUtil.java
+
+OCA 2/6
+PROGRAM POINT: METHOD_ENTRY
+EXPR: bytes != null
+ID: 3766c0f5-9299-4fe2-babd-16a74e73eecb
+RATIONALE: The bytes array must be non-null to avoid NullPointerException when accessing elements.
+SOURCE FILE: io/netty/util/NetUtil.java
+
+OCA 3/6
+PROGRAM POINT: METHOD_ENTRY
+EXPR: offset >= 0
+ID: 3971bb3f-1a42-4339-bee2-3cd4d879a842
+RATIONALE: The offset must be non-negative as it is used as an index into the bytes array.
+SOURCE FILE: io/netty/util/NetUtil.java
+
+OCA 4/6
+PROGRAM POINT: METHOD_ENTRY
+EXPR: bytes.length >= 16
+ID: fea4b1d0-5e67-4989-87e5-4fe8a712dcd2
+RATIONALE: At minimum, the bytes array should have length equal or larger than 16 to represent an IPv6 address.
+SOURCE FILE: io/netty/util/NetUtil.java
+
+OCA 5/6
+PROGRAM POINT: METHOD_ENTRY
+EXPR: ipv4Mapped == true || ipv4Mapped == false
+ID: c8fadd10-a725-467c-b360-d48c9742b0c9
+RATIONALE: The parameter ipv4Mapped is a boolean, so this invariant always holds and is included for completeness.
+SOURCE FILE: io/netty/util/NetUtil.java
+
+OCA 6/6
+PROGRAM POINT: METHOD_ENTRY
+EXPR: offset <= bytes.length - 16
+ID: 9e9a33f0-643f-43e1-92df-6c404788c973
+RATIONALE: To safely read 16 bytes for the IPv6 address starting from offset, offset must be less than or equal to bytes.length - 16.
+SOURCE FILE: io/netty/util/NetUtil.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (6)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/6
+PROGRAM POINT: io.netty.util.NetUtil.toAddressString(byte[], int, boolean):::EXIT
+EXPR: io.netty.util.NetUtil.LOOPBACK_IF == orig(io.netty.util.NetUtil.LOOPBACK_IF)
+
+DAIKON 2/6
+PROGRAM POINT: io.netty.util.NetUtil.toAddressString(byte[], int, boolean):::EXIT
+EXPR: orig(offset) in bytes[]
+
+DAIKON 3/6
+PROGRAM POINT: io.netty.util.NetUtil.toAddressString(byte[], int, boolean):::EXIT
+EXPR: io.netty.util.NetUtil.SOMAXCONN == orig(io.netty.util.NetUtil.SOMAXCONN)
+
+DAIKON 4/6
+PROGRAM POINT: io.netty.util.NetUtil.toAddressString(byte[], int, boolean):::EXIT
+EXPR: io.netty.util.NetUtil.logger == orig(io.netty.util.NetUtil.logger)
+
+DAIKON 5/6
+PROGRAM POINT: io.netty.util.NetUtil.toAddressString(byte[], int, boolean):::EXIT
+EXPR: io.netty.util.NetUtil.IPV4_PREFERRED == orig(io.netty.util.NetUtil.IPV6_ADDRESSES_PREFERRED)
+
+DAIKON 6/6
+PROGRAM POINT: io.netty.util.NetUtil.toAddressString(byte[], int, boolean):::EXIT
+EXPR: io.netty.util.NetUtil.NETWORK_INTERFACES.getClass().getName() == orig(io.netty.util.NetUtil.NETWORK_INTERFACES.getClass().getName())
+
+
+==============================================================================================================
+PROJECT: netty
+SAMPLE INDEX: 9/10
+
+OCA METHOD: io.netty.util.internal.ReflectionUtil#resolveTypeParameter(Object,Class<?>,String):Class<?>
+DAIKON METHOD: io.netty.util.internal.ReflectionUtil.resolveTypeParameter(java.lang.Object, java.lang.Class, java.lang.String)
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 6
+DAIKON ORIGINAL INVARIANT COUNT: 1
+BALANCED COUNT PER TOOL: 1
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (1)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/1
+PROGRAM POINT: METHOD_ENTRY
+EXPR: parametrizedSuperclass.isAssignableFrom(object.getClass())
+ID: 1e15da1f-283a-4e03-b790-d57af74272f6
+RATIONALE: The method resolves a type parameter of a class that is a subclass of the given parametrized superclass.
+SOURCE FILE: io/netty/util/internal/ReflectionUtil.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (1)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/1
+PROGRAM POINT: io.netty.util.internal.ReflectionUtil.resolveTypeParameter(java.lang.Object, java.lang.Class, java.lang.String):::ENTER
+EXPR: typeParamName.toString one of { "B", "C", "E" }
+
+
+==============================================================================================================
+PROJECT: netty
+SAMPLE INDEX: 10/10
+
+OCA METHOD: io.netty.util.AbstractConstant#hashCode():int
+DAIKON METHOD: io.netty.util.AbstractConstant.hashCode()
+
+OCA ORIGINAL OBSERVED-HELD COUNT: 1
+DAIKON ORIGINAL INVARIANT COUNT: 13
+BALANCED COUNT PER TOOL: 1
+
+--------------------------------------------------------------------------------------------------------------
+OCA SAMPLED OBSERVED-HELD INVARIANTS (1)
+--------------------------------------------------------------------------------------------------------------
+OCA 1/1
+PROGRAM POINT: METHOD_EXIT
+EXPR: result != 0
+ID: a9419243-6c3a-4dc7-9991-728cefcc2e74
+RATIONALE: The hash code is unlikely to be zero unless the superclass hashCode() returns zero.
+SOURCE FILE: io/netty/util/AbstractConstant.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON SAMPLED INVARIANTS (1)
+--------------------------------------------------------------------------------------------------------------
+DAIKON 1/1
+PROGRAM POINT: io.netty.util.AbstractConstant.hashCode():::EXIT
+EXPR: io.netty.util.AbstractConstant.uniqueIdGenerator == orig(io.netty.util.AbstractConstant.uniqueIdGenerator)
+
+

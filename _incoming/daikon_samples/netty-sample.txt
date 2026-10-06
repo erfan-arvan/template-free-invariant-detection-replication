@@ -1,0 +1,265 @@
+
+
+====================================================================================================
+SAMPLE 1/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: netty
+METHOD: io.netty.util.RecyclerTest$18.run()
+####################################################################################################
+
+===========================================================================
+io.netty.util.RecyclerTest$18.run():::ENTER
+
+===========================================================================
+io.netty.util.RecyclerTest$18.run():::EXIT
+this.val$array == orig(this.val$array)
+this.val$array.getClass().getName() == orig(this.val$array.getClass().getName())
+this.val$array[] == orig(this.val$array[])
+this.val$array[].handle == orig(this.val$array[].handle)
+io.netty.util.RecyclerTest.this == orig(io.netty.util.RecyclerTest.this)
+
+
+
+====================================================================================================
+SAMPLE 2/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: netty
+METHOD: io.netty.util.concurrent.NonStickyEventExecutorGroup$NonStickyOrderedEventExecutor.inEventLoop(java.lang.Thread)
+####################################################################################################
+
+===========================================================================
+io.netty.util.concurrent.NonStickyEventExecutorGroup$NonStickyOrderedEventExecutor.inEventLoop(java.lang.Thread):::ENTER
+thread != null
+
+===========================================================================
+io.netty.util.concurrent.NonStickyEventExecutorGroup$NonStickyOrderedEventExecutor.inEventLoop(java.lang.Thread):::EXIT
+this.executor == orig(this.executor)
+this.executor.getClass().getName() == orig(this.executor.getClass().getName())
+this.executor.getClass().getName() == orig(this.parent.getClass().getName())
+this.tasks == orig(this.tasks)
+this.tasks.getClass().getName() == orig(this.tasks.getClass().getName())
+this.state == orig(this.state)
+this.maxTaskExecutePerRun == orig(this.maxTaskExecutePerRun)
+this.executingThread == orig(this.executingThread)
+io.netty.util.concurrent.AbstractEventExecutor.logger == orig(io.netty.util.concurrent.AbstractEventExecutor.logger)
+io.netty.util.concurrent.AbstractEventExecutor.logger.getClass().getName() == orig(io.netty.util.concurrent.AbstractEventExecutor.logger.getClass().getName())
+this.parent == orig(this.parent)
+this.selfCollection == orig(this.selfCollection)
+this.selfCollection.getClass().getName() == orig(this.selfCollection.getClass().getName())
+(return == false)  ==>  (io.netty.util.concurrent.NonStickyEventExecutorGroup$NonStickyOrderedEventExecutor.RUNNING < this.maxTaskExecutePerRun)
+(return == false)  ==>  (io.netty.util.concurrent.NonStickyEventExecutorGroup$NonStickyOrderedEventExecutor.SUBMITTED < this.maxTaskExecutePerRun)
+(return == false)  ==>  (this.executor.getClass().getName() == io.netty.util.concurrent.UnorderedThreadPoolEventExecutor.class)
+(return == false)  ==>  (this.maxTaskExecutePerRun > io.netty.util.concurrent.AbstractEventExecutor.DEFAULT_SHUTDOWN_TIMEOUT)
+
+===========================================================================
+io.netty.util.concurrent.NonStickyEventExecutorGroup$NonStickyOrderedEventExecutor.inEventLoop(java.lang.Thread):::EXIT;condition="return == true"
+return == true
+
+===========================================================================
+io.netty.util.concurrent.NonStickyEventExecutorGroup$NonStickyOrderedEventExecutor.inEventLoop(java.lang.Thread):::EXIT;condition="not(return == true)"
+this.executor.getClass().getName() == io.netty.util.concurrent.UnorderedThreadPoolEventExecutor.class
+return == false
+io.netty.util.concurrent.NonStickyEventExecutorGroup$NonStickyOrderedEventExecutor.SUBMITTED < this.maxTaskExecutePerRun
+io.netty.util.concurrent.NonStickyEventExecutorGroup$NonStickyOrderedEventExecutor.RUNNING < this.maxTaskExecutePerRun
+this.maxTaskExecutePerRun > io.netty.util.concurrent.AbstractEventExecutor.DEFAULT_SHUTDOWN_TIMEOUT
+
+
+
+====================================================================================================
+SAMPLE 3/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: netty
+METHOD: io.netty.util.HashedWheelTimerTest$5.run(io.netty.util.Timeout)
+####################################################################################################
+
+===========================================================================
+io.netty.util.HashedWheelTimerTest$5.run(io.netty.util.Timeout):::ENTER
+timeout.getClass().getName() == io.netty.util.HashedWheelTimer$HashedWheelTimeout.class
+
+===========================================================================
+io.netty.util.HashedWheelTimerTest$5.run(io.netty.util.Timeout):::EXIT
+this.val$latch == orig(this.val$latch)
+io.netty.util.HashedWheelTimerTest.this == orig(io.netty.util.HashedWheelTimerTest.this)
+
+
+
+====================================================================================================
+SAMPLE 4/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: netty
+METHOD: io.netty.util.internal.SWARUtilTest.toUpperCaseInt()
+####################################################################################################
+
+===========================================================================
+io.netty.util.internal.SWARUtilTest.toUpperCaseInt():::ENTER
+this has only one value
+
+===========================================================================
+io.netty.util.internal.SWARUtilTest.toUpperCaseInt():::EXIT
+io.netty.util.internal.SWARUtilTest.$assertionsDisabled == orig(io.netty.util.internal.SWARUtilTest.$assertionsDisabled)
+
+
+
+====================================================================================================
+SAMPLE 5/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: netty
+METHOD: io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser$UtilizationMonitor.rebuildActiveExecutors()
+####################################################################################################
+
+===========================================================================
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser$UtilizationMonitor.rebuildActiveExecutors():::ENTER
+this.consistentlyIdleChildren[].getClass().getName() one of { [io.netty.util.concurrent.AutoScalingEventExecutorChooserFactoryTest.TestEventExecutor], [io.netty.util.concurrent.AutoScalingEventExecutorChooserFactoryTest.TestEventExecutor, io.netty.util.concurrent.AutoScalingEventExecutorChooserFactoryTest.TestEventExecutor] }
+
+===========================================================================
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser$UtilizationMonitor.rebuildActiveExecutors():::EXIT
+this.consistentlyIdleChildren == orig(this.consistentlyIdleChildren)
+this.consistentlyIdleChildren[] == orig(this.consistentlyIdleChildren[])
+this.consistentlyIdleChildren.getClass().getName() == orig(this.consistentlyIdleChildren.getClass().getName())
+this.lastCheckTimeNanos == orig(this.lastCheckTimeNanos)
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this)
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.executors == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.executors)
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.executors.getClass().getName() == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.executors.getClass().getName())
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.executors[] == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.executors[])
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.allExecutorsChooser == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.allExecutorsChooser)
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.allExecutorsChooser.getClass().getName() == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.allExecutorsChooser.getClass().getName())
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.state == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.state)
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.utilizationMetrics == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.utilizationMetrics)
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.utilizationMetrics[] == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.utilizationMetrics[])
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.utilizationMetrics.getClass().getName() == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.utilizationMetrics.getClass().getName())
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this)
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.NO_OOP_TASK == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.NO_OOP_TASK)
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.NO_OOP_TASK.getClass().getName() == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.NO_OOP_TASK.getClass().getName())
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this.minChildren == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this.minChildren)
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this.maxChildren == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this.maxChildren)
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this.maxChildren == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this.maxRampUpStep)
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this.maxChildren == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this.maxRampDownStep)
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this.utilizationCheckPeriodNanos == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this.utilizationCheckPeriodNanos)
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this.scaleDownThreshold == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this.scaleDownThreshold)
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this.scaleUpThreshold == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this.scaleUpThreshold)
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this.scalingPatienceCycles == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this.scalingPatienceCycles)
+this.consistentlyIdleChildren[].getClass().getName() one of { [io.netty.util.concurrent.AutoScalingEventExecutorChooserFactoryTest.TestEventExecutor], [io.netty.util.concurrent.AutoScalingEventExecutorChooserFactoryTest.TestEventExecutor, io.netty.util.concurrent.AutoScalingEventExecutorChooserFactoryTest.TestEventExecutor] }
+
+
+
+====================================================================================================
+SAMPLE 6/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: netty
+METHOD: io.netty.util.internal.logging.InternalLoggerFactoryTest.init()
+####################################################################################################
+
+===========================================================================
+io.netty.util.internal.logging.InternalLoggerFactoryTest.init():::ENTER
+this.oldLoggerFactory == null
+io.netty.util.internal.logging.InternalLoggerFactory.defaultFactory has only one value
+io.netty.util.internal.logging.InternalLoggerFactory.defaultFactory.getClass().getName() == io.netty.util.internal.logging.Slf4JLoggerFactory.class
+this.mockLogger == null
+
+===========================================================================
+io.netty.util.internal.logging.InternalLoggerFactoryTest.init():::EXIT
+io.netty.util.internal.logging.InternalLoggerFactoryTest.e == orig(io.netty.util.internal.logging.InternalLoggerFactoryTest.e)
+this.oldLoggerFactory == orig(io.netty.util.internal.logging.InternalLoggerFactory.defaultFactory)
+this.oldLoggerFactory.getClass().getName() == orig(io.netty.util.internal.logging.InternalLoggerFactory.defaultFactory.getClass().getName())
+this.oldLoggerFactory has only one value
+io.netty.util.internal.logging.InternalLoggerFactory.defaultFactory.getClass().getName() == io.netty.util.internal.logging.InternalLoggerFactory$MockitoMock$ojA7qZhK.class
+
+
+
+====================================================================================================
+SAMPLE 7/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: netty
+METHOD: io.netty.util.internal.logging.CommonsLoggerTest.testIsTraceEnabled()
+####################################################################################################
+
+===========================================================================
+io.netty.util.internal.logging.CommonsLoggerTest.testIsTraceEnabled():::ENTER
+this has only one value
+
+===========================================================================
+io.netty.util.internal.logging.CommonsLoggerTest.testIsTraceEnabled():::EXIT
+io.netty.util.internal.logging.CommonsLoggerTest.e == orig(io.netty.util.internal.logging.CommonsLoggerTest.e)
+
+
+
+====================================================================================================
+SAMPLE 8/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: netty
+METHOD: io.netty.util.concurrent.GlobalEventExecutor$3.run()
+####################################################################################################
+
+===========================================================================
+io.netty.util.concurrent.GlobalEventExecutor$3.run():::ENTER
+
+===========================================================================
+io.netty.util.concurrent.GlobalEventExecutor$3.run():::EXIT
+this.val$t == orig(this.val$t)
+this.val$cl == orig(this.val$cl)
+this.val$cl.getClass().getName() == orig(this.val$cl.getClass().getName())
+return == null
+
+
+
+====================================================================================================
+SAMPLE 9/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: netty
+METHOD: io.netty.util.internal.StringUtilTest.testIsNullOrEmpty()
+####################################################################################################
+
+===========================================================================
+io.netty.util.internal.StringUtilTest.testIsNullOrEmpty():::ENTER
+this has only one value
+
+===========================================================================
+io.netty.util.internal.StringUtilTest.testIsNullOrEmpty():::EXIT
+
+
+
+====================================================================================================
+SAMPLE 10/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: netty
+METHOD: io.netty.util.collection.CharObjectHashMap.CharObjectHashMap(int)
+####################################################################################################
+
+===========================================================================
+io.netty.util.collection.CharObjectHashMap.CharObjectHashMap(int):::ENTER
+
+===========================================================================
+io.netty.util.collection.CharObjectHashMap.CharObjectHashMap(int):::EXIT
+io.netty.util.collection.CharObjectHashMap.DEFAULT_LOAD_FACTOR == this.loadFactor
+this.keys[] elements == 0
+this.values[] elements == null
+this.values[].getClass().getName() elements == null
+this.size == 0
+io.netty.util.collection.CharObjectHashMap.DEFAULT_CAPACITY != orig(initialCapacity)
+this.maxSize >= this.size
+this.maxSize < orig(initialCapacity)
+this.keys[] elements == this.size
+this.size in this.keys[]
+this.size <= this.mask
+this.size < orig(initialCapacity)
+

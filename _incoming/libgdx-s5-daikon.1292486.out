@@ -1,0 +1,6 @@
+>>> Trace size:
+-rw-r--r--+ 1 ea442 ea442 45G Sep 14 05:13 /mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory-out/dtrace.gz
+>>> Done.
+total 317M
+-rw-r--r--+ 1 ea442 ea442 256M Sep 17 02:17 libgdx-s5-invariants.txt
+-rw-r--r--+ 1 ea442 ea442  69M Sep 17 02:17 libgdx-s5.inv.gz

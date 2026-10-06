@@ -1,0 +1,216 @@
+======================================
+>>> Running Daikon++ on libGDX
+======================================
+>>> CMD: java -jar /project/mjk76/ea442/promptstudy/daikonplusplus/build/libs/daikonplusplus.jar --external-project --project-root /project/mjk76/ea442/promptstudy/libgdx --main-src gdx/src --test-src tests/gdx-tests/src --runner-script /scratch/mjk76/ea442/promptstudy/libgdx_run_tests.sh 5
+Picked up JAVA_TOOL_OPTIONS:  -Djava.io.tmpdir=/scratch/mjk76/ea442/contextstudy_fewshot/tmp -Djava.io.tmpdir=/scratch/mjk76/ea442/promptstudy/tmp
+==== Daikon++ Config ====
+threads = 8
+registryPath = /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/io_examples/libgdx/daikonpp_registry.jsonl
+outcomesPath = /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/io_examples/libgdx/daikonpp_outcomes.jsonl
+includeBody = true
+registryReset = true
+debug = false
+keepWork = true
+noQualityFilter = false
+llmTotalTimeoutSec = 14400
+llmPerReqTimeoutSec = 30
+bodyMaxChars = 2000
+enabledContexts = [METHOD_BODY, SCOPE, IO_EXAMPLES]
+openaiModel = gpt-4.1-mini
+llmCassettesDir = /project/mjk76/ea442/promptstudy/daikonplusplus/src/test/cassettes
+disableRealLlm = false
+callSitesIndexPath = /project/mjk76/ea442/promptstudy/libgdx_callsites.json
+ioExamplesIndexPath = /project/mjk76/ea442/promptstudy/libgdx-s5_io_examples.json
+compileMainScript = /scratch/mjk76/ea442/promptstudy/libgdx_compile.sh
+compileTestScript = /scratch/mjk76/ea442/promptstudy/libgdx_compile.sh
+llmPollStepMs = 1500
+externalCompileClasspath = /project/mjk76/ea442/promptstudy/libgdx/gdx/build/classes/java/main:/project/mjk76/ea442/promptstudy/libgdx/gdx/build/resources/main
+workDir = /scratch/mjk76/ea442/promptstudy/daikonpp_work
+promptStrategy = fewshot
+scanIncludes = [com/badlogic/gdx/utils, com/badlogic/gdx/math]
+llmProvider = openai
+llmLocalBackend = ollama
+llmLocalUrl = http://localhost:11434
+llmLocalModel = qwen2.5:7b
+enableTestFilter = false
+testFilterMethodBatchSize = 1
+staleCheckMinutes = 1
+maxTimeoutMinutes = 480
+=========================
+🔥 EXEC MODE = EXTERNAL_PROJECT
+>>> Working project copy created at: /scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260915-120437
+>>> Scan include filter: [com/badlogic/gdx/utils, com/badlogic/gdx/math]
+>>> Registry reset: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/io_examples/libgdx/daikonpp_registry.jsonl
+[DP-LLM] Using model: gpt-4.1-mini
+[DP] Using prompt strategy: fewshot
+[DP-PATHS] execMode=EXTERNAL_PROJECT
+[DP-PATHS] userProjectRoot=/project/mjk76/ea442/promptstudy/libgdx
+[DP-PATHS] mainSrcRoot=/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260915-120437/gdx/src
+[DP-PATHS] testSrcRoot=/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260915-120437/tests/gdx-tests/src
+>>> Scanning MAIN sources under (WORKING COPY): /scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260915-120437/gdx/src
+>>> [Scan phase] started at 2026-09-15 12:05:23.687
+>>> [Scan phase] finished at 2026-09-15 12:05:27.089 (elapsed 3.401s)
+>>> Scan include filter: [com/badlogic/gdx/utils, com/badlogic/gdx/math]
+>>> Points before filter: 21564
+>>> Points after filter: 7540
+>>> Points — ENTRY: 3770  EXIT: 3770  TOTAL: 7540
+>>> [LM phase] started at 2026-09-15 12:05:27.146
+===== FIRST PROMPT =====
+----- SYSTEM -----
+You are a program analysis assistant.
+
+Task:
+Generate candidate invariants for a Java program point.
+
+Global rules:
+- Return ONLY JSON matching the required schema.
+- The JSON schema is:
+  {
+    "invariants": [
+      { "expression": "<Java boolean expression>" }
+    ]
+  }
+- Each invariant must be a valid Java boolean expression.
+- Expressions must be valid at the program point.
+- Use only the listed in-scope names.
+- Do not introduce new variables, helper functions, or APIs.
+- Expressions must be side-effect free.
+
+
+===== EXAMPLE 1 =====
+PROGRAM POINT: Example1 [METHOD_ENTRY]
+
+In-scope names:
+- order : Order
+- limit : int
+
+===== PROGRAM CONTEXT =====
+[Method Implementation]
+public void process(Order order, int limit) {
+  if (order.getQuantity() > limit) {
+    throw new IllegalArgumentException();
+  }
+}
+===========================
+
+Expected Output:
+{
+  "invariants": [
+    { "expression": "order != null" },
+    { "expression": "order.getQuantity() <= limit" },
+    { "expression": "order.getQuantity() >= 0" },
+    { "expression": "limit >= 0" }
+  ]
+}
+===== END EXAMPLE 1 =====
+
+===== EXAMPLE 2 =====
+PROGRAM POINT: Example2 [METHOD_ENTRY]
+
+In-scope names:
+- s : String
+- start : int
+- end : int
+
+===== PROGRAM CONTEXT =====
+[Method Implementation]
+public String sub(String s, int start, int end) {
+  if (start < 0 || end > s.length()) return "";
+  return s.substring(start, end);
+}
+===========================
+
+Expected Output:
+{
+  "invariants": [
+    { "expression": "s != null" },
+    { "expression": "start >= 0" },
+    { "expression": "end <= s.length()" },
+    { "expression": "start <= end" }
+  ]
+}
+===== END EXAMPLE 2 =====
+
+
+----- USER -----
+PROGRAM POINT: com.badlogic.gdx.utils.viewport.ScalingViewport#getScaling():Scaling [METHOD_ENTRY]
+
+This program point represents the state immediately BEFORE the method executes.
+Only parameters and object state are defined.
+
+In-scope names:
+(none)
+
+Note:
+- These are base variables.
+- Expressions derived from them (e.g., field accesses and method calls) are allowed if valid at this program point.
+
+Constraints specific to this program point:
+- Single-line Java boolean expressions only.
+- Method calls are allowed and encouraged if callable using listed names.
+- Method calls may belong to the JDK or the project codebase.
+- Field accesses (e.g., obj.field) are allowed if accessible using listed names.
+- Do not invent methods or fields that are not available at this program point.
+- Add null checks ONLY when required for safe evaluation.
+- Do not use non-Java logical operators such as ==> or ⇒.
+- Logical implication (A ⇒ B) must be expressed as (!A || B) using standard Java boolean operators.
+- Prefer pure predicate-style method calls.
+- Avoid redundant or trivially true expressions.
+- Do NOT generate tautologies or self-comparisons (e.g., x == x, obj.method() == obj.method()).
+- Avoid semantically duplicate invariants that differ only by operand order or equivalent comparison form (e.g., a == b vs b == a, a <= b vs b >= a).
+- Do not focus solely on nullness-related invariants.
+- Prioritize invariants that capture meaningful relationships among the in-scope names and reflect the behavior of the method at this program point.
+
+===== PROGRAM CONTEXT =====
+Consider the following context when generating invariants.
+[Method Implementation]
+public Scaling getScaling () {
+		return scaling;
+	}
+===========================
+
+Generate up to 5 candidate invariants that are valid at this program point.
+Return ONLY the JSON.
+
+========================
+
+... waiting on LLM tasks: 128/7540 done (14398s left)
+... waiting on LLM tasks: 128/7540 done (14397s left)
+... waiting on LLM tasks: 128/7540 done (14395s left)
+... waiting on LLM tasks: 1227/7540 done (14377s left)
+... waiting on LLM tasks: 1233/7540 done (14373s left)
+... waiting on LLM tasks: 1281/7540 done (14369s left)
+... waiting on LLM tasks: 1297/7540 done (14365s left)
+... waiting on LLM tasks: 1346/7540 done (14350s left)
+... waiting on LLM tasks: 1396/7540 done (14346s left)
+... waiting on LLM tasks: 1617/7540 done (14319s left)
+... waiting on LLM tasks: 1729/7540 done (14311s left)
+... waiting on LLM tasks: 2241/7540 done (14298s left)
+... waiting on LLM tasks: 3961/7540 done (14280s left)
+... waiting on LLM tasks: 4365/7540 done (14273s left)
+... waiting on LLM tasks: 6161/7540 done (14239s left)
+>>> LLM filter breakdown:
+    raw from LLM:              31514
+    dropped (empty expr):      4
+    dropped (parse fail):      141
+    dropped (quality filter):  19119
+    dropped (per-point dedup): 53
+    dropped (maxK cap):        3
+    → passed LLM filters:      12194
+    dropped (run dedup):       390
+    dropped (registry dedup):  0
+    → total dropped:           19710
+    → proposed (into injection): 11804
+>>> Points with non-empty call-site context: 0
+>>> Points with non-empty I/O examples:      1292
+>>> Files to inject (MAIN only): 138
+>>> To inject — ENTRY: 5873  EXIT: 5931
+>>> [LM phase] finished at 2026-09-15 12:08:44.909 (elapsed 197.763s)
+>>> [Injection phase] started at 2026-09-15 12:08:44.909
+OpenJDK 64-Bit Server VM warning: INFO: os::commit_memory(0x0000000407000000, 3422552064, 0) failed; error='Not enough space' (errno=12)
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 3422552064 bytes. Error detail: committing reserved memory.
+# An error report file with more information is saved as:
+# /mmfs1/project/mjk76/ea442/promptstudy/hs_err_pid3638568.log
+>>> Done.

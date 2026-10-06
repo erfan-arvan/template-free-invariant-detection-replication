@@ -1,0 +1,957 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/23.0.2/bin/java
+MVN: /scratch/mjk76/ea442/apache-maven-3.9.9/bin/mvn
+>>> Running Daikon++
+>>> CMD: java -jar /project/mjk76/ea442/promptstudy/daikonplusplus/build/libs/daikonplusplus.jar --external-project --project-root /project/mjk76/ea442/promptstudy/hudi --main-src hudi-client/hudi-java-client/src/main/java --test-src hudi-client/hudi-java-client/src/test/java --runner-script /scratch/mjk76/ea442/promptstudy/hudi_run_tests.sh 5
+Picked up JAVA_TOOL_OPTIONS:  -Djava.io.tmpdir=/scratch/mjk76/ea442/promptstudy/tmp -Djava.io.tmpdir=/scratch/mjk76/ea442/promptstudy/tmp
+🔥 EXEC MODE = EXTERNAL_PROJECT
+>>> Working project copy created at: /scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542
+>>> Registry reset: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/multi_sample/hudi/daikonpp_registry.jsonl
+[DP-LLM] Using model: gpt-4.1-mini
+[DP] Using prompt strategy: multi_sample
+[DP-PATHS] execMode=EXTERNAL_PROJECT
+[DP-PATHS] userProjectRoot=/project/mjk76/ea442/promptstudy/hudi
+[DP-PATHS] mainSrcRoot=/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java
+[DP-PATHS] testSrcRoot=/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/test/java
+>>> Scanning MAIN sources under (WORKING COPY): /scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java
+>>> Points — ENTRY: 213  EXIT: 213  TOTAL: 426
+===== FIRST PROMPT =====
+----- SYSTEM -----
+You are a program analysis assistant.
+
+Task:
+Generate candidate invariants for a Java program point.
+
+Global rules:
+- Return ONLY JSON matching the required schema.
+- The JSON schema is:
+  {
+    "invariants": [
+      { "expression": "<Java boolean expression>" }
+    ]
+  }
+- Each invariant must be a valid Java boolean expression.
+- Expressions must be valid at the program point.
+- Use only the listed in-scope names.
+- Do not introduce new variables, helper functions, or APIs.
+- Expressions must be side-effect free.
+
+----- USER -----
+PROGRAM POINT: org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#initRegistry():void [METHOD_ENTRY]
+
+This program point represents the state immediately BEFORE the method executes.
+Only parameters and object state are defined.
+
+In-scope names:
+(none)
+
+Note:
+- These are base variables.
+- Expressions derived from them (e.g., field accesses and method calls) are allowed if valid at this program point.
+
+Constraints specific to this program point:
+- Single-line Java boolean expressions only.
+- Method calls are allowed and encouraged if callable using listed names.
+- Method calls may belong to the JDK or the project codebase.
+- Field accesses (e.g., obj.field) are allowed if accessible using listed names.
+- Do not invent methods or fields that are not available at this program point.
+- Add null checks ONLY when required for safe evaluation.
+- Do not use non-Java logical operators such as ==> or ⇒.
+- Logical implication (A ⇒ B) must be expressed as (!A || B) using standard Java boolean operators.
+- Prefer pure predicate-style method calls.
+- Avoid redundant or trivially true expressions.
+- Do NOT generate tautologies or self-comparisons (e.g., x == x, obj.method() == obj.method()).
+- Avoid semantically duplicate invariants that differ only by operand order or equivalent comparison form (e.g., a == b vs b == a, a <= b vs b >= a).
+- Do not focus solely on nullness-related invariants.
+- Prioritize invariants that capture meaningful relationships among the in-scope names and reflect the behavior of the method at this program point.
+
+===== PROGRAM CONTEXT =====
+Consider the following context when generating invariants.
+[Method Implementation]
+@Override
+  protected void initRegistry() {
+    if (metadataWriteConfig.isMetricsOn()) {
+      this.metrics = Option.of(new HoodieMetadataMetrics(metadataWriteConfig.getMetricsConfig(), dataMetaClient.getStorage()));
+    } else {
+      this.metrics = Option.empty();
+    }
+  }
+===========================
+
+Within this single response, create three internal drafts with different focuses:
+- Draft A: focus on simple parameter/field constraints.
+- Draft B: focus on relations involving 'result' (if METHOD_EXIT) and parameters.
+- Draft C: focus on safe, pure method-call predicates (if any are implied by context).
+
+Then keep only invariants that appear in at least two drafts, or are clearly implied by context and non-redundant.
+Return ONLY the final agreed JSON. Do not output the drafts.
+
+Generate up to 5 candidate invariants that are valid at this program point.
+Return ONLY the JSON.
+
+========================
+
+>>> LLM filter breakdown:
+    raw from LLM:              815
+    dropped (empty expr):      0
+    dropped (parse fail):      31
+    dropped (quality filter):  369
+    dropped (per-point dedup): 0
+    dropped (maxK cap):        0
+    → passed LLM filters:      415
+    dropped (run dedup):       0
+    dropped (registry dedup):  0
+    → total dropped:           400
+    → proposed (into injection): 415
+>>> Files to inject (MAIN only): 37
+>>> To inject — ENTRY: 215  EXIT: 200
+>>> Injection done. Updated MAIN files: 37
+[DP] Wrote DpRuntime helper → /scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/daikonpp/DpRuntime.java
+[DP] External-project mode enabled
+[DP] Working project root: /scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542
+[DP] Instrumented main src: /scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java
+[DP] Runner script: /scratch/mjk76/ea442/promptstudy/hudi_run_tests.sh
+[DP] === external autofilter pass 1 (script=hudi_compile.sh) ===
+[DP] inModifyPhase = true
+[DP] external compile exit code: 1
+
+[DP-DEBUG] ===== RAW COMPILER OUTPUT =====
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.hudi:hudi-common:jar:1.2.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.fasterxml.jackson.module:jackson-module-afterburner:jar -> duplicate declaration of version (?) @ line 158, column 17
+[WARNING] 'dependencyManagement.dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.fasterxml.jackson.module:jackson-module-afterburner:jar -> version ${fasterxml.version} vs ${fasterxml.jackson.databind.version} @ org.apache.hudi:hudi:1.2.0-SNAPSHOT, /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/pom.xml, line 869, column 19
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.hudi:hudi-aws:jar:1.2.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: software.amazon.awssdk:sts:jar -> duplicate declaration of version ${aws.sdk.version} @ line 229, column 21
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.hudi:hudi-spark-common_2.12:jar:1.2.0-SNAPSHOT
+[WARNING] 'artifactId' contains an expression but should be a constant. @ org.apache.hudi:hudi-spark-common_${scala.binary.version}:1.2.0-SNAPSHOT, /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-spark-datasource/hud
+...[truncated]
+[DP-DEBUG] =================================
+
+[DP] wrote autofilter input to /scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/dp-autofilter-seen.txt
+[DP-DEBUG] Parsed errors count = 88
+[DP-DEBUG] ERROR[0] → /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-client-common/src/main/java/org/apache/hudi/config/HoodieClusteringConfig.java:309
+[DP-DEBUG] ERROR[1] → /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-client-common/src/main/java/org/apache/hudi/config/HoodieClusteringConfig.java:384
+[DP-DEBUG] ERROR[2] → /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/client/HoodieJavaTableServiceClient.java:190
+[DP-DEBUG] ERROR[3] → /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/client/HoodieJavaWriteClient.java:962
+[DP-DEBUG] ERROR[4] → /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/client/clustering/run/strategy/JavaExecutionStrategy.java:218
+[DP-DEBUG] ERROR[5] → /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/client/common/HoodieJavaEngineContext.java:631
+[DP-DEBUG] ERROR[6] → /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/client/common/HoodieJavaEngineContext.java:1341
+[DP-DEBUG] ERROR[7] → /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/client/common/HoodieJavaEngineContext.java:1684
+[DP-DEBUG] ERROR[8] → /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/client/common/HoodieJavaEngineContext.java:1753
+[DP-DEBUG] ERROR[9] → /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaTable.java:358
+[DP] skipping path outside workSrcRoot: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-client-common/src/main/java/org/apache/hudi/config/HoodieClusteringConfig.java
+[DP] skipping path outside workSrcRoot: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-client-common/src/main/java/org/apache/hudi/config/HoodieClusteringConfig.java
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/client/HoodieJavaTableServiceClient.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/client/HoodieJavaTableServiceClient.java @ line 190
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/client/HoodieJavaWriteClient.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/client/HoodieJavaWriteClient.java @ line 962
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/client/clustering/run/strategy/JavaExecutionStrategy.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/client/clustering/run/strategy/JavaExecutionStrategy.java @ line 218
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/client/common/HoodieJavaEngineContext.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/client/common/HoodieJavaEngineContext.java @ line 631
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/client/common/HoodieJavaEngineContext.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/client/common/HoodieJavaEngineContext.java @ line 1341
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/client/common/HoodieJavaEngineContext.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/client/common/HoodieJavaEngineContext.java @ line 1684
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/client/common/HoodieJavaEngineContext.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/client/common/HoodieJavaEngineContext.java @ line 1753
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaTable.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaTable.java @ line 358
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaTable.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaTable.java @ line 456
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaCopyOnWriteTable.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaCopyOnWriteTable.java @ line 110
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaCopyOnWriteTable.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaCopyOnWriteTable.java @ line 936
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaCopyOnWriteTable.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaCopyOnWriteTable.java @ line 1037
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaCopyOnWriteTable.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaCopyOnWriteTable.java @ line 1211
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaCopyOnWriteTable.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaCopyOnWriteTable.java @ line 1478
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaCopyOnWriteTable.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaCopyOnWriteTable.java @ line 1583
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaCopyOnWriteTable.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaCopyOnWriteTable.java @ line 1614
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaCopyOnWriteTable.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaCopyOnWriteTable.java @ line 1858
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaMergeOnReadTable.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaMergeOnReadTable.java @ line 188
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaMergeOnReadTable.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaMergeOnReadTable.java @ line 419
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaMergeOnReadTable.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaMergeOnReadTable.java @ line 589
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaMergeOnReadTable.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaMergeOnReadTable.java @ line 732
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaMergeOnReadTable.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaMergeOnReadTable.java @ line 907
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java @ line 306
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java @ line 337
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java @ line 381
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java @ line 448
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java @ line 524
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java @ line 1391
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/action/commit/BaseJavaCommitActionExecutor.java @ line 1617
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/action/commit/JavaBulkInsertPreppedCommitActionExecutor.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/action/commit/JavaBulkInsertPreppedCommitActionExecutor.java @ line 65
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/action/commit/JavaInsertPreppedCommitActionExecutor.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/action/commit/JavaInsertPreppedCommitActionExecutor.java @ line 58
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/action/commit/JavaUpsertPartitioner.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/action/commit/JavaUpsertPartitioner.java @ line 874
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/action/deltacommit/BaseJavaDeltaCommitActionExecutor.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/action/deltacommit/BaseJavaDeltaCommitActionExecutor.java @ line 77
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/action/deltacommit/BaseJavaDeltaCommitActionExecutor.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/action/deltacommit/BaseJavaDeltaCommitActionExecutor.java @ line 108
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/action/deltacommit/JavaDeleteDeltaCommitActionExecutor.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/action/deltacommit/JavaDeleteDeltaCommitActionExecutor.java @ line 57
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/action/deltacommit/JavaInsertDeltaCommitActionExecutor.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/action/deltacommit/JavaInsertDeltaCommitActionExecutor.java @ line 58
+[DP] touched = 36
+[DP] === external autofilter pass 2 (script=hudi_compile.sh) ===
+[DP] inModifyPhase = true
+[DP] external compile exit code: 1
+
+[DP-DEBUG] ===== RAW COMPILER OUTPUT =====
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.hudi:hudi-common:jar:1.2.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.fasterxml.jackson.module:jackson-module-afterburner:jar -> duplicate declaration of version (?) @ line 158, column 17
+[WARNING] 'dependencyManagement.dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.fasterxml.jackson.module:jackson-module-afterburner:jar -> version ${fasterxml.version} vs ${fasterxml.jackson.databind.version} @ org.apache.hudi:hudi:1.2.0-SNAPSHOT, /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/pom.xml, line 869, column 19
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.hudi:hudi-aws:jar:1.2.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: software.amazon.awssdk:sts:jar -> duplicate declaration of version ${aws.sdk.version} @ line 229, column 21
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.hudi:hudi-spark-common_2.12:jar:1.2.0-SNAPSHOT
+[WARNING] 'artifactId' contains an expression but should be a constant. @ org.apache.hudi:hudi-spark-common_${scala.binary.version}:1.2.0-SNAPSHOT, /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-spark-datasource/hud
+...[truncated]
+[DP-DEBUG] =================================
+
+[DP] wrote autofilter input to /scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/dp-autofilter-seen.txt
+[DP-DEBUG] Parsed errors count = 4
+[DP-DEBUG] ERROR[0] → /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/metadata/JavaHoodieBackedTableMetadataWriter.java:1162
+[DP-DEBUG] ERROR[1] → /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/metadata/JavaHoodieBackedTableMetadataWriter.java:1330
+[DP-DEBUG] ERROR[2] → /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/metadata/JavaHoodieBackedTableMetadataWriter.java:1162
+[DP-DEBUG] ERROR[3] → /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/metadata/JavaHoodieBackedTableMetadataWriter.java:1330
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/metadata/JavaHoodieBackedTableMetadataWriter.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/metadata/JavaHoodieBackedTableMetadataWriter.java @ line 1162
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/metadata/JavaHoodieBackedTableMetadataWriter.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/metadata/JavaHoodieBackedTableMetadataWriter.java @ line 1330
+[DP] touched = 2
+[DP] === external autofilter pass 3 (script=hudi_compile.sh) ===
+[DP] inModifyPhase = true
+[DP] external compile exit code: 1
+
+[DP-DEBUG] ===== RAW COMPILER OUTPUT =====
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.hudi:hudi-common:jar:1.2.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.fasterxml.jackson.module:jackson-module-afterburner:jar -> duplicate declaration of version (?) @ line 158, column 17
+[WARNING] 'dependencyManagement.dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.fasterxml.jackson.module:jackson-module-afterburner:jar -> version ${fasterxml.version} vs ${fasterxml.jackson.databind.version} @ org.apache.hudi:hudi:1.2.0-SNAPSHOT, /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/pom.xml, line 869, column 19
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.hudi:hudi-aws:jar:1.2.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: software.amazon.awssdk:sts:jar -> duplicate declaration of version ${aws.sdk.version} @ line 229, column 21
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.hudi:hudi-spark-common_2.12:jar:1.2.0-SNAPSHOT
+[WARNING] 'artifactId' contains an expression but should be a constant. @ org.apache.hudi:hudi-spark-common_${scala.binary.version}:1.2.0-SNAPSHOT, /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-spark-datasource/hud
+...[truncated]
+[DP-DEBUG] =================================
+
+[DP] wrote autofilter input to /scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/dp-autofilter-seen.txt
+[DP-DEBUG] Parsed errors count = 2
+[DP-DEBUG] ERROR[0] → /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaCopyOnWriteTable.java:1164
+[DP-DEBUG] ERROR[1] → /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaCopyOnWriteTable.java:1164
+[DP] error file exists? true :: /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaCopyOnWriteTable.java
+[DP]   removeInvariantRegion → 1
+[DP] disabled invariant in /mmfs1/scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaCopyOnWriteTable.java @ line 1164
+[DP] touched = 1
+[DP] === external autofilter pass 4 (script=hudi_compile.sh) ===
+[DP] inModifyPhase = true
+[DP] external compile exit code: 0
+[DP] external compilation succeeded
+>>> Invariant auto-filter finished (external-project mode)
+>>> Running Tests!
+[DP] SHM directory: /dev/shm/daikonpp-2970603
+[DP] Running script: /scratch/mjk76/ea442/promptstudy/hudi_run_tests.sh
+[DP] Working dir: /scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542
+[DP] Log file: /scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/daikonpp-run.log
+[DP] Stale detector started — threshold: 1 min, poll: 60 s, log: /scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/daikonpp-run.log
+[DP] Stale detector thread exiting (staleKilled=false)
+>>> Stale-removed invariants this run: 0
+[DP] Results read from shm (278 executed, 7 falsified) + log fallback
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/multi_sample/hudi/daikonpp_outcomes.jsonl
+>>> Totals: all=415 compiled=375 non-compiled=40 executed=278 falsified=7 observed-held=271 never-executed=97 (disabled-stale=0 unreached=97)
+>>> OBSERVED-HELD invariants by method (ENTRY & EXIT):
+  - org.apache.hudi.client.HoodieJavaTableServiceClient#convertToOutputMetadata(HoodieWriteMetadata<List<WriteStatus>>):HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_EXIT] 106bc1cc-523f-4ec7-9df1-f49584f22b48 :: result == writeMetadata
+  - org.apache.hudi.client.HoodieJavaTableServiceClient#createTable(HoodieWriteConfig,StorageConfiguration<?>,boolean):HoodieTable<?, List<HoodieRecord<T>>, ?, List<WriteStatus>>
+      [METHOD_EXIT] ff0a0e8b-5369-462b-adc4-1f24a9e03bd6 :: result != null && config != null && storageConf != null && (skipValidation || result.getConfig().equals(config))
+      [METHOD_ENTRY] 3b757d8f-4960-4d0f-8e56-c049b6980208 :: skipValidation == true || skipValidation == false
+      [METHOD_ENTRY] 3b569b4d-9c15-4143-af9e-86602a7b4610 :: config != null && storageConf != null
+  - org.apache.hudi.client.HoodieJavaTableServiceClient#triggerWritesAndFetchWriteStats(HoodieWriteMetadata<List<WriteStatus>>):TableWriteStats
+      [METHOD_ENTRY] 041db77f-b142-4fc3-b0d9-233f06594155 :: writeMetadata != null && writeMetadata.getWriteStatuses() != null && !writeMetadata.getWriteStatuses().isEmpty()
+  - org.apache.hudi.client.HoodieJavaWriteClient#bulkInsertPreppedRecords(List<HoodieRecord<T>>,String,Option<BulkInsertPartitioner>):List<WriteStatus>
+      [METHOD_ENTRY] 0e90b965-0ebf-43ca-bd76-7ccd4fd4882c :: instantTime.length() > 0
+  - org.apache.hudi.client.HoodieJavaWriteClient#commit(String,List<WriteStatus>,Option<Map<String, String>>,String,Map<String, List<String>>,Option<BiConsumer<HoodieTableMetaClient, HoodieCommitMetadata>>,Option<WriteStatusValidator>):boolean
+      [METHOD_EXIT] 085bff50-ce05-42e3-b873-4519c77a832f :: result == true || result == false
+  - org.apache.hudi.client.HoodieJavaWriteClient#createIndex(HoodieWriteConfig):HoodieIndex
+      [METHOD_EXIT] 7a0b3e0a-2b22-4b8a-8a74-955e80e692f1 :: result != null
+  - org.apache.hudi.client.HoodieJavaWriteClient#createTable(HoodieWriteConfig):HoodieTable
+      [METHOD_EXIT] e0ba95b0-f3bf-4dfd-8f01-076a07ef659b :: result != null
+  - org.apache.hudi.client.HoodieJavaWriteClient#delete(List<HoodieKey>,String):List<WriteStatus>
+      [METHOD_ENTRY] ba4e3472-ac05-4e34-91df-142bb14cbc58 :: !keys.contains(null)
+      [METHOD_ENTRY] 4b6ff8e9-187f-4156-b4ba-b17af5780fce :: instantTime.length() > 0
+      [METHOD_ENTRY] 27091079-3520-48e4-91d0-bea02fde8086 :: keys != null && instantTime != null && !instantTime.isEmpty() && !keys.isEmpty()
+      [METHOD_EXIT] a3577d67-e632-48e9-8cba-f923ecaca30a :: result != null && !result.isEmpty() == (keys != null && !keys.isEmpty())
+  - org.apache.hudi.client.HoodieJavaWriteClient#deletePrepped(List<HoodieRecord<T>>,String):List<WriteStatus>
+      [METHOD_ENTRY] ec310601-3d9f-4378-9e7f-8df060982964 :: instantTime != null && !instantTime.isEmpty()
+  - org.apache.hudi.client.HoodieJavaWriteClient#initializeMetadataTable(Option<String>,HoodieTableMetaClient):void
+      [METHOD_ENTRY] a1a4f128-039b-4504-96e7-56867e0170c8 :: metaClient != null
+      [METHOD_EXIT] 4100feda-a7bf-4bcf-a3a4-ae950ad41d9d :: metaClient.getTableConfig() != null
+  - org.apache.hudi.client.HoodieJavaWriteClient#insert(List<HoodieRecord<T>>,String):List<WriteStatus>
+      [METHOD_EXIT] 42f56eac-2531-455a-bb94-4d76407fa309 :: result != null && !result.isEmpty() == !records.isEmpty()
+  - org.apache.hudi.client.HoodieJavaWriteClient#insertPreppedRecords(List<HoodieRecord<T>>,String):List<WriteStatus>
+      [METHOD_EXIT] 960c847b-3bce-402b-ab85-2267d79a49d8 :: result != null && !result.isEmpty() == (preppedRecords != null && !preppedRecords.isEmpty())
+      [METHOD_ENTRY] 6f4a186f-0ca4-432d-9969-2c56cfd31502 :: instantTime.length() > 0
+  - org.apache.hudi.client.HoodieJavaWriteClient#updateColumnsToIndexWithColStats(HoodieTableMetaClient,List<String>):void
+      [METHOD_EXIT] 5bd511fb-852f-4ef1-90ae-b5705f220a20 :: metaClient != null && columnsToIndex != null && !columnsToIndex.isEmpty()&& metaClient.getBasePath() != null
+      [METHOD_ENTRY] a5e82c47-0fdc-4e86-a5b5-ec7a75b11562 :: !columnsToIndex.isEmpty()
+      [METHOD_ENTRY] 06447e09-21ee-4a21-a483-1350f2da85d9 :: metaClient != null && columnsToIndex != null && !columnsToIndex.isEmpty() && !columnsToIndex.contains(null)
+  - org.apache.hudi.client.HoodieJavaWriteClient#upsert(List<HoodieRecord<T>>,String):List<WriteStatus>
+      [METHOD_EXIT] 4ad69b50-2c5f-4121-bdcb-60dfb0f94476 :: result.size() <= records.size() * 2
+      [METHOD_EXIT] 097a32a8-69f9-4cea-b8c5-9b22bcae3793 :: result != null && records != null && instantTime != null && !instantTime.isEmpty()
+      [METHOD_EXIT] 1a3b12f5-f22c-4f47-a54e-fb42d0249dc7 :: result.size() >= 0
+  - org.apache.hudi.client.HoodieJavaWriteClient#upsertPreppedRecords(List<HoodieRecord<T>>,String):List<WriteStatus>
+      [METHOD_ENTRY] b6484658-7b4c-4ceb-a075-5d327872fc6c :: preppedRecords != null && !preppedRecords.isEmpty() && instantTime != null && !instantTime.isEmpty()
+  - org.apache.hudi.client.clustering.plan.strategy.JavaSizeBasedClusteringPlanStrategy#buildClusteringGroupsForPartition(String,List<FileSlice>):Pair<Stream<HoodieClusteringGroup>, Boolean>
+      [METHOD_EXIT] 3f65a0c5-0428-49e3-86f7-2ddf4eaca13d :: result != null
+      [METHOD_EXIT] 6c898d2b-703c-4690-931c-d2ae339967f8 :: result.getKey() != null
+  - org.apache.hudi.client.clustering.plan.strategy.JavaSizeBasedClusteringPlanStrategy#getFileSlicesEligibleForClustering(String):Stream<FileSlice>
+      [METHOD_ENTRY] ce078ab7-c1a8-438f-b3bf-00f695ad4fcd :: partition != null && !partition.isEmpty()
+  - org.apache.hudi.client.clustering.run.strategy.JavaExecutionStrategy#performClustering(HoodieClusteringPlan,HoodieSchema,String):HoodieWriteMetadata<HoodieData<WriteStatus>>
+      [METHOD_ENTRY] 7e66320a-d751-4983-9e4a-217c328e4b05 :: clusteringPlan.getStrategy() != null
+      [METHOD_EXIT] 9641c783-6a4d-46cb-a89b-c018e5a9d103 :: result != null && result.getWriteStatuses() != null && !result.getWriteStatuses().isEmpty()
+      [METHOD_ENTRY] 9fa4875a-0dfd-4bea-85cb-d6d922537ced :: clusteringPlan.getInputGroups() != null
+      [METHOD_ENTRY] 836676b1-0b7b-4f6b-a3d8-a5a0545bd807 :: clusteringPlan != null && schema != null && instantTime != null && !instantTime.isEmpty()
+  - org.apache.hudi.client.clustering.run.strategy.JavaExecutionStrategy#readRecordsForGroup(HoodieClusteringGroup,String):List<HoodieRecord<T>>
+      [METHOD_EXIT] 99133912-c331-4cfc-afe0-24d1f9a3883c :: result != null && !result.contains(null)
+  - org.apache.hudi.client.clustering.run.strategy.JavaExecutionStrategy#runClusteringForGroup(HoodieClusteringGroup,Map<String, String>,boolean,String):List<WriteStatus>
+      [METHOD_EXIT] 2691d927-3e26-4754-93ae-99edcf034302 :: result != null && !result.isEmpty() == (clusteringGroup.getNumOutputFileGroups() > 0)
+  - org.apache.hudi.client.clustering.run.strategy.JavaSortAndSizeExecutionStrategy#performClusteringWithRecordList(List<HoodieRecord<T>>,int,String,Map<String, String>,HoodieSchema,List<HoodieFileGroupId>,boolean):List<WriteStatus>
+      [METHOD_EXIT] 125c4ef1-3d79-42e2-ae8a-fae044ee8a88 :: result.size() <= inputRecords.size()
+      [METHOD_ENTRY] ed72a2a5-deeb-4be0-930d-02fdd6d0affc :: instantTime != null && !instantTime.isEmpty()
+      [METHOD_ENTRY] d673a067-d419-4fc4-bb8c-d73f61ec42bb :: inputRecords != null && inputRecords.size() >= 0
+      [METHOD_ENTRY] 028f479a-2501-4ede-8fe8-d2af76418bf3 :: numOutputGroups > 0
+      [METHOD_ENTRY] fc4a849b-ddee-4c29-9687-d1a5dd075dd5 :: fileGroupIdList != null && fileGroupIdList.size() >= 0
+      [METHOD_EXIT] ed9e8a5a-857c-4dd0-b799-e62a09ba0cb7 :: result != null && !result.isEmpty() || inputRecords.isEmpty()
+      [METHOD_ENTRY] 128cf46b-d886-4f2c-b6ea-5e52ef54655e :: strategyParams != null
+  - org.apache.hudi.client.common.HoodieJavaEngineContext#emptyHoodieData():HoodieData<T>
+      [METHOD_EXIT] 1649cecc-ac7c-4b12-9dba-0fbdcfc9c626 :: result != null && result.count() == 0
+  - org.apache.hudi.client.common.HoodieJavaEngineContext#flatMap(List<I>,SerializableFunction<I, Stream<O>>,int):List<O>
+      [METHOD_EXIT] ad309a7f-a80e-4e10-90f4-6411b8d6db78 :: data != null && result != null && func != null && parallelism > 0 && !data.isEmpty() == !result.isEmpty()
+      [METHOD_ENTRY] e11c4587-46d6-4afe-8138-9f8a06d7e3f6 :: data != null && func != null && parallelism > 0
+      [METHOD_EXIT] e21871e9-fee7-45c7-be04-2971278bc39e :: result.size() >= 0
+  - org.apache.hudi.client.common.HoodieJavaEngineContext#foreach(List<I>,SerializableConsumer<I>,int):void
+      [METHOD_EXIT] f52eee30-2b7d-46be-aa45-ad9b4997b09f :: parallelism > 0
+      [METHOD_EXIT] 8d473ea6-5c9e-4017-b0ea-512b2e0a38c8 :: data.size() >= 0
+      [METHOD_EXIT] f8e4e345-61e2-41da-bda6-9b1cc24d6b95 :: data != null && consumer != null && parallelism >= 1 && data.size() >= 0
+      [METHOD_EXIT] d3767c84-02af-4f32-9aed-86fa5bddfa9d :: consumer != null
+  - org.apache.hudi.client.common.HoodieJavaEngineContext#getEngineReaderContextFactory(HoodieTableMetaClient):ReaderContextFactory<IndexedRecord>
+      [METHOD_ENTRY] 4e6ca349-1a9c-4026-91f8-485b123669d6 :: metaClient != null
+  - org.apache.hudi.client.common.HoodieJavaEngineContext#getProperty(EngineProperty):Option<String>
+      [METHOD_EXIT] a45b753e-25c6-44a3-8009-e13a474fc423 :: result.isEmpty() == true
+  - org.apache.hudi.client.common.HoodieJavaEngineContext#map(List<I>,SerializableFunction<I, O>,int):List<O>
+      [METHOD_ENTRY] 5f56767f-0b5d-4f77-bb39-9b5800a3c1cf :: parallelism > 0
+      [METHOD_ENTRY] aa4742e6-b34e-42e6-a028-92612dc0225d :: func != null
+      [METHOD_ENTRY] 85bfa6af-39ef-471e-8828-4221e63fe643 :: data != null
+  - org.apache.hudi.client.common.HoodieJavaEngineContext#mapPartitionsToPairAndReduceByKey(Stream<I>,SerializablePairFlatMapFunction<Iterator<I>, K, V>,SerializableBiFunction<V, V, V>,int):Stream<ImmutablePair<K, V>>
+      [METHOD_ENTRY] 403d6a96-1d61-4ce0-bd38-47afb09c788f :: data != null
+      [METHOD_ENTRY] 00cb9985-fe4b-4334-8ff5-a367b0329a77 :: parallelism > 0
+      [METHOD_ENTRY] 579ab967-38aa-40d5-857a-8655a45c52a2 :: flatMapToPairFunc != null
+      [METHOD_ENTRY] f4456b90-8f47-4b08-92cc-61b8dc5f7753 :: reduceFunc != null
+      [METHOD_EXIT] 6e97ca6a-560a-4eb7-a023-0ac801e60ca9 :: result != null
+  - org.apache.hudi.client.common.HoodieJavaEngineContext#mapToPair(List<I>,SerializablePairFunction<I, K, V>,Integer):Map<K, V>
+      [METHOD_EXIT] 32d74a79-df62-441b-9639-013c0a4fbf9e :: result != null && (data == null || result.size() <= data.size())
+  - org.apache.hudi.client.common.HoodieJavaEngineContext#parallelize(List<T>,int):HoodieData<T>
+      [METHOD_ENTRY] e52e2055-6125-40a0-a116-d730f21bf5fe :: parallelism >= 1
+      [METHOD_EXIT] d670093c-aad2-4527-b106-e2286cf2f907 :: data != null && result != null && result.collectAsList().equals(data)
+      [METHOD_ENTRY] 8739d27d-b816-4ab2-805b-56f3969e9963 :: data != null
+  - org.apache.hudi.client.common.HoodieJavaEngineContext#reduceByKey(List<Pair<K, V>>,SerializableBiFunction<V, V, V>,int):List<V>
+      [METHOD_EXIT] 378eb685-f80d-46bd-993e-ba754bc09e89 :: result.size() <= data.size()
+      [METHOD_EXIT] f2a5988b-7282-4ffa-b31a-06814e9606cb :: result != null && !result.contains(null)
+  - org.apache.hudi.client.common.HoodieJavaEngineContext#setJobStatus(String,String):void
+      [METHOD_ENTRY] cf5d3745-c446-45ae-94c5-03a6318c1e58 :: activeModule == null || !activeModule.isEmpty()
+      [METHOD_ENTRY] 957b3997-f311-4ddc-83e9-8b42f9916ed4 :: activeModule != null || activityDescription != null
+      [METHOD_EXIT] 4284f3d3-d2d2-4777-851d-a5c8ef202137 :: activeModule == null || activeModule.length() >= 0
+      [METHOD_ENTRY] c746ad41-4c7b-4a9b-aa65-e4aced882974 :: activityDescription == null || !activityDescription.isEmpty()
+      [METHOD_EXIT] d1e3332a-9511-469b-86dd-82368d10a76d :: activityDescription == null || activityDescription.length() >= 0
+  - org.apache.hudi.client.common.JavaTaskContextSupplier#getProperty(EngineProperty):Option<String>
+      [METHOD_EXIT] 10bec789-0ceb-49b5-8cc5-9a10bed52831 :: result.isEmpty() == true
+  - org.apache.hudi.execution.JavaLazyInsertIterable#computeNext():List<WriteStatus>
+      [METHOD_EXIT] 8c1328a5-c8bd-46cb-919d-c70ccdad6ce4 :: result != null && !result.isEmpty()
+  - org.apache.hudi.execution.bulkinsert.JavaCustomColumnsSortPartitioner#getComparableSortColumns(HoodieRecord):FlatLists.ComparableList<Comparable<HoodieRecord>>
+      [METHOD_ENTRY] 72540977-c826-4c8c-b39f-c22f94d03359 :: record != null && record.getRecordKey() != null && !record.getRecordKey().isEmpty()
+  - org.apache.hudi.execution.bulkinsert.JavaCustomColumnsSortPartitioner#repartitionRecords(List<HoodieRecord<T>>,int):List<HoodieRecord<T>>
+      [METHOD_ENTRY] 60f569c0-5821-4cef-866f-30c114f75f31 :: outputPartitions >= 1
+      [METHOD_ENTRY] 4589feab-954e-4d20-b355-e26e9c8cf642 :: outputPartitions > 0
+      [METHOD_ENTRY] ab5e91ef-9900-46d2-818a-d319eb34741a :: records != null && outputPartitions > 0 && !records.isEmpty() || records.isEmpty() && outputPartitions >= 0
+      [METHOD_ENTRY] 359eb041-dc78-4b5e-9be6-1fed057b19aa :: records != null
+  - org.apache.hudi.index.JavaHoodieIndexFactory#getKeyGeneratorForSimpleIndex(HoodieWriteConfig):Option<BaseKeyGenerator>
+      [METHOD_ENTRY] 384330d7-1c5d-4f90-af5e-bf457167ab0e :: config.populateMetaFields() == true || config.populateMetaFields() == false
+      [METHOD_ENTRY] 3c30869e-ca77-4e47-a6fb-0773908eae06 :: config != null
+      [METHOD_EXIT] c989cc44-d3fc-4d3e-9104-c65eb617b417 :: result.isEmpty() == config.populateMetaFields()
+  - org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#bulkCommit(String,String,HoodieData<HoodieRecord>,MetadataTableFileGroupIndexParser):void
+      [METHOD_EXIT] fdab0762-0ab3-4c34-bc19-ae990e183094 :: instantTime != null && !instantTime.isEmpty()
+      [METHOD_EXIT] cc9fc0fc-0b55-49be-93fb-c96b0b1af389 :: partitionPath != null && !partitionPath.isEmpty()
+      [METHOD_EXIT] 54b08202-ac16-438d-8c0e-6459fe916324 :: records != null && !records.isEmpty()
+      [METHOD_ENTRY] ee3d5a12-b18a-43dc-94eb-0b6f56136675 :: partitionPath != null && !partitionPath.isEmpty()
+      [METHOD_ENTRY] 3a00f3dd-12a5-4890-a846-745a0e37b419 :: instantTime != null && !instantTime.isEmpty()
+      [METHOD_ENTRY] 95d4e00d-b8a4-4e75-a564-946479d60a22 :: records != null && !records.isEmpty()
+      [METHOD_ENTRY] 82070c4f-cafe-4b03-a296-08e25a9938d5 :: indexParser != null
+  - org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#bulkInsertAndCommit(BaseHoodieWriteClient<?, List<HoodieRecord>, ?, List<WriteStatus>>,String,List<HoodieRecord>,Option<BulkInsertPartitioner>):void
+      [METHOD_EXIT] 9068d113-4063-4cdb-a65d-9a98aab4d7d6 :: writeClient != null
+      [METHOD_EXIT] b9b6993e-fae1-474c-bae1-bbd90a02a66a :: preppedRecordInputs.size() > 0
+      [METHOD_ENTRY] 9c040362-2bbf-41bb-a2e9-17bee75f4d2f :: !preppedRecordInputs.isEmpty()
+      [METHOD_ENTRY] c356ee00-a0da-4ec3-8aae-535c698c919c :: !instantTime.isEmpty()
+      [METHOD_ENTRY] c5a9e381-af06-493a-9e6e-b68148099243 :: writeClient != null && instantTime != null && preppedRecordInputs != null && bulkInsertPartitioner != null || !bulkInsertPartitioner.isPresent()
+  - org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#commit(String,Map<String, HoodieData<HoodieRecord>>):void
+      [METHOD_ENTRY] d003a497-e8e5-4e7f-9ddd-0e060502809a :: partitionRecordsMap != null
+      [METHOD_ENTRY] 3c56597a-edc9-4c1c-9366-7eeb14c1022f :: instantTime != null && !instantTime.isEmpty()
+  - org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#convertHoodieDataToEngineSpecificData(HoodieData<HoodieRecord>):List<HoodieRecord>
+      [METHOD_EXIT] 8ba19042-3c55-4c1d-b12b-e472d9e49e1e :: result != null && result.equals(records.collectAsList())
+      [METHOD_ENTRY] 2617f368-2df1-43f2-a028-862d93ed5f57 :: records != null && records.count() >= 0
+  - org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#create(StorageConfiguration<?>,HoodieWriteConfig,HoodieEngineContext,Option<String>):HoodieTableMetadataWriter
+      [METHOD_ENTRY] 1b5c2497-ea56-4f07-9e29-98f41cb1017d :: conf != null && writeConfig != null && context != null && inflightInstantTimestamp != null
+  - org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#create(StorageConfiguration<?>,HoodieWriteConfig,HoodieFailedWritesCleaningPolicy,HoodieEngineContext,Option<String>):HoodieTableMetadataWriter
+      [METHOD_ENTRY] ff393195-cb12-45be-b3d4-e378c362b4e9 :: conf != null && writeConfig != null && failedWritesCleaningPolicy != null && context != null && inflightInstantTimestamp != null
+  - org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#initializeWriteClient():BaseHoodieWriteClient<?, List<HoodieRecord>, ?, List<WriteStatus>>
+      [METHOD_EXIT] 42c5afbf-7c7b-480d-a8cf-203bc4056a04 :: result != null
+  - org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#preWrite(String):void
+      [METHOD_EXIT] d2e2132a-048d-40a1-a632-b4844b29c1b1 :: instantTime != null && !instantTime.isEmpty()
+  - org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#updateColumnsToIndexWithColStats(List<String>):void
+      [METHOD_EXIT] 7f1cc916-90fb-474c-84e7-e7a2ee5d7aa1 :: columnsToIndex != null && !columnsToIndex.contains(null)
+      [METHOD_ENTRY] d914584d-275f-403e-8f95-efb6067383f4 :: columnsToIndex != null && columnsToIndex != null && columnsToIndex.size() >= 0
+  - org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#upsertAndCommit(BaseHoodieWriteClient<?, List<HoodieRecord>, ?, List<WriteStatus>>,String,List<HoodieRecord>):void
+      [METHOD_ENTRY] 74786fa0-2a5c-4cda-a7dd-ced3538effba :: writeClient != null
+      [METHOD_EXIT] 9713159b-8aba-4cde-af26-029269457d43 :: writeClient != null
+      [METHOD_EXIT] f37b1559-cb72-4cf8-a425-8791b7586c8b :: preppedRecordInputs != null && !preppedRecordInputs.isEmpty()
+      [METHOD_ENTRY] fa0de099-2f22-443d-a149-2c7d1a888fee :: preppedRecordInputs != null && !preppedRecordInputs.isEmpty()
+      [METHOD_EXIT] 60d5ce51-80e1-43a0-9de9-2134e9052f99 :: instantTime != null && !instantTime.isEmpty()
+      [METHOD_ENTRY] 8e2e208a-6359-4374-9541-31f8b31b32fb :: instantTime != null && !instantTime.isEmpty()
+  - org.apache.hudi.metadata.JavaHoodieMetadataBulkInsertPartitioner#getFileIdPfx(int):String
+      [METHOD_ENTRY] 54047bd6-c045-4151-89f7-44a07d7964ee :: partitionId >= 0 && partitionId < 10000
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#bulkInsert(HoodieEngineContext,String,List<HoodieRecord<T>>,Option<BulkInsertPartitioner>):HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_ENTRY] 6a3666da-0849-4f4b-857f-0337c758ed52 :: records != null && !records.isEmpty() && instantTime != null && !instantTime.isEmpty() && context != null && bulkInsertPartitioner != null
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#cluster(HoodieEngineContext,String):HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_EXIT] 97a70b73-fc91-4b6e-9a9d-9c18c5cb0501 :: result != null
+      [METHOD_ENTRY] 37f7d7f3-982f-4602-8aaf-be8bf6a23ab2 :: context != null
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#createCleanerPlan(HoodieEngineContext,Option<Map<String, String>>):Option<HoodieCleanerPlan>
+      [METHOD_EXIT] 8dd099df-7869-47f9-8b23-86b0737d300b :: (result.isPresent() && result.get() != null) || !result.isPresent()
+      [METHOD_EXIT] 8e4a3bb6-15e9-463c-8cc7-f0c280bff404 :: result.isPresent() || !result.isPresent()
+      [METHOD_ENTRY] 19973f20-cb7d-4490-a598-79cc6c7322ed :: context != null
+      [METHOD_ENTRY] e71bf477-32cd-4377-b47f-35fd6d840923 :: extraMetadata != null
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#delete(HoodieEngineContext,String,List<HoodieKey>):HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_ENTRY] cf609ba6-052f-4e61-84f2-e531dc0c73be :: keys != null && !keys.isEmpty()
+      [METHOD_ENTRY] 9a94b271-5a9a-4145-90fb-77548266590a :: instantTime != null && !instantTime.isEmpty()
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#insert(HoodieEngineContext,String,List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_ENTRY] d622d683-f4c7-40c5-86d8-fd68bc3e0ff3 :: !instantTime.isEmpty()
+      [METHOD_ENTRY] 999a88d0-efb5-40fa-9850-8d0c596ebf58 :: context != null && instantTime != null && records != null && !records.isEmpty()
+      [METHOD_EXIT] b03b7cdc-0a94-4379-8e9b-3a61274b411e :: result != null
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#insertPrepped(HoodieEngineContext,String,List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_EXIT] 338ac564-83c9-4242-9cfe-5b532b325740 :: result != null
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#restore(HoodieEngineContext,String,String):HoodieRestoreMetadata
+      [METHOD_EXIT] 8c3bd17b-81e7-4812-90c0-abd659e7badf :: result != null
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#rollback(HoodieEngineContext,String,HoodieInstant,boolean,boolean):HoodieRollbackMetadata
+      [METHOD_ENTRY] 323cb535-4cd7-4ab2-8754-75368e9684c2 :: rollbackInstantTime != null && !rollbackInstantTime.isEmpty()
+      [METHOD_ENTRY] 42003570-f150-4b2a-bfc3-7bddf5637301 :: commitInstant != null
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#savepoint(HoodieEngineContext,String,String,String):HoodieSavepointMetadata
+      [METHOD_ENTRY] 66f6b1ba-f4bc-4e31-b718-cbd3ab9dc231 :: instantToSavepoint.trim().length() > 0 && user.trim().length() > 0 && comment.trim().length() >= 0
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#scheduleClustering(HoodieEngineContext,String,Option<Map<String, String>>):Option<HoodieClusteringPlan>
+      [METHOD_ENTRY] c6851206-543c-4ca5-a53f-1eaaf2867519 :: context != null
+      [METHOD_ENTRY] 66179eae-04bb-4b57-8364-41d5f57314ff :: instantTime != null && !instantTime.isEmpty()
+      [METHOD_EXIT] 9ac7f3a1-60c7-497e-a470-d650856dfd8d :: result.isPresent() || !extraMetadata.isEmpty() || extraMetadata.isEmpty()
+      [METHOD_EXIT] 3cb24ad5-8b4d-463b-bc0b-61e7a8f5191f :: result.isPresent() == true || result.isPresent() == false
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#scheduleRestore(HoodieEngineContext,String,String):Option<HoodieRestorePlan>
+      [METHOD_EXIT] 80cc1857-6cf5-4a38-8d75-6e4e1e857279 :: result.isPresent() == (result.get() != null)
+      [METHOD_EXIT] 4867aeca-d962-444c-af3d-be574533c466 :: result.isPresent() || !result.isPresent()
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#scheduleRollback(HoodieEngineContext,String,HoodieInstant,boolean,boolean,boolean):Option<HoodieRollbackPlan>
+      [METHOD_EXIT] a3e968ec-b8f1-469a-b785-10c75e2da008 :: !skipTimelinePublish || result.isPresent()
+      [METHOD_ENTRY] 274242da-6045-4dc6-9756-9276eeb325a4 :: skipTimelinePublish == false || shouldRollbackUsingMarkers == false || isRestore == false
+      [METHOD_EXIT] a6a74f58-4083-47a9-a153-b6c50c1e9fcc :: result != null && result.isPresent() == (instantToRollback != null)
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#upsertPrepped(HoodieEngineContext,String,List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_ENTRY] 5971dbc4-b6a0-46a3-9f8f-16ead67f198e :: instantTime != null && !instantTime.isEmpty() && preppedRecords != null && !preppedRecords.isEmpty() && context != null
+      [METHOD_EXIT] 9bd2a875-f80b-44ac-bea1-bc428e72f0de :: result.getWriteStatuses() != null
+      [METHOD_EXIT] 56d03835-10d9-450d-8818-36503c001699 :: result != null
+  - org.apache.hudi.table.HoodieJavaMergeOnReadTable#bulkInsert(HoodieEngineContext,String,List<HoodieRecord<T>>,Option<BulkInsertPartitioner>):HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_ENTRY] a4248d40-0f43-47ef-ab5d-88aed3ea30f5 :: !hoodieRecords.isEmpty()
+      [METHOD_ENTRY] 10c33cf5-dc5d-4310-bbe1-916db3d87bf7 :: context != null && instantTime != null && hoodieRecords != null
+      [METHOD_EXIT] b05cec4c-be5a-4b98-9bf8-e7c8f7af7d3d :: context != null && instantTime != null && hoodieRecords != null && bulkInsertPartitioner != null && result != null
+      [METHOD_EXIT] 9f23702b-67e8-4022-b4c7-386c264981da :: result.getWriteStatuses().size() == hoodieRecords.size()
+  - org.apache.hudi.table.HoodieJavaMergeOnReadTable#bulkInsertPrepped(HoodieEngineContext,String,List<HoodieRecord<T>>,Option<BulkInsertPartitioner>):HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_ENTRY] 1fd563eb-de33-4edf-a7a5-4d4e7f5aa062 :: instantTime.length() > 0
+      [METHOD_ENTRY] 759ff53a-786b-4b0a-95bd-0ccf3b13330b :: bulkInsertPartitioner.isPresent() || !bulkInsertPartitioner.isPresent()
+      [METHOD_ENTRY] 22205272-f732-4807-b2cf-22f30f026bda :: context != null && instantTime != null && preppedRecords != null && bulkInsertPartitioner != null && preppedRecords.size() >= 0
+  - org.apache.hudi.table.HoodieJavaMergeOnReadTable#compact(HoodieEngineContext,String):HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_ENTRY] c1ecefbe-29bb-48b4-b90d-a51fd63a2aa8 :: context != null && compactionInstantTime != null && !compactionInstantTime.isEmpty() && compactionInstantTime.trim().length() > 0
+  - org.apache.hudi.table.HoodieJavaMergeOnReadTable#delete(HoodieEngineContext,String,List<HoodieKey>):HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_EXIT] ab8760db-8160-4b16-aeb5-31d4aaca8eac :: result != null && result.getWriteStatuses() != null
+  - org.apache.hudi.table.HoodieJavaMergeOnReadTable#restore(HoodieEngineContext,String,String):HoodieRestoreMetadata
+      [METHOD_EXIT] b9590e0c-48a2-43ad-962e-26d4ba064b44 :: result != null
+  - org.apache.hudi.table.HoodieJavaMergeOnReadTable#rollback(HoodieEngineContext,String,HoodieInstant,boolean,boolean):HoodieRollbackMetadata
+      [METHOD_ENTRY] 198910f4-c6e1-41de-894d-87f204cf15e2 :: !(deleteInstants && skipLocking)
+      [METHOD_ENTRY] 8fa63a04-29e8-44f1-b9a2-67efaaa9e18b :: context != null
+  - org.apache.hudi.table.HoodieJavaMergeOnReadTable#scheduleCompaction(HoodieEngineContext,String,Option<Map<String, String>>):Option<HoodieCompactionPlan>
+      [METHOD_ENTRY] 47e2a862-aa2a-4d66-a81f-56cce8a89bc1 :: context != null
+      [METHOD_EXIT] 3b833905-7c34-4493-8b48-a61b7d2a8ca8 :: result.isPresent() == (result.get() != null)
+      [METHOD_ENTRY] 3adab73d-64f7-4062-908f-e0833ae4807d :: instantTime != null && !instantTime.isEmpty()
+  - org.apache.hudi.table.HoodieJavaMergeOnReadTable#upsertPrepped(HoodieEngineContext,String,List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_ENTRY] 2ccdb927-84fb-4bd9-89cb-4ba60fc0cf3e :: context != null && instantTime != null && preppedRecords != null && !preppedRecords.isEmpty()
+      [METHOD_EXIT] 67e9c802-62a1-4dde-b505-7bda881b4c4e :: result != null
+  - org.apache.hudi.table.HoodieJavaTable#convertMetadata(HoodieWriteMetadata<HoodieData<WriteStatus>>):HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_ENTRY] 65eaf603-93b1-4830-8dec-7135831f7f4e :: metadata != null && metadata.getWriteStatuses() != null && metadata.getWriteStatuses().collectAsList() != null
+      [METHOD_EXIT] 39dea072-e0b4-4499-a608-7096bbfaa12b :: result.getWriteStatuses().size() == metadata.getWriteStatuses().count()
+  - org.apache.hudi.table.HoodieJavaTable#create(HoodieWriteConfig,HoodieEngineContext):HoodieJavaTable<T>
+      [METHOD_ENTRY] 7c93dafa-309c-43b1-94a7-d1a563d803d8 :: config.getConsistencyGuardConfig() != null
+      [METHOD_ENTRY] 96d32bad-fc3d-435a-ba25-f930508f096e :: config.getTimeGeneratorConfig() != null
+      [METHOD_EXIT] d087381d-9ddd-4869-b54b-ca6bdd609a8b :: result.getContext().equals(context)
+      [METHOD_ENTRY] 5692688e-3305-4b15-8ebe-51a93b51d170 :: config.getBasePath() != null && !config.getBasePath().isEmpty()
+      [METHOD_EXIT] 87f14880-58a5-40cb-b135-97816a6ee8a7 :: config != null && context != null && result != null
+      [METHOD_EXIT] 8acb4033-4894-4f3b-9fbe-decc48c6ff88 :: result.getConfig().equals(config)
+      [METHOD_ENTRY] 3bbe2e88-58f8-4c42-b3a6-826fd033b3a3 :: context.getStorageConf() != null
+  - org.apache.hudi.table.HoodieJavaTable#create(HoodieWriteConfig,HoodieEngineContext,HoodieTableMetaClient):HoodieJavaTable<T>
+      [METHOD_ENTRY] e5f7058b-5038-4ef5-9ca9-9fc59d6b209e :: metaClient.getTableType() != null
+      [METHOD_EXIT] 294684fe-40c7-4caa-b546-b647045ba3ce :: result.getMetaClient() == metaClient
+      [METHOD_EXIT] 50105b15-6ede-4a7f-9f13-4c4355ec3fc0 :: result.getConfig() == config
+  - org.apache.hudi.table.HoodieJavaTable#getMetadataWriter(String,HoodieFailedWritesCleaningPolicy,boolean,boolean):Option<HoodieTableMetadataWriter>
+      [METHOD_ENTRY] 85a1cd8e-9e08-499f-8446-2433655714f5 :: triggeringInstantTimestamp != null
+      [METHOD_ENTRY] 2e882609-eae6-49fe-9496-943d2b73aac6 :: failedWritesCleaningPolicy != null
+      [METHOD_ENTRY] 39aeecb9-b463-4876-86a2-3168d301cf37 :: !autoDetectAndDeleteMetadataPartitions || autoDetectAndDeleteMetadataPartitions == true
+      [METHOD_ENTRY] 3ae9fa24-a6e7-47e8-9de9-456da18adff7 :: !streamingWrites || streamingWrites == false
+  - org.apache.hudi.table.action.cluster.JavaExecuteClusteringCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_EXIT] a5d84c67-7ffb-4f58-8c67-898fdb14c84e :: result != null && result.getWriteStatuses() != null && !result.getWriteStatuses().isEmpty()
+      [METHOD_EXIT] 3634ae95-d7e0-4955-afd1-0da82daaca2a :: result.getWriteStatuses().size() > 0
+  - org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#buildProfile(List<HoodieRecord<T>>):Pair<Map<String, WorkloadStat>, WorkloadStat>
+      [METHOD_ENTRY] 764d8b75-eb96-4b58-86b4-b0474117ca53 :: inputRecords != null && !inputRecords.contains(null)
+      [METHOD_EXIT] d2569d54-610f-407e-8a62-94d67dd45c30 :: result != null && result.getLeft() != null && result.getRight() != null
+  - org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#execute(List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_ENTRY] f7c49275-bbe0-4b07-98a0-a6e9d6e269fd :: inputRecords.size() >= 0
+      [METHOD_ENTRY] 246c9796-828f-40f0-a6d3-5cd5338509e7 :: inputRecords != null && !inputRecords.contains(null)
+  - org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#execute(List<HoodieRecord<T>>,Option<HoodieTimer>):HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_EXIT] ff7d1ca8-8dfe-4892-b8e9-988ed128b564 :: result.getWriteStatuses() != null && !result.getWriteStatuses().isEmpty()
+      [METHOD_ENTRY] 4fc81db0-bd89-47b0-8f1f-aec71d64ea24 :: inputRecords != null && sourceReadAndIndexTimer != null && inputRecords.size() >= 0
+      [METHOD_EXIT] dd7567a5-d406-491d-a995-32b55b239898 :: result.getWriteStatuses().size() >= inputRecords.size() / 100 || result.getWriteStatuses().size() > 0
+  - org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#getPartitionToReplacedFileIds(HoodieWriteMetadata<List<WriteStatus>>):Map<String, List<String>>
+      [METHOD_EXIT] 3e85d65b-12b8-40db-ad6c-d855f6274343 :: result.isEmpty() == true
+  - org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#getPartitioner(WorkloadProfile):Partitioner
+      [METHOD_EXIT] 3c05601c-5ad9-455c-b568-9d1b0e378084 :: result != null
+  - org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#getUpdateHandle(String,String,Iterator<HoodieRecord<T>>):HoodieMergeHandle<?, ?, ?, ?>
+      [METHOD_ENTRY] 9e05c089-567d-44a9-98b8-b6532d69b394 :: fileId != null && !fileId.isEmpty()
+      [METHOD_ENTRY] df3372e5-f9ea-4ffd-b7ce-3047c171944a :: recordItr != null && recordItr.hasNext()
+      [METHOD_EXIT] 2e1fe65f-aeff-4332-83f3-99cadedccb53 :: result != null
+      [METHOD_EXIT] cb71753d-5355-4c12-b57a-4e478ff5b3fe :: result.getPartitionPath().equals(partitionPath)
+      [METHOD_ENTRY] fbdadff5-a251-4b98-8bbb-d7308c5e5ae2 :: partitionPath != null && !partitionPath.isEmpty()
+  - org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#getUpsertPartitioner(WorkloadProfile):Partitioner
+      [METHOD_ENTRY] 63b3bf35-67e1-4b10-8db6-19f8fb2fa69b :: profile != null
+  - org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#handleInsert(String,Iterator<HoodieRecord<T>>):Iterator<List<WriteStatus>>
+      [METHOD_ENTRY] 20ec9f04-1a12-4f1b-8317-428707d7195f :: idPfx != null && !idPfx.isEmpty()
+      [METHOD_ENTRY] e87cc930-6af8-4b1b-9063-60cfd2b5b14d :: recordItr != null
+  - org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#handleInsertPartition(String,Integer,Iterator,Partitioner):Iterator<List<WriteStatus>>
+      [METHOD_EXIT] e6269964-adad-4e3f-803e-5aa9cd32dfd2 :: result != null && result.hasNext() == false || result.hasNext() == true
+      [METHOD_ENTRY] abc6a84b-75a7-4e2e-8532-37cc6a445f7d :: instantTime != null && !instantTime.isEmpty() && partition != null && recordItr != null && partitioner != null
+  - org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#handleUpdate(String,String,Iterator<HoodieRecord<T>>):Iterator<List<WriteStatus>>
+      [METHOD_EXIT] dab7ff8e-7eca-4b62-b75a-fdaacd217fe3 :: result != null
+      [METHOD_ENTRY] 3b1a0840-2b57-48a3-9c63-41b0357c91f6 :: partitionPath != null && !partitionPath.isEmpty() && fileId != null && !fileId.isEmpty() && recordItr != null && recordItr.hasNext() == false || recordItr.hasNext() == true
+  - org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#handleUpsertPartition(String,Integer,Iterator,Partitioner):Iterator<List<WriteStatus>>
+      [METHOD_ENTRY] b7aa6f8a-8035-4713-9a29-459a9b197740 :: recordItr != null && recordItr.hasNext() == false || recordItr.hasNext() == true
+      [METHOD_ENTRY] 3998423a-7921-4989-88e0-99855cfb3b94 :: partitioner != null
+      [METHOD_ENTRY] d10c19c1-fbff-46be-9706-5531b7af4afd :: instantTime != null && !instantTime.isEmpty()
+      [METHOD_ENTRY] 59572f66-3e27-4ba3-97a3-cca611d3ea46 :: partition != null && partition >= 0
+      [METHOD_EXIT] 730ff863-9d06-4661-90da-703487f0a448 :: result != null
+  - org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#updateIndexAndMaybeRunPreCommitValidations(List<WriteStatus>,HoodieWriteMetadata):void
+      [METHOD_EXIT] 9067b764-ce20-411b-b882-d94a60c1f71a :: result.getIndexUpdateDuration() != null
+      [METHOD_ENTRY] 7725d12a-25b7-42b2-9c56-1d4a9ab3a036 :: result != null
+      [METHOD_ENTRY] 97a31208-71ca-443c-ad17-698893ff80ea :: writeStatuses != null && !writeStatuses.isEmpty() || writeStatuses != null && writeStatuses.isEmpty()
+  - org.apache.hudi.table.action.commit.JavaBulkInsertHelper#bulkInsert(List<HoodieRecord<T>>,String,HoodieTable<T, List<HoodieRecord<T>>, List<HoodieKey>, List<WriteStatus>>,HoodieWriteConfig,BaseCommitActionExecutor<T, List<HoodieRecord<T>>, List<HoodieKey>, List<WriteStatus>, R>,boolean,Option<BulkInsertPartitioner>):HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_ENTRY] ad4e881e-e5ba-46e1-9a81-563940ba1a94 :: table.getActiveTimeline() != null
+      [METHOD_EXIT] 52ba82c9-4399-4fda-8c83-de2321dd9564 :: result != null
+      [METHOD_ENTRY] e26bc91d-14d4-46ba-a130-b6b548c68488 :: !instantTime.isEmpty()
+  - org.apache.hudi.table.action.commit.JavaBulkInsertHelper#bulkInsert(List<HoodieRecord<T>>,String,HoodieTable<T, List<HoodieRecord<T>>, List<HoodieKey>, List<WriteStatus>>,HoodieWriteConfig,boolean,BulkInsertPartitioner,boolean,int,WriteHandleFactory):List<WriteStatus>
+      [METHOD_EXIT] d219282b-cba1-4742-bdc0-25bbbd32babf :: !performDedupe || result.size() <= inputRecords.size()
+      [METHOD_EXIT] 629f2046-437d-4f68-ac33-4f6b5615eab8 :: result != null && !result.isEmpty() && inputRecords != null && !inputRecords.isEmpty()
+      [METHOD_ENTRY] 7223edfe-4a07-4eb9-b4ad-ccc606b66c54 :: !performDedupe || (inputRecords.size() >= 0)
+      [METHOD_ENTRY] 9ec18044-d9fa-49a4-82bd-8126498ddb42 :: inputRecords != null && table != null && config != null && partitioner != null && writeHandleFactory != null && instantTime != null && configuredParallelism > 0
+  - org.apache.hudi.table.action.commit.JavaBulkInsertHelper#newInstance():JavaBulkInsertHelper
+      [METHOD_EXIT] f7f8df37-c2b3-477c-bf22-24b5cb621331 :: result != null
+  - org.apache.hudi.table.action.commit.JavaDeleteHelper#deduplicateKeys(List<HoodieKey>,HoodieTable<EmptyHoodieRecordPayload, List<HoodieRecord<EmptyHoodieRecordPayload>>, List<HoodieKey>, List<WriteStatus>>,int):List<HoodieKey>
+      [METHOD_EXIT] 361cfaee-b1d1-4079-aa77-2448e3565416 :: result != null && !result.contains(null)
+      [METHOD_ENTRY] 59c58fd5-ef43-4590-8d69-1654be863d4b :: keys != null && table != null && parallelism >= 1 && keys.size() >= 0 && table.getIndex() != null && table.getIndex().isGlobal() == false || table.getIndex().isGlobal() == true
+      [METHOD_EXIT] 4ebbe1a0-9f50-4bbf-9942-2406f8d600b7 :: result.size() <= keys.size()
+      [METHOD_EXIT] 105c9d8d-cddc-4875-b055-441d17c7d06e :: (result == keys) || (result != keys)
+  - org.apache.hudi.table.action.commit.JavaDeleteHelper#execute(String,List<HoodieKey>,HoodieEngineContext,HoodieWriteConfig,HoodieTable<EmptyHoodieRecordPayload, List<HoodieRecord<EmptyHoodieRecordPayload>>, List<HoodieKey>, List<WriteStatus>>,BaseCommitActionExecutor<EmptyHoodieRecordPayload, List<HoodieRecord<EmptyHoodieRecordPayload>>, List<HoodieKey>, List<WriteStatus>, R>):HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_ENTRY] ae21558f-258a-404a-955c-ceaee300f2b8 :: deleteExecutor != null
+      [METHOD_ENTRY] 3ab18162-ccab-4272-a987-d25f20bd9ef3 :: keys != null
+      [METHOD_ENTRY] 87824332-f2a6-4474-b80d-206d91880e8f :: config != null
+      [METHOD_ENTRY] 4903b3e7-a60f-4f58-a812-586cd7ba7d2c :: table != null
+      [METHOD_EXIT] 59861948-03c3-4751-83f5-5016df958ac0 :: result != null && result.getWriteStatuses() != null && !result.getWriteStatuses().contains(null)
+      [METHOD_EXIT] 25831233-98b2-4bac-b8e4-bf98b0052928 :: result.getIndexLookupDuration() != null
+      [METHOD_ENTRY] 79a08be0-7934-40a0-9fd8-3e205ce201d8 :: instantTime != null && !instantTime.isEmpty()
+  - org.apache.hudi.table.action.commit.JavaDeleteHelper#newInstance():JavaDeleteHelper
+      [METHOD_EXIT] 54acdbf4-0dcd-4b79-bd78-6226935979f2 :: result != null
+  - org.apache.hudi.table.action.commit.JavaDeletePreppedCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_EXIT] 2a0895b9-5a1a-4816-b4a6-b7215e68e4ae :: result.getWriteStatuses().size() > 0
+      [METHOD_EXIT] 178b2d03-f97c-4ba1-8e34-e783ed4e66eb :: result != null
+  - org.apache.hudi.table.action.commit.JavaUpsertCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_EXIT] 61023f57-1931-4682-bd23-2de2b47304fa :: result != null && !result.getWriteStatuses().isEmpty() && !result.getWriteStatuses().contains(null)
+  - org.apache.hudi.table.action.commit.JavaUpsertPartitioner#assignInserts(WorkloadProfile,HoodieEngineContext):void
+      [METHOD_ENTRY] 518c6556-8f1c-4e83-8c7a-1aad69969a6a :: profile.getOutputPartitionPathStatMap() != null
+      [METHOD_ENTRY] 021d6e08-ffef-4254-add5-243324855bda :: !profile.getPartitionPaths().contains(null)
+      [METHOD_EXIT] 6a5667bd-d61b-4f04-a6ea-95e3a4190005 :: !profile.getPartitionPaths().isEmpty()
+  - org.apache.hudi.table.action.commit.JavaUpsertPartitioner#assignUpdates(WorkloadProfile):void
+      [METHOD_EXIT] 367868ce-6606-4ffb-a333-e7f0bd1f226d :: profile.getInputPartitionPathStatMap().entrySet().size() >= 0
+      [METHOD_ENTRY] 5fdbc4bc-6677-41f5-bef5-b3d40c4abca6 :: !profile.hasOutputWorkLoadStats() || profile.getOutputPartitionPathStatMap() != null
+      [METHOD_ENTRY] 8a03c18e-0f35-4187-8a83-ad043a8b75e7 :: profile.getOutputPartitionPathStatMap() != null
+      [METHOD_EXIT] 5f1ceb47-9a28-46f0-a350-0480c11d10a7 :: profile.getOutputPartitionPathStatMap() != null
+  - org.apache.hudi.table.action.commit.JavaUpsertPartitioner#averageBytesPerRecord(HoodieTimeline,HoodieWriteConfig):long
+      [METHOD_EXIT] 349022c7-b62c-46a4-8808-ff3a1e982287 :: !commitTimeline.empty() || result == hoodieWriteConfig.getCopyOnWriteRecordSizeEstimate()
+      [METHOD_ENTRY] 1ebb8992-9945-4bcb-8fdd-aadc8872de81 :: hoodieWriteConfig.getCopyOnWriteRecordSizeEstimate() > 0
+      [METHOD_EXIT] 7e895b58-c9fc-4367-ad0b-a706c721a8f3 :: result >= 0L
+      [METHOD_ENTRY] 0081c4d2-1b3f-4ebf-850e-2c6100450a65 :: hoodieWriteConfig.getRecordSizeEstimationThreshold() >= 0.0 && hoodieWriteConfig.getParquetSmallFileLimit() >= 0L
+      [METHOD_ENTRY] 4ea44847-d78a-46b2-ba85-0d5642120973 :: commitTimeline != null && hoodieWriteConfig != null && !commitTimeline.empty() || commitTimeline.empty()
+  - org.apache.hudi.table.action.commit.JavaUpsertPartitioner#getBucketInfo(int):BucketInfo
+      [METHOD_ENTRY] bba276a7-b069-4a2b-8a7f-b8de7cd70dbf :: bucketNumber >= 0
+  - org.apache.hudi.table.action.commit.JavaUpsertPartitioner#getPartition(Object):int
+      [METHOD_ENTRY] fe1b8c8f-1c10-4276-811c-d808361f1715 :: key != null
+      [METHOD_EXIT] de2a0c30-c408-49eb-973a-3ca692c36432 :: result >= 0
+  - org.apache.hudi.table.action.commit.JavaUpsertPartitioner#getSmallFiles(String):List<SmallFile>
+      [METHOD_ENTRY] 395fcf12-7777-4b83-9ba7-79be296f9fc0 :: partitionPath != null && !partitionPath.isEmpty() && partitionPath.trim().length() > 0 && partitionPath.trim().equals(partitionPath)
+      [METHOD_ENTRY] a6bc2381-100a-4589-9c08-bcf7cbb77cc2 :: partitionPath.equals(partitionPath.trim())
+  - org.apache.hudi.table.action.commit.JavaUpsertPartitioner#getSmallFilesForPartitions(List<String>,HoodieEngineContext):Map<String, List<SmallFile>>
+      [METHOD_ENTRY] 1ec83134-429d-4d45-9c11-fc41f9136160 :: partitionPaths == null || partitionPaths.isEmpty() || partitionPaths.size() >= 0
+      [METHOD_EXIT] 7ae990c7-f63f-4758-bc49-eebec7304a4c :: partitionPaths == null || (partitionPaths.size() == 0 || result.size() == partitionPaths.size())
+      [METHOD_EXIT] ae07adda-e6d1-49e3-906c-766bf42acc54 :: result != null && !result.containsKey(null)
+      [METHOD_ENTRY] 24ee2ba4-b06f-4fbe-9d77-829c2cd7dcb2 :: partitionPaths != null || partitionPaths == null
+      [METHOD_ENTRY] 1b544500-9a97-4de8-ba34-3272648e3661 :: context != null
+      [METHOD_EXIT] ae835ff4-6f5f-4045-add3-a683cf1fbdaa :: partitionPaths == null || result.keySet().containsAll(partitionPaths)
+  - org.apache.hudi.table.action.commit.JavaWriteHelper#deduplicateRecords(List<HoodieRecord<T>>,HoodieIndex<?, ?>,int,String,TypedProperties,BufferedRecordMerger<T>,HoodieReaderContext<T>,String[]):List<HoodieRecord<T>>
+      [METHOD_ENTRY] 59995914-483e-4995-ac77-5aac5e48959a :: orderingFieldNames.length >= 0
+      [METHOD_ENTRY] 6c17e4fe-827f-468b-a9b4-8ed0d5f5e269 :: records != null && props != null && recordMerger != null && readerContext != null && orderingFieldNames != null && schemaStr != null && index != null && parallelism > 0
+      [METHOD_ENTRY] 896b846d-697d-4b86-a042-1eeaf40de4aa :: parallelism > 0
+      [METHOD_EXIT] ba88643b-7529-4b07-96e7-4c031cccb800 :: result.size() <= records.size()
+      [METHOD_EXIT] 7fe611f6-ea88-40b8-a932-4e6e0172d951 :: result != null && !result.contains(null)
+  - org.apache.hudi.table.action.commit.JavaWriteHelper#newInstance():JavaWriteHelper
+      [METHOD_EXIT] 08a9fea7-a32f-47a4-ae15-fc62f698e331 :: result != null
+  - org.apache.hudi.table.action.compact.HoodieJavaMergeOnReadTableCompactor#maybePersist(HoodieData<WriteStatus>,HoodieEngineContext,HoodieWriteConfig,String):void
+      [METHOD_EXIT] c858f805-ecd0-472b-b1d3-af3efb33af78 :: writeStatus != null && context != null && config != null && instantTime != null && !instantTime.isEmpty()
+  - org.apache.hudi.table.action.compact.HoodieJavaMergeOnReadTableCompactor#preCompact(HoodieTable,HoodieTimeline,WriteOperationType,String):void
+      [METHOD_ENTRY] fa41ceb1-62b0-41fc-a088-dfa2903ae8a2 :: table != null
+      [METHOD_ENTRY] 6123090e-df61-4643-95fd-26c569f88b58 :: instantTime != null
+      [METHOD_ENTRY] b4cc4482-6217-4d4c-894a-495335847894 :: pendingCompactionTimeline != null
+      [METHOD_ENTRY] 5d8f3c4e-2a43-488a-a2c0-180d5db0e269 :: pendingCompactionTimeline.containsInstant(table.getInstantGenerator().getCompactionInflightInstant(instantTime)) == false || table.getConfig() != null
+  - org.apache.hudi.table.action.deltacommit.BaseJavaDeltaCommitActionExecutor#handleInsert(String,Iterator<HoodieRecord<T>>):Iterator<List<WriteStatus>>
+      [METHOD_ENTRY] 381ea447-e3ec-444e-9902-2e7fa2257ab8 :: recordItr != null
+      [METHOD_EXIT] 414e1755-68ca-401d-b7ed-f13ab3303663 :: result != null && recordItr != null && idPfx != null && !idPfx.isEmpty() && result.hasNext() == false || result.hasNext() == true
+      [METHOD_ENTRY] 100305e0-f60f-4220-817a-d0122fb2d084 :: idPfx != null && !idPfx.isEmpty()
+  - org.apache.hudi.table.action.deltacommit.BaseJavaDeltaCommitActionExecutor#handleUpdate(String,String,Iterator<HoodieRecord<T>>):Iterator<List<WriteStatus>>
+      [METHOD_ENTRY] 2ace7ea3-875b-4347-8081-ee9c3ca8a3f3 :: partitionPath != null && !partitionPath.isEmpty() && fileId != null && !fileId.isEmpty() && recordItr != null && recordItr.hasNext() == true && !fileId.isEmpty()
+      [METHOD_EXIT] 389232b6-67a2-4bc0-854c-c589c6b58752 :: result != null
+      [METHOD_EXIT] 8e665f7d-bebc-4d5a-8a82-8926fb95055b :: result.hasNext()
+  - org.apache.hudi.table.action.deltacommit.JavaBulkInsertDeltaCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_EXIT] 82c57a19-8306-4ff4-8b37-dbf5e51d84d9 :: result != null && result.getWriteStatuses() != null && !result.getWriteStatuses().isEmpty()
+  - org.apache.hudi.table.action.deltacommit.JavaBulkInsertPreppedDeltaCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_EXIT] be9c6dde-5e20-40f8-a809-7f4f80659c3c :: result != null && result.getWriteStatuses() != null && !result.getWriteStatuses().isEmpty()
+  - org.apache.hudi.table.action.deltacommit.JavaUpsertPreppedDeltaCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_EXIT] 36c8a337-3080-4077-8241-788233263172 :: result != null && result.getWriteStatuses() != null && result.getWriteStatuses().size() >= 0
+  - org.apache.hudi.table.upgrade.JavaUpgradeDowngradeHelper#getTable(HoodieWriteConfig,HoodieEngineContext):HoodieTable
+      [METHOD_EXIT] ae2f7a5f-4db4-437c-9f1c-d79ca7c67599 :: result != null && result.getConfig().equals(config)
+      [METHOD_ENTRY] 636bba6e-ff3e-42c2-b9dd-c9d0d6b5276e :: config != null && context != null
+>>> FALSIFIED invariants by method (ENTRY & EXIT):
+  - org.apache.hudi.client.HoodieJavaWriteClient#commit(String,List<WriteStatus>,Option<Map<String, String>>,String,Map<String, List<String>>,Option<BiConsumer<HoodieTableMetaClient, HoodieCommitMetadata>>,Option<WriteStatusValidator>):boolean
+      [METHOD_ENTRY] 6a86b845-21a6-4c0c-8759-6ec3ef6cb8a2 :: extraPreCommitFunc.isPresent() == (extraPreCommitFunc.get() != null)
+      [METHOD_ENTRY] 8a1bb0ab-53bd-42cf-a83d-aa89001d0899 :: extraMetadata.isPresent() == (extraMetadata.get() != null)
+  - org.apache.hudi.client.HoodieJavaWriteClient#insert(List<HoodieRecord<T>>,String):List<WriteStatus>
+      [METHOD_EXIT] aaaa3375-ee2c-4dd0-a9ac-bcf9513f9929 :: result.size() == records.size()
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#scheduleClustering(HoodieEngineContext,String,Option<Map<String, String>>):Option<HoodieClusteringPlan>
+      [METHOD_ENTRY] 9078b3a2-9460-4329-a2de-f921546ec98f :: extraMetadata == null || extraMetadata.isPresent()
+  - org.apache.hudi.table.HoodieJavaMergeOnReadTable#bulkInsert(HoodieEngineContext,String,List<HoodieRecord<T>>,Option<BulkInsertPartitioner>):HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_ENTRY] d87adebd-300c-4399-9732-81b7b9de5126 :: bulkInsertPartitioner == null || bulkInsertPartitioner.isPresent()
+  - org.apache.hudi.table.HoodieJavaMergeOnReadTable#upsert(HoodieEngineContext,String,List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_EXIT] 5c8e7eff-d421-433b-af52-4a6b7a35e488 :: hoodieRecords != null && !hoodieRecords.isEmpty() && result != null && result.getWriteStatuses() != null && result.getWriteStatuses().size() == hoodieRecords.size()
+  - org.apache.hudi.table.HoodieJavaTable#getMetadataWriter(String,HoodieFailedWritesCleaningPolicy,boolean,boolean):Option<HoodieTableMetadataWriter>
+      [METHOD_EXIT] 3bab4f0c-c28b-451d-a1dc-744f0fb5f481 :: !autoDetectAndDeleteMetadataPartitions || (result.isPresent() && !result.isEmpty())
+>>> FAILED-TO-COMPILE invariants by method:
+  - org.apache.hudi.client.HoodieJavaTableServiceClient#convertToOutputMetadata(HoodieWriteMetadata<List<WriteStatus>>):HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_ENTRY] 22ad5af8-8f89-4ee0-a8b4-973410416257 :: writeMetadata != null && !writeMetadata.isEmpty()
+  - org.apache.hudi.client.HoodieJavaWriteClient#initMetadataTable(Option<String>,HoodieTableMetaClient):void
+      [METHOD_ENTRY] 3dd4923d-4c6d-40f7-997d-e641ad72c039 :: instantTime != null && metaClient != null && !instantTime.isEmpty() && metaClient.getBasePath() != null && !metaClient.getBasePath().isEmpty() && !metaClient.getBasePath().equals(\
+  - org.apache.hudi.client.clustering.run.strategy.JavaExecutionStrategy#performClustering(HoodieClusteringPlan,HoodieSchema,String):HoodieWriteMetadata<HoodieData<WriteStatus>>
+      [METHOD_EXIT] 2deab46d-938a-4fed-8156-e8b290cc852f :: result.getWriteStatuses().size() >= clusteringPlan.getInputGroups().size()
+  - org.apache.hudi.client.common.HoodieJavaEngineContext#getEngineReaderContextFactory(HoodieTableMetaClient):ReaderContextFactory<IndexedRecord>
+      [METHOD_EXIT] 4fdae21d-bbe4-4f36-b419-8b38e1f69aaf :: metaClient != null && result != null && result.getMetaClient().equals(metaClient)
+  - org.apache.hudi.client.common.HoodieJavaEngineContext#getReaderContextFactory(HoodieTableMetaClient):ReaderContextFactory<IndexedRecord>
+      [METHOD_ENTRY] bc140f63-2772-4d46-9c3e-d495c6635e72 :: metaClient != null && metaClient.getBasePath() != null && !metaClient.getBasePath().isEmpty()
+  - org.apache.hudi.client.common.HoodieJavaEngineContext#mapPartitionsToPairAndReduceByKey(Stream<I>,SerializablePairFlatMapFunction<Iterator<I>, K, V>,SerializableBiFunction<V, V, V>,int):Stream<ImmutablePair<K, V>>
+      [METHOD_EXIT] 9ff3c436-656a-4acf-9eaf-277d470110a0 :: result.parallel()
+  - org.apache.hudi.client.common.HoodieJavaEngineContext#putCachedDataIds(HoodieDataCacheKey,int):void
+      [METHOD_ENTRY] ed6f47ae-ccd2-48c2-ac98-4976a1ce0fdd :: cacheKey != null && ids >= 0 && cacheKey.toString().length() > 0
+  - org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#deletePartitions(String,List<MetadataPartitionType>):void
+      [METHOD_EXIT] 8398d5de-1d85-412a-94bb-f14f05a6a02d :: instantTime != null && !instantTime.isEmpty()
+      [METHOD_ENTRY] 5d5f4386-2bd0-4831-b150-be42ca205b0f :: !partitions.isEmpty()
+  - org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#upsertAndCommit(BaseHoodieWriteClient<?, List<HoodieRecord>, ?, List<WriteStatus>>,String,List<HoodieRecord>,List<HoodieFileGroupId>):void
+      [METHOD_ENTRY] 602a98bb-66a0-4383-870d-99bf7f68f6d2 :: preppedRecordInputs.size() > 0 || fileGroupsIdsToUpdate.size() > 0
+      [METHOD_EXIT] e22664e7-dc7e-40de-b971-92002f9c99ed :: instantTime != null && !instantTime.isEmpty()
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#clean(HoodieEngineContext,String):HoodieCleanMetadata
+      [METHOD_EXIT] b8fc4dfa-68eb-40b6-a44a-9012528bbd18 :: result != null && result.getCleanInstantTime().equals(cleanInstantTime)
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#cluster(HoodieEngineContext,String):HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_EXIT] b04312b3-a5fb-4352-9aef-e0ace433e4db :: result.getCommitTime().equals(clusteringInstantTime)
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#rollback(HoodieEngineContext,String,HoodieInstant,boolean,boolean):HoodieRollbackMetadata
+      [METHOD_EXIT] 2c1f931d-935e-427a-a45d-1042b8956ac1 :: result != null && result.getRollbackInstantTime().equals(rollbackInstantTime)
+      [METHOD_EXIT] 6f9036c0-af16-4030-98a5-1e0ed1592538 :: !skipLocking || result.isLockAcquired()
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#rollbackBootstrap(HoodieEngineContext,String):void
+      [METHOD_EXIT] df323ebf-b82b-4276-ade3-d44d239fe50c :: context != null && instantTime != null && !instantTime.isEmpty() && instantTime.length() > 0
+      [METHOD_ENTRY] 995e3e3f-47b3-41a3-8103-87f351fda911 :: context != null && instantTime != null && !instantTime.isEmpty()
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#savepoint(HoodieEngineContext,String,String,String):HoodieSavepointMetadata
+      [METHOD_EXIT] 229f34cf-a6e5-4200-9191-a6a4f40a1be5 :: result != null && result.getSavepointInstant().equals(instantToSavepoint)
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#scheduleClustering(HoodieEngineContext,String,Option<Map<String, String>>):Option<HoodieClusteringPlan>
+      [METHOD_EXIT] 8ae19b72-5d39-4722-8f68-48991c3dfb0c :: !result.isPresent() || result.get().getClusteringInstantTime().equals(instantTime)
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#scheduleRollback(HoodieEngineContext,String,HoodieInstant,boolean,boolean,boolean):Option<HoodieRollbackPlan>
+      [METHOD_ENTRY] ad3d80bc-7460-462a-839e-bc0373c07ed5 :: context != null && instantTime != null && instantToRollback != null && !instantTime.isEmpty() && instantToRollback.getTimestamp() != null && !instantToRollback.getTimestamp().isEmpty()
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#upsert(HoodieEngineContext,String,List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_EXIT] 00257031-81cc-4618-ba7e-a5b863b86bad :: records != null && !records.isEmpty() == result.getWriteStatuses() != null && !result.getWriteStatuses().isEmpty() && result.getWriteStatuses().size() == records.size()
+  - org.apache.hudi.table.HoodieJavaMergeOnReadTable#bulkInsert(HoodieEngineContext,String,List<HoodieRecord<T>>,Option<BulkInsertPartitioner>):HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_EXIT] ea39aac0-3151-4d04-9d3b-0586bc7ffee9 :: result.getInstantTime().equals(instantTime)
+  - org.apache.hudi.table.HoodieJavaMergeOnReadTable#delete(HoodieEngineContext,String,List<HoodieKey>):HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_EXIT] 6e90639d-53af-4dac-a09e-d3daf7faa524 :: keys != null && !keys.isEmpty() || result.getWriteStatuses().isEmpty() && result.getTotalRecordsDeleted() == 0
+  - org.apache.hudi.table.HoodieJavaMergeOnReadTable#rollback(HoodieEngineContext,String,HoodieInstant,boolean,boolean):HoodieRollbackMetadata
+      [METHOD_ENTRY] 2fe8f288-fe75-44cf-9bbe-56aaea4ad325 :: rollbackInstantTime != null && !rollbackInstantTime.isEmpty() && commitInstant != null && commitInstant.getTimestamp().equals(rollbackInstantTime)
+  - org.apache.hudi.table.HoodieJavaMergeOnReadTable#scheduleCompaction(HoodieEngineContext,String,Option<Map<String, String>>):Option<HoodieCompactionPlan>
+      [METHOD_ENTRY] a9c939b4-c82b-4dc6-be35-bf9b16648ac5 :: extraMetadata == null || extraMetadata.isDefined() || !extraMetadata.isDefined()
+  - org.apache.hudi.table.HoodieJavaMergeOnReadTable#scheduleLogCompaction(HoodieEngineContext,String,Option<Map<String, String>>):Option<HoodieCompactionPlan>
+      [METHOD_ENTRY] ac3fe893-0ac5-432e-bf42-f8b504b0614f :: context != null && instantTime != null && extraMetadata != null && extraMetadata.isDefined() == (extraMetadata.get() != null)
+  - org.apache.hudi.table.HoodieJavaTable#create(HoodieWriteConfig,HoodieEngineContext,HoodieTableMetaClient):HoodieJavaTable<T>
+      [METHOD_EXIT] 83d5e241-241f-4164-88a3-8c85fd083fd4 :: result.getEngineContext() == context
+  - org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#getPartitioner(WorkloadProfile):Partitioner
+      [METHOD_EXIT] aad43273-98ed-4358-8b4b-45747b9bacde :: result != null || profile == null || profile.isEmpty() == false
+  - org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#getUpdateHandle(String,String,Iterator<HoodieRecord<T>>):HoodieMergeHandle<?, ?, ?, ?>
+      [METHOD_EXIT] a139ee85-4714-4247-b88b-9223db84cdc8 :: result.getFileId().equals(fileId)
+  - org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#partition(List<HoodieRecord<T>>,Partitioner):Map<Integer, List<HoodieRecord<T>>>
+      [METHOD_EXIT] 3f69665e-04a3-4d36-a130-53e570cc66ec :: result.keySet().containsAll(partitioner.getPartitions())
+  - org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#updateIndex(List<WriteStatus>,HoodieWriteMetadata<List<WriteStatus>>):List<WriteStatus>
+      [METHOD_EXIT] 043d25c2-e667-411b-88c8-465c76080252 :: result != null && result.getWriteStatuses() != null && result.getWriteStatuses().equals(result.getWriteStatuses())
+      [METHOD_EXIT] 74045467-376d-45c7-9538-73e6e28fe7d0 :: result.getWriteStatuses() != null && result.getWriteStatuses().size() == writeStatuses.size()
+  - org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#updateIndexAndMaybeRunPreCommitValidations(List<WriteStatus>,HoodieWriteMetadata):void
+      [METHOD_EXIT] 7fc8ff3e-1195-44ae-91c2-cb3fcefced04 :: result.getWriteStatuses() != null && !result.getWriteStatuses().isEmpty()
+  - org.apache.hudi.table.action.commit.JavaBulkInsertPreppedCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_EXIT] dfc0340e-b3b4-4f96-9561-f17f3f240973 :: result.getCommitted() != null && !result.getCommitted().isEmpty()
+  - org.apache.hudi.table.action.commit.JavaInsertPreppedCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_EXIT] 9d9da41a-ae86-4556-93d6-1423df974643 :: result.getPartitionPath() != null
+  - org.apache.hudi.table.action.commit.JavaUpsertPartitioner#getBucketInfo(int):BucketInfo
+      [METHOD_EXIT] c2664272-91a0-4425-b9a2-c719e43a75cf :: result == null || result.getBucketNumber() == bucketNumber
+  - org.apache.hudi.table.action.deltacommit.BaseJavaDeltaCommitActionExecutor#getUpsertPartitioner(WorkloadProfile):Partitioner
+      [METHOD_ENTRY] 1ff6d94b-2800-465f-853f-9e30c1fd0e26 :: profile.getRecords() > 0
+      [METHOD_ENTRY] 34b6f9a8-d185-4e7f-b878-47965cf41fb9 :: profile != null && profile.isValid()
+  - org.apache.hudi.table.action.deltacommit.JavaDeleteDeltaCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_EXIT] b6f308ed-e949-416e-aea8-863516658dcb :: result.getCommitTime() != null && !result.getCommitTime().isEmpty()
+  - org.apache.hudi.table.action.deltacommit.JavaInsertDeltaCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_EXIT] 675e1f78-1316-4b97-88e1-2888661f1819 :: result != null && result.getWriteStatuses() != null && !result.getWriteStatuses().isEmpty() && result.getNumWrites() >= 0
+>>> NEVER-EXECUTED invariants by method (compiled but never observed):
+  - org.apache.hudi.client.HoodieJavaTableServiceClient#updateColumnsToIndexWithColStats(HoodieTableMetaClient,List<String>):void
+      [METHOD_EXIT] 72511de6-74e9-4752-8cb8-b14ab732fa61 :: metaClient != null && columnsToIndex != null && columnsToIndex.isEmpty() == false
+      [METHOD_ENTRY] ec996a4f-3347-4902-928f-0625f39319a2 :: metaClient != null && columnsToIndex != null && !columnsToIndex.isEmpty()
+      [METHOD_EXIT] b05b2eea-27d6-4498-bb8a-f456c33cea0b :: metaClient != null && columnsToIndex != null
+  - org.apache.hudi.client.HoodieJavaWriteClient#transitionInflight(String):void
+      [METHOD_EXIT] 217c143a-eb89-40be-b7fe-00275f67bc8a :: instantTime != null && !instantTime.isEmpty() && instantTime.length() > 0
+  - org.apache.hudi.client.common.HoodieJavaEngineContext#aggregate(HoodieData<I>,O,Functions.Function2<O, I, O>,Functions.Function2<O, O, O>):O
+      [METHOD_ENTRY] 2523ea2a-64a3-41b2-8287-be02ac90e2e4 :: data != null && seqOp != null && combOp != null && zeroValue != null
+      [METHOD_ENTRY] 867a73fd-393c-4e50-81e2-d697b9bc758b :: data.collectAsList().size() >= 0
+      [METHOD_ENTRY] b191ee39-7eaa-4a40-93dc-1a1c8a82ce73 :: seqOp != null && combOp != null
+  - org.apache.hudi.client.common.HoodieJavaEngineContext#cancelJob(String):void
+      [METHOD_EXIT] f38c5491-1f7c-4a50-bb3d-3e5ba42bea5a :: jobId != null && !jobId.isEmpty() && jobId.trim().length() > 0
+      [METHOD_ENTRY] 81d4226f-e1d5-47c5-b0e6-be75fac41274 :: jobId != null && !jobId.isEmpty() || jobId == null || jobId.isEmpty()
+      [METHOD_ENTRY] 03b7093e-5cbc-4948-96b8-60b33689a812 :: jobId == null || jobId.length() >= 0
+  - org.apache.hudi.client.common.HoodieJavaEngineContext#mapToPairAndReduceByKey(List<I>,SerializablePairFunction<I, K, V>,SerializableBiFunction<V, V, V>,int):List<V>
+      [METHOD_ENTRY] 94fa7149-81e0-408e-aa04-452b9cb6b3bb :: data != null && mapToPairFunc != null && reduceFunc != null && parallelism > 0
+      [METHOD_EXIT] 5479436c-b5da-49fd-b873-1731081b5dae :: !data.isEmpty() || result.isEmpty()
+      [METHOD_EXIT] 3bc1917c-e21f-489a-ab8f-ce3530892b38 :: result != null
+      [METHOD_EXIT] e8fdbe63-f0e8-43b6-8296-0edb5a647cb0 :: result.size() <= data.size()
+  - org.apache.hudi.client.common.HoodieJavaEngineContext#putCachedDataIds(HoodieDataCacheKey,int):void
+      [METHOD_EXIT] ab343da9-4c38-41c0-a2aa-72a7f1a49326 :: cacheKey != null
+  - org.apache.hudi.client.common.HoodieJavaEngineContext#removeCachedDataIds(HoodieDataCacheKey):List<Integer>
+      [METHOD_EXIT] cd369e30-e655-44ff-abc1-322e4e4c4038 :: result.isEmpty()
+      [METHOD_ENTRY] bc175e7c-1e69-4cb2-b58b-0902161bb101 :: cacheKey != null
+  - org.apache.hudi.client.common.HoodieJavaEngineContext#setProperty(EngineProperty,String):void
+      [METHOD_ENTRY] 4238499c-92e6-47dc-9d8e-584ca4601fe0 :: key != null && value != null && !value.isEmpty() == (value.length() > 0)
+      [METHOD_ENTRY] 8e3b5e79-a0b8-4a84-a077-21ca96e5b436 :: key != null
+      [METHOD_EXIT] 4f5675f3-6c23-418f-8cdd-9a22fe13f2c9 :: key != null && value != null && value.isEmpty() == false
+      [METHOD_ENTRY] a2754c12-fc05-442e-b0cd-e92b1da10bee :: value != null || key != null
+  - org.apache.hudi.client.common.JavaTaskContextSupplier#getAttemptIdSupplier():Supplier<Long>
+      [METHOD_EXIT] 1ea5501a-22b7-4bf2-971b-5985c8804a29 :: result.get() == 0L
+  - org.apache.hudi.client.common.JavaTaskContextSupplier#getPartitionIdSupplier():Supplier<Integer>
+      [METHOD_EXIT] 2db68937-6f41-4eb8-923e-6a5a5dd09160 :: result != null && result.get() == 0
+  - org.apache.hudi.client.common.JavaTaskContextSupplier#getStageAttemptNumberSupplier():Supplier<Integer>
+      [METHOD_EXIT] b85ebdbe-994f-446f-b792-142d3f74b41b :: result != null && result.get() == -1
+  - org.apache.hudi.client.common.JavaTaskContextSupplier#getStageIdSupplier():Supplier<Integer>
+      [METHOD_EXIT] 777d09b7-04d7-4372-8d3f-937628564310 :: result != null
+      [METHOD_EXIT] 0d90f675-2efe-4afc-b23a-ca3787117c13 :: result.get() == 0
+  - org.apache.hudi.client.common.JavaTaskContextSupplier#getTaskAttemptNumberSupplier():Supplier<Integer>
+      [METHOD_EXIT] 77f9da1e-b85e-4e5d-b8fe-139d8f1dff46 :: result != null && result.get() == -1
+  - org.apache.hudi.execution.bulkinsert.JavaCustomColumnsSortPartitioner#arePartitionRecordsSorted():boolean
+      [METHOD_EXIT] 70369437-3aac-4cf2-bcf3-ad3de4ff7b7e :: result == true
+  - org.apache.hudi.execution.bulkinsert.JavaGlobalSortPartitioner#arePartitionRecordsSorted():boolean
+      [METHOD_EXIT] 98ee5740-6f99-46ee-bba0-c0c9bd8d8a7c :: result == true
+  - org.apache.hudi.execution.bulkinsert.JavaGlobalSortPartitioner#repartitionRecords(List<HoodieRecord<T>>,int):List<HoodieRecord<T>>
+      [METHOD_EXIT] c1177f78-d3a0-4511-a73d-0b32121d5294 :: result != null && result.size() == records.size() && result.equals(records)
+  - org.apache.hudi.index.JavaHoodieIndex#tagLocation(HoodieData<HoodieRecord<R>>,HoodieEngineContext,HoodieTable):HoodieData<HoodieRecord<R>>
+      [METHOD_ENTRY] 14012601-b7ec-49be-8324-f7a29f6ea183 :: records != null && context != null && hoodieTable != null && !records.isEmpty()
+  - org.apache.hudi.index.JavaHoodieIndex#updateLocation(HoodieData<WriteStatus>,HoodieEngineContext,HoodieTable):HoodieData<WriteStatus>
+      [METHOD_EXIT] 680b054e-b3ae-466f-b641-0a3e0f395bf8 :: result.count() == writeStatuses.count() && result.count() >= 0
+      [METHOD_ENTRY] 9728f8e6-0275-4941-afaf-97dcfa16124f :: writeStatuses != null && context != null && hoodieTable != null
+      [METHOD_ENTRY] 68bcb7d3-9f39-42bc-be78-0c1cb6b80378 :: writeStatuses.collectAsList() != null
+      [METHOD_EXIT] f7144c17-ac43-498b-85dd-794a1a6edd41 :: result != null && writeStatuses != null
+  - org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#convertEngineSpecificDataToHoodieData(List<WriteStatus>):HoodieData<WriteStatus>
+      [METHOD_ENTRY] 7dd5e1f9-4200-427d-84e0-c58f1032b4af :: records != null && !records.contains(null)
+      [METHOD_EXIT] 6c7f8744-5ad3-4570-bf06-ffdec988b771 :: result.count() == records.size() || records == null || result == null
+      [METHOD_ENTRY] ec815bc4-8c8d-4605-80a2-eae4072d4bba :: records.size() >= 0
+      [METHOD_EXIT] bf137de3-5ff7-4194-8f56-f8e9323e3ae0 :: result != null || records == null
+  - org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#deletePartitions(String,List<MetadataPartitionType>):void
+      [METHOD_EXIT] 69e965a6-ab67-4a15-8cc9-4bb82780b9b4 :: partitions != null
+      [METHOD_ENTRY] 61da6531-bd30-45d6-bd37-bf0a041e1eee :: instantTime != null && !instantTime.isEmpty()
+      [METHOD_ENTRY] 62ef3fee-0c23-46d3-8131-164a9c61ab2c :: partitions != null
+  - org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#getExpressionIndexRecords(List<Pair<String, Pair<String, Long>>>,HoodieIndexDefinition,HoodieTableMetaClient,int,HoodieSchema,HoodieSchema,StorageConfiguration<?>,String):HoodieData<HoodieRecord>
+      [METHOD_ENTRY] 81c6722f-796a-4612-b926-71d8c66c8a5f :: partitionFilePathAndSizeTriplet != null && indexDefinition != null && metaClient != null && tableSchema != null && readerSchema != null && storageConf != null && instantTime != null && parallelism > 0
+      [METHOD_ENTRY] a16feaf5-1f61-4aeb-b8c8-308b2ae96148 :: !instantTime.isEmpty()
+  - org.apache.hudi.metadata.JavaHoodieBackedTableMetadataWriter#upsertAndCommit(BaseHoodieWriteClient<?, List<HoodieRecord>, ?, List<WriteStatus>>,String,List<HoodieRecord>,List<HoodieFileGroupId>):void
+      [METHOD_ENTRY] dd17457b-6a82-4456-8c9c-102cb09f3edf :: !instantTime.isEmpty()
+      [METHOD_ENTRY] b82874d5-2e2d-4dc7-ae40-aecc84324005 :: writeClient != null && instantTime != null && preppedRecordInputs != null && fileGroupsIdsToUpdate != null
+  - org.apache.hudi.metadata.JavaHoodieMetadataBulkInsertPartitioner#arePartitionRecordsSorted():boolean
+      [METHOD_EXIT] 30614ca1-932c-46be-b964-06781f6d36f9 :: result == true
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#bootstrap(HoodieEngineContext,Option<Map<String, String>>):HoodieBootstrapWriteMetadata<List<WriteStatus>>
+      [METHOD_ENTRY] b72bd1ac-7fc4-4701-9dc0-eb51c8f031e6 :: extraMetadata.isPresent() || !extraMetadata.isPresent()
+      [METHOD_ENTRY] e6184e27-4d7b-4516-91c2-ed64a1d54303 :: context != null && extraMetadata != null && extraMetadata.isPresent() || !extraMetadata.isPresent() && context != null
+      [METHOD_EXIT] c54463ea-860d-4d06-8483-47c9ad3a1403 :: result == null || result.getWriteStatuses() != null
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#compact(HoodieEngineContext,String):HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_ENTRY] e164568a-0035-412f-8037-812535da39ae :: context != null && compactionInstantTime != null && !compactionInstantTime.isEmpty()
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#deletePartitions(HoodieEngineContext,String,List<String>):HoodieWriteMetadata
+      [METHOD_EXIT] cdd64292-f45b-45bd-a946-c107c2570927 :: partitions != null && !partitions.isEmpty() == false && result == null
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#getUpdateHandle(String,String,String,Map<String, HoodieRecord<T>>,HoodieBaseFile):HoodieMergeHandle
+      [METHOD_EXIT] bd58adbd-decd-4d5d-bbbd-f548f368bfb1 :: result != null
+      [METHOD_ENTRY] 933cafe4-7da8-4703-8fd8-f98a9a84dfc1 :: partitionPath != null
+      [METHOD_ENTRY] f93cc368-c37a-41d9-b326-6ec31705abc4 :: instantTime != null && !instantTime.isEmpty()
+      [METHOD_ENTRY] faecc15b-ebc4-4105-b588-4176242c6fa1 :: keyToNewRecords != null
+      [METHOD_ENTRY] 6902da23-7189-4e81-a768-e5abca6443ad :: dataFileToBeMerged != null
+      [METHOD_ENTRY] 27f73054-6920-4f15-8fde-79aea9c52d6f :: fileId != null && !fileId.isEmpty()
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#handleInsert(String,String,String,Map<String, HoodieRecord<?>>):Iterator<List<WriteStatus>>
+      [METHOD_ENTRY] 358eb510-3647-4228-9d98-68d916d91b3a :: recordMap != null
+      [METHOD_ENTRY] 3f39e00b-64f1-4966-8d7d-334b06d7daf9 :: instantTime != null && !instantTime.isEmpty()
+      [METHOD_ENTRY] ace662ac-9e9a-4fc1-8d46-09c0beaa4cd3 :: fileId != null
+      [METHOD_ENTRY] 0d0e5079-8727-44c1-aa5e-45a45b8230fb :: partitionPath != null
+      [METHOD_ENTRY] c1ac9f5b-f7d4-4f7e-9f2f-ff37949d34c5 :: !recordMap.isEmpty()
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#handleUpdate(String,String,String,Map<String, HoodieRecord<T>>,HoodieBaseFile):Iterator<List<WriteStatus>>
+      [METHOD_ENTRY] 5d94ce02-8718-4581-b6da-08b77abc1d66 :: oldDataFile != null
+      [METHOD_ENTRY] 83af9fee-9e1b-40c0-a20d-42833705d052 :: partitionPath != null && !partitionPath.isEmpty()
+      [METHOD_EXIT] be00aaa1-b4b8-4991-954d-a02bf8fd0a2f :: result != null
+      [METHOD_ENTRY] 78307df5-4951-4bd4-a599-452532d62bfa :: keyToNewRecords != null && !keyToNewRecords.isEmpty()
+      [METHOD_ENTRY] a5964fd3-6b72-4d08-86fe-f68d768f0929 :: fileId != null && !fileId.isEmpty()
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#index(HoodieEngineContext,String):Option<HoodieIndexCommitMetadata>
+      [METHOD_EXIT] 0b9f4544-10c5-4d04-a561-b29218527ca8 :: result.isPresent() || !result.isPresent()
+      [METHOD_ENTRY] 9053cec6-1da9-4424-8a0f-78d3cb4179ff :: context != null && indexInstantTime != null && !indexInstantTime.isEmpty()
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#insertOverwrite(HoodieEngineContext,String,List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_EXIT] 0c56bd9a-925a-488e-8359-b0b99b5acaf3 :: records != null && !records.isEmpty() || result.getWriteStatuses().isEmpty() || result.getWriteStatuses().size() == records.size()
+      [METHOD_EXIT] 4a947b95-355e-4be3-b5f6-d661641aae6e :: result.getWriteStatuses() != null
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#insertOverwriteTable(HoodieEngineContext,String,List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_ENTRY] 74561f5c-e32e-4dcc-8c15-1a3371ede2c4 :: !instantTime.isEmpty()
+      [METHOD_ENTRY] efd9a1ca-a08b-4e99-949d-55e86a2b2209 :: context != null && instantTime != null && records != null && !records.isEmpty()
+      [METHOD_EXIT] c0e6113e-a464-4daa-8eb5-766c99686353 :: result != null
+      [METHOD_EXIT] e97fa87f-19e4-465f-840b-2976f7ceef62 :: result.getWriteStatuses() != null
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#managePartitionTTL(HoodieEngineContext,String):HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_EXIT] f27d41f6-19ea-4c85-9421-ad5581eb6134 :: context != null && instantTime != null && result == null
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#scheduleCompaction(HoodieEngineContext,String,Option<Map<String, String>>):Option<HoodieCompactionPlan>
+      [METHOD_EXIT] 75485488-1307-4be3-91a5-19048721fbaf :: result.isEmpty()
+  - org.apache.hudi.table.HoodieJavaCopyOnWriteTable#scheduleIndexing(HoodieEngineContext,String,List<MetadataPartitionType>,List<String>):Option<HoodieIndexPlan>
+      [METHOD_EXIT] c1581f6a-e32d-40fc-afdd-8168c1824a18 :: partitionsToIndex != null && partitionPaths != null && indexInstantTime != null && context != null && result != null
+      [METHOD_EXIT] 9d07b5da-ae7d-4264-acf0-f4bd15677c7a :: result.isPresent() == (!partitionsToIndex.isEmpty() && !partitionPaths.isEmpty())
+      [METHOD_EXIT] faff1caa-f626-4543-9b4c-74524c74b79b :: result.isPresent() || (!result.isPresent() && partitionsToIndex.isEmpty())
+  - org.apache.hudi.table.HoodieJavaMergeOnReadTable#logCompact(HoodieEngineContext,String):HoodieWriteMetadata<List<WriteStatus>>
+      [METHOD_ENTRY] 0fe2d6f7-f92f-4b8b-914c-b341eefd2576 :: context != null && logCompactionInstantTime != null && !logCompactionInstantTime.isEmpty() && logCompactionInstantTime.trim().length() > 0
+      [METHOD_EXIT] f67221e7-a41a-4dfa-b270-c24e06948f50 :: result != null && result.getWriteStatuses() != null && !result.getWriteStatuses().isEmpty()
+  - org.apache.hudi.table.HoodieJavaMergeOnReadTable#scheduleLogCompaction(HoodieEngineContext,String,Option<Map<String, String>>):Option<HoodieCompactionPlan>
+      [METHOD_EXIT] 36b51929-3bc0-44b0-bc73-2afe68b57090 :: result.isPresent() || !result.isPresent()
+      [METHOD_ENTRY] 3c1a833e-2a23-4d4b-867c-9a72c9b6c6e9 :: instantTime.length() > 0
+  - org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#commit(HoodieWriteMetadata<List<WriteStatus>>):void
+      [METHOD_ENTRY] 8e4f94c3-e3cb-42b4-833d-4d9cf3f40189 :: result.getWriteStatuses().size() >= 0
+  - org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#setCommitMetadata(HoodieWriteMetadata<List<WriteStatus>>):void
+      [METHOD_EXIT] 08d224d0-aa7d-4925-8c67-80d76ec2e033 :: result.getCommitMetadata().isPresent()
+      [METHOD_EXIT] e0d51c3e-2fb3-4d6b-b811-4e432f8d9a69 :: result.getPartitionToReplaceFileIds() != null
+      [METHOD_EXIT] 17758dba-6121-489c-af9f-1f73ccc5d6c4 :: result.getWriteStatuses() != null && !result.getWriteStatuses().isEmpty()
+  - org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor#updateColumnsToIndexForColumnStats(HoodieTableMetaClient,List<String>):void
+      [METHOD_EXIT] b03fc0c8-4d61-46aa-b062-aeda1fac9873 :: columnsToIndex != null && metaClient != null && columnsToIndex.isEmpty()
+  - org.apache.hudi.table.action.commit.JavaInsertOverwriteCommitActionExecutor#getAllExistingFileIds(String):List<String>
+      [METHOD_ENTRY] 20f33fc3-c55c-497c-bbf3-01e0364f7cf1 :: partitionPath != null && !partitionPath.isEmpty()
+  - org.apache.hudi.table.action.commit.JavaInsertOverwriteCommitActionExecutor#getPartitionToReplacedFileIds(HoodieWriteMetadata<List<WriteStatus>>):Map<String, List<String>>
+      [METHOD_ENTRY] 509f51e1-384a-4133-a58e-b7496a993c47 :: writeResult != null && writeResult.getWriteStatuses() != null && !writeResult.getWriteStatuses().isEmpty()
+      [METHOD_EXIT] f79bb53b-9736-449d-a7d2-ec245b2589b4 :: result != null && !result.containsKey(null)
+  - org.apache.hudi.table.action.commit.JavaInsertOverwriteTableCommitActionExecutor#getAllExistingFileIds(String):List<String>
+      [METHOD_ENTRY] ea54d0b4-5819-4624-b08a-782752dab500 :: partitionPath != null && !partitionPath.isEmpty()
+  - org.apache.hudi.table.action.commit.JavaInsertOverwriteTableCommitActionExecutor#getPartitionToReplacedFileIds(HoodieWriteMetadata<List<WriteStatus>>):Map<String, List<String>>
+      [METHOD_EXIT] 0a9ccfce-478d-4cea-8ff0-6946f6e99184 :: result != null && !result.containsKey(null)
+  - org.apache.hudi.table.action.commit.JavaUpsertPartitioner#getInsertBuckets(String):List<InsertBucketCumulativeWeightPair>
+      [METHOD_ENTRY] 74b148ac-5883-4a8f-9df2-fb5d10c98ac4 :: partitionPath != null && !partitionPath.isEmpty() && partitionPath.trim().equals(partitionPath)
+  - org.apache.hudi.table.action.commit.JavaUpsertPartitioner#getNumPartitions():int
+      [METHOD_EXIT] 38c84f78-328f-4db4-8bfe-36d4e97f070a :: result >= 0
+>>> SUMMARY (IDs)
+  COMPILED IDs: 0081c4d2-1b3f-4ebf-850e-2c6100450a65, 00cb9985-fe4b-4334-8ff5-a367b0329a77, 021d6e08-ffef-4254-add5-243324855bda, 028f479a-2501-4ede-8fe8-d2af76418bf3, 03b7093e-5cbc-4948-96b8-60b33689a812, 041db77f-b142-4fc3-b0d9-233f06594155, 06447e09-21ee-4a21-a483-1350f2da85d9, 085bff50-ce05-42e3-b873-4519c77a832f, 08a9fea7-a32f-47a4-ae15-fc62f698e331, 08d224d0-aa7d-4925-8c67-80d76ec2e033, 097a32a8-69f9-4cea-b8c5-9b22bcae3793, 0a9ccfce-478d-4cea-8ff0-6946f6e99184, 0b9f4544-10c5-4d04-a561-b29218527ca8, 0c56bd9a-925a-488e-8359-b0b99b5acaf3, 0d0e5079-8727-44c1-aa5e-45a45b8230fb, 0d90f675-2efe-4afc-b23a-ca3787117c13, 0e90b965-0ebf-43ca-bd76-7ccd4fd4882c, 0fe2d6f7-f92f-4b8b-914c-b341eefd2576, 100305e0-f60f-4220-817a-d0122fb2d084, 105c9d8d-cddc-4875-b055-441d17c7d06e, 106bc1cc-523f-4ec7-9df1-f49584f22b48, 10bec789-0ceb-49b5-8cc5-9a10bed52831, 10c33cf5-dc5d-4310-bbe1-916db3d87bf7, 125c4ef1-3d79-42e2-ae8a-fae044ee8a88, 128cf46b-d886-4f2c-b6ea-5e52ef54655e, 14012601-b7ec-49be-8324-f7a29f6ea183, 1649cecc-ac7c-4b12-9dba-0fbdcfc9c626, 17758dba-6121-489c-af9f-1f73ccc5d6c4, 178b2d03-f97c-4ba1-8e34-e783ed4e66eb, 198910f4-c6e1-41de-894d-87f204cf15e2, 19973f20-cb7d-4490-a598-79cc6c7322ed, 1a3b12f5-f22c-4f47-a54e-fb42d0249dc7, 1b544500-9a97-4de8-ba34-3272648e3661, 1b5c2497-ea56-4f07-9e29-98f41cb1017d, 1ea5501a-22b7-4bf2-971b-5985c8804a29, 1ebb8992-9945-4bcb-8fdd-aadc8872de81, 1ec83134-429d-4d45-9c11-fc41f9136160, 1fd563eb-de33-4edf-a7a5-4d4e7f5aa062, 20ec9f04-1a12-4f1b-8317-428707d7195f, 20f33fc3-c55c-497c-bbf3-01e0364f7cf1, 217c143a-eb89-40be-b7fe-00275f67bc8a, 22205272-f732-4807-b2cf-22f30f026bda, 246c9796-828f-40f0-a6d3-5cd5338509e7, 24ee2ba4-b06f-4fbe-9d77-829c2cd7dcb2, 2523ea2a-64a3-41b2-8287-be02ac90e2e4, 25831233-98b2-4bac-b8e4-bf98b0052928, 2617f368-2df1-43f2-a028-862d93ed5f57, 2691d927-3e26-4754-93ae-99edcf034302, 27091079-3520-48e4-91d0-bea02fde8086, 274242da-6045-4dc6-9756-9276eeb325a4, 27f73054-6920-4f15-8fde-79aea9c52d6f, 294684fe-40c7-4caa-b546-b647045ba3ce, 2a0895b9-5a1a-4816-b4a6-b7215e68e4ae, 2ace7ea3-875b-4347-8081-ee9c3ca8a3f3, 2ccdb927-84fb-4bd9-89cb-4ba60fc0cf3e, 2db68937-6f41-4eb8-923e-6a5a5dd09160, 2e1fe65f-aeff-4332-83f3-99cadedccb53, 2e882609-eae6-49fe-9496-943d2b73aac6, 30614ca1-932c-46be-b964-06781f6d36f9, 323cb535-4cd7-4ab2-8754-75368e9684c2, 32d74a79-df62-441b-9639-013c0a4fbf9e, 338ac564-83c9-4242-9cfe-5b532b325740, 349022c7-b62c-46a4-8808-ff3a1e982287, 358eb510-3647-4228-9d98-68d916d91b3a, 359eb041-dc78-4b5e-9be6-1fed057b19aa, 361cfaee-b1d1-4079-aa77-2448e3565416, 3634ae95-d7e0-4955-afd1-0da82daaca2a, 367868ce-6606-4ffb-a333-e7f0bd1f226d, 36b51929-3bc0-44b0-bc73-2afe68b57090, 36c8a337-3080-4077-8241-788233263172, 378eb685-f80d-46bd-993e-ba754bc09e89, 37f7d7f3-982f-4602-8aaf-be8bf6a23ab2, 381ea447-e3ec-444e-9902-2e7fa2257ab8, 384330d7-1c5d-4f90-af5e-bf457167ab0e, 389232b6-67a2-4bc0-854c-c589c6b58752, 38c84f78-328f-4db4-8bfe-36d4e97f070a, 395fcf12-7777-4b83-9ba7-79be296f9fc0, 3998423a-7921-4989-88e0-99855cfb3b94, 39aeecb9-b463-4876-86a2-3168d301cf37, 39dea072-e0b4-4499-a608-7096bbfaa12b, 3a00f3dd-12a5-4890-a846-745a0e37b419, 3ab18162-ccab-4272-a987-d25f20bd9ef3, 3adab73d-64f7-4062-908f-e0833ae4807d, 3ae9fa24-a6e7-47e8-9de9-456da18adff7, 3b1a0840-2b57-48a3-9c63-41b0357c91f6, 3b569b4d-9c15-4143-af9e-86602a7b4610, 3b757d8f-4960-4d0f-8e56-c049b6980208, 3b833905-7c34-4493-8b48-a61b7d2a8ca8, 3bab4f0c-c28b-451d-a1dc-744f0fb5f481, 3bbe2e88-58f8-4c42-b3a6-826fd033b3a3, 3bc1917c-e21f-489a-ab8f-ce3530892b38, 3c05601c-5ad9-455c-b568-9d1b0e378084, 3c1a833e-2a23-4d4b-867c-9a72c9b6c6e9, 3c30869e-ca77-4e47-a6fb-0773908eae06, 3c56597a-edc9-4c1c-9366-7eeb14c1022f, 3cb24ad5-8b4d-463b-bc0b-61e7a8f5191f, 3e85d65b-12b8-40db-ad6c-d855f6274343, 3f39e00b-64f1-4966-8d7d-334b06d7daf9, 3f65a0c5-0428-49e3-86f7-2ddf4eaca13d, 403d6a96-1d61-4ce0-bd38-47afb09c788f, 4100feda-a7bf-4bcf-a3a4-ae950ad41d9d, 414e1755-68ca-401d-b7ed-f13ab3303663, 42003570-f150-4b2a-bfc3-7bddf5637301, 4238499c-92e6-47dc-9d8e-584ca4601fe0, 4284f3d3-d2d2-4777-851d-a5c8ef202137, 42c5afbf-7c7b-480d-a8cf-203bc4056a04, 42f56eac-2531-455a-bb94-4d76407fa309, 4589feab-954e-4d20-b355-e26e9c8cf642, 47e2a862-aa2a-4d66-a81f-56cce8a89bc1, 4867aeca-d962-444c-af3d-be574533c466, 4903b3e7-a60f-4f58-a812-586cd7ba7d2c, 4a947b95-355e-4be3-b5f6-d661641aae6e, 4ad69b50-2c5f-4121-bdcb-60dfb0f94476, 4b6ff8e9-187f-4156-b4ba-b17af5780fce, 4e6ca349-1a9c-4026-91f8-485b123669d6, 4ea44847-d78a-46b2-ba85-0d5642120973, 4ebbe1a0-9f50-4bbf-9942-2406f8d600b7, 4f5675f3-6c23-418f-8cdd-9a22fe13f2c9, 4fc81db0-bd89-47b0-8f1f-aec71d64ea24, 50105b15-6ede-4a7f-9f13-4c4355ec3fc0, 509f51e1-384a-4133-a58e-b7496a993c47, 518c6556-8f1c-4e83-8c7a-1aad69969a6a, 52ba82c9-4399-4fda-8c83-de2321dd9564, 54047bd6-c045-4151-89f7-44a07d7964ee, 5479436c-b5da-49fd-b873-1731081b5dae, 54acdbf4-0dcd-4b79-bd78-6226935979f2, 54b08202-ac16-438d-8c0e-6459fe916324, 5692688e-3305-4b15-8ebe-51a93b51d170, 56d03835-10d9-450d-8818-36503c001699, 579ab967-38aa-40d5-857a-8655a45c52a2, 59572f66-3e27-4ba3-97a3-cca611d3ea46, 5971dbc4-b6a0-46a3-9f8f-16ead67f198e, 59861948-03c3-4751-83f5-5016df958ac0, 59995914-483e-4995-ac77-5aac5e48959a, 59c58fd5-ef43-4590-8d69-1654be863d4b, 5bd511fb-852f-4ef1-90ae-b5705f220a20, 5c8e7eff-d421-433b-af52-4a6b7a35e488, 5d8f3c4e-2a43-488a-a2c0-180d5db0e269, 5d94ce02-8718-4581-b6da-08b77abc1d66, 5f1ceb47-9a28-46f0-a350-0480c11d10a7, 5f56767f-0b5d-4f77-bb39-9b5800a3c1cf, 5fdbc4bc-6677-41f5-bef5-b3d40c4abca6, 60d5ce51-80e1-43a0-9de9-2134e9052f99, 60f569c0-5821-4cef-866f-30c114f75f31, 61023f57-1931-4682-bd23-2de2b47304fa, 6123090e-df61-4643-95fd-26c569f88b58, 61da6531-bd30-45d6-bd37-bf0a041e1eee, 629f2046-437d-4f68-ac33-4f6b5615eab8, 62ef3fee-0c23-46d3-8131-164a9c61ab2c, 636bba6e-ff3e-42c2-b9dd-c9d0d6b5276e, 63b3bf35-67e1-4b10-8db6-19f8fb2fa69b, 65eaf603-93b1-4830-8dec-7135831f7f4e, 66179eae-04bb-4b57-8364-41d5f57314ff, 66f6b1ba-f4bc-4e31-b718-cbd3ab9dc231, 67e9c802-62a1-4dde-b505-7bda881b4c4e, 680b054e-b3ae-466f-b641-0a3e0f395bf8, 68bcb7d3-9f39-42bc-be78-0c1cb6b80378, 6902da23-7189-4e81-a768-e5abca6443ad, 69e965a6-ab67-4a15-8cc9-4bb82780b9b4, 6a3666da-0849-4f4b-857f-0337c758ed52, 6a5667bd-d61b-4f04-a6ea-95e3a4190005, 6a86b845-21a6-4c0c-8759-6ec3ef6cb8a2, 6c17e4fe-827f-468b-a9b4-8ed0d5f5e269, 6c7f8744-5ad3-4570-bf06-ffdec988b771, 6c898d2b-703c-4690-931c-d2ae339967f8, 6e97ca6a-560a-4eb7-a023-0ac801e60ca9, 6f4a186f-0ca4-432d-9969-2c56cfd31502, 70369437-3aac-4cf2-bcf3-ad3de4ff7b7e, 7223edfe-4a07-4eb9-b4ad-ccc606b66c54, 72511de6-74e9-4752-8cb8-b14ab732fa61, 72540977-c826-4c8c-b39f-c22f94d03359, 730ff863-9d06-4661-90da-703487f0a448, 74561f5c-e32e-4dcc-8c15-1a3371ede2c4, 74786fa0-2a5c-4cda-a7dd-ced3538effba, 74b148ac-5883-4a8f-9df2-fb5d10c98ac4, 75485488-1307-4be3-91a5-19048721fbaf, 759ff53a-786b-4b0a-95bd-0ccf3b13330b, 764d8b75-eb96-4b58-86b4-b0474117ca53, 7725d12a-25b7-42b2-9c56-1d4a9ab3a036, 777d09b7-04d7-4372-8d3f-937628564310, 77f9da1e-b85e-4e5d-b8fe-139d8f1dff46, 78307df5-4951-4bd4-a599-452532d62bfa, 79a08be0-7934-40a0-9fd8-3e205ce201d8, 7a0b3e0a-2b22-4b8a-8a74-955e80e692f1, 7ae990c7-f63f-4758-bc49-eebec7304a4c, 7c93dafa-309c-43b1-94a7-d1a563d803d8, 7dd5e1f9-4200-427d-84e0-c58f1032b4af, 7e66320a-d751-4983-9e4a-217c328e4b05, 7e895b58-c9fc-4367-ad0b-a706c721a8f3, 7f1cc916-90fb-474c-84e7-e7a2ee5d7aa1, 7fe611f6-ea88-40b8-a932-4e6e0172d951, 80cc1857-6cf5-4a38-8d75-6e4e1e857279, 81c6722f-796a-4612-b926-71d8c66c8a5f, 81d4226f-e1d5-47c5-b0e6-be75fac41274, 82070c4f-cafe-4b03-a296-08e25a9938d5, 82c57a19-8306-4ff4-8b37-dbf5e51d84d9, 836676b1-0b7b-4f6b-a3d8-a5a0545bd807, 83af9fee-9e1b-40c0-a20d-42833705d052, 85a1cd8e-9e08-499f-8446-2433655714f5, 85bfa6af-39ef-471e-8828-4221e63fe643, 867a73fd-393c-4e50-81e2-d697b9bc758b, 8739d27d-b816-4ab2-805b-56f3969e9963, 87824332-f2a6-4474-b80d-206d91880e8f, 87f14880-58a5-40cb-b135-97816a6ee8a7, 896b846d-697d-4b86-a042-1eeaf40de4aa, 8a03c18e-0f35-4187-8a83-ad043a8b75e7, 8a1bb0ab-53bd-42cf-a83d-aa89001d0899, 8acb4033-4894-4f3b-9fbe-decc48c6ff88, 8ba19042-3c55-4c1d-b12b-e472d9e49e1e, 8c1328a5-c8bd-46cb-919d-c70ccdad6ce4, 8c3bd17b-81e7-4812-90c0-abd659e7badf, 8d473ea6-5c9e-4017-b0ea-512b2e0a38c8, 8dd099df-7869-47f9-8b23-86b0737d300b, 8e2e208a-6359-4374-9541-31f8b31b32fb, 8e3b5e79-a0b8-4a84-a077-21ca96e5b436, 8e4a3bb6-15e9-463c-8cc7-f0c280bff404, 8e4f94c3-e3cb-42b4-833d-4d9cf3f40189, 8e665f7d-bebc-4d5a-8a82-8926fb95055b, 8fa63a04-29e8-44f1-b9a2-67efaaa9e18b, 9053cec6-1da9-4424-8a0f-78d3cb4179ff, 9067b764-ce20-411b-b882-d94a60c1f71a, 9068d113-4063-4cdb-a65d-9a98aab4d7d6, 9078b3a2-9460-4329-a2de-f921546ec98f, 933cafe4-7da8-4703-8fd8-f98a9a84dfc1, 94fa7149-81e0-408e-aa04-452b9cb6b3bb, 957b3997-f311-4ddc-83e9-8b42f9916ed4, 95d4e00d-b8a4-4e75-a564-946479d60a22, 960c847b-3bce-402b-ab85-2267d79a49d8, 9641c783-6a4d-46cb-a89b-c018e5a9d103, 96d32bad-fc3d-435a-ba25-f930508f096e, 9713159b-8aba-4cde-af26-029269457d43, 9728f8e6-0275-4941-afaf-97dcfa16124f, 97a31208-71ca-443c-ad17-698893ff80ea, 97a70b73-fc91-4b6e-9a9d-9c18c5cb0501, 98ee5740-6f99-46ee-bba0-c0c9bd8d8a7c, 99133912-c331-4cfc-afe0-24d1f9a3883c, 999a88d0-efb5-40fa-9850-8d0c596ebf58, 9a94b271-5a9a-4145-90fb-77548266590a, 9ac7f3a1-60c7-497e-a470-d650856dfd8d, 9bd2a875-f80b-44ac-bea1-bc428e72f0de, 9c040362-2bbf-41bb-a2e9-17bee75f4d2f, 9d07b5da-ae7d-4264-acf0-f4bd15677c7a, 9e05c089-567d-44a9-98b8-b6532d69b394, 9ec18044-d9fa-49a4-82bd-8126498ddb42, 9f23702b-67e8-4022-b4c7-386c264981da, 9fa4875a-0dfd-4bea-85cb-d6d922537ced, a16feaf5-1f61-4aeb-b8c8-308b2ae96148, a1a4f128-039b-4504-96e7-56867e0170c8, a2754c12-fc05-442e-b0cd-e92b1da10bee, a3577d67-e632-48e9-8cba-f923ecaca30a, a3e968ec-b8f1-469a-b785-10c75e2da008, a4248d40-0f43-47ef-ab5d-88aed3ea30f5, a45b753e-25c6-44a3-8009-e13a474fc423, a5964fd3-6b72-4d08-86fe-f68d768f0929, a5d84c67-7ffb-4f58-8c67-898fdb14c84e, a5e82c47-0fdc-4e86-a5b5-ec7a75b11562, a6a74f58-4083-47a9-a153-b6c50c1e9fcc, a6bc2381-100a-4589-9c08-bcf7cbb77cc2, aa4742e6-b34e-42e6-a028-92612dc0225d, aaaa3375-ee2c-4dd0-a9ac-bcf9513f9929, ab343da9-4c38-41c0-a2aa-72a7f1a49326, ab5e91ef-9900-46d2-818a-d319eb34741a, ab8760db-8160-4b16-aeb5-31d4aaca8eac, abc6a84b-75a7-4e2e-8532-37cc6a445f7d, ace662ac-9e9a-4fc1-8d46-09c0beaa4cd3, ad309a7f-a80e-4e10-90f4-6411b8d6db78, ad4e881e-e5ba-46e1-9a81-563940ba1a94, ae07adda-e6d1-49e3-906c-766bf42acc54, ae21558f-258a-404a-955c-ceaee300f2b8, ae2f7a5f-4db4-437c-9f1c-d79ca7c67599, ae835ff4-6f5f-4045-add3-a683cf1fbdaa, b03b7cdc-0a94-4379-8e9b-3a61274b411e, b03fc0c8-4d61-46aa-b062-aeda1fac9873, b05b2eea-27d6-4498-bb8a-f456c33cea0b, b05cec4c-be5a-4b98-9bf8-e7c8f7af7d3d, b191ee39-7eaa-4a40-93dc-1a1c8a82ce73, b4cc4482-6217-4d4c-894a-495335847894, b6484658-7b4c-4ceb-a075-5d327872fc6c, b72bd1ac-7fc4-4701-9dc0-eb51c8f031e6, b7aa6f8a-8035-4713-9a29-459a9b197740, b82874d5-2e2d-4dc7-ae40-aecc84324005, b85ebdbe-994f-446f-b792-142d3f74b41b, b9590e0c-48a2-43ad-962e-26d4ba064b44, b9b6993e-fae1-474c-bae1-bbd90a02a66a, ba4e3472-ac05-4e34-91df-142bb14cbc58, ba88643b-7529-4b07-96e7-4c031cccb800, bba276a7-b069-4a2b-8a7f-b8de7cd70dbf, bc175e7c-1e69-4cb2-b58b-0902161bb101, bd58adbd-decd-4d5d-bbbd-f548f368bfb1, be00aaa1-b4b8-4991-954d-a02bf8fd0a2f, be9c6dde-5e20-40f8-a809-7f4f80659c3c, bf137de3-5ff7-4194-8f56-f8e9323e3ae0, c0e6113e-a464-4daa-8eb5-766c99686353, c1177f78-d3a0-4511-a73d-0b32121d5294, c1581f6a-e32d-40fc-afdd-8168c1824a18, c1ac9f5b-f7d4-4f7e-9f2f-ff37949d34c5, c1ecefbe-29bb-48b4-b90d-a51fd63a2aa8, c356ee00-a0da-4ec3-8aae-535c698c919c, c54463ea-860d-4d06-8483-47c9ad3a1403, c5a9e381-af06-493a-9e6e-b68148099243, c6851206-543c-4ca5-a53f-1eaaf2867519, c746ad41-4c7b-4a9b-aa65-e4aced882974, c858f805-ecd0-472b-b1d3-af3efb33af78, c989cc44-d3fc-4d3e-9104-c65eb617b417, cb71753d-5355-4c12-b57a-4e478ff5b3fe, cc9fc0fc-0b55-49be-93fb-c96b0b1af389, cd369e30-e655-44ff-abc1-322e4e4c4038, cdd64292-f45b-45bd-a946-c107c2570927, ce078ab7-c1a8-438f-b3bf-00f695ad4fcd, cf5d3745-c446-45ae-94c5-03a6318c1e58, cf609ba6-052f-4e61-84f2-e531dc0c73be, d003a497-e8e5-4e7f-9ddd-0e060502809a, d087381d-9ddd-4869-b54b-ca6bdd609a8b, d10c19c1-fbff-46be-9706-5531b7af4afd, d1e3332a-9511-469b-86dd-82368d10a76d, d219282b-cba1-4742-bdc0-25bbbd32babf, d2569d54-610f-407e-8a62-94d67dd45c30, d2e2132a-048d-40a1-a632-b4844b29c1b1, d3767c84-02af-4f32-9aed-86fa5bddfa9d, d622d683-f4c7-40c5-86d8-fd68bc3e0ff3, d670093c-aad2-4527-b106-e2286cf2f907, d673a067-d419-4fc4-bb8c-d73f61ec42bb, d87adebd-300c-4399-9732-81b7b9de5126, d914584d-275f-403e-8f95-efb6067383f4, dab7ff8e-7eca-4b62-b75a-fdaacd217fe3, dd17457b-6a82-4456-8c9c-102cb09f3edf, dd7567a5-d406-491d-a995-32b55b239898, de2a0c30-c408-49eb-973a-3ca692c36432, df3372e5-f9ea-4ffd-b7ce-3047c171944a, e0ba95b0-f3bf-4dfd-8f01-076a07ef659b, e0d51c3e-2fb3-4d6b-b811-4e432f8d9a69, e11c4587-46d6-4afe-8138-9f8a06d7e3f6, e164568a-0035-412f-8037-812535da39ae, e21871e9-fee7-45c7-be04-2971278bc39e, e26bc91d-14d4-46ba-a130-b6b548c68488, e52e2055-6125-40a0-a116-d730f21bf5fe, e5f7058b-5038-4ef5-9ca9-9fc59d6b209e, e6184e27-4d7b-4516-91c2-ed64a1d54303, e6269964-adad-4e3f-803e-5aa9cd32dfd2, e71bf477-32cd-4377-b47f-35fd6d840923, e87cc930-6af8-4b1b-9063-60cfd2b5b14d, e8fdbe63-f0e8-43b6-8296-0edb5a647cb0, e97fa87f-19e4-465f-840b-2976f7ceef62, ea54d0b4-5819-4624-b08a-782752dab500, ec310601-3d9f-4378-9e7f-8df060982964, ec815bc4-8c8d-4605-80a2-eae4072d4bba, ec996a4f-3347-4902-928f-0625f39319a2, ed72a2a5-deeb-4be0-930d-02fdd6d0affc, ed9e8a5a-857c-4dd0-b799-e62a09ba0cb7, ee3d5a12-b18a-43dc-94eb-0b6f56136675, efd9a1ca-a08b-4e99-949d-55e86a2b2209, f27d41f6-19ea-4c85-9421-ad5581eb6134, f2a5988b-7282-4ffa-b31a-06814e9606cb, f37b1559-cb72-4cf8-a425-8791b7586c8b, f38c5491-1f7c-4a50-bb3d-3e5ba42bea5a, f4456b90-8f47-4b08-92cc-61b8dc5f7753, f52eee30-2b7d-46be-aa45-ad9b4997b09f, f67221e7-a41a-4dfa-b270-c24e06948f50, f7144c17-ac43-498b-85dd-794a1a6edd41, f79bb53b-9736-449d-a7d2-ec245b2589b4, f7c49275-bbe0-4b07-98a0-a6e9d6e269fd, f7f8df37-c2b3-477c-bf22-24b5cb621331, f8e4e345-61e2-41da-bda6-9b1cc24d6b95, f93cc368-c37a-41d9-b326-6ec31705abc4, fa0de099-2f22-443d-a149-2c7d1a888fee, fa41ceb1-62b0-41fc-a088-dfa2903ae8a2, faecc15b-ebc4-4105-b588-4176242c6fa1, faff1caa-f626-4543-9b4c-74524c74b79b, fbdadff5-a251-4b98-8bbb-d7308c5e5ae2, fc4a849b-ddee-4c29-9687-d1a5dd075dd5, fdab0762-0ab3-4c34-bc19-ae990e183094, fe1b8c8f-1c10-4276-811c-d808361f1715, ff0a0e8b-5369-462b-adc4-1f24a9e03bd6, ff393195-cb12-45be-b3d4-e378c362b4e9, ff7d1ca8-8dfe-4892-b8e9-988ed128b564
+  EXECUTED IDs: 0081c4d2-1b3f-4ebf-850e-2c6100450a65, 00cb9985-fe4b-4334-8ff5-a367b0329a77, 021d6e08-ffef-4254-add5-243324855bda, 028f479a-2501-4ede-8fe8-d2af76418bf3, 041db77f-b142-4fc3-b0d9-233f06594155, 06447e09-21ee-4a21-a483-1350f2da85d9, 085bff50-ce05-42e3-b873-4519c77a832f, 08a9fea7-a32f-47a4-ae15-fc62f698e331, 097a32a8-69f9-4cea-b8c5-9b22bcae3793, 0e90b965-0ebf-43ca-bd76-7ccd4fd4882c, 100305e0-f60f-4220-817a-d0122fb2d084, 105c9d8d-cddc-4875-b055-441d17c7d06e, 106bc1cc-523f-4ec7-9df1-f49584f22b48, 10bec789-0ceb-49b5-8cc5-9a10bed52831, 10c33cf5-dc5d-4310-bbe1-916db3d87bf7, 125c4ef1-3d79-42e2-ae8a-fae044ee8a88, 128cf46b-d886-4f2c-b6ea-5e52ef54655e, 1649cecc-ac7c-4b12-9dba-0fbdcfc9c626, 178b2d03-f97c-4ba1-8e34-e783ed4e66eb, 198910f4-c6e1-41de-894d-87f204cf15e2, 19973f20-cb7d-4490-a598-79cc6c7322ed, 1a3b12f5-f22c-4f47-a54e-fb42d0249dc7, 1b544500-9a97-4de8-ba34-3272648e3661, 1b5c2497-ea56-4f07-9e29-98f41cb1017d, 1ebb8992-9945-4bcb-8fdd-aadc8872de81, 1ec83134-429d-4d45-9c11-fc41f9136160, 1fd563eb-de33-4edf-a7a5-4d4e7f5aa062, 20ec9f04-1a12-4f1b-8317-428707d7195f, 22205272-f732-4807-b2cf-22f30f026bda, 246c9796-828f-40f0-a6d3-5cd5338509e7, 24ee2ba4-b06f-4fbe-9d77-829c2cd7dcb2, 25831233-98b2-4bac-b8e4-bf98b0052928, 2617f368-2df1-43f2-a028-862d93ed5f57, 2691d927-3e26-4754-93ae-99edcf034302, 27091079-3520-48e4-91d0-bea02fde8086, 274242da-6045-4dc6-9756-9276eeb325a4, 294684fe-40c7-4caa-b546-b647045ba3ce, 2a0895b9-5a1a-4816-b4a6-b7215e68e4ae, 2ace7ea3-875b-4347-8081-ee9c3ca8a3f3, 2ccdb927-84fb-4bd9-89cb-4ba60fc0cf3e, 2e1fe65f-aeff-4332-83f3-99cadedccb53, 2e882609-eae6-49fe-9496-943d2b73aac6, 323cb535-4cd7-4ab2-8754-75368e9684c2, 32d74a79-df62-441b-9639-013c0a4fbf9e, 338ac564-83c9-4242-9cfe-5b532b325740, 349022c7-b62c-46a4-8808-ff3a1e982287, 359eb041-dc78-4b5e-9be6-1fed057b19aa, 361cfaee-b1d1-4079-aa77-2448e3565416, 3634ae95-d7e0-4955-afd1-0da82daaca2a, 367868ce-6606-4ffb-a333-e7f0bd1f226d, 36c8a337-3080-4077-8241-788233263172, 378eb685-f80d-46bd-993e-ba754bc09e89, 37f7d7f3-982f-4602-8aaf-be8bf6a23ab2, 381ea447-e3ec-444e-9902-2e7fa2257ab8, 384330d7-1c5d-4f90-af5e-bf457167ab0e, 389232b6-67a2-4bc0-854c-c589c6b58752, 395fcf12-7777-4b83-9ba7-79be296f9fc0, 3998423a-7921-4989-88e0-99855cfb3b94, 39aeecb9-b463-4876-86a2-3168d301cf37, 39dea072-e0b4-4499-a608-7096bbfaa12b, 3a00f3dd-12a5-4890-a846-745a0e37b419, 3ab18162-ccab-4272-a987-d25f20bd9ef3, 3adab73d-64f7-4062-908f-e0833ae4807d, 3ae9fa24-a6e7-47e8-9de9-456da18adff7, 3b1a0840-2b57-48a3-9c63-41b0357c91f6, 3b569b4d-9c15-4143-af9e-86602a7b4610, 3b757d8f-4960-4d0f-8e56-c049b6980208, 3b833905-7c34-4493-8b48-a61b7d2a8ca8, 3bab4f0c-c28b-451d-a1dc-744f0fb5f481, 3bbe2e88-58f8-4c42-b3a6-826fd033b3a3, 3c05601c-5ad9-455c-b568-9d1b0e378084, 3c30869e-ca77-4e47-a6fb-0773908eae06, 3c56597a-edc9-4c1c-9366-7eeb14c1022f, 3cb24ad5-8b4d-463b-bc0b-61e7a8f5191f, 3e85d65b-12b8-40db-ad6c-d855f6274343, 3f65a0c5-0428-49e3-86f7-2ddf4eaca13d, 403d6a96-1d61-4ce0-bd38-47afb09c788f, 4100feda-a7bf-4bcf-a3a4-ae950ad41d9d, 414e1755-68ca-401d-b7ed-f13ab3303663, 42003570-f150-4b2a-bfc3-7bddf5637301, 4284f3d3-d2d2-4777-851d-a5c8ef202137, 42c5afbf-7c7b-480d-a8cf-203bc4056a04, 42f56eac-2531-455a-bb94-4d76407fa309, 4589feab-954e-4d20-b355-e26e9c8cf642, 47e2a862-aa2a-4d66-a81f-56cce8a89bc1, 4867aeca-d962-444c-af3d-be574533c466, 4903b3e7-a60f-4f58-a812-586cd7ba7d2c, 4ad69b50-2c5f-4121-bdcb-60dfb0f94476, 4b6ff8e9-187f-4156-b4ba-b17af5780fce, 4e6ca349-1a9c-4026-91f8-485b123669d6, 4ea44847-d78a-46b2-ba85-0d5642120973, 4ebbe1a0-9f50-4bbf-9942-2406f8d600b7, 4fc81db0-bd89-47b0-8f1f-aec71d64ea24, 50105b15-6ede-4a7f-9f13-4c4355ec3fc0, 518c6556-8f1c-4e83-8c7a-1aad69969a6a, 52ba82c9-4399-4fda-8c83-de2321dd9564, 54047bd6-c045-4151-89f7-44a07d7964ee, 54acdbf4-0dcd-4b79-bd78-6226935979f2, 54b08202-ac16-438d-8c0e-6459fe916324, 5692688e-3305-4b15-8ebe-51a93b51d170, 56d03835-10d9-450d-8818-36503c001699, 579ab967-38aa-40d5-857a-8655a45c52a2, 59572f66-3e27-4ba3-97a3-cca611d3ea46, 5971dbc4-b6a0-46a3-9f8f-16ead67f198e, 59861948-03c3-4751-83f5-5016df958ac0, 59995914-483e-4995-ac77-5aac5e48959a, 59c58fd5-ef43-4590-8d69-1654be863d4b, 5bd511fb-852f-4ef1-90ae-b5705f220a20, 5c8e7eff-d421-433b-af52-4a6b7a35e488, 5d8f3c4e-2a43-488a-a2c0-180d5db0e269, 5f1ceb47-9a28-46f0-a350-0480c11d10a7, 5f56767f-0b5d-4f77-bb39-9b5800a3c1cf, 5fdbc4bc-6677-41f5-bef5-b3d40c4abca6, 60d5ce51-80e1-43a0-9de9-2134e9052f99, 60f569c0-5821-4cef-866f-30c114f75f31, 61023f57-1931-4682-bd23-2de2b47304fa, 6123090e-df61-4643-95fd-26c569f88b58, 629f2046-437d-4f68-ac33-4f6b5615eab8, 636bba6e-ff3e-42c2-b9dd-c9d0d6b5276e, 63b3bf35-67e1-4b10-8db6-19f8fb2fa69b, 65eaf603-93b1-4830-8dec-7135831f7f4e, 66179eae-04bb-4b57-8364-41d5f57314ff, 66f6b1ba-f4bc-4e31-b718-cbd3ab9dc231, 67e9c802-62a1-4dde-b505-7bda881b4c4e, 6a3666da-0849-4f4b-857f-0337c758ed52, 6a5667bd-d61b-4f04-a6ea-95e3a4190005, 6a86b845-21a6-4c0c-8759-6ec3ef6cb8a2, 6c17e4fe-827f-468b-a9b4-8ed0d5f5e269, 6c898d2b-703c-4690-931c-d2ae339967f8, 6e97ca6a-560a-4eb7-a023-0ac801e60ca9, 6f4a186f-0ca4-432d-9969-2c56cfd31502, 7223edfe-4a07-4eb9-b4ad-ccc606b66c54, 72540977-c826-4c8c-b39f-c22f94d03359, 730ff863-9d06-4661-90da-703487f0a448, 74786fa0-2a5c-4cda-a7dd-ced3538effba, 759ff53a-786b-4b0a-95bd-0ccf3b13330b, 764d8b75-eb96-4b58-86b4-b0474117ca53, 7725d12a-25b7-42b2-9c56-1d4a9ab3a036, 79a08be0-7934-40a0-9fd8-3e205ce201d8, 7a0b3e0a-2b22-4b8a-8a74-955e80e692f1, 7ae990c7-f63f-4758-bc49-eebec7304a4c, 7c93dafa-309c-43b1-94a7-d1a563d803d8, 7e66320a-d751-4983-9e4a-217c328e4b05, 7e895b58-c9fc-4367-ad0b-a706c721a8f3, 7f1cc916-90fb-474c-84e7-e7a2ee5d7aa1, 7fe611f6-ea88-40b8-a932-4e6e0172d951, 80cc1857-6cf5-4a38-8d75-6e4e1e857279, 82070c4f-cafe-4b03-a296-08e25a9938d5, 82c57a19-8306-4ff4-8b37-dbf5e51d84d9, 836676b1-0b7b-4f6b-a3d8-a5a0545bd807, 85a1cd8e-9e08-499f-8446-2433655714f5, 85bfa6af-39ef-471e-8828-4221e63fe643, 8739d27d-b816-4ab2-805b-56f3969e9963, 87824332-f2a6-4474-b80d-206d91880e8f, 87f14880-58a5-40cb-b135-97816a6ee8a7, 896b846d-697d-4b86-a042-1eeaf40de4aa, 8a03c18e-0f35-4187-8a83-ad043a8b75e7, 8a1bb0ab-53bd-42cf-a83d-aa89001d0899, 8acb4033-4894-4f3b-9fbe-decc48c6ff88, 8ba19042-3c55-4c1d-b12b-e472d9e49e1e, 8c1328a5-c8bd-46cb-919d-c70ccdad6ce4, 8c3bd17b-81e7-4812-90c0-abd659e7badf, 8d473ea6-5c9e-4017-b0ea-512b2e0a38c8, 8dd099df-7869-47f9-8b23-86b0737d300b, 8e2e208a-6359-4374-9541-31f8b31b32fb, 8e4a3bb6-15e9-463c-8cc7-f0c280bff404, 8e665f7d-bebc-4d5a-8a82-8926fb95055b, 8fa63a04-29e8-44f1-b9a2-67efaaa9e18b, 9067b764-ce20-411b-b882-d94a60c1f71a, 9068d113-4063-4cdb-a65d-9a98aab4d7d6, 9078b3a2-9460-4329-a2de-f921546ec98f, 957b3997-f311-4ddc-83e9-8b42f9916ed4, 95d4e00d-b8a4-4e75-a564-946479d60a22, 960c847b-3bce-402b-ab85-2267d79a49d8, 9641c783-6a4d-46cb-a89b-c018e5a9d103, 96d32bad-fc3d-435a-ba25-f930508f096e, 9713159b-8aba-4cde-af26-029269457d43, 97a31208-71ca-443c-ad17-698893ff80ea, 97a70b73-fc91-4b6e-9a9d-9c18c5cb0501, 99133912-c331-4cfc-afe0-24d1f9a3883c, 999a88d0-efb5-40fa-9850-8d0c596ebf58, 9a94b271-5a9a-4145-90fb-77548266590a, 9ac7f3a1-60c7-497e-a470-d650856dfd8d, 9bd2a875-f80b-44ac-bea1-bc428e72f0de, 9c040362-2bbf-41bb-a2e9-17bee75f4d2f, 9e05c089-567d-44a9-98b8-b6532d69b394, 9ec18044-d9fa-49a4-82bd-8126498ddb42, 9f23702b-67e8-4022-b4c7-386c264981da, 9fa4875a-0dfd-4bea-85cb-d6d922537ced, a1a4f128-039b-4504-96e7-56867e0170c8, a3577d67-e632-48e9-8cba-f923ecaca30a, a3e968ec-b8f1-469a-b785-10c75e2da008, a4248d40-0f43-47ef-ab5d-88aed3ea30f5, a45b753e-25c6-44a3-8009-e13a474fc423, a5d84c67-7ffb-4f58-8c67-898fdb14c84e, a5e82c47-0fdc-4e86-a5b5-ec7a75b11562, a6a74f58-4083-47a9-a153-b6c50c1e9fcc, a6bc2381-100a-4589-9c08-bcf7cbb77cc2, aa4742e6-b34e-42e6-a028-92612dc0225d, aaaa3375-ee2c-4dd0-a9ac-bcf9513f9929, ab5e91ef-9900-46d2-818a-d319eb34741a, ab8760db-8160-4b16-aeb5-31d4aaca8eac, abc6a84b-75a7-4e2e-8532-37cc6a445f7d, ad309a7f-a80e-4e10-90f4-6411b8d6db78, ad4e881e-e5ba-46e1-9a81-563940ba1a94, ae07adda-e6d1-49e3-906c-766bf42acc54, ae21558f-258a-404a-955c-ceaee300f2b8, ae2f7a5f-4db4-437c-9f1c-d79ca7c67599, ae835ff4-6f5f-4045-add3-a683cf1fbdaa, b03b7cdc-0a94-4379-8e9b-3a61274b411e, b05cec4c-be5a-4b98-9bf8-e7c8f7af7d3d, b4cc4482-6217-4d4c-894a-495335847894, b6484658-7b4c-4ceb-a075-5d327872fc6c, b7aa6f8a-8035-4713-9a29-459a9b197740, b9590e0c-48a2-43ad-962e-26d4ba064b44, b9b6993e-fae1-474c-bae1-bbd90a02a66a, ba4e3472-ac05-4e34-91df-142bb14cbc58, ba88643b-7529-4b07-96e7-4c031cccb800, bba276a7-b069-4a2b-8a7f-b8de7cd70dbf, be9c6dde-5e20-40f8-a809-7f4f80659c3c, c1ecefbe-29bb-48b4-b90d-a51fd63a2aa8, c356ee00-a0da-4ec3-8aae-535c698c919c, c5a9e381-af06-493a-9e6e-b68148099243, c6851206-543c-4ca5-a53f-1eaaf2867519, c746ad41-4c7b-4a9b-aa65-e4aced882974, c858f805-ecd0-472b-b1d3-af3efb33af78, c989cc44-d3fc-4d3e-9104-c65eb617b417, cb71753d-5355-4c12-b57a-4e478ff5b3fe, cc9fc0fc-0b55-49be-93fb-c96b0b1af389, ce078ab7-c1a8-438f-b3bf-00f695ad4fcd, cf5d3745-c446-45ae-94c5-03a6318c1e58, cf609ba6-052f-4e61-84f2-e531dc0c73be, d003a497-e8e5-4e7f-9ddd-0e060502809a, d087381d-9ddd-4869-b54b-ca6bdd609a8b, d10c19c1-fbff-46be-9706-5531b7af4afd, d1e3332a-9511-469b-86dd-82368d10a76d, d219282b-cba1-4742-bdc0-25bbbd32babf, d2569d54-610f-407e-8a62-94d67dd45c30, d2e2132a-048d-40a1-a632-b4844b29c1b1, d3767c84-02af-4f32-9aed-86fa5bddfa9d, d622d683-f4c7-40c5-86d8-fd68bc3e0ff3, d670093c-aad2-4527-b106-e2286cf2f907, d673a067-d419-4fc4-bb8c-d73f61ec42bb, d87adebd-300c-4399-9732-81b7b9de5126, d914584d-275f-403e-8f95-efb6067383f4, dab7ff8e-7eca-4b62-b75a-fdaacd217fe3, dd7567a5-d406-491d-a995-32b55b239898, de2a0c30-c408-49eb-973a-3ca692c36432, df3372e5-f9ea-4ffd-b7ce-3047c171944a, e0ba95b0-f3bf-4dfd-8f01-076a07ef659b, e11c4587-46d6-4afe-8138-9f8a06d7e3f6, e21871e9-fee7-45c7-be04-2971278bc39e, e26bc91d-14d4-46ba-a130-b6b548c68488, e52e2055-6125-40a0-a116-d730f21bf5fe, e5f7058b-5038-4ef5-9ca9-9fc59d6b209e, e6269964-adad-4e3f-803e-5aa9cd32dfd2, e71bf477-32cd-4377-b47f-35fd6d840923, e87cc930-6af8-4b1b-9063-60cfd2b5b14d, ec310601-3d9f-4378-9e7f-8df060982964, ed72a2a5-deeb-4be0-930d-02fdd6d0affc, ed9e8a5a-857c-4dd0-b799-e62a09ba0cb7, ee3d5a12-b18a-43dc-94eb-0b6f56136675, f2a5988b-7282-4ffa-b31a-06814e9606cb, f37b1559-cb72-4cf8-a425-8791b7586c8b, f4456b90-8f47-4b08-92cc-61b8dc5f7753, f52eee30-2b7d-46be-aa45-ad9b4997b09f, f7c49275-bbe0-4b07-98a0-a6e9d6e269fd, f7f8df37-c2b3-477c-bf22-24b5cb621331, f8e4e345-61e2-41da-bda6-9b1cc24d6b95, fa0de099-2f22-443d-a149-2c7d1a888fee, fa41ceb1-62b0-41fc-a088-dfa2903ae8a2, fbdadff5-a251-4b98-8bbb-d7308c5e5ae2, fc4a849b-ddee-4c29-9687-d1a5dd075dd5, fdab0762-0ab3-4c34-bc19-ae990e183094, fe1b8c8f-1c10-4276-811c-d808361f1715, ff0a0e8b-5369-462b-adc4-1f24a9e03bd6, ff393195-cb12-45be-b3d4-e378c362b4e9, ff7d1ca8-8dfe-4892-b8e9-988ed128b564
+  HELD∩EXECUTED∩COMPILED IDs: 0081c4d2-1b3f-4ebf-850e-2c6100450a65, 00cb9985-fe4b-4334-8ff5-a367b0329a77, 021d6e08-ffef-4254-add5-243324855bda, 028f479a-2501-4ede-8fe8-d2af76418bf3, 041db77f-b142-4fc3-b0d9-233f06594155, 06447e09-21ee-4a21-a483-1350f2da85d9, 085bff50-ce05-42e3-b873-4519c77a832f, 08a9fea7-a32f-47a4-ae15-fc62f698e331, 097a32a8-69f9-4cea-b8c5-9b22bcae3793, 0e90b965-0ebf-43ca-bd76-7ccd4fd4882c, 100305e0-f60f-4220-817a-d0122fb2d084, 105c9d8d-cddc-4875-b055-441d17c7d06e, 106bc1cc-523f-4ec7-9df1-f49584f22b48, 10bec789-0ceb-49b5-8cc5-9a10bed52831, 10c33cf5-dc5d-4310-bbe1-916db3d87bf7, 125c4ef1-3d79-42e2-ae8a-fae044ee8a88, 128cf46b-d886-4f2c-b6ea-5e52ef54655e, 1649cecc-ac7c-4b12-9dba-0fbdcfc9c626, 178b2d03-f97c-4ba1-8e34-e783ed4e66eb, 198910f4-c6e1-41de-894d-87f204cf15e2, 19973f20-cb7d-4490-a598-79cc6c7322ed, 1a3b12f5-f22c-4f47-a54e-fb42d0249dc7, 1b544500-9a97-4de8-ba34-3272648e3661, 1b5c2497-ea56-4f07-9e29-98f41cb1017d, 1ebb8992-9945-4bcb-8fdd-aadc8872de81, 1ec83134-429d-4d45-9c11-fc41f9136160, 1fd563eb-de33-4edf-a7a5-4d4e7f5aa062, 20ec9f04-1a12-4f1b-8317-428707d7195f, 22205272-f732-4807-b2cf-22f30f026bda, 246c9796-828f-40f0-a6d3-5cd5338509e7, 24ee2ba4-b06f-4fbe-9d77-829c2cd7dcb2, 25831233-98b2-4bac-b8e4-bf98b0052928, 2617f368-2df1-43f2-a028-862d93ed5f57, 2691d927-3e26-4754-93ae-99edcf034302, 27091079-3520-48e4-91d0-bea02fde8086, 274242da-6045-4dc6-9756-9276eeb325a4, 294684fe-40c7-4caa-b546-b647045ba3ce, 2a0895b9-5a1a-4816-b4a6-b7215e68e4ae, 2ace7ea3-875b-4347-8081-ee9c3ca8a3f3, 2ccdb927-84fb-4bd9-89cb-4ba60fc0cf3e, 2e1fe65f-aeff-4332-83f3-99cadedccb53, 2e882609-eae6-49fe-9496-943d2b73aac6, 323cb535-4cd7-4ab2-8754-75368e9684c2, 32d74a79-df62-441b-9639-013c0a4fbf9e, 338ac564-83c9-4242-9cfe-5b532b325740, 349022c7-b62c-46a4-8808-ff3a1e982287, 359eb041-dc78-4b5e-9be6-1fed057b19aa, 361cfaee-b1d1-4079-aa77-2448e3565416, 3634ae95-d7e0-4955-afd1-0da82daaca2a, 367868ce-6606-4ffb-a333-e7f0bd1f226d, 36c8a337-3080-4077-8241-788233263172, 378eb685-f80d-46bd-993e-ba754bc09e89, 37f7d7f3-982f-4602-8aaf-be8bf6a23ab2, 381ea447-e3ec-444e-9902-2e7fa2257ab8, 384330d7-1c5d-4f90-af5e-bf457167ab0e, 389232b6-67a2-4bc0-854c-c589c6b58752, 395fcf12-7777-4b83-9ba7-79be296f9fc0, 3998423a-7921-4989-88e0-99855cfb3b94, 39aeecb9-b463-4876-86a2-3168d301cf37, 39dea072-e0b4-4499-a608-7096bbfaa12b, 3a00f3dd-12a5-4890-a846-745a0e37b419, 3ab18162-ccab-4272-a987-d25f20bd9ef3, 3adab73d-64f7-4062-908f-e0833ae4807d, 3ae9fa24-a6e7-47e8-9de9-456da18adff7, 3b1a0840-2b57-48a3-9c63-41b0357c91f6, 3b569b4d-9c15-4143-af9e-86602a7b4610, 3b757d8f-4960-4d0f-8e56-c049b6980208, 3b833905-7c34-4493-8b48-a61b7d2a8ca8, 3bbe2e88-58f8-4c42-b3a6-826fd033b3a3, 3c05601c-5ad9-455c-b568-9d1b0e378084, 3c30869e-ca77-4e47-a6fb-0773908eae06, 3c56597a-edc9-4c1c-9366-7eeb14c1022f, 3cb24ad5-8b4d-463b-bc0b-61e7a8f5191f, 3e85d65b-12b8-40db-ad6c-d855f6274343, 3f65a0c5-0428-49e3-86f7-2ddf4eaca13d, 403d6a96-1d61-4ce0-bd38-47afb09c788f, 4100feda-a7bf-4bcf-a3a4-ae950ad41d9d, 414e1755-68ca-401d-b7ed-f13ab3303663, 42003570-f150-4b2a-bfc3-7bddf5637301, 4284f3d3-d2d2-4777-851d-a5c8ef202137, 42c5afbf-7c7b-480d-a8cf-203bc4056a04, 42f56eac-2531-455a-bb94-4d76407fa309, 4589feab-954e-4d20-b355-e26e9c8cf642, 47e2a862-aa2a-4d66-a81f-56cce8a89bc1, 4867aeca-d962-444c-af3d-be574533c466, 4903b3e7-a60f-4f58-a812-586cd7ba7d2c, 4ad69b50-2c5f-4121-bdcb-60dfb0f94476, 4b6ff8e9-187f-4156-b4ba-b17af5780fce, 4e6ca349-1a9c-4026-91f8-485b123669d6, 4ea44847-d78a-46b2-ba85-0d5642120973, 4ebbe1a0-9f50-4bbf-9942-2406f8d600b7, 4fc81db0-bd89-47b0-8f1f-aec71d64ea24, 50105b15-6ede-4a7f-9f13-4c4355ec3fc0, 518c6556-8f1c-4e83-8c7a-1aad69969a6a, 52ba82c9-4399-4fda-8c83-de2321dd9564, 54047bd6-c045-4151-89f7-44a07d7964ee, 54acdbf4-0dcd-4b79-bd78-6226935979f2, 54b08202-ac16-438d-8c0e-6459fe916324, 5692688e-3305-4b15-8ebe-51a93b51d170, 56d03835-10d9-450d-8818-36503c001699, 579ab967-38aa-40d5-857a-8655a45c52a2, 59572f66-3e27-4ba3-97a3-cca611d3ea46, 5971dbc4-b6a0-46a3-9f8f-16ead67f198e, 59861948-03c3-4751-83f5-5016df958ac0, 59995914-483e-4995-ac77-5aac5e48959a, 59c58fd5-ef43-4590-8d69-1654be863d4b, 5bd511fb-852f-4ef1-90ae-b5705f220a20, 5d8f3c4e-2a43-488a-a2c0-180d5db0e269, 5f1ceb47-9a28-46f0-a350-0480c11d10a7, 5f56767f-0b5d-4f77-bb39-9b5800a3c1cf, 5fdbc4bc-6677-41f5-bef5-b3d40c4abca6, 60d5ce51-80e1-43a0-9de9-2134e9052f99, 60f569c0-5821-4cef-866f-30c114f75f31, 61023f57-1931-4682-bd23-2de2b47304fa, 6123090e-df61-4643-95fd-26c569f88b58, 629f2046-437d-4f68-ac33-4f6b5615eab8, 636bba6e-ff3e-42c2-b9dd-c9d0d6b5276e, 63b3bf35-67e1-4b10-8db6-19f8fb2fa69b, 65eaf603-93b1-4830-8dec-7135831f7f4e, 66179eae-04bb-4b57-8364-41d5f57314ff, 66f6b1ba-f4bc-4e31-b718-cbd3ab9dc231, 67e9c802-62a1-4dde-b505-7bda881b4c4e, 6a3666da-0849-4f4b-857f-0337c758ed52, 6a5667bd-d61b-4f04-a6ea-95e3a4190005, 6c17e4fe-827f-468b-a9b4-8ed0d5f5e269, 6c898d2b-703c-4690-931c-d2ae339967f8, 6e97ca6a-560a-4eb7-a023-0ac801e60ca9, 6f4a186f-0ca4-432d-9969-2c56cfd31502, 7223edfe-4a07-4eb9-b4ad-ccc606b66c54, 72540977-c826-4c8c-b39f-c22f94d03359, 730ff863-9d06-4661-90da-703487f0a448, 74786fa0-2a5c-4cda-a7dd-ced3538effba, 759ff53a-786b-4b0a-95bd-0ccf3b13330b, 764d8b75-eb96-4b58-86b4-b0474117ca53, 7725d12a-25b7-42b2-9c56-1d4a9ab3a036, 79a08be0-7934-40a0-9fd8-3e205ce201d8, 7a0b3e0a-2b22-4b8a-8a74-955e80e692f1, 7ae990c7-f63f-4758-bc49-eebec7304a4c, 7c93dafa-309c-43b1-94a7-d1a563d803d8, 7e66320a-d751-4983-9e4a-217c328e4b05, 7e895b58-c9fc-4367-ad0b-a706c721a8f3, 7f1cc916-90fb-474c-84e7-e7a2ee5d7aa1, 7fe611f6-ea88-40b8-a932-4e6e0172d951, 80cc1857-6cf5-4a38-8d75-6e4e1e857279, 82070c4f-cafe-4b03-a296-08e25a9938d5, 82c57a19-8306-4ff4-8b37-dbf5e51d84d9, 836676b1-0b7b-4f6b-a3d8-a5a0545bd807, 85a1cd8e-9e08-499f-8446-2433655714f5, 85bfa6af-39ef-471e-8828-4221e63fe643, 8739d27d-b816-4ab2-805b-56f3969e9963, 87824332-f2a6-4474-b80d-206d91880e8f, 87f14880-58a5-40cb-b135-97816a6ee8a7, 896b846d-697d-4b86-a042-1eeaf40de4aa, 8a03c18e-0f35-4187-8a83-ad043a8b75e7, 8acb4033-4894-4f3b-9fbe-decc48c6ff88, 8ba19042-3c55-4c1d-b12b-e472d9e49e1e, 8c1328a5-c8bd-46cb-919d-c70ccdad6ce4, 8c3bd17b-81e7-4812-90c0-abd659e7badf, 8d473ea6-5c9e-4017-b0ea-512b2e0a38c8, 8dd099df-7869-47f9-8b23-86b0737d300b, 8e2e208a-6359-4374-9541-31f8b31b32fb, 8e4a3bb6-15e9-463c-8cc7-f0c280bff404, 8e665f7d-bebc-4d5a-8a82-8926fb95055b, 8fa63a04-29e8-44f1-b9a2-67efaaa9e18b, 9067b764-ce20-411b-b882-d94a60c1f71a, 9068d113-4063-4cdb-a65d-9a98aab4d7d6, 957b3997-f311-4ddc-83e9-8b42f9916ed4, 95d4e00d-b8a4-4e75-a564-946479d60a22, 960c847b-3bce-402b-ab85-2267d79a49d8, 9641c783-6a4d-46cb-a89b-c018e5a9d103, 96d32bad-fc3d-435a-ba25-f930508f096e, 9713159b-8aba-4cde-af26-029269457d43, 97a31208-71ca-443c-ad17-698893ff80ea, 97a70b73-fc91-4b6e-9a9d-9c18c5cb0501, 99133912-c331-4cfc-afe0-24d1f9a3883c, 999a88d0-efb5-40fa-9850-8d0c596ebf58, 9a94b271-5a9a-4145-90fb-77548266590a, 9ac7f3a1-60c7-497e-a470-d650856dfd8d, 9bd2a875-f80b-44ac-bea1-bc428e72f0de, 9c040362-2bbf-41bb-a2e9-17bee75f4d2f, 9e05c089-567d-44a9-98b8-b6532d69b394, 9ec18044-d9fa-49a4-82bd-8126498ddb42, 9f23702b-67e8-4022-b4c7-386c264981da, 9fa4875a-0dfd-4bea-85cb-d6d922537ced, a1a4f128-039b-4504-96e7-56867e0170c8, a3577d67-e632-48e9-8cba-f923ecaca30a, a3e968ec-b8f1-469a-b785-10c75e2da008, a4248d40-0f43-47ef-ab5d-88aed3ea30f5, a45b753e-25c6-44a3-8009-e13a474fc423, a5d84c67-7ffb-4f58-8c67-898fdb14c84e, a5e82c47-0fdc-4e86-a5b5-ec7a75b11562, a6a74f58-4083-47a9-a153-b6c50c1e9fcc, a6bc2381-100a-4589-9c08-bcf7cbb77cc2, aa4742e6-b34e-42e6-a028-92612dc0225d, ab5e91ef-9900-46d2-818a-d319eb34741a, ab8760db-8160-4b16-aeb5-31d4aaca8eac, abc6a84b-75a7-4e2e-8532-37cc6a445f7d, ad309a7f-a80e-4e10-90f4-6411b8d6db78, ad4e881e-e5ba-46e1-9a81-563940ba1a94, ae07adda-e6d1-49e3-906c-766bf42acc54, ae21558f-258a-404a-955c-ceaee300f2b8, ae2f7a5f-4db4-437c-9f1c-d79ca7c67599, ae835ff4-6f5f-4045-add3-a683cf1fbdaa, b03b7cdc-0a94-4379-8e9b-3a61274b411e, b05cec4c-be5a-4b98-9bf8-e7c8f7af7d3d, b4cc4482-6217-4d4c-894a-495335847894, b6484658-7b4c-4ceb-a075-5d327872fc6c, b7aa6f8a-8035-4713-9a29-459a9b197740, b9590e0c-48a2-43ad-962e-26d4ba064b44, b9b6993e-fae1-474c-bae1-bbd90a02a66a, ba4e3472-ac05-4e34-91df-142bb14cbc58, ba88643b-7529-4b07-96e7-4c031cccb800, bba276a7-b069-4a2b-8a7f-b8de7cd70dbf, be9c6dde-5e20-40f8-a809-7f4f80659c3c, c1ecefbe-29bb-48b4-b90d-a51fd63a2aa8, c356ee00-a0da-4ec3-8aae-535c698c919c, c5a9e381-af06-493a-9e6e-b68148099243, c6851206-543c-4ca5-a53f-1eaaf2867519, c746ad41-4c7b-4a9b-aa65-e4aced882974, c858f805-ecd0-472b-b1d3-af3efb33af78, c989cc44-d3fc-4d3e-9104-c65eb617b417, cb71753d-5355-4c12-b57a-4e478ff5b3fe, cc9fc0fc-0b55-49be-93fb-c96b0b1af389, ce078ab7-c1a8-438f-b3bf-00f695ad4fcd, cf5d3745-c446-45ae-94c5-03a6318c1e58, cf609ba6-052f-4e61-84f2-e531dc0c73be, d003a497-e8e5-4e7f-9ddd-0e060502809a, d087381d-9ddd-4869-b54b-ca6bdd609a8b, d10c19c1-fbff-46be-9706-5531b7af4afd, d1e3332a-9511-469b-86dd-82368d10a76d, d219282b-cba1-4742-bdc0-25bbbd32babf, d2569d54-610f-407e-8a62-94d67dd45c30, d2e2132a-048d-40a1-a632-b4844b29c1b1, d3767c84-02af-4f32-9aed-86fa5bddfa9d, d622d683-f4c7-40c5-86d8-fd68bc3e0ff3, d670093c-aad2-4527-b106-e2286cf2f907, d673a067-d419-4fc4-bb8c-d73f61ec42bb, d914584d-275f-403e-8f95-efb6067383f4, dab7ff8e-7eca-4b62-b75a-fdaacd217fe3, dd7567a5-d406-491d-a995-32b55b239898, de2a0c30-c408-49eb-973a-3ca692c36432, df3372e5-f9ea-4ffd-b7ce-3047c171944a, e0ba95b0-f3bf-4dfd-8f01-076a07ef659b, e11c4587-46d6-4afe-8138-9f8a06d7e3f6, e21871e9-fee7-45c7-be04-2971278bc39e, e26bc91d-14d4-46ba-a130-b6b548c68488, e52e2055-6125-40a0-a116-d730f21bf5fe, e5f7058b-5038-4ef5-9ca9-9fc59d6b209e, e6269964-adad-4e3f-803e-5aa9cd32dfd2, e71bf477-32cd-4377-b47f-35fd6d840923, e87cc930-6af8-4b1b-9063-60cfd2b5b14d, ec310601-3d9f-4378-9e7f-8df060982964, ed72a2a5-deeb-4be0-930d-02fdd6d0affc, ed9e8a5a-857c-4dd0-b799-e62a09ba0cb7, ee3d5a12-b18a-43dc-94eb-0b6f56136675, f2a5988b-7282-4ffa-b31a-06814e9606cb, f37b1559-cb72-4cf8-a425-8791b7586c8b, f4456b90-8f47-4b08-92cc-61b8dc5f7753, f52eee30-2b7d-46be-aa45-ad9b4997b09f, f7c49275-bbe0-4b07-98a0-a6e9d6e269fd, f7f8df37-c2b3-477c-bf22-24b5cb621331, f8e4e345-61e2-41da-bda6-9b1cc24d6b95, fa0de099-2f22-443d-a149-2c7d1a888fee, fa41ceb1-62b0-41fc-a088-dfa2903ae8a2, fbdadff5-a251-4b98-8bbb-d7308c5e5ae2, fc4a849b-ddee-4c29-9687-d1a5dd075dd5, fdab0762-0ab3-4c34-bc19-ae990e183094, fe1b8c8f-1c10-4276-811c-d808361f1715, ff0a0e8b-5369-462b-adc4-1f24a9e03bd6, ff393195-cb12-45be-b3d4-e378c362b4e9, ff7d1ca8-8dfe-4892-b8e9-988ed128b564
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/multi_sample/hudi/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudy/multi_sample/hudi/daikonpp_outcomes.jsonl
+>>> Run log: /scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/daikonpp-run.log
+>>> Keeping working copy(ies) (DP_KEEP_WORK=1):
+    project: /scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542
+    main: /scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/main/java
+    test: /scratch/mjk76/ea442/promptstudy/daikonpp_work/project-20260719-001542/hudi-client/hudi-java-client/src/test/java
+>>> Done.

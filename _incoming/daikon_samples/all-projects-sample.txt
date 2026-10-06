@@ -1,0 +1,2203 @@
+
+
+====================================================================================================
+SAMPLE 1/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: apollo
+METHOD: com.ctrip.framework.apollo.biz.entity.ServerConfig.setKey(java.lang.String)
+####################################################################################################
+
+===========================================================================
+com.ctrip.framework.apollo.biz.entity.ServerConfig.setKey(java.lang.String):::ENTER
+this.key == this.cluster
+this.key == this.value
+this.key == this.comment
+this.key == this.dataChangeCreatedBy
+this.key == this.dataChangeLastModifiedBy
+this.id == this.deletedAt
+this.dataChangeCreatedTime == this.dataChangeLastModifiedTime
+this.key == null
+this.id == 0
+this.dataChangeCreatedTime == null
+
+===========================================================================
+com.ctrip.framework.apollo.biz.entity.ServerConfig.setKey(java.lang.String):::EXIT
+this.key == orig(key)
+this.key.toString == key.toString
+this.cluster == this.value
+this.cluster == this.comment
+this.cluster == this.dataChangeCreatedBy
+this.cluster == this.dataChangeLastModifiedBy
+this.cluster == orig(this.key)
+this.cluster == orig(this.cluster)
+this.cluster == orig(this.value)
+this.cluster == orig(this.comment)
+this.cluster == orig(this.dataChangeCreatedBy)
+this.cluster == orig(this.dataChangeLastModifiedBy)
+this.id == this.deletedAt
+this.id == orig(this.id)
+this.id == orig(this.deletedAt)
+this.isDeleted == orig(this.isDeleted)
+this.dataChangeCreatedTime == this.dataChangeLastModifiedTime
+this.dataChangeCreatedTime == orig(this.dataChangeCreatedTime)
+this.dataChangeCreatedTime == orig(this.dataChangeLastModifiedTime)
+key.toString == orig(key.toString)
+this.cluster == null
+this.id == 0
+this.dataChangeCreatedTime == null
+
+
+
+====================================================================================================
+SAMPLE 2/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: apollo
+METHOD: com.ctrip.framework.apollo.biz.MockBeanFactory.mockItem(long, long, java.lang.String, java.lang.String, int)
+####################################################################################################
+
+===========================================================================
+com.ctrip.framework.apollo.biz.MockBeanFactory.mockItem(long, long, java.lang.String, java.lang.String, int):::ENTER
+id == namespaceId
+id == lineNum
+id == 1
+itemKey != null
+itemKey.toString one of { "", "timeout" }
+itemValue != null
+itemValue.toString one of { "100", "1001" }
+itemKey.toString != itemValue.toString
+
+===========================================================================
+com.ctrip.framework.apollo.biz.MockBeanFactory.mockItem(long, long, java.lang.String, java.lang.String, int):::EXIT
+itemKey.toString == return.key.toString
+itemKey.toString == orig(itemKey.toString)
+itemValue.toString == return.value.toString
+itemValue.toString == orig(itemValue.toString)
+return.namespaceId == return.id
+return.namespaceId == orig(id)
+return.namespaceId == orig(namespaceId)
+return.namespaceId == orig(lineNum)
+return.key == orig(itemKey)
+return.type == return.deletedAt
+return.value == orig(itemValue)
+return.comment == return.dataChangeCreatedBy
+return.comment == return.dataChangeLastModifiedBy
+return.dataChangeCreatedTime == return.dataChangeLastModifiedTime
+itemKey.toString one of { "", "timeout" }
+itemValue.toString one of { "100", "1001" }
+return != null
+return.namespaceId == 1
+return.key != null
+return.type == 0
+return.value != null
+return.comment == null
+return.lineNum has only one value
+return.lineNum != null
+return.isDeleted == false
+return.dataChangeCreatedTime == null
+itemKey.toString != itemValue.toString
+
+
+
+====================================================================================================
+SAMPLE 3/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: apollo
+METHOD: com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.getTargetClass()
+####################################################################################################
+
+===========================================================================
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.getTargetClass():::ENTER
+
+===========================================================================
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.getTargetClass():::EXIT
+this.CGLIB$BOUND == orig(this.CGLIB$BOUND)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$FACTORY_DATA == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$FACTORY_DATA)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$FACTORY_DATA.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$FACTORY_DATA.getClass().getName())
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$THREAD_CALLBACKS == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$THREAD_CALLBACKS)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$STATIC_CALLBACKS == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$STATIC_CALLBACKS)
+this.CGLIB$CALLBACK_0 == orig(this.CGLIB$CALLBACK_0)
+this.CGLIB$CALLBACK_0.getClass().getName() == orig(this.CGLIB$CALLBACK_0.getClass().getName())
+this.CGLIB$CALLBACK_1 == orig(this.CGLIB$CALLBACK_1)
+this.CGLIB$CALLBACK_1.getClass().getName() == orig(this.CGLIB$CALLBACK_1.getClass().getName())
+this.CGLIB$CALLBACK_2 == orig(this.CGLIB$CALLBACK_2)
+this.CGLIB$CALLBACK_2.getClass().getName() == orig(this.CGLIB$CALLBACK_2.getClass().getName())
+this.CGLIB$CALLBACK_3 == orig(this.CGLIB$CALLBACK_3)
+this.CGLIB$CALLBACK_3.getClass().getName() == orig(this.CGLIB$CALLBACK_3.getClass().getName())
+this.CGLIB$CALLBACK_4 == orig(this.CGLIB$CALLBACK_4)
+this.CGLIB$CALLBACK_4.getClass().getName() == orig(this.CGLIB$CALLBACK_4.getClass().getName())
+this.CGLIB$CALLBACK_5 == orig(this.CGLIB$CALLBACK_5)
+this.CGLIB$CALLBACK_5.getClass().getName() == orig(this.CGLIB$CALLBACK_5.getClass().getName())
+this.CGLIB$CALLBACK_6 == orig(this.CGLIB$CALLBACK_6)
+this.CGLIB$CALLBACK_6.getClass().getName() == orig(this.CGLIB$CALLBACK_6.getClass().getName())
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$CALLBACK_FILTER == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$CALLBACK_FILTER)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$CALLBACK_FILTER.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$CALLBACK_FILTER.getClass().getName())
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$update$0$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$update$0$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$update$0$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$update$0$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$emptyArgs == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$emptyArgs)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$emptyArgs.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$emptyArgs.getClass().getName())
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$emptyArgs[] == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$emptyArgs[])
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findOne$1$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findOne$1$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findOne$1$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findOne$1$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findByAppId$2$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findByAppId$2$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findByAppId$2$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findByAppId$2$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$batchDelete$3$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$batchDelete$3$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$batchDelete$3$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$batchDelete$3$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$createDefaultAppNamespace$4$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$createDefaultAppNamespace$4$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$createDefaultAppNamespace$4$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$createDefaultAppNamespace$4$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findPublicNamespaceByName$5$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findPublicNamespaceByName$5$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findPublicNamespaceByName$5$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findPublicNamespaceByName$5$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findPrivateAppNamespace$6$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findPrivateAppNamespace$6$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findPrivateAppNamespace$6$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findPrivateAppNamespace$6$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findByAppIdAndNamespaces$7$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findByAppIdAndNamespaces$7$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findByAppIdAndNamespaces$7$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findByAppIdAndNamespaces$7$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$createAppNamespace$8$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$createAppNamespace$8$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$createAppNamespace$8$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$createAppNamespace$8$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$deleteAppNamespace$9$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$deleteAppNamespace$9$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$deleteAppNamespace$9$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$deleteAppNamespace$9$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$isAppNamespaceNameUnique$10$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$isAppNamespaceNameUnique$10$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$isAppNamespaceNameUnique$10$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$isAppNamespaceNameUnique$10$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$createNamespaceForAppNamespaceInAllCluster$11$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$createNamespaceForAppNamespaceInAllCluster$11$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$createNamespaceForAppNamespaceInAllCluster$11$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$createNamespaceForAppNamespaceInAllCluster$11$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findPublicNamespacesByNames$12$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findPublicNamespacesByNames$12$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findPublicNamespacesByNames$12$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findPublicNamespacesByNames$12$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$equals$13$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$equals$13$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$equals$13$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$equals$13$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$toString$14$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$toString$14$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$toString$14$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$toString$14$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$hashCode$15$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$hashCode$15$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$hashCode$15$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$hashCode$15$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$clone$16$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$clone$16$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$clone$16$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$clone$16$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger.getClass().getName())
+com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger.getClass().getName() == orig(com.ctrip.framework.apollo.biz.config.BizConfig.logger.getClass().getName())
+com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger.getClass().getName() == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.logger.getClass().getName())
+this.appNamespaceRepository == orig(this.appNamespaceRepository)
+this.namespaceService == orig(this.namespaceService)
+com.ctrip.framework.apollo.biz.service.NamespaceService.GSON == orig(com.ctrip.framework.apollo.biz.service.NamespaceService.GSON)
+com.ctrip.framework.apollo.biz.service.ItemService.clusterPattern == orig(com.ctrip.framework.apollo.biz.service.ItemService.clusterPattern)
+com.ctrip.framework.apollo.biz.service.ReleaseService.TIMESTAMP_FORMAT == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.TIMESTAMP_FORMAT)
+com.ctrip.framework.apollo.biz.service.ReleaseService.GSON == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.GSON)
+com.ctrip.framework.apollo.biz.service.ReleaseService.BRANCH_RELEASE_OPERATIONS == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.BRANCH_RELEASE_OPERATIONS)
+com.ctrip.framework.apollo.biz.service.ReleaseService.BRANCH_RELEASE_OPERATIONS.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.BRANCH_RELEASE_OPERATIONS.getClass().getName())
+com.ctrip.framework.apollo.biz.service.ReleaseService.FIRST_ITEM == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.FIRST_ITEM)
+com.ctrip.framework.apollo.biz.service.ReleaseService.FIRST_ITEM.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.FIRST_ITEM.getClass().getName())
+com.ctrip.framework.apollo.biz.service.ReleaseService.OPERATION_CONTEXT_TYPE_REFERENCE == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.OPERATION_CONTEXT_TYPE_REFERENCE)
+com.ctrip.framework.apollo.biz.service.ReleaseService.OPERATION_CONTEXT_TYPE_REFERENCE.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.OPERATION_CONTEXT_TYPE_REFERENCE.getClass().getName())
+com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.logger == orig(com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.logger)
+com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.logger.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.logger.getClass().getName())
+com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.GSON == orig(com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.GSON)
+com.ctrip.framework.apollo.biz.config.BizConfig.logger == orig(com.ctrip.framework.apollo.biz.config.BizConfig.logger)
+com.ctrip.framework.apollo.biz.config.BizConfig.GSON == orig(com.ctrip.framework.apollo.biz.config.BizConfig.GSON)
+com.ctrip.framework.apollo.biz.config.BizConfig.INTERVAL_TIME_UNIT == orig(com.ctrip.framework.apollo.biz.config.BizConfig.INTERVAL_TIME_UNIT)
+com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference == orig(com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference)
+com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference.getClass().getName() == orig(com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference.getClass().getName())
+com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference.getClass().getName() == orig(com.ctrip.framework.apollo.biz.config.BizConfig.namespaceValueLengthOverrideTypeReference.getClass().getName())
+com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference.getClass().getName() == orig(com.ctrip.framework.apollo.biz.config.BizConfig.releaseHistoryRetentionSizeOverrideTypeReference.getClass().getName())
+com.ctrip.framework.apollo.biz.config.BizConfig.namespaceValueLengthOverrideTypeReference == orig(com.ctrip.framework.apollo.biz.config.BizConfig.namespaceValueLengthOverrideTypeReference)
+com.ctrip.framework.apollo.biz.config.BizConfig.releaseHistoryRetentionSizeOverrideTypeReference == orig(com.ctrip.framework.apollo.biz.config.BizConfig.releaseHistoryRetentionSizeOverrideTypeReference)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.logger == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.logger)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.LIST_SEPARATOR == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.LIST_SEPARATOR)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.LIST_SEPARATOR.toString == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.LIST_SEPARATOR.toString)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY.getClass().getName() == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY.getClass().getName())
+com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY[] == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY[])
+this.clusterService == orig(this.clusterService)
+this.auditService == orig(this.auditService)
+return has only one value
+
+
+
+====================================================================================================
+SAMPLE 4/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: apollo
+METHOD: com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.setMockitoInterceptor(org.mockito.internal.creation.bytebuddy.access.MockMethodInterceptor)
+####################################################################################################
+
+===========================================================================
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.setMockitoInterceptor(org.mockito.internal.creation.bytebuddy.access.MockMethodInterceptor):::ENTER
+this.mockitoInterceptor == null
+
+===========================================================================
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.setMockitoInterceptor(org.mockito.internal.creation.bytebuddy.access.MockMethodInterceptor):::EXIT
+this.mockitoInterceptor == orig(arg0)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$j67p190 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$j67p190)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$4v1ml40 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$4v1ml40)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$d0je2m1 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$d0je2m1)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$jh9nhg1 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$jh9nhg1)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$3f11ml2 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$3f11ml2)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$mk39331 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$mk39331)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$ku8f982 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$ku8f982)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$9os4543 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$9os4543)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$67uvia3 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$67uvia3)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$stg5jm1 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$stg5jm1)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$aumcj90 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$aumcj90)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$e3eogl0 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$e3eogl0)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$4cscpe1 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$4cscpe1)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$d4qslf2 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$d4qslf2)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$69aq8p1 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$69aq8p1)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$5f4g0g0 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$5f4g0g0)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$rm31hd3 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$rm31hd3)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$388m821 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$388m821)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$omfr5r3 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$omfr5r3)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$5p2ojn2 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$5p2ojn2)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$p41uod1 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$p41uod1)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$7muqof1 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$7muqof1)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$ppqt2e2 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$ppqt2e2)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$d9brbe3 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$d9brbe3)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$7m9oaq0 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$7m9oaq0)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$shm9540 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$shm9540)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$d3h2bs1 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$d3h2bs1)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$ako7gf3 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$ako7gf3)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$dm4ft02 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$dm4ft02)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$n7tq2u0 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$n7tq2u0)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$t3vrbt3 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$t3vrbt3)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$k5cnu53 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$k5cnu53)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$797ejp2 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$797ejp2)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$379ao90 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$379ao90)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$f0umhs3 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$f0umhs3)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$r78ll61 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$r78ll61)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$4ec8q12 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$4ec8q12)
+
+
+
+====================================================================================================
+SAMPLE 5/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: apollo
+METHOD: com.ctrip.framework.apollo.biz.repository.ReleaseHistoryRepositoryTest.testFindFirst100ByAppIdAndClusterNameAndNamespaceNameAndBranchNameAndIdLessThanEqualOrderByIdAsc()
+####################################################################################################
+
+===========================================================================
+com.ctrip.framework.apollo.biz.repository.ReleaseHistoryRepositoryTest.testFindFirst100ByAppIdAndClusterNameAndNamespaceNameAndBranchNameAndIdLessThanEqualOrderByIdAsc():::ENTER
+this has only one value
+this.releaseHistoryRepository has only one value
+
+===========================================================================
+com.ctrip.framework.apollo.biz.repository.ReleaseHistoryRepositoryTest.testFindFirst100ByAppIdAndClusterNameAndNamespaceNameAndBranchNameAndIdLessThanEqualOrderByIdAsc():::EXIT
+this.releaseHistoryRepository == orig(this.releaseHistoryRepository)
+this.releaseHistoryRepository.getClass().getName() == orig(this.releaseHistoryRepository.getClass().getName())
+com.ctrip.framework.apollo.biz.AbstractIntegrationTest.APP_ID == orig(com.ctrip.framework.apollo.biz.AbstractIntegrationTest.APP_ID)
+com.ctrip.framework.apollo.biz.AbstractIntegrationTest.APP_ID.toString == orig(com.ctrip.framework.apollo.biz.AbstractIntegrationTest.APP_ID.toString)
+com.ctrip.framework.apollo.biz.AbstractIntegrationTest.CLUSTER_NAME == orig(com.ctrip.framework.apollo.biz.AbstractIntegrationTest.CLUSTER_NAME)
+com.ctrip.framework.apollo.biz.AbstractIntegrationTest.CLUSTER_NAME == orig(com.ctrip.framework.apollo.biz.AbstractIntegrationTest.BRANCH_NAME)
+com.ctrip.framework.apollo.biz.AbstractIntegrationTest.CLUSTER_NAME.toString == orig(com.ctrip.framework.apollo.biz.AbstractIntegrationTest.CLUSTER_NAME.toString)
+com.ctrip.framework.apollo.biz.AbstractIntegrationTest.CLUSTER_NAME.toString == orig(com.ctrip.framework.apollo.biz.AbstractIntegrationTest.BRANCH_NAME.toString)
+com.ctrip.framework.apollo.biz.AbstractIntegrationTest.NAMESPACE_NAME == orig(com.ctrip.framework.apollo.biz.AbstractIntegrationTest.NAMESPACE_NAME)
+com.ctrip.framework.apollo.biz.AbstractIntegrationTest.NAMESPACE_NAME.toString == orig(com.ctrip.framework.apollo.biz.AbstractIntegrationTest.NAMESPACE_NAME.toString)
+this.releaseHistoryRepository has only one value
+
+
+
+====================================================================================================
+SAMPLE 6/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: apollo
+METHOD: com.ctrip.framework.apollo.biz.message.DatabaseMessageSender.cleanMessage(java.lang.Long)
+####################################################################################################
+
+===========================================================================
+com.ctrip.framework.apollo.biz.message.DatabaseMessageSender.cleanMessage(java.lang.Long):::ENTER
+this.releaseMessageRepository.getClass().getName() == jdk.proxy2.$Proxy248.class
+
+===========================================================================
+com.ctrip.framework.apollo.biz.message.DatabaseMessageSender.cleanMessage(java.lang.Long):::EXIT108
+
+===========================================================================
+com.ctrip.framework.apollo.biz.message.DatabaseMessageSender.cleanMessage(java.lang.Long):::EXIT
+com.ctrip.framework.apollo.biz.message.DatabaseMessageSender.logger == orig(com.ctrip.framework.apollo.biz.message.DatabaseMessageSender.logger)
+com.ctrip.framework.apollo.biz.message.DatabaseMessageSender.logger.getClass().getName() == orig(com.ctrip.framework.apollo.biz.message.DatabaseMessageSender.logger.getClass().getName())
+this.toClean == orig(this.toClean)
+this.toClean.getClass().getName() == orig(this.toClean.getClass().getName())
+this.cleanExecutorService == orig(this.cleanExecutorService)
+this.cleanExecutorService.getClass().getName() == orig(this.cleanExecutorService.getClass().getName())
+this.cleanStopped == orig(this.cleanStopped)
+this.releaseMessageRepository == orig(this.releaseMessageRepository)
+this.releaseMessageRepository.getClass().getName() == orig(this.releaseMessageRepository.getClass().getName())
+this.releaseMessageRepository.getClass().getName() == jdk.proxy2.$Proxy248.class
+
+
+
+====================================================================================================
+SAMPLE 7/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: apollo
+METHOD: com.ctrip.framework.apollo.biz.entity.ReleaseHistory.setNamespaceName(java.lang.String)
+####################################################################################################
+
+===========================================================================
+com.ctrip.framework.apollo.biz.entity.ReleaseHistory.setNamespaceName(java.lang.String):::ENTER
+this.namespaceName == this.operationContext
+this.namespaceName == this.dataChangeCreatedBy
+this.namespaceName == this.dataChangeLastModifiedBy
+this.releaseId == this.previousReleaseId
+this.releaseId == this.operation
+this.releaseId == this.id
+this.releaseId == this.deletedAt
+this.dataChangeCreatedTime == this.dataChangeLastModifiedTime
+this.appId.toString one of { "test", "testApp" }
+this.namespaceName == null
+this.branchName.toString == "default"
+this.releaseId == 0
+this.dataChangeCreatedTime == null
+namespaceName has only one value
+namespaceName != null
+namespaceName.toString == "application"
+this.appId.toString > namespaceName.toString
+this.clusterName.toString > namespaceName.toString
+this.branchName.toString > namespaceName.toString
+
+===========================================================================
+com.ctrip.framework.apollo.biz.entity.ReleaseHistory.setNamespaceName(java.lang.String):::EXIT
+this.appId == orig(this.appId)
+this.appId.toString == orig(this.appId.toString)
+this.clusterName == orig(this.clusterName)
+this.clusterName.toString == orig(this.clusterName.toString)
+this.namespaceName == orig(namespaceName)
+this.namespaceName.toString == namespaceName.toString
+this.branchName == orig(this.branchName)
+this.branchName.toString == orig(this.branchName.toString)
+this.releaseId == this.previousReleaseId
+this.releaseId == this.operation
+this.releaseId == this.id
+this.releaseId == this.deletedAt
+this.releaseId == orig(this.releaseId)
+this.releaseId == orig(this.previousReleaseId)
+this.releaseId == orig(this.operation)
+this.releaseId == orig(this.id)
+this.releaseId == orig(this.deletedAt)
+this.operationContext == this.dataChangeCreatedBy
+this.operationContext == this.dataChangeLastModifiedBy
+this.operationContext == orig(this.namespaceName)
+this.operationContext == orig(this.operationContext)
+this.operationContext == orig(this.dataChangeCreatedBy)
+this.operationContext == orig(this.dataChangeLastModifiedBy)
+this.isDeleted == orig(this.isDeleted)
+this.dataChangeCreatedTime == this.dataChangeLastModifiedTime
+this.dataChangeCreatedTime == orig(this.dataChangeCreatedTime)
+this.dataChangeCreatedTime == orig(this.dataChangeLastModifiedTime)
+namespaceName.toString == orig(namespaceName.toString)
+this.appId.toString one of { "test", "testApp" }
+this.namespaceName has only one value
+this.namespaceName != null
+this.branchName.toString == "default"
+this.releaseId == 0
+this.operationContext == null
+this.dataChangeCreatedTime == null
+namespaceName.toString == "application"
+this.appId.toString > namespaceName.toString
+this.clusterName.toString > namespaceName.toString
+this.branchName.toString > namespaceName.toString
+
+
+
+====================================================================================================
+SAMPLE 8/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: apollo
+METHOD: com.ctrip.framework.apollo.common.entity.BaseEntity.getDataChangeLastModifiedBy()
+####################################################################################################
+
+===========================================================================
+com.ctrip.framework.apollo.common.entity.BaseEntity.getDataChangeLastModifiedBy():::ENTER
+this.id >= 0
+this.deletedAt one of { 0, 1789082188062L }
+this.dataChangeCreatedBy == null
+this.dataChangeLastModifiedBy.toString == "user-test"
+
+===========================================================================
+com.ctrip.framework.apollo.common.entity.BaseEntity.getDataChangeLastModifiedBy():::EXIT
+this.id == orig(this.id)
+this.isDeleted == orig(this.isDeleted)
+this.deletedAt == orig(this.deletedAt)
+this.dataChangeCreatedBy == orig(this.dataChangeCreatedBy)
+this.dataChangeCreatedTime == orig(this.dataChangeCreatedTime)
+this.dataChangeLastModifiedBy == return
+this.dataChangeLastModifiedBy.toString == return.toString
+this.dataChangeLastModifiedTime == orig(this.dataChangeLastModifiedTime)
+return == orig(this.dataChangeLastModifiedBy)
+return.toString == orig(this.dataChangeLastModifiedBy.toString)
+this.id >= 0
+this.deletedAt one of { 0, 1789082188062L }
+this.dataChangeCreatedBy == null
+return.toString == "user-test"
+
+
+
+====================================================================================================
+SAMPLE 9/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: apollo
+METHOD: com.ctrip.framework.apollo.biz.entity.Namespace.setClusterName(java.lang.String)
+####################################################################################################
+
+===========================================================================
+com.ctrip.framework.apollo.biz.entity.Namespace.setClusterName(java.lang.String):::ENTER
+this.clusterName == this.dataChangeCreatedBy
+this.clusterName == this.dataChangeLastModifiedBy
+this.dataChangeCreatedTime == this.dataChangeLastModifiedTime
+this.appId != null
+this.clusterName == null
+this.namespaceName.toString == "application"
+this.isDeleted == false
+this.deletedAt == 0
+this.dataChangeCreatedTime == null
+clusterName != null
+this.appId.toString > this.namespaceName.toString
+this.appId.toString != clusterName.toString
+this.namespaceName.toString < clusterName.toString
+this.id >= this.deletedAt
+
+===========================================================================
+com.ctrip.framework.apollo.biz.entity.Namespace.setClusterName(java.lang.String):::EXIT
+this.appId == orig(this.appId)
+this.appId.toString == orig(this.appId.toString)
+this.clusterName == orig(clusterName)
+this.clusterName.toString == clusterName.toString
+this.namespaceName == orig(this.namespaceName)
+this.namespaceName.toString == orig(this.namespaceName.toString)
+this.id == orig(this.id)
+this.isDeleted == orig(this.isDeleted)
+this.deletedAt == orig(this.deletedAt)
+this.dataChangeCreatedBy == this.dataChangeLastModifiedBy
+this.dataChangeCreatedBy == orig(this.clusterName)
+this.dataChangeCreatedBy == orig(this.dataChangeCreatedBy)
+this.dataChangeCreatedBy == orig(this.dataChangeLastModifiedBy)
+this.dataChangeCreatedTime == this.dataChangeLastModifiedTime
+this.dataChangeCreatedTime == orig(this.dataChangeCreatedTime)
+this.dataChangeCreatedTime == orig(this.dataChangeLastModifiedTime)
+clusterName.toString == orig(clusterName.toString)
+this.appId != null
+this.clusterName != null
+this.namespaceName.toString == "application"
+this.isDeleted == false
+this.deletedAt == 0
+this.dataChangeCreatedBy == null
+this.dataChangeCreatedTime == null
+this.appId.toString > this.namespaceName.toString
+this.appId.toString != clusterName.toString
+this.namespaceName.toString < clusterName.toString
+this.id >= this.deletedAt
+
+
+
+====================================================================================================
+SAMPLE 10/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: apollo
+METHOD: com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.initialize()
+####################################################################################################
+
+===========================================================================
+com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.initialize():::ENTER
+this.releaseRepository.getClass().getName() == jdk.proxy2.$Proxy260.class
+
+===========================================================================
+com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.initialize():::EXIT
+com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.logger == orig(com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.logger)
+com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.logger.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.logger.getClass().getName())
+com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.logger.getClass().getName() == orig(com.ctrip.framework.apollo.biz.config.BizConfig.logger.getClass().getName())
+com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.logger.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.BizDBPropertySource.logger.getClass().getName())
+com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.logger.getClass().getName() == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.logger.getClass().getName())
+com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.GSON == orig(com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.GSON)
+this.releaseClearQueue == orig(this.releaseClearQueue)
+this.releaseClearQueue.getClass().getName() == orig(this.releaseClearQueue.getClass().getName())
+this.cleanExecutorService == orig(this.cleanExecutorService)
+this.cleanExecutorService.getClass().getName() == orig(this.cleanExecutorService.getClass().getName())
+this.cleanStopped == orig(this.cleanStopped)
+this.releaseHistoryRepository == orig(this.releaseHistoryRepository)
+this.releaseHistoryRepository.getClass().getName() == orig(this.releaseHistoryRepository.getClass().getName())
+this.releaseRepository == orig(this.releaseRepository)
+this.releaseRepository.getClass().getName() == orig(this.releaseRepository.getClass().getName())
+this.auditService == orig(this.auditService)
+this.auditService.auditRepository == orig(this.auditService.auditRepository)
+this.bizConfig == orig(this.bizConfig)
+com.ctrip.framework.apollo.biz.config.BizConfig.logger == orig(com.ctrip.framework.apollo.biz.config.BizConfig.logger)
+com.ctrip.framework.apollo.biz.config.BizConfig.GSON == orig(com.ctrip.framework.apollo.biz.config.BizConfig.GSON)
+com.ctrip.framework.apollo.biz.config.BizConfig.INTERVAL_TIME_UNIT == orig(com.ctrip.framework.apollo.biz.config.BizConfig.INTERVAL_TIME_UNIT)
+com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference == orig(com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference)
+com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference.getClass().getName() == orig(com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference.getClass().getName())
+com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference.getClass().getName() == orig(com.ctrip.framework.apollo.biz.config.BizConfig.namespaceValueLengthOverrideTypeReference.getClass().getName())
+com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference.getClass().getName() == orig(com.ctrip.framework.apollo.biz.config.BizConfig.releaseHistoryRetentionSizeOverrideTypeReference.getClass().getName())
+com.ctrip.framework.apollo.biz.config.BizConfig.namespaceValueLengthOverrideTypeReference == orig(com.ctrip.framework.apollo.biz.config.BizConfig.namespaceValueLengthOverrideTypeReference)
+com.ctrip.framework.apollo.biz.config.BizConfig.releaseHistoryRetentionSizeOverrideTypeReference == orig(com.ctrip.framework.apollo.biz.config.BizConfig.releaseHistoryRetentionSizeOverrideTypeReference)
+this.bizConfig.propertySource == orig(this.bizConfig.propertySource)
+com.ctrip.framework.apollo.biz.service.BizDBPropertySource.logger == orig(com.ctrip.framework.apollo.biz.service.BizDBPropertySource.logger)
+this.bizConfig.propertySource.serverConfigRepository == orig(this.bizConfig.propertySource.serverConfigRepository)
+this.bizConfig.propertySource.serverConfigRepository.getClass().getName() == orig(this.bizConfig.propertySource.serverConfigRepository.getClass().getName())
+this.bizConfig.propertySource.dataSource == orig(this.bizConfig.propertySource.dataSource)
+this.bizConfig.propertySource.dataSource.getClass().getName() == orig(this.bizConfig.propertySource.dataSource.getClass().getName())
+this.bizConfig.propertySource.env == orig(this.bizConfig.propertySource.env)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.logger == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.logger)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.LIST_SEPARATOR == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.LIST_SEPARATOR)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.LIST_SEPARATOR.toString == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.LIST_SEPARATOR.toString)
+this.bizConfig.splitter == orig(this.bizConfig.splitter)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY.getClass().getName() == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY.getClass().getName())
+com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY[] == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY[])
+this.bizConfig.environment == orig(this.bizConfig.environment)
+this.bizConfig.environment.getClass().getName() == orig(this.bizConfig.propertySource.env.getClass().getName())
+this.bizConfig.environment.getClass().getName() == orig(this.bizConfig.environment.getClass().getName())
+this.bizConfig.propertySources == orig(this.bizConfig.propertySources)
+this.bizConfig.propertySources[] == orig(this.bizConfig.propertySources[])
+this.bizConfig.propertySources.getClass().getName() == orig(this.bizConfig.propertySources.getClass().getName())
+this.bizConfig.executorService == orig(this.bizConfig.executorService)
+this.bizConfig.executorService.getClass().getName() == orig(this.bizConfig.executorService.getClass().getName())
+this.transactionManager == orig(this.transactionManager)
+this.releaseRepository.getClass().getName() == jdk.proxy2.$Proxy260.class
+
+
+
+====================================================================================================
+SAMPLE 1/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: hudi
+METHOD: org.apache.hudi.avro.model.HoodieArchivedMetaEntry.setActionState(java.lang.String)
+####################################################################################################
+
+===========================================================================
+org.apache.hudi.avro.model.HoodieArchivedMetaEntry.setActionState(java.lang.String):::ENTER
+this.hoodieCommitMetadata == this.HoodieInflightReplaceMetadata
+this.actionType == this.actionState
+this.actionType == this.stateTransitionTime
+this.hoodieCommitMetadata == null
+this.actionType == null
+value has only one value
+value.toString == "COMPLETED"
+this.commitTime.toString < value.toString
+
+===========================================================================
+org.apache.hudi.avro.model.HoodieArchivedMetaEntry.setActionState(java.lang.String):::EXIT
+org.apache.hudi.avro.model.HoodieArchivedMetaEntry.SCHEMA$ == orig(org.apache.hudi.avro.model.HoodieArchivedMetaEntry.SCHEMA$)
+org.apache.hudi.avro.model.HoodieArchivedMetaEntry.SCHEMA$.getClass().getName() == orig(org.apache.hudi.avro.model.HoodieArchivedMetaEntry.SCHEMA$.getClass().getName())
+org.apache.hudi.avro.model.HoodieArchivedMetaEntry.MODEL$ == orig(org.apache.hudi.avro.model.HoodieArchivedMetaEntry.MODEL$)
+org.apache.hudi.avro.model.HoodieArchivedMetaEntry.ENCODER == orig(org.apache.hudi.avro.model.HoodieArchivedMetaEntry.ENCODER)
+org.apache.hudi.avro.model.HoodieArchivedMetaEntry.DECODER == orig(org.apache.hudi.avro.model.HoodieArchivedMetaEntry.DECODER)
+this.hoodieCommitMetadata == this.HoodieInflightReplaceMetadata
+this.hoodieCommitMetadata == orig(this.hoodieCommitMetadata)
+this.hoodieCommitMetadata == orig(this.HoodieInflightReplaceMetadata)
+this.hoodieCleanMetadata == orig(this.hoodieCleanMetadata)
+this.hoodieCompactionMetadata == orig(this.hoodieCompactionMetadata)
+this.hoodieRollbackMetadata == orig(this.hoodieRollbackMetadata)
+this.hoodieSavePointMetadata == orig(this.hoodieSavePointMetadata)
+this.commitTime == orig(this.commitTime)
+this.commitTime.toString == orig(this.commitTime.toString)
+this.actionType == this.stateTransitionTime
+this.actionType == orig(this.actionType)
+this.actionType == orig(this.actionState)
+this.actionType == orig(this.stateTransitionTime)
+this.version == orig(this.version)
+this.hoodieCompactionPlan == orig(this.hoodieCompactionPlan)
+this.hoodieCleanerPlan == orig(this.hoodieCleanerPlan)
+this.actionState == orig(value)
+this.actionState.toString == value.toString
+this.hoodieReplaceCommitMetadata == orig(this.hoodieReplaceCommitMetadata)
+this.hoodieRequestedReplaceMetadata == orig(this.hoodieRequestedReplaceMetadata)
+this.hoodieIndexCommitMetadata == orig(this.hoodieIndexCommitMetadata)
+org.apache.hudi.avro.model.HoodieArchivedMetaEntry.WRITER$ == orig(org.apache.hudi.avro.model.HoodieArchivedMetaEntry.WRITER$)
+org.apache.hudi.avro.model.HoodieArchivedMetaEntry.WRITER$.getClass().getName() == orig(org.apache.hudi.avro.model.HoodieArchivedMetaEntry.WRITER$.getClass().getName())
+org.apache.hudi.avro.model.HoodieArchivedMetaEntry.READER$ == orig(org.apache.hudi.avro.model.HoodieArchivedMetaEntry.READER$)
+org.apache.hudi.avro.model.HoodieArchivedMetaEntry.READER$.getClass().getName() == orig(org.apache.hudi.avro.model.HoodieArchivedMetaEntry.READER$.getClass().getName())
+value.toString == orig(value.toString)
+this.hoodieCommitMetadata == null
+this.actionType == null
+this.actionState has only one value
+value.toString == "COMPLETED"
+this.commitTime.toString < value.toString
+
+
+
+====================================================================================================
+SAMPLE 2/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: hudi
+METHOD: org.apache.hudi.avro.model.FloatWrapper.FloatWrapper()
+####################################################################################################
+
+===========================================================================
+org.apache.hudi.avro.model.FloatWrapper.FloatWrapper():::EXIT
+this.value == 0.0
+
+
+
+====================================================================================================
+SAMPLE 3/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: hudi
+METHOD: org.apache.hudi.client.BaseHoodieWriteClient.scheduleAndGetRestorePlan(java.lang.String, org.apache.hudi.table.HoodieTable)
+####################################################################################################
+
+===========================================================================
+org.apache.hudi.client.BaseHoodieWriteClient.scheduleAndGetRestorePlan(java.lang.String, org.apache.hudi.table.HoodieTable):::ENTER
+this.lastCompletedTxnAndMetadata == this.timelineServer
+this.getClass().getName() == org.apache.hudi.client.HoodieJavaWriteClient.class
+this.index.getClass().getName() == org.apache.hudi.index.simple.HoodieSimpleIndex.class
+this.operationType == null
+this.writeTimer == null
+this.lastCompletedTxnAndMetadata has only one value
+this.pendingInflightAndRequestedInstants has only one value
+this.pendingInflightAndRequestedInstants.getClass().getName() == java.util.Collections$EmptySet.class
+this.shouldStopTimelineServer == true
+savepointToRestoreTimestamp.toString one of { "004", "20260910232655776" }
+
+===========================================================================
+org.apache.hudi.client.BaseHoodieWriteClient.scheduleAndGetRestorePlan(java.lang.String, org.apache.hudi.table.HoodieTable):::EXIT957
+
+===========================================================================
+org.apache.hudi.client.BaseHoodieWriteClient.scheduleAndGetRestorePlan(java.lang.String, org.apache.hudi.table.HoodieTable):::EXIT
+org.apache.hudi.client.BaseHoodieWriteClient.log == orig(org.apache.hudi.client.BaseHoodieWriteClient.log)
+org.apache.hudi.client.BaseHoodieWriteClient.log.getClass().getName() == orig(org.apache.hudi.client.BaseHoodieWriteClient.log.getClass().getName())
+org.apache.hudi.client.BaseHoodieWriteClient.log.getClass().getName() == orig(org.apache.hudi.client.BaseHoodieClient.log.getClass().getName())
+org.apache.hudi.client.BaseHoodieWriteClient.LOOKUP_STR == orig(org.apache.hudi.client.BaseHoodieWriteClient.LOOKUP_STR)
+org.apache.hudi.client.BaseHoodieWriteClient.LOOKUP_STR.toString == orig(org.apache.hudi.client.BaseHoodieWriteClient.LOOKUP_STR.toString)
+this.index == orig(this.index)
+this.index.getClass().getName() == orig(this.index.getClass().getName())
+this.upgradeDowngradeHelper == orig(this.upgradeDowngradeHelper)
+this.upgradeDowngradeHelper.getClass().getName() == orig(this.upgradeDowngradeHelper.getClass().getName())
+this.operationType == orig(this.operationType)
+this.commitCallback == orig(this.commitCallback)
+this.writeTimer == orig(this.writeTimer)
+this.lastCompletedTxnAndMetadata == this.timelineServer
+this.lastCompletedTxnAndMetadata == orig(this.lastCompletedTxnAndMetadata)
+this.lastCompletedTxnAndMetadata == orig(this.timelineServer)
+this.pendingInflightAndRequestedInstants == orig(this.pendingInflightAndRequestedInstants)
+this.pendingInflightAndRequestedInstants.getClass().getName() == orig(this.pendingInflightAndRequestedInstants.getClass().getName())
+this.tableServiceClient == orig(this.tableServiceClient)
+this.tableServiceClient.getClass().getName() == orig(this.tableServiceClient.getClass().getName())
+org.apache.hudi.client.BaseHoodieClient.log == orig(org.apache.hudi.client.BaseHoodieClient.log)
+this.storage == orig(this.storage)
+this.storage.getClass().getName() == orig(this.storage.getClass().getName())
+this.context == orig(this.context)
+this.context.getClass().getName() == orig(this.context.getClass().getName())
+this.storageConf == orig(this.storageConf)
+this.storageConf.getClass().getName() == orig(this.storageConf.getClass().getName())
+this.metrics == orig(this.metrics)
+this.config == orig(this.config)
+this.basePath == orig(this.basePath)
+this.basePath.toString == orig(this.basePath.toString)
+this.heartbeatClient == orig(this.heartbeatClient)
+this.txnManager == orig(this.txnManager)
+this.timeGenerator == orig(this.timeGenerator)
+this.timeGenerator.getClass().getName() == orig(this.timeGenerator.getClass().getName())
+this.shouldStopTimelineServer == orig(this.shouldStopTimelineServer)
+savepointToRestoreTimestamp.toString == orig(savepointToRestoreTimestamp.toString)
+this.index.getClass().getName() == org.apache.hudi.index.simple.HoodieSimpleIndex.class
+this.operationType == null
+this.writeTimer == null
+this.lastCompletedTxnAndMetadata has only one value
+this.pendingInflightAndRequestedInstants has only one value
+this.pendingInflightAndRequestedInstants.getClass().getName() == java.util.Collections$EmptySet.class
+this.shouldStopTimelineServer == true
+savepointToRestoreTimestamp.toString one of { "004", "20260910232655776" }
+return.getClass().getName() == org.apache.hudi.common.util.collection.ImmutablePair.class
+
+
+
+====================================================================================================
+SAMPLE 4/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: hudi
+METHOD: org.apache.hudi.common.model.CompactionOperation.getBaseInstantTime()
+####################################################################################################
+
+===========================================================================
+org.apache.hudi.common.model.CompactionOperation.getBaseInstantTime():::ENTER
+this.bootstrapFilePath has only one value
+size(this.deltaFileNames[]) one of { 1, 2, 4 }
+
+===========================================================================
+org.apache.hudi.common.model.CompactionOperation.getBaseInstantTime():::EXIT
+this.baseInstantTime == return
+this.baseInstantTime.toString == return.toString
+this.dataFileCommitTime == orig(this.dataFileCommitTime)
+this.deltaFileNames == orig(this.deltaFileNames)
+this.deltaFileNames[] == orig(this.deltaFileNames[])
+this.deltaFileNames.getClass().getName() == orig(this.deltaFileNames.getClass().getName())
+this.dataFileName == orig(this.dataFileName)
+this.fileGroupId == orig(this.fileGroupId)
+this.metrics == orig(this.metrics)
+this.metrics.getClass().getName() == orig(this.metrics.getClass().getName())
+this.bootstrapFilePath == orig(this.bootstrapFilePath)
+return == orig(this.baseInstantTime)
+return.toString == orig(this.baseInstantTime.toString)
+this.bootstrapFilePath has only one value
+size(this.deltaFileNames[]) one of { 1, 2, 4 }
+
+
+
+====================================================================================================
+SAMPLE 5/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: hudi
+METHOD: org.apache.hudi.common.model.HoodieCommitMetadata.fetchTotalBytesWritten()
+####################################################################################################
+
+===========================================================================
+org.apache.hudi.common.model.HoodieCommitMetadata.fetchTotalBytesWritten():::ENTER
+
+===========================================================================
+org.apache.hudi.common.model.HoodieCommitMetadata.fetchTotalBytesWritten():::EXIT
+org.apache.hudi.common.model.HoodieCommitMetadata.log == orig(org.apache.hudi.common.model.HoodieCommitMetadata.log)
+org.apache.hudi.common.model.HoodieCommitMetadata.log.getClass().getName() == orig(org.apache.hudi.common.model.HoodieCommitMetadata.log.getClass().getName())
+org.apache.hudi.common.model.HoodieCommitMetadata.SCHEMA_KEY == orig(org.apache.hudi.common.model.HoodieCommitMetadata.SCHEMA_KEY)
+org.apache.hudi.common.model.HoodieCommitMetadata.SCHEMA_KEY.toString == orig(org.apache.hudi.common.model.HoodieCommitMetadata.SCHEMA_KEY.toString)
+this.partitionToWriteStats == orig(this.partitionToWriteStats)
+this.partitionToWriteStats.getClass().getName() == orig(this.partitionToWriteStats.getClass().getName())
+this.partitionToWriteStats.getClass().getName() == orig(this.extraMetadata.getClass().getName())
+this.compacted == orig(this.compacted)
+this.extraMetadata == orig(this.extraMetadata)
+this.operationType == orig(this.operationType)
+
+
+
+====================================================================================================
+SAMPLE 6/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: hudi
+METHOD: org.apache.hudi.common.util.CompactionUtils.getDeltaCommitsSinceLatestCompaction(org.apache.hudi.common.table.timeline.HoodieActiveTimeline)
+####################################################################################################
+
+===========================================================================
+org.apache.hudi.common.util.CompactionUtils.getDeltaCommitsSinceLatestCompaction(org.apache.hudi.common.table.timeline.HoodieActiveTimeline):::ENTER
+activeTimeline != null
+org.apache.hudi.common.util.CompactionUtils.LOG.getClass().getName() != activeTimeline.getClass().getName()
+
+===========================================================================
+org.apache.hudi.common.util.CompactionUtils.getDeltaCommitsSinceLatestCompaction(org.apache.hudi.common.table.timeline.HoodieActiveTimeline):::EXIT328
+return has only one value
+orig(activeTimeline) has only one value
+orig(activeTimeline.getClass().getName()) == org.apache.hudi.common.table.timeline.versioning.v2.ActiveTimelineV2.class
+
+===========================================================================
+org.apache.hudi.common.util.CompactionUtils.getDeltaCommitsSinceLatestCompaction(org.apache.hudi.common.table.timeline.HoodieActiveTimeline):::EXIT333
+
+===========================================================================
+org.apache.hudi.common.util.CompactionUtils.getDeltaCommitsSinceLatestCompaction(org.apache.hudi.common.table.timeline.HoodieActiveTimeline):::EXIT
+org.apache.hudi.common.util.CompactionUtils.LOG == orig(org.apache.hudi.common.util.CompactionUtils.LOG)
+org.apache.hudi.common.util.CompactionUtils.LOG.getClass().getName() == orig(org.apache.hudi.common.util.CompactionUtils.LOG.getClass().getName())
+org.apache.hudi.common.util.CompactionUtils.COMPACTION_METADATA_VERSION_1 == orig(org.apache.hudi.common.util.CompactionUtils.COMPACTION_METADATA_VERSION_1)
+org.apache.hudi.common.util.CompactionUtils.COMPACTION_METADATA_VERSION_2 == orig(org.apache.hudi.common.util.CompactionUtils.COMPACTION_METADATA_VERSION_2)
+org.apache.hudi.common.util.CompactionUtils.COMPACTION_METADATA_VERSION_2 == orig(org.apache.hudi.common.util.CompactionUtils.LATEST_COMPACTION_METADATA_VERSION)
+return != null
+org.apache.hudi.common.util.CompactionUtils.LOG.getClass().getName() != orig(activeTimeline.getClass().getName())
+
+
+
+====================================================================================================
+SAMPLE 7/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: hudi
+METHOD: org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.newBuilder()
+####################################################################################################
+
+===========================================================================
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.newBuilder():::ENTER
+
+===========================================================================
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.newBuilder():::EXIT
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_PREFIX == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_PREFIX)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_PREFIX.toString == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_PREFIX.toString)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.REPORT_PERIOD_IN_SECONDS == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.REPORT_PERIOD_IN_SECONDS)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.API_SITE_VALUE == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.API_SITE_VALUE)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.API_KEY == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.API_KEY)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.API_KEY_SKIP_VALIDATION == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.API_KEY_SKIP_VALIDATION)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.API_KEY_SUPPLIER == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.API_KEY_SUPPLIER)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.API_TIMEOUT_IN_SECONDS == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.API_TIMEOUT_IN_SECONDS)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.METRIC_PREFIX_VALUE == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.METRIC_PREFIX_VALUE)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.METRIC_HOST_NAME == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.METRIC_HOST_NAME)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.METRIC_TAG_VALUES == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.METRIC_TAG_VALUES)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_REPORT_PERIOD_SECONDS == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_REPORT_PERIOD_SECONDS)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_REPORT_PERIOD_SECONDS.toString == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_REPORT_PERIOD_SECONDS.toString)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DEFAULT_DATADOG_REPORT_PERIOD_SECONDS == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DEFAULT_DATADOG_REPORT_PERIOD_SECONDS)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_SITE == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_SITE)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_SITE.toString == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_SITE.toString)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_KEY == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_KEY)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_KEY.toString == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_KEY.toString)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_KEY_SKIP_VALIDATION == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_KEY_SKIP_VALIDATION)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_KEY_SKIP_VALIDATION.toString == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_KEY_SKIP_VALIDATION.toString)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DEFAULT_DATADOG_API_KEY_SKIP_VALIDATION == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DEFAULT_DATADOG_API_KEY_SKIP_VALIDATION)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_KEY_SUPPLIER == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_KEY_SUPPLIER)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_KEY_SUPPLIER.toString == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_KEY_SUPPLIER.toString)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_TIMEOUT_SECONDS == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_TIMEOUT_SECONDS)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_TIMEOUT_SECONDS.toString == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_TIMEOUT_SECONDS.toString)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DEFAULT_DATADOG_API_TIMEOUT_SECONDS == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DEFAULT_DATADOG_API_TIMEOUT_SECONDS)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_METRIC_PREFIX == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_METRIC_PREFIX)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_METRIC_PREFIX.toString == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_METRIC_PREFIX.toString)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_METRIC_HOST == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_METRIC_HOST)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_METRIC_HOST.toString == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_METRIC_HOST.toString)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_METRIC_TAGS == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_METRIC_TAGS)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_METRIC_TAGS.toString == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_METRIC_TAGS.toString)
+org.apache.hudi.common.config.HoodieConfig.LOG == orig(org.apache.hudi.common.config.HoodieConfig.LOG)
+org.apache.hudi.common.config.HoodieConfig.LOG.getClass().getName() == orig(org.apache.hudi.common.config.HoodieConfig.LOG.getClass().getName())
+org.apache.hudi.common.config.HoodieConfig.CONFIG_VALUES_DELIMITER == orig(org.apache.hudi.common.config.HoodieConfig.CONFIG_VALUES_DELIMITER)
+org.apache.hudi.common.config.HoodieConfig.CONFIG_VALUES_DELIMITER.toString == orig(org.apache.hudi.common.config.HoodieConfig.CONFIG_VALUES_DELIMITER.toString)
+return != null
+
+
+
+====================================================================================================
+SAMPLE 8/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: hudi
+METHOD: org.apache.hudi.avro.model.BooleanWrapper.getValue()
+####################################################################################################
+
+===========================================================================
+org.apache.hudi.avro.model.BooleanWrapper.getValue():::ENTER
+
+===========================================================================
+org.apache.hudi.avro.model.BooleanWrapper.getValue():::EXIT
+org.apache.hudi.avro.model.BooleanWrapper.SCHEMA$ == orig(org.apache.hudi.avro.model.BooleanWrapper.SCHEMA$)
+org.apache.hudi.avro.model.BooleanWrapper.SCHEMA$.getClass().getName() == orig(org.apache.hudi.avro.model.BooleanWrapper.SCHEMA$.getClass().getName())
+org.apache.hudi.avro.model.BooleanWrapper.MODEL$ == orig(org.apache.hudi.avro.model.BooleanWrapper.MODEL$)
+org.apache.hudi.avro.model.BooleanWrapper.ENCODER == orig(org.apache.hudi.avro.model.BooleanWrapper.ENCODER)
+org.apache.hudi.avro.model.BooleanWrapper.DECODER == orig(org.apache.hudi.avro.model.BooleanWrapper.DECODER)
+this.value == return
+org.apache.hudi.avro.model.BooleanWrapper.WRITER$ == orig(org.apache.hudi.avro.model.BooleanWrapper.WRITER$)
+org.apache.hudi.avro.model.BooleanWrapper.WRITER$.getClass().getName() == orig(org.apache.hudi.avro.model.BooleanWrapper.WRITER$.getClass().getName())
+org.apache.hudi.avro.model.BooleanWrapper.READER$ == orig(org.apache.hudi.avro.model.BooleanWrapper.READER$)
+org.apache.hudi.avro.model.BooleanWrapper.READER$.getClass().getName() == orig(org.apache.hudi.avro.model.BooleanWrapper.READER$.getClass().getName())
+return == orig(this.value)
+return == false
+
+===========================================================================
+org.apache.hudi.avro.model.BooleanWrapper.getValue():::EXIT;condition="not(return == true)"
+
+
+
+====================================================================================================
+SAMPLE 9/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: hudi
+METHOD: org.apache.hudi.config.HoodieIndexConfig$Builder.withIndexType(org.apache.hudi.index.HoodieIndex$IndexType)
+####################################################################################################
+
+===========================================================================
+org.apache.hudi.config.HoodieIndexConfig$Builder.withIndexType(org.apache.hudi.index.HoodieIndex$IndexType):::ENTER
+this.engineType has only one value
+indexType != null
+
+===========================================================================
+org.apache.hudi.config.HoodieIndexConfig$Builder.withIndexType(org.apache.hudi.index.HoodieIndex$IndexType):::EXIT
+this.engineType == orig(this.engineType)
+this.hoodieIndexConfig == orig(this.hoodieIndexConfig)
+return == orig(this)
+this.engineType has only one value
+return != null
+
+
+
+====================================================================================================
+SAMPLE 10/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: hudi
+METHOD: org.apache.hudi.common.engine.RecordContext.isDeleteRecord(java.lang.Object, org.apache.hudi.common.table.read.DeleteContext)
+####################################################################################################
+
+===========================================================================
+org.apache.hudi.common.engine.RecordContext.isDeleteRecord(java.lang.Object, org.apache.hudi.common.table.read.DeleteContext):::ENTER
+this.recordKeyExtractor != null
+record != null
+deleteContext != null
+this.getClass().getName() != record.getClass().getName()
+this.recordKeyExtractor.getClass().getName() != record.getClass().getName()
+this.typeConverter.getClass().getName() != record.getClass().getName()
+
+===========================================================================
+org.apache.hudi.common.engine.RecordContext.isDeleteRecord(java.lang.Object, org.apache.hudi.common.table.read.DeleteContext):::EXIT
+this.recordKeyExtractor == orig(this.recordKeyExtractor)
+this.recordKeyExtractor.getClass().getName() == orig(this.recordKeyExtractor.getClass().getName())
+this.localSchemaCache == orig(this.localSchemaCache)
+this.typeConverter == orig(this.typeConverter)
+this.typeConverter.getClass().getName() == orig(this.typeConverter.getClass().getName())
+this.partitionPath == orig(this.partitionPath)
+this.partitionPath.toString == orig(this.partitionPath.toString)
+this.recordKeyExtractor != null
+return == false
+this.recordKeyExtractor.getClass().getName() != orig(this.getClass().getName())
+this.recordKeyExtractor.getClass().getName() != orig(record.getClass().getName())
+this.typeConverter.getClass().getName() != orig(this.getClass().getName())
+this.typeConverter.getClass().getName() != orig(record.getClass().getName())
+
+===========================================================================
+org.apache.hudi.common.engine.RecordContext.isDeleteRecord(java.lang.Object, org.apache.hudi.common.table.read.DeleteContext):::EXIT;condition="not(return == true)"
+
+
+
+====================================================================================================
+SAMPLE 1/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: spring
+METHOD: org.springframework.core.convert.support.ObjectToArrayConverter.ObjectToArrayConverter(org.springframework.core.convert.ConversionService)
+####################################################################################################
+
+===========================================================================
+org.springframework.core.convert.support.ObjectToArrayConverter.ObjectToArrayConverter(org.springframework.core.convert.ConversionService):::ENTER
+conversionService != null
+
+===========================================================================
+org.springframework.core.convert.support.ObjectToArrayConverter.ObjectToArrayConverter(org.springframework.core.convert.ConversionService):::EXIT
+this.conversionService == orig(conversionService)
+this.conversionService.getClass().getName() == orig(conversionService.getClass().getName())
+
+
+
+====================================================================================================
+SAMPLE 2/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: spring
+METHOD: org.springframework.core.convert.support.GenericConversionServiceTests.removeConvertible()
+####################################################################################################
+
+===========================================================================
+org.springframework.core.convert.support.GenericConversionServiceTests.removeConvertible():::ENTER
+this has only one value
+this.conversionService has only one value
+
+===========================================================================
+org.springframework.core.convert.support.GenericConversionServiceTests.removeConvertible():::EXIT
+this.conversionService == orig(this.conversionService)
+this.annotatedString == orig(this.annotatedString)
+this.activeColor == orig(this.activeColor)
+this.activeColor == orig(this.inactiveColor)
+this.wildcardMap == orig(this.wildcardMap)
+this.rawCollection == orig(this.rawCollection)
+this.rawCollection == orig(this.genericCollection)
+this.rawCollection == orig(this.stringCollection)
+this.rawCollection == orig(this.integerCollection)
+org.springframework.core.convert.support.GenericConversionServiceTests.$assertionsDisabled == orig(org.springframework.core.convert.support.GenericConversionServiceTests.$assertionsDisabled)
+this.conversionService has only one value
+
+
+
+====================================================================================================
+SAMPLE 3/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: spring
+METHOD: org.springframework.core.convert.support.MapToMapConverterTests.noDefaultConstructorCopyNotRequired()
+####################################################################################################
+
+===========================================================================
+org.springframework.core.convert.support.MapToMapConverterTests.noDefaultConstructorCopyNotRequired():::ENTER
+this has only one value
+this.conversionService has only one value
+
+===========================================================================
+org.springframework.core.convert.support.MapToMapConverterTests.noDefaultConstructorCopyNotRequired():::EXIT
+this.conversionService == orig(this.conversionService)
+this.scalarMapTarget == orig(this.scalarMapTarget)
+this.scalarMapTarget == orig(this.collectionMapTarget)
+this.scalarMapTarget == orig(this.sourceCollectionMapTarget)
+this.scalarMapTarget == orig(this.emptyMapTarget)
+this.scalarMapTarget == orig(this.notGenericMapSource)
+this.emptyMapDifferentTarget == orig(this.emptyMapDifferentTarget)
+this.multiValueMapTarget == orig(this.multiValueMapTarget)
+this.enumMap == orig(this.enumMap)
+this.conversionService has only one value
+
+
+
+====================================================================================================
+SAMPLE 4/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: spring
+METHOD: org.springframework.core.convert.support.GenericConversionServiceTests$GenericBaseClass.GenericBaseClass()
+####################################################################################################
+
+===========================================================================
+org.springframework.core.convert.support.GenericConversionServiceTests$GenericBaseClass.GenericBaseClass():::EXIT
+
+
+
+====================================================================================================
+SAMPLE 5/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: spring
+METHOD: org.springframework.core.convert.support.ByteBufferConverterTests$ByteArrayToOtherTypeConverter.ByteArrayToOtherTypeConverter()
+####################################################################################################
+
+===========================================================================
+org.springframework.core.convert.support.ByteBufferConverterTests$ByteArrayToOtherTypeConverter.ByteArrayToOtherTypeConverter():::EXIT
+
+
+
+====================================================================================================
+SAMPLE 6/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: spring
+METHOD: org.springframework.core.convert.converter.DefaultConversionServiceTests$ListWrapper.ListWrapper(java.util.List)
+####################################################################################################
+
+===========================================================================
+org.springframework.core.convert.converter.DefaultConversionServiceTests$ListWrapper.ListWrapper(java.util.List):::ENTER
+list has only one value
+list[] contains no nulls and has only one value, of length 2
+list[].getClass().getName() == [java.lang.String, java.lang.String]
+list[].getClass().getName() elements == java.lang.String.class
+list.getClass().getName() == java.util.ImmutableCollections$List12.class
+
+===========================================================================
+org.springframework.core.convert.converter.DefaultConversionServiceTests$ListWrapper.ListWrapper(java.util.List):::EXIT
+this.list == orig(list)
+this.list[] == list[]
+this.list.getClass().getName() == orig(list.getClass().getName())
+list[] == orig(list[])
+list[] contains no nulls and has only one value, of length 2
+list[].getClass().getName() == [java.lang.String, java.lang.String]
+list[].getClass().getName() elements == java.lang.String.class
+
+
+
+====================================================================================================
+SAMPLE 7/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: spring
+METHOD: org.springframework.core.convert.support.CollectionToCollectionConverterTests.arrayCollectionToObjectInteraction()
+####################################################################################################
+
+===========================================================================
+org.springframework.core.convert.support.CollectionToCollectionConverterTests.arrayCollectionToObjectInteraction():::ENTER
+this has only one value
+this.conversionService has only one value
+
+===========================================================================
+org.springframework.core.convert.support.CollectionToCollectionConverterTests.arrayCollectionToObjectInteraction():::EXIT
+this.conversionService == orig(this.conversionService)
+this.scalarListTarget == orig(this.scalarListTarget)
+this.scalarListTarget == orig(this.emptyListDifferentTarget)
+this.emptyListTarget == orig(this.emptyListTarget)
+this.emptyListTarget == orig(this.objectToCollection)
+this.emptyListTarget == orig(this.strings)
+this.emptyListTarget == orig(this.resources)
+this.list == orig(this.list)
+this.wildcardCollection == orig(this.wildcardCollection)
+this.enumSet == orig(this.enumSet)
+this.conversionService has only one value
+
+
+
+====================================================================================================
+SAMPLE 8/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: spring
+METHOD: org.springframework.core.convert.support.GenericConversionServiceTests$StringToListOfMapConverter.StringToListOfMapConverter()
+####################################################################################################
+
+===========================================================================
+org.springframework.core.convert.support.GenericConversionServiceTests$StringToListOfMapConverter.StringToListOfMapConverter():::EXIT
+
+
+
+====================================================================================================
+SAMPLE 9/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: spring
+METHOD: org.springframework.core.convert.converter.DefaultConversionServiceTests.convertCollectionToCollectionSpecialCaseSourceImpl()
+####################################################################################################
+
+===========================================================================
+org.springframework.core.convert.converter.DefaultConversionServiceTests.convertCollectionToCollectionSpecialCaseSourceImpl():::ENTER
+this has only one value
+this.conversionService has only one value
+this.genericList has only one value
+this.genericMap has only one value
+
+===========================================================================
+org.springframework.core.convert.converter.DefaultConversionServiceTests.convertCollectionToCollectionSpecialCaseSourceImpl():::EXIT
+this.conversionService == orig(this.conversionService)
+this.genericList == orig(this.genericList)
+this.genericList[] == orig(this.genericList[])
+this.genericList.getClass().getName() == orig(this.genericList.getClass().getName())
+this.genericStream == orig(this.genericStream)
+this.genericMap == orig(this.genericMap)
+this.genericMap.getClass().getName() == orig(this.genericMap.getClass().getName())
+this.enumSet == orig(this.enumSet)
+this.assignableTarget == orig(this.assignableTarget)
+this.conversionService has only one value
+this.genericList has only one value
+this.genericMap has only one value
+
+
+
+====================================================================================================
+SAMPLE 10/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: spring
+METHOD: org.springframework.core.convert.support.StringToRegexConverter.convert(java.lang.String)
+####################################################################################################
+
+===========================================================================
+org.springframework.core.convert.support.StringToRegexConverter.convert(java.lang.String):::ENTER
+source.toString one of { "", "\\w+" }
+
+===========================================================================
+org.springframework.core.convert.support.StringToRegexConverter.convert(java.lang.String):::EXIT36
+source.toString == ""
+return == null
+orig(this) has only one value
+orig(source) has only one value
+
+===========================================================================
+org.springframework.core.convert.support.StringToRegexConverter.convert(java.lang.String):::EXIT38
+source.toString == "\\w+"
+return has only one value
+orig(this) has only one value
+orig(source) has only one value
+
+===========================================================================
+org.springframework.core.convert.support.StringToRegexConverter.convert(java.lang.String):::EXIT
+source.toString == orig(source.toString)
+(source.toString == "")  <==>  (return == null)
+(source.toString == "\\w+")  <==>  (return has only one value)
+source.toString one of { "", "\\w+" }
+
+
+
+====================================================================================================
+SAMPLE 1/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: libgdx
+METHOD: com.badlogic.gdx.math.BSpline.valueAt(com.badlogic.gdx.math.Vector, int, float)
+####################################################################################################
+
+===========================================================================
+com.badlogic.gdx.math.BSpline.valueAt(com.badlogic.gdx.math.Vector, int, float):::ENTER
+this.tmp.getClass().getName() == out.getClass().getName()
+this.degree == 3
+this.spanCount one of { 1, 4 }
+span one of { 0, 3 }
+u one of { 0.0, 0.5, 1.0 }
+
+===========================================================================
+com.badlogic.gdx.math.BSpline.valueAt(com.badlogic.gdx.math.Vector, int, float):::EXIT
+this.controlPoints == orig(this.controlPoints)
+this.controlPoints.getClass().getName() == orig(this.controlPoints.getClass().getName())
+this.controlPoints[] == orig(this.controlPoints[])
+this.knots == orig(this.knots)
+this.degree == orig(this.degree)
+this.continuous == orig(this.continuous)
+this.spanCount == orig(this.spanCount)
+this.tmp == orig(this.tmp)
+this.tmp.getClass().getName() == return.getClass().getName()
+this.tmp2 == orig(this.tmp2)
+this.tmp2.getClass().getName() == return.getClass().getName()
+this.tmp3 == orig(this.tmp3)
+this.tmp3.getClass().getName() == return.getClass().getName()
+return == orig(out)
+return.getClass().getName() == orig(this.tmp.getClass().getName())
+return.getClass().getName() == orig(this.tmp2.getClass().getName())
+return.getClass().getName() == orig(this.tmp3.getClass().getName())
+return.getClass().getName() == orig(out.getClass().getName())
+this.degree == 3
+this.spanCount one of { 1, 4 }
+return.getClass().getName() == com.badlogic.gdx.math.Vector3.class
+return.getClass().getName() in this.controlPoints[].getClass().getName()
+
+
+
+====================================================================================================
+SAMPLE 2/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: libgdx
+METHOD: com.badlogic.gdx.utils.CharArray.addAll(char[])
+####################################################################################################
+
+===========================================================================
+com.badlogic.gdx.utils.CharArray.addAll(char[]):::ENTER
+this.items[] one of { [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 0, 0, 0, 0] }
+this.size one of { 0, 12 }
+this.ordered == true
+
+===========================================================================
+com.badlogic.gdx.utils.CharArray.addAll(char[]):::EXIT
+com.badlogic.gdx.utils.CharArray.NULL == orig(com.badlogic.gdx.utils.CharArray.NULL)
+com.badlogic.gdx.utils.CharArray.NULL.toString == orig(com.badlogic.gdx.utils.CharArray.NULL.toString)
+com.badlogic.gdx.utils.CharArray.DIGITS == orig(com.badlogic.gdx.utils.CharArray.DIGITS)
+com.badlogic.gdx.utils.CharArray.DIGITS[] == orig(com.badlogic.gdx.utils.CharArray.DIGITS[])
+this.items == orig(this.items)
+this.ordered == orig(this.ordered)
+array[] == orig(array[])
+this.size one of { 3, 5, 15 }
+this.ordered == true
+
+
+
+====================================================================================================
+SAMPLE 3/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: libgdx
+METHOD: com.badlogic.gdx.utils.LongQueue.addFirst(long)
+####################################################################################################
+
+===========================================================================
+com.badlogic.gdx.utils.LongQueue.addFirst(long):::ENTER
+
+===========================================================================
+com.badlogic.gdx.utils.LongQueue.addFirst(long):::EXIT
+this.values == orig(this.values)
+this.tail == orig(this.tail)
+this.size >= 1
+orig(this.size) in this.values[]
+orig(value) in this.values[]
+this.head != this.tail
+this.head != orig(this.head)
+this.head != orig(this.size)
+this.head != orig(value)
+this.size != orig(this.head)
+this.size - orig(this.size) - 1 == 0
+this.size >= orig(value)
+
+
+
+====================================================================================================
+SAMPLE 4/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: libgdx
+METHOD: com.badlogic.gdx.utils.JsonTest.testIntArrray()
+####################################################################################################
+
+===========================================================================
+com.badlogic.gdx.utils.JsonTest.testIntArrray():::ENTER
+this has only one value
+
+===========================================================================
+com.badlogic.gdx.utils.JsonTest.testIntArrray():::EXIT
+
+
+
+====================================================================================================
+SAMPLE 5/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: libgdx
+METHOD: com.badlogic.gdx.utils.Json.getDefaultValues(java.lang.Class)
+####################################################################################################
+
+===========================================================================
+com.badlogic.gdx.utils.Json.getDefaultValues(java.lang.Class):::ENTER
+this.equals1[].getClass().getName() one of { [null], [char[]] }
+
+===========================================================================
+com.badlogic.gdx.utils.Json.getDefaultValues(java.lang.Class):::EXIT353
+this.reader has only one value
+this.typeToFields has only one value
+this.tagToClass has only one value
+this.classToTag has only one value
+this.classToSerializer has only one value
+this.classToDefaultValues has only one value
+this.equals1 has only one value
+this.equals1[].getClass().getName() == [char[]]
+this.equals1[].getClass().getName() elements == char[].class
+this.equals2 has only one value
+this.equals2[] contains no nulls and has only one value, of length 1
+this.equals2[] elements has only one value
+return has only one value
+return[] contains no nulls and has only one value, of length 3
+orig(this) has only one value
+orig(type) has only one value
+
+===========================================================================
+com.badlogic.gdx.utils.Json.getDefaultValues(java.lang.Class):::EXIT385
+this.equals1[] == this.equals2[]
+this.equals1[] == orig(this.equals2[])
+this.equals1[] == [null]
+this.equals1[] elements == null
+this.equals1[].getClass().getName() == [null]
+this.equals1[].getClass().getName() elements == null
+this.defaultSerializer in this.equals1[]
+this.equals1[] elements == this.defaultSerializer
+
+===========================================================================
+com.badlogic.gdx.utils.Json.getDefaultValues(java.lang.Class):::EXIT
+this.writer == orig(this.writer)
+this.reader == orig(this.reader)
+this.typeName == orig(this.typeName)
+this.typeName.toString == orig(this.typeName.toString)
+this.usePrototypes == orig(this.usePrototypes)
+this.usePrototypes == orig(this.enumNames)
+this.outputType == orig(this.outputType)
+this.defaultSerializer == orig(this.defaultSerializer)
+this.typeToFields == orig(this.typeToFields)
+this.tagToClass == orig(this.tagToClass)
+this.classToTag == orig(this.classToTag)
+this.classToSerializer == orig(this.classToSerializer)
+this.classToDefaultValues == orig(this.classToDefaultValues)
+this.equals1 == orig(this.equals1)
+this.equals1.getClass().getName() == return.getClass().getName()
+this.equals1[] == orig(this.equals1[])
+this.equals2 == orig(this.equals2)
+this.equals2.getClass().getName() == return.getClass().getName()
+this.equals2[] == orig(this.equals2[])
+return.getClass().getName() == orig(this.equals1.getClass().getName())
+return.getClass().getName() == orig(this.equals2.getClass().getName())
+this.equals1[].getClass().getName() one of { [null], [char[]] }
+return.getClass().getName() == java.lang.Object[].class
+
+
+
+====================================================================================================
+SAMPLE 6/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: libgdx
+METHOD: com.badlogic.gdx.utils.CharArray.CharArray(com.badlogic.gdx.utils.CharArray)
+####################################################################################################
+
+===========================================================================
+com.badlogic.gdx.utils.CharArray.CharArray(com.badlogic.gdx.utils.CharArray):::ENTER
+array has only one value
+
+===========================================================================
+com.badlogic.gdx.utils.CharArray.CharArray(com.badlogic.gdx.utils.CharArray):::EXIT
+this.items has only one value
+this.items[] == [97, 98]
+this.items[] elements one of { 97, 98 }
+this.size == 2
+this.ordered == true
+
+
+
+====================================================================================================
+SAMPLE 7/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: libgdx
+METHOD: com.badlogic.gdx.utils.CharArray.reverseCodePoints()
+####################################################################################################
+
+===========================================================================
+com.badlogic.gdx.utils.CharArray.reverseCodePoints():::ENTER
+com.badlogic.gdx.utils.CharArray.TRUE_STRING_SIZE == this.size
+this has only one value
+this.items has only one value
+this.items[] == [55357, 56832, 72, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+this.ordered == true
+
+===========================================================================
+com.badlogic.gdx.utils.CharArray.reverseCodePoints():::EXIT1914
+
+===========================================================================
+com.badlogic.gdx.utils.CharArray.reverseCodePoints():::EXIT
+com.badlogic.gdx.utils.CharArray.TRUE_STRING_SIZE == this.size
+com.badlogic.gdx.utils.CharArray.NULL == orig(com.badlogic.gdx.utils.CharArray.NULL)
+com.badlogic.gdx.utils.CharArray.NULL.toString == orig(com.badlogic.gdx.utils.CharArray.NULL.toString)
+com.badlogic.gdx.utils.CharArray.DIGITS == orig(com.badlogic.gdx.utils.CharArray.DIGITS)
+com.badlogic.gdx.utils.CharArray.DIGITS[] == orig(com.badlogic.gdx.utils.CharArray.DIGITS[])
+this.items == orig(this.items)
+this.ordered == orig(this.ordered)
+return == orig(this)
+this.items has only one value
+this.items[] == [105, 72, 55357, 56832, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+this.ordered == true
+return has only one value
+
+
+
+====================================================================================================
+SAMPLE 8/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: libgdx
+METHOD: com.badlogic.gdx.utils.JsonSkimmer.stop()
+####################################################################################################
+
+===========================================================================
+com.badlogic.gdx.utils.JsonSkimmer.stop():::ENTER
+this.stop == false
+
+===========================================================================
+com.badlogic.gdx.utils.JsonSkimmer.stop():::EXIT
+this.nameString == orig(this.nameString)
+this.value == orig(this.value)
+this.stack == orig(this.stack)
+this.stack[] == orig(this.stack[])
+this.buffer == orig(this.buffer)
+com.badlogic.gdx.utils.JsonSkimmer._json_actions == orig(com.badlogic.gdx.utils.JsonSkimmer._json_actions)
+com.badlogic.gdx.utils.JsonSkimmer._json_actions[] == orig(com.badlogic.gdx.utils.JsonSkimmer._json_actions[])
+com.badlogic.gdx.utils.JsonSkimmer._json_key_offsets == orig(com.badlogic.gdx.utils.JsonSkimmer._json_key_offsets)
+com.badlogic.gdx.utils.JsonSkimmer._json_key_offsets[] == orig(com.badlogic.gdx.utils.JsonSkimmer._json_key_offsets[])
+com.badlogic.gdx.utils.JsonSkimmer._json_trans_keys == orig(com.badlogic.gdx.utils.JsonSkimmer._json_trans_keys)
+com.badlogic.gdx.utils.JsonSkimmer._json_trans_keys[] == orig(com.badlogic.gdx.utils.JsonSkimmer._json_trans_keys[])
+com.badlogic.gdx.utils.JsonSkimmer._json_single_lengths == orig(com.badlogic.gdx.utils.JsonSkimmer._json_single_lengths)
+com.badlogic.gdx.utils.JsonSkimmer._json_single_lengths[] == orig(com.badlogic.gdx.utils.JsonSkimmer._json_single_lengths[])
+com.badlogic.gdx.utils.JsonSkimmer._json_range_lengths == orig(com.badlogic.gdx.utils.JsonSkimmer._json_range_lengths)
+com.badlogic.gdx.utils.JsonSkimmer._json_range_lengths[] == orig(com.badlogic.gdx.utils.JsonSkimmer._json_range_lengths[])
+com.badlogic.gdx.utils.JsonSkimmer._json_index_offsets == orig(com.badlogic.gdx.utils.JsonSkimmer._json_index_offsets)
+com.badlogic.gdx.utils.JsonSkimmer._json_index_offsets[] == orig(com.badlogic.gdx.utils.JsonSkimmer._json_index_offsets[])
+com.badlogic.gdx.utils.JsonSkimmer._json_indicies == orig(com.badlogic.gdx.utils.JsonSkimmer._json_indicies)
+com.badlogic.gdx.utils.JsonSkimmer._json_indicies[] == orig(com.badlogic.gdx.utils.JsonSkimmer._json_indicies[])
+com.badlogic.gdx.utils.JsonSkimmer._json_trans_targs == orig(com.badlogic.gdx.utils.JsonSkimmer._json_trans_targs)
+com.badlogic.gdx.utils.JsonSkimmer._json_trans_targs[] == orig(com.badlogic.gdx.utils.JsonSkimmer._json_trans_targs[])
+com.badlogic.gdx.utils.JsonSkimmer._json_trans_actions == orig(com.badlogic.gdx.utils.JsonSkimmer._json_trans_actions)
+com.badlogic.gdx.utils.JsonSkimmer._json_trans_actions[] == orig(com.badlogic.gdx.utils.JsonSkimmer._json_trans_actions[])
+com.badlogic.gdx.utils.JsonSkimmer._json_eof_actions == orig(com.badlogic.gdx.utils.JsonSkimmer._json_eof_actions)
+com.badlogic.gdx.utils.JsonSkimmer._json_eof_actions[] == orig(com.badlogic.gdx.utils.JsonSkimmer._json_eof_actions[])
+this.stop == true
+
+
+
+====================================================================================================
+SAMPLE 9/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: libgdx
+METHOD: com.badlogic.gdx.math.Vector3.dot(com.badlogic.gdx.math.Vector3)
+####################################################################################################
+
+===========================================================================
+com.badlogic.gdx.math.Vector3.dot(com.badlogic.gdx.math.Vector3):::ENTER
+this has only one value
+this.x one of { -1485.0, 0.0, 1.2625 }
+this.y one of { -1.1920929E-7, 0.0 }
+
+===========================================================================
+com.badlogic.gdx.math.Vector3.dot(com.badlogic.gdx.math.Vector3):::EXIT
+this.x == orig(this.x)
+this.y == orig(this.y)
+this.z == orig(this.z)
+com.badlogic.gdx.math.Vector3.X == orig(com.badlogic.gdx.math.Vector3.X)
+com.badlogic.gdx.math.Vector3.Y == orig(com.badlogic.gdx.math.Vector3.Y)
+com.badlogic.gdx.math.Vector3.Z == orig(com.badlogic.gdx.math.Vector3.Z)
+com.badlogic.gdx.math.Vector3.Zero == orig(com.badlogic.gdx.math.Vector3.Zero)
+com.badlogic.gdx.math.Vector3.One == orig(com.badlogic.gdx.math.Vector3.One)
+com.badlogic.gdx.math.Vector3.tmpMat == orig(com.badlogic.gdx.math.Vector3.tmpMat)
+this.x one of { -1485.0, 0.0, 1.2625 }
+this.y one of { -1.1920929E-7, 0.0 }
+
+
+
+====================================================================================================
+SAMPLE 10/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: libgdx
+METHOD: com.badlogic.gdx.math.Vector2.set(com.badlogic.gdx.math.Vector2)
+####################################################################################################
+
+===========================================================================
+com.badlogic.gdx.math.Vector2.set(com.badlogic.gdx.math.Vector2):::ENTER
+this.x == this.y
+this.x == 0.0
+
+===========================================================================
+com.badlogic.gdx.math.Vector2.set(com.badlogic.gdx.math.Vector2):::EXIT
+com.badlogic.gdx.math.Vector2.X == orig(com.badlogic.gdx.math.Vector2.X)
+com.badlogic.gdx.math.Vector2.Y == orig(com.badlogic.gdx.math.Vector2.Y)
+com.badlogic.gdx.math.Vector2.Zero == orig(com.badlogic.gdx.math.Vector2.Zero)
+com.badlogic.gdx.math.Vector2.One == orig(com.badlogic.gdx.math.Vector2.One)
+this.x == this.y
+return == orig(this)
+this.x one of { 0.0, 1.0 }
+this.x >= orig(this.x)
+
+
+
+====================================================================================================
+SAMPLE 1/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: dubbo
+METHOD: org.apache.dubbo.common.model.person.Dgeneric.getT()
+####################################################################################################
+
+===========================================================================
+org.apache.dubbo.common.model.person.Dgeneric.getT():::ENTER
+this.t has only one value
+this.y has only one value
+this.z has only one value
+
+===========================================================================
+org.apache.dubbo.common.model.person.Dgeneric.getT():::EXIT
+org.apache.dubbo.common.model.person.Dgeneric.NAME == orig(org.apache.dubbo.common.model.person.Dgeneric.NAME)
+org.apache.dubbo.common.model.person.Dgeneric.NAME == orig(this.name)
+org.apache.dubbo.common.model.person.Dgeneric.NAME.toString == orig(org.apache.dubbo.common.model.person.Dgeneric.NAME.toString)
+org.apache.dubbo.common.model.person.Dgeneric.NAME.toString == orig(this.name.toString)
+this.t == return
+this.t.getClass().getName() == return.getClass().getName()
+this.y == orig(this.y)
+this.y.getClass().getName() == orig(this.y.getClass().getName())
+this.z == orig(this.z)
+this.z.getClass().getName() == orig(this.z.getClass().getName())
+return == orig(this.t)
+return.getClass().getName() == orig(this.t.getClass().getName())
+this.y has only one value
+this.z has only one value
+return has only one value
+return.getClass().getName() == org.apache.dubbo.common.model.person.Ageneric.class
+
+
+
+====================================================================================================
+SAMPLE 2/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: dubbo
+METHOD: org.apache.dubbo.common.compiler.support.CtClassBuilder.setClassName(java.lang.String)
+####################################################################################################
+
+===========================================================================
+org.apache.dubbo.common.compiler.support.CtClassBuilder.setClassName(java.lang.String):::ENTER
+this.imports[] == this.ifaces[]
+this.imports[] == this.constructors[]
+this.imports[] == this.fields[]
+this.imports[] == this.methods[]
+this.className == null
+this.superClassName has only one value
+this.superClassName.toString == "java.lang.Object"
+this.imports[] == []
+this.imports[].getClass().getName() == []
+className.toString one of { "org.apache.dubbo.common.compiler.support.HelloServiceImpl10", "org.apache.dubbo.common.compiler.support.HelloServiceImpl29", "org.apache.dubbo.common.compiler.support.HelloServiceImpl8" }
+
+===========================================================================
+org.apache.dubbo.common.compiler.support.CtClassBuilder.setClassName(java.lang.String):::EXIT
+this.className == orig(className)
+this.className.toString == className.toString
+this.superClassName == orig(this.superClassName)
+this.superClassName.toString == orig(this.superClassName.toString)
+this.imports == orig(this.imports)
+this.imports[] == this.ifaces[]
+this.imports[] == this.constructors[]
+this.imports[] == this.fields[]
+this.imports[] == this.methods[]
+this.imports[] == orig(this.imports[])
+this.imports[] == orig(this.ifaces[])
+this.imports[] == orig(this.constructors[])
+this.imports[] == orig(this.fields[])
+this.imports[] == orig(this.methods[])
+this.imports.getClass().getName() == orig(this.imports.getClass().getName())
+this.imports.getClass().getName() == orig(this.ifaces.getClass().getName())
+this.imports.getClass().getName() == orig(this.constructors.getClass().getName())
+this.imports.getClass().getName() == orig(this.fields.getClass().getName())
+this.imports.getClass().getName() == orig(this.methods.getClass().getName())
+this.fullNames == orig(this.fullNames)
+this.fullNames.getClass().getName() == orig(this.fullNames.getClass().getName())
+this.ifaces == orig(this.ifaces)
+this.constructors == orig(this.constructors)
+this.fields == orig(this.fields)
+this.methods == orig(this.methods)
+className.toString == orig(className.toString)
+this.superClassName has only one value
+this.superClassName.toString == "java.lang.Object"
+this.imports[] == []
+this.imports[].getClass().getName() == []
+className.toString one of { "org.apache.dubbo.common.compiler.support.HelloServiceImpl10", "org.apache.dubbo.common.compiler.support.HelloServiceImpl29", "org.apache.dubbo.common.compiler.support.HelloServiceImpl8" }
+
+
+
+====================================================================================================
+SAMPLE 3/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: dubbo
+METHOD: org.apache.dubbo.common.logger.support.FailsafeLogger.info(java.lang.String, java.lang.Throwable)
+####################################################################################################
+
+===========================================================================
+org.apache.dubbo.common.logger.support.FailsafeLogger.info(java.lang.String, java.lang.Throwable):::ENTER
+msg has only one value
+msg.toString == "info"
+
+===========================================================================
+org.apache.dubbo.common.logger.support.FailsafeLogger.info(java.lang.String, java.lang.Throwable):::EXIT145
+
+===========================================================================
+org.apache.dubbo.common.logger.support.FailsafeLogger.info(java.lang.String, java.lang.Throwable):::EXIT151
+
+===========================================================================
+org.apache.dubbo.common.logger.support.FailsafeLogger.info(java.lang.String, java.lang.Throwable):::EXIT
+this.logger == orig(this.logger)
+this.logger.getClass().getName() == orig(this.logger.getClass().getName())
+org.apache.dubbo.common.logger.support.FailsafeLogger.disabled == orig(org.apache.dubbo.common.logger.support.FailsafeLogger.disabled)
+msg.toString == orig(msg.toString)
+msg.toString == "info"
+
+
+
+====================================================================================================
+SAMPLE 4/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: dubbo
+METHOD: org.apache.dubbo.common.logger.slf4j.Slf4jLogger.warn(java.lang.Throwable)
+####################################################################################################
+
+===========================================================================
+org.apache.dubbo.common.logger.slf4j.Slf4jLogger.warn(java.lang.Throwable):::ENTER
+this has only one value
+this.logger has only one value
+this.logger.getClass().getName() == org.slf4j.spi.LocationAwareLogger$MockitoMock$Zm5XmKJW.class
+this.locationAwareLogger has only one value
+e has only one value
+
+===========================================================================
+org.apache.dubbo.common.logger.slf4j.Slf4jLogger.warn(java.lang.Throwable):::EXIT195
+
+===========================================================================
+org.apache.dubbo.common.logger.slf4j.Slf4jLogger.warn(java.lang.Throwable):::EXIT
+this.fqcn == orig(this.fqcn)
+this.fqcn.toString == orig(this.fqcn.toString)
+this.logger == orig(this.logger)
+this.logger.getClass().getName() == orig(this.logger.getClass().getName())
+this.logger.getClass().getName() == orig(this.locationAwareLogger.getClass().getName())
+this.locationAwareLogger == orig(this.locationAwareLogger)
+this.logger has only one value
+this.logger.getClass().getName() == org.slf4j.spi.LocationAwareLogger$MockitoMock$Zm5XmKJW.class
+this.locationAwareLogger has only one value
+
+
+
+====================================================================================================
+SAMPLE 5/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: dubbo
+METHOD: org.apache.dubbo.common.utils.LFUCache$CacheDeque.pollFirst()
+####################################################################################################
+
+===========================================================================
+org.apache.dubbo.common.utils.LFUCache$CacheDeque.pollFirst():::ENTER
+this == this.last.next.owner
+this.last.prev == this.nextDeque.first.next
+this.last.key == this.nextDeque.last.value
+this.last.key == this.nextDeque.first.key
+this.last.key == this.nextDeque.first.value
+this.last.owner == this.nextDeque.first.owner
+this has only one value
+this.last has only one value
+this.last.next has only one value
+this.last.next.key has only one value
+this.last.next.value has only one value
+this.last.next.owner has only one value
+this.first has only one value
+this.nextDeque has only one value
+this.nextDeque.last has only one value
+this.nextDeque.last.next has only one value
+this.nextDeque.first has only one value
+this.nextDeque.first.prev has only one value
+this.nextDeque.nextDeque has only one value
+this.nextDeque.nextDeque.last has only one value
+this.nextDeque.nextDeque.first has only one value
+this.nextDeque.nextDeque.nextDeque has only one value
+
+===========================================================================
+org.apache.dubbo.common.utils.LFUCache$CacheDeque.pollFirst():::EXIT
+this.last == return.owner.last
+this.last == orig(this.last)
+this.last == orig(this.last.next.prev)
+this.last.prev == return.prev
+this.last.next.key.getClass().getName() == return.key.getClass().getName()
+this.last.next.value.getClass().getName() == return.value.getClass().getName()
+this.last.key == this.nextDeque.last.value
+this.last.key == this.nextDeque.first.key
+this.last.key == this.nextDeque.first.value
+this.last.key == return.prev
+this.last.key == orig(this.last.key)
+this.last.key == orig(this.last.value)
+this.last.key == orig(this.first.key)
+this.last.key == orig(this.first.value)
+this.last.key == orig(this.nextDeque.last.key)
+this.last.key == orig(this.nextDeque.last.value)
+this.last.key == orig(this.nextDeque.first.key)
+this.last.key == orig(this.nextDeque.first.value)
+this.last.owner == this.nextDeque.first.owner
+this.last.owner == orig(this.last.owner)
+this.last.owner == orig(this.first.owner)
+this.last.owner == orig(this.nextDeque.last.owner)
+this.last.owner == orig(this.nextDeque.first.owner)
+this.first == return.owner.first
+this.first == orig(this.first)
+this.first == orig(this.first.prev.next)
+this.first.prev == orig(this.first.prev.prev)
+this.first.next == return.prev
+this.nextDeque == return.owner.nextDeque
+this.nextDeque == orig(this.nextDeque)
+this.nextDeque.last == orig(this.nextDeque.last)
+this.nextDeque.last.prev == return.prev
+this.nextDeque.last.next == orig(this.nextDeque.last.next)
+this.nextDeque.first == orig(this.nextDeque.first)
+this.nextDeque.first.prev == orig(this.nextDeque.first.prev)
+this.nextDeque.first.next == return.prev
+this.nextDeque.nextDeque == orig(this.nextDeque.nextDeque)
+this.nextDeque.nextDeque.last == orig(this.nextDeque.nextDeque.last)
+this.nextDeque.nextDeque.first == orig(this.nextDeque.nextDeque.first)
+this.nextDeque.nextDeque.nextDeque == orig(this.nextDeque.nextDeque.nextDeque)
+return == orig(this.first.prev)
+return.prev == return.next
+return.prev == orig(this.last.prev)
+return.prev == orig(this.first.next)
+return.prev == orig(this.nextDeque.last.prev)
+return.prev == orig(this.nextDeque.first.next)
+return.key == orig(this.first.prev.key)
+return.key.getClass().getName() == orig(this.last.next.key.getClass().getName())
+return.key.getClass().getName() == orig(this.first.prev.key.getClass().getName())
+return.value == orig(this.first.prev.value)
+return.value.getClass().getName() == orig(this.last.next.value.getClass().getName())
+return.value.getClass().getName() == orig(this.first.prev.value.getClass().getName())
+return.owner == orig(this)
+return.owner == orig(this.last.next.owner)
+return.owner == orig(this.first.prev.owner)
+this.last has only one value
+this.first has only one value
+this.nextDeque has only one value
+this.nextDeque.last has only one value
+this.nextDeque.last.next has only one value
+this.nextDeque.first has only one value
+this.nextDeque.first.prev has only one value
+this.nextDeque.nextDeque has only one value
+this.nextDeque.nextDeque.last has only one value
+this.nextDeque.nextDeque.first has only one value
+this.nextDeque.nextDeque.nextDeque has only one value
+return.prev == null
+return.key.getClass().getName() == java.lang.String.class
+return.value.getClass().getName() == java.lang.Integer.class
+return.owner has only one value
+
+
+
+====================================================================================================
+SAMPLE 6/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: dubbo
+METHOD: org.apache.dubbo.common.json.impl.FastJson2ImplTest.FastJson2ImplTest()
+####################################################################################################
+
+===========================================================================
+org.apache.dubbo.common.json.impl.FastJson2ImplTest.FastJson2ImplTest():::EXIT
+
+
+
+====================================================================================================
+SAMPLE 7/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: dubbo
+METHOD: org.apache.dubbo.common.bytecode.Bean$Builder5d0fde73-936a-4f7e-8e70-490e82138f2a.Bean$Builder5d0fde73-936a-4f7e-8e70-490e82138f2a()
+####################################################################################################
+
+===========================================================================
+org.apache.dubbo.common.bytecode.Bean$Builder5d0fde73-936a-4f7e-8e70-490e82138f2a.Bean$Builder5d0fde73-936a-4f7e-8e70-490e82138f2a():::EXIT
+
+
+
+====================================================================================================
+SAMPLE 8/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: dubbo
+METHOD: org.apache.dubbo.common.utils.Stack.isEmpty()
+####################################################################################################
+
+===========================================================================
+org.apache.dubbo.common.utils.Stack.isEmpty():::ENTER
+
+===========================================================================
+org.apache.dubbo.common.utils.Stack.isEmpty():::EXIT
+this.mSize == orig(this.mSize)
+this.mElements == orig(this.mElements)
+this.mElements[] == orig(this.mElements[])
+this.mElements.getClass().getName() == orig(this.mElements.getClass().getName())
+(this.mSize == 0)  <==>  (return == true)
+(this.mSize == 0)  <==>  (this.mElements[] elements == null)
+(this.mSize == 0)  <==>  (this.mElements[].getClass().getName() elements == null)
+(this.mSize == 0)  <==>  (this.mElements[].getClass().getName() one of { [], [null] })
+(this.mSize one of { 1, 2 })  <==>  (return == false)
+(this.mSize one of { 1, 2 })  <==>  (this.mElements[].getClass().getName() elements == java.lang.String.class)
+(this.mSize one of { 1, 2 })  <==>  (this.mElements[].getClass().getName() one of { [java.lang.String], [java.lang.String, java.lang.String] })
+
+===========================================================================
+org.apache.dubbo.common.utils.Stack.isEmpty():::EXIT;condition="return == true"
+this.mSize == 0
+this.mElements[] elements == null
+this.mElements[].getClass().getName() elements == null
+this.mElements[].getClass().getName() one of { [], [null] }
+return == true
+
+===========================================================================
+org.apache.dubbo.common.utils.Stack.isEmpty():::EXIT;condition="not(return == true)"
+this.mSize one of { 1, 2 }
+this.mElements[].getClass().getName() elements == java.lang.String.class
+this.mElements[].getClass().getName() one of { [java.lang.String], [java.lang.String, java.lang.String] }
+return == false
+
+
+
+====================================================================================================
+SAMPLE 9/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: dubbo
+METHOD: org.apache.dubbo.common.threadpool.event.ThreadPoolExhaustedEventListenerTest.ThreadPoolExhaustedEventListenerTest()
+####################################################################################################
+
+===========================================================================
+org.apache.dubbo.common.threadpool.event.ThreadPoolExhaustedEventListenerTest.ThreadPoolExhaustedEventListenerTest():::EXIT
+this.listener == null
+
+
+
+====================================================================================================
+SAMPLE 10/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: dubbo
+METHOD: org.apache.dubbo.common.utils.ClassUtilsTest.testForName1()
+####################################################################################################
+
+===========================================================================
+org.apache.dubbo.common.utils.ClassUtilsTest.testForName1():::ENTER
+this has only one value
+
+===========================================================================
+org.apache.dubbo.common.utils.ClassUtilsTest.testForName1():::EXIT
+
+
+
+====================================================================================================
+SAMPLE 1/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: netty
+METHOD: io.netty.util.RecyclerTest$18.run()
+####################################################################################################
+
+===========================================================================
+io.netty.util.RecyclerTest$18.run():::ENTER
+
+===========================================================================
+io.netty.util.RecyclerTest$18.run():::EXIT
+this.val$array == orig(this.val$array)
+this.val$array.getClass().getName() == orig(this.val$array.getClass().getName())
+this.val$array[] == orig(this.val$array[])
+this.val$array[].handle == orig(this.val$array[].handle)
+io.netty.util.RecyclerTest.this == orig(io.netty.util.RecyclerTest.this)
+
+
+
+====================================================================================================
+SAMPLE 2/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: netty
+METHOD: io.netty.util.concurrent.NonStickyEventExecutorGroup$NonStickyOrderedEventExecutor.inEventLoop(java.lang.Thread)
+####################################################################################################
+
+===========================================================================
+io.netty.util.concurrent.NonStickyEventExecutorGroup$NonStickyOrderedEventExecutor.inEventLoop(java.lang.Thread):::ENTER
+thread != null
+
+===========================================================================
+io.netty.util.concurrent.NonStickyEventExecutorGroup$NonStickyOrderedEventExecutor.inEventLoop(java.lang.Thread):::EXIT
+this.executor == orig(this.executor)
+this.executor.getClass().getName() == orig(this.executor.getClass().getName())
+this.executor.getClass().getName() == orig(this.parent.getClass().getName())
+this.tasks == orig(this.tasks)
+this.tasks.getClass().getName() == orig(this.tasks.getClass().getName())
+this.state == orig(this.state)
+this.maxTaskExecutePerRun == orig(this.maxTaskExecutePerRun)
+this.executingThread == orig(this.executingThread)
+io.netty.util.concurrent.AbstractEventExecutor.logger == orig(io.netty.util.concurrent.AbstractEventExecutor.logger)
+io.netty.util.concurrent.AbstractEventExecutor.logger.getClass().getName() == orig(io.netty.util.concurrent.AbstractEventExecutor.logger.getClass().getName())
+this.parent == orig(this.parent)
+this.selfCollection == orig(this.selfCollection)
+this.selfCollection.getClass().getName() == orig(this.selfCollection.getClass().getName())
+(return == false)  ==>  (io.netty.util.concurrent.NonStickyEventExecutorGroup$NonStickyOrderedEventExecutor.RUNNING < this.maxTaskExecutePerRun)
+(return == false)  ==>  (io.netty.util.concurrent.NonStickyEventExecutorGroup$NonStickyOrderedEventExecutor.SUBMITTED < this.maxTaskExecutePerRun)
+(return == false)  ==>  (this.executor.getClass().getName() == io.netty.util.concurrent.UnorderedThreadPoolEventExecutor.class)
+(return == false)  ==>  (this.maxTaskExecutePerRun > io.netty.util.concurrent.AbstractEventExecutor.DEFAULT_SHUTDOWN_TIMEOUT)
+
+===========================================================================
+io.netty.util.concurrent.NonStickyEventExecutorGroup$NonStickyOrderedEventExecutor.inEventLoop(java.lang.Thread):::EXIT;condition="return == true"
+return == true
+
+===========================================================================
+io.netty.util.concurrent.NonStickyEventExecutorGroup$NonStickyOrderedEventExecutor.inEventLoop(java.lang.Thread):::EXIT;condition="not(return == true)"
+this.executor.getClass().getName() == io.netty.util.concurrent.UnorderedThreadPoolEventExecutor.class
+return == false
+io.netty.util.concurrent.NonStickyEventExecutorGroup$NonStickyOrderedEventExecutor.SUBMITTED < this.maxTaskExecutePerRun
+io.netty.util.concurrent.NonStickyEventExecutorGroup$NonStickyOrderedEventExecutor.RUNNING < this.maxTaskExecutePerRun
+this.maxTaskExecutePerRun > io.netty.util.concurrent.AbstractEventExecutor.DEFAULT_SHUTDOWN_TIMEOUT
+
+
+
+====================================================================================================
+SAMPLE 3/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: netty
+METHOD: io.netty.util.HashedWheelTimerTest$5.run(io.netty.util.Timeout)
+####################################################################################################
+
+===========================================================================
+io.netty.util.HashedWheelTimerTest$5.run(io.netty.util.Timeout):::ENTER
+timeout.getClass().getName() == io.netty.util.HashedWheelTimer$HashedWheelTimeout.class
+
+===========================================================================
+io.netty.util.HashedWheelTimerTest$5.run(io.netty.util.Timeout):::EXIT
+this.val$latch == orig(this.val$latch)
+io.netty.util.HashedWheelTimerTest.this == orig(io.netty.util.HashedWheelTimerTest.this)
+
+
+
+====================================================================================================
+SAMPLE 4/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: netty
+METHOD: io.netty.util.internal.SWARUtilTest.toUpperCaseInt()
+####################################################################################################
+
+===========================================================================
+io.netty.util.internal.SWARUtilTest.toUpperCaseInt():::ENTER
+this has only one value
+
+===========================================================================
+io.netty.util.internal.SWARUtilTest.toUpperCaseInt():::EXIT
+io.netty.util.internal.SWARUtilTest.$assertionsDisabled == orig(io.netty.util.internal.SWARUtilTest.$assertionsDisabled)
+
+
+
+====================================================================================================
+SAMPLE 5/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: netty
+METHOD: io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser$UtilizationMonitor.rebuildActiveExecutors()
+####################################################################################################
+
+===========================================================================
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser$UtilizationMonitor.rebuildActiveExecutors():::ENTER
+this.consistentlyIdleChildren[].getClass().getName() one of { [io.netty.util.concurrent.AutoScalingEventExecutorChooserFactoryTest.TestEventExecutor], [io.netty.util.concurrent.AutoScalingEventExecutorChooserFactoryTest.TestEventExecutor, io.netty.util.concurrent.AutoScalingEventExecutorChooserFactoryTest.TestEventExecutor] }
+
+===========================================================================
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser$UtilizationMonitor.rebuildActiveExecutors():::EXIT
+this.consistentlyIdleChildren == orig(this.consistentlyIdleChildren)
+this.consistentlyIdleChildren[] == orig(this.consistentlyIdleChildren[])
+this.consistentlyIdleChildren.getClass().getName() == orig(this.consistentlyIdleChildren.getClass().getName())
+this.lastCheckTimeNanos == orig(this.lastCheckTimeNanos)
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this)
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.executors == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.executors)
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.executors.getClass().getName() == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.executors.getClass().getName())
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.executors[] == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.executors[])
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.allExecutorsChooser == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.allExecutorsChooser)
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.allExecutorsChooser.getClass().getName() == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.allExecutorsChooser.getClass().getName())
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.state == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.state)
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.utilizationMetrics == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.utilizationMetrics)
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.utilizationMetrics[] == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.utilizationMetrics[])
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.utilizationMetrics.getClass().getName() == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory$AutoScalingEventExecutorChooser.this.utilizationMetrics.getClass().getName())
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this)
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.NO_OOP_TASK == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.NO_OOP_TASK)
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.NO_OOP_TASK.getClass().getName() == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.NO_OOP_TASK.getClass().getName())
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this.minChildren == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this.minChildren)
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this.maxChildren == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this.maxChildren)
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this.maxChildren == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this.maxRampUpStep)
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this.maxChildren == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this.maxRampDownStep)
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this.utilizationCheckPeriodNanos == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this.utilizationCheckPeriodNanos)
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this.scaleDownThreshold == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this.scaleDownThreshold)
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this.scaleUpThreshold == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this.scaleUpThreshold)
+io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this.scalingPatienceCycles == orig(io.netty.util.concurrent.AutoScalingEventExecutorChooserFactory.this.scalingPatienceCycles)
+this.consistentlyIdleChildren[].getClass().getName() one of { [io.netty.util.concurrent.AutoScalingEventExecutorChooserFactoryTest.TestEventExecutor], [io.netty.util.concurrent.AutoScalingEventExecutorChooserFactoryTest.TestEventExecutor, io.netty.util.concurrent.AutoScalingEventExecutorChooserFactoryTest.TestEventExecutor] }
+
+
+
+====================================================================================================
+SAMPLE 6/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: netty
+METHOD: io.netty.util.internal.logging.InternalLoggerFactoryTest.init()
+####################################################################################################
+
+===========================================================================
+io.netty.util.internal.logging.InternalLoggerFactoryTest.init():::ENTER
+this.oldLoggerFactory == null
+io.netty.util.internal.logging.InternalLoggerFactory.defaultFactory has only one value
+io.netty.util.internal.logging.InternalLoggerFactory.defaultFactory.getClass().getName() == io.netty.util.internal.logging.Slf4JLoggerFactory.class
+this.mockLogger == null
+
+===========================================================================
+io.netty.util.internal.logging.InternalLoggerFactoryTest.init():::EXIT
+io.netty.util.internal.logging.InternalLoggerFactoryTest.e == orig(io.netty.util.internal.logging.InternalLoggerFactoryTest.e)
+this.oldLoggerFactory == orig(io.netty.util.internal.logging.InternalLoggerFactory.defaultFactory)
+this.oldLoggerFactory.getClass().getName() == orig(io.netty.util.internal.logging.InternalLoggerFactory.defaultFactory.getClass().getName())
+this.oldLoggerFactory has only one value
+io.netty.util.internal.logging.InternalLoggerFactory.defaultFactory.getClass().getName() == io.netty.util.internal.logging.InternalLoggerFactory$MockitoMock$ojA7qZhK.class
+
+
+
+====================================================================================================
+SAMPLE 7/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: netty
+METHOD: io.netty.util.internal.logging.CommonsLoggerTest.testIsTraceEnabled()
+####################################################################################################
+
+===========================================================================
+io.netty.util.internal.logging.CommonsLoggerTest.testIsTraceEnabled():::ENTER
+this has only one value
+
+===========================================================================
+io.netty.util.internal.logging.CommonsLoggerTest.testIsTraceEnabled():::EXIT
+io.netty.util.internal.logging.CommonsLoggerTest.e == orig(io.netty.util.internal.logging.CommonsLoggerTest.e)
+
+
+
+====================================================================================================
+SAMPLE 8/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: netty
+METHOD: io.netty.util.concurrent.GlobalEventExecutor$3.run()
+####################################################################################################
+
+===========================================================================
+io.netty.util.concurrent.GlobalEventExecutor$3.run():::ENTER
+
+===========================================================================
+io.netty.util.concurrent.GlobalEventExecutor$3.run():::EXIT
+this.val$t == orig(this.val$t)
+this.val$cl == orig(this.val$cl)
+this.val$cl.getClass().getName() == orig(this.val$cl.getClass().getName())
+return == null
+
+
+
+====================================================================================================
+SAMPLE 9/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: netty
+METHOD: io.netty.util.internal.StringUtilTest.testIsNullOrEmpty()
+####################################################################################################
+
+===========================================================================
+io.netty.util.internal.StringUtilTest.testIsNullOrEmpty():::ENTER
+this has only one value
+
+===========================================================================
+io.netty.util.internal.StringUtilTest.testIsNullOrEmpty():::EXIT
+
+
+
+====================================================================================================
+SAMPLE 10/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: netty
+METHOD: io.netty.util.collection.CharObjectHashMap.CharObjectHashMap(int)
+####################################################################################################
+
+===========================================================================
+io.netty.util.collection.CharObjectHashMap.CharObjectHashMap(int):::ENTER
+
+===========================================================================
+io.netty.util.collection.CharObjectHashMap.CharObjectHashMap(int):::EXIT
+io.netty.util.collection.CharObjectHashMap.DEFAULT_LOAD_FACTOR == this.loadFactor
+this.keys[] elements == 0
+this.values[] elements == null
+this.values[].getClass().getName() elements == null
+this.size == 0
+io.netty.util.collection.CharObjectHashMap.DEFAULT_CAPACITY != orig(initialCapacity)
+this.maxSize >= this.size
+this.maxSize < orig(initialCapacity)
+this.keys[] elements == this.size
+this.size in this.keys[]
+this.size <= this.mask
+this.size < orig(initialCapacity)
+

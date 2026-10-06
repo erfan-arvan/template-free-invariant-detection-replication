@@ -1,0 +1,51 @@
+======================================
+SLURM JOB ID: 1363886
+HOST: n0036
+START TIME: Thu Oct  1 06:35:20 PM EDT 2026
+ROOT: /project/mjk76/ea442/promptstudy
+DPP_DIR: /scratch/mjk76/ea442/daikonplusplus-relaxedAll
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/23.0.2/bin/java
+MVN: /scratch/mjk76/ea442/apache-maven-3.9.9/bin/mvn
+======================================
+>>> Building isolated Daikon++ worktree
+>>> DPP_DIR: /scratch/mjk76/ea442/daikonplusplus-relaxedAll
+>>> Commit:  d7ea9f07b95233a46137b2b4b98faba03cb23dd8
+######################################
+PROMPT STUDY RELAXEDALL STARTED
+Start time: 2026-10-01 18:38:31 EDT
+Strategies: 6
+Benchmarks: 6
+Total planned runs: 36
+Results base: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll
+Scratch base: /scratch/mjk76/ea442/promptstudy_relaxedAll
+Daikon++ dir: /scratch/mjk76/ea442/daikonplusplus-relaxedAll
+Daikon++ jar: /scratch/mjk76/ea442/daikonplusplus-relaxedAll/build/libs/daikonplusplus.jar
+Daikon++ commit: d7ea9f07b95233a46137b2b4b98faba03cb23dd8
+Cassette dir: /project/mjk76/ea442/promptstudy/daikonplusplus/src/test/cassettes
+######################################
+======================================
+>>> STRATEGY: baseline
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-01 18:38:31 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: apollo
+>>> Strategy: baseline
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-01 18:38:31 EDT
+--------------------------------------
+>>> Finished apollo (strategy=baseline)
+>>> Exit status: 0
+>>> Finish time: 2026-10-01 18:40:59 EDT
+>>> Duration: 00h:02m:28s
+>>> Duration in seconds: 148
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/baseline/apollo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/baseline/apollo/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/baseline/apollo/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: dubbo
+>>> Strategy: baseline
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-01 18:40:59 EDT
+--------------------------------------

@@ -1,0 +1,6 @@
+>>> Trace size:
+-rw-r--r--+ 1 ea442 ea442 76M Sep 16 00:44 /mmfs1/scratch/mjk76/ea442/promptstudy/netty-s5-chicory-out/1286082/dtrace.gz
+>>> Done.
+total 75M
+-rw-r--r--+ 1 ea442 ea442 17M Sep 18 03:28 netty-s5-quickfix-invariants.txt
+-rw-r--r--+ 1 ea442 ea442 59M Sep 18 03:28 netty-s5-quickfix.inv.gz

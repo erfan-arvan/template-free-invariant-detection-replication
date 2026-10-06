@@ -1,0 +1,37 @@
+Loaded fixed selected methods: 60
+
+Loading project: apollo
+  OCA methods with HELD: 323
+  Daikon methods parsed: 1147
+
+Loading project: dubbo
+  OCA methods with HELD: 2330
+  Daikon methods parsed: 1328
+
+Loading project: hudi
+  OCA methods with HELD: 65
+  Daikon methods parsed: 7218
+
+Loading project: libgdx
+  OCA methods with HELD: 515
+  Daikon methods parsed: 1055
+
+Loading project: netty
+  OCA methods with HELD: 263
+  Daikon methods parsed: 2554
+
+Loading project: spring
+  OCA methods with HELD: 1568
+  Daikon methods parsed: 754
+
+================================================================================
+DONE
+================================================================================
+Fixed methods processed: 60
+Methods with balanced count 0: 0
+
+Human-readable output: oca_daikon_balanced_invariants/all-projects-balanced-invariants.txt
+Balanced manifest: oca_daikon_balanced_invariants/balanced-invariant-manifest.tsv
+Machine-readable sample: oca_daikon_balanced_invariants/balanced-invariants.jsonl
+Project summary: oca_daikon_balanced_invariants/balanced-summary.tsv
+Zero-count cases: oca_daikon_balanced_invariants/zero-balanced-methods.tsv

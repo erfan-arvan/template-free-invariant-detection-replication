@@ -1,0 +1,115 @@
+======================================
+SLURM JOB ID: 1362131
+HOST: n0006
+START TIME: Thu Oct  1 10:01:03 AM EDT 2026
+WORKING DIRECTORY: /project/mjk76/ea442/promptstudy
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/23.0.2/bin/java
+JAVA VERSION:
+MVN: /scratch/mjk76/ea442/apache-maven-3.9.9/bin/mvn
+MVN VERSION:
+Apache Maven 3.9.9 (8e8579a9e76f7d015ee5ec7bfcdc97d260186937)
+Maven home: /scratch/mjk76/ea442/apache-maven-3.9.9
+Java version: 23.0.2, vendor: Eclipse Adoptium, runtime: /mmfs1/apps/easybuild/el9_5.x86_64/software/Java/23.0.2
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "5.14.0-503.11.1.el9_5.x86_64", arch: "amd64", family: "unix"
+======================================
+Starting full few-shot relaxed-QF context study...
+ROOT: /project/mjk76/ea442/promptstudy
+SCRIPT: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshotQfRelaxedAll.sh
+
+######################################
+FEWSHOT CONTEXT STUDY STARTED
+Prompt strategy (fixed): fewshot
+Context configurations: 6
+Results base: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshotQfRelaxed
+Start time: 2026-10-01 10:01:04 EDT
+######################################
+>>> Building Daikon++ (once)
+Benchmarks: 6
+Total planned runs: 36
+
+======================================
+>>> CONTEXT CONFIG: method_javadoc
+>>> Prompt strategy: fewshot
+>>> DP_CONTEXTS: METHOD_BODY,SCOPE,METHOD_JAVADOC
+>>> Start time: 2026-10-01 10:04:45 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: apollo
+>>> Context config: method_javadoc
+>>> Prompt strategy: fewshot
+>>> DP_CONTEXTS: METHOD_BODY,SCOPE,METHOD_JAVADOC
+>>> Start time: 2026-10-01 10:04:45 EDT
+--------------------------------------
+>>> Finished apollo
+>>> Context config: method_javadoc
+>>> Prompt strategy: fewshot
+>>> Exit status: 0
+>>> Finish time: 2026-10-01 10:07:16 EDT
+>>> Duration: 00h:02m:31s
+>>> Duration in seconds: 151
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshotQfRelaxed/method_javadoc/apollo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshotQfRelaxed/method_javadoc/apollo/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshotQfRelaxed/method_javadoc/apollo/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: dubbo
+>>> Context config: method_javadoc
+>>> Prompt strategy: fewshot
+>>> DP_CONTEXTS: METHOD_BODY,SCOPE,METHOD_JAVADOC
+>>> Start time: 2026-10-01 10:07:16 EDT
+--------------------------------------
+>>> Finished dubbo
+>>> Context config: method_javadoc
+>>> Prompt strategy: fewshot
+>>> Exit status: 0
+>>> Finish time: 2026-10-01 10:49:56 EDT
+>>> Duration: 00h:42m:40s
+>>> Duration in seconds: 2560
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshotQfRelaxed/method_javadoc/dubbo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshotQfRelaxed/method_javadoc/dubbo/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshotQfRelaxed/method_javadoc/dubbo/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: netty
+>>> Context config: method_javadoc
+>>> Prompt strategy: fewshot
+>>> DP_CONTEXTS: METHOD_BODY,SCOPE,METHOD_JAVADOC
+>>> Start time: 2026-10-01 10:49:56 EDT
+--------------------------------------
+>>> Finished netty
+>>> Context config: method_javadoc
+>>> Prompt strategy: fewshot
+>>> Exit status: 0
+>>> Finish time: 2026-10-01 15:00:53 EDT
+>>> Duration: 04h:10m:57s
+>>> Duration in seconds: 15057
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshotQfRelaxed/method_javadoc/netty/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshotQfRelaxed/method_javadoc/netty/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshotQfRelaxed/method_javadoc/netty/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: hudi
+>>> Context config: method_javadoc
+>>> Prompt strategy: fewshot
+>>> DP_CONTEXTS: METHOD_BODY,SCOPE,METHOD_JAVADOC
+>>> Start time: 2026-10-01 15:00:53 EDT
+--------------------------------------
+>>> Finished hudi
+>>> Context config: method_javadoc
+>>> Prompt strategy: fewshot
+>>> Exit status: 0
+>>> Finish time: 2026-10-01 15:24:19 EDT
+>>> Duration: 00h:23m:26s
+>>> Duration in seconds: 1406
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshotQfRelaxed/method_javadoc/hudi/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshotQfRelaxed/method_javadoc/hudi/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshotQfRelaxed/method_javadoc/hudi/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: spring
+>>> Context config: method_javadoc
+>>> Prompt strategy: fewshot
+>>> DP_CONTEXTS: METHOD_BODY,SCOPE,METHOD_JAVADOC
+>>> Start time: 2026-10-01 15:24:19 EDT
+--------------------------------------

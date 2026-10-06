@@ -1,0 +1,653 @@
+Python: /mmfs1/project/mjk76/ea442/promptstudy/openai-env/bin/python
+Python 3.9.25
+OpenAI SDK: 2.48.0
+OPENAI_API_KEY received; length=164
+Input methods: 60
+Sampled Daikon invariants: 239
+Already processed: 0
+Model: gpt-5.6-sol
+
+apollo 1/10 com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceRegistryClearApplicationRunner.run(org.springframework.boot.ApplicationArguments)
+  1: args.getClass().getName() == org.springframework.boot.DefaultApplicationArguments.class
+      -> OK
+         args.getClass().getName().equals(org.springframework.boot.DefaultApplicationArguments.class.getName())
+  2: com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceRegistryClearApplicationRunner.log.getClass().getName() == orig(com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceRegistryClearApplicationRunner.log.getClass().getName())
+      -> FAIL
+  3: com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceRegistryClearApplicationRunner.log == orig(com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceRegistryClearApplicationRunner.log)
+      -> FAIL
+  4: this.instanceClearScheduledExecutorService == orig(this.instanceClearScheduledExecutorService)
+      -> FAIL
+  5: this.instanceClearScheduledExecutorService.getClass().getName() == orig(this.instanceClearScheduledExecutorService.getClass().getName())
+      -> FAIL
+apollo 2/10 com.ctrip.framework.apollo.biz.service.InstanceService.findActiveInstanceConfigsByReleaseKey(java.lang.String, org.springframework.data.domain.Pageable)
+  1: releaseKey has only one value
+      -> FAIL
+  2: releaseKey.toString == "someReleaseKey"
+      -> OK
+         releaseKey.toString().equals("someReleaseKey")
+  3: this.instanceConfigRepository == orig(this.instanceConfigRepository)
+      -> FAIL
+  4: this.instanceRepository == orig(this.instanceRepository)
+      -> FAIL
+  5: return has only one value
+      -> FAIL
+  6: this has only one value
+      -> FAIL
+  7: this.instanceRepository.getClass().getName() == orig(this.instanceRepository.getClass().getName())
+      -> FAIL
+  8: pageable.getClass().getName() == org.springframework.data.domain.PageRequest.class
+      -> OK
+         pageable.getClass().getName().equals("org.springframework.data.domain.PageRequest")
+  9: pageable has only one value
+      -> FAIL
+apollo 3/10 com.ctrip.framework.apollo.biz.entity.ReleaseHistory.getOperationContext()
+  1: this.branchName.toString < return.toString
+      -> OK
+         this.branchName.toString().compareTo(result.toString()) < 0
+  2: return != null
+      -> OK
+         result != null
+  3: this.namespaceName == orig(this.namespaceName)
+      -> FAIL
+apollo 4/10 com.ctrip.framework.apollo.biz.entity.Item.setLineNum(java.lang.Integer)
+  1: this.key != null
+      -> OK
+         this.key != null
+  2: this.dataChangeCreatedBy == null
+      -> OK
+         this.dataChangeCreatedBy == null
+  3: this.lineNum == orig(lineNum)
+      -> FAIL
+apollo 5/10 com.ctrip.framework.apollo.biz.service.ItemService.checkItemKeyLength(java.lang.String)
+  1: com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger)
+      -> FAIL
+  2: this.itemRepository == orig(this.itemRepository)
+      -> FAIL
+  3: com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger.getClass().getName() == com.ctrip.framework.apollo.common.config.RefreshableConfig.logger.getClass().getName()
+      -> FAIL
+  4: this.bizConfig == orig(this.bizConfig)
+      -> FAIL
+apollo 6/10 com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceDiscoveryProperties.getHealthCheckIntervalInSecond()
+  1: this.healthCheckIntervalInSecond == return
+      -> OK
+         this.healthCheckIntervalInSecond == result
+apollo 7/10 com.ctrip.framework.apollo.biz.registry.configuration.ApolloServiceDiscoveryAutoConfiguration.wrapMemoryCache(com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClient)
+  1: discoveryClient.getClass().getName() == com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClientAlwaysAddSelfInstanceDecoratorImpl.class
+      -> FAIL
+  2: return.getClass().getName() == com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClientMemoryCacheDecoratorImpl.class
+      -> OK
+         result.getClass().getName().equals(com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClientMemoryCacheDecoratorImpl.class.getName())
+  3: return has only one value
+      -> FAIL
+apollo 8/10 com.ctrip.framework.apollo.biz.service.ItemSetService.updateSet(java.lang.String, java.lang.String, java.lang.String, com.ctrip.framework.apollo.common.dto.ItemChangeSets)
+  1: this.bizConfig.splitter == null
+      -> OK
+         this.bizConfig.splitter == null
+  2: this.itemService.bizConfig == orig(this.itemService.bizConfig)
+      -> FAIL
+  3: this.bizConfig.propertySources == orig(this.bizConfig.propertySources)
+      -> FAIL
+  4: this.bizConfig.propertySources == null
+      -> OK
+         this.bizConfig.propertySources == null
+  5: this.bizConfig has only one value
+      -> FAIL
+apollo 9/10 com.ctrip.framework.apollo.biz.service.ItemService.getItemInfoBySearch(java.lang.String, java.lang.String, org.springframework.data.domain.Pageable)
+  1: com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY[] == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY[])
+      -> FAIL
+  2: this.namespaceService has only one value
+      -> FAIL
+  3: this.itemRepository == orig(this.itemRepository)
+      -> FAIL
+  4: this.bizConfig.environment has only one value
+      -> FAIL
+  5: value.toString one of { "", "v1" }
+      -> OK
+         value.toString().equals("") || value.toString().equals("v1")
+  6: this.namespaceService.itemService == orig(this.namespaceService.itemService)
+      -> FAIL
+  7: com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger.getClass().getName() == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.logger.getClass().getName())
+      -> FAIL
+  8: value.toString one of { "", "v1" }
+      -> OK
+         value.toString().equals("") || value.toString().equals("v1")
+apollo 10/10 com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.convertToDatabaseColumn(java.util.Map)
+  1: com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.TYPE.getClass().getName() != attribute.getClass().getName()
+      -> OK
+         !com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.TYPE.getClass().getName().equals(attribute.getClass().getName())
+  2: com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.TYPE_TOKEN.getClass().getName() != orig(attribute.getClass().getName())
+      -> FAIL
+  3: com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.TYPE.getClass().getName() != orig(attribute.getClass().getName())
+      -> FAIL
+  4: com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.TYPE.getClass().getName() == orig(com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.TYPE.getClass().getName())
+      -> FAIL
+hudi 1/10 org.apache.hudi.table.action.commit.JavaUpsertPartitioner.getSmallFilesForPartitions(java.util.List, org.apache.hudi.common.engine.HoodieEngineContext)
+  1: this.smallFiles.getClass().getName() != orig(context.getClass().getName())
+      -> FAIL
+  2: size(this.smallFiles[]) <= size(partitionPaths[])-1
+      -> OK
+         this.smallFiles.size() <= partitionPaths.size() - 1
+  3: partitionPaths != null
+      -> OK
+         partitionPaths != null
+  4: context != null
+      -> OK
+         context != null
+  5: this.table.getClass().getName() != orig(context.getClass().getName())
+      -> FAIL
+hudi 2/10 org.apache.hudi.table.HoodieJavaMergeOnReadTable.scheduleCompaction(org.apache.hudi.common.engine.HoodieEngineContext, java.lang.String, org.apache.hudi.common.util.Option)
+  1: this.context == orig(context)
+      -> FAIL
+  2: this.instantGenerator.getClass().getName() == orig(this.instantGenerator.getClass().getName())
+      -> FAIL
+  3: this.storageLayout == null
+      -> OK
+         this.storageLayout == null
+  4: this.isMetadataTableExists == false
+      -> OK
+         this.isMetadataTableExists == false
+  5: this.context == orig(this.context)
+      -> FAIL
+  6: org.apache.hudi.table.HoodieJavaCopyOnWriteTable.log.getClass().getName() == orig(org.apache.hudi.table.HoodieJavaCopyOnWriteTable.log.getClass().getName())
+      -> FAIL
+  7: this.metadata == null
+      -> OK
+         this.metadata == null
+hudi 3/10 org.apache.hudi.execution.JavaLazyInsertIterable.computeNext()
+  1: this.instantTime == orig(this.instantTime)
+      -> FAIL
+  2: this.taskContextSupplier.getClass().getName() != return.getClass().getName()
+      -> OK
+         !this.taskContextSupplier.getClass().getName().equals(result.getClass().getName())
+  3: this.idPrefix.toString == orig(this.idPrefix.toString)
+      -> FAIL
+hudi 4/10 org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.handleUpsertPartition(java.lang.String, java.lang.Integer, java.util.Iterator, org.apache.hudi.table.action.commit.Partitioner)
+  1: this.instantFileNameGenerator has only one value
+      -> FAIL
+  2: this.instantFileNameGenerator.getClass().getName() != orig(partitioner.getClass().getName())
+      -> FAIL
+  3: this.instantFileNameGenerator.getClass().getName() == org.apache.hudi.common.table.timeline.versioning.v2.InstantFileNameGeneratorV2.class
+      -> FAIL
+  4: this.operationType has only one value
+      -> FAIL
+  5: this.taskContextSupplier.getClass().getName() == orig(this.taskContextSupplier.getClass().getName())
+      -> FAIL
+hudi 5/10 org.apache.hudi.table.upgrade.JavaUpgradeDowngradeHelper.getInstance()
+  1: org.apache.hudi.table.upgrade.JavaUpgradeDowngradeHelper.SINGLETON_INSTANCE == return
+      -> OK
+         org.apache.hudi.table.upgrade.JavaUpgradeDowngradeHelper.SINGLETON_INSTANCE == result
+hudi 6/10 org.apache.hudi.table.HoodieJavaTable.create(org.apache.hudi.config.HoodieWriteConfig, org.apache.hudi.common.engine.HoodieEngineContext)
+  1: return.getClass().getName() != orig(context.getClass().getName())
+      -> FAIL
+  2: context != null
+      -> OK
+         context != null
+  3: org.apache.hudi.table.HoodieTable.log.getClass().getName() != orig(context.getClass().getName())
+      -> FAIL
+  4: context.getClass().getName() == org.apache.hudi.client.common.HoodieJavaEngineContext.class
+      -> OK
+         context.getClass().getName().equals(org.apache.hudi.client.common.HoodieJavaEngineContext.class.getName())
+  5: org.apache.hudi.table.HoodieTable.log.getClass().getName() != context.getClass().getName()
+      -> OK
+         !org.apache.hudi.table.HoodieTable.log.getClass().getName().equals(context.getClass().getName())
+  6: return != null
+      -> OK
+         result != null
+hudi 7/10 org.apache.hudi.table.action.commit.JavaDeleteHelper.newInstance()
+  1: return has only one value
+      -> FAIL
+hudi 8/10 org.apache.hudi.client.common.HoodieJavaEngineContext.getReaderContextFactory(org.apache.hudi.common.table.HoodieTableMetaClient)
+  1: this.storageConf.getClass().getName() != return.getClass().getName()
+      -> OK
+         !this.storageConf.getClass().getName().equals(result.getClass().getName())
+  2: this.taskContextSupplier.getClass().getName() == orig(this.taskContextSupplier.getClass().getName())
+      -> FAIL
+  3: this.storageConf == orig(this.storageConf)
+      -> FAIL
+  4: this.taskContextSupplier.getClass().getName() != return.getClass().getName()
+      -> OK
+         !this.taskContextSupplier.getClass().getName().equals(result.getClass().getName())
+  5: this.storageConf.getClass().getName() == orig(this.storageConf.getClass().getName())
+      -> FAIL
+hudi 9/10 org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.getPartitionToReplacedFileIds(org.apache.hudi.table.action.HoodieWriteMetadata)
+  1: this.context.getClass().getName() != orig(this.getClass().getName())
+      -> FAIL
+  2: this.extraMetadata == orig(this.extraMetadata)
+      -> FAIL
+  3: this.instantFileNameParser == orig(this.instantFileNameParser)
+      -> FAIL
+  4: this.operationType == orig(this.operationType)
+      -> FAIL
+  5: this.table.getClass().getName() != return.getClass().getName()
+      -> OK
+         !this.table.getClass().getName().equals(result.getClass().getName())
+  6: this.instantFileNameGenerator.getClass().getName() != orig(this.getClass().getName())
+      -> FAIL
+hudi 10/10 org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.updateIndex(java.util.List, org.apache.hudi.table.action.HoodieWriteMetadata)
+  1: org.apache.hudi.table.action.commit.BaseCommitActionExecutor.log == orig(org.apache.hudi.table.action.commit.BaseCommitActionExecutor.log)
+      -> FAIL
+  2: this.instantFileNameGenerator.getClass().getName() != return.getClass().getName()
+      -> OK
+         !this.instantFileNameGenerator.getClass().getName().equals(result.getClass().getName())
+  3: this.instantFileNameGenerator == orig(this.instantFileNameGenerator)
+      -> FAIL
+  4: this.instantGenerator.getClass().getName() != writeStatuses.getClass().getName()
+      -> OK
+         !this.instantGenerator.getClass().getName().equals(writeStatuses.getClass().getName())
+  5: this.instantGenerator.getClass().getName() != orig(this.getClass().getName())
+      -> FAIL
+  6: this.pendingInflightAndRequestedInstants.getClass().getName() != return.getClass().getName()
+      -> OK
+         !this.pendingInflightAndRequestedInstants.getClass().getName().equals(result.getClass().getName())
+spring 1/10 org.springframework.core.convert.support.NumberToDataSizeConverter.convert(java.lang.Number)
+  1: this has only one value
+      -> FAIL
+spring 2/10 org.springframework.core.convert.support.StringToArrayConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor)
+  1: this.conversionService.getClass().getName() == org.springframework.core.convert.support.GenericConversionService.class
+      -> FAIL
+  2: sourceType has only one value
+      -> FAIL
+  3: this.conversionService.getClass().getName() == orig(this.conversionService.getClass().getName())
+      -> FAIL
+  4: orig(this) has only one value
+      -> FAIL
+  5: this.conversionService == orig(this.conversionService)
+      -> FAIL
+spring 3/10 org.springframework.core.convert.ConversionService.convert(java.lang.Object, org.springframework.core.convert.TypeDescriptor)
+  1: source != null
+      -> OK
+         source != null
+  2: targetType != null
+      -> OK
+         targetType != null
+  3: this.getClass().getName() != source.getClass().getName()
+      -> OK
+         !this.getClass().getName().equals(source.getClass().getName())
+  4: return != null
+      -> OK
+         result != null
+  5: return.getClass().getName() != orig(this.getClass().getName())
+      -> FAIL
+spring 4/10 org.springframework.core.convert.support.StringToPropertiesConverter.convert(java.lang.String)
+  1: source.toString one of { "   foo=bar\n    bar=baz\n     baz=boo", "a=b\nc=2\nd=" }
+      -> OK
+         source.toString().equals("   foo=bar\n    bar=baz\n     baz=boo") || source.toString().equals("a=b\nc=2\nd=")
+  2: source.toString == orig(source.toString)
+      -> FAIL
+  3: source.toString one of { "   foo=bar\n    bar=baz\n     baz=boo", "a=b\nc=2\nd=" }
+      -> OK
+         source.toString().equals("   foo=bar\n    bar=baz\n     baz=boo") || source.toString().equals("a=b\nc=2\nd=")
+spring 5/10 org.springframework.core.convert.support.StreamConverter.convertToStream(java.lang.Object, org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor)
+  1: org.springframework.core.convert.support.StreamConverter.STREAM_TYPE == orig(org.springframework.core.convert.support.StreamConverter.STREAM_TYPE)
+      -> FAIL
+  2: org.springframework.core.convert.support.StreamConverter.CONVERTIBLE_TYPES == orig(org.springframework.core.convert.support.StreamConverter.CONVERTIBLE_TYPES)
+      -> FAIL
+  3: org.springframework.core.convert.support.StreamConverter.CONVERTIBLE_TYPES.getClass().getName() == orig(org.springframework.core.convert.support.StreamConverter.CONVERTIBLE_TYPES.getClass().getName())
+      -> FAIL
+  4: this.conversionService == orig(this.conversionService)
+      -> FAIL
+  5: this.conversionService.getClass().getName() == orig(this.conversionService.getClass().getName())
+      -> FAIL
+  6: return.getClass().getName() == java.util.stream.ReferencePipeline$Head.class
+      -> FAIL
+spring 6/10 org.springframework.core.convert.support.ObjectToCollectionConverter.getConvertibleTypes()
+  1: return != null
+      -> OK
+         result != null
+  2: return.getClass().getName() == java.util.Collections$SingletonSet.class
+      -> OK
+         result.getClass().getName().equals("java.util.Collections$SingletonSet")
+  3: this.conversionService == orig(this.conversionService)
+      -> FAIL
+spring 7/10 org.springframework.core.convert.support.IdToEntityConverter.getEntityName(java.lang.Class)
+  1: entityClass != null
+      -> OK
+         entityClass != null
+  2: return != null
+      -> OK
+         result != null
+  3: this.conversionService == orig(this.conversionService)
+      -> FAIL
+spring 8/10 org.springframework.core.convert.support.AbstractConditionalEnumConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor)
+  1: this.conversionService == orig(this.conversionService)
+      -> FAIL
+  2: this.conversionService.getClass().getName() == orig(this.conversionService.getClass().getName())
+      -> FAIL
+  3: return == true
+      -> OK
+         result == true
+spring 9/10 org.springframework.core.convert.support.ObjectToCollectionConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor)
+  1: this.conversionService == orig(this.conversionService)
+      -> FAIL
+  2: this.conversionService.getClass().getName() == orig(this.conversionService.getClass().getName())
+      -> FAIL
+  3: return == true
+      -> OK
+         result == true
+spring 10/10 org.springframework.core.convert.support.EnumToStringConverter.convert(java.lang.Enum)
+  1: this.conversionService == orig(this.conversionService)
+      -> FAIL
+  2: this.conversionService.getClass().getName() == orig(this.conversionService.getClass().getName())
+      -> FAIL
+  3: return.toString one of { "A", "BAR", "FIRST" }
+      -> OK
+         result.toString().equals("A") || result.toString().equals("BAR") || result.toString().equals("FIRST")
+libgdx 1/10 com.badlogic.gdx.utils.CharArray.add(char, char)
+  1: orig(value1) in this.items[]
+      -> FAIL
+  2: this.ordered == orig(this.ordered)
+      -> FAIL
+  3: com.badlogic.gdx.utils.CharArray.DIGITS == orig(com.badlogic.gdx.utils.CharArray.DIGITS)
+      -> FAIL
+  4: this.items == orig(this.items)
+      -> FAIL
+  5: com.badlogic.gdx.utils.CharArray.DIGITS[] == orig(com.badlogic.gdx.utils.CharArray.DIGITS[])
+      -> FAIL
+  6: this has only one value
+      -> FAIL
+  7: this.items[] == [97, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      -> OK
+         java.util.Arrays.equals(this.items, new char[]{97, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0})
+libgdx 2/10 com.badlogic.gdx.utils.JsonValue.getString(java.lang.String, java.lang.String)
+  1: name.toString == "class"
+      -> OK
+         name.toString().equals("class")
+  2: name.toString == "class"
+      -> OK
+         name.toString().equals("class")
+  3: this.type == orig(this.type)
+      -> FAIL
+  4: this.parent == this.prev
+      -> OK
+         this.parent == this.prev
+  5: this.doubleValue == orig(this.doubleValue)
+      -> FAIL
+  6: this.doubleValue == 0.0
+      -> OK
+         this.doubleValue == 0.0
+  7: this.size == 2
+      -> OK
+         this.size == 2
+  8: this.longValue == 0
+      -> OK
+         this.longValue == 0
+libgdx 3/10 com.badlogic.gdx.utils.CharArray.incr(int, char)
+  1: com.badlogic.gdx.utils.CharArray.DIGITS == orig(com.badlogic.gdx.utils.CharArray.DIGITS)
+      -> FAIL
+  2: value == 1
+      -> OK
+         value == 1
+  3: this.ordered == true
+      -> OK
+         this.ordered == true
+libgdx 4/10 com.badlogic.gdx.utils.CharArray.substring(int, int)
+  1: com.badlogic.gdx.utils.CharArray.DIGITS == orig(com.badlogic.gdx.utils.CharArray.DIGITS)
+      -> FAIL
+  2: this.size one of { 4, 12 }
+      -> OK
+         this.size == 4 || this.size == 12
+  3: this.ordered == true
+      -> OK
+         this.ordered == true
+  4: start one of { 0, 6 }
+      -> OK
+         start == 0 || start == 6
+libgdx 5/10 com.badlogic.gdx.utils.LongArray.incr(int, long)
+  1: this.items has only one value
+      -> FAIL
+libgdx 6/10 com.badlogic.gdx.utils.JsonReader.parse(char[], int, int)
+  1: data[] == orig(data[])
+      -> FAIL
+  2: data[] elements >= 0
+      -> OK
+         java.util.stream.IntStream.range(0, data.length).allMatch(i -> data[i] >= 0)
+  3: com.badlogic.gdx.utils.JsonReader._json_key_offsets == orig(com.badlogic.gdx.utils.JsonReader._json_key_offsets)
+      -> FAIL
+  4: this.root == this.current
+      -> OK
+         this.root == this.current
+  5: com.badlogic.gdx.utils.JsonReader._json_key_offsets[] == orig(com.badlogic.gdx.utils.JsonReader._json_key_offsets[])
+      -> FAIL
+libgdx 7/10 com.badlogic.gdx.utils.LongQueue.equals(java.lang.Object)
+  1: (return == false)  ==>  (this.values[] elements one of { 0, 1, 2 })
+      -> OK
+         (!(result == false)) || java.util.Arrays.stream(this.values).allMatch(element -> element == 0 || element == 1 || element == 2)
+libgdx 8/10 com.badlogic.gdx.utils.CharArray.append(char[])
+  1: this.items == orig(this.items)
+      -> FAIL
+  2: ch[] one of { [49, 50, 51], [55357, 56832] }
+      -> OK
+         java.util.Arrays.equals(ch, new char[] {49, 50, 51}) || java.util.Arrays.equals(ch, new char[] {55357, 56832})
+  3: this.ordered == true
+      -> OK
+         this.ordered == true
+  4: com.badlogic.gdx.utils.CharArray.DIGITS[] == orig(com.badlogic.gdx.utils.CharArray.DIGITS[])
+      -> FAIL
+  5: com.badlogic.gdx.utils.CharArray.DIGITS == orig(com.badlogic.gdx.utils.CharArray.DIGITS)
+      -> FAIL
+  6: this.size one of { 2, 8 }
+      -> OK
+         this.size == 2 || this.size == 8
+libgdx 9/10 com.badlogic.gdx.utils.reflect.Field.getType()
+  1: this.field == orig(this.field)
+      -> FAIL
+libgdx 10/10 com.badlogic.gdx.math.Polygon.setVertices(float[])
+  1: this.x == this.originX
+      -> OK
+         this.x == this.originX
+  2: this.worldVertices == null
+      -> OK
+         this.worldVertices == null
+  3: this.localVertices[] == vertices[]
+      -> OK
+         java.util.Arrays.equals(this.localVertices, vertices)
+  4: this.x == 0.0
+      -> OK
+         this.x == 0.0
+  5: this.dirty == orig(this.dirty)
+      -> FAIL
+  6: vertices[] == [1.0, -2.0, 1.0, -1.5, 1.5, -1.5, 1.5, -2.0]
+      -> OK
+         java.util.Arrays.equals(vertices, new float[] {1.0f, -2.0f, 1.0f, -1.5f, 1.5f, -1.5f, 1.5f, -2.0f})
+dubbo 1/10 org.apache.dubbo.common.utils.IOUtils.readLines(java.io.File)
+  1: return.getClass().getName() == java.lang.String[].class
+      -> FAIL
+  2: return[].toString one of { [ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890], [a, b, c] }
+      -> OK
+         java.util.Arrays.equals(result, new String[]{"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"}) || java.util.Arrays.equals(result, new String[]{"a", "b", "c"})
+dubbo 2/10 org.apache.dubbo.common.utils.ReflectUtils.getName(java.lang.reflect.Method)
+  1: org.apache.dubbo.common.utils.ReflectUtils.EMPTY_CLASS_ARRAY[] == orig(org.apache.dubbo.common.utils.ReflectUtils.EMPTY_CLASS_ARRAY[])
+      -> FAIL
+  2: m has only one value
+      -> FAIL
+  3: org.apache.dubbo.common.utils.ReflectUtils.JAVA_IDENT_REGEX.toString == orig(org.apache.dubbo.common.utils.ReflectUtils.JAVA_IDENT_REGEX.toString)
+      -> FAIL
+  4: org.apache.dubbo.common.utils.ReflectUtils.DESC_REGEX == orig(org.apache.dubbo.common.utils.ReflectUtils.DESC_REGEX)
+      -> FAIL
+  5: return.toString == "java.util.List hello(int[])"
+      -> OK
+         result.toString().equals("java.util.List hello(int[])")
+  6: org.apache.dubbo.common.utils.ReflectUtils.ARRAY_DESC == orig(org.apache.dubbo.common.utils.ReflectUtils.ARRAY_DESC)
+      -> FAIL
+  7: org.apache.dubbo.common.utils.ReflectUtils.SETTER_METHOD_DESC_PATTERN == orig(org.apache.dubbo.common.utils.ReflectUtils.SETTER_METHOD_DESC_PATTERN)
+      -> FAIL
+  8: org.apache.dubbo.common.utils.ReflectUtils.CLASS_DESC == orig(org.apache.dubbo.common.utils.ReflectUtils.CLASS_DESC)
+      -> FAIL
+dubbo 3/10 org.apache.dubbo.common.utils.FieldUtils.getFieldValue(java.lang.Object, java.lang.String)
+  1: fieldName.toString one of { "a", "b" }
+      -> OK
+         fieldName.toString().equals("a") || fieldName.toString().equals("b")
+  2: fieldName.toString == orig(fieldName.toString)
+      -> FAIL
+  3: return == orig(fieldName)
+      -> FAIL
+  4: fieldName.toString one of { "a", "b" }
+      -> OK
+         fieldName.toString().equals("a") || fieldName.toString().equals("b")
+  5: return.getClass().getName() == java.lang.String.class
+      -> OK
+         result.getClass().getName().equals(java.lang.String.class)
+dubbo 4/10 org.apache.dubbo.common.utils.CollectionUtils.isEmptyMap(java.util.Map)
+  1: org.apache.dubbo.common.utils.CollectionUtils.SIMPLE_NAME_COMPARATOR == orig(org.apache.dubbo.common.utils.CollectionUtils.SIMPLE_NAME_COMPARATOR)
+      -> FAIL
+  2: return == false
+      -> OK
+         result == false
+  3: map.getClass().getName() == java.util.HashMap.class
+      -> OK
+         map.getClass().getName().equals("java.util.HashMap")
+dubbo 5/10 org.apache.dubbo.common.utils.MethodUtils.excludedDeclaredClass(java.lang.Class)
+  1: declaredClass has only one value
+      -> FAIL
+  2: return has only one value
+      -> FAIL
+  3: return.getClass().getName() == org.apache.dubbo.common.utils.MethodUtils$$Lambda$1023/0x00001548a54c6bf0.class
+      -> OK
+         result.getClass().getName().equals("org.apache.dubbo.common.utils.MethodUtils$$Lambda$1023/0x00001548a54c6bf0")
+dubbo 6/10 org.apache.dubbo.common.compiler.support.ClassUtils.getSize(java.lang.Object)
+  1: return == 1
+      -> OK
+         result == 1
+dubbo 7/10 org.apache.dubbo.common.io.UnsafeByteArrayOutputStream.toString()
+  1: this.mCount == 3
+      -> OK
+         this.mCount == 3
+dubbo 8/10 org.apache.dubbo.common.utils.ArrayUtils.isEmpty(java.lang.Object[])
+  1: array[] == []
+      -> OK
+         array != null && array.length == 0
+  2: array[] == orig(array[])
+      -> FAIL
+  3: array[] == []
+      -> OK
+         array != null && array.length == 0
+  4: return == true
+      -> OK
+         result == true
+dubbo 9/10 org.apache.dubbo.common.utils.Stack.peek()
+  1: this.mElements has only one value
+      -> FAIL
+dubbo 10/10 org.apache.dubbo.common.utils.LogHelper.error(org.apache.dubbo.common.logger.Logger, java.lang.String, java.lang.Throwable)
+  1: logger has only one value
+      -> FAIL
+  2: logger.getClass().getName() == org.apache.dubbo.common.logger.Logger$MockitoMock$jZMOTlpe.class
+      -> OK
+         logger.getClass().getName().equals("org.apache.dubbo.common.logger.Logger$MockitoMock$jZMOTlpe")
+  3: msg has only one value
+      -> FAIL
+  4: msg.toString == "error"
+      -> OK
+         msg.toString().equals("error")
+  5: e has only one value
+      -> FAIL
+  6: msg.toString == orig(msg.toString)
+      -> FAIL
+  7: msg.toString == "error"
+      -> OK
+         msg.toString().equals("error")
+netty 1/10 io.netty.util.concurrent.FastThreadLocalThread.setThreadLocalMap(io.netty.util.internal.InternalThreadLocalMap)
+  1: threadLocalMap.futureListenerStackDepth == orig(threadLocalMap.rp1)
+      -> FAIL
+netty 2/10 io.netty.util.DomainNameMapping.needsNormalization(java.lang.String)
+  1: hostname.toString == orig(hostname.toString)
+      -> FAIL
+  2: return == false
+      -> OK
+         result == false
+netty 3/10 io.netty.util.AsciiStringUtil.toLowerCase(io.netty.util.AsciiString)
+  1: io.netty.util.AsciiString.EMPTY_STRING.string.toString == ""
+      -> FAIL
+  2: io.netty.util.AsciiString.EMPTY_STRING == orig(io.netty.util.AsciiString.EMPTY_STRING)
+      -> FAIL
+  3: io.netty.util.AsciiString.CASE_SENSITIVE_HASHER == orig(io.netty.util.AsciiString.CASE_SENSITIVE_HASHER)
+      -> FAIL
+  4: string.string == return.string
+      -> FAIL
+  5: io.netty.util.AsciiString.EMPTY_STRING.offset == orig(io.netty.util.AsciiString.EMPTY_STRING.length)
+      -> FAIL
+  6: io.netty.util.AsciiString.EMPTY_STRING.value == orig(io.netty.util.AsciiString.EMPTY_STRING.value)
+      -> FAIL
+  7: io.netty.util.AsciiString.EMPTY_STRING.value[] == []
+      -> FAIL
+  8: io.netty.util.AsciiString.EMPTY_STRING.offset == orig(string.offset)
+      -> FAIL
+netty 4/10 io.netty.util.Signal.fillInStackTrace()
+  1: io.netty.util.AbstractConstant.uniqueIdGenerator == orig(io.netty.util.AbstractConstant.uniqueIdGenerator)
+      -> FAIL
+  2: io.netty.util.Signal.pool.constants.getClass().getName() == orig(io.netty.util.Signal.pool.constants.getClass().getName())
+      -> FAIL
+netty 5/10 io.netty.util.internal.ReflectionUtil.trySetAccessible(java.lang.reflect.AccessibleObject, boolean)
+  1: orig(checkAccessible) == false
+      -> FAIL
+  2: orig(object) has only one value
+      -> FAIL
+  3: return == null
+      -> OK
+         result == null
+  4: orig(checkAccessible) == true
+      -> FAIL
+  5: orig(object) has only one value
+      -> FAIL
+netty 6/10 io.netty.util.internal.ObjectUtil.checkNonEmpty(java.lang.CharSequence, java.lang.String)
+  1: name.toString one of { "NOT_NULL", "NOT_NULL_BUT_EMPTY" }
+      -> OK
+         name.toString().equals("NOT_NULL") || name.toString().equals("NOT_NULL_BUT_EMPTY")
+  2: return == orig(value)
+      -> FAIL
+  3: return.getClass().getName() == orig(value.getClass().getName())
+      -> FAIL
+  4: value.getClass().getName() == java.lang.String.class
+      -> OK
+         value.getClass() == java.lang.String.class
+  5: return.getClass().getName() == java.lang.String.class
+      -> OK
+         result.getClass() == java.lang.String.class
+  6: name.toString == orig(name.toString)
+      -> FAIL
+netty 7/10 io.netty.util.AsciiStringUtil.isLowerCase(byte)
+  1: io.netty.util.AsciiStringUtil.$assertionsDisabled == orig(io.netty.util.AsciiStringUtil.$assertionsDisabled)
+      -> FAIL
+  2: orig(value) one of { 99, 101, 115 }
+      -> FAIL
+  3: orig(value) == 84
+      -> FAIL
+  4: io.netty.util.AsciiStringUtil.$assertionsDisabled == return
+      -> OK
+         io.netty.util.AsciiStringUtil.$assertionsDisabled == result
+  5: (return == false)  <==>  (orig(value) == 84)
+      -> FAIL
+netty 8/10 io.netty.util.NetUtil.toAddressString(byte[], int, boolean)
+  1: io.netty.util.NetUtil.LOOPBACK_IF == orig(io.netty.util.NetUtil.LOOPBACK_IF)
+      -> FAIL
+  2: orig(offset) in bytes[]
+      -> FAIL
+  3: io.netty.util.NetUtil.SOMAXCONN == orig(io.netty.util.NetUtil.SOMAXCONN)
+      -> FAIL
+  4: io.netty.util.NetUtil.logger == orig(io.netty.util.NetUtil.logger)
+      -> FAIL
+  5: io.netty.util.NetUtil.IPV4_PREFERRED == orig(io.netty.util.NetUtil.IPV6_ADDRESSES_PREFERRED)
+      -> FAIL
+  6: io.netty.util.NetUtil.NETWORK_INTERFACES.getClass().getName() == orig(io.netty.util.NetUtil.NETWORK_INTERFACES.getClass().getName())
+      -> FAIL
+netty 9/10 io.netty.util.internal.ReflectionUtil.resolveTypeParameter(java.lang.Object, java.lang.Class, java.lang.String)
+  1: typeParamName.toString one of { "B", "C", "E" }
+      -> OK
+         typeParamName.toString().equals("B") || typeParamName.toString().equals("C") || typeParamName.toString().equals("E")
+netty 10/10 io.netty.util.AbstractConstant.hashCode()
+  1: io.netty.util.AbstractConstant.uniqueIdGenerator == orig(io.netty.util.AbstractConstant.uniqueIdGenerator)
+      -> FAIL
+
+================================================================================
+DONE
+================================================================================
+Processed this run: 239
+Total results: 239
+OK: 91
+FAIL: 148
+API_ERROR/other: 0
+
+Raw normalization results: /project/mjk76/ea442/promptstudy/daikon_java_normalized/daikon-normalization-results.jsonl
+Normalized balanced dataset: /project/mjk76/ea442/promptstudy/daikon_java_normalized/balanced-invariants-normalized.jsonl
+Successful conversions: /project/mjk76/ea442/promptstudy/daikon_java_normalized/normalization-successes.tsv
+Failures: /project/mjk76/ea442/promptstudy/daikon_java_normalized/normalization-failures.tsv
+Summary: /project/mjk76/ea442/promptstudy/daikon_java_normalized/normalization-summary.tsv

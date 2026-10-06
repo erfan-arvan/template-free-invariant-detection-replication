@@ -1,0 +1,715 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+MVN: /scratch/mjk76/ea442/apache-maven-3.9.9/bin/mvn
+Patched 3 occurrence(s) of argLine in /scratch/mjk76/ea442/promptstudy/hudi-chicory/pom.xml (hudi/pom.xml itself untouched)
+[ERROR] COMPILATION ERROR : 
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/callback/client/http/TestCallbackHttpClient.java:[194,71] cannot access org.apache.hudi.config.HoodieWriteCommitCallbackConfig.Builder
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/HoodieWriteCommitCallbackConfig$Builder.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/HoodieWriteCommitCallbackConfig$Builder.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/TestBaseHoodieTableServiceClient.java:[379,37] cannot access org.apache.hudi.client.heartbeat.HoodieHeartbeatClient.Heartbeat
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/heartbeat/HoodieHeartbeatClient$Heartbeat.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/heartbeat/HoodieHeartbeatClient$Heartbeat.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/TestBaseHoodieTableServiceClient.java:[490,18] cannot access org.apache.hudi.exception.HoodieRollbackException
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/exception/HoodieRollbackException.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/exception/HoodieRollbackException.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/TestBaseHoodieWriteClient.java:[267,52] cannot access org.apache.hudi.config.HoodieLockConfig.Builder
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/HoodieLockConfig$Builder.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/HoodieLockConfig$Builder.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/TestBaseHoodieWriteClient.java:[301,18] cannot access org.apache.hudi.client.BaseHoodieWriteClient.TriFunction
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/BaseHoodieWriteClient$TriFunction.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/BaseHoodieWriteClient$TriFunction.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/embedded/TestEmbeddedTimelineService.java:[56,28] cannot access org.apache.hudi.client.embedded.EmbeddedTimelineService.TimelineServiceCreator
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/embedded/EmbeddedTimelineService$TimelineServiceCreator.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/embedded/EmbeddedTimelineService$TimelineServiceCreator.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/embedded/TestEmbeddedTimelineService.java:[56,102] cannot find symbol
+  symbol:   class TimelineServiceCreator
+  location: class org.apache.hudi.client.embedded.EmbeddedTimelineService
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/embedded/TestEmbeddedTimelineService.java:[70,28] cannot find symbol
+  symbol:   class TimelineServiceCreator
+  location: class org.apache.hudi.client.embedded.EmbeddedTimelineService
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/embedded/TestEmbeddedTimelineService.java:[70,103] cannot find symbol
+  symbol:   class TimelineServiceCreator
+  location: class org.apache.hudi.client.embedded.EmbeddedTimelineService
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/embedded/TestEmbeddedTimelineService.java:[97,28] cannot find symbol
+  symbol:   class TimelineServiceCreator
+  location: class org.apache.hudi.client.embedded.EmbeddedTimelineService
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/embedded/TestEmbeddedTimelineService.java:[97,102] cannot find symbol
+  symbol:   class TimelineServiceCreator
+  location: class org.apache.hudi.client.embedded.EmbeddedTimelineService
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/embedded/TestEmbeddedTimelineService.java:[111,28] cannot find symbol
+  symbol:   class TimelineServiceCreator
+  location: class org.apache.hudi.client.embedded.EmbeddedTimelineService
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/embedded/TestEmbeddedTimelineService.java:[111,103] cannot find symbol
+  symbol:   class TimelineServiceCreator
+  location: class org.apache.hudi.client.embedded.EmbeddedTimelineService
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/embedded/TestEmbeddedTimelineService.java:[134,28] cannot find symbol
+  symbol:   class TimelineServiceCreator
+  location: class org.apache.hudi.client.embedded.EmbeddedTimelineService
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/embedded/TestEmbeddedTimelineService.java:[134,102] cannot find symbol
+  symbol:   class TimelineServiceCreator
+  location: class org.apache.hudi.client.embedded.EmbeddedTimelineService
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/embedded/TestEmbeddedTimelineService.java:[145,28] cannot find symbol
+  symbol:   class TimelineServiceCreator
+  location: class org.apache.hudi.client.embedded.EmbeddedTimelineService
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/embedded/TestEmbeddedTimelineService.java:[145,103] cannot find symbol
+  symbol:   class TimelineServiceCreator
+  location: class org.apache.hudi.client.embedded.EmbeddedTimelineService
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/embedded/TestEmbeddedTimelineService.java:[170,28] cannot find symbol
+  symbol:   class TimelineServiceCreator
+  location: class org.apache.hudi.client.embedded.EmbeddedTimelineService
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/embedded/TestEmbeddedTimelineService.java:[170,102] cannot find symbol
+  symbol:   class TimelineServiceCreator
+  location: class org.apache.hudi.client.embedded.EmbeddedTimelineService
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/embedded/TestEmbeddedTimelineService.java:[183,28] cannot find symbol
+  symbol:   class TimelineServiceCreator
+  location: class org.apache.hudi.client.embedded.EmbeddedTimelineService
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/embedded/TestEmbeddedTimelineService.java:[183,103] cannot find symbol
+  symbol:   class TimelineServiceCreator
+  location: class org.apache.hudi.client.embedded.EmbeddedTimelineService
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/heartbeat/TestHoodieHeartbeatClient.java:[69,26] cannot find symbol
+  symbol:   class Heartbeat
+  location: class org.apache.hudi.client.heartbeat.HoodieHeartbeatClient
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/heartbeat/TestHoodieHeartbeatClient.java:[103,9] cannot access org.apache.hudi.client.heartbeat.HeartbeatUtils
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/heartbeat/HeartbeatUtils.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/heartbeat/HeartbeatUtils.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/timeline/TestCompletionTimeQueryView.java:[217,54] cannot access org.apache.hudi.config.HoodieIndexConfig.Builder
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/HoodieIndexConfig$Builder.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/HoodieIndexConfig$Builder.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/timeline/TestHoodieTimelineArchiver.java:[65,60] cannot access org.apache.hudi.config.HoodieArchivalConfig.Builder
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/HoodieArchivalConfig$Builder.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/HoodieArchivalConfig$Builder.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/timeline/TestHoodieTimelineArchiver.java:[82,13] cannot access org.apache.hudi.client.timeline.HoodieTimelineArchiver
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/timeline/HoodieTimelineArchiver.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/timeline/HoodieTimelineArchiver.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/timeline/TestHoodieTimelineArchiver.java:[87,13] method archiveIfRequired in class org.apache.hudi.client.timeline.versioning.v1.TimelineArchiverV1<T,I,K,O> cannot be applied to given types;
+  required: org.apache.hudi.common.engine.HoodieEngineContext,boolean
+  found:    org.apache.hudi.common.engine.HoodieEngineContext
+  reason: actual and formal argument lists differ in length
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/timeline/TestHoodieTimelineArchiver.java:[92,13] method archiveIfRequired in class org.apache.hudi.client.timeline.versioning.v1.TimelineArchiverV1<T,I,K,O> cannot be applied to given types;
+  required: org.apache.hudi.common.engine.HoodieEngineContext,boolean
+  found:    org.apache.hudi.common.engine.HoodieEngineContext
+  reason: actual and formal argument lists differ in length
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/transaction/TestBucketIndexConcurrentFileWritesConflictResolutionStrategy.java:[63,5] cannot access org.apache.hudi.client.transaction.SimpleConcurrentFileWritesConflictResolutionStrategy
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/transaction/SimpleConcurrentFileWritesConflictResolutionStrategy.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/transaction/SimpleConcurrentFileWritesConflictResolutionStrategy.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/transaction/TestBucketIndexConcurrentFileWritesConflictResolutionStrategy.java:[63,73] cannot access org.apache.hudi.client.transaction.BucketIndexConcurrentFileWritesConflictResolutionStrategy
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/transaction/BucketIndexConcurrentFileWritesConflictResolutionStrategy.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/transaction/BucketIndexConcurrentFileWritesConflictResolutionStrategy.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/transaction/TestBucketIndexConcurrentFileWritesConflictResolutionStrategy.java:[106,5] cannot access org.apache.hudi.client.transaction.ConcurrentOperation
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/transaction/ConcurrentOperation.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/transaction/ConcurrentOperation.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/transaction/TestConcurrentSchemaEvolutionTableSchemaGetter.java:[197,5] cannot access org.apache.hudi.client.transaction.ConcurrentSchemaEvolutionTableSchemaGetter
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/transaction/ConcurrentSchemaEvolutionTableSchemaGetter.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/transaction/ConcurrentSchemaEvolutionTableSchemaGetter.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/transaction/TestPreferWriterConflictResolutionStrategy.java:[80,5] cannot access org.apache.hudi.client.transaction.PreferWriterConflictResolutionStrategy
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/transaction/PreferWriterConflictResolutionStrategy.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/transaction/PreferWriterConflictResolutionStrategy.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/transaction/TestSimpleSchemaConflictResolutionStrategy.java:[140,35] cannot access org.apache.hudi.client.transaction.SchemaConflictResolutionStrategy
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/transaction/SchemaConflictResolutionStrategy.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/transaction/SchemaConflictResolutionStrategy.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/transaction/lock/audit/TestAuditServiceFactory.java:[55,12] cannot access org.apache.hudi.client.transaction.lock.audit.AuditService
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/transaction/lock/audit/AuditService.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/transaction/lock/audit/AuditService.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/transaction/lock/audit/TestAuditServiceFactory.java:[55,35] cannot access org.apache.hudi.client.transaction.lock.audit.AuditServiceFactory
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/transaction/lock/audit/AuditServiceFactory.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/transaction/lock/audit/AuditServiceFactory.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/utils/TestCommitMetadataResolver.java:[139,9] cannot access org.apache.hudi.client.CommitMetadataResolver
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/CommitMetadataResolver.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/CommitMetadataResolver.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/utils/TestDeletePartitionUtils.java:[81,17] cannot access org.apache.hudi.client.utils.DeletePartitionUtils
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/utils/DeletePartitionUtils.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/utils/DeletePartitionUtils.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/utils/TestFileSliceMetricUtils.java:[46,5] cannot access org.apache.hudi.client.utils.FileSliceMetricUtils
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/utils/FileSliceMetricUtils.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/utils/FileSliceMetricUtils.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/utils/TestLegacyArchivedMetaEntryReader.java:[79,5] cannot access org.apache.hudi.client.utils.LegacyArchivedMetaEntryReader
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/utils/LegacyArchivedMetaEntryReader.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/utils/LegacyArchivedMetaEntryReader.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/utils/TestPreWriteValidatorUtils.java:[56,9] cannot access org.apache.hudi.client.utils.PreWriteValidatorUtils
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/utils/PreWriteValidatorUtils.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/utils/PreWriteValidatorUtils.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestHoodiePreWriteValidatorConfig.java:[57,34] cannot access org.apache.hudi.config.HoodiePreWriteValidatorConfig.Builder
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/HoodiePreWriteValidatorConfig$Builder.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/HoodiePreWriteValidatorConfig$Builder.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestHoodiePreWriteValidatorConfig.java:[180,34] cannot find symbol
+  symbol:   class Builder
+  location: class org.apache.hudi.config.HoodiePreWriteValidatorConfig
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestHoodiePreWriteValidatorConfig.java:[184,34] cannot find symbol
+  symbol:   class Builder
+  location: class org.apache.hudi.config.HoodiePreWriteValidatorConfig
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestHoodieWriteConfig.java:[330,64] cannot access org.apache.hudi.config.HoodieCompactionConfig.Builder
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/HoodieCompactionConfig$Builder.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/HoodieCompactionConfig$Builder.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestHoodieWriteConfig.java:[328,57] cannot access org.apache.hudi.config.HoodieClusteringConfig.Builder
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/HoodieClusteringConfig$Builder.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/HoodieClusteringConfig$Builder.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestHoodieWriteConfig.java:[346,57] cannot find symbol
+  symbol:   class Builder
+  location: class org.apache.hudi.config.HoodieClusteringConfig
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestHoodieWriteConfig.java:[366,57] cannot find symbol
+  symbol:   class Builder
+  location: class org.apache.hudi.config.HoodieClusteringConfig
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestHoodieWriteConfig.java:[381,57] cannot find symbol
+  symbol:   class Builder
+  location: class org.apache.hudi.config.HoodieClusteringConfig
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestHoodieWriteConfig.java:[579,51] cannot access org.apache.hudi.index.HoodieIndex.BucketIndexEngineType
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/index/HoodieIndex$BucketIndexEngineType.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/index/HoodieIndex$BucketIndexEngineType.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestHoodieWriteConfig.java:[590,47] cannot find symbol
+  symbol:   variable BucketIndexEngineType
+  location: class org.apache.hudi.index.HoodieIndex
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestHoodieWriteConfig.java:[609,51] cannot find symbol
+  symbol:   variable BucketIndexEngineType
+  location: class org.apache.hudi.index.HoodieIndex
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestHoodieWriteConfig.java:[611,18] cannot access org.apache.hudi.config.HoodieLayoutConfig
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/HoodieLayoutConfig.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/HoodieLayoutConfig.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestHoodieWriteConfig.java:[615,51] cannot find symbol
+  symbol:   variable BucketIndexEngineType
+  location: class org.apache.hudi.index.HoodieIndex
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestHoodieWriteConfig.java:[645,55] cannot find symbol
+  symbol:   variable BucketIndexEngineType
+  location: class org.apache.hudi.index.HoodieIndex
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestHoodieWriteConfig.java:[669,55] cannot find symbol
+  symbol:   variable BucketIndexEngineType
+  location: class org.apache.hudi.index.HoodieIndex
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestStorageBasedLockConfig.java:[38,27] cannot access org.apache.hudi.config.StorageBasedLockConfig.Builder
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/StorageBasedLockConfig$Builder.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/StorageBasedLockConfig$Builder.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestStorageBasedLockConfig.java:[38,72] cannot find symbol
+  symbol:   class Builder
+  location: class org.apache.hudi.config.StorageBasedLockConfig
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestStorageBasedLockConfig.java:[55,63] cannot find symbol
+  symbol:   class Builder
+  location: class org.apache.hudi.config.StorageBasedLockConfig
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestStorageBasedLockConfig.java:[69,27] cannot find symbol
+  symbol:   class Builder
+  location: class org.apache.hudi.config.StorageBasedLockConfig
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestStorageBasedLockConfig.java:[69,77] cannot find symbol
+  symbol:   class Builder
+  location: class org.apache.hudi.config.StorageBasedLockConfig
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestStorageBasedLockConfig.java:[85,27] cannot find symbol
+  symbol:   class Builder
+  location: class org.apache.hudi.config.StorageBasedLockConfig
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestStorageBasedLockConfig.java:[85,77] cannot find symbol
+  symbol:   class Builder
+  location: class org.apache.hudi.config.StorageBasedLockConfig
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/estimator/TestAverageRecordSizeEstimator.java:[78,5] cannot access org.apache.hudi.estimator.AverageRecordSizeEstimator
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/estimator/AverageRecordSizeEstimator.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/estimator/AverageRecordSizeEstimator.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/estimator/TestRecordSizeEstimatorFactory.java:[47,37] cannot access org.apache.hudi.estimator.RecordSizeEstimatorFactory
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/estimator/RecordSizeEstimatorFactory.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/estimator/RecordSizeEstimatorFactory.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/execution/TestFileMetadataWriteStatusConverter.java:[106,5] cannot access org.apache.hudi.execution.FileMetadataWriteStatusConverter
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/execution/FileMetadataWriteStatusConverter.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/execution/FileMetadataWriteStatusConverter.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/index/bucket/TestBucketIdentifier.java:[73,23] cannot access org.apache.hudi.index.bucket.BucketIdentifier
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/index/bucket/BucketIdentifier.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/index/bucket/BucketIdentifier.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/index/bucket/TestConsistentBucketIdIdentifier.java:[69,5] cannot access org.apache.hudi.index.bucket.ConsistentBucketIdentifier
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/index/bucket/ConsistentBucketIdentifier.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/index/bucket/ConsistentBucketIdentifier.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/index/bucket/TestConsistentBucketIdIdentifier.java:[214,68] cannot access org.apache.hudi.index.bucket.ConsistentBucketIndexUtils
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/index/bucket/ConsistentBucketIndexUtils.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/index/bucket/ConsistentBucketIndexUtils.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/index/simple/TestGlobalSimpleIndex.java:[98,5] cannot access org.apache.hudi.index.simple.HoodieGlobalSimpleIndex
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/index/simple/HoodieGlobalSimpleIndex.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/index/simple/HoodieGlobalSimpleIndex.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieCreateHandle.java:[113,5] cannot access org.apache.hudi.io.HoodieCreateHandle
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/io/HoodieCreateHandle.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/io/HoodieCreateHandle.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieCreateHandle.java:[315,7] method does not override or implement a method from a supertype
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieCreateHandle.java:[317,35] cannot find symbol
+  symbol:   variable path
+  location: class CreateHandleWithFileWriterInitFailure
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieCreateHandle.java:[354,7] method does not override or implement a method from a supertype
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieCreateHandle.java:[356,35] cannot find symbol
+  symbol:   variable path
+  location: class CreateHandleWithFileWriterWriteFailure
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieCreateHandle.java:[364,31] cannot find symbol
+  symbol:   variable fileWriter
+  location: variable createHandle of type CreateHandleWithFileWriterWriteFailure
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieCreateHandle.java:[365,28] cannot find symbol
+  symbol:   variable fileWriter
+  location: variable createHandle of type CreateHandleWithFileWriterWriteFailure
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieCreateHandle.java:[384,21] cannot find symbol
+  symbol:   variable fileWriter
+  location: variable createHandle of type CreateHandleWithFileWriterWriteFailure
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieCreateHandle.java:[387,21] cannot find symbol
+  symbol:   variable fileWriter
+  location: variable createHandle of type CreateHandleWithFileWriterWriteFailure
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieCreateHandle.java:[390,42] cannot find symbol
+  symbol:   variable fileWriter
+  location: variable createHandle of type CreateHandleWithFileWriterWriteFailure
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieCreateHandle.java:[391,29] cannot find symbol
+  symbol:   variable fileWriter
+  location: variable createHandle of type CreateHandleWithFileWriterWriteFailure
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieCreateHandle.java:[392,24] invalid method reference
+  cannot find symbol
+    symbol:   method close()
+    location: class CreateHandleWithFileWriterWriteFailure
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieMergeHandleFactory.java:[63,31] cannot access org.apache.hudi.io.HoodieMergeHandleFactory
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/io/HoodieMergeHandleFactory.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/io/HoodieMergeHandleFactory.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieMergeHandleFactory.java:[64,46] cannot access org.apache.hudi.io.FileGroupReaderBasedMergeHandle
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/io/FileGroupReaderBasedMergeHandle.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/io/FileGroupReaderBasedMergeHandle.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieMergeHandleFactory.java:[70,46] cannot access org.apache.hudi.io.HoodieSortedMergeHandleWithChangeLog
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/io/HoodieSortedMergeHandleWithChangeLog.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/io/HoodieSortedMergeHandleWithChangeLog.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieMergeHandleFactory.java:[73,46] cannot access org.apache.hudi.io.HoodieSortedMergeHandle
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/io/HoodieSortedMergeHandle.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/io/HoodieSortedMergeHandle.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieMergeHandleFactory.java:[80,46] cannot access org.apache.hudi.io.HoodieConcatHandle
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/io/HoodieConcatHandle.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/io/HoodieConcatHandle.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestSecondaryIndexStreamingTracker.java:[173,48] cannot access org.apache.hudi.client.IndexStats
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/IndexStats.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/IndexStats.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestSecondaryIndexStreamingTracker.java:[247,5] cannot access org.apache.hudi.io.SecondaryIndexStreamingTracker
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/io/SecondaryIndexStreamingTracker.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/io/SecondaryIndexStreamingTracker.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/keygen/factory/TestCreateAvroKeyGeneratorByTypeWithFactory.java:[83,33] cannot access org.apache.hudi.keygen.factory.HoodieAvroKeyGeneratorFactory
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/keygen/factory/HoodieAvroKeyGeneratorFactory.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/keygen/factory/HoodieAvroKeyGeneratorFactory.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/metadata/TestHoodieBackedTableMetadataWriter.java:[121,32] cannot access org.apache.hudi.metadata.HoodieBackedTableMetadataWriter
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/metadata/HoodieBackedTableMetadataWriter.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/metadata/HoodieBackedTableMetadataWriter.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/metadata/TestHoodieMetadataWriteUtils.java:[59,46] cannot access org.apache.hudi.metadata.HoodieMetadataWriteUtils
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/metadata/HoodieMetadataWriteUtils.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/metadata/HoodieMetadataWriteUtils.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/metadata/TestMetadataIndexMapper.java:[68,5] cannot access org.apache.hudi.metadata.RecordIndexMapper
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/metadata/RecordIndexMapper.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/metadata/RecordIndexMapper.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/table/action/clean/TestCleanPlanActionExecutor.java:[80,5] cannot access org.apache.hudi.table.action.clean.CleanPlanActionExecutor
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/table/action/clean/CleanPlanActionExecutor.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/table/action/clean/CleanPlanActionExecutor.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/table/action/clean/TestCleanPlanActionExecutor.java:[187,7] method does not override or implement a method from a supertype
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/table/action/cluster/strategy/TestCommitBasedClusteringPlanStrategy.java:[653,27] cannot find symbol
+  symbol:   class Builder
+  location: class org.apache.hudi.config.HoodieClusteringConfig
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/table/action/compact/TestScheduleCompactionActionExecutor.java:[61,38] cannot access org.apache.hudi.table.action.compact.strategy.CompactionStrategy
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/table/action/compact/strategy/CompactionStrategy.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/table/action/compact/strategy/CompactionStrategy.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/table/action/compact/TestScheduleCompactionActionExecutor.java:[62,45] cannot access org.apache.hudi.table.action.compact.ScheduleCompactionActionExecutor
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/table/action/compact/ScheduleCompactionActionExecutor.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/table/action/compact/ScheduleCompactionActionExecutor.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/table/action/rollback/TestMarkerBasedRollbackStrategy.java:[91,13] cannot access org.apache.hudi.table.action.rollback.MarkerBasedRollbackStrategy
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/table/action/rollback/MarkerBasedRollbackStrategy.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/table/action/rollback/MarkerBasedRollbackStrategy.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/table/action/savepoint/TestSavepointActionExecutor.java:[60,5] cannot access org.apache.hudi.table.action.savepoint.SavepointActionExecutor
+  bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/table/action/savepoint/SavepointActionExecutor.class
+    unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/table/action/savepoint/SavepointActionExecutor.class
+    Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.14.1:testCompile (default-testCompile) on project hudi-client-common: Compilation failure: Compilation failure: 
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/callback/client/http/TestCallbackHttpClient.java:[194,71] cannot access org.apache.hudi.config.HoodieWriteCommitCallbackConfig.Builder
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/HoodieWriteCommitCallbackConfig$Builder.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/HoodieWriteCommitCallbackConfig$Builder.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/TestBaseHoodieTableServiceClient.java:[379,37] cannot access org.apache.hudi.client.heartbeat.HoodieHeartbeatClient.Heartbeat
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/heartbeat/HoodieHeartbeatClient$Heartbeat.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/heartbeat/HoodieHeartbeatClient$Heartbeat.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/TestBaseHoodieTableServiceClient.java:[490,18] cannot access org.apache.hudi.exception.HoodieRollbackException
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/exception/HoodieRollbackException.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/exception/HoodieRollbackException.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/TestBaseHoodieWriteClient.java:[267,52] cannot access org.apache.hudi.config.HoodieLockConfig.Builder
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/HoodieLockConfig$Builder.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/HoodieLockConfig$Builder.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/TestBaseHoodieWriteClient.java:[301,18] cannot access org.apache.hudi.client.BaseHoodieWriteClient.TriFunction
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/BaseHoodieWriteClient$TriFunction.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/BaseHoodieWriteClient$TriFunction.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/embedded/TestEmbeddedTimelineService.java:[56,28] cannot access org.apache.hudi.client.embedded.EmbeddedTimelineService.TimelineServiceCreator
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/embedded/EmbeddedTimelineService$TimelineServiceCreator.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/embedded/EmbeddedTimelineService$TimelineServiceCreator.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/embedded/TestEmbeddedTimelineService.java:[56,102] cannot find symbol
+[ERROR]   symbol:   class TimelineServiceCreator
+[ERROR]   location: class org.apache.hudi.client.embedded.EmbeddedTimelineService
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/embedded/TestEmbeddedTimelineService.java:[70,28] cannot find symbol
+[ERROR]   symbol:   class TimelineServiceCreator
+[ERROR]   location: class org.apache.hudi.client.embedded.EmbeddedTimelineService
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/embedded/TestEmbeddedTimelineService.java:[70,103] cannot find symbol
+[ERROR]   symbol:   class TimelineServiceCreator
+[ERROR]   location: class org.apache.hudi.client.embedded.EmbeddedTimelineService
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/embedded/TestEmbeddedTimelineService.java:[97,28] cannot find symbol
+[ERROR]   symbol:   class TimelineServiceCreator
+[ERROR]   location: class org.apache.hudi.client.embedded.EmbeddedTimelineService
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/embedded/TestEmbeddedTimelineService.java:[97,102] cannot find symbol
+[ERROR]   symbol:   class TimelineServiceCreator
+[ERROR]   location: class org.apache.hudi.client.embedded.EmbeddedTimelineService
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/embedded/TestEmbeddedTimelineService.java:[111,28] cannot find symbol
+[ERROR]   symbol:   class TimelineServiceCreator
+[ERROR]   location: class org.apache.hudi.client.embedded.EmbeddedTimelineService
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/embedded/TestEmbeddedTimelineService.java:[111,103] cannot find symbol
+[ERROR]   symbol:   class TimelineServiceCreator
+[ERROR]   location: class org.apache.hudi.client.embedded.EmbeddedTimelineService
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/embedded/TestEmbeddedTimelineService.java:[134,28] cannot find symbol
+[ERROR]   symbol:   class TimelineServiceCreator
+[ERROR]   location: class org.apache.hudi.client.embedded.EmbeddedTimelineService
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/embedded/TestEmbeddedTimelineService.java:[134,102] cannot find symbol
+[ERROR]   symbol:   class TimelineServiceCreator
+[ERROR]   location: class org.apache.hudi.client.embedded.EmbeddedTimelineService
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/embedded/TestEmbeddedTimelineService.java:[145,28] cannot find symbol
+[ERROR]   symbol:   class TimelineServiceCreator
+[ERROR]   location: class org.apache.hudi.client.embedded.EmbeddedTimelineService
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/embedded/TestEmbeddedTimelineService.java:[145,103] cannot find symbol
+[ERROR]   symbol:   class TimelineServiceCreator
+[ERROR]   location: class org.apache.hudi.client.embedded.EmbeddedTimelineService
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/embedded/TestEmbeddedTimelineService.java:[170,28] cannot find symbol
+[ERROR]   symbol:   class TimelineServiceCreator
+[ERROR]   location: class org.apache.hudi.client.embedded.EmbeddedTimelineService
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/embedded/TestEmbeddedTimelineService.java:[170,102] cannot find symbol
+[ERROR]   symbol:   class TimelineServiceCreator
+[ERROR]   location: class org.apache.hudi.client.embedded.EmbeddedTimelineService
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/embedded/TestEmbeddedTimelineService.java:[183,28] cannot find symbol
+[ERROR]   symbol:   class TimelineServiceCreator
+[ERROR]   location: class org.apache.hudi.client.embedded.EmbeddedTimelineService
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/embedded/TestEmbeddedTimelineService.java:[183,103] cannot find symbol
+[ERROR]   symbol:   class TimelineServiceCreator
+[ERROR]   location: class org.apache.hudi.client.embedded.EmbeddedTimelineService
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/heartbeat/TestHoodieHeartbeatClient.java:[69,26] cannot find symbol
+[ERROR]   symbol:   class Heartbeat
+[ERROR]   location: class org.apache.hudi.client.heartbeat.HoodieHeartbeatClient
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/heartbeat/TestHoodieHeartbeatClient.java:[103,9] cannot access org.apache.hudi.client.heartbeat.HeartbeatUtils
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/heartbeat/HeartbeatUtils.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/heartbeat/HeartbeatUtils.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/timeline/TestCompletionTimeQueryView.java:[217,54] cannot access org.apache.hudi.config.HoodieIndexConfig.Builder
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/HoodieIndexConfig$Builder.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/HoodieIndexConfig$Builder.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/timeline/TestHoodieTimelineArchiver.java:[65,60] cannot access org.apache.hudi.config.HoodieArchivalConfig.Builder
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/HoodieArchivalConfig$Builder.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/HoodieArchivalConfig$Builder.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/timeline/TestHoodieTimelineArchiver.java:[82,13] cannot access org.apache.hudi.client.timeline.HoodieTimelineArchiver
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/timeline/HoodieTimelineArchiver.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/timeline/HoodieTimelineArchiver.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/timeline/TestHoodieTimelineArchiver.java:[87,13] method archiveIfRequired in class org.apache.hudi.client.timeline.versioning.v1.TimelineArchiverV1<T,I,K,O> cannot be applied to given types;
+[ERROR]   required: org.apache.hudi.common.engine.HoodieEngineContext,boolean
+[ERROR]   found:    org.apache.hudi.common.engine.HoodieEngineContext
+[ERROR]   reason: actual and formal argument lists differ in length
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/timeline/TestHoodieTimelineArchiver.java:[92,13] method archiveIfRequired in class org.apache.hudi.client.timeline.versioning.v1.TimelineArchiverV1<T,I,K,O> cannot be applied to given types;
+[ERROR]   required: org.apache.hudi.common.engine.HoodieEngineContext,boolean
+[ERROR]   found:    org.apache.hudi.common.engine.HoodieEngineContext
+[ERROR]   reason: actual and formal argument lists differ in length
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/transaction/TestBucketIndexConcurrentFileWritesConflictResolutionStrategy.java:[63,5] cannot access org.apache.hudi.client.transaction.SimpleConcurrentFileWritesConflictResolutionStrategy
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/transaction/SimpleConcurrentFileWritesConflictResolutionStrategy.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/transaction/SimpleConcurrentFileWritesConflictResolutionStrategy.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/transaction/TestBucketIndexConcurrentFileWritesConflictResolutionStrategy.java:[63,73] cannot access org.apache.hudi.client.transaction.BucketIndexConcurrentFileWritesConflictResolutionStrategy
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/transaction/BucketIndexConcurrentFileWritesConflictResolutionStrategy.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/transaction/BucketIndexConcurrentFileWritesConflictResolutionStrategy.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/transaction/TestBucketIndexConcurrentFileWritesConflictResolutionStrategy.java:[106,5] cannot access org.apache.hudi.client.transaction.ConcurrentOperation
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/transaction/ConcurrentOperation.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/transaction/ConcurrentOperation.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/transaction/TestConcurrentSchemaEvolutionTableSchemaGetter.java:[197,5] cannot access org.apache.hudi.client.transaction.ConcurrentSchemaEvolutionTableSchemaGetter
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/transaction/ConcurrentSchemaEvolutionTableSchemaGetter.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/transaction/ConcurrentSchemaEvolutionTableSchemaGetter.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/transaction/TestPreferWriterConflictResolutionStrategy.java:[80,5] cannot access org.apache.hudi.client.transaction.PreferWriterConflictResolutionStrategy
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/transaction/PreferWriterConflictResolutionStrategy.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/transaction/PreferWriterConflictResolutionStrategy.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/transaction/TestSimpleSchemaConflictResolutionStrategy.java:[140,35] cannot access org.apache.hudi.client.transaction.SchemaConflictResolutionStrategy
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/transaction/SchemaConflictResolutionStrategy.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/transaction/SchemaConflictResolutionStrategy.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/transaction/lock/audit/TestAuditServiceFactory.java:[55,12] cannot access org.apache.hudi.client.transaction.lock.audit.AuditService
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/transaction/lock/audit/AuditService.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/transaction/lock/audit/AuditService.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/transaction/lock/audit/TestAuditServiceFactory.java:[55,35] cannot access org.apache.hudi.client.transaction.lock.audit.AuditServiceFactory
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/transaction/lock/audit/AuditServiceFactory.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/transaction/lock/audit/AuditServiceFactory.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/utils/TestCommitMetadataResolver.java:[139,9] cannot access org.apache.hudi.client.CommitMetadataResolver
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/CommitMetadataResolver.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/CommitMetadataResolver.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/utils/TestDeletePartitionUtils.java:[81,17] cannot access org.apache.hudi.client.utils.DeletePartitionUtils
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/utils/DeletePartitionUtils.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/utils/DeletePartitionUtils.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/utils/TestFileSliceMetricUtils.java:[46,5] cannot access org.apache.hudi.client.utils.FileSliceMetricUtils
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/utils/FileSliceMetricUtils.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/utils/FileSliceMetricUtils.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/utils/TestLegacyArchivedMetaEntryReader.java:[79,5] cannot access org.apache.hudi.client.utils.LegacyArchivedMetaEntryReader
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/utils/LegacyArchivedMetaEntryReader.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/utils/LegacyArchivedMetaEntryReader.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/client/utils/TestPreWriteValidatorUtils.java:[56,9] cannot access org.apache.hudi.client.utils.PreWriteValidatorUtils
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/utils/PreWriteValidatorUtils.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/utils/PreWriteValidatorUtils.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestHoodiePreWriteValidatorConfig.java:[57,34] cannot access org.apache.hudi.config.HoodiePreWriteValidatorConfig.Builder
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/HoodiePreWriteValidatorConfig$Builder.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/HoodiePreWriteValidatorConfig$Builder.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestHoodiePreWriteValidatorConfig.java:[180,34] cannot find symbol
+[ERROR]   symbol:   class Builder
+[ERROR]   location: class org.apache.hudi.config.HoodiePreWriteValidatorConfig
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestHoodiePreWriteValidatorConfig.java:[184,34] cannot find symbol
+[ERROR]   symbol:   class Builder
+[ERROR]   location: class org.apache.hudi.config.HoodiePreWriteValidatorConfig
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestHoodieWriteConfig.java:[330,64] cannot access org.apache.hudi.config.HoodieCompactionConfig.Builder
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/HoodieCompactionConfig$Builder.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/HoodieCompactionConfig$Builder.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestHoodieWriteConfig.java:[328,57] cannot access org.apache.hudi.config.HoodieClusteringConfig.Builder
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/HoodieClusteringConfig$Builder.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/HoodieClusteringConfig$Builder.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestHoodieWriteConfig.java:[346,57] cannot find symbol
+[ERROR]   symbol:   class Builder
+[ERROR]   location: class org.apache.hudi.config.HoodieClusteringConfig
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestHoodieWriteConfig.java:[366,57] cannot find symbol
+[ERROR]   symbol:   class Builder
+[ERROR]   location: class org.apache.hudi.config.HoodieClusteringConfig
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestHoodieWriteConfig.java:[381,57] cannot find symbol
+[ERROR]   symbol:   class Builder
+[ERROR]   location: class org.apache.hudi.config.HoodieClusteringConfig
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestHoodieWriteConfig.java:[579,51] cannot access org.apache.hudi.index.HoodieIndex.BucketIndexEngineType
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/index/HoodieIndex$BucketIndexEngineType.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/index/HoodieIndex$BucketIndexEngineType.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestHoodieWriteConfig.java:[590,47] cannot find symbol
+[ERROR]   symbol:   variable BucketIndexEngineType
+[ERROR]   location: class org.apache.hudi.index.HoodieIndex
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestHoodieWriteConfig.java:[609,51] cannot find symbol
+[ERROR]   symbol:   variable BucketIndexEngineType
+[ERROR]   location: class org.apache.hudi.index.HoodieIndex
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestHoodieWriteConfig.java:[611,18] cannot access org.apache.hudi.config.HoodieLayoutConfig
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/HoodieLayoutConfig.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/HoodieLayoutConfig.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestHoodieWriteConfig.java:[615,51] cannot find symbol
+[ERROR]   symbol:   variable BucketIndexEngineType
+[ERROR]   location: class org.apache.hudi.index.HoodieIndex
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestHoodieWriteConfig.java:[645,55] cannot find symbol
+[ERROR]   symbol:   variable BucketIndexEngineType
+[ERROR]   location: class org.apache.hudi.index.HoodieIndex
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestHoodieWriteConfig.java:[669,55] cannot find symbol
+[ERROR]   symbol:   variable BucketIndexEngineType
+[ERROR]   location: class org.apache.hudi.index.HoodieIndex
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestStorageBasedLockConfig.java:[38,27] cannot access org.apache.hudi.config.StorageBasedLockConfig.Builder
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/StorageBasedLockConfig$Builder.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/config/StorageBasedLockConfig$Builder.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestStorageBasedLockConfig.java:[38,72] cannot find symbol
+[ERROR]   symbol:   class Builder
+[ERROR]   location: class org.apache.hudi.config.StorageBasedLockConfig
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestStorageBasedLockConfig.java:[55,63] cannot find symbol
+[ERROR]   symbol:   class Builder
+[ERROR]   location: class org.apache.hudi.config.StorageBasedLockConfig
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestStorageBasedLockConfig.java:[69,27] cannot find symbol
+[ERROR]   symbol:   class Builder
+[ERROR]   location: class org.apache.hudi.config.StorageBasedLockConfig
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestStorageBasedLockConfig.java:[69,77] cannot find symbol
+[ERROR]   symbol:   class Builder
+[ERROR]   location: class org.apache.hudi.config.StorageBasedLockConfig
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestStorageBasedLockConfig.java:[85,27] cannot find symbol
+[ERROR]   symbol:   class Builder
+[ERROR]   location: class org.apache.hudi.config.StorageBasedLockConfig
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/config/TestStorageBasedLockConfig.java:[85,77] cannot find symbol
+[ERROR]   symbol:   class Builder
+[ERROR]   location: class org.apache.hudi.config.StorageBasedLockConfig
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/estimator/TestAverageRecordSizeEstimator.java:[78,5] cannot access org.apache.hudi.estimator.AverageRecordSizeEstimator
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/estimator/AverageRecordSizeEstimator.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/estimator/AverageRecordSizeEstimator.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/estimator/TestRecordSizeEstimatorFactory.java:[47,37] cannot access org.apache.hudi.estimator.RecordSizeEstimatorFactory
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/estimator/RecordSizeEstimatorFactory.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/estimator/RecordSizeEstimatorFactory.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/execution/TestFileMetadataWriteStatusConverter.java:[106,5] cannot access org.apache.hudi.execution.FileMetadataWriteStatusConverter
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/execution/FileMetadataWriteStatusConverter.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/execution/FileMetadataWriteStatusConverter.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/index/bucket/TestBucketIdentifier.java:[73,23] cannot access org.apache.hudi.index.bucket.BucketIdentifier
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/index/bucket/BucketIdentifier.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/index/bucket/BucketIdentifier.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/index/bucket/TestConsistentBucketIdIdentifier.java:[69,5] cannot access org.apache.hudi.index.bucket.ConsistentBucketIdentifier
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/index/bucket/ConsistentBucketIdentifier.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/index/bucket/ConsistentBucketIdentifier.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/index/bucket/TestConsistentBucketIdIdentifier.java:[214,68] cannot access org.apache.hudi.index.bucket.ConsistentBucketIndexUtils
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/index/bucket/ConsistentBucketIndexUtils.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/index/bucket/ConsistentBucketIndexUtils.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/index/simple/TestGlobalSimpleIndex.java:[98,5] cannot access org.apache.hudi.index.simple.HoodieGlobalSimpleIndex
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/index/simple/HoodieGlobalSimpleIndex.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/index/simple/HoodieGlobalSimpleIndex.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieCreateHandle.java:[113,5] cannot access org.apache.hudi.io.HoodieCreateHandle
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/io/HoodieCreateHandle.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/io/HoodieCreateHandle.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieCreateHandle.java:[315,7] method does not override or implement a method from a supertype
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieCreateHandle.java:[317,35] cannot find symbol
+[ERROR]   symbol:   variable path
+[ERROR]   location: class CreateHandleWithFileWriterInitFailure
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieCreateHandle.java:[354,7] method does not override or implement a method from a supertype
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieCreateHandle.java:[356,35] cannot find symbol
+[ERROR]   symbol:   variable path
+[ERROR]   location: class CreateHandleWithFileWriterWriteFailure
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieCreateHandle.java:[364,31] cannot find symbol
+[ERROR]   symbol:   variable fileWriter
+[ERROR]   location: variable createHandle of type CreateHandleWithFileWriterWriteFailure
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieCreateHandle.java:[365,28] cannot find symbol
+[ERROR]   symbol:   variable fileWriter
+[ERROR]   location: variable createHandle of type CreateHandleWithFileWriterWriteFailure
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieCreateHandle.java:[384,21] cannot find symbol
+[ERROR]   symbol:   variable fileWriter
+[ERROR]   location: variable createHandle of type CreateHandleWithFileWriterWriteFailure
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieCreateHandle.java:[387,21] cannot find symbol
+[ERROR]   symbol:   variable fileWriter
+[ERROR]   location: variable createHandle of type CreateHandleWithFileWriterWriteFailure
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieCreateHandle.java:[390,42] cannot find symbol
+[ERROR]   symbol:   variable fileWriter
+[ERROR]   location: variable createHandle of type CreateHandleWithFileWriterWriteFailure
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieCreateHandle.java:[391,29] cannot find symbol
+[ERROR]   symbol:   variable fileWriter
+[ERROR]   location: variable createHandle of type CreateHandleWithFileWriterWriteFailure
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieCreateHandle.java:[392,24] invalid method reference
+[ERROR]   cannot find symbol
+[ERROR]     symbol:   method close()
+[ERROR]     location: class CreateHandleWithFileWriterWriteFailure
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieMergeHandleFactory.java:[63,31] cannot access org.apache.hudi.io.HoodieMergeHandleFactory
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/io/HoodieMergeHandleFactory.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/io/HoodieMergeHandleFactory.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieMergeHandleFactory.java:[64,46] cannot access org.apache.hudi.io.FileGroupReaderBasedMergeHandle
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/io/FileGroupReaderBasedMergeHandle.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/io/FileGroupReaderBasedMergeHandle.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieMergeHandleFactory.java:[70,46] cannot access org.apache.hudi.io.HoodieSortedMergeHandleWithChangeLog
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/io/HoodieSortedMergeHandleWithChangeLog.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/io/HoodieSortedMergeHandleWithChangeLog.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieMergeHandleFactory.java:[73,46] cannot access org.apache.hudi.io.HoodieSortedMergeHandle
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/io/HoodieSortedMergeHandle.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/io/HoodieSortedMergeHandle.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestHoodieMergeHandleFactory.java:[80,46] cannot access org.apache.hudi.io.HoodieConcatHandle
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/io/HoodieConcatHandle.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/io/HoodieConcatHandle.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestSecondaryIndexStreamingTracker.java:[173,48] cannot access org.apache.hudi.client.IndexStats
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/IndexStats.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/client/IndexStats.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/io/TestSecondaryIndexStreamingTracker.java:[247,5] cannot access org.apache.hudi.io.SecondaryIndexStreamingTracker
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/io/SecondaryIndexStreamingTracker.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/io/SecondaryIndexStreamingTracker.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/keygen/factory/TestCreateAvroKeyGeneratorByTypeWithFactory.java:[83,33] cannot access org.apache.hudi.keygen.factory.HoodieAvroKeyGeneratorFactory
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/keygen/factory/HoodieAvroKeyGeneratorFactory.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/keygen/factory/HoodieAvroKeyGeneratorFactory.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/metadata/TestHoodieBackedTableMetadataWriter.java:[121,32] cannot access org.apache.hudi.metadata.HoodieBackedTableMetadataWriter
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/metadata/HoodieBackedTableMetadataWriter.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/metadata/HoodieBackedTableMetadataWriter.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/metadata/TestHoodieMetadataWriteUtils.java:[59,46] cannot access org.apache.hudi.metadata.HoodieMetadataWriteUtils
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/metadata/HoodieMetadataWriteUtils.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/metadata/HoodieMetadataWriteUtils.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/metadata/TestMetadataIndexMapper.java:[68,5] cannot access org.apache.hudi.metadata.RecordIndexMapper
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/metadata/RecordIndexMapper.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/metadata/RecordIndexMapper.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/table/action/clean/TestCleanPlanActionExecutor.java:[80,5] cannot access org.apache.hudi.table.action.clean.CleanPlanActionExecutor
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/table/action/clean/CleanPlanActionExecutor.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/table/action/clean/CleanPlanActionExecutor.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/table/action/clean/TestCleanPlanActionExecutor.java:[187,7] method does not override or implement a method from a supertype
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/table/action/cluster/strategy/TestCommitBasedClusteringPlanStrategy.java:[653,27] cannot find symbol
+[ERROR]   symbol:   class Builder
+[ERROR]   location: class org.apache.hudi.config.HoodieClusteringConfig
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/table/action/compact/TestScheduleCompactionActionExecutor.java:[61,38] cannot access org.apache.hudi.table.action.compact.strategy.CompactionStrategy
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/table/action/compact/strategy/CompactionStrategy.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/table/action/compact/strategy/CompactionStrategy.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/table/action/compact/TestScheduleCompactionActionExecutor.java:[62,45] cannot access org.apache.hudi.table.action.compact.ScheduleCompactionActionExecutor
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/table/action/compact/ScheduleCompactionActionExecutor.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/table/action/compact/ScheduleCompactionActionExecutor.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/table/action/rollback/TestMarkerBasedRollbackStrategy.java:[91,13] cannot access org.apache.hudi.table.action.rollback.MarkerBasedRollbackStrategy
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/table/action/rollback/MarkerBasedRollbackStrategy.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/table/action/rollback/MarkerBasedRollbackStrategy.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/src/test/java/org/apache/hudi/table/action/savepoint/TestSavepointActionExecutor.java:[60,5] cannot access org.apache.hudi.table.action.savepoint.SavepointActionExecutor
+[ERROR]   bad class file: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/table/action/savepoint/SavepointActionExecutor.class
+[ERROR]     unable to access file: java.nio.file.NoSuchFileException: /mmfs1/scratch/mjk76/ea442/promptstudy/hudi-chicory/hudi-client/hudi-client-common/target/classes/org/apache/hudi/table/action/savepoint/SavepointActionExecutor.class
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the classpath.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :hudi-client-common

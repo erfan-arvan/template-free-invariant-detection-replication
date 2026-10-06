@@ -1,0 +1,6 @@
+
+The following have been reloaded with a version change:
+  1) Java/17.0.15 => Java/23.0.2
+
+Picked up JAVA_TOOL_OPTIONS:  -Djava.io.tmpdir=/scratch/mjk76/ea442/promptstudy/tmp
+[2026-09-09T02:50:50.194] error: *** JOB 1239760 ON n0070 CANCELLED AT 2026-09-09T02:50:50 DUE to SIGNAL Terminated ***

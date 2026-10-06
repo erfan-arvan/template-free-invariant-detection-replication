@@ -1,0 +1,705 @@
+Random seed: 42
+Eligible methods: 4128
+Sampled methods: 9
+
+SELECTED METHODS
+====================================================================================================
+1. [apollo] com.ctrip.framework.apollo.biz.entity.InstanceConfig#setInstanceId(long):void
+2. [dubbo] org.apache.dubbo.common.URLBuilder#removeParameters(String):URLBuilder
+3. [hudi] org.apache.hudi.table.action.deltacommit.JavaInsertDeltaCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>
+4. [netty] io.netty.util.concurrent.UnorderedThreadPoolEventExecutor#shutdownGracefully():Future<?>
+5. [spring] org.springframework.core.annotation.PackagesAnnotationFilter#matches(String):boolean
+6. [dubbo] org.apache.dubbo.common.utils.UrlUtils#isMatchGlobPattern(String,String,URL):boolean
+7. [dubbo] org.apache.dubbo.common.resource.GlobalResourcesRepository#getInstance():GlobalResourcesRepository
+8. [dubbo] org.apache.dubbo.common.extension.ExtensionLoader#setLoadingStrategies(LoadingStrategy):void
+9. [dubbo] org.apache.dubbo.common.convert.Converter#getSourceType():Class<S>
+
+
+########################################################################################################################
+METHOD 1/9
+PROJECT: apollo
+ELEMENT: com.ctrip.framework.apollo.biz.entity.InstanceConfig#setInstanceId(long):void
+########################################################################################################################
+
+=== CALL_SITE : 3 HELD ===
+[METHOD_ENTRY] instanceId >= 0L
+    id: ba7f0914-a253-4efa-8a96-1371c859871b
+    rationale: instanceId likely represents an identifier, which is usually non-negative.
+[METHOD_EXIT] Long.valueOf(instanceId).equals(Long.valueOf(instanceId))
+    id: 81348236-1022-4ec7-b19a-c5a2429bd508
+    rationale: Reinforces the type integrity of instanceId.
+[METHOD_EXIT] instanceId >= 0
+    id: 1a60f2bb-9e70-4bf2-b5c6-c663a88852f2
+    rationale: Identifiers are typically non-negative; this captures that instanceId is set to a valid id.
+
+=== CLASS_DOC : 2 HELD ===
+[METHOD_ENTRY] instanceId >= 0L
+    id: 01370607-90ba-4757-bd2d-0994e6360bb9
+    rationale: Instance IDs often represent positive identifiers.
+[METHOD_EXIT] instanceId >= 0
+    id: 30ce362a-7dbe-4dea-b610-c0747d1d2e9c
+    rationale: Instance IDs are typically non-negative identifiers.
+
+=== IO_EXAMPLES : 1 HELD ===
+[METHOD_ENTRY] instanceId >= 0
+    id: 1c00ae0d-1309-4f71-aa73-e5b06a455a57
+    rationale: Typically, identifiers like instanceId are non-negative
+
+=== METHOD_JAVADOC : 3 HELD ===
+[METHOD_ENTRY] instanceId >= 0L
+    id: 09b5f3b9-ca64-40c3-92f2-d2b8a9ebf2ba
+    rationale: instanceId likely represents an identifier, which is usually non-negative.
+[METHOD_EXIT] Long.valueOf(instanceId).equals(Long.valueOf(instanceId))
+    id: 5968c1a6-806d-40c5-a6b5-e58cf16dfa53
+    rationale: Reinforces the type integrity of instanceId.
+[METHOD_EXIT] instanceId >= 0
+    id: 5cdef8da-6333-4cf6-a7f9-6a9e75f837f3
+    rationale: Identifiers are typically non-negative; this captures that instanceId is set to a valid id.
+
+=== TYPE_DOC : 3 HELD ===
+[METHOD_ENTRY] instanceId >= 0L
+    id: 5b2958a9-7b57-4be4-bd8b-3fb366e20531
+    rationale: instanceId likely represents an identifier, which is usually non-negative.
+[METHOD_EXIT] Long.valueOf(instanceId).equals(Long.valueOf(instanceId))
+    id: 9c8b3edd-e91c-4869-9da1-86c2082dd08d
+    rationale: Reinforces the type integrity of instanceId.
+[METHOD_EXIT] instanceId >= 0
+    id: 7be8d730-7c31-4ec6-ae2c-1e30211f976c
+    rationale: Identifiers are typically non-negative; this captures that instanceId is set to a valid id.
+
+=== SOURCE CODE ===
+Registry file: com/ctrip/framework/apollo/biz/entity/InstanceConfig.java
+Repository path: /mmfs1/project/mjk76/ea442/promptstudy/apollo/apollo-biz/src/main/java/com/ctrip/framework/apollo/biz/entity/InstanceConfig.java
+
+  public void setInstanceId(long instanceId) {
+    this.instanceId = instanceId;
+  }
+
+
+########################################################################################################################
+METHOD 2/9
+PROJECT: dubbo
+ELEMENT: org.apache.dubbo.common.URLBuilder#removeParameters(String):URLBuilder
+########################################################################################################################
+
+=== CALL_SITE : 7 HELD ===
+[METHOD_ENTRY] !(keys.length == 0) || keys.length > 0
+    id: 3d5df00f-4bda-49d5-859f-cfc95eb1e599
+    rationale: Keys array length is non-negative.
+[METHOD_ENTRY] (! (keys.length == 0) || keys.length > 0)
+    id: 8c2062c7-088d-477b-b899-23136cf0da62
+    rationale: Keys is either empty or has positive length, covering all cases.
+[METHOD_ENTRY] (keys == null) || (keys.length > 0)
+    id: e2fac967-d00c-4918-829b-f82c163c9e1c
+    rationale: Either keys is null or keys has elements.
+[METHOD_ENTRY] keys != null
+    id: bdbd2de1-efd8-48b1-8805-3c5990499c2d
+    rationale: Keys should be non-null because the method checks ArrayUtils.isEmpty(keys), which itself checks for null.
+[METHOD_ENTRY] keys.length >= 0
+    id: 1bedb1e1-8420-46f8-8ed2-5554dd441d2c
+    rationale: Keys.length must be at least zero because keys is an array.
+[METHOD_EXIT] keys != null && (keys.length == 0 || result.parameters != null)
+    id: 91094136-9b14-4e89-8ff0-6636cd1c13ab
+    rationale: parameters map in result is expected to exist unless keys is empty
+[METHOD_EXIT] keys == null || keys.length == 0 || result != null
+    id: 3e9f11b3-6746-472e-a3c1-8e06255aa85d
+    rationale: If no keys given, result is this; if keys exist result remains non-null
+
+=== CLASS_DOC : 3 HELD ===
+[METHOD_ENTRY] keys != null
+    id: 84bf3396-984b-4bb8-94fa-3099e9ba2024
+    rationale: The method removeParameters expects keys to not be null to avoid NullPointerException.
+[METHOD_ENTRY] keys.length >= 0
+    id: 2aeaf208-5014-49be-9057-32ae7a86aada
+    rationale: The keys array length is always zero or more.
+[METHOD_EXIT] result.parameters != null
+    id: d1e44667-13d4-4207-aeff-0c2e216b7eda
+    rationale: Assuming the class invariant is that parameters map is always initialized, so after method exit it remains non-null.
+
+=== IO_EXAMPLES : 7 HELD ===
+[METHOD_ENTRY] !(keys.length == 0) || keys.length > 0
+    id: 6e1a380a-76c3-486c-a807-48c9d882bfd7
+    rationale: Keys array length is non-negative.
+[METHOD_ENTRY] (! (keys.length == 0) || keys.length > 0)
+    id: aa0e189d-1458-49f3-a328-abc3e85a50e8
+    rationale: Keys is either empty or has positive length, covering all cases.
+[METHOD_ENTRY] (keys == null) || (keys.length > 0)
+    id: 53545a72-e813-447f-98ee-80fd0f12ee78
+    rationale: Either keys is null or keys has elements.
+[METHOD_ENTRY] keys != null
+    id: f264e6cb-499d-4598-b871-42e6017e32b0
+    rationale: Keys should be non-null because the method checks ArrayUtils.isEmpty(keys), which itself checks for null.
+[METHOD_ENTRY] keys.length >= 0
+    id: 4cc96040-4b30-4d4a-8dfb-b2534089a03e
+    rationale: Keys.length must be at least zero because keys is an array.
+[METHOD_EXIT] keys != null && (keys.length == 0 || result.parameters != null)
+    id: 823b20a4-cfc9-43dc-91cc-986ebbb8c772
+    rationale: parameters map in result is expected to exist unless keys is empty
+[METHOD_EXIT] keys == null || keys.length == 0 || result != null
+    id: 133d9a30-ac5b-496d-aad4-c09cc0b2f15e
+    rationale: If no keys given, result is this; if keys exist result remains non-null
+
+=== METHOD_JAVADOC : 7 HELD ===
+[METHOD_ENTRY] !(keys.length == 0) || keys.length > 0
+    id: e3e84566-f278-4385-97e8-96806e6083ba
+    rationale: Keys array length is non-negative.
+[METHOD_ENTRY] (! (keys.length == 0) || keys.length > 0)
+    id: 822d169b-6a99-46e0-8779-32e31e974226
+    rationale: Keys is either empty or has positive length, covering all cases.
+[METHOD_ENTRY] (keys == null) || (keys.length > 0)
+    id: 719a74d5-061c-4ca0-bd16-1afdf7778067
+    rationale: Either keys is null or keys has elements.
+[METHOD_ENTRY] keys != null
+    id: 70f363cb-14da-4fb0-aa56-8d3b473b7e0b
+    rationale: Keys should be non-null because the method checks ArrayUtils.isEmpty(keys), which itself checks for null.
+[METHOD_ENTRY] keys.length >= 0
+    id: 4f8c2f26-3b57-4ddd-9947-a669cb9f1658
+    rationale: Keys.length must be at least zero because keys is an array.
+[METHOD_EXIT] keys != null && (keys.length == 0 || result.parameters != null)
+    id: 63cf6503-d2da-4bf1-aefd-6742bec6feb6
+    rationale: parameters map in result is expected to exist unless keys is empty
+[METHOD_EXIT] keys == null || keys.length == 0 || result != null
+    id: 46ba8689-19eb-425c-8bb6-c070a0b077e7
+    rationale: If no keys given, result is this; if keys exist result remains non-null
+
+=== TYPE_DOC : 7 HELD ===
+[METHOD_ENTRY] !(keys.length == 0) || keys.length > 0
+    id: a27939be-fdf9-44c8-9174-5502f558b5fb
+    rationale: Keys array length is non-negative.
+[METHOD_ENTRY] (! (keys.length == 0) || keys.length > 0)
+    id: c0f8032a-785c-4d19-b677-dc917762ca52
+    rationale: Keys is either empty or has positive length, covering all cases.
+[METHOD_ENTRY] (keys == null) || (keys.length > 0)
+    id: 6c578391-2b2f-46df-bcfd-81212c816080
+    rationale: Either keys is null or keys has elements.
+[METHOD_ENTRY] keys != null
+    id: 80d03f9c-ddbf-4322-8d85-a54fd07e6d7a
+    rationale: Keys should be non-null because the method checks ArrayUtils.isEmpty(keys), which itself checks for null.
+[METHOD_ENTRY] keys.length >= 0
+    id: 3a5ec7c0-c936-435a-8099-abe5948088ce
+    rationale: Keys.length must be at least zero because keys is an array.
+[METHOD_EXIT] keys != null && (keys.length == 0 || result.parameters != null)
+    id: 9152e5f8-868f-41e5-82da-60beeb16ed80
+    rationale: parameters map in result is expected to exist unless keys is empty
+[METHOD_EXIT] keys == null || keys.length == 0 || result != null
+    id: eed4affc-56c7-4a2b-b1bd-aad73a88d599
+    rationale: If no keys given, result is this; if keys exist result remains non-null
+
+=== SOURCE CODE ===
+Registry file: org/apache/dubbo/common/URLBuilder.java
+Repository path: /mmfs1/project/mjk76/ea442/promptstudy/dubbo/dubbo-common/src/main/java/org/apache/dubbo/common/URLBuilder.java
+
+    @Override
+    public URLBuilder removeParameters(Collection<String> keys) {
+        if (CollectionUtils.isEmpty(keys)) {
+            return this;
+        }
+        return removeParameters(keys.toArray(new String[0]));
+    }
+
+
+########################################################################################################################
+METHOD 3/9
+PROJECT: hudi
+ELEMENT: org.apache.hudi.table.action.deltacommit.JavaInsertDeltaCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>
+########################################################################################################################
+
+=== CALL_SITE : 1 HELD ===
+[METHOD_EXIT] result.getCommitMetadata() != null
+    id: f6f2f9a1-a38d-4741-a472-68710e026d97
+    rationale: The result always includes valid commit metadata.
+
+=== CLASS_DOC : 3 HELD ===
+[METHOD_EXIT] result != null
+    id: d7feb3d1-8fac-4b4d-9484-c324f69ecfda
+    rationale: The method returns a HoodieWriteMetadata object on all paths, so result should not be null.
+[METHOD_EXIT] result.getWriteStatuses() != null
+    id: 50576622-c440-4dff-8235-bc574e559ac0
+    rationale: HoodieWriteMetadata is expected to contain a list of WriteStatus objects indicating write results.
+[METHOD_EXIT] result.getWriteStatuses().size() >= 0
+    id: 0216c7f7-8ec2-4ff5-896b-e074e98d5771
+    rationale: The list returned by getWriteStatuses is a Java List, which cannot have negative size.
+
+=== IO_EXAMPLES : 3 HELD ===
+[METHOD_EXIT] result != null
+    id: 19c26aff-485d-4dc9-bfa5-d2319a73998e
+    rationale: The method returns a HoodieWriteMetadata instance created by a helper write method, so result should always be non-null.
+[METHOD_EXIT] result.getWriteStatuses() != null
+    id: 775febe5-1f82-4e19-9e03-116a0e56538b
+    rationale: The write() helper method is expected to always populate a non-null list of WriteStatus in the HoodieWriteMetadata returned.
+[METHOD_EXIT] result.getWriteStatuses().size() >= 0
+    id: 71954060-a9e1-402b-b8ed-50edc087d50e
+    rationale: The returned write metadata's list of WriteStatus should be a valid list; size is logically non-negative.
+
+=== METHOD_JAVADOC : 3 HELD ===
+[METHOD_EXIT] result != null
+    id: d9c8616e-6849-44f6-b0d7-3dbdaa912038
+    rationale: The method is expected to always return a HoodieWriteMetadata object, not null.
+[METHOD_EXIT] result.getWriteStatuses() != null
+    id: 8e03e1cc-7c5d-4d67-a619-a8002b9b0b99
+    rationale: The HoodieWriteMetadata is constructed from a write operation, so its contained write statuses should not be null.
+[METHOD_EXIT] result.getWriteStatuses().isEmpty() || result.getWriteStatuses().get(0) != null
+    id: bd154860-a9ca-45fd-8ec7-2162905c14f7
+    rationale: If the list isn't empty, it should contain at least one WriteStatus that is not null.
+
+=== TYPE_DOC : 3 HELD ===
+[METHOD_EXIT] result != null
+    id: cd2721f6-2930-42ed-9b8a-f308882e5348
+    rationale: The method is expected to always return a HoodieWriteMetadata object, not null.
+[METHOD_EXIT] result.getWriteStatuses() != null
+    id: 06d6548c-0495-4ad1-b886-4f3a589efd33
+    rationale: The HoodieWriteMetadata is constructed from a write operation, so its contained write statuses should not be null.
+[METHOD_EXIT] result.getWriteStatuses().isEmpty() || result.getWriteStatuses().get(0) != null
+    id: 9ac78336-40b0-4570-9351-0abbb8ccd215
+    rationale: If the list isn't empty, it should contain at least one WriteStatus that is not null.
+
+=== SOURCE CODE ===
+Registry file: org/apache/hudi/table/action/deltacommit/JavaInsertDeltaCommitActionExecutor.java
+Repository path: /mmfs1/project/mjk76/ea442/promptstudy/hudi/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/action/deltacommit/JavaInsertDeltaCommitActionExecutor.java
+
+  @Override
+  public HoodieWriteMetadata<List<WriteStatus>> execute() {
+    return JavaWriteHelper.newInstance().write(instantTime, inputRecords, context, table,
+        config.shouldCombineBeforeUpsert(), config.getUpsertShuffleParallelism(),this, operationType);
+  }
+
+
+########################################################################################################################
+METHOD 4/9
+PROJECT: netty
+ELEMENT: io.netty.util.concurrent.UnorderedThreadPoolEventExecutor#shutdownGracefully():Future<?>
+########################################################################################################################
+
+=== CALL_SITE : 1 HELD ===
+[METHOD_EXIT] result != null
+    id: edab8c68-b6e2-441a-b3a4-9380417eb523
+    rationale: Since the method returns a Future<?> object, it's expected to always return a non-null future.
+
+=== CLASS_DOC : 3 HELD ===
+[METHOD_EXIT] result != null
+    id: 1f6ef4d3-1977-4003-be1b-11f8e06666a7
+    rationale: The shutdownGracefully() method returns a non-null Future representing the shutdown process.
+[METHOD_EXIT] result.cancel(false) == false || result.isCancelled()
+    id: 05c15618-b3a5-49aa-89d9-86cbdfecb742
+    rationale: Attempting cancellation without interruption likely returns false if already done or cancelled.
+[METHOD_EXIT] result.isDone() || !result.isCancelled()
+    id: 4a191d04-cc57-4443-9f57-51a491c95bb6
+    rationale: At shutdown initiation, the returned Future is not yet done or cancelled.
+
+=== IO_EXAMPLES : 3 HELD ===
+[METHOD_EXIT] result != null
+    id: 056f590d-02f2-4f0f-abf9-08719094585b
+    rationale: The method shutdownGracefully() calls another shutdownGracefully() that returns a Future, so the returned result is expected to be non-null.
+[METHOD_EXIT] result.isDone() == (result.isCancelled() || result.isCancelled() == false)
+    id: 3d1e162e-bf04-4cb6-bb20-cedb6dbacf2a
+    rationale: This invariant captures that isDone is independent logically from isCancelled as both values cover all cases.
+[METHOD_EXIT] result.isDone() || !result.isDone()
+    id: 908b1ab3-11b4-40cf-be2f-3d851b4f2ac8
+    rationale: Any Future object either is done or not done, so this is always true, serving as a tautological invariant.
+
+=== METHOD_JAVADOC : 1 HELD ===
+[METHOD_EXIT] result != null
+    id: 3b5bf05e-69a8-4263-bd20-93d7d7cad0ad
+    rationale: Since the method returns a Future<?> object, it's expected to always return a non-null future.
+
+=== TYPE_DOC : 1 HELD ===
+[METHOD_EXIT] result != null
+    id: 9251edea-6542-429a-8b56-996791978de0
+    rationale: Since the method returns a Future<?> object, it's expected to always return a non-null future.
+
+=== SOURCE CODE ===
+Registry file: io/netty/util/concurrent/UnorderedThreadPoolEventExecutor.java
+Repository path: /mmfs1/project/mjk76/ea442/promptstudy/netty/common/src/main/java/io/netty/util/concurrent/UnorderedThreadPoolEventExecutor.java
+
+    @Override
+    public Future<?> shutdownGracefully() {
+        return shutdownGracefully(2, 15, TimeUnit.SECONDS);
+    }
+
+
+########################################################################################################################
+METHOD 5/9
+PROJECT: spring
+ELEMENT: org.springframework.core.annotation.PackagesAnnotationFilter#matches(String):boolean
+########################################################################################################################
+
+=== CALL_SITE : 4 HELD ===
+[METHOD_ENTRY] annotationType != null
+    id: 705d89f5-82fc-4286-bc4c-b4d5e38d7a26
+    rationale: The method calls annotationType.startsWith(prefix), so annotationType must be non-null for safe execution.
+[METHOD_ENTRY] annotationType.length() > 0
+    id: 2f36f3e9-e63e-46b4-8552-68e2505200f8
+    rationale: Since annotationType is matched against prefixes through startsWith, it is likely to be a non-empty string.
+[METHOD_EXIT] annotationType != null || !result
+    id: 9de21b01-f5f4-44e3-be75-c4f82327f336
+    rationale: Because the method calls annotationType.startsWith, annotationType must be non-null when result is true.
+[METHOD_EXIT] result == false || (annotationType != null && annotationType.startsWith(""))
+    id: c31343eb-1896-48cb-a2e4-5e6ae1f5036f
+    rationale: If result is true, annotationType must start with one of the prefixes; since startsWith("") is true for any non-null, it captures the conditions of string prefix matching.
+
+=== CLASS_DOC : 3 HELD ===
+[METHOD_ENTRY] annotationType != null
+    id: 69ac9182-9088-458a-b450-75a53c0e7a9f
+    rationale: The method calls annotationType.startsWith(prefix), so annotationType must not be null to avoid NullPointerException.
+[METHOD_ENTRY] annotationType.length() > 0
+    id: f09ce000-746a-4df9-a4a6-d48dd08eb7e2
+    rationale: The method checks annotationType starts with one of the prefixes, so annotationType is likely non-empty for a match to exist.
+[METHOD_EXIT] !result || annotationType != null
+    id: adc724f9-38ed-4f4e-bf59-8d11a3cd5aa1
+    rationale: If result is true, annotationType cannot be null to allow startsWith call.
+
+=== IO_EXAMPLES : 2 HELD ===
+[METHOD_ENTRY] annotationType != null
+    id: 2d436bd0-830d-47eb-b413-1ac25016325d
+    rationale: The parameter annotationType must be non-null to safely call annotationType.startsWith(prefix).
+[METHOD_ENTRY] annotationType.length() > 0
+    id: af680039-8a5d-4f22-b28f-87ad418c4e61
+    rationale: annotationType should be a non-empty string as it is checked with startsWith.
+
+=== METHOD_JAVADOC : 2 HELD ===
+[METHOD_ENTRY] annotationType != null
+    id: 10557f10-e027-4cc8-8064-3979422f8ea3
+    rationale: The method calls annotationType.startsWith, so annotationType must be non-null to avoid NullPointerException.
+[METHOD_ENTRY] annotationType.length() > 0
+    id: 887784a4-532f-41f5-9cf4-77296c25bfa4
+    rationale: For the startsWith check to be meaningful, annotationType is expected to have positive length.
+
+=== TYPE_DOC : 2 HELD ===
+[METHOD_ENTRY] annotationType != null
+    id: 8c05859c-51af-4a69-8f4c-1fb00d6415a9
+    rationale: The method calls annotationType.startsWith, so annotationType must be non-null to avoid NullPointerException.
+[METHOD_ENTRY] annotationType.length() > 0
+    id: 7ed282d3-010d-4961-a2d6-8be1d677a2e2
+    rationale: For the startsWith check to be meaningful, annotationType is expected to have positive length.
+
+=== SOURCE CODE ===
+Registry file: org/springframework/core/annotation/PackagesAnnotationFilter.java
+Could not locate source file in repository.
+
+########################################################################################################################
+METHOD 6/9
+PROJECT: dubbo
+ELEMENT: org.apache.dubbo.common.utils.UrlUtils#isMatchGlobPattern(String,String,URL):boolean
+########################################################################################################################
+
+=== CALL_SITE : 6 HELD ===
+[METHOD_ENTRY] (param == null) || (pattern.startsWith("$")) || (!pattern.startsWith("$"))
+    id: 403ba878-c530-4ff3-b92f-be4a94bf1a7c
+    rationale: Ensures pattern.startsWith is called only when param is non-null.
+[METHOD_ENTRY] param == null || (pattern.length() > 0)
+    id: a58c83e0-2833-489f-9b28-fc1473781b92
+    rationale: When param is not null and pattern starts with '$', pattern.substring(1) is safe assuming pattern length > 0.
+[METHOD_ENTRY] param == null || (pattern.startsWith("$") == (param.getRawParameter(pattern.substring(1)) != null))
+    id: e6a040f5-4fda-46e0-90b3-d6232710952d
+    rationale: If start with '$', the pattern is replaced by param.getRawParameter; otherwise pattern remains.
+[METHOD_ENTRY] pattern != null
+    id: b22a1562-9d10-473b-8374-6dff73ae3eb2
+    rationale: The pattern must be non-null to safely call startsWith and substring methods.
+[METHOD_ENTRY] value != null
+    id: b5a74021-eff8-4ecc-8161-4288ad271a7b
+    rationale: The value string must be non-null as it is passed to isMatchGlobPattern for matching.
+[METHOD_EXIT] !result || (pattern != null && value != null)
+    id: b8f6f47a-c330-41eb-bd4e-10baa433d21d
+    rationale: Matching a pattern with a value requires both to be non-null if match is successful.
+
+=== CLASS_DOC : 7 HELD ===
+[METHOD_ENTRY] (param != null) == (pattern.startsWith("$"))
+    id: c98c1785-4d52-4c76-b19c-95a183023664
+    rationale: The logic condition for substitution indicates that pattern starts with '$' if param is non-null
+[METHOD_ENTRY] (param == null || pattern.startsWith("$") && param.getRawParameter(pattern.substring(1)) != null)
+    id: 5f924a1a-9d5b-4608-aba4-497da22b2df7
+    rationale: If param is non-null and pattern starts with '$', then the raw parameter fetched from param is non-null.
+[METHOD_ENTRY] param == null || pattern.startsWith("$") || !pattern.startsWith("$")
+    id: 7d68c6c1-9b0f-4172-ba48-6c962862bee3
+    rationale: Either param is null or pattern can start with '$' or not; this ensures no unsafe calls.
+[METHOD_ENTRY] pattern != null
+    id: 8e1e8cc8-2fb3-48d6-a35c-29e45d6dada9
+    rationale: The parameter pattern is expected to be non-null to perform pattern matching.
+[METHOD_ENTRY] value != null
+    id: 907ac2be-9a95-4862-81a8-4d32a979599c
+    rationale: The parameter value should be non-null since it is tested against the pattern.
+[METHOD_EXIT] (!result || !pattern.isEmpty())
+    id: a94dba31-478e-4926-a9b2-fc4882e75304
+    rationale: For the method to return true, the pattern should not be empty string.
+[METHOD_EXIT] (!result || (pattern.startsWith("$") && param != null) || !pattern.startsWith("$"))
+    id: 7c28ca9e-a57d-4013-98f5-b2c7050d7253
+    rationale: If result is true, either pattern did not start with '$' or param was non-null allowing resolution.
+
+=== IO_EXAMPLES : 6 HELD ===
+[METHOD_ENTRY] (param == null) || (pattern.startsWith("$")) || (!pattern.startsWith("$"))
+    id: bbf8bf43-0e6a-48e8-9137-b9d10cf674e7
+    rationale: Ensures pattern.startsWith is called only when param is non-null.
+[METHOD_ENTRY] param == null || (pattern.length() > 0)
+    id: cc978aaf-716d-4fcb-8915-296d672e66ba
+    rationale: When param is not null and pattern starts with '$', pattern.substring(1) is safe assuming pattern length > 0.
+[METHOD_ENTRY] param == null || (pattern.startsWith("$") == (param.getRawParameter(pattern.substring(1)) != null))
+    id: 01eebc4c-b988-4c91-ba83-adf9f9ca7a14
+    rationale: If start with '$', the pattern is replaced by param.getRawParameter; otherwise pattern remains.
+[METHOD_ENTRY] pattern != null
+    id: cc5dacac-97e2-46ba-9f9f-1f61ef8951b9
+    rationale: The pattern must be non-null to safely call startsWith and substring methods.
+[METHOD_ENTRY] value != null
+    id: b422f770-3dd6-499e-8970-ed8791af0140
+    rationale: The value string must be non-null as it is passed to isMatchGlobPattern for matching.
+[METHOD_EXIT] !result || (pattern != null && value != null)
+    id: 2231bfa0-09c4-4f59-931a-5b06545e49e5
+    rationale: Matching a pattern with a value requires both to be non-null if match is successful.
+
+=== METHOD_JAVADOC : 6 HELD ===
+[METHOD_ENTRY] (param == null) || (pattern.startsWith("$")) || (!pattern.startsWith("$"))
+    id: 70e77ba3-545c-437b-8411-b072dbc67c21
+    rationale: Ensures pattern.startsWith is called only when param is non-null.
+[METHOD_ENTRY] param == null || (pattern.length() > 0)
+    id: a59c3a3f-f935-44ee-a49e-f587aecc536c
+    rationale: When param is not null and pattern starts with '$', pattern.substring(1) is safe assuming pattern length > 0.
+[METHOD_ENTRY] param == null || (pattern.startsWith("$") == (param.getRawParameter(pattern.substring(1)) != null))
+    id: c82b9e07-27af-4c33-8a47-39dc8645ad32
+    rationale: If start with '$', the pattern is replaced by param.getRawParameter; otherwise pattern remains.
+[METHOD_ENTRY] pattern != null
+    id: 0fc54f04-5aef-417c-891e-703c3bb31e60
+    rationale: The pattern must be non-null to safely call startsWith and substring methods.
+[METHOD_ENTRY] value != null
+    id: dcd50810-bb3d-49ff-a236-40b229401c0a
+    rationale: The value string must be non-null as it is passed to isMatchGlobPattern for matching.
+[METHOD_EXIT] !result || (pattern != null && value != null)
+    id: f188886b-a8c3-458b-ab4d-ca8390020c71
+    rationale: Matching a pattern with a value requires both to be non-null if match is successful.
+
+=== TYPE_DOC : 6 HELD ===
+[METHOD_ENTRY] (param == null) || (pattern.startsWith("$")) || (!pattern.startsWith("$"))
+    id: bd01fad5-30b6-44ab-a6d5-f79ea884c017
+    rationale: Ensures pattern.startsWith is called only when param is non-null.
+[METHOD_ENTRY] param == null || (pattern.length() > 0)
+    id: 3eabaa29-3daf-43f2-9db1-c5fca0f81dde
+    rationale: When param is not null and pattern starts with '$', pattern.substring(1) is safe assuming pattern length > 0.
+[METHOD_ENTRY] param == null || (pattern.startsWith("$") == (param.getRawParameter(pattern.substring(1)) != null))
+    id: 811ec236-22a8-4e6f-8222-7939954e8d51
+    rationale: If start with '$', the pattern is replaced by param.getRawParameter; otherwise pattern remains.
+[METHOD_ENTRY] pattern != null
+    id: a8d45128-44d3-4a14-b8a0-ab4e9c276674
+    rationale: The pattern must be non-null to safely call startsWith and substring methods.
+[METHOD_ENTRY] value != null
+    id: 47151446-7842-4d36-a3e5-3f5bea2a2fda
+    rationale: The value string must be non-null as it is passed to isMatchGlobPattern for matching.
+[METHOD_EXIT] !result || (pattern != null && value != null)
+    id: ebfd2355-2313-4760-998d-d0eb8aec4636
+    rationale: Matching a pattern with a value requires both to be non-null if match is successful.
+
+=== SOURCE CODE ===
+Registry file: org/apache/dubbo/common/utils/UrlUtils.java
+Repository path: /mmfs1/project/mjk76/ea442/promptstudy/dubbo/dubbo-common/src/main/java/org/apache/dubbo/common/utils/UrlUtils.java
+
+    public static boolean isMatchGlobPattern(String pattern, String value, URL param) {
+        if (param != null && pattern.startsWith("$")) {
+            pattern = param.getRawParameter(pattern.substring(1));
+        }
+        return isMatchGlobPattern(pattern, value);
+    }
+
+
+########################################################################################################################
+METHOD 7/9
+PROJECT: dubbo
+ELEMENT: org.apache.dubbo.common.resource.GlobalResourcesRepository#getInstance():GlobalResourcesRepository
+########################################################################################################################
+
+=== CALL_SITE : 2 HELD ===
+[METHOD_EXIT] result != null
+    id: d038cc08-f808-4654-92b5-b67867c6fbc6
+    rationale: The getInstance method ensures the instance is initialized and never returns null.
+[METHOD_EXIT] result.getExecutorService() != null
+    id: 84d565ac-5579-4be9-9dd6-a780a4023806
+    rationale: Based on usage context, the instance provides a usable executor service.
+
+=== CLASS_DOC : 4 HELD ===
+[METHOD_EXIT] result != null
+    id: 5cbc5b5e-11f0-4218-bc4e-e4a51914eb86
+    rationale: The method returns a singleton instance that is lazily initialized and never null after method execution.
+[METHOD_EXIT] result.getExecutorService() != null
+    id: 6f85337a-beba-4281-9618-a1b818500f5c
+    rationale: Because 'executorService' is a field in GlobalResourcesRepository, it should be accessible and non-null in a valid singleton instance.
+[METHOD_EXIT] result.getGlobalReusedDisposables() != null
+    id: b8c19c77-860d-4c9d-8ad4-2a6098f44ab0
+    rationale: The singleton holds a list of reusable disposables that should not be null.
+[METHOD_EXIT] result.getOneoffDisposables() != null
+    id: c4c781ff-15fd-407f-bdda-6417ab527fc7
+    rationale: The singleton holds a list of one-off disposables that should not be null.
+
+=== IO_EXAMPLES : 1 HELD ===
+[METHOD_EXIT] result != null
+    id: 73283728-cc5c-4bfa-9bdb-f08fab3ebebb
+    rationale: The method returns the singleton instance, which after initialization should not be null.
+
+=== METHOD_JAVADOC : 1 HELD ===
+[METHOD_EXIT] result != null
+    id: 69801238-608f-4005-82f3-e2fa3693382c
+    rationale: The method returns the singleton instance, which after initialization should not be null.
+
+=== TYPE_DOC : 1 HELD ===
+[METHOD_EXIT] result != null
+    id: e3da4777-1908-4fa5-a661-9dfea55a1ac6
+    rationale: The method returns the singleton instance, which after initialization should not be null.
+
+=== SOURCE CODE ===
+Registry file: org/apache/dubbo/common/resource/GlobalResourcesRepository.java
+Repository path: /mmfs1/project/mjk76/ea442/promptstudy/dubbo/dubbo-common/src/main/java/org/apache/dubbo/common/resource/GlobalResourcesRepository.java
+
+    public static GlobalResourcesRepository getInstance() {
+        if (instance == null) {
+            synchronized (GlobalResourcesRepository.class) {
+                if (instance == null) {
+                    instance = new GlobalResourcesRepository();
+                }
+            }
+        }
+        return instance;
+    }
+
+
+########################################################################################################################
+METHOD 8/9
+PROJECT: dubbo
+ELEMENT: org.apache.dubbo.common.extension.ExtensionLoader#setLoadingStrategies(LoadingStrategy):void
+########################################################################################################################
+
+=== CALL_SITE : 3 HELD ===
+[METHOD_ENTRY] strategies == null || strategies.length > 0
+    id: 79519732-2c5e-424f-96f5-80c3463471c4
+    rationale: The method assigns the strategies only when the array is not empty, so either it's null or it has length greater than zero.
+[METHOD_ENTRY] strategies == null || strategies.length >= 0
+    id: cc9db5d9-c447-4474-881f-a86c25c3bd1a
+    rationale: Array length in Java is always non-negative, but strategies may be null.
+[METHOD_EXIT] strategies == null || strategies.length > 0
+    id: 0f86027d-7f8e-452c-b968-f1044c8da320
+    rationale: The input array strategies, if assigned, is guaranteed to be non-empty.
+
+=== CLASS_DOC : 3 HELD ===
+[METHOD_ENTRY] strategies == null || (strategies.length == 0 || strategies.length > 0)
+    id: a9915c9a-e533-4d02-a8a3-8d9ce25efb71
+    rationale: Strategies array is either null or empty or non-empty.
+[METHOD_ENTRY] strategies == null || strategies.length >= 0
+    id: e7a7f676-b7c0-4fcd-80f1-0a1d37a309e7
+    rationale: Arrays in Java are either null or have non-negative length.
+[METHOD_EXIT] strategies == null || strategies.length > 0
+    id: 9061375c-bc63-46cb-9080-7b8a933dc26b
+    rationale: Because the method only sets ExtensionLoader.strategies if the array is not empty, the assigned strategies are either null or non-empty.
+
+=== IO_EXAMPLES : 3 HELD ===
+[METHOD_ENTRY] strategies == null || strategies.length > 0
+    id: e8538048-45d1-4e71-8ef5-d0163908398e
+    rationale: The method assigns the strategies only when the array is not empty, so either it's null or it has length greater than zero.
+[METHOD_ENTRY] strategies == null || strategies.length >= 0
+    id: da520c80-1577-4d06-b548-345496928a48
+    rationale: Array length in Java is always non-negative, but strategies may be null.
+[METHOD_EXIT] strategies == null || strategies.length > 0
+    id: 5a176d66-fe33-491c-950e-f721b78f40ac
+    rationale: The input array strategies, if assigned, is guaranteed to be non-empty.
+
+=== METHOD_JAVADOC : 3 HELD ===
+[METHOD_ENTRY] strategies == null || strategies.length > 0
+    id: f9706106-d237-48d0-908c-615572e6e94e
+    rationale: The method assigns the strategies only when the array is not empty, so either it's null or it has length greater than zero.
+[METHOD_ENTRY] strategies == null || strategies.length >= 0
+    id: 21dc140a-e878-475e-94cf-23cab4a46368
+    rationale: Array length in Java is always non-negative, but strategies may be null.
+[METHOD_EXIT] strategies == null || strategies.length > 0
+    id: 06b38f36-49a3-458a-8336-a8e73d8aaddf
+    rationale: The input array strategies, if assigned, is guaranteed to be non-empty.
+
+=== TYPE_DOC : 3 HELD ===
+[METHOD_ENTRY] strategies == null || strategies.length > 0
+    id: 3b51abcf-230b-474b-b34e-5faea011d78b
+    rationale: The method assigns the strategies only when the array is not empty, so either it's null or it has length greater than zero.
+[METHOD_ENTRY] strategies == null || strategies.length >= 0
+    id: ad193554-28ea-4d78-bc5f-7fae75aeb615
+    rationale: Array length in Java is always non-negative, but strategies may be null.
+[METHOD_EXIT] strategies == null || strategies.length > 0
+    id: a12fdc7a-7726-4f46-9033-c8d589f20a39
+    rationale: The input array strategies, if assigned, is guaranteed to be non-empty.
+
+=== SOURCE CODE ===
+Registry file: org/apache/dubbo/common/extension/ExtensionLoader.java
+Repository path: /mmfs1/project/mjk76/ea442/promptstudy/dubbo/dubbo-common/src/main/java/org/apache/dubbo/common/extension/ExtensionLoader.java
+
+    public static void setLoadingStrategies(LoadingStrategy... strategies) {
+        if (ArrayUtils.isNotEmpty(strategies)) {
+            ExtensionLoader.strategies = strategies;
+        }
+    }
+
+
+########################################################################################################################
+METHOD 9/9
+PROJECT: dubbo
+ELEMENT: org.apache.dubbo.common.convert.Converter#getSourceType():Class<S>
+########################################################################################################################
+
+=== CALL_SITE : 4 HELD ===
+[METHOD_EXIT] result != null && !result.isPrimitive()
+    id: 0b7adc15-c40c-42ff-ad66-b8b901fa2164
+    rationale: The source type is usually a reference type, so result is not a primitive type.
+[METHOD_EXIT] result != null && result.getSuperclass() != null
+    id: 2bfe1a0b-3e58-4a60-8ce7-5e19c4eda93b
+    rationale: As a Class representing a type, it must have a superclass except for Object.
+[METHOD_EXIT] result != null && result.getTypeParameters().length == 0
+    id: 6d1c3c9c-d18c-4013-925f-f9a1d5f5210a
+    rationale: The source type typically does not have type parameters as it represents a raw class type.
+[METHOD_EXIT] result != null && result.isInterface() == false
+    id: f1fb64a7-a0fd-4036-a6cf-81f9c9d285a6
+    rationale: The source type is generally a class, not an interface.
+
+=== CLASS_DOC : 3 HELD ===
+[METHOD_EXIT] result != null
+    id: 24b0def2-2f30-453c-b703-cccf2785bba4
+    rationale: The documentation states that getSourceType() always returns a non-null Class<S> object
+[METHOD_EXIT] result.getTypeParameters().length >= 0
+    id: 8cc9dbbf-e3eb-4478-9eec-d3c2981f20db
+    rationale: It is always valid to check that type parameters length is zero or more as part of Class reflection
+[METHOD_EXIT] result.isAssignableFrom(result)
+    id: 89ecf5c2-c161-40f4-acc1-4c7b6e5e7fb9
+    rationale: Any Class object must be assignable from itself, which holds true for Java classes
+
+=== IO_EXAMPLES : 4 HELD ===
+[METHOD_EXIT] result != null && !result.isPrimitive()
+    id: a421e1f9-f487-4fb9-bd5e-5833075adb50
+    rationale: The source type is usually a reference type, so result is not a primitive type.
+[METHOD_EXIT] result != null && result.getSuperclass() != null
+    id: 82c0bcc8-e04c-4ed9-8be3-e548d21f947e
+    rationale: As a Class representing a type, it must have a superclass except for Object.
+[METHOD_EXIT] result != null && result.getTypeParameters().length == 0
+    id: d63dadf5-b794-40d4-b75c-756248a97f68
+    rationale: The source type typically does not have type parameters as it represents a raw class type.
+[METHOD_EXIT] result != null && result.isInterface() == false
+    id: 2b36af70-fab2-4868-a080-de1eb527d4b3
+    rationale: The source type is generally a class, not an interface.
+
+=== METHOD_JAVADOC : 2 HELD ===
+[METHOD_EXIT] result != null
+    id: a83eb43b-b10a-4d51-98a2-4becd9051d4e
+    rationale: The method's Javadoc specifies that the return value is non-null, so result must not be null.
+[METHOD_EXIT] result.isAssignableFrom(result)
+    id: 97d1d56d-a9b5-4711-9ed8-b3b335497789
+    rationale: A Class object is always assignable from itself, so this ensures result is a well-defined Class.
+
+=== TYPE_DOC : 4 HELD ===
+[METHOD_EXIT] result != null && !result.isPrimitive()
+    id: 326da5cc-352e-405a-9ab5-ff8accbfaf4e
+    rationale: The source type is usually a reference type, so result is not a primitive type.
+[METHOD_EXIT] result != null && result.getSuperclass() != null
+    id: 270b5b57-86a5-4952-8e97-c2a8163d656f
+    rationale: As a Class representing a type, it must have a superclass except for Object.
+[METHOD_EXIT] result != null && result.getTypeParameters().length == 0
+    id: f15b44de-2e7f-4f3e-a53c-d786fcd964ee
+    rationale: The source type typically does not have type parameters as it represents a raw class type.
+[METHOD_EXIT] result != null && result.isInterface() == false
+    id: c3a93985-8ac1-441f-942d-bbb2d83745ff
+    rationale: The source type is generally a class, not an interface.
+
+=== SOURCE CODE ===
+Registry file: org/apache/dubbo/common/convert/Converter.java
+Repository path: /mmfs1/project/mjk76/ea442/promptstudy/dubbo/dubbo-common/src/main/java/org/apache/dubbo/common/convert/Converter.java
+
+    default Class<S> getSourceType() {
+        return findActualTypeArgument(getClass(), Converter.class, 0);
+    }
+

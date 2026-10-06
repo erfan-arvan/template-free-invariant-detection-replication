@@ -1,0 +1,8 @@
+
+The following have been reloaded with a version change:
+  1) Java/17.0.15 => Java/23.0.2
+
+src/main/module/module-info.java:14: warning: [module] module name component rxjava4 should avoid terminal digits
+module io.reactivex.rxjava4 {
+                   ^
+1 warning

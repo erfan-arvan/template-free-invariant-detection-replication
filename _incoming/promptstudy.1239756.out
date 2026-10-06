@@ -1,0 +1,15 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/23.0.2/bin/java
+MVN: /scratch/mjk76/ea442/apache-maven-3.9.9/bin/mvn
+######################################
+PROMPT STUDY STARTED
+Start time: 2026-09-09 02:22:43 EDT
+######################################
+>>> Building Daikon++ (once)
+======================================
+>>> STRATEGY: baseline
+>>> Start time: 2026-09-09 02:25:44 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: ghidra
+>>> Start time: 2026-09-09 02:25:44 EDT
+--------------------------------------

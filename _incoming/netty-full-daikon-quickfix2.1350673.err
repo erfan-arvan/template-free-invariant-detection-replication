@@ -1,0 +1,21 @@
+Exception in thread "main" java.lang.Error: Error while processing trace file /scratch/mjk76/ea442/promptstudy/netty-chicory-out/latest/netty-full.dtrace.gz
+	at daikon.FileIO.read_data_trace_files(FileIO.java:1057)
+	at daikon.FileIO.read_data_trace_files(FileIO.java:1026)
+	at daikon.Daikon.process_data(Daikon.java:2329)
+	at daikon.Daikon.mainHelper(Daikon.java:805)
+	at daikon.Daikon.main(Daikon.java:680)
+Caused by: daikon.Daikon$UserError: Error at line 50111804 in file /scratch/mjk76/ea442/promptstudy/netty-chicory-out/latest/netty-full.dtrace.gz: at end of add_modified
+	at daikon.FileIO.read_data_trace_file(FileIO.java:1579)
+	at daikon.FileIO.read_data_trace_files(FileIO.java:1044)
+	... 4 more
+Caused by: java.lang.Error: at end of add_modified
+	at daikon.inv.ternary.threeScalar.LinearTernaryCore.add_modified(LinearTernaryCore.java:464)
+	at daikon.inv.ternary.threeScalar.LinearTernary.add_modified(LinearTernary.java:315)
+	at daikon.inv.ternary.threeScalar.ThreeScalar.add(ThreeScalar.java:101)
+	at daikon.PptSlice3.add_val_bu(PptSlice3.java:270)
+	at daikon.PptSlice3.add(PptSlice3.java:248)
+	at daikon.PptTopLevel.add_bottom_up(PptTopLevel.java:1187)
+	at daikon.FileIO.process_sample(FileIO.java:1924)
+	at daikon.FileIO$Processor.process_sample(FileIO.java:1207)
+	at daikon.FileIO.read_data_trace_file(FileIO.java:1571)
+	... 5 more

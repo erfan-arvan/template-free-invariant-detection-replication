@@ -1,0 +1,209 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+MVN: /scratch/mjk76/ea442/apache-maven-3.9.9/bin/mvn
+>>> iDFlakies source already present at /project/mjk76/ea442/promptstudy/iDFlakies, skipping clone
+>>> iDFlakies version: 2.0.1-SNAPSHOT
+>>> idflakies-maven-plugin 2.0.1-SNAPSHOT already in local repo, skipping build
+>>> Syncing /project/mjk76/ea442/promptstudy/hudi -> /project/mjk76/ea442/promptstudy/hudi-idflakies
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-examples
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-common
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/docker/hoodie/hadoop/datanode
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/docker/hoodie/hadoop/trinoworker
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/packaging/hudi-flink-bundle
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-examples/hudi-examples-java
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/docker/hoodie/hadoop/sparkadhoc
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/packaging/hudi-integ-test-bundle
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-azure
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/docker/hoodie/hadoop/spark_base
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-cli
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-client/hudi-client-common
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-spark-datasource/hudi-spark3-common
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-spark-datasource/hudi-spark4-common
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/docker/hoodie/hadoop/sparkmaster
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-spark-datasource/hudi-spark4.0.x
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-spark-datasource/hudi-spark
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-spark-datasource/hudi-spark3.5.x
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-hadoop-common
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/docker/hoodie/hadoop/prestobase
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/docker/hoodie/hadoop
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-client/hudi-flink-client
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/docker/hoodie/hadoop/trinocoordinator
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-platform-service/hudi-metaserver
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-sync/hudi-sync-common
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/docker/hoodie/hadoop/trinobase
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-utilities
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/packaging/hudi-utilities-bundle
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-examples/hudi-examples-flink
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/packaging/hudi-gcp-bundle
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-gcp
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-flink-datasource/hudi-flink2.1.x
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-platform-service
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-platform-service/hudi-metaserver/hudi-metaserver-client
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-sync/hudi-adb-sync
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-sync
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-spark-datasource/hudi-spark-common
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-aws
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/packaging/hudi-hive-sync-bundle
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-flink-datasource/hudi-flink1.17.x
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-client
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-flink-datasource/hudi-flink1.19.x
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/packaging/hudi-timeline-server-bundle
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-flink-datasource/hudi-flink
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-spark-datasource/hudi-spark3.4.x
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/packaging/hudi-datahub-sync-bundle
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-flink-datasource/hudi-flink1.20.x
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/packaging/hudi-spark-bundle
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-spark-datasource/hudi-spark3.3.x
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-tests-common
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/packaging/hudi-cli-bundle
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/docker/hoodie/hadoop/namenode
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-client/hudi-java-client
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/packaging/hudi-aws-bundle
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-hadoop-mr
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-trino-plugin
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/packaging/hudi-utilities-slim-bundle
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/docker/hoodie/hadoop/base_java17
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/packaging/hudi-presto-bundle
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-examples/hudi-examples-common
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-flink-datasource
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-platform-service/hudi-metaserver/hudi-metaserver-server
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/packaging/hudi-metaserver-server-bundle
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/docker/hoodie/hadoop/base_java11
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-io
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-examples/hudi-examples-spark
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/docker/hoodie/hadoop/base
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-client/hudi-spark-client
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/packaging/hudi-trino-bundle
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/docker/hoodie/hadoop/sparkworker
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/docker/hoodie/hadoop/historyserver
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/packaging/hudi-hadoop-mr-bundle
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-flink-datasource/hudi-flink2.0.x
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-kafka-connect
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/docker/hoodie/hadoop/hive_base
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-sync/hudi-hive-sync
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-examples/hudi-examples-k8s
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-spark-datasource
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-sync/hudi-datahub-sync
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-flink-datasource/hudi-flink1.18.x
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-timeline-service
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/packaging/hudi-kafka-connect-bundle
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/packaging/hudi-azure-bundle
+/mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-integ-test
+>>> mvn -pl hudi-client/hudi-java-client -DskipITs -Duser.timezone=UTC -Dcheckstyle.skip=true -Dcheckstyle.skipExec=true -Denforcer.skip=true -Drat.skip=true idflakies:detect -Ddetector.detector_type=random-class-method -Ddt.randomize.rounds=10 -Ddt.detector.original_order.all_must_pass=false -Dtest=org.apache.hudi.client.functional.TestHoodieJavaClientOnCopyOnWriteStorage
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.hudi:hudi-common:jar:1.2.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.fasterxml.jackson.module:jackson-module-afterburner:jar -> duplicate declaration of version (?) @ line 277, column 21
+[WARNING] 'dependencyManagement.dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.fasterxml.jackson.module:jackson-module-afterburner:jar -> version ${fasterxml.version} vs ${fasterxml.jackson.databind.version} @ org.apache.hudi:hudi:1.2.0-SNAPSHOT, /mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/pom.xml, line 1638, column 25
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.hudi:hudi-aws:jar:1.2.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: software.amazon.awssdk:sts:jar -> duplicate declaration of version ${aws.sdk.version} @ line 390, column 21
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.hudi:hudi-spark-common_2.12:jar:1.2.0-SNAPSHOT
+[WARNING] 'artifactId' contains an expression but should be a constant. @ org.apache.hudi:hudi-spark-common_${scala.binary.version}:1.2.0-SNAPSHOT, /mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-spark-datasource/hudi-spark-common/pom.xml, line 28, column 17
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.hudi:hudi-spark_2.12:jar:1.2.0-SNAPSHOT
+[WARNING] 'artifactId' contains an expression but should be a constant. @ org.apache.hudi:hudi-spark_${scala.binary.version}:1.2.0-SNAPSHOT, /mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-spark-datasource/hudi-spark/pom.xml, line 30, column 17
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.hudi:hudi-utilities_2.12:jar:1.2.0-SNAPSHOT
+[WARNING] 'artifactId' contains an expression but should be a constant. @ org.apache.hudi:hudi-utilities_${scala.binary.version}:1.2.0-SNAPSHOT, /mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-utilities/pom.xml, line 30, column 17
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.apache.httpcomponents:httpcore:jar -> version ${aws.sdk.httpcore.version} vs (?) @ org.apache.hudi:hudi-utilities_${scala.binary.version}:1.2.0-SNAPSHOT, /mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-utilities/pom.xml, line 706, column 21
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.hudi:hudi-spark-bundle_2.12:jar:1.2.0-SNAPSHOT
+[WARNING] 'artifactId' contains an expression but should be a constant. @ org.apache.hudi:hudi-spark${sparkbundle.version}-bundle_${scala.binary.version}:1.2.0-SNAPSHOT, /mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/packaging/hudi-spark-bundle/pom.xml, line 32, column 17
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.hudi:hudi-utilities-bundle_2.12:jar:1.2.0-SNAPSHOT
+[WARNING] 'artifactId' contains an expression but should be a constant. @ org.apache.hudi:hudi-utilities-bundle_${scala.binary.version}:1.2.0-SNAPSHOT, /mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/packaging/hudi-utilities-bundle/pom.xml, line 32, column 17
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.hudi:hudi-utilities-slim-bundle_2.12:jar:1.2.0-SNAPSHOT
+[WARNING] 'artifactId' contains an expression but should be a constant. @ org.apache.hudi:hudi-utilities-slim-bundle_${scala.binary.version}:1.2.0-SNAPSHOT, /mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/packaging/hudi-utilities-slim-bundle/pom.xml, line 32, column 17
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.hudi:hudi-flink1.20-bundle:jar:1.2.0-SNAPSHOT
+[WARNING] 'artifactId' contains an expression but should be a constant. @ org.apache.hudi:hudi-flink${flink.bundle.version}-bundle:1.2.0-SNAPSHOT, /mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/packaging/hudi-flink-bundle/pom.xml, line 32, column 17
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.hudi:hudi-cli-bundle_2.12:jar:1.2.0-SNAPSHOT
+[WARNING] 'artifactId' contains an expression but should be a constant. @ org.apache.hudi:hudi-cli-bundle_${scala.binary.version}:1.2.0-SNAPSHOT, /mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/packaging/hudi-cli-bundle/pom.xml, line 32, column 17
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.hudi:hudi:pom:1.2.0-SNAPSHOT
+[WARNING] 'dependencyManagement.dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.fasterxml.jackson.module:jackson-module-afterburner:jar -> version ${fasterxml.version} vs ${fasterxml.jackson.databind.version} @ line 1638, column 25
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] ------------------< org.apache.hudi:hudi-java-client >------------------
+[INFO] Building hudi-java-client 1.2.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> idflakies:2.0.1-SNAPSHOT:detect (default-cli) > test-compile @ hudi-java-client >>>
+[WARNING] 2 problems were encountered while building the effective model for org.apache.yetus:audience-annotations:jar:0.5.0 during dependency collection step for project (use -X to see details)
+[WARNING] Could not transfer metadata net.minidev:json-smart/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [apache.snapshots (http://repository.apache.org/snapshots, default, snapshots)]
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-maven-version) @ hudi-java-client ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- enforcer:3.6.2:enforce (enforce-logging) @ hudi-java-client ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- remote-resources:1.5:process (process-resource-bundles) @ hudi-java-client ---
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ hudi-java-client ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-client/hudi-java-client/src/main/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ hudi-java-client ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- checkstyle:3.6.0:check (default) @ hudi-java-client ---
+[INFO] 
+[INFO] --- apache-rat:0.16.1:check (default) @ hudi-java-client ---
+[WARNING]  Parameter 'licenseFamilies' is deprecated: No reason given
+[WARNING]  Parameter 'licenses' is deprecated: No reason given
+[INFO] RAT will not execute since it is configured to be skipped via system property 'rat.skip'.
+[INFO] 
+[INFO] --- resources:3.1.0:testResources (default-testResources) @ hudi-java-client ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ hudi-java-client ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- jar:3.5.0:test-jar (default) @ hudi-java-client ---
+[INFO] Building jar: /mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-client/hudi-java-client/target/hudi-java-client-1.2.0-SNAPSHOT-tests.jar
+[INFO] 
+[INFO] <<< idflakies:2.0.1-SNAPSHOT:detect (default-cli) < test-compile @ hudi-java-client <<<
+[INFO] 
+[WARNING] net.minidev:json-smart/maven-metadata.xml failed to transfer from http://0.0.0.0/ during a previous attempt. This failure was cached in the local repository and resolution will not be reattempted until the update interval of maven-default-http-blocker has elapsed or updates are forced. Original error: Could not transfer metadata net.minidev:json-smart/maven-metadata.xml from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [apache.snapshots (http://repository.apache.org/snapshots, default, snapshots)]
+[INFO] 
+[INFO] --- idflakies:2.0.1-SNAPSHOT:detect (default-cli) @ hudi-java-client ---
+INFO: Locating tests...
+INFO: Located 0 tests. Time taken: 1.4290001392364502 seconds
+INFO: Locating tests...
+INFO: Located 107 tests. Time taken: 1.1000001430511475 seconds
+INFO: No timeout specified. Using randomize.rounds: 10
+INFO: ROUNDS_CALCULATED: Giving org.apache.hudi:hudi-java-client:1.2.0-SNAPSHOT 10 rounds to run for random-class-method
+INFO: Using original order in path: /mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-client/hudi-java-client/.dtfixingtools/original-order
+INFO: Getting original order by parsing logs. ignoreExisting set to: false
+INFO: Using original order in path: /mmfs1/project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-client/hudi-java-client/.dtfixingtools/original-order
+[INFO] Getting original results (107 tests).
+---------------------------------------------------
+TRY_COPY_ALL_FAILING_TEST_OUTPUT
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  18.746 s
+[INFO] Finished at: 2026-09-08T03:39:40Z
+[INFO] ------------------------------------------------------------------------
+>>> Detection results dir:
+total 2
+drwxr-xr-x+ 2 ea442 ea442 4096 Sep  7 23:39 .
+drwxr-xr-x+ 3 ea442 ea442 4096 Sep  7 23:39 ..
+>>> Flaky test list (list.txt -- empty means none found):
+  (not found: /project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-client/hudi-java-client/.dtfixingtools/detection-results/list.txt)
+>>> Detailed dependent-test JSON (flaky-lists.json):
+  (not found: /project/mjk76/ea442/promptstudy/hudi-idflakies/hudi-client/hudi-java-client/.dtfixingtools/detection-results/flaky-lists.json)
+>>> Done.

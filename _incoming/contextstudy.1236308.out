@@ -1,0 +1,17 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/23.0.2/bin/java
+MVN: /scratch/mjk76/ea442/apache-maven-3.9.9/bin/mvn
+######################################
+CONTEXT STUDY STARTED
+Prompt strategy (fixed): baseline
+Start time: 2026-09-07 15:28:11 EDT
+######################################
+>>> Building Daikon++ (once)
+======================================
+>>> CONTEXT CONFIG: method_javadoc
+>>> DP_CONTEXTS: METHOD_BODY,SCOPE, METHOD_JAVADOC
+>>> Start time: 2026-09-07 15:31:15 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: apollo
+>>> Start time: 2026-09-07 15:31:16 EDT
+--------------------------------------

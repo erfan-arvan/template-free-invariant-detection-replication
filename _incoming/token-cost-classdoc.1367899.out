@@ -1,0 +1,231 @@
+======================================
+SLURM JOB ID: 1367899
+HOST: n0043
+START: Fri Oct  2 07:21:02 PM EDT 2026
+ROOT: /project/mjk76/ea442/promptstudy
+DPP_DIR: /scratch/mjk76/ea442/daikonplusplus-token-cost
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/23.0.2/bin/java
+======================================
+======================================
+TOKEN-COST DRY RUN
+ROOT: /project/mjk76/ea442/promptstudy
+DPP_DIR: /scratch/mjk76/ea442/daikonplusplus-token-cost
+Cassette dir: /project/mjk76/ea442/promptstudy/daikonplusplus/src/test/cassettes
+Results: /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc
+======================================
+Daikon++ commit: 0ea6324
+>>> Building Daikon++
+
+Prompt strategy: fewshot
+Contexts: METHOD_BODY,SCOPE,CLASS_DOC
+Model: gpt-4.1-mini
+Dry run: true
+Projects: 6
+
+======================================
+>>> Running: apollo
+>>> Start: Fri Oct  2 07:24:48 PM EDT 2026
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/apollo/run.log
+======================================
+>>> Finished: apollo
+>>> Exit status: 0
+>>> Duration: 6 seconds
+>>> Dry-run summary:
+>>> CMD: java -jar /scratch/mjk76/ea442/daikonplusplus-token-cost/build/libs/daikonplusplus.jar --external-project --project-root /project/mjk76/ea442/promptstudy/apollo --main-src apollo-biz/src/main/java --test-src apollo-biz/src/test/java --runner-script /scratch/mjk76/ea442/token_cost_fewshot_class_doc/apollo_biz_run_tests.sh 5
+Picked up JAVA_TOOL_OPTIONS:  -Djava.io.tmpdir=/scratch/mjk76/ea442/token_cost_fewshot_class_doc/tmp -Djava.io.tmpdir=/scratch/mjk76/ea442/token_cost_fewshot_class_doc/tmp
+registryPath = /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/apollo/daikonpp_registry.jsonl
+outcomesPath = /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/apollo/daikonpp_outcomes.jsonl
+compileMainScript = /scratch/mjk76/ea442/token_cost_fewshot_class_doc/apollo_biz_compile.sh
+compileTestScript = /scratch/mjk76/ea442/token_cost_fewshot_class_doc/apollo_biz_compile.sh
+workDir = /scratch/mjk76/ea442/token_cost_fewshot_class_doc/daikonpp_work
+>>> LLM DRY RUN: prompts are counted, not sent; stopping after LM phase
+==== DRY RUN: LLM prompt token summary (nothing was sent) ====
+model / tokenizer       : gpt-4.1-mini / o200k_base
+system-prompt tokens    : 438340
+user-prompt tokens      : 791575
+chat framing tokens     : 11110  (11 per prompt)
+TOTAL input tokens      : 1241025
+  METHOD_ENTRY          : 505 prompts, 595938 tokens, mean 1180
+  METHOD_EXIT           : 505 prompts, 645087 tokens, mean 1277
+  already recorded      : 1010 prompts, 1241025 tokens
+  NOT recorded (to send): 0 prompts (0 distinct), 0 tokens (distinct)
+output tokens (recorded): 235075  (1010 recorded responses, mean 233)
+TOTAL output tokens     : 235075
+>>> Per-prompt token counts: /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/apollo/daikonpp_dry_run_tokens.tsv
+>>> LLM DRY RUN finished; injection, compilation and tests skipped.
+
+======================================
+>>> Running: dubbo
+>>> Start: Fri Oct  2 07:24:54 PM EDT 2026
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/dubbo/run.log
+======================================
+>>> Finished: dubbo
+>>> Exit status: 0
+>>> Duration: 32 seconds
+>>> Dry-run summary:
+>>> CMD: java -jar /scratch/mjk76/ea442/daikonplusplus-token-cost/build/libs/daikonplusplus.jar --external-project --project-root /project/mjk76/ea442/promptstudy/dubbo --main-src dubbo-common/src/main/java --test-src dubbo-common/src/test/java --runner-script /scratch/mjk76/ea442/token_cost_fewshot_class_doc/dubbo_dubbo-common_run_tests.sh 5
+Picked up JAVA_TOOL_OPTIONS:  -Djava.io.tmpdir=/scratch/mjk76/ea442/token_cost_fewshot_class_doc/tmp -Djava.io.tmpdir=/scratch/mjk76/ea442/token_cost_fewshot_class_doc/tmp
+registryPath = /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/dubbo/daikonpp_registry.jsonl
+outcomesPath = /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/dubbo/daikonpp_outcomes.jsonl
+compileMainScript = /scratch/mjk76/ea442/token_cost_fewshot_class_doc/dubbo_dubbo-common_compile.sh
+compileTestScript = /scratch/mjk76/ea442/token_cost_fewshot_class_doc/dubbo_dubbo-common_compile.sh
+workDir = /scratch/mjk76/ea442/token_cost_fewshot_class_doc/daikonpp_work
+>>> LLM DRY RUN: prompts are counted, not sent; stopping after LM phase
+==== DRY RUN: LLM prompt token summary (nothing was sent) ====
+model / tokenizer       : gpt-4.1-mini / o200k_base
+system-prompt tokens    : 4157720
+user-prompt tokens      : 12255986
+chat framing tokens     : 105380  (11 per prompt)
+TOTAL input tokens      : 16519086
+  METHOD_ENTRY          : 4790 prompts, 8023828 tokens, mean 1675
+  METHOD_EXIT           : 4790 prompts, 8495258 tokens, mean 1774
+  already recorded      : 9580 prompts, 16519086 tokens
+  NOT recorded (to send): 0 prompts (0 distinct), 0 tokens (distinct)
+output tokens (recorded): 2378921  (9580 recorded responses, mean 248)
+TOTAL output tokens     : 2378921
+      5124  METHOD_EXIT  org.apache.dubbo.common.utils.StringUtils#tokenizeToList(String,char):List<String>
+      5004  METHOD_ENTRY org.apache.dubbo.common.utils.StringUtils#tokenizeToList(String,char):List<String>
+>>> Per-prompt token counts: /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/dubbo/daikonpp_dry_run_tokens.tsv
+>>> LLM DRY RUN finished; injection, compilation and tests skipped.
+
+======================================
+>>> Running: netty
+>>> Start: Fri Oct  2 07:25:26 PM EDT 2026
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/netty/run.log
+======================================
+>>> Finished: netty
+>>> Exit status: 0
+>>> Duration: 23 seconds
+>>> Dry-run summary:
+>>> CMD: java -jar /scratch/mjk76/ea442/daikonplusplus-token-cost/build/libs/daikonplusplus.jar --external-project --project-root /project/mjk76/ea442/promptstudy/netty --main-src common/src/main/java --test-src common/src/test/java --runner-script /scratch/mjk76/ea442/token_cost_fewshot_class_doc/netty_common_run_tests.sh 5
+Picked up JAVA_TOOL_OPTIONS:  -Djava.io.tmpdir=/scratch/mjk76/ea442/token_cost_fewshot_class_doc/tmp -Djava.io.tmpdir=/scratch/mjk76/ea442/token_cost_fewshot_class_doc/tmp
+registryPath = /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/netty/daikonpp_registry.jsonl
+outcomesPath = /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/netty/daikonpp_outcomes.jsonl
+compileMainScript = /scratch/mjk76/ea442/token_cost_fewshot_class_doc/netty_common_compile.sh
+compileTestScript = /scratch/mjk76/ea442/token_cost_fewshot_class_doc/netty_common_compile.sh
+workDir = /scratch/mjk76/ea442/token_cost_fewshot_class_doc/daikonpp_work
+>>> LLM DRY RUN: prompts are counted, not sent; stopping after LM phase
+==== DRY RUN: LLM prompt token summary (nothing was sent) ====
+model / tokenizer       : gpt-4.1-mini / o200k_base
+system-prompt tokens    : 1957340
+user-prompt tokens      : 8114824
+chat framing tokens     : 49610  (11 per prompt)
+TOTAL input tokens      : 10121774
+  METHOD_ENTRY          : 2255 prompts, 4951132 tokens, mean 2196
+  METHOD_EXIT           : 2255 prompts, 5170642 tokens, mean 2293
+  already recorded      : 4510 prompts, 10121774 tokens
+  NOT recorded (to send): 0 prompts (0 distinct), 0 tokens (distinct)
+output tokens (recorded): 1112694  (4510 recorded responses, mean 247)
+TOTAL output tokens     : 1112694
+>>> Per-prompt token counts: /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/netty/daikonpp_dry_run_tokens.tsv
+>>> LLM DRY RUN finished; injection, compilation and tests skipped.
+
+======================================
+>>> Running: hudi
+>>> Start: Fri Oct  2 07:25:49 PM EDT 2026
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/hudi/run.log
+======================================
+>>> Finished: hudi
+>>> Exit status: 0
+>>> Duration: 5 seconds
+>>> Dry-run summary:
+>>> CMD: java -jar /scratch/mjk76/ea442/daikonplusplus-token-cost/build/libs/daikonplusplus.jar --external-project --project-root /project/mjk76/ea442/promptstudy/hudi --main-src hudi-client/hudi-java-client/src/main/java --test-src hudi-client/hudi-java-client/src/test/java --runner-script /scratch/mjk76/ea442/token_cost_fewshot_class_doc/hudi_run_tests.sh 5
+Picked up JAVA_TOOL_OPTIONS:  -Djava.io.tmpdir=/scratch/mjk76/ea442/token_cost_fewshot_class_doc/tmp -Djava.io.tmpdir=/scratch/mjk76/ea442/token_cost_fewshot_class_doc/tmp
+registryPath = /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/hudi/daikonpp_registry.jsonl
+outcomesPath = /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/hudi/daikonpp_outcomes.jsonl
+compileMainScript = /scratch/mjk76/ea442/token_cost_fewshot_class_doc/hudi_compile.sh
+compileTestScript = /scratch/mjk76/ea442/token_cost_fewshot_class_doc/hudi_compile.sh
+workDir = /scratch/mjk76/ea442/token_cost_fewshot_class_doc/daikonpp_work
+>>> LLM DRY RUN: prompts are counted, not sent; stopping after LM phase
+==== DRY RUN: LLM prompt token summary (nothing was sent) ====
+model / tokenizer       : gpt-4.1-mini / o200k_base
+system-prompt tokens    : 184884
+user-prompt tokens      : 380923
+chat framing tokens     : 4686  (11 per prompt)
+TOTAL input tokens      : 570493
+  METHOD_ENTRY          : 213 prompts, 273337 tokens, mean 1283
+  METHOD_EXIT           : 213 prompts, 297156 tokens, mean 1395
+  already recorded      : 426 prompts, 570493 tokens
+  NOT recorded (to send): 0 prompts (0 distinct), 0 tokens (distinct)
+output tokens (recorded): 101514  (426 recorded responses, mean 238)
+TOTAL output tokens     : 101514
+>>> Per-prompt token counts: /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/hudi/daikonpp_dry_run_tokens.tsv
+>>> LLM DRY RUN finished; injection, compilation and tests skipped.
+
+======================================
+>>> Running: spring
+>>> Start: Fri Oct  2 07:25:54 PM EDT 2026
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/spring/run.log
+======================================
+>>> Finished: spring
+>>> Exit status: 0
+>>> Duration: 41 seconds
+>>> Dry-run summary:
+  edu.njit.jerse.daikonplusplus.shaded.javaparser.GeneratedJavaParser.jj_consume_token(GeneratedJavaParser.java:14302)
+  edu.njit.jerse.daikonplusplus.shaded.javaparser.GeneratedJavaParser.jj_consume_token(GeneratedJavaParser.java:14302)
+  edu.njit.jerse.daikonplusplus.shaded.javaparser.GeneratedJavaParser.jj_consume_token(GeneratedJavaParser.java:14302)
+  edu.njit.jerse.daikonplusplus.shaded.javaparser.GeneratedJavaParser.jj_consume_token(GeneratedJavaParser.java:14302)
+  edu.njit.jerse.daikonplusplus.shaded.javaparser.GeneratedJavaParser.jj_consume_token(GeneratedJavaParser.java:14302)
+  edu.njit.jerse.daikonplusplus.shaded.javaparser.GeneratedJavaParser.jj_consume_token(GeneratedJavaParser.java:14302)
+  edu.njit.jerse.daikonplusplus.shaded.javaparser.GeneratedJavaParser.jj_consume_token(GeneratedJavaParser.java:14302)
+  edu.njit.jerse.daikonplusplus.shaded.javaparser.GeneratedJavaParser.jj_consume_token(GeneratedJavaParser.java:14302)
+  edu.njit.jerse.daikonplusplus.shaded.javaparser.GeneratedJavaParser.jj_consume_token(GeneratedJavaParser.java:14302)
+  edu.njit.jerse.daikonplusplus.shaded.javaparser.GeneratedJavaParser.jj_consume_token(GeneratedJavaParser.java:14302)
+  edu.njit.jerse.daikonplusplus.shaded.javaparser.GeneratedJavaParser.jj_consume_token(GeneratedJavaParser.java:14302)
+  edu.njit.jerse.daikonplusplus.shaded.javaparser.GeneratedJavaParser.jj_consume_token(GeneratedJavaParser.java:14302)
+  edu.njit.jerse.daikonplusplus.shaded.javaparser.GeneratedJavaParser.jj_consume_token(GeneratedJavaParser.java:14302)
+  edu.njit.jerse.daikonplusplus.shaded.javaparser.GeneratedJavaParser.jj_consume_token(GeneratedJavaParser.java:14302)
+  edu.njit.jerse.daikonplusplus.shaded.javaparser.GeneratedJavaParser.jj_consume_token(GeneratedJavaParser.java:14302)
+  edu.njit.jerse.daikonplusplus.shaded.javaparser.GeneratedJavaParser.jj_consume_token(GeneratedJavaParser.java:14302)
+==== DRY RUN: LLM prompt token summary (nothing was sent) ====
+model / tokenizer       : gpt-4.1-mini / o200k_base
+system-prompt tokens    : 3038868
+user-prompt tokens      : 11150814
+chat framing tokens     : 77022  (11 per prompt)
+TOTAL input tokens      : 14266704
+  METHOD_ENTRY          : 3501 prompts, 6960689 tokens, mean 1988
+  METHOD_EXIT           : 3501 prompts, 7306015 tokens, mean 2087
+  already recorded      : 7002 prompts, 14266704 tokens
+  NOT recorded (to send): 0 prompts (0 distinct), 0 tokens (distinct)
+output tokens (recorded): 1725218  (7002 recorded responses, mean 246)
+TOTAL output tokens     : 1725218
+>>> Per-prompt token counts: /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/spring/daikonpp_dry_run_tokens.tsv
+>>> LLM DRY RUN finished; injection, compilation and tests skipped.
+
+======================================
+>>> Running: libgdx
+>>> Start: Fri Oct  2 07:26:35 PM EDT 2026
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/libgdx/run.log
+======================================
+>>> Finished: libgdx
+>>> Exit status: 0
+>>> Duration: 42 seconds
+>>> Dry-run summary:
+>>> CMD: java -jar /scratch/mjk76/ea442/daikonplusplus-token-cost/build/libs/daikonplusplus.jar --external-project --project-root /project/mjk76/ea442/promptstudy/libgdx --main-src gdx/src --test-src tests/gdx-tests/src --runner-script /scratch/mjk76/ea442/token_cost_fewshot_class_doc/libgdx_run_tests.sh 5
+Picked up JAVA_TOOL_OPTIONS:  -Djava.io.tmpdir=/scratch/mjk76/ea442/token_cost_fewshot_class_doc/tmp -Djava.io.tmpdir=/scratch/mjk76/ea442/token_cost_fewshot_class_doc/tmp
+registryPath = /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/libgdx/daikonpp_registry.jsonl
+outcomesPath = /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/libgdx/daikonpp_outcomes.jsonl
+compileMainScript = /scratch/mjk76/ea442/token_cost_fewshot_class_doc/libgdx_compile.sh
+compileTestScript = /scratch/mjk76/ea442/token_cost_fewshot_class_doc/libgdx_compile.sh
+workDir = /scratch/mjk76/ea442/token_cost_fewshot_class_doc/daikonpp_work
+>>> LLM DRY RUN: prompts are counted, not sent; stopping after LM phase
+==== DRY RUN: LLM prompt token summary (nothing was sent) ====
+model / tokenizer       : gpt-4.1-mini / o200k_base
+system-prompt tokens    : 3272360
+user-prompt tokens      : 17797131
+chat framing tokens     : 82940  (11 per prompt)
+TOTAL input tokens      : 21152431
+  METHOD_ENTRY          : 3770 prompts, 10387992 tokens, mean 2755
+  METHOD_EXIT           : 3770 prompts, 10764439 tokens, mean 2855
+  already recorded      : 7540 prompts, 21152431 tokens
+  NOT recorded (to send): 0 prompts (0 distinct), 0 tokens (distinct)
+output tokens (recorded): 1940372  (7540 recorded responses, mean 257)
+TOTAL output tokens     : 1940372
+>>> Per-prompt token counts: /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/libgdx/daikonpp_dry_run_tokens.tsv
+>>> LLM DRY RUN finished; injection, compilation and tests skipped.
+
+======================================
+TOKEN-COST STUDY FINISHED
+Finish: Fri Oct  2 07:27:17 PM EDT 2026
+Results: /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc
+======================================

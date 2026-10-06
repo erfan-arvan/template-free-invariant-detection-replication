@@ -1,0 +1,943 @@
+==============================================================================================================
+SAMPLE 1/10
+==============================================================================================================
+PROJECT: apollo
+
+OCA METHOD: com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceRegistryClearApplicationRunner#run(ApplicationArguments):void
+DAIKON METHOD: com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceRegistryClearApplicationRunner.run(org.springframework.boot.ApplicationArguments)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_ENTRY] args.getSourceArgs() != null
+ID: 4c039444-35bf-4e2e-a3ab-a8027e43f5f8
+Rationale: The source arguments array should not be null to reflect typical Spring Boot ApplicationArguments behavior.
+Source file: com/ctrip/framework/apollo/biz/registry/configuration/support/ApolloServiceRegistryClearApplicationRunner.java
+
+[METHOD_ENTRY] args.getOptionNames() != null
+ID: 98b66b55-4916-4e34-bf60-1a94179bb065
+Rationale: The option names collection inside ApplicationArguments is expected to be non-null.
+Source file: com/ctrip/framework/apollo/biz/registry/configuration/support/ApolloServiceRegistryClearApplicationRunner.java
+
+[METHOD_ENTRY] !args.getOptionNames().isEmpty() || args.getNonOptionArgs().isEmpty()
+ID: e1975d33-9e05-4bfd-9c1e-75e034aa630b
+Rationale: Either option names are not empty or non-option arguments can be empty or non-empty; this captures possible typical states of ApplicationArguments.
+Source file: com/ctrip/framework/apollo/biz/registry/configuration/support/ApolloServiceRegistryClearApplicationRunner.java
+
+[METHOD_EXIT] args != null
+ID: e08d4873-745b-4810-8d14-a8e7c0912622
+Rationale: The method run receives ApplicationArguments which is expected to be non-null when method exits.
+Source file: com/ctrip/framework/apollo/biz/registry/configuration/support/ApolloServiceRegistryClearApplicationRunner.java
+
+[METHOD_ENTRY] args != null
+ID: 96a55798-54fa-484e-8ff4-335eb939852e
+Rationale: The method expects a non-null ApplicationArguments object as its parameter.
+Source file: com/ctrip/framework/apollo/biz/registry/configuration/support/ApolloServiceRegistryClearApplicationRunner.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceRegistryClearApplicationRunner.run(org.springframework.boot.ApplicationArguments):::ENTER
+args.getClass().getName() == org.springframework.boot.DefaultApplicationArguments.class
+
+===========================================================================
+com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceRegistryClearApplicationRunner.run(org.springframework.boot.ApplicationArguments):::EXIT
+com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceRegistryClearApplicationRunner.log == orig(com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceRegistryClearApplicationRunner.log)
+com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceRegistryClearApplicationRunner.log.getClass().getName() == orig(com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceRegistryClearApplicationRunner.log.getClass().getName())
+this.instanceClearScheduledExecutorService == orig(this.instanceClearScheduledExecutorService)
+this.instanceClearScheduledExecutorService.getClass().getName() == orig(this.instanceClearScheduledExecutorService.getClass().getName())
+this.serviceRegistryService == orig(this.serviceRegistryService)
+this.serviceRegistryService.repository == orig(this.serviceRegistryService.repository)
+
+
+==============================================================================================================
+SAMPLE 2/10
+==============================================================================================================
+PROJECT: apollo
+
+OCA METHOD: com.ctrip.framework.apollo.biz.service.InstanceService#findActiveInstanceConfigsByReleaseKey(String,Pageable):Page<InstanceConfig>
+DAIKON METHOD: com.ctrip.framework.apollo.biz.service.InstanceService.findActiveInstanceConfigsByReleaseKey(java.lang.String, org.springframework.data.domain.Pageable)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_ENTRY] releaseKey != null
+ID: bd35fff5-ec6a-4792-9078-122569b98217
+Rationale: releaseKey being non-null is likely required for repository query to find active instance configs.
+Source file: com/ctrip/framework/apollo/biz/service/InstanceService.java
+
+[METHOD_EXIT] result != null
+ID: d70ecf27-2533-4cda-8b2f-4a9d4c41edfb
+Rationale: The method returns a Page instance and based on typical repository behavior, the result is expected to be non-null.
+Source file: com/ctrip/framework/apollo/biz/service/InstanceService.java
+
+[METHOD_ENTRY] pageable.getPageSize() > 0
+ID: aa604c7d-a0cb-455c-9f22-3716fcdb2552
+Rationale: Pageable with zero or negative size would not make sense for querying pages.
+Source file: com/ctrip/framework/apollo/biz/service/InstanceService.java
+
+[METHOD_EXIT] result.getPageable().equals(pageable)
+ID: 1ab338d4-390a-48f1-8920-22a43964a487
+Rationale: The returned Page object's Pageable should match the requested Pageable parameter.
+Source file: com/ctrip/framework/apollo/biz/service/InstanceService.java
+
+[METHOD_ENTRY] releaseKey.length() > 0
+ID: a47ad589-884f-46fa-8247-617d42ac2883
+Rationale: Empty release key may not be valid or useful for querying active instance configs.
+Source file: com/ctrip/framework/apollo/biz/service/InstanceService.java
+
+[METHOD_EXIT] result.getNumber() >= 0
+ID: 5740a4a3-7265-4dbf-989f-eba3b89a91ca
+Rationale: Page interface defines the current page number as non-negative.
+Source file: com/ctrip/framework/apollo/biz/service/InstanceService.java
+
+[METHOD_ENTRY] pageable.getPageNumber() >= 0
+ID: 56d20d08-3d10-4a4e-8e12-2ec47057dac9
+Rationale: Page numbers are expected to start at zero; negative page number is invalid.
+Source file: com/ctrip/framework/apollo/biz/service/InstanceService.java
+
+[METHOD_EXIT] result.getContent() != null
+ID: e7921cb3-8289-40e7-990c-d0e85e99f78a
+Rationale: The Page result returned by the repository call typically has a non-null content list.
+Source file: com/ctrip/framework/apollo/biz/service/InstanceService.java
+
+[METHOD_ENTRY] pageable != null
+ID: 10c0d6e1-1394-499d-b9e4-32eac5197fa4
+Rationale: pageable parameter is needed to define paging for the query, must be non-null.
+Source file: com/ctrip/framework/apollo/biz/service/InstanceService.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+com.ctrip.framework.apollo.biz.service.InstanceService.findActiveInstanceConfigsByReleaseKey(java.lang.String, org.springframework.data.domain.Pageable):::ENTER
+this has only one value
+this.instanceRepository has only one value
+this.instanceConfigRepository has only one value
+releaseKey has only one value
+releaseKey.toString == "someReleaseKey"
+pageable has only one value
+pageable.getClass().getName() == org.springframework.data.domain.PageRequest.class
+
+===========================================================================
+com.ctrip.framework.apollo.biz.service.InstanceService.findActiveInstanceConfigsByReleaseKey(java.lang.String, org.springframework.data.domain.Pageable):::EXIT
+this.instanceRepository == orig(this.instanceRepository)
+this.instanceRepository.getClass().getName() == orig(this.instanceRepository.getClass().getName())
+this.instanceConfigRepository == orig(this.instanceConfigRepository)
+this.instanceConfigRepository.getClass().getName() == orig(this.instanceConfigRepository.getClass().getName())
+releaseKey.toString == orig(releaseKey.toString)
+this.instanceRepository has only one value
+this.instanceConfigRepository has only one value
+releaseKey.toString == "someReleaseKey"
+return has only one value
+return.getClass().getName() == org.springframework.data.domain.PageImpl.class
+
+
+==============================================================================================================
+SAMPLE 3/10
+==============================================================================================================
+PROJECT: apollo
+
+OCA METHOD: com.ctrip.framework.apollo.biz.entity.ReleaseHistory#getOperationContext():String
+DAIKON METHOD: com.ctrip.framework.apollo.biz.entity.ReleaseHistory.getOperationContext()
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_EXIT] result == null || result.length() >= 0
+ID: db5d5725-88a1-414d-8062-f1eb1e61087b
+Rationale: Ensures that if result is not null, the length property holds as expected for strings.
+Source file: com/ctrip/framework/apollo/biz/entity/ReleaseHistory.java
+
+[METHOD_EXIT] result == null || !result.isEmpty() || result.isEmpty()
+ID: a9d8edeb-07e4-48b8-865c-61f4c003077e
+Rationale: Trivially true string property, no contradiction but included for completeness.
+Source file: com/ctrip/framework/apollo/biz/entity/ReleaseHistory.java
+
+[METHOD_EXIT] result == null || result.contains("")
+ID: d981f0ac-107f-453a-8b7e-f805616e70e7
+Rationale: Basic property of strings, confirming result is a valid string if non-null.
+Source file: com/ctrip/framework/apollo/biz/entity/ReleaseHistory.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+com.ctrip.framework.apollo.biz.entity.ReleaseHistory.getOperationContext():::ENTER
+this.appId != null
+this.appId.toString == "test"
+this.clusterName != null
+this.namespaceName has only one value
+this.namespaceName != null
+this.branchName != null
+this.operationContext != null
+this.dataChangeCreatedTime != null
+this.dataChangeLastModifiedTime != null
+this.clusterName.toString > this.branchName.toString
+this.releaseId >= this.previousReleaseId
+this.releaseId != this.operation
+this.releaseId < this.id
+this.previousReleaseId != this.operation
+this.previousReleaseId < this.id
+this.operation < this.id
+this.operation > this.deletedAt
+this.id > this.deletedAt
+
+===========================================================================
+com.ctrip.framework.apollo.biz.entity.ReleaseHistory.getOperationContext():::EXIT
+this.appId == orig(this.appId)
+this.appId.toString == orig(this.appId.toString)
+this.clusterName == orig(this.clusterName)
+this.clusterName.toString == orig(this.clusterName.toString)
+this.namespaceName == orig(this.namespaceName)
+this.namespaceName.toString == orig(this.namespaceName.toString)
+this.branchName == orig(this.branchName)
+this.branchName.toString == orig(this.branchName.toString)
+this.releaseId == orig(this.releaseId)
+this.previousReleaseId == orig(this.previousReleaseId)
+this.operation == orig(this.operation)
+this.operationContext == return
+this.operationContext.toString == return.toString
+this.id == orig(this.id)
+this.isDeleted == orig(this.isDeleted)
+this.deletedAt == orig(this.deletedAt)
+this.dataChangeCreatedBy == orig(this.dataChangeCreatedBy)
+this.dataChangeCreatedBy == orig(this.dataChangeLastModifiedBy)
+this.dataChangeCreatedBy.toString == orig(this.dataChangeCreatedBy.toString)
+this.dataChangeCreatedBy.toString == orig(this.dataChangeLastModifiedBy.toString)
+this.dataChangeCreatedTime == orig(this.dataChangeCreatedTime)
+this.dataChangeLastModifiedTime == orig(this.dataChangeLastModifiedTime)
+return == orig(this.operationContext)
+return.toString == orig(this.operationContext.toString)
+this.appId != null
+this.appId.toString == "test"
+this.clusterName != null
+this.namespaceName has only one value
+this.namespaceName != null
+this.branchName != null
+this.dataChangeCreatedTime != null
+this.dataChangeLastModifiedTime != null
+return != null
+this.appId.toString < return.toString
+this.clusterName.toString > this.branchName.toString
+this.clusterName.toString < return.toString
+this.namespaceName.toString < return.toString
+this.branchName.toString < return.toString
+this.releaseId >= this.previousReleaseId
+this.releaseId != this.operation
+this.releaseId < this.id
+this.previousReleaseId != this.operation
+this.previousReleaseId < this.id
+this.operation < this.id
+this.operation > this.deletedAt
+this.id > this.deletedAt
+this.dataChangeCreatedBy.toString < return.toString
+
+
+==============================================================================================================
+SAMPLE 4/10
+==============================================================================================================
+PROJECT: apollo
+
+OCA METHOD: com.ctrip.framework.apollo.biz.entity.Item#setLineNum(Integer):void
+DAIKON METHOD: com.ctrip.framework.apollo.biz.entity.Item.setLineNum(java.lang.Integer)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_EXIT] lineNum == null || lineNum.compareTo(0) >= 0
+ID: 3b2511d2-4b9a-4998-b25c-0be294e886c4
+Rationale: Ensures lineNum represents a non-negative integer value at method exit, using compareTo.
+Source file: com/ctrip/framework/apollo/biz/entity/Item.java
+
+[METHOD_ENTRY] lineNum == null || lineNum.intValue() >= 0
+ID: 910026ae-39e8-429f-87e9-2cc2259f2a76
+Rationale: Line number, if provided, should be non-negative.
+Source file: com/ctrip/framework/apollo/biz/entity/Item.java
+
+[METHOD_EXIT] lineNum == null || lineNum.intValue() >= 0
+ID: 83b602a2-6fec-40ef-92bb-b53759764b74
+Rationale: The lineNum parameter, if set, likely corresponds to a valid non-negative line number.
+Source file: com/ctrip/framework/apollo/biz/entity/Item.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+com.ctrip.framework.apollo.biz.entity.Item.setLineNum(java.lang.Integer):::ENTER
+this.namespaceId one of { 0, 1 }
+this.key != null
+this.deletedAt one of { 0, 1789082188065L }
+this.dataChangeCreatedBy == null
+
+===========================================================================
+com.ctrip.framework.apollo.biz.entity.Item.setLineNum(java.lang.Integer):::EXIT
+this.namespaceId == orig(this.namespaceId)
+this.key == orig(this.key)
+this.key.toString == orig(this.key.toString)
+this.type == orig(this.type)
+this.value == orig(this.value)
+this.value.toString == orig(this.value.toString)
+this.comment == orig(this.comment)
+this.comment.toString == orig(this.comment.toString)
+this.lineNum == orig(lineNum)
+this.id == orig(this.id)
+this.isDeleted == orig(this.isDeleted)
+this.deletedAt == orig(this.deletedAt)
+this.dataChangeCreatedBy == orig(this.dataChangeCreatedBy)
+this.dataChangeCreatedBy == orig(this.dataChangeLastModifiedBy)
+this.dataChangeCreatedTime == orig(this.dataChangeCreatedTime)
+this.dataChangeLastModifiedTime == orig(this.dataChangeLastModifiedTime)
+this.namespaceId one of { 0, 1 }
+this.key != null
+this.deletedAt one of { 0, 1789082188065L }
+this.dataChangeCreatedBy == null
+
+
+==============================================================================================================
+SAMPLE 5/10
+==============================================================================================================
+PROJECT: apollo
+
+OCA METHOD: com.ctrip.framework.apollo.biz.service.ItemService#checkItemKeyLength(String):boolean
+DAIKON METHOD: com.ctrip.framework.apollo.biz.service.ItemService.checkItemKeyLength(java.lang.String)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_ENTRY] key != null || key == null
+ID: 5048c8a8-fc7f-4778-a9eb-168e034eae36
+Rationale: This is trivially true and can be omitted; shown here for completeness.
+Source file: com/ctrip/framework/apollo/biz/service/ItemService.java
+
+[METHOD_EXIT] result == true
+ID: c98d5a69-0e14-4921-9921-dffb60a4d03e
+Rationale: The method returns true unless it throws a BadRequestException when key is not empty and key.length() exceeds bizConfig.itemKeyLengthLimit().
+Source file: com/ctrip/framework/apollo/biz/service/ItemService.java
+
+[METHOD_ENTRY] key == null || !key.isEmpty() || !key.isEmpty()
+ID: 04f67f03-a20e-4b38-bf4e-15365ddb67bf
+Rationale: Key can be null or empty to satisfy the initial check
+Source file: com/ctrip/framework/apollo/biz/service/ItemService.java
+
+[METHOD_ENTRY] key == null || key.length() >= 0
+ID: e04b29c0-b664-4a92-8ad1-19b67115f9fe
+Rationale: String length is always non-negative, key may be null so need null check.
+Source file: com/ctrip/framework/apollo/biz/service/ItemService.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+com.ctrip.framework.apollo.biz.service.ItemService.checkItemKeyLength(java.lang.String):::ENTER
+com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger.getClass().getName() == com.ctrip.framework.apollo.common.config.RefreshableConfig.logger.getClass().getName()
+com.ctrip.framework.apollo.biz.service.ReleaseService.OPERATION_CONTEXT_TYPE_REFERENCE.getClass().getName() == com.ctrip.framework.apollo.biz.config.BizConfig.namespaceValueLengthOverrideTypeReference.getClass().getName()
+com.ctrip.framework.apollo.biz.service.ReleaseService.OPERATION_CONTEXT_TYPE_REFERENCE.getClass().getName() == com.ctrip.framework.apollo.biz.config.BizConfig.releaseHistoryRetentionSizeOverrideTypeReference.getClass().getName()
+this.itemRepository.getClass().getName() == jdk.proxy2.$Proxy258.class
+this.bizConfig.propertySource.serverConfigRepository has only one value
+this.bizConfig.propertySource.dataSource has only one value
+this.bizConfig.propertySource.env has only one value
+this.bizConfig.propertySources[] contains no nulls and has only one value, of length 1
+this.bizConfig.propertySources[] elements has only one value
+key.toString one of { "k3", "k6", "k7" }
+com.ctrip.framework.apollo.common.config.RefreshableConfig.LIST_SEPARATOR.toString < key.toString
+
+===========================================================================
+com.ctrip.framework.apollo.biz.service.ItemService.checkItemKeyLength(java.lang.String):::EXIT
+com.ctrip.framework.apollo.biz.service.ItemService.clusterPattern == orig(com.ctrip.framework.apollo.biz.service.ItemService.clusterPattern)
+this.itemRepository == orig(this.itemRepository)
+this.itemRepository.getClass().getName() == orig(this.itemRepository.getClass().getName())
+this.namespaceService == orig(this.namespaceService)
+com.ctrip.framework.apollo.biz.service.NamespaceService.GSON == orig(com.ctrip.framework.apollo.biz.service.NamespaceService.GSON)
+this.namespaceService.namespaceRepository == orig(this.namespaceService.namespaceRepository)
+this.namespaceService.auditService == orig(this.namespaceService.auditService)
+this.namespaceService.appNamespaceService == orig(this.namespaceService.appNamespaceService)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger.getClass().getName() == com.ctrip.framework.apollo.common.config.RefreshableConfig.logger.getClass().getName()
+com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger.getClass().getName())
+com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.logger.getClass().getName())
+com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger.getClass().getName() == orig(com.ctrip.framework.apollo.biz.config.BizConfig.logger.getClass().getName())
+com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger.getClass().getName() == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.logger.getClass().getName())
+com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.BizDBPropertySource.logger.getClass().getName())
+this.namespaceService.itemService == orig(this.namespaceService.itemService)
+this.namespaceService.commitService == orig(this.namespaceService.commitService)
+this.namespaceService.releaseService == orig(this.namespaceService.releaseService)
+com.ctrip.framework.apollo.biz.service.ReleaseService.TIMESTAMP_FORMAT == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.TIMESTAMP_FORMAT)
+com.ctrip.framework.apollo.biz.service.ReleaseService.GSON == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.GSON)
+com.ctrip.framework.apollo.biz.service.ReleaseService.BRANCH_RELEASE_OPERATIONS == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.BRANCH_RELEASE_OPERATIONS)
+com.ctrip.framework.apollo.biz.service.ReleaseService.BRANCH_RELEASE_OPERATIONS.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.BRANCH_RELEASE_OPERATIONS.getClass().getName())
+com.ctrip.framework.apollo.biz.service.ReleaseService.FIRST_ITEM == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.FIRST_ITEM)
+com.ctrip.framework.apollo.biz.service.ReleaseService.FIRST_ITEM.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.FIRST_ITEM.getClass().getName())
+com.ctrip.framework.apollo.biz.service.ReleaseService.OPERATION_CONTEXT_TYPE_REFERENCE == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.OPERATION_CONTEXT_TYPE_REFERENCE)
+com.ctrip.framework.apollo.biz.service.ReleaseService.OPERATION_CONTEXT_TYPE_REFERENCE.getClass().getName() == com.ctrip.framework.apollo.biz.config.BizConfig.namespaceValueLengthOverrideTypeReference.getClass().getName()
+com.ctrip.framework.apollo.biz.service.ReleaseService.OPERATION_CONTEXT_TYPE_REFERENCE.getClass().getName() == com.ctrip.framework.apollo.biz.config.BizConfig.releaseHistoryRetentionSizeOverrideTypeReference.getClass().getName()
+com.ctrip.framework.apollo.biz.service.ReleaseService.OPERATION_CONTEXT_TYPE_REFERENCE.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.OPERATION_CONTEXT_TYPE_REFERENCE.getClass().getName())
+com.ctrip.framework.apollo.biz.service.ReleaseService.OPERATION_CONTEXT_TYPE_REFERENCE.getClass().getName() == orig(com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference.getClass().getName())
+com.ctrip.framework.apollo.biz.service.ReleaseService.OPERATION_CONTEXT_TYPE_REFERENCE.getClass().getName() == orig(com.ctrip.framework.apollo.biz.config.BizConfig.namespaceValueLengthOverrideTypeReference.getClass().getName())
+com.ctrip.framework.apollo.biz.service.ReleaseService.OPERATION_CONTEXT_TYPE_REFERENCE.getClass().getName() == orig(com.ctrip.framework.apollo.biz.config.BizConfig.releaseHistoryRetentionSizeOverrideTypeReference.getClass().getName())
+this.namespaceService.clusterService == orig(this.namespaceService.clusterService)
+this.namespaceService.namespaceBranchService == orig(this.namespaceService.namespaceBranchService)
+this.namespaceService.releaseHistoryService == orig(this.namespaceService.releaseHistoryService)
+com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.logger == orig(com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.logger)
+com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.GSON == orig(com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.GSON)
+this.namespaceService.namespaceLockService == orig(this.namespaceService.namespaceLockService)
+this.namespaceService.instanceService == orig(this.namespaceService.instanceService)
+this.namespaceService.messageSender == orig(this.namespaceService.messageSender)
+this.namespaceService.bizConfig == orig(this.namespaceService.bizConfig)
+com.ctrip.framework.apollo.biz.config.BizConfig.logger == orig(com.ctrip.framework.apollo.biz.config.BizConfig.logger)
+com.ctrip.framework.apollo.biz.config.BizConfig.GSON == orig(com.ctrip.framework.apollo.biz.config.BizConfig.GSON)
+com.ctrip.framework.apollo.biz.config.BizConfig.INTERVAL_TIME_UNIT == orig(com.ctrip.framework.apollo.biz.config.BizConfig.INTERVAL_TIME_UNIT)
+com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference == orig(com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference)
+com.ctrip.framework.apollo.biz.config.BizConfig.namespaceValueLengthOverrideTypeReference == orig(com.ctrip.framework.apollo.biz.config.BizConfig.namespaceValueLengthOverrideTypeReference)
+com.ctrip.framework.apollo.biz.config.BizConfig.releaseHistoryRetentionSizeOverrideTypeReference == orig(com.ctrip.framework.apollo.biz.config.BizConfig.releaseHistoryRetentionSizeOverrideTypeReference)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.logger == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.logger)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.LIST_SEPARATOR == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.LIST_SEPARATOR)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.LIST_SEPARATOR.toString == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.LIST_SEPARATOR.toString)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY.getClass().getName() == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY.getClass().getName())
+com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY[] == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY[])
+this.auditService == orig(this.auditService)
+this.auditService.auditRepository == orig(this.auditService.auditRepository)
+this.bizConfig == orig(this.bizConfig)
+this.bizConfig.propertySource == orig(this.bizConfig.propertySource)
+com.ctrip.framework.apollo.biz.service.BizDBPropertySource.logger == orig(com.ctrip.framework.apollo.biz.service.BizDBPropertySource.logger)
+this.bizConfig.propertySource.serverConfigRepository == orig(this.bizConfig.propertySource.serverConfigRepository)
+this.bizConfig.propertySource.serverConfigRepository.getClass().getName() == orig(this.bizConfig.propertySource.serverConfigRepository.getClass().getName())
+this.bizConfig.propertySource.dataSource == orig(this.bizConfig.propertySource.dataSource)
+this.bizConfig.propertySource.dataSource.getClass().getName() == orig(this.bizConfig.propertySource.dataSource.getClass().getName())
+this.bizConfig.propertySource.env == orig(this.bizConfig.propertySource.env)
+this.bizConfig.splitter == orig(this.bizConfig.splitter)
+this.bizConfig.environment == orig(this.bizConfig.environment)
+this.bizConfig.environment.getClass().getName() == orig(this.bizConfig.propertySource.env.getClass().getName())
+this.bizConfig.environment.getClass().getName() == orig(this.bizConfig.environment.getClass().getName())
+this.bizConfig.propertySources == orig(this.bizConfig.propertySources)
+this.bizConfig.propertySources[] == orig(this.bizConfig.propertySources[])
+this.bizConfig.propertySources.getClass().getName() == orig(this.bizConfig.propertySources.getClass().getName())
+this.bizConfig.executorService == orig(this.bizConfig.executorService)
+this.bizConfig.executorService.getClass().getName() == orig(this.bizConfig.executorService.getClass().getName())
+key.toString == orig(key.toString)
+this.itemRepository.getClass().getName() == jdk.proxy2.$Proxy258.class
+this.bizConfig.propertySource.serverConfigRepository has only one value
+this.bizConfig.propertySource.dataSource has only one value
+this.bizConfig.propertySource.env has only one value
+this.bizConfig.propertySources[] contains no nulls and has only one value, of length 1
+this.bizConfig.propertySources[] elements has only one value
+key.toString one of { "k3", "k6", "k7" }
+return == true
+com.ctrip.framework.apollo.common.config.RefreshableConfig.LIST_SEPARATOR.toString < key.toString
+
+===========================================================================
+com.ctrip.framework.apollo.biz.service.ItemService.checkItemKeyLength(java.lang.String):::EXIT;condition="return == true"
+
+
+==============================================================================================================
+SAMPLE 6/10
+==============================================================================================================
+PROJECT: apollo
+
+OCA METHOD: com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceDiscoveryProperties#getHealthCheckIntervalInSecond():long
+DAIKON METHOD: com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceDiscoveryProperties.getHealthCheckIntervalInSecond()
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_EXIT] result >= 0L
+ID: 3dc5f883-5419-4773-9d52-a579a771b1a3
+Rationale: Health check interval being a time duration likely cannot be negative.
+Source file: com/ctrip/framework/apollo/biz/registry/configuration/support/ApolloServiceDiscoveryProperties.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceDiscoveryProperties.getHealthCheckIntervalInSecond():::ENTER
+
+===========================================================================
+com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceDiscoveryProperties.getHealthCheckIntervalInSecond():::EXIT
+com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceDiscoveryProperties.PREFIX == orig(com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceDiscoveryProperties.PREFIX)
+com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceDiscoveryProperties.PREFIX.toString == orig(com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceDiscoveryProperties.PREFIX.toString)
+this.enabled == orig(this.enabled)
+this.healthCheckIntervalInSecond == return
+return == orig(this.healthCheckIntervalInSecond)
+return == 61
+
+
+==============================================================================================================
+SAMPLE 7/10
+==============================================================================================================
+PROJECT: apollo
+
+OCA METHOD: com.ctrip.framework.apollo.biz.registry.configuration.ApolloServiceDiscoveryAutoConfiguration#wrapMemoryCache(DatabaseDiscoveryClient):DatabaseDiscoveryClient
+DAIKON METHOD: com.ctrip.framework.apollo.biz.registry.configuration.ApolloServiceDiscoveryAutoConfiguration.wrapMemoryCache(com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClient)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_EXIT] result != null
+ID: fe88bc9b-af25-41ad-9e7a-6299ba28a0c3
+Rationale: The method creates and returns a new decorator, so result should never be null.
+Source file: com/ctrip/framework/apollo/biz/registry/configuration/ApolloServiceDiscoveryAutoConfiguration.java
+
+[METHOD_ENTRY] discoveryClient != null
+ID: 1b8716e1-d124-41f1-bab5-713cfda795de
+Rationale: The method wraps the given discoveryClient, so it should not be null.
+Source file: com/ctrip/framework/apollo/biz/registry/configuration/ApolloServiceDiscoveryAutoConfiguration.java
+
+[METHOD_EXIT] result != discoveryClient
+ID: ef2a9841-7b93-4a16-9171-4e626bee2c4b
+Rationale: The method returns a new wrapped object distinct from the original client.
+Source file: com/ctrip/framework/apollo/biz/registry/configuration/ApolloServiceDiscoveryAutoConfiguration.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+com.ctrip.framework.apollo.biz.registry.configuration.ApolloServiceDiscoveryAutoConfiguration.wrapMemoryCache(com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClient):::ENTER
+discoveryClient has only one value
+discoveryClient.getClass().getName() == com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClientAlwaysAddSelfInstanceDecoratorImpl.class
+
+===========================================================================
+com.ctrip.framework.apollo.biz.registry.configuration.ApolloServiceDiscoveryAutoConfiguration.wrapMemoryCache(com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClient):::EXIT
+return has only one value
+return.getClass().getName() == com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClientMemoryCacheDecoratorImpl.class
+
+
+==============================================================================================================
+SAMPLE 8/10
+==============================================================================================================
+PROJECT: apollo
+
+OCA METHOD: com.ctrip.framework.apollo.biz.service.ItemSetService#updateSet(String,String,String,ItemChangeSets):ItemChangeSets
+DAIKON METHOD: com.ctrip.framework.apollo.biz.service.ItemSetService.updateSet(java.lang.String, java.lang.String, java.lang.String, com.ctrip.framework.apollo.common.dto.ItemChangeSets)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_ENTRY] clusterName != null
+ID: 756d9a89-ebf5-4ff9-ba0a-132afeef6c21
+Rationale: ClusterName is a required identifier to lookup namespaces and likely non-null.
+Source file: com/ctrip/framework/apollo/biz/service/ItemSetService.java
+
+[METHOD_ENTRY] appId != null
+ID: 6ece2e0c-3608-481d-8cbf-d2540901a932
+Rationale: AppId is a required identifier to lookup namespaces and likely non-null.
+Source file: com/ctrip/framework/apollo/biz/service/ItemSetService.java
+
+[METHOD_EXIT] changeSet != null && result == changeSet
+ID: d54c1616-5e6f-408b-9ad3-6ce8d66f1dcb
+Rationale: The method always returns the same 'changeSet' instance passed as a parameter.
+Source file: com/ctrip/framework/apollo/biz/service/ItemSetService.java
+
+[METHOD_ENTRY] namespaceName != null
+ID: 0f9f6b8f-c71c-4f6b-8bfb-44e20a68a86b
+Rationale: NamespaceName is a required identifier to lookup namespaces and likely non-null.
+Source file: com/ctrip/framework/apollo/biz/service/ItemSetService.java
+
+[METHOD_ENTRY] changeSet != null && changeSet.getCreateItems() != null && changeSet.getDeleteItems() != null && changeSet.getUpdateItems() != null
+ID: 21c91e04-c54c-43d6-b618-d994d7cc34f5
+Rationale: ChangeSet must be non-null and its create, update, and delete item lists should be non-null collections.
+Source file: com/ctrip/framework/apollo/biz/service/ItemSetService.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+com.ctrip.framework.apollo.biz.service.ItemSetService.updateSet(java.lang.String, java.lang.String, java.lang.String, com.ctrip.framework.apollo.common.dto.ItemChangeSets):::ENTER
+changeSet.createItems.getClass().getName() == changeSet.updateItems.getClass().getName()
+changeSet.createItems.getClass().getName() == changeSet.deleteItems.getClass().getName()
+changeSet.dataChangeCreatedBy == changeSet.dataChangeLastModifiedBy
+changeSet.dataChangeCreatedBy == changeSet.dataChangeCreatedByDisplayName
+changeSet.dataChangeCreatedBy == changeSet.dataChangeLastModifiedByDisplayName
+changeSet.dataChangeCreatedTime == changeSet.dataChangeLastModifiedTime
+size(changeSet.updateItems[]) == size(changeSet.deleteItems[])
+this has only one value
+this.auditService has only one value
+this.commitService has only one value
+this.itemService has only one value
+this.namespaceService has only one value
+this.bizConfig has only one value
+this.bizConfig.propertySource == null
+this.bizConfig.splitter == null
+this.bizConfig.environment == null
+this.bizConfig.propertySources == null
+this.bizConfig.executorService == null
+appId has only one value
+appId.toString == "testApp"
+clusterName has only one value
+clusterName.toString == "default"
+namespaceName has only one value
+namespaceName.toString == "application"
+changeSet.createItems[].getClass().getName() elements == com.ctrip.framework.apollo.common.dto.ItemDTO.class
+changeSet.createItems[].getClass().getName() one of { [com.ctrip.framework.apollo.common.dto.ItemDTO], [com.ctrip.framework.apollo.common.dto.ItemDTO, com.ctrip.framework.apollo.common.dto.ItemDTO] }
+changeSet.createItems.getClass().getName() == java.util.LinkedList.class
+changeSet.updateItems[] elements has only one value
+changeSet.updateItems[].getClass().getName() elements == com.ctrip.framework.apollo.common.dto.ItemDTO.class
+changeSet.updateItems[].getClass().getName() one of { [], [com.ctrip.framework.apollo.common.dto.ItemDTO] }
+changeSet.deleteItems[] elements has only one value
+changeSet.dataChangeCreatedBy == null
+changeSet.dataChangeCreatedTime == null
+size(changeSet.createItems[]) one of { 1, 2 }
+size(changeSet.updateItems[]) one of { 0, 1 }
+
+===========================================================================
+com.ctrip.framework.apollo.biz.service.ItemSetService.updateSet(java.lang.String, java.lang.String, java.lang.String, com.ctrip.framework.apollo.common.dto.ItemChangeSets):::EXIT
+this.auditService == orig(this.auditService)
+this.auditService.auditRepository == orig(this.auditService.auditRepository)
+this.commitService == orig(this.commitService)
+this.commitService.commitRepository == orig(this.commitService.commitRepository)
+this.itemService == orig(this.itemService)
+com.ctrip.framework.apollo.biz.service.ItemService.clusterPattern == orig(com.ctrip.framework.apollo.biz.service.ItemService.clusterPattern)
+this.itemService.itemRepository == orig(this.itemService.itemRepository)
+this.itemService.namespaceService == orig(this.itemService.namespaceService)
+com.ctrip.framework.apollo.biz.service.NamespaceService.GSON == orig(com.ctrip.framework.apollo.biz.service.NamespaceService.GSON)
+this.itemService.auditService == orig(this.itemService.auditService)
+this.itemService.auditService == orig(this.namespaceService.auditService)
+this.itemService.bizConfig == orig(this.itemService.bizConfig)
+this.itemService.bizConfig == orig(this.namespaceService.bizConfig)
+com.ctrip.framework.apollo.biz.config.BizConfig.logger == orig(com.ctrip.framework.apollo.biz.config.BizConfig.logger)
+com.ctrip.framework.apollo.biz.config.BizConfig.logger.getClass().getName() == orig(com.ctrip.framework.apollo.biz.config.BizConfig.logger.getClass().getName())
+com.ctrip.framework.apollo.biz.config.BizConfig.logger.getClass().getName() == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.logger.getClass().getName())
+com.ctrip.framework.apollo.biz.config.BizConfig.logger.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger.getClass().getName())
+com.ctrip.framework.apollo.biz.config.BizConfig.logger.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.logger.getClass().getName())
+com.ctrip.framework.apollo.biz.config.BizConfig.logger.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.BizDBPropertySource.logger.getClass().getName())
+com.ctrip.framework.apollo.biz.config.BizConfig.GSON == orig(com.ctrip.framework.apollo.biz.config.BizConfig.GSON)
+com.ctrip.framework.apollo.biz.config.BizConfig.INTERVAL_TIME_UNIT == orig(com.ctrip.framework.apollo.biz.config.BizConfig.INTERVAL_TIME_UNIT)
+com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference == orig(com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference)
+com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference.getClass().getName() == orig(com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference.getClass().getName())
+com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference.getClass().getName() == orig(com.ctrip.framework.apollo.biz.config.BizConfig.namespaceValueLengthOverrideTypeReference.getClass().getName())
+com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference.getClass().getName() == orig(com.ctrip.framework.apollo.biz.config.BizConfig.releaseHistoryRetentionSizeOverrideTypeReference.getClass().getName())
+com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.OPERATION_CONTEXT_TYPE_REFERENCE.getClass().getName())
+com.ctrip.framework.apollo.biz.config.BizConfig.namespaceValueLengthOverrideTypeReference == orig(com.ctrip.framework.apollo.biz.config.BizConfig.namespaceValueLengthOverrideTypeReference)
+com.ctrip.framework.apollo.biz.config.BizConfig.releaseHistoryRetentionSizeOverrideTypeReference == orig(com.ctrip.framework.apollo.biz.config.BizConfig.releaseHistoryRetentionSizeOverrideTypeReference)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.logger == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.logger)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.LIST_SEPARATOR == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.LIST_SEPARATOR)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.LIST_SEPARATOR.toString == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.LIST_SEPARATOR.toString)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY.getClass().getName() == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY.getClass().getName())
+com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY[] == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY[])
+this.namespaceService == orig(this.namespaceService)
+this.namespaceService.namespaceRepository == orig(this.namespaceService.namespaceRepository)
+this.namespaceService.appNamespaceService == orig(this.namespaceService.appNamespaceService)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger)
+this.namespaceService.itemService == orig(this.namespaceService.itemService)
+this.namespaceService.commitService == orig(this.namespaceService.commitService)
+this.namespaceService.releaseService == orig(this.namespaceService.releaseService)
+com.ctrip.framework.apollo.biz.service.ReleaseService.TIMESTAMP_FORMAT == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.TIMESTAMP_FORMAT)
+com.ctrip.framework.apollo.biz.service.ReleaseService.GSON == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.GSON)
+com.ctrip.framework.apollo.biz.service.ReleaseService.BRANCH_RELEASE_OPERATIONS == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.BRANCH_RELEASE_OPERATIONS)
+com.ctrip.framework.apollo.biz.service.ReleaseService.BRANCH_RELEASE_OPERATIONS.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.BRANCH_RELEASE_OPERATIONS.getClass().getName())
+com.ctrip.framework.apollo.biz.service.ReleaseService.FIRST_ITEM == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.FIRST_ITEM)
+com.ctrip.framework.apollo.biz.service.ReleaseService.FIRST_ITEM.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.FIRST_ITEM.getClass().getName())
+com.ctrip.framework.apollo.biz.service.ReleaseService.OPERATION_CONTEXT_TYPE_REFERENCE == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.OPERATION_CONTEXT_TYPE_REFERENCE)
+this.namespaceService.clusterService == orig(this.namespaceService.clusterService)
+this.namespaceService.namespaceBranchService == orig(this.namespaceService.namespaceBranchService)
+this.namespaceService.releaseHistoryService == orig(this.namespaceService.releaseHistoryService)
+com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.logger == orig(com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.logger)
+com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.GSON == orig(com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.GSON)
+this.namespaceService.namespaceLockService == orig(this.namespaceService.namespaceLockService)
+this.namespaceService.instanceService == orig(this.namespaceService.instanceService)
+this.namespaceService.messageSender == orig(this.namespaceService.messageSender)
+this.bizConfig == orig(this.bizConfig)
+this.bizConfig.propertySource == orig(this.bizConfig.propertySource)
+com.ctrip.framework.apollo.biz.service.BizDBPropertySource.logger == orig(com.ctrip.framework.apollo.biz.service.BizDBPropertySource.logger)
+this.bizConfig.splitter == orig(this.bizConfig.splitter)
+this.bizConfig.environment == orig(this.bizConfig.environment)
+this.bizConfig.propertySources == orig(this.bizConfig.propertySources)
+this.bizConfig.executorService == orig(this.bizConfig.executorService)
+appId.toString == orig(appId.toString)
+clusterName.toString == orig(clusterName.toString)
+namespaceName.toString == orig(namespaceName.toString)
+changeSet.createItems == return.createItems
+changeSet.createItems == orig(changeSet.createItems)
+changeSet.createItems[] == return.createItems[]
+changeSet.createItems[] == orig(changeSet.createItems[])
+changeSet.createItems.getClass().getName() == changeSet.updateItems.getClass().getName()
+changeSet.createItems.getClass().getName() == changeSet.deleteItems.getClass().getName()
+changeSet.createItems.getClass().getName() == return.createItems.getClass().getName()
+changeSet.createItems.getClass().getName() == return.updateItems.getClass().getName()
+changeSet.createItems.getClass().getName() == return.deleteItems.getClass().getName()
+changeSet.createItems.getClass().getName() == orig(changeSet.createItems.getClass().getName())
+changeSet.createItems.getClass().getName() == orig(changeSet.updateItems.getClass().getName())
+changeSet.createItems.getClass().getName() == orig(changeSet.deleteItems.getClass().getName())
+changeSet.updateItems == return.updateItems
+changeSet.updateItems == orig(changeSet.updateItems)
+changeSet.updateItems[] == return.updateItems[]
+changeSet.updateItems[] == orig(changeSet.updateItems[])
+changeSet.deleteItems == return.deleteItems
+changeSet.deleteItems == orig(changeSet.deleteItems)
+changeSet.deleteItems[] == return.deleteItems[]
+changeSet.deleteItems[] == orig(changeSet.deleteItems[])
+changeSet.dataChangeCreatedBy == changeSet.dataChangeLastModifiedBy
+changeSet.dataChangeCreatedBy == changeSet.dataChangeCreatedByDisplayName
+changeSet.dataChangeCreatedBy == changeSet.dataChangeLastModifiedByDisplayName
+changeSet.dataChangeCreatedBy == return.dataChangeCreatedBy
+changeSet.dataChangeCreatedBy == return.dataChangeLastModifiedBy
+changeSet.dataChangeCreatedBy == return.dataChangeCreatedByDisplayName
+changeSet.dataChangeCreatedBy == return.dataChangeLastModifiedByDisplayName
+changeSet.dataChangeCreatedBy == orig(changeSet.dataChangeCreatedBy)
+changeSet.dataChangeCreatedBy == orig(changeSet.dataChangeLastModifiedBy)
+changeSet.dataChangeCreatedBy == orig(changeSet.dataChangeCreatedByDisplayName)
+changeSet.dataChangeCreatedBy == orig(changeSet.dataChangeLastModifiedByDisplayName)
+changeSet.dataChangeCreatedTime == changeSet.dataChangeLastModifiedTime
+changeSet.dataChangeCreatedTime == return.dataChangeCreatedTime
+changeSet.dataChangeCreatedTime == return.dataChangeLastModifiedTime
+changeSet.dataChangeCreatedTime == orig(changeSet.dataChangeCreatedTime)
+changeSet.dataChangeCreatedTime == orig(changeSet.dataChangeLastModifiedTime)
+return == orig(changeSet)
+size(changeSet.updateItems[]) == size(changeSet.deleteItems[])
+size(changeSet.updateItems[]) == size(return.deleteItems[])
+size(changeSet.updateItems[]) == orig(size(changeSet.deleteItems[]))
+this.auditService has only one value
+this.commitService has only one value
+this.itemService has only one value
+this.namespaceService has only one value
+this.bizConfig has only one value
+this.bizConfig.propertySource == null
+this.bizConfig.splitter == null
+this.bizConfig.environment == null
+this.bizConfig.propertySources == null
+this.bizConfig.executorService == null
+appId.toString == "testApp"
+clusterName.toString == "default"
+namespaceName.toString == "application"
+changeSet.createItems[].getClass().getName() elements == com.ctrip.framework.apollo.common.dto.ItemDTO.class
+changeSet.createItems[].getClass().getName() one of { [com.ctrip.framework.apollo.common.dto.ItemDTO], [com.ctrip.framework.apollo.common.dto.ItemDTO, com.ctrip.framework.apollo.common.dto.ItemDTO] }
+changeSet.createItems.getClass().getName() == java.util.LinkedList.class
+changeSet.updateItems[] elements has only one value
+changeSet.updateItems[].getClass().getName() elements == com.ctrip.framework.apollo.common.dto.ItemDTO.class
+changeSet.updateItems[].getClass().getName() one of { [], [com.ctrip.framework.apollo.common.dto.ItemDTO] }
+changeSet.deleteItems[] elements has only one value
+changeSet.dataChangeCreatedBy == null
+changeSet.dataChangeCreatedTime == null
+size(changeSet.createItems[]) one of { 1, 2 }
+size(changeSet.updateItems[]) one of { 0, 1 }
+
+
+==============================================================================================================
+SAMPLE 9/10
+==============================================================================================================
+PROJECT: apollo
+
+OCA METHOD: com.ctrip.framework.apollo.biz.service.ItemService#getItemInfoBySearch(String,String,Pageable):Page<ItemInfoDTO>
+DAIKON METHOD: com.ctrip.framework.apollo.biz.service.ItemService.getItemInfoBySearch(java.lang.String, java.lang.String, org.springframework.data.domain.Pageable)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_ENTRY] value != null
+ID: 18fc64e2-a341-41fc-80e6-59b6de338af0
+Rationale: The method calls value.isEmpty(), so value must be non-null.
+Source file: com/ctrip/framework/apollo/biz/service/ItemService.java
+
+[METHOD_ENTRY] !(key.isEmpty() && value.isEmpty())
+ID: cd17e483-17c0-4327-8fbb-210d75be1204
+Rationale: The method does not handle the case where both key and value are empty, so it is presumably disallowed.
+Source file: com/ctrip/framework/apollo/biz/service/ItemService.java
+
+[METHOD_ENTRY] limit != null
+ID: d03089e4-36bb-4970-b11e-28909249eafc
+Rationale: limit is passed to repository methods and should be non-null.
+Source file: com/ctrip/framework/apollo/biz/service/ItemService.java
+
+[METHOD_EXIT] result != null
+ID: 54764273-9360-49b0-93a8-a08c37d130ae
+Rationale: The method assigns the result of repository calls which likely never return null.
+Source file: com/ctrip/framework/apollo/biz/service/ItemService.java
+
+[METHOD_ENTRY] key != null
+ID: c7dc5321-0b0f-428c-84dd-5e10ce34c063
+Rationale: The method calls key.isEmpty(), so key must be non-null.
+Source file: com/ctrip/framework/apollo/biz/service/ItemService.java
+
+[METHOD_ENTRY] (key.isEmpty() && !value.isEmpty()) || (!key.isEmpty() && value.isEmpty()) || (!key.isEmpty() && !value.isEmpty())
+ID: 123e5ed4-4a9d-459f-a40d-a9828f1ccb0d
+Rationale: Reflects the mutually exclusive conditional branches in method: key empty & value not, or value empty & key not, or both non-empty.
+Source file: com/ctrip/framework/apollo/biz/service/ItemService.java
+
+[METHOD_EXIT] (key.isEmpty() || !value.isEmpty() || !result.isEmpty())
+ID: 344ccc7b-afc0-4283-87c1-cbb9f35731ed
+Rationale: The result page content relates to the input parameters key and value.
+Source file: com/ctrip/framework/apollo/biz/service/ItemService.java
+
+[METHOD_EXIT] (result.getSize() == limit.getPageSize())
+ID: be6b0eec-c33b-4dd8-b5c0-6f6fb88772c9
+Rationale: The pageable parameter limit relates directly to the size of the page returned.
+Source file: com/ctrip/framework/apollo/biz/service/ItemService.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+com.ctrip.framework.apollo.biz.service.ItemService.getItemInfoBySearch(java.lang.String, java.lang.String, org.springframework.data.domain.Pageable):::ENTER
+com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger.getClass().getName() == com.ctrip.framework.apollo.common.config.RefreshableConfig.logger.getClass().getName()
+com.ctrip.framework.apollo.biz.service.ReleaseService.FIRST_ITEM.getClass().getName() == limit.getClass().getName()
+com.ctrip.framework.apollo.biz.service.ReleaseService.OPERATION_CONTEXT_TYPE_REFERENCE.getClass().getName() == com.ctrip.framework.apollo.biz.config.BizConfig.namespaceValueLengthOverrideTypeReference.getClass().getName()
+com.ctrip.framework.apollo.biz.service.ReleaseService.OPERATION_CONTEXT_TYPE_REFERENCE.getClass().getName() == com.ctrip.framework.apollo.biz.config.BizConfig.releaseHistoryRetentionSizeOverrideTypeReference.getClass().getName()
+this has only one value
+this.itemRepository has only one value
+this.itemRepository.getClass().getName() == jdk.proxy2.$Proxy258.class
+this.namespaceService has only one value
+this.auditService has only one value
+this.bizConfig has only one value
+this.bizConfig.propertySource has only one value
+this.bizConfig.propertySource.serverConfigRepository has only one value
+this.bizConfig.propertySource.dataSource has only one value
+this.bizConfig.propertySource.env has only one value
+this.bizConfig.splitter has only one value
+this.bizConfig.environment has only one value
+this.bizConfig.propertySources has only one value
+this.bizConfig.propertySources[] contains no nulls and has only one value, of length 1
+this.bizConfig.propertySources[] elements has only one value
+this.bizConfig.executorService has only one value
+key.toString one of { "", "k1" }
+value.toString one of { "", "v1" }
+
+===========================================================================
+com.ctrip.framework.apollo.biz.service.ItemService.getItemInfoBySearch(java.lang.String, java.lang.String, org.springframework.data.domain.Pageable):::EXIT
+com.ctrip.framework.apollo.biz.service.ItemService.clusterPattern == orig(com.ctrip.framework.apollo.biz.service.ItemService.clusterPattern)
+this.itemRepository == orig(this.itemRepository)
+this.itemRepository.getClass().getName() == orig(this.itemRepository.getClass().getName())
+this.namespaceService == orig(this.namespaceService)
+com.ctrip.framework.apollo.biz.service.NamespaceService.GSON == orig(com.ctrip.framework.apollo.biz.service.NamespaceService.GSON)
+this.namespaceService.namespaceRepository == orig(this.namespaceService.namespaceRepository)
+this.namespaceService.auditService == orig(this.namespaceService.auditService)
+this.namespaceService.appNamespaceService == orig(this.namespaceService.appNamespaceService)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger.getClass().getName() == com.ctrip.framework.apollo.common.config.RefreshableConfig.logger.getClass().getName()
+com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger.getClass().getName())
+com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.logger.getClass().getName())
+com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger.getClass().getName() == orig(com.ctrip.framework.apollo.biz.config.BizConfig.logger.getClass().getName())
+com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger.getClass().getName() == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.logger.getClass().getName())
+com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.BizDBPropertySource.logger.getClass().getName())
+this.namespaceService.itemService == orig(this.namespaceService.itemService)
+this.namespaceService.commitService == orig(this.namespaceService.commitService)
+this.namespaceService.releaseService == orig(this.namespaceService.releaseService)
+com.ctrip.framework.apollo.biz.service.ReleaseService.TIMESTAMP_FORMAT == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.TIMESTAMP_FORMAT)
+com.ctrip.framework.apollo.biz.service.ReleaseService.GSON == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.GSON)
+com.ctrip.framework.apollo.biz.service.ReleaseService.BRANCH_RELEASE_OPERATIONS == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.BRANCH_RELEASE_OPERATIONS)
+com.ctrip.framework.apollo.biz.service.ReleaseService.BRANCH_RELEASE_OPERATIONS.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.BRANCH_RELEASE_OPERATIONS.getClass().getName())
+com.ctrip.framework.apollo.biz.service.ReleaseService.FIRST_ITEM == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.FIRST_ITEM)
+com.ctrip.framework.apollo.biz.service.ReleaseService.FIRST_ITEM.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.FIRST_ITEM.getClass().getName())
+com.ctrip.framework.apollo.biz.service.ReleaseService.FIRST_ITEM.getClass().getName() == orig(limit.getClass().getName())
+com.ctrip.framework.apollo.biz.service.ReleaseService.OPERATION_CONTEXT_TYPE_REFERENCE == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.OPERATION_CONTEXT_TYPE_REFERENCE)
+com.ctrip.framework.apollo.biz.service.ReleaseService.OPERATION_CONTEXT_TYPE_REFERENCE.getClass().getName() == com.ctrip.framework.apollo.biz.config.BizConfig.namespaceValueLengthOverrideTypeReference.getClass().getName()
+com.ctrip.framework.apollo.biz.service.ReleaseService.OPERATION_CONTEXT_TYPE_REFERENCE.getClass().getName() == com.ctrip.framework.apollo.biz.config.BizConfig.releaseHistoryRetentionSizeOverrideTypeReference.getClass().getName()
+com.ctrip.framework.apollo.biz.service.ReleaseService.OPERATION_CONTEXT_TYPE_REFERENCE.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.OPERATION_CONTEXT_TYPE_REFERENCE.getClass().getName())
+com.ctrip.framework.apollo.biz.service.ReleaseService.OPERATION_CONTEXT_TYPE_REFERENCE.getClass().getName() == orig(com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference.getClass().getName())
+com.ctrip.framework.apollo.biz.service.ReleaseService.OPERATION_CONTEXT_TYPE_REFERENCE.getClass().getName() == orig(com.ctrip.framework.apollo.biz.config.BizConfig.namespaceValueLengthOverrideTypeReference.getClass().getName())
+com.ctrip.framework.apollo.biz.service.ReleaseService.OPERATION_CONTEXT_TYPE_REFERENCE.getClass().getName() == orig(com.ctrip.framework.apollo.biz.config.BizConfig.releaseHistoryRetentionSizeOverrideTypeReference.getClass().getName())
+this.namespaceService.clusterService == orig(this.namespaceService.clusterService)
+this.namespaceService.namespaceBranchService == orig(this.namespaceService.namespaceBranchService)
+this.namespaceService.releaseHistoryService == orig(this.namespaceService.releaseHistoryService)
+com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.logger == orig(com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.logger)
+com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.GSON == orig(com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.GSON)
+this.namespaceService.namespaceLockService == orig(this.namespaceService.namespaceLockService)
+this.namespaceService.instanceService == orig(this.namespaceService.instanceService)
+this.namespaceService.messageSender == orig(this.namespaceService.messageSender)
+this.namespaceService.bizConfig == orig(this.namespaceService.bizConfig)
+com.ctrip.framework.apollo.biz.config.BizConfig.logger == orig(com.ctrip.framework.apollo.biz.config.BizConfig.logger)
+com.ctrip.framework.apollo.biz.config.BizConfig.GSON == orig(com.ctrip.framework.apollo.biz.config.BizConfig.GSON)
+com.ctrip.framework.apollo.biz.config.BizConfig.INTERVAL_TIME_UNIT == orig(com.ctrip.framework.apollo.biz.config.BizConfig.INTERVAL_TIME_UNIT)
+com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference == orig(com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference)
+com.ctrip.framework.apollo.biz.config.BizConfig.namespaceValueLengthOverrideTypeReference == orig(com.ctrip.framework.apollo.biz.config.BizConfig.namespaceValueLengthOverrideTypeReference)
+com.ctrip.framework.apollo.biz.config.BizConfig.releaseHistoryRetentionSizeOverrideTypeReference == orig(com.ctrip.framework.apollo.biz.config.BizConfig.releaseHistoryRetentionSizeOverrideTypeReference)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.logger == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.logger)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.LIST_SEPARATOR == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.LIST_SEPARATOR)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.LIST_SEPARATOR.toString == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.LIST_SEPARATOR.toString)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY.getClass().getName() == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY.getClass().getName())
+com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY[] == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY[])
+this.auditService == orig(this.auditService)
+this.auditService.auditRepository == orig(this.auditService.auditRepository)
+this.bizConfig == orig(this.bizConfig)
+this.bizConfig.propertySource == orig(this.bizConfig.propertySource)
+com.ctrip.framework.apollo.biz.service.BizDBPropertySource.logger == orig(com.ctrip.framework.apollo.biz.service.BizDBPropertySource.logger)
+this.bizConfig.propertySource.serverConfigRepository == orig(this.bizConfig.propertySource.serverConfigRepository)
+this.bizConfig.propertySource.serverConfigRepository.getClass().getName() == orig(this.bizConfig.propertySource.serverConfigRepository.getClass().getName())
+this.bizConfig.propertySource.dataSource == orig(this.bizConfig.propertySource.dataSource)
+this.bizConfig.propertySource.dataSource.getClass().getName() == orig(this.bizConfig.propertySource.dataSource.getClass().getName())
+this.bizConfig.propertySource.env == orig(this.bizConfig.propertySource.env)
+this.bizConfig.splitter == orig(this.bizConfig.splitter)
+this.bizConfig.environment == orig(this.bizConfig.environment)
+this.bizConfig.environment.getClass().getName() == orig(this.bizConfig.propertySource.env.getClass().getName())
+this.bizConfig.environment.getClass().getName() == orig(this.bizConfig.environment.getClass().getName())
+this.bizConfig.propertySources == orig(this.bizConfig.propertySources)
+this.bizConfig.propertySources[] == orig(this.bizConfig.propertySources[])
+this.bizConfig.propertySources.getClass().getName() == orig(this.bizConfig.propertySources.getClass().getName())
+this.bizConfig.executorService == orig(this.bizConfig.executorService)
+this.bizConfig.executorService.getClass().getName() == orig(this.bizConfig.executorService.getClass().getName())
+key.toString == orig(key.toString)
+value.toString == orig(value.toString)
+size(com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY[]) == orig(size(this.bizConfig.propertySources[]))-1
+this.itemRepository has only one value
+this.itemRepository.getClass().getName() == jdk.proxy2.$Proxy258.class
+this.namespaceService has only one value
+this.auditService has only one value
+this.bizConfig has only one value
+this.bizConfig.propertySource has only one value
+this.bizConfig.propertySource.serverConfigRepository has only one value
+this.bizConfig.propertySource.dataSource has only one value
+this.bizConfig.propertySource.env has only one value
+this.bizConfig.splitter has only one value
+this.bizConfig.environment has only one value
+this.bizConfig.propertySources has only one value
+this.bizConfig.propertySources[] contains no nulls and has only one value, of length 1
+this.bizConfig.propertySources[] elements has only one value
+this.bizConfig.executorService has only one value
+key.toString one of { "", "k1" }
+value.toString one of { "", "v1" }
+return.getClass().getName() == org.springframework.data.domain.PageImpl.class
+
+
+==============================================================================================================
+SAMPLE 10/10
+==============================================================================================================
+PROJECT: apollo
+
+OCA METHOD: com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter#convertToDatabaseColumn(Map<String, String>):String
+DAIKON METHOD: com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.convertToDatabaseColumn(java.util.Map)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_EXIT] attribute == null || result.length() >= 2
+ID: 8dfd135d-58f4-4d9c-b24b-062f4cffd24d
+Rationale: Even for empty map serialization, the result string is at least '{}', hence length at least 2.
+Source file: com/ctrip/framework/apollo/biz/entity/JpaMapFieldJsonConverter.java
+
+[METHOD_EXIT] (attribute == null) || (!result.contains("null"))
+ID: 5ac7cae3-52f4-4248-bbe8-49cb943e8327
+Rationale: If attribute is non-null, its JSON serialization string does not contain standalone null literals.
+Source file: com/ctrip/framework/apollo/biz/entity/JpaMapFieldJsonConverter.java
+
+[METHOD_EXIT] !result.isEmpty() || (attribute == null || attribute.isEmpty())
+ID: 5daf8356-b28d-4a0d-bf2f-d6e336cbaf84
+Rationale: If the attribute map is null or empty, the JSON output might be empty or "null" but result is never invalid.
+Source file: com/ctrip/framework/apollo/biz/entity/JpaMapFieldJsonConverter.java
+
+[METHOD_EXIT] result != null
+ID: e0fd86af-ea0f-49ad-931d-6b51019df216
+Rationale: Since Gson.toJson serializes the attribute map to JSON string representation, the result should never be null.
+Source file: com/ctrip/framework/apollo/biz/entity/JpaMapFieldJsonConverter.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.convertToDatabaseColumn(java.util.Map):::ENTER
+com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.TYPE_TOKEN.getClass().getName() != attribute.getClass().getName()
+com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.TYPE.getClass().getName() != attribute.getClass().getName()
+
+===========================================================================
+com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.convertToDatabaseColumn(java.util.Map):::EXIT
+com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.GSON == orig(com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.GSON)
+com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.TYPE_TOKEN == orig(com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.TYPE_TOKEN)
+com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.TYPE_TOKEN.getClass().getName() == orig(com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.TYPE_TOKEN.getClass().getName())
+com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.TYPE == orig(com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.TYPE)
+com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.TYPE.getClass().getName() == orig(com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.TYPE.getClass().getName())
+return != null
+com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.TYPE_TOKEN.getClass().getName() != orig(attribute.getClass().getName())
+com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverter.TYPE.getClass().getName() != orig(attribute.getClass().getName())
+
+

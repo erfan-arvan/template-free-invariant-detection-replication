@@ -1,0 +1,58 @@
+>>> Using JDK 25 at: /scratch/mjk76/ea442/promptstudy/jdk25
+>>> Stopping any leaked Gradle daemons from prior runs on this GRADLE_USER_HOME
+No Gradle daemons are running.
+>>> gradle compileJava (warm build, no agent)
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.7.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :buildSrc:compileJava
+> Task :buildSrc:compileGroovy NO-SOURCE
+> Task :buildSrc:pluginDescriptors
+> Task :buildSrc:processResources
+> Task :buildSrc:classes
+> Task :buildSrc:checkstyleMain
+> Task :buildSrc:compileTestJava
+> Task :buildSrc:compileTestGroovy NO-SOURCE
+> Task :buildSrc:processTestResources NO-SOURCE
+> Task :buildSrc:testClasses
+> Task :buildSrc:pluginUnderTestMetadata
+> Task :buildSrc:checkstyleTest
+> Task :buildSrc:test
+> Task :buildSrc:validatePlugins
+> Task :buildSrc:check
+> Task :buildSrc:jar
+> Task :spring-core:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :spring-core:javapoetRepackJar
+> Task :spring-core:objenesisRepackJar
+> Task :spring-core:compileKotlin
+> Task :spring-core:compileJava
+
+[Incubating] Problems report is available at: file:///mmfs1/scratch/mjk76/ea442/promptstudy/spring-s5-chicory/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.7.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 1m 38s
+14 actionable tasks: 14 executed
+Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.7.1/userguide/configuration_cache_enabling.html
+>>> gradle test (javaagent attached via init script) -- this is the actual Chicory-instrumented run
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.7.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+[Incubating] Problems report is available at: file:///mmfs1/scratch/mjk76/ea442/promptstudy/spring-s5-chicory/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.7.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+No Gradle daemons are running.
+>>> Chicory trace output directory:
+total 17
+drwxr-xr-x+  2 ea442 ea442 4096 Sep  7 22:24 .
+drwxr-xr-x+ 30 ea442 ea442 8192 Sep  7 22:24 ..
+>>> Combining dtrace files...
+>>> Combined trace: /scratch/mjk76/ea442/promptstudy/spring-s5.dtrace
+0 /scratch/mjk76/ea442/promptstudy/spring-s5.dtrace

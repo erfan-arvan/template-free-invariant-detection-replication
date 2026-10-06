@@ -1,0 +1,392 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+>>> gradle compileJava (warm build, no agent)
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :tests:gdx-tests-android
+==============================================================================================
+sdk.dir/ANDROID_HOME/ANDROID_SDK_ROOT are unset, gdx-tests-android will not be properly setup.
+==============================================================================================
+
+> Task :clean
+> Task :backends:clean
+> Task :extensions:clean
+> Task :gdx:clean
+> Task :tests:clean
+> Task :backends:gdx-backend-android:clean
+> Task :backends:gdx-backend-gwt:clean
+> Task :backends:gdx-backend-headless:clean
+> Task :backends:gdx-backend-lwjgl:clean
+> Task :backends:gdx-backend-lwjgl3:clean
+> Task :backends:gdx-backend-robovm:clean
+> Task :backends:gdx-backend-robovm-metalangle:clean
+> Task :extensions:gdx-box2d-parent:clean
+> Task :extensions:gdx-bullet:clean
+> Task :extensions:gdx-freetype:clean
+> Task :extensions:gdx-lwjgl3-angle:clean
+> Task :extensions:gdx-tools:clean
+> Task :tests:gdx-tests:clean
+> Task :tests:gdx-tests-android:clean
+> Task :tests:gdx-tests-gwt:clean
+> Task :tests:gdx-tests-iosrobovm:clean
+> Task :tests:gdx-tests-lwjgl:clean
+> Task :tests:gdx-tests-lwjgl3:clean
+> Task :extensions:gdx-box2d-parent:gdx-box2d:clean
+> Task :extensions:gdx-box2d-parent:gdx-box2d-gwt:clean
+
+> Task :gdx:compileJava
+
+[Incubating] Problems report is available at: file:///mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 20s
+26 actionable tasks: 26 executed
+>>> gradle test (javaagent attached via init script) -- this is the actual Chicory-instrumented run
+Initialized native services in: /scratch/mjk76/ea442/promptstudy/libgdx-s5-gradle-home/native
+Initialized jansi services in: /scratch/mjk76/ea442/promptstudy/libgdx-s5-gradle-home/native
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Starting process 'Gradle build daemon'. Working directory: /scratch/mjk76/ea442/promptstudy/libgdx-s5-gradle-home/daemon/8.14.3 Command: /mmfs1/apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-opens=java.base/java.nio.charset=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.xml/javax.xml.namespace=ALL-UNNAMED -Xms128m -Xmx2000m -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -cp /scratch/mjk76/ea442/promptstudy/libgdx-s5-gradle-home/wrapper/dists/gradle-8.14.3-bin/cv11ve7ro1n3o1j4so8xd9n66/gradle-8.14.3/lib/gradle-daemon-main-8.14.3.jar -javaagent:/scratch/mjk76/ea442/promptstudy/libgdx-s5-gradle-home/wrapper/dists/gradle-8.14.3-bin/cv11ve7ro1n3o1j4so8xd9n66/gradle-8.14.3/lib/agents/gradle-instrumentation-agent-8.14.3.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 8.14.3
+Successfully started process 'Gradle build daemon'
+An attempt to start the daemon took 1.141 secs.
+The client will now receive all logging from the daemon (pid: 2118435). The daemon log file: /scratch/mjk76/ea442/promptstudy/libgdx-s5-gradle-home/daemon/8.14.3/daemon-2118435.out.log
+Daemon will be stopped at the end of the build 
+Using 8 worker leases.
+Received JVM installation metadata from '/mmfs1/apps/easybuild/el9_5.x86_64/software/Java/17.0.15': {JAVA_HOME=/mmfs1/apps/easybuild/el9_5.x86_64/software/Java/17.0.15, JAVA_VERSION=17.0.15, JAVA_VENDOR=Eclipse Adoptium, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=17.0.15+6, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=17.0.15+6, VM_VENDOR=Eclipse Adoptium, OS_ARCH=amd64}
+Watching the file system is configured to be enabled if available
+Not watching /mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory since the file system is not supported
+File system watching is active
+Starting Build
+Settings evaluated using settings file '/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/settings.gradle'.
+Projects loaded. Root project using build file '/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/build.gradle'.
+Included projects: [root project 'libgdx', project ':backends', project ':extensions', project ':gdx', project ':tests', project ':backends:gdx-backend-android', project ':backends:gdx-backend-gwt', project ':backends:gdx-backend-headless', project ':backends:gdx-backend-lwjgl', project ':backends:gdx-backend-lwjgl3', project ':backends:gdx-backend-robovm', project ':backends:gdx-backend-robovm-metalangle', project ':extensions:gdx-box2d-parent', project ':extensions:gdx-bullet', project ':extensions:gdx-freetype', project ':extensions:gdx-lwjgl3-angle', project ':extensions:gdx-tools', project ':tests:gdx-tests', project ':tests:gdx-tests-android', project ':tests:gdx-tests-gwt', project ':tests:gdx-tests-iosrobovm', project ':tests:gdx-tests-lwjgl', project ':tests:gdx-tests-lwjgl3', project ':extensions:gdx-box2d-parent:gdx-box2d', project ':extensions:gdx-box2d-parent:gdx-box2d-gwt']
+
+> Configure project :
+Evaluating root project 'libgdx' using build file '/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/build.gradle'.
+Resolved plugin [id: 'de.undercouch.download', version: '5.0.1']
+
+> Configure project :backends
+Evaluating project ':backends' using build file '/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/backends/build.gradle'.
+
+> Configure project :extensions
+Evaluating project ':extensions' using build file '/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/extensions/build.gradle'.
+
+> Configure project :gdx
+Evaluating project ':gdx' using build file '/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/gdx/build.gradle'.
+
+> Configure project :tests
+Evaluating project ':tests' using build file '/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/tests/build.gradle'.
+
+> Configure project :backends:gdx-backend-android
+Evaluating project ':backends:gdx-backend-android' using build file '/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/backends/gdx-backend-android/build.gradle'.
+Using default execution profile
+
+> Configure project :backends:gdx-backend-gwt
+Evaluating project ':backends:gdx-backend-gwt' using build file '/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/backends/gdx-backends-gwt/build.gradle'.
+
+> Configure project :backends:gdx-backend-headless
+Evaluating project ':backends:gdx-backend-headless' using build file '/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/backends/gdx-backend-headless/build.gradle'.
+
+> Configure project :backends:gdx-backend-lwjgl
+Evaluating project ':backends:gdx-backend-lwjgl' using build file '/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/backends/gdx-backend-lwjgl/build.gradle'.
+
+> Configure project :backends:gdx-backend-lwjgl3
+Evaluating project ':backends:gdx-backend-lwjgl3' using build file '/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/backends/gdx-backend-lwjgl3/build.gradle'.
+
+> Configure project :backends:gdx-backend-robovm
+Evaluating project ':backends:gdx-backend-robovm' using build file '/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/backends/gdx-backend-robovm/build.gradle'.
+
+> Configure project :backends:gdx-backend-robovm-metalangle
+Evaluating project ':backends:gdx-backend-robovm-metalangle' using build file '/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/backends/gdx-backend-robovm-metalangle/build.gradle'.
+
+> Configure project :extensions:gdx-box2d-parent
+Evaluating project ':extensions:gdx-box2d-parent' using build file '/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/extensions/gdx-box2d/build.gradle'.
+
+> Configure project :extensions:gdx-bullet
+Evaluating project ':extensions:gdx-bullet' using build file '/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/extensions/gdx-bullet/build.gradle'.
+
+> Configure project :extensions:gdx-freetype
+Evaluating project ':extensions:gdx-freetype' using build file '/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/extensions/gdx-freetype/build.gradle'.
+
+> Configure project :extensions:gdx-lwjgl3-angle
+Evaluating project ':extensions:gdx-lwjgl3-angle' using build file '/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/extensions/gdx-lwjgl3-angle/build.gradle'.
+
+> Configure project :extensions:gdx-tools
+Evaluating project ':extensions:gdx-tools' using build file '/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/extensions/gdx-tools/build.gradle'.
+
+> Configure project :tests:gdx-tests
+Evaluating project ':tests:gdx-tests' using build file '/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/tests/gdx-tests/build.gradle'.
+
+> Configure project :tests:gdx-tests-android
+Evaluating project ':tests:gdx-tests-android' using build file '/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/tests/gdx-tests-android/build.gradle'.
+==============================================================================================
+sdk.dir/ANDROID_HOME/ANDROID_SDK_ROOT are unset, gdx-tests-android will not be properly setup.
+==============================================================================================
+
+> Configure project :tests:gdx-tests-gwt
+Evaluating project ':tests:gdx-tests-gwt' using build file '/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/tests/gdx-tests-gwt/build.gradle'.
+Using gwt.args for test: -war /mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/tests/gdx-tests-gwt/war -workDir /mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/tests/gdx-tests-gwt/build/gwt/work -logLevel INFO
+Using gwt.persistentunitcachedir for test: {0}
+
+> Configure project :tests:gdx-tests-iosrobovm
+Evaluating project ':tests:gdx-tests-iosrobovm' using build file '/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/tests/gdx-tests-iosrobovm/build.gradle'.
+
+> Configure project :tests:gdx-tests-lwjgl
+Evaluating project ':tests:gdx-tests-lwjgl' using build file '/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/tests/gdx-tests-lwjgl/build.gradle'.
+
+> Configure project :tests:gdx-tests-lwjgl3
+Evaluating project ':tests:gdx-tests-lwjgl3' using build file '/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/tests/gdx-tests-lwjgl3/build.gradle'.
+
+> Configure project :extensions:gdx-box2d-parent:gdx-box2d
+Evaluating project ':extensions:gdx-box2d-parent:gdx-box2d' using build file '/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/extensions/gdx-box2d/gdx-box2d/build.gradle'.
+
+> Configure project :extensions:gdx-box2d-parent:gdx-box2d-gwt
+Evaluating project ':extensions:gdx-box2d-parent:gdx-box2d-gwt' using build file '/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/extensions/gdx-box2d/gdx-box2d-gwt/build.gradle'.
+All projects evaluated.
+Task path ':gdx:test' matched project ':gdx'
+Task name matched 'test'
+Selected primary task 'test' from project :gdx
+Tasks to be executed: [task ':gdx:compileJava', task ':gdx:processResources', task ':gdx:classes', task ':gdx:jar', task ':gdx:compileTestJava', task ':gdx:processTestResources', task ':gdx:testClasses', task ':backends:gdx-backend-robovm:compileJava', task ':backends:gdx-backend-robovm:processResources', task ':backends:gdx-backend-robovm:classes', task ':gdx:regenerateIOSHeader', task ':gdx:validateIOSHeader', task ':gdx:test']
+Tasks that were excluded: []
+Resolve mutations for :gdx:compileJava (Thread[Execution worker,5,main]) started.
+:gdx:compileJava (Thread[Execution worker,5,main]) started.
+
+> Task :gdx:compileJava UP-TO-DATE
+Caching disabled for task ':gdx:compileJava' because:
+  Build cache is disabled
+Skipping task ':gdx:compileJava' as it is up-to-date.
+No compile result for :gdx:compileJava
+work action resolve main (project :gdx) (Thread[Execution worker,5,main]) started.
+Resolve mutations for :gdx:processResources (Thread[Execution worker,5,main]) started.
+:gdx:processResources (Thread[Execution worker,5,main]) started.
+
+> Task :gdx:processResources
+Caching disabled for task ':gdx:processResources' because:
+  Build cache is disabled
+  Not worth caching
+Task ':gdx:processResources' is not up-to-date because:
+  Output property 'destinationDir' file /mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/gdx/build/resources/main has been removed.
+  Output property 'destinationDir' file /mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/gdx/build/resources/main/com has been removed.
+  Output property 'destinationDir' file /mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/gdx/build/resources/main/com/badlogic has been removed.
+  and more...
+Resolve mutations for :gdx:classes (Thread[Execution worker,5,main]) started.
+:gdx:classes (Thread[Execution worker,5,main]) started.
+
+> Task :gdx:classes
+Skipping task ':gdx:classes' as it has no actions.
+Resolve mutations for :gdx:jar (Thread[Execution worker,5,main]) started.
+:gdx:jar (Thread[Execution worker,5,main]) started.
+
+> Task :gdx:jar
+Caching disabled for task ':gdx:jar' because:
+  Build cache is disabled
+  Not worth caching
+Task ':gdx:jar' is not up-to-date because:
+  Output property 'archiveFile' file /mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/gdx/build/libs/gdx-1.14.1-SNAPSHOT.jar has been removed.
+work action resolve gdx-1.14.1-SNAPSHOT.jar (project :gdx) (Thread[included builds,5,main]) started.
+Resolve mutations for :gdx:compileTestJava (Thread[included builds,5,main]) started.
+:gdx:compileTestJava (Thread[included builds,5,main]) started.
+
+> Task :gdx:compileTestJava
+Caching disabled for task ':gdx:compileTestJava' because:
+  Build cache is disabled
+Task ':gdx:compileTestJava' is not up-to-date because:
+  Output property 'destinationDirectory' file /mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/gdx/build/classes/java/test has been removed.
+  Output property 'destinationDirectory' file /mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/gdx/build/classes/java/test/com has been removed.
+  Output property 'destinationDirectory' file /mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/gdx/build/classes/java/test/com/badlogic has been removed.
+  and more...
+The input changes require a full rebuild for incremental task ':gdx:compileTestJava'.
+Compilation mode: in-process compilation
+Full recompilation is required because no incremental change information is available. This is usually caused by clean builds or changing compiler arguments.
+Compiling with toolchain '/mmfs1/apps/easybuild/el9_5.x86_64/software/Java/17.0.15'.
+Compiling with JDK Java compiler API.
+Class dependency analysis for incremental compilation took 0.026 secs.
+Created classpath snapshot for incremental compilation in 0.017 secs.
+Resolve mutations for :gdx:processTestResources (Thread[included builds,5,main]) started.
+:gdx:processTestResources (Thread[included builds,5,main]) started.
+
+> Task :gdx:processTestResources NO-SOURCE
+Skipping task ':gdx:processTestResources' as it has no source files and no previous output files.
+Resolve mutations for :gdx:testClasses (Thread[included builds,5,main]) started.
+:gdx:testClasses (Thread[included builds,5,main]) started.
+
+> Task :gdx:testClasses
+Skipping task ':gdx:testClasses' as it has no actions.
+Resolve mutations for :backends:gdx-backend-robovm:compileJava (Thread[included builds,5,main]) started.
+:backends:gdx-backend-robovm:compileJava (Thread[included builds,5,main]) started.
+This JVM does not support getting OS memory, so no OS memory status updates will be broadcast
+
+> Task :backends:gdx-backend-robovm:compileJava
+Caching disabled for task ':backends:gdx-backend-robovm:compileJava' because:
+  Build cache is disabled
+Task ':backends:gdx-backend-robovm:compileJava' is not up-to-date because:
+  Output property 'destinationDirectory' file /mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/backends/gdx-backend-robovm/build/classes/java/main has been removed.
+  Output property 'destinationDirectory' file /mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/backends/gdx-backend-robovm/build/classes/java/main/com has been removed.
+  Output property 'destinationDirectory' file /mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/backends/gdx-backend-robovm/build/classes/java/main/com/badlogic has been removed.
+  and more...
+The input changes require a full rebuild for incremental task ':backends:gdx-backend-robovm:compileJava'.
+Compilation mode: forking compiler
+Full recompilation is required because no incremental change information is available. This is usually caused by clean builds or changing compiler arguments.
+Compiling with toolchain '/mmfs1/apps/easybuild/el9_5.x86_64/software/Java/17.0.15'.
+Starting process 'Gradle Worker Daemon 1'. Working directory: /mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-gradle-home/workers Command: /mmfs1/apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED @/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-gradle-home/.tmp/gradle-worker-classpath17067677017591483086txt -Xmx4g -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Worker Daemon 1'
+Successfully started process 'Gradle Worker Daemon 1'
+Started Gradle worker daemon (0.872 secs) with fork options DaemonForkOptions{executable=/mmfs1/apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java, minHeapSize=null, maxHeapSize=4g, jvmArgs=[--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED, --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED], keepAliveMode=DAEMON}.
+Compiling with JDK Java compiler API.
+Class dependency analysis for incremental compilation took 0.03 secs.
+Created classpath snapshot for incremental compilation in 0.174 secs.
+Resolve mutations for :backends:gdx-backend-robovm:processResources (Thread[included builds,5,main]) started.
+:backends:gdx-backend-robovm:processResources (Thread[included builds,5,main]) started.
+
+> Task :backends:gdx-backend-robovm:processResources
+Caching disabled for task ':backends:gdx-backend-robovm:processResources' because:
+  Build cache is disabled
+  Not worth caching
+Task ':backends:gdx-backend-robovm:processResources' is not up-to-date because:
+  Output property 'destinationDir' file /mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/backends/gdx-backend-robovm/build/resources/main has been removed.
+  Output property 'destinationDir' file /mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/backends/gdx-backend-robovm/build/resources/main/ic_password_invisible.png has been removed.
+  Output property 'destinationDir' file /mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/backends/gdx-backend-robovm/build/resources/main/ic_password_visible.png has been removed.
+  and more...
+Resolve mutations for :backends:gdx-backend-robovm:classes (Thread[included builds,5,main]) started.
+:backends:gdx-backend-robovm:classes (Thread[included builds,5,main]) started.
+
+> Task :backends:gdx-backend-robovm:classes
+Skipping task ':backends:gdx-backend-robovm:classes' as it has no actions.
+Resolve mutations for :gdx:regenerateIOSHeader (Thread[included builds,5,main]) started.
+:gdx:regenerateIOSHeader (Thread[included builds,5,main]) started.
+
+> Task :gdx:regenerateIOSHeader
+Caching disabled for task ':gdx:regenerateIOSHeader' because:
+  Build cache is disabled
+Task ':gdx:regenerateIOSHeader' is not up-to-date because:
+  Task has not declared any outputs despite executing actions.
+Starting process 'command 'javac''. Working directory: /mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/backends/gdx-backend-robovm/src Command: javac -h /tmp/groovy-generated-tmpdir-17625162193840848662 -cp /mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/backends/gdx-backend-robovm/build/classes/java/main:/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/backends/gdx-backend-robovm/build/resources/main:/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/gdx/build/libs/gdx-1.14.1-SNAPSHOT.jar:/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-gradle-home/caches/modules-2/files-2.1/com.mobidevelop.robovm/robovm-rt/2.3.23/472e72f3d202569dd7ca507ac19aff769950919e/robovm-rt-2.3.23.jar:/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-gradle-home/caches/modules-2/files-2.1/com.mobidevelop.robovm/robovm-cocoatouch/2.3.23/11daee5c924654d59273519a21fda13082150fba/robovm-cocoatouch-2.3.23.jar:/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-gradle-home/caches/modules-2/files-2.1/com.mobidevelop.robovm/robovm-objc/2.3.23/3f747705b3eb6b4d669a5a05d18fb53ce939a415/robovm-objc-2.3.23.jar:/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-gradle-home/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-jnigen-loader/2.5.2/f35e90affe07c46b4f5e5958a1a4c1820c4890e2/gdx-jnigen-loader-2.5.2.jar com/badlogic/gdx/backends/iosrobovm/IOSGLES20.java
+Successfully started process 'command 'javac''
+Starting process 'command 'javac''. Working directory: /mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/backends/gdx-backend-robovm/src Command: javac -h /tmp/groovy-generated-tmpdir-1697555149392590329 -cp /mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/backends/gdx-backend-robovm/build/classes/java/main:/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/backends/gdx-backend-robovm/build/resources/main:/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/gdx/build/libs/gdx-1.14.1-SNAPSHOT.jar:/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-gradle-home/caches/modules-2/files-2.1/com.mobidevelop.robovm/robovm-rt/2.3.23/472e72f3d202569dd7ca507ac19aff769950919e/robovm-rt-2.3.23.jar:/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-gradle-home/caches/modules-2/files-2.1/com.mobidevelop.robovm/robovm-cocoatouch/2.3.23/11daee5c924654d59273519a21fda13082150fba/robovm-cocoatouch-2.3.23.jar:/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-gradle-home/caches/modules-2/files-2.1/com.mobidevelop.robovm/robovm-objc/2.3.23/3f747705b3eb6b4d669a5a05d18fb53ce939a415/robovm-objc-2.3.23.jar:/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-gradle-home/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-jnigen-loader/2.5.2/f35e90affe07c46b4f5e5958a1a4c1820c4890e2/gdx-jnigen-loader-2.5.2.jar com/badlogic/gdx/backends/iosrobovm/IOSGLES30.java
+Successfully started process 'command 'javac''
+Resolve mutations for :gdx:validateIOSHeader (Thread[included builds,5,main]) started.
+:gdx:validateIOSHeader (Thread[included builds,5,main]) started.
+
+> Task :gdx:validateIOSHeader
+Caching disabled for task ':gdx:validateIOSHeader' because:
+  Build cache is disabled
+Task ':gdx:validateIOSHeader' is not up-to-date because:
+  Task has not declared any outputs despite executing actions.
+Resolve mutations for :gdx:test (Thread[included builds,5,main]) started.
+:gdx:test (Thread[included builds,5,main]) started.
+Gradle Test Executor 2 started executing tests.
+
+> Task :gdx:test
+Caching disabled for task ':gdx:test' because:
+  Build cache is disabled
+Task ':gdx:test' is not up-to-date because:
+  No history is available.
+Starting process 'Gradle Test Executor 2'. Working directory: /mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/gdx Command: /mmfs1/apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java -Dorg.gradle.internal.worker.tmpdir=/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/gdx/build/tmp/test/work -javaagent:/project/mjk76/ea442/promptstudy/daikon.jar=--output_dir=/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory-out --ppt-select-pattern=^com\.badlogic\.gdx\.(utils|math)\..* --ppt-omit-pattern=com\.google\.protobuf --boot-classes=^(?!com\.badlogic\.gdx\.).* --sample-start=5 --nesting-depth=0 @/mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-gradle-home/.tmp/gradle-worker-classpath15205076596494427585txt -Xmx48g -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -ea worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 2'
+Successfully started process 'Gradle Test Executor 2'
+
+IntersectorTest > testSplitTriangle FAILED
+    java.lang.VerifyError: Expecting a stack map frame
+    Exception Details:
+      Location:
+        com/badlogic/gdx/math/collision/OrientedBoundingBox.<clinit>()V @80: ldc
+      Reason:
+        Expected stackmap frame at this location.
+      Bytecode:
+        0000000: 100f bd00 1ab3 0078 1008 bd00 1ab3 0094
+        0000010: 1009 bd00 1ab3 006a 033b 1ab2 006a bea2
+        0000020: 0015 b200 6a1a bb00 1a59 b700 3853 8400
+        0000030: 01a7 ffe9 033b 1ab2 0094 bea2 001a b200
+        0000040: 941a bb00 1a59 b700 3853 8400 01a7 ffe9
+        0000050: 12e8 b800 ecb1                         
+      Stackmap Table:
+        append_frame(@26,Integer)
+        chop_frame(@52,1)
+        append_frame(@54,Integer)
+        chop_frame(@85,1)
+        at java.base/java.lang.Class.getDeclaredConstructors0(Native Method)
+        at java.base/java.lang.Class.privateGetDeclaredConstructors(Class.java:3373)
+        at java.base/java.lang.Class.getConstructor0(Class.java:3578)
+        at java.base/java.lang.Class.getDeclaredConstructor(Class.java:2754)
+        at daikon.chicory.MethodInfo.initViaReflection(MethodInfo.java:154)
+        at daikon.chicory.ClassInfo.initViaReflection(ClassInfo.java:91)
+        at daikon.chicory.Runtime.process_new_classes(Runtime.java:451)
+        at daikon.chicory.Runtime.enter(Runtime.java:253)
+        at com.badlogic.gdx.math.Intersector$SplitTriangle.<init>(Intersector.java:1460)
+        at com.badlogic.gdx.math.IntersectorTest.testSplitTriangle(IntersectorTest.java:44)
+
+CollisionTest > testOrientedBoundingBox FAILED
+    java.lang.VerifyError: Expecting a stack map frame
+    Exception Details:
+      Location:
+        com/badlogic/gdx/math/collision/OrientedBoundingBox.<clinit>()V @80: ldc
+      Reason:
+        Expected stackmap frame at this location.
+      Bytecode:
+        0000000: 100f bd00 1ab3 0078 1008 bd00 1ab3 0094
+        0000010: 1009 bd00 1ab3 006a 033b 1ab2 006a bea2
+        0000020: 0015 b200 6a1a bb00 1a59 b700 3853 8400
+        0000030: 01a7 ffe9 033b 1ab2 0094 bea2 001a b200
+        0000040: 941a bb00 1a59 b700 3853 8400 01a7 ffe9
+        0000050: 12e8 b800 ecb1                         
+      Stackmap Table:
+        append_frame(@26,Integer)
+        chop_frame(@52,1)
+        append_frame(@54,Integer)
+        chop_frame(@85,1)
+        at com.badlogic.gdx.math.collision.CollisionTest.testOrientedBoundingBox(CollisionTest.java:26)
+
+CollisionTest > testOrientedBoundingBoxCollision FAILED
+    java.lang.VerifyError: Expecting a stack map frame
+    Exception Details:
+      Location:
+        com/badlogic/gdx/math/collision/OrientedBoundingBox.<clinit>()V @80: ldc
+      Reason:
+        Expected stackmap frame at this location.
+      Bytecode:
+        0000000: 100f bd00 1ab3 0078 1008 bd00 1ab3 0094
+        0000010: 1009 bd00 1ab3 006a 033b 1ab2 006a bea2
+        0000020: 0015 b200 6a1a bb00 1a59 b700 3853 8400
+        0000030: 01a7 ffe9 033b 1ab2 0094 bea2 001a b200
+        0000040: 941a bb00 1a59 b700 3853 8400 01a7 ffe9
+        0000050: 12e8 b800 ecb1                         
+      Stackmap Table:
+        append_frame(@26,Integer)
+        chop_frame(@52,1)
+        append_frame(@54,Integer)
+        chop_frame(@85,1)
+        at com.badlogic.gdx.math.collision.CollisionTest.testOrientedBoundingBoxCollision(CollisionTest.java:36)
+
+JsonMatcherTests > singlePatterns STANDARD_OUT
+    🔥 TEST PRINT: singlePatterns is running
+
+Gradle Test Executor 2 finished executing tests.
+
+> Task :gdx:test
+Finished generating test XML results (0.018 secs) into: /mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/gdx/build/test-results/test
+Generating HTML test report...
+Finished generating test html results (0.031 secs) into: /mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/gdx/build/reports/tests/test
+There were failing tests. See the report at: file:///mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/gdx/build/reports/tests/test/index.html
+
+[Incubating] Problems report is available at: file:///mmfs1/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 4h 10m 46s
+9 actionable tasks: 8 executed, 1 up-to-date
+Some of the file system contents retained in the virtual file system are on file systems that Gradle doesn't support watching. The relevant state was discarded to ensure changes to these locations are properly detected. You can override this by explicitly enabling file system watching.
+No Gradle daemons are running.
+>>> Chicory trace output directory:
+total 94322705
+drwxr-xr-x+  2 ea442 ea442        4096 Sep 14 01:03 .
+drwxr-xr-x+ 43 ea442 ea442        8192 Sep 14 01:02 ..
+-rw-r--r--+  1 ea442 ea442 48289827408 Sep 14 05:13 dtrace.gz
+
+>>> Original Chicory-generated dtrace.gz files preserved in:
+>>> /scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory-out

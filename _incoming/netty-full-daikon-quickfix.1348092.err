@@ -1,0 +1,16 @@
+Exception in thread "main" java.lang.Error: Error while processing trace file /scratch/mjk76/ea442/promptstudy/netty-chicory-out/latest/netty-full.dtrace.gz
+	at daikon.FileIO.read_data_trace_files(FileIO.java:1057)
+	at daikon.FileIO.read_data_trace_files(FileIO.java:1026)
+	at daikon.Daikon.process_data(Daikon.java:2329)
+	at daikon.Daikon.mainHelper(Daikon.java:805)
+	at daikon.Daikon.main(Daikon.java:680)
+Caused by: daikon.Daikon$UserError: Error at line 1039844872 in file /scratch/mjk76/ea442/promptstudy/netty-chicory-out/latest/netty-full.dtrace.gz: Didn't find call with nonce 10526168 to match io.netty.util.internal.logging.LocationAwareSlf4JLogger.debug(java.lang.String, java.lang.Object):::EXIT110 ending at /scratch/mjk76/ea442/promptstudy/netty-chicory-out/latest/netty-full.dtrace.gz line 1039844872
+	at daikon.FileIO.read_data_trace_file(FileIO.java:1579)
+	at daikon.FileIO.read_data_trace_files(FileIO.java:1044)
+	... 4 more
+Caused by: java.lang.Error: Didn't find call with nonce 10526168 to match io.netty.util.internal.logging.LocationAwareSlf4JLogger.debug(java.lang.String, java.lang.Object):::EXIT110 ending at /scratch/mjk76/ea442/promptstudy/netty-chicory-out/latest/netty-full.dtrace.gz line 1039844872
+	at daikon.FileIO.compute_orig_variables(FileIO.java:2386)
+	at daikon.FileIO.process_sample(FileIO.java:1872)
+	at daikon.FileIO$Processor.process_sample(FileIO.java:1207)
+	at daikon.FileIO.read_data_trace_file(FileIO.java:1571)
+	... 5 more

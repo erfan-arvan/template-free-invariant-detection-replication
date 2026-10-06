@@ -1,0 +1,171 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/23.0.2/bin/java
+MVN: /scratch/mjk76/ea442/apache-maven-3.9.9/bin/mvn
+######################################
+CONTEXT STUDY STARTED
+Prompt strategy (fixed): baseline
+Start time: 2026-08-27 22:49:07 EDT
+######################################
+>>> Building Daikon++ (once)
+======================================
+>>> CONTEXT CONFIG: method_javadoc
+>>> DP_CONTEXTS: METHOD_BODY,SCOPE, METHOD_JAVADOC
+>>> Start time: 2026-08-27 22:49:39 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: apollo
+>>> Start time: 2026-08-27 22:49:39 EDT
+--------------------------------------
+>>> Finished apollo (context_config=method_javadoc)
+>>> Finish time: 2026-08-27 22:51:37 EDT
+>>> Duration: 00h:01m:58s
+>>> Duration in seconds: 118
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/method_javadoc/apollo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/method_javadoc/apollo/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: dubbo
+>>> Start time: 2026-08-27 22:51:37 EDT
+--------------------------------------
+>>> Finished dubbo (context_config=method_javadoc)
+>>> Finish time: 2026-08-27 23:09:11 EDT
+>>> Duration: 00h:17m:34s
+>>> Duration in seconds: 1054
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/method_javadoc/dubbo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/method_javadoc/dubbo/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: netty
+>>> Start time: 2026-08-27 23:09:11 EDT
+--------------------------------------
+>>> Finished netty (context_config=method_javadoc)
+>>> Finish time: 2026-08-27 23:30:11 EDT
+>>> Duration: 00h:21m:00s
+>>> Duration in seconds: 1260
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/method_javadoc/netty/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/method_javadoc/netty/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: spring
+>>> Start time: 2026-08-27 23:30:11 EDT
+--------------------------------------
+>>> Finished spring (context_config=method_javadoc)
+>>> Finish time: 2026-08-28 00:08:08 EDT
+>>> Duration: 00h:37m:57s
+>>> Duration in seconds: 2277
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/method_javadoc/spring/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/method_javadoc/spring/daikonpp_registry.jsonl
+======================================
+DONE context config: method_javadoc
+Finish time: 2026-08-28 00:08:08 EDT
+Duration: 01h:18m:29s
+Duration in seconds: 4709
+Results in: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/method_javadoc
+======================================
+======================================
+>>> CONTEXT CONFIG: class_doc
+>>> DP_CONTEXTS: METHOD_BODY,SCOPE, CLASS_DOC
+>>> Start time: 2026-08-28 00:08:08 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: apollo
+>>> Start time: 2026-08-28 00:08:08 EDT
+--------------------------------------
+>>> Finished apollo (context_config=class_doc)
+>>> Finish time: 2026-08-28 00:16:41 EDT
+>>> Duration: 00h:08m:33s
+>>> Duration in seconds: 513
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/class_doc/apollo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/class_doc/apollo/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: dubbo
+>>> Start time: 2026-08-28 00:16:41 EDT
+--------------------------------------
+>>> Finished dubbo (context_config=class_doc)
+>>> Finish time: 2026-08-28 01:35:22 EDT
+>>> Duration: 01h:18m:41s
+>>> Duration in seconds: 4721
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/class_doc/dubbo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/class_doc/dubbo/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: netty
+>>> Start time: 2026-08-28 01:35:22 EDT
+--------------------------------------
+>>> Finished netty (context_config=class_doc)
+>>> Finish time: 2026-08-28 02:07:43 EDT
+>>> Duration: 00h:32m:21s
+>>> Duration in seconds: 1941
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/class_doc/netty/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/class_doc/netty/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: spring
+>>> Start time: 2026-08-28 02:07:43 EDT
+--------------------------------------
+>>> Finished spring (context_config=class_doc)
+>>> Finish time: 2026-08-28 02:43:52 EDT
+>>> Duration: 00h:36m:09s
+>>> Duration in seconds: 2169
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/class_doc/spring/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/class_doc/spring/daikonpp_registry.jsonl
+======================================
+DONE context config: class_doc
+Finish time: 2026-08-28 02:43:52 EDT
+Duration: 02h:35m:44s
+Duration in seconds: 9344
+Results in: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/class_doc
+======================================
+======================================
+>>> CONTEXT CONFIG: type_doc
+>>> DP_CONTEXTS: METHOD_BODY,SCOPE, TYPE_DOC
+>>> Start time: 2026-08-28 02:43:52 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: apollo
+>>> Start time: 2026-08-28 02:43:52 EDT
+--------------------------------------
+>>> Finished apollo (context_config=type_doc)
+>>> Finish time: 2026-08-28 02:45:19 EDT
+>>> Duration: 00h:01m:27s
+>>> Duration in seconds: 87
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/type_doc/apollo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/type_doc/apollo/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: dubbo
+>>> Start time: 2026-08-28 02:45:19 EDT
+--------------------------------------
+>>> Finished dubbo (context_config=type_doc)
+>>> Finish time: 2026-08-28 02:51:01 EDT
+>>> Duration: 00h:05m:42s
+>>> Duration in seconds: 342
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/type_doc/dubbo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/type_doc/dubbo/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: netty
+>>> Start time: 2026-08-28 02:51:01 EDT
+--------------------------------------
+>>> Finished netty (context_config=type_doc)
+>>> Finish time: 2026-08-28 02:56:11 EDT
+>>> Duration: 00h:05m:10s
+>>> Duration in seconds: 310
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/type_doc/netty/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/type_doc/netty/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: spring
+>>> Start time: 2026-08-28 02:56:11 EDT
+--------------------------------------
+>>> Finished spring (context_config=type_doc)
+>>> Finish time: 2026-08-28 03:04:44 EDT
+>>> Duration: 00h:08m:33s
+>>> Duration in seconds: 513
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/type_doc/spring/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/type_doc/spring/daikonpp_registry.jsonl
+======================================
+DONE context config: type_doc
+Finish time: 2026-08-28 03:04:44 EDT
+Duration: 00h:20m:52s
+Duration in seconds: 1252
+Results in: /project/mjk76/ea442/promptstudy/resultsOfContextStudy/type_doc
+======================================
+######################################
+ALL CONTEXT CONFIGS DONE
+Start time: 2026-08-27 22:49:07 EDT
+Finish time: 2026-08-28 03:04:44 EDT
+Total duration: 04h:15m:37s
+Total duration in seconds: 15337
+######################################

@@ -1,0 +1,16 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+DTRACE (original, read-only): /scratch/mjk76/ea442/promptstudy/apollo-chicory-out/latest/dtrace.gz
+OUT:   /project/mjk76/ea442/promptstudy/apollo-full_io_examples.json
+[io-examples-tool] dtrace=/scratch/mjk76/ea442/promptstudy/apollo-chicory-out/latest/dtrace.gz
+[io-examples-tool] src=/project/mjk76/ea442/promptstudy/apollo/apollo-biz/src/main/java
+[io-examples-tool] out=/project/mjk76/ea442/promptstudy/apollo-full_io_examples.json
+[io-examples-tool] ENTER records=386900
+[io-examples-tool] paired ENTER/EXIT examples=8320
+[io-examples-tool] truncated lines=0
+[io-examples-tool] distinct program points=1255
+[io-examples-tool] resolved program points=352
+[io-examples-tool] unresolved program points=903
+[io-examples-tool] wrote /project/mjk76/ea442/promptstudy/apollo-full_io_examples.json
+[TIMING] io-examples-tool extract (apollo-full) 11s  (19:27:04 -> 19:27:15)
+>>> Wrote /project/mjk76/ea442/promptstudy/apollo-full_io_examples.json
+>>> Original dtrace.gz untouched: -rw-r--r--+ 1 ea442 ea442 26M Sep 10 19:16 /scratch/mjk76/ea442/promptstudy/apollo-chicory-out/latest/dtrace.gz

@@ -1,0 +1,230 @@
+MVN: /scratch/mjk76/ea442/apache-maven-3.9.9/bin/mvn
+>>> Running Daikon++
+>>> CMD: java -jar /scratch/mjk76/ea442/daikonplusplus-token-cost/build/libs/daikonplusplus.jar --external-project --project-root /project/mjk76/ea442/promptstudy/apollo --main-src apollo-biz/src/main/java --test-src apollo-biz/src/test/java --runner-script /scratch/mjk76/ea442/token_cost_fewshot_class_doc/apollo_biz_run_tests.sh 5
+Picked up JAVA_TOOL_OPTIONS:  -Djava.io.tmpdir=/scratch/mjk76/ea442/token_cost_fewshot_class_doc/tmp -Djava.io.tmpdir=/scratch/mjk76/ea442/token_cost_fewshot_class_doc/tmp
+==== Daikon++ Config ====
+threads = 8
+registryPath = /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/apollo/daikonpp_registry.jsonl
+outcomesPath = /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/apollo/daikonpp_outcomes.jsonl
+includeBody = true
+registryReset = true
+debug = false
+keepWork = true
+noQualityFilter = false
+qualityFilterRules = {maxLength=true, alwaysTrueLiteral=true, tautologyNotXOrX=true, fullRangeComparison=true, selfComparison=false, trivialDisjunction=true, noStatements=true, noAssignment=true, forbiddenConstructs=true, requireInScopeName=false, requireResultAtExit=false, primitiveNullComparison=true, unknownIdentifier=false, parseCheck=true}
+llmTotalTimeoutSec = 180
+llmPerReqTimeoutSec = 45
+bodyMaxChars = 2000
+enabledContexts = [METHOD_BODY, SCOPE, CLASS_DOC]
+openaiModel = gpt-4.1-mini
+llmCassettesDir = /project/mjk76/ea442/promptstudy/daikonplusplus/src/test/cassettes
+disableRealLlm = false
+callSitesIndexPath = /project/mjk76/ea442/promptstudy/apollo_callsites.json
+ioExamplesIndexPath = /project/mjk76/ea442/promptstudy/apollo-s5_io_examples.json
+compileMainScript = /scratch/mjk76/ea442/token_cost_fewshot_class_doc/apollo_biz_compile.sh
+compileTestScript = /scratch/mjk76/ea442/token_cost_fewshot_class_doc/apollo_biz_compile.sh
+llmPollStepMs = 1500
+externalCompileClasspath = /project/mjk76/ea442/promptstudy/apollo/apollo-biz/target/classes
+workDir = /scratch/mjk76/ea442/token_cost_fewshot_class_doc/daikonpp_work
+promptStrategy = fewshot
+scanIncludes = []
+llmProvider = openai
+llmLocalBackend = ollama
+llmLocalUrl = http://localhost:11434
+llmLocalModel = qwen2.5:7b
+enableTestFilter = false
+testFilterMethodBatchSize = 1
+staleCheckMinutes = 1
+maxTimeoutMinutes = 480
+autofilterMaxModifyPasses = 200
+autofilterMaxExtraPasses = 150
+llmDryRun = true
+llmPriceInputPerM = 0.4
+llmPriceOutputPerM = 1.6
+=========================
+🔥 EXEC MODE = EXTERNAL_PROJECT
+>>> LLM DRY RUN: prompts are counted, not sent; stopping after LM phase
+[DP] Using prompt strategy: fewshot
+[DP-PATHS] execMode=EXTERNAL_PROJECT
+[DP-PATHS] userProjectRoot=/project/mjk76/ea442/promptstudy/apollo
+[DP-PATHS] mainSrcRoot=/project/mjk76/ea442/promptstudy/apollo/apollo-biz/src/main/java
+[DP-PATHS] testSrcRoot=/project/mjk76/ea442/promptstudy/apollo/apollo-biz/src/test/java
+>>> Scanning MAIN sources under (WORKING COPY): /project/mjk76/ea442/promptstudy/apollo/apollo-biz/src/main/java
+>>> [Scan phase] started at 2026-10-02 19:24:49.498
+>>> [Scan phase] finished at 2026-10-02 19:24:50.372 (elapsed 0.873s)
+>>> Points — ENTRY: 505  EXIT: 505  TOTAL: 1010
+>>> [LM phase] started at 2026-10-02 19:24:50.381
+===== FIRST PROMPT =====
+----- SYSTEM -----
+You are a program analysis assistant.
+
+Task:
+Generate candidate invariants for a Java program point.
+
+Global rules:
+- Return ONLY JSON matching the required schema.
+- The JSON schema is:
+  {
+    "invariants": [
+      { "expression": "<Java boolean expression>" }
+    ]
+  }
+- Each invariant must be a valid Java boolean expression.
+- Expressions must be valid at the program point.
+- Use only the listed in-scope names.
+- Do not introduce new variables, helper functions, or APIs.
+- Expressions must be side-effect free.
+
+
+===== EXAMPLE 1 =====
+PROGRAM POINT: Example1 [METHOD_EXIT]
+
+In-scope names:
+- order : Order
+- result : double
+
+===== PROGRAM CONTEXT =====
+[Method Implementation]
+public double total(Order order) {
+  return order.getQuantity() * order.getUnitPrice();
+}
+===========================
+
+Expected Output:
+{
+  "invariants": [
+    { "expression": "order != null" },
+    { "expression": "result == order.getQuantity() * order.getUnitPrice()" },
+    { "expression": "order.getQuantity() == 0 || result / order.getQuantity() == order.getUnitPrice()" },
+    { "expression": "!(result < 0 && order.getQuantity() >= 0 && order.getUnitPrice() >= 0)" }
+  ]
+}
+===== END EXAMPLE 1 =====
+
+===== EXAMPLE 2 =====
+PROGRAM POINT: Example2 [METHOD_EXIT]
+
+In-scope names:
+- card : String
+- expiry : String
+- result : boolean
+
+===== PROGRAM CONTEXT =====
+[Method Implementation]
+public boolean valid(String card, String expiry) {
+  if (card == null || expiry == null) return false;
+  return card.length() == 16 && expiry.length() == 5 && expiry.charAt(2) == '/';
+}
+===========================
+
+Expected Output:
+{
+  "invariants": [
+    { "expression": "!result || (card != null && expiry != null)" },
+    { "expression": "!result || (card.length() == 16 && expiry.length() == 5 && expiry.charAt(2) == '/')" }
+  ]
+}
+===== END EXAMPLE 2 =====
+
+
+----- USER -----
+PROGRAM POINT: com.ctrip.framework.apollo.biz.auth.WebSecurityConfig#securityFilterChain(HttpSecurity):SecurityFilterChain [METHOD_EXIT]
+
+This program point represents the state immediately BEFORE the method returns.
+Parameters, object state, and 'result' (if non-void) may be referenced.
+
+In-scope names:
+- http : HttpSecurity
+- result : SecurityFilterChain
+
+Note:
+- These are base variables.
+- Expressions derived from them (e.g., field accesses and method calls) are allowed if valid at this program point.
+
+Note about 'result':
+- 'result' is a symbolic name for the value returned by the method.
+- If the method has multiple return statements, 'result' refers to the value returned along any execution path.
+- Any invariant involving 'result' must hold for all possible return values of the method.
+
+Constraints specific to this program point:
+- Single-line Java boolean expressions only.
+- Method calls are allowed and encouraged if callable using listed names.
+- Method calls may belong to the JDK or the project codebase.
+- Field accesses (e.g., obj.field) are allowed if accessible using listed names.
+- Do not invent methods or fields that are not available at this program point.
+- Add null checks ONLY when required for safe evaluation.
+- Do not use non-Java logical operators such as ==> or ⇒.
+- Logical implication (A ⇒ B) must be expressed as (!A || B) using standard Java boolean operators.
+- Prefer pure predicate-style method calls.
+- Avoid redundant or trivially true expressions.
+- Do NOT generate tautologies or self-comparisons (e.g., x == x, obj.method() == obj.method()).
+- Avoid semantically duplicate invariants that differ only by operand order or equivalent comparison form (e.g., a == b vs b == a, a <= b vs b >= a).
+- Do not focus solely on nullness-related invariants.
+- Prioritize invariants that capture meaningful relationships among the in-scope names and reflect the behavior of the method at this program point.
+
+===== PROGRAM CONTEXT =====
+Consider the following context when generating invariants.
+[Method Implementation]
+@Bean
+  public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    http.httpBasic(Customizer.withDefaults());
+    http.csrf(csrf -> csrf.disable());
+    http.headers(headers -> headers.frameOptions(frameOptions -> frameOptions.sameOrigin()));
+    return http.build();
+  }
+
+[Enclosing Class Documentation]
+[Class] WebSecurityConfig
+
+[Method] securityFilterChain(HttpSecurity) : SecurityFilterChain
+
+[Method] userDetailsService() : UserDetailsService
+Although the authentication below is useless, we may not remove them for backward compatibility.
+Because if we remove them and the old clients(before 0.9.0) still send the authentication
+information, the server will return 401, which should cause big problems.
+
+We may remove the following once we remove spring security from Apollo.
+===========================
+
+Generate up to 5 candidate invariants that are valid at this program point.
+Return ONLY the JSON.
+
+========================
+
+>>> [LM phase] finished at 2026-10-02 19:24:53.918 (elapsed 3.537s)
+==== DRY RUN: LLM prompt token summary (nothing was sent) ====
+model / tokenizer       : gpt-4.1-mini / o200k_base
+program points in scope : 1010
+prompts built           : 1010  (METHOD_ENTRY 505, METHOD_EXIT 505)
+distinct prompts        : 1010  (identical system+user)
+system-prompt tokens    : 438340
+user-prompt tokens      : 791575
+chat framing tokens     : 11110  (11 per prompt)
+TOTAL input tokens      : 1241025
+  of distinct prompts   : 1241025
+per prompt (input)      : min 851 | mean 1229 | median 1140 | p90 1727 | p99 1943 | max 2079
+  METHOD_ENTRY          : 505 prompts, 595938 tokens, mean 1180
+  METHOD_EXIT           : 505 prompts, 645087 tokens, mean 1277
+cassettes               : /project/mjk76/ea442/promptstudy/daikonplusplus/src/test/cassettes
+  already recorded      : 1010 prompts, 1241025 tokens
+  NOT recorded (to send): 0 prompts (0 distinct), 0 tokens (distinct)
+output tokens (recorded): 235075  (1010 recorded responses, mean 233)
+TOTAL output tokens     : 235075
+COST (USD)              : input $0.50 (at $0.4/1M) + output $0.38 (at $1.6/1M) = $0.87
+  per program point     : $0.000864
+largest prompts:
+      2079  METHOD_EXIT  com.ctrip.framework.apollo.biz.service.ReleaseService#branchRelease(Namespace,Namespace,String,String,Map<String, String>,long,String,int,boolean,Collection<String>):Release
+      2033  METHOD_EXIT  com.ctrip.framework.apollo.biz.service.ReleaseService#rollbackChildNamespace(String,String,String,List<Release>,String):void
+      2003  METHOD_EXIT  com.ctrip.framework.apollo.biz.service.ReleaseService#rollbackTo(long,long,String):Release
+      1992  METHOD_EXIT  com.ctrip.framework.apollo.biz.config.BizConfig#parseOverrideConfig(String,Type,Predicate<V>):Map<K, V>
+      1980  METHOD_ENTRY com.ctrip.framework.apollo.biz.service.ReleaseService#rollbackChildNamespace(String,String,String,List<Release>,String):void
+      1976  METHOD_EXIT  com.ctrip.framework.apollo.biz.service.ReleaseService#rollback(long,String):Release
+      1976  METHOD_EXIT  com.ctrip.framework.apollo.biz.service.ReleaseService#mergeFromMasterAndPublishBranch(Namespace,Namespace,Map<String, String>,String,String,String,Release,Release,boolean):void
+      1960  METHOD_ENTRY com.ctrip.framework.apollo.biz.service.ReleaseService#branchRelease(Namespace,Namespace,String,String,Map<String, String>,long,String,int,boolean,Collection<String>):Release
+      1958  METHOD_EXIT  com.ctrip.framework.apollo.biz.service.ReleaseService#publish(Namespace,String,String,String,boolean):Release
+      1950  METHOD_EXIT  com.ctrip.framework.apollo.biz.service.ReleaseService#calculateBranchModifiedItemsAccordingToRelease(Map<String, String>,Map<String, String>,Collection<String>):Map<String, String>
+not included: structured-output JSON schema sent with each request (input side)
+==============================================================
+>>> Per-prompt token counts: /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/apollo/daikonpp_dry_run_tokens.tsv
+>>> LLM DRY RUN finished; injection, compilation and tests skipped.
+>>> Done.

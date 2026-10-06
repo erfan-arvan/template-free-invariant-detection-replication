@@ -1,0 +1,13 @@
+[TIMING] === hudi daikon run started 2026-09-11T00:23:10-04:00 ===
+========================================
+Hudi (sampled) Daikon invariant detection
+========================================
+JAVA:   /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+TRACE:  /scratch/mjk76/ea442/promptstudy/hudi-chicory-out/1260713/hudi.dtrace
+JAR:    /project/mjk76/ea442/promptstudy/daikon.jar
+OUTPUT: /project/mjk76/ea442/promptstudy/hudi-daikon-out
+
+>>> Trace size:
+-rw-r--r--+ 1 ea442 ea442 1.1G Sep 10 19:37 /scratch/mjk76/ea442/promptstudy/hudi-chicory-out/1260713/hudi.dtrace
+
+>>> Starting Daikon at 2026-09-11T00:23:11-04:00

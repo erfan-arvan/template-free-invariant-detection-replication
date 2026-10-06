@@ -1,0 +1,14 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+CLASSES: dubbo/dubbo-common/target/classes
+SRC: dubbo/dubbo-common/src/main/java
+[callsite-tool] classes=dubbo/dubbo-common/target/classes
+[callsite-tool] src=dubbo/dubbo-common/src/main/java
+[callsite-tool] out=dubbo_callsites.json
+[callsite-tool] classpath entries skipped=0
+[callsite-tool] entrypoints=5702
+[callsite-tool] CG nodes=43221
+[callsite-tool] application call edges=6479
+[callsite-tool] methods with recorded callers=1826
+[callsite-tool] wrote dubbo_callsites.json
+>>> Wrote dubbo_callsites.json
+24783 dubbo_callsites.json

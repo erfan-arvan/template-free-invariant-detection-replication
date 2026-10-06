@@ -1,0 +1,353 @@
+
+
+====================================================================================================
+SAMPLE 1/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: libgdx
+METHOD: com.badlogic.gdx.math.BSpline.valueAt(com.badlogic.gdx.math.Vector, int, float)
+####################################################################################################
+
+===========================================================================
+com.badlogic.gdx.math.BSpline.valueAt(com.badlogic.gdx.math.Vector, int, float):::ENTER
+this.tmp.getClass().getName() == out.getClass().getName()
+this.degree == 3
+this.spanCount one of { 1, 4 }
+span one of { 0, 3 }
+u one of { 0.0, 0.5, 1.0 }
+
+===========================================================================
+com.badlogic.gdx.math.BSpline.valueAt(com.badlogic.gdx.math.Vector, int, float):::EXIT
+this.controlPoints == orig(this.controlPoints)
+this.controlPoints.getClass().getName() == orig(this.controlPoints.getClass().getName())
+this.controlPoints[] == orig(this.controlPoints[])
+this.knots == orig(this.knots)
+this.degree == orig(this.degree)
+this.continuous == orig(this.continuous)
+this.spanCount == orig(this.spanCount)
+this.tmp == orig(this.tmp)
+this.tmp.getClass().getName() == return.getClass().getName()
+this.tmp2 == orig(this.tmp2)
+this.tmp2.getClass().getName() == return.getClass().getName()
+this.tmp3 == orig(this.tmp3)
+this.tmp3.getClass().getName() == return.getClass().getName()
+return == orig(out)
+return.getClass().getName() == orig(this.tmp.getClass().getName())
+return.getClass().getName() == orig(this.tmp2.getClass().getName())
+return.getClass().getName() == orig(this.tmp3.getClass().getName())
+return.getClass().getName() == orig(out.getClass().getName())
+this.degree == 3
+this.spanCount one of { 1, 4 }
+return.getClass().getName() == com.badlogic.gdx.math.Vector3.class
+return.getClass().getName() in this.controlPoints[].getClass().getName()
+
+
+
+====================================================================================================
+SAMPLE 2/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: libgdx
+METHOD: com.badlogic.gdx.utils.CharArray.addAll(char[])
+####################################################################################################
+
+===========================================================================
+com.badlogic.gdx.utils.CharArray.addAll(char[]):::ENTER
+this.items[] one of { [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 0, 0, 0, 0] }
+this.size one of { 0, 12 }
+this.ordered == true
+
+===========================================================================
+com.badlogic.gdx.utils.CharArray.addAll(char[]):::EXIT
+com.badlogic.gdx.utils.CharArray.NULL == orig(com.badlogic.gdx.utils.CharArray.NULL)
+com.badlogic.gdx.utils.CharArray.NULL.toString == orig(com.badlogic.gdx.utils.CharArray.NULL.toString)
+com.badlogic.gdx.utils.CharArray.DIGITS == orig(com.badlogic.gdx.utils.CharArray.DIGITS)
+com.badlogic.gdx.utils.CharArray.DIGITS[] == orig(com.badlogic.gdx.utils.CharArray.DIGITS[])
+this.items == orig(this.items)
+this.ordered == orig(this.ordered)
+array[] == orig(array[])
+this.size one of { 3, 5, 15 }
+this.ordered == true
+
+
+
+====================================================================================================
+SAMPLE 3/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: libgdx
+METHOD: com.badlogic.gdx.utils.LongQueue.addFirst(long)
+####################################################################################################
+
+===========================================================================
+com.badlogic.gdx.utils.LongQueue.addFirst(long):::ENTER
+
+===========================================================================
+com.badlogic.gdx.utils.LongQueue.addFirst(long):::EXIT
+this.values == orig(this.values)
+this.tail == orig(this.tail)
+this.size >= 1
+orig(this.size) in this.values[]
+orig(value) in this.values[]
+this.head != this.tail
+this.head != orig(this.head)
+this.head != orig(this.size)
+this.head != orig(value)
+this.size != orig(this.head)
+this.size - orig(this.size) - 1 == 0
+this.size >= orig(value)
+
+
+
+====================================================================================================
+SAMPLE 4/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: libgdx
+METHOD: com.badlogic.gdx.utils.JsonTest.testIntArrray()
+####################################################################################################
+
+===========================================================================
+com.badlogic.gdx.utils.JsonTest.testIntArrray():::ENTER
+this has only one value
+
+===========================================================================
+com.badlogic.gdx.utils.JsonTest.testIntArrray():::EXIT
+
+
+
+====================================================================================================
+SAMPLE 5/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: libgdx
+METHOD: com.badlogic.gdx.utils.Json.getDefaultValues(java.lang.Class)
+####################################################################################################
+
+===========================================================================
+com.badlogic.gdx.utils.Json.getDefaultValues(java.lang.Class):::ENTER
+this.equals1[].getClass().getName() one of { [null], [char[]] }
+
+===========================================================================
+com.badlogic.gdx.utils.Json.getDefaultValues(java.lang.Class):::EXIT353
+this.reader has only one value
+this.typeToFields has only one value
+this.tagToClass has only one value
+this.classToTag has only one value
+this.classToSerializer has only one value
+this.classToDefaultValues has only one value
+this.equals1 has only one value
+this.equals1[].getClass().getName() == [char[]]
+this.equals1[].getClass().getName() elements == char[].class
+this.equals2 has only one value
+this.equals2[] contains no nulls and has only one value, of length 1
+this.equals2[] elements has only one value
+return has only one value
+return[] contains no nulls and has only one value, of length 3
+orig(this) has only one value
+orig(type) has only one value
+
+===========================================================================
+com.badlogic.gdx.utils.Json.getDefaultValues(java.lang.Class):::EXIT385
+this.equals1[] == this.equals2[]
+this.equals1[] == orig(this.equals2[])
+this.equals1[] == [null]
+this.equals1[] elements == null
+this.equals1[].getClass().getName() == [null]
+this.equals1[].getClass().getName() elements == null
+this.defaultSerializer in this.equals1[]
+this.equals1[] elements == this.defaultSerializer
+
+===========================================================================
+com.badlogic.gdx.utils.Json.getDefaultValues(java.lang.Class):::EXIT
+this.writer == orig(this.writer)
+this.reader == orig(this.reader)
+this.typeName == orig(this.typeName)
+this.typeName.toString == orig(this.typeName.toString)
+this.usePrototypes == orig(this.usePrototypes)
+this.usePrototypes == orig(this.enumNames)
+this.outputType == orig(this.outputType)
+this.defaultSerializer == orig(this.defaultSerializer)
+this.typeToFields == orig(this.typeToFields)
+this.tagToClass == orig(this.tagToClass)
+this.classToTag == orig(this.classToTag)
+this.classToSerializer == orig(this.classToSerializer)
+this.classToDefaultValues == orig(this.classToDefaultValues)
+this.equals1 == orig(this.equals1)
+this.equals1.getClass().getName() == return.getClass().getName()
+this.equals1[] == orig(this.equals1[])
+this.equals2 == orig(this.equals2)
+this.equals2.getClass().getName() == return.getClass().getName()
+this.equals2[] == orig(this.equals2[])
+return.getClass().getName() == orig(this.equals1.getClass().getName())
+return.getClass().getName() == orig(this.equals2.getClass().getName())
+this.equals1[].getClass().getName() one of { [null], [char[]] }
+return.getClass().getName() == java.lang.Object[].class
+
+
+
+====================================================================================================
+SAMPLE 6/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: libgdx
+METHOD: com.badlogic.gdx.utils.CharArray.CharArray(com.badlogic.gdx.utils.CharArray)
+####################################################################################################
+
+===========================================================================
+com.badlogic.gdx.utils.CharArray.CharArray(com.badlogic.gdx.utils.CharArray):::ENTER
+array has only one value
+
+===========================================================================
+com.badlogic.gdx.utils.CharArray.CharArray(com.badlogic.gdx.utils.CharArray):::EXIT
+this.items has only one value
+this.items[] == [97, 98]
+this.items[] elements one of { 97, 98 }
+this.size == 2
+this.ordered == true
+
+
+
+====================================================================================================
+SAMPLE 7/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: libgdx
+METHOD: com.badlogic.gdx.utils.CharArray.reverseCodePoints()
+####################################################################################################
+
+===========================================================================
+com.badlogic.gdx.utils.CharArray.reverseCodePoints():::ENTER
+com.badlogic.gdx.utils.CharArray.TRUE_STRING_SIZE == this.size
+this has only one value
+this.items has only one value
+this.items[] == [55357, 56832, 72, 105, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+this.ordered == true
+
+===========================================================================
+com.badlogic.gdx.utils.CharArray.reverseCodePoints():::EXIT1914
+
+===========================================================================
+com.badlogic.gdx.utils.CharArray.reverseCodePoints():::EXIT
+com.badlogic.gdx.utils.CharArray.TRUE_STRING_SIZE == this.size
+com.badlogic.gdx.utils.CharArray.NULL == orig(com.badlogic.gdx.utils.CharArray.NULL)
+com.badlogic.gdx.utils.CharArray.NULL.toString == orig(com.badlogic.gdx.utils.CharArray.NULL.toString)
+com.badlogic.gdx.utils.CharArray.DIGITS == orig(com.badlogic.gdx.utils.CharArray.DIGITS)
+com.badlogic.gdx.utils.CharArray.DIGITS[] == orig(com.badlogic.gdx.utils.CharArray.DIGITS[])
+this.items == orig(this.items)
+this.ordered == orig(this.ordered)
+return == orig(this)
+this.items has only one value
+this.items[] == [105, 72, 55357, 56832, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+this.ordered == true
+return has only one value
+
+
+
+====================================================================================================
+SAMPLE 8/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: libgdx
+METHOD: com.badlogic.gdx.utils.JsonSkimmer.stop()
+####################################################################################################
+
+===========================================================================
+com.badlogic.gdx.utils.JsonSkimmer.stop():::ENTER
+this.stop == false
+
+===========================================================================
+com.badlogic.gdx.utils.JsonSkimmer.stop():::EXIT
+this.nameString == orig(this.nameString)
+this.value == orig(this.value)
+this.stack == orig(this.stack)
+this.stack[] == orig(this.stack[])
+this.buffer == orig(this.buffer)
+com.badlogic.gdx.utils.JsonSkimmer._json_actions == orig(com.badlogic.gdx.utils.JsonSkimmer._json_actions)
+com.badlogic.gdx.utils.JsonSkimmer._json_actions[] == orig(com.badlogic.gdx.utils.JsonSkimmer._json_actions[])
+com.badlogic.gdx.utils.JsonSkimmer._json_key_offsets == orig(com.badlogic.gdx.utils.JsonSkimmer._json_key_offsets)
+com.badlogic.gdx.utils.JsonSkimmer._json_key_offsets[] == orig(com.badlogic.gdx.utils.JsonSkimmer._json_key_offsets[])
+com.badlogic.gdx.utils.JsonSkimmer._json_trans_keys == orig(com.badlogic.gdx.utils.JsonSkimmer._json_trans_keys)
+com.badlogic.gdx.utils.JsonSkimmer._json_trans_keys[] == orig(com.badlogic.gdx.utils.JsonSkimmer._json_trans_keys[])
+com.badlogic.gdx.utils.JsonSkimmer._json_single_lengths == orig(com.badlogic.gdx.utils.JsonSkimmer._json_single_lengths)
+com.badlogic.gdx.utils.JsonSkimmer._json_single_lengths[] == orig(com.badlogic.gdx.utils.JsonSkimmer._json_single_lengths[])
+com.badlogic.gdx.utils.JsonSkimmer._json_range_lengths == orig(com.badlogic.gdx.utils.JsonSkimmer._json_range_lengths)
+com.badlogic.gdx.utils.JsonSkimmer._json_range_lengths[] == orig(com.badlogic.gdx.utils.JsonSkimmer._json_range_lengths[])
+com.badlogic.gdx.utils.JsonSkimmer._json_index_offsets == orig(com.badlogic.gdx.utils.JsonSkimmer._json_index_offsets)
+com.badlogic.gdx.utils.JsonSkimmer._json_index_offsets[] == orig(com.badlogic.gdx.utils.JsonSkimmer._json_index_offsets[])
+com.badlogic.gdx.utils.JsonSkimmer._json_indicies == orig(com.badlogic.gdx.utils.JsonSkimmer._json_indicies)
+com.badlogic.gdx.utils.JsonSkimmer._json_indicies[] == orig(com.badlogic.gdx.utils.JsonSkimmer._json_indicies[])
+com.badlogic.gdx.utils.JsonSkimmer._json_trans_targs == orig(com.badlogic.gdx.utils.JsonSkimmer._json_trans_targs)
+com.badlogic.gdx.utils.JsonSkimmer._json_trans_targs[] == orig(com.badlogic.gdx.utils.JsonSkimmer._json_trans_targs[])
+com.badlogic.gdx.utils.JsonSkimmer._json_trans_actions == orig(com.badlogic.gdx.utils.JsonSkimmer._json_trans_actions)
+com.badlogic.gdx.utils.JsonSkimmer._json_trans_actions[] == orig(com.badlogic.gdx.utils.JsonSkimmer._json_trans_actions[])
+com.badlogic.gdx.utils.JsonSkimmer._json_eof_actions == orig(com.badlogic.gdx.utils.JsonSkimmer._json_eof_actions)
+com.badlogic.gdx.utils.JsonSkimmer._json_eof_actions[] == orig(com.badlogic.gdx.utils.JsonSkimmer._json_eof_actions[])
+this.stop == true
+
+
+
+====================================================================================================
+SAMPLE 9/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: libgdx
+METHOD: com.badlogic.gdx.math.Vector3.dot(com.badlogic.gdx.math.Vector3)
+####################################################################################################
+
+===========================================================================
+com.badlogic.gdx.math.Vector3.dot(com.badlogic.gdx.math.Vector3):::ENTER
+this has only one value
+this.x one of { -1485.0, 0.0, 1.2625 }
+this.y one of { -1.1920929E-7, 0.0 }
+
+===========================================================================
+com.badlogic.gdx.math.Vector3.dot(com.badlogic.gdx.math.Vector3):::EXIT
+this.x == orig(this.x)
+this.y == orig(this.y)
+this.z == orig(this.z)
+com.badlogic.gdx.math.Vector3.X == orig(com.badlogic.gdx.math.Vector3.X)
+com.badlogic.gdx.math.Vector3.Y == orig(com.badlogic.gdx.math.Vector3.Y)
+com.badlogic.gdx.math.Vector3.Z == orig(com.badlogic.gdx.math.Vector3.Z)
+com.badlogic.gdx.math.Vector3.Zero == orig(com.badlogic.gdx.math.Vector3.Zero)
+com.badlogic.gdx.math.Vector3.One == orig(com.badlogic.gdx.math.Vector3.One)
+com.badlogic.gdx.math.Vector3.tmpMat == orig(com.badlogic.gdx.math.Vector3.tmpMat)
+this.x one of { -1485.0, 0.0, 1.2625 }
+this.y one of { -1.1920929E-7, 0.0 }
+
+
+
+====================================================================================================
+SAMPLE 10/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: libgdx
+METHOD: com.badlogic.gdx.math.Vector2.set(com.badlogic.gdx.math.Vector2)
+####################################################################################################
+
+===========================================================================
+com.badlogic.gdx.math.Vector2.set(com.badlogic.gdx.math.Vector2):::ENTER
+this.x == this.y
+this.x == 0.0
+
+===========================================================================
+com.badlogic.gdx.math.Vector2.set(com.badlogic.gdx.math.Vector2):::EXIT
+com.badlogic.gdx.math.Vector2.X == orig(com.badlogic.gdx.math.Vector2.X)
+com.badlogic.gdx.math.Vector2.Y == orig(com.badlogic.gdx.math.Vector2.Y)
+com.badlogic.gdx.math.Vector2.Zero == orig(com.badlogic.gdx.math.Vector2.Zero)
+com.badlogic.gdx.math.Vector2.One == orig(com.badlogic.gdx.math.Vector2.One)
+this.x == this.y
+return == orig(this)
+this.x one of { 0.0, 1.0 }
+this.x >= orig(this.x)
+

@@ -1,0 +1,7 @@
+
+The following have been reloaded with a version change:
+  1) Java/17.0.15 => Java/23.0.2
+
+Picked up JAVA_TOOL_OPTIONS:  -Djava.io.tmpdir=/scratch/mjk76/ea442/contextstudy/tmp
+Picked up JAVA_TOOL_OPTIONS:  -Djava.io.tmpdir=/scratch/mjk76/ea442/contextstudy/tmp
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended

@@ -1,0 +1,85 @@
+=== libgdx-full-chicory-out (never completed successfully) ===
+1.9T	/scratch/mjk76/ea442/promptstudy/libgdx-full-chicory-out
+1.9T	/scratch/mjk76/ea442/promptstudy/libgdx-full-chicory-out/1280644
+total 18
+drwxr-xr-x+  3 ea442 ea442 4096 Sep 13 16:53 .
+drwxr-xr-x+ 44 ea442 ea442 8192 Sep 18 03:08 ..
+drwxr-xr-x+  2 ea442 ea442 4096 Sep 17 00:33 1280644
+
+=== dubbo-chicory-out (full, never completed successfully) ===
+280G	/scratch/mjk76/ea442/promptstudy/dubbo-chicory-out
+984M	/scratch/mjk76/ea442/promptstudy/dubbo-chicory-out/1259753
+169G	/scratch/mjk76/ea442/promptstudy/dubbo-chicory-out/1280625
+466M	/scratch/mjk76/ea442/promptstudy/dubbo-chicory-out/1260423
+110G	/scratch/mjk76/ea442/promptstudy/dubbo-chicory-out/1233675
+total 21
+drwxr-xr-x+  6 ea442 ea442 4096 Sep 13 16:37 .
+drwxr-xr-x+ 44 ea442 ea442 8192 Sep 18 03:08 ..
+drwxr-xr-x+  2 ea442 ea442 4096 Sep  4 23:23 1233675
+drwxr-xr-x+  2 ea442 ea442 4096 Sep 10 18:30 1259753
+drwxr-xr-x+  2 ea442 ea442 4096 Sep 10 18:58 1260423
+drwxr-xr-x+  2 ea442 ea442 4096 Sep 17 00:33 1280625
+
+=== apollo-chicory-out (successful, daikon complete) ===
+2.3G	/scratch/mjk76/ea442/promptstudy/apollo-chicory-out
+1.0K	/scratch/mjk76/ea442/promptstudy/apollo-chicory-out/latest
+24M	/scratch/mjk76/ea442/promptstudy/apollo-chicory-out/1259752
+1.6G	/scratch/mjk76/ea442/promptstudy/apollo-chicory-out/1260710
+82M	/scratch/mjk76/ea442/promptstudy/apollo-chicory-out/1260014
+645M	/scratch/mjk76/ea442/promptstudy/apollo-chicory-out/1260422
+total 22
+drwxr-xr-x+  6 ea442 ea442 4096 Sep 10 19:16 .
+drwxr-xr-x+ 44 ea442 ea442 8192 Sep 18 03:08 ..
+drwxr-xr-x+  2 ea442 ea442 4096 Sep 10 18:30 1259752
+drwxr-xr-x+  2 ea442 ea442 4096 Sep 10 18:43 1260014
+drwxr-xr-x+  2 ea442 ea442 4096 Sep 10 19:01 1260422
+drwxr-xr-x+  2 ea442 ea442 4096 Sep 10 19:16 1260710
+lrwxrwxrwx   1 ea442 ea442   59 Sep 10 19:16 latest -> /scratch/mjk76/ea442/promptstudy/apollo-chicory-out/1260710
+
+=== hudi-chicory-out (successful, daikon complete) ===
+683G	/scratch/mjk76/ea442/promptstudy/hudi-chicory-out
+2.3G	/scratch/mjk76/ea442/promptstudy/hudi-chicory-out/1260713
+1.0K	/scratch/mjk76/ea442/promptstudy/hudi-chicory-out/1259755
+1.0K	/scratch/mjk76/ea442/promptstudy/hudi-chicory-out/latest
+3.1G	/scratch/mjk76/ea442/promptstudy/hudi-chicory-out/1260426
+3.3G	/scratch/mjk76/ea442/promptstudy/hudi-chicory-out/1259756
+669G	/scratch/mjk76/ea442/promptstudy/hudi-chicory-out/1260714
+805M	/scratch/mjk76/ea442/promptstudy/hudi-chicory-out/1260425
+4.9G	/scratch/mjk76/ea442/promptstudy/hudi-chicory-out/1259837
+total 25
+drwxr-xr-x+  9 ea442 ea442 4096 Sep 10 19:37 .
+drwxr-xr-x+ 44 ea442 ea442 8192 Sep 18 03:08 ..
+drwxr-xr-x+  2 ea442 ea442 4096 Sep 10 18:29 1259755
+drwxr-xr-x+  2 ea442 ea442 4096 Sep 10 18:31 1259756
+drwxr-xr-x+  2 ea442 ea442 4096 Sep 10 18:37 1259837
+drwxr-xr-x+  2 ea442 ea442 4096 Sep 10 19:05 1260425
+drwxr-xr-x+  2 ea442 ea442 4096 Sep 10 18:59 1260426
+drwxr-xr-x+  2 ea442 ea442 4096 Sep 10 19:37 1260713
+drwxr-xr-x+  2 ea442 ea442 4096 Sep 13 16:26 1260714
+lrwxrwxrwx   1 ea442 ea442   57 Sep 10 19:37 latest -> /scratch/mjk76/ea442/promptstudy/hudi-chicory-out/1260713
+
+=== spring-full-chicory-out (successful, daikon complete, narrowed scope) ===
+2.2G	/scratch/mjk76/ea442/promptstudy/spring-full-chicory-out
+679M	/scratch/mjk76/ea442/promptstudy/spring-full-chicory-out/1259757
+22M	/scratch/mjk76/ea442/promptstudy/spring-full-chicory-out/1280660
+15M	/scratch/mjk76/ea442/promptstudy/spring-full-chicory-out/1286325
+1.0K	/scratch/mjk76/ea442/promptstudy/spring-full-chicory-out/latest
+856M	/scratch/mjk76/ea442/promptstudy/spring-full-chicory-out/1286170
+679M	/scratch/mjk76/ea442/promptstudy/spring-full-chicory-out/1260427
+total 23
+drwxr-xr-x+  7 ea442 ea442 4096 Sep 15 00:37 .
+drwxr-xr-x+ 44 ea442 ea442 8192 Sep 18 03:08 ..
+drwxr-xr-x+  2 ea442 ea442 4096 Sep 10 18:35 1259757
+drwxr-xr-x+  2 ea442 ea442 4096 Sep 10 18:59 1260427
+drwxr-xr-x+  2 ea442 ea442 4096 Sep 14 23:05 1280660
+drwxr-xr-x+  2 ea442 ea442 4096 Sep 15 00:22 1286170
+drwxr-xr-x+  2 ea442 ea442 4096 Sep 15 00:41 1286325
+lrwxrwxrwx   1 ea442 ea442   64 Sep 15 00:37 latest -> /scratch/mjk76/ea442/promptstudy/spring-full-chicory-out/1286325
+
+=== libgdx-s5-chicory-out (successful, daikon complete) ===
+90G	/scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory-out
+total 94316306
+drwxr-xr-x+  2 ea442 ea442        4096 Sep 17 00:38 .
+drwxr-xr-x+ 44 ea442 ea442        8192 Sep 18 03:08 ..
+-rw-r--r--+  1 ea442 ea442 48289827408 Sep 14 05:13 dtrace.gz
+lrwxrwxrwx   1 ea442 ea442          64 Sep 17 00:38 libgdx-s5.dtrace.gz -> /scratch/mjk76/ea442/promptstudy/libgdx-s5-chicory-out/dtrace.gz

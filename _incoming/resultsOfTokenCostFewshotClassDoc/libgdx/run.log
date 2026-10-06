@@ -1,0 +1,252 @@
+======================================
+>>> Running Daikon++ on libGDX
+======================================
+>>> CMD: java -jar /scratch/mjk76/ea442/daikonplusplus-token-cost/build/libs/daikonplusplus.jar --external-project --project-root /project/mjk76/ea442/promptstudy/libgdx --main-src gdx/src --test-src tests/gdx-tests/src --runner-script /scratch/mjk76/ea442/token_cost_fewshot_class_doc/libgdx_run_tests.sh 5
+Picked up JAVA_TOOL_OPTIONS:  -Djava.io.tmpdir=/scratch/mjk76/ea442/token_cost_fewshot_class_doc/tmp -Djava.io.tmpdir=/scratch/mjk76/ea442/token_cost_fewshot_class_doc/tmp
+==== Daikon++ Config ====
+threads = 8
+registryPath = /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/libgdx/daikonpp_registry.jsonl
+outcomesPath = /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/libgdx/daikonpp_outcomes.jsonl
+includeBody = true
+registryReset = true
+debug = false
+keepWork = true
+noQualityFilter = false
+qualityFilterRules = {maxLength=true, alwaysTrueLiteral=true, tautologyNotXOrX=true, fullRangeComparison=true, selfComparison=false, trivialDisjunction=true, noStatements=true, noAssignment=true, forbiddenConstructs=true, requireInScopeName=false, requireResultAtExit=false, primitiveNullComparison=true, unknownIdentifier=false, parseCheck=true}
+llmTotalTimeoutSec = 180
+llmPerReqTimeoutSec = 45
+bodyMaxChars = 2000
+enabledContexts = [METHOD_BODY, SCOPE, CLASS_DOC]
+openaiModel = gpt-4.1-mini
+llmCassettesDir = /project/mjk76/ea442/promptstudy/daikonplusplus/src/test/cassettes
+disableRealLlm = false
+callSitesIndexPath = /project/mjk76/ea442/promptstudy/libgdx_callsites.json
+ioExamplesIndexPath = /project/mjk76/ea442/promptstudy/libgdx-s5_io_examples.json
+compileMainScript = /scratch/mjk76/ea442/token_cost_fewshot_class_doc/libgdx_compile.sh
+compileTestScript = /scratch/mjk76/ea442/token_cost_fewshot_class_doc/libgdx_compile.sh
+llmPollStepMs = 1500
+externalCompileClasspath = /project/mjk76/ea442/promptstudy/libgdx/gdx/build/classes/java/main:/project/mjk76/ea442/promptstudy/libgdx/gdx/build/resources/main
+workDir = /scratch/mjk76/ea442/token_cost_fewshot_class_doc/daikonpp_work
+promptStrategy = fewshot
+scanIncludes = [com/badlogic/gdx/utils, com/badlogic/gdx/math]
+llmProvider = openai
+llmLocalBackend = ollama
+llmLocalUrl = http://localhost:11434
+llmLocalModel = qwen2.5:7b
+enableTestFilter = false
+testFilterMethodBatchSize = 1
+staleCheckMinutes = 1
+maxTimeoutMinutes = 480
+autofilterMaxModifyPasses = 200
+autofilterMaxExtraPasses = 150
+llmDryRun = true
+llmPriceInputPerM = 0.4
+llmPriceOutputPerM = 1.6
+=========================
+🔥 EXEC MODE = EXTERNAL_PROJECT
+>>> LLM DRY RUN: prompts are counted, not sent; stopping after LM phase
+>>> Scan include filter: [com/badlogic/gdx/utils, com/badlogic/gdx/math]
+[DP] Using prompt strategy: fewshot
+[DP-PATHS] execMode=EXTERNAL_PROJECT
+[DP-PATHS] userProjectRoot=/project/mjk76/ea442/promptstudy/libgdx
+[DP-PATHS] mainSrcRoot=/project/mjk76/ea442/promptstudy/libgdx/gdx/src
+[DP-PATHS] testSrcRoot=/project/mjk76/ea442/promptstudy/libgdx/tests/gdx-tests/src
+>>> Scanning MAIN sources under (WORKING COPY): /project/mjk76/ea442/promptstudy/libgdx/gdx/src
+>>> [Scan phase] started at 2026-10-02 19:26:36.792
+>>> [Scan phase] finished at 2026-10-02 19:26:44.050 (elapsed 7.258s)
+>>> Scan include filter: [com/badlogic/gdx/utils, com/badlogic/gdx/math]
+>>> Points before filter: 21564
+>>> Points after filter: 7540
+>>> Points — ENTRY: 3770  EXIT: 3770  TOTAL: 7540
+>>> [LM phase] started at 2026-10-02 19:26:44.136
+===== FIRST PROMPT =====
+----- SYSTEM -----
+You are a program analysis assistant.
+
+Task:
+Generate candidate invariants for a Java program point.
+
+Global rules:
+- Return ONLY JSON matching the required schema.
+- The JSON schema is:
+  {
+    "invariants": [
+      { "expression": "<Java boolean expression>" }
+    ]
+  }
+- Each invariant must be a valid Java boolean expression.
+- Expressions must be valid at the program point.
+- Use only the listed in-scope names.
+- Do not introduce new variables, helper functions, or APIs.
+- Expressions must be side-effect free.
+
+
+===== EXAMPLE 1 =====
+PROGRAM POINT: Example1 [METHOD_ENTRY]
+
+In-scope names:
+- order : Order
+- limit : int
+
+===== PROGRAM CONTEXT =====
+[Method Implementation]
+public void process(Order order, int limit) {
+  if (order.getQuantity() > limit) {
+    throw new IllegalArgumentException();
+  }
+}
+===========================
+
+Expected Output:
+{
+  "invariants": [
+    { "expression": "order != null" },
+    { "expression": "order.getQuantity() <= limit" },
+    { "expression": "order.getQuantity() >= 0" },
+    { "expression": "limit >= 0" }
+  ]
+}
+===== END EXAMPLE 1 =====
+
+===== EXAMPLE 2 =====
+PROGRAM POINT: Example2 [METHOD_ENTRY]
+
+In-scope names:
+- s : String
+- start : int
+- end : int
+
+===== PROGRAM CONTEXT =====
+[Method Implementation]
+public String sub(String s, int start, int end) {
+  if (start < 0 || end > s.length()) return "";
+  return s.substring(start, end);
+}
+===========================
+
+Expected Output:
+{
+  "invariants": [
+    { "expression": "s != null" },
+    { "expression": "start >= 0" },
+    { "expression": "end <= s.length()" },
+    { "expression": "start <= end" }
+  ]
+}
+===== END EXAMPLE 2 =====
+
+
+----- USER -----
+PROGRAM POINT: com.badlogic.gdx.utils.viewport.ScalingViewport#update(int,int,boolean):void [METHOD_ENTRY]
+
+This program point represents the state immediately BEFORE the method executes.
+Only parameters and object state are defined.
+
+In-scope names:
+- screenWidth : int
+- screenHeight : int
+- centerCamera : boolean
+
+Note:
+- These are base variables.
+- Expressions derived from them (e.g., field accesses and method calls) are allowed if valid at this program point.
+
+Constraints specific to this program point:
+- Single-line Java boolean expressions only.
+- Method calls are allowed and encouraged if callable using listed names.
+- Method calls may belong to the JDK or the project codebase.
+- Field accesses (e.g., obj.field) are allowed if accessible using listed names.
+- Do not invent methods or fields that are not available at this program point.
+- Add null checks ONLY when required for safe evaluation.
+- Do not use non-Java logical operators such as ==> or ⇒.
+- Logical implication (A ⇒ B) must be expressed as (!A || B) using standard Java boolean operators.
+- Prefer pure predicate-style method calls.
+- Avoid redundant or trivially true expressions.
+- Do NOT generate tautologies or self-comparisons (e.g., x == x, obj.method() == obj.method()).
+- Avoid semantically duplicate invariants that differ only by operand order or equivalent comparison form (e.g., a == b vs b == a, a <= b vs b >= a).
+- Do not focus solely on nullness-related invariants.
+- Prioritize invariants that capture meaningful relationships among the in-scope names and reflect the behavior of the method at this program point.
+
+===== PROGRAM CONTEXT =====
+Consider the following context when generating invariants.
+[Method Implementation]
+public void update (int screenWidth, int screenHeight, boolean centerCamera) {
+		Vector2 scaled = scaling.apply(getWorldWidth(), getWorldHeight(), screenWidth, screenHeight);
+		int viewportWidth = Math.round(scaled.x);
+		int viewportHeight = Math.round(scaled.y);
+
+		// Center.
+		setScreenBounds((screenWidth - viewportWidth) / 2, (screenHeight - viewportHeight) / 2, viewportWidth, viewportHeight);
+
+		apply(centerCamera);
+	}
+
+[Enclosing Class Documentation]
+[Class] ScalingViewport
+A viewport that scales the world using {@link Scaling}.
+<p>
+{@link Scaling#fit} keeps the aspect ratio by scaling the world up to fit the screen, adding black bars (letterboxing) for the
+remaining space.
+<p>
+{@link Scaling#fill} keeps the aspect ratio by scaling the world up to take the whole screen (some of the world may be off
+screen).
+<p>
+{@link Scaling#stretch} does not keep the aspect ratio, the world is scaled to take the whole screen.
+<p>
+{@link Scaling#none} keeps the aspect ratio by using a fixed size world (the world may not fill the screen or some of the world
+may be off screen).
+
+@author Daniel Holderbaum
+@author Nathan Sweet
+
+[Field] scaling : Scaling
+
+[Method] update(int, int, boolean) : void
+
+[Method] getScaling() : Scaling
+
+[Method] setScaling(Scaling) : void
+===========================
+
+Generate up to 5 candidate invariants that are valid at this program point.
+Return ONLY the JSON.
+
+========================
+
+>>> [LM phase] finished at 2026-10-02 19:27:17.447 (elapsed 33.310s)
+==== DRY RUN: LLM prompt token summary (nothing was sent) ====
+model / tokenizer       : gpt-4.1-mini / o200k_base
+program points in scope : 7540
+prompts built           : 7540  (METHOD_ENTRY 3770, METHOD_EXIT 3770)
+distinct prompts        : 7200  (identical system+user)
+system-prompt tokens    : 3272360
+user-prompt tokens      : 17797131
+chat framing tokens     : 82940  (11 per prompt)
+TOTAL input tokens      : 21152431
+  of distinct prompts   : 20623785
+per prompt (input)      : min 799 | mean 2805 | median 2015 | p90 5313 | p99 10203 | max 10918
+  METHOD_ENTRY          : 3770 prompts, 10387992 tokens, mean 2755
+  METHOD_EXIT           : 3770 prompts, 10764439 tokens, mean 2855
+cassettes               : /project/mjk76/ea442/promptstudy/daikonplusplus/src/test/cassettes
+  already recorded      : 7540 prompts, 21152431 tokens
+  NOT recorded (to send): 0 prompts (0 distinct), 0 tokens (distinct)
+output tokens (recorded): 1940372  (7540 recorded responses, mean 257)
+TOTAL output tokens     : 1940372
+COST (USD)              : input $8.46 (at $0.4/1M) + output $3.10 (at $1.6/1M) = $11.57
+  per program point     : $0.001534
+largest prompts:
+     10918  METHOD_EXIT  com.badlogic.gdx.utils.CharArray#append(long,int,char):CharArray
+     10798  METHOD_ENTRY com.badlogic.gdx.utils.CharArray#append(long,int,char):CharArray
+     10640  METHOD_EXIT  com.badlogic.gdx.utils.CharArray#reverseCodePoints():CharArray
+     10523  METHOD_ENTRY com.badlogic.gdx.utils.CharArray#reverseCodePoints():CharArray
+     10511  METHOD_EXIT  com.badlogic.gdx.utils.CharArray#append(int,int,char):CharArray
+     10419  METHOD_EXIT  com.badlogic.gdx.utils.CharArray#indexOfIgnoreCase(String,int):int
+     10391  METHOD_ENTRY com.badlogic.gdx.utils.CharArray#append(int,int,char):CharArray
+     10347  METHOD_EXIT  com.badlogic.gdx.utils.CharArray#indexOf(String,int):int
+     10340  METHOD_EXIT  com.badlogic.gdx.utils.CharArray#lastIndexOf(String,int):int
+     10319  METHOD_EXIT  com.badlogic.gdx.utils.CharArray#insert(int,char[],int,int):CharArray
+not included: structured-output JSON schema sent with each request (input side)
+==============================================================
+>>> Per-prompt token counts: /project/mjk76/ea442/promptstudy/resultsOfTokenCostFewshotClassDoc/libgdx/daikonpp_dry_run_tokens.tsv
+>>> LLM DRY RUN finished; injection, compilation and tests skipped.
+>>> Done.

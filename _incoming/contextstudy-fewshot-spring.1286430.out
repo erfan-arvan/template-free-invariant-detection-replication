@@ -1,0 +1,44 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/23.0.2/bin/java
+MVN: /scratch/mjk76/ea442/apache-maven-3.9.9/bin/mvn
+######################################
+FEWSHOT CONTEXT STUDY STARTED
+Prompt strategy (fixed): fewshot
+Results base: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot
+Start time: 2026-09-15 01:20:30 EDT
+######################################
+>>> Building Daikon++ (once)
+======================================
+>>> CONTEXT CONFIG: io_examples
+>>> Prompt strategy: fewshot
+>>> DP_CONTEXTS: METHOD_BODY,SCOPE,IO_EXAMPLES
+>>> Start time: 2026-09-15 01:21:07 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: spring
+>>> Context config: io_examples
+>>> Prompt strategy: fewshot
+>>> Start time: 2026-09-15 01:21:07 EDT
+--------------------------------------
+>>> Finished spring (context_config=io_examples, prompt=fewshot)
+>>> Finish time: 2026-09-15 02:15:50 EDT
+>>> Duration: 00h:54m:43s
+>>> Duration in seconds: 3283
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/io_examples/spring/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/io_examples/spring/daikonpp_registry.jsonl
+======================================
+DONE context config: io_examples
+Prompt strategy: fewshot
+Finish time: 2026-09-15 02:15:50 EDT
+Duration: 00h:54m:43s
+Duration in seconds: 3283
+Results in: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/io_examples
+======================================
+######################################
+ALL FEWSHOT CONTEXT CONFIGS DONE
+Prompt strategy: fewshot
+Start time: 2026-09-15 01:20:30 EDT
+Finish time: 2026-09-15 02:15:50 EDT
+Total duration: 00h:55m:20s
+Total duration in seconds: 3320
+Results base: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot
+######################################

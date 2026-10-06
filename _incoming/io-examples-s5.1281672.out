@@ -1,0 +1,64 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+[io-examples-tool] dtrace=/scratch/mjk76/ea442/promptstudy/apollo-s5-chicory-out/latest/dtrace.gz
+[io-examples-tool] src=/scratch/mjk76/ea442/promptstudy/apollo-s5-chicory/apollo-biz/src/main/java
+[io-examples-tool] out=/scratch/mjk76/ea442/promptstudy/apollo-s5_io_examples.json
+[io-examples-tool] ENTER records=5563
+[io-examples-tool] paired ENTER/EXIT examples=5370
+[io-examples-tool] truncated lines=0
+[io-examples-tool] distinct program points=1286
+[io-examples-tool] scanning source tree to build forward index...
+[io-examples-tool] forward index built: 642 declared members
+[io-examples-tool] resolved program points=391
+[io-examples-tool] unresolved program points=895
+[io-examples-tool] wrote /scratch/mjk76/ea442/promptstudy/apollo-s5_io_examples.json
+[TIMING] io-examples-tool extract (apollo-s5) 6s  (01:30:46 -> 01:30:52)
+>>> Wrote /scratch/mjk76/ea442/promptstudy/apollo-s5_io_examples.json
+119934 /scratch/mjk76/ea442/promptstudy/apollo-s5_io_examples.json
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+[io-examples-tool] dtrace=/scratch/mjk76/ea442/promptstudy/dubbo-s5-chicory-out/latest/dtrace.gz
+[io-examples-tool] src=/scratch/mjk76/ea442/promptstudy/dubbo-s5-chicory/dubbo-common/src/main/java
+[io-examples-tool] out=/scratch/mjk76/ea442/promptstudy/dubbo-s5_io_examples.json
+[io-examples-tool] ENTER records=505713
+[io-examples-tool] paired ENTER/EXIT examples=4598
+[io-examples-tool] truncated lines=0
+[io-examples-tool] distinct program points=1571
+[io-examples-tool] scanning source tree to build forward index...
+[io-examples-tool] forward index built: 5351 declared members
+[io-examples-tool] resolved program points=718
+[io-examples-tool] unresolved program points=853
+[io-examples-tool] wrote /scratch/mjk76/ea442/promptstudy/dubbo-s5_io_examples.json
+[TIMING] io-examples-tool extract (dubbo-s5) 227s  (01:30:52 -> 01:34:39)
+>>> Wrote /scratch/mjk76/ea442/promptstudy/dubbo-s5_io_examples.json
+40173 /scratch/mjk76/ea442/promptstudy/dubbo-s5_io_examples.json
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+[io-examples-tool] dtrace=/scratch/mjk76/ea442/promptstudy/hudi-s5-chicory-out/dtrace.gz
+[io-examples-tool] src=/scratch/mjk76/ea442/promptstudy/hudi-s5-chicory/hudi-client/hudi-java-client/src/main/java
+[io-examples-tool] out=/scratch/mjk76/ea442/promptstudy/hudi-s5_io_examples.json
+[io-examples-tool] ENTER records=149208
+[io-examples-tool] paired ENTER/EXIT examples=95165
+[io-examples-tool] truncated lines=78
+[io-examples-tool] distinct program points=7516
+[io-examples-tool] scanning source tree to build forward index...
+[io-examples-tool] forward index built: 260 declared members
+[io-examples-tool] resolved program points=196
+[io-examples-tool] unresolved program points=7320
+[io-examples-tool] wrote /scratch/mjk76/ea442/promptstudy/hudi-s5_io_examples.json
+[TIMING] io-examples-tool extract (hudi-s5) 14s  (01:34:39 -> 01:34:53)
+>>> Wrote /scratch/mjk76/ea442/promptstudy/hudi-s5_io_examples.json
+48479 /scratch/mjk76/ea442/promptstudy/hudi-s5_io_examples.json
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+[io-examples-tool] dtrace=/scratch/mjk76/ea442/promptstudy/spring-s5-chicory-out/dtrace.gz
+[io-examples-tool] src=/scratch/mjk76/ea442/promptstudy/spring-s5-chicory/spring-core/src/main/java
+[io-examples-tool] out=/scratch/mjk76/ea442/promptstudy/spring-s5_io_examples.json
+[io-examples-tool] ENTER records=10214
+[io-examples-tool] paired ENTER/EXIT examples=10155
+[io-examples-tool] truncated lines=0
+[io-examples-tool] distinct program points=1883
+[io-examples-tool] scanning source tree to build forward index...
+[io-examples-tool] forward index built: 4001 declared members
+[io-examples-tool] resolved program points=399
+[io-examples-tool] unresolved program points=1484
+[io-examples-tool] wrote /scratch/mjk76/ea442/promptstudy/spring-s5_io_examples.json
+[TIMING] io-examples-tool extract (spring-s5) 5s  (01:34:53 -> 01:34:58)
+>>> Wrote /scratch/mjk76/ea442/promptstudy/spring-s5_io_examples.json
+38645 /scratch/mjk76/ea442/promptstudy/spring-s5_io_examples.json

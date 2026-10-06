@@ -1,0 +1,569 @@
+
+
+====================================================================================================
+SAMPLE 1/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: apollo
+METHOD: com.ctrip.framework.apollo.biz.entity.ServerConfig.setKey(java.lang.String)
+####################################################################################################
+
+===========================================================================
+com.ctrip.framework.apollo.biz.entity.ServerConfig.setKey(java.lang.String):::ENTER
+this.key == this.cluster
+this.key == this.value
+this.key == this.comment
+this.key == this.dataChangeCreatedBy
+this.key == this.dataChangeLastModifiedBy
+this.id == this.deletedAt
+this.dataChangeCreatedTime == this.dataChangeLastModifiedTime
+this.key == null
+this.id == 0
+this.dataChangeCreatedTime == null
+
+===========================================================================
+com.ctrip.framework.apollo.biz.entity.ServerConfig.setKey(java.lang.String):::EXIT
+this.key == orig(key)
+this.key.toString == key.toString
+this.cluster == this.value
+this.cluster == this.comment
+this.cluster == this.dataChangeCreatedBy
+this.cluster == this.dataChangeLastModifiedBy
+this.cluster == orig(this.key)
+this.cluster == orig(this.cluster)
+this.cluster == orig(this.value)
+this.cluster == orig(this.comment)
+this.cluster == orig(this.dataChangeCreatedBy)
+this.cluster == orig(this.dataChangeLastModifiedBy)
+this.id == this.deletedAt
+this.id == orig(this.id)
+this.id == orig(this.deletedAt)
+this.isDeleted == orig(this.isDeleted)
+this.dataChangeCreatedTime == this.dataChangeLastModifiedTime
+this.dataChangeCreatedTime == orig(this.dataChangeCreatedTime)
+this.dataChangeCreatedTime == orig(this.dataChangeLastModifiedTime)
+key.toString == orig(key.toString)
+this.cluster == null
+this.id == 0
+this.dataChangeCreatedTime == null
+
+
+
+====================================================================================================
+SAMPLE 2/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: apollo
+METHOD: com.ctrip.framework.apollo.biz.MockBeanFactory.mockItem(long, long, java.lang.String, java.lang.String, int)
+####################################################################################################
+
+===========================================================================
+com.ctrip.framework.apollo.biz.MockBeanFactory.mockItem(long, long, java.lang.String, java.lang.String, int):::ENTER
+id == namespaceId
+id == lineNum
+id == 1
+itemKey != null
+itemKey.toString one of { "", "timeout" }
+itemValue != null
+itemValue.toString one of { "100", "1001" }
+itemKey.toString != itemValue.toString
+
+===========================================================================
+com.ctrip.framework.apollo.biz.MockBeanFactory.mockItem(long, long, java.lang.String, java.lang.String, int):::EXIT
+itemKey.toString == return.key.toString
+itemKey.toString == orig(itemKey.toString)
+itemValue.toString == return.value.toString
+itemValue.toString == orig(itemValue.toString)
+return.namespaceId == return.id
+return.namespaceId == orig(id)
+return.namespaceId == orig(namespaceId)
+return.namespaceId == orig(lineNum)
+return.key == orig(itemKey)
+return.type == return.deletedAt
+return.value == orig(itemValue)
+return.comment == return.dataChangeCreatedBy
+return.comment == return.dataChangeLastModifiedBy
+return.dataChangeCreatedTime == return.dataChangeLastModifiedTime
+itemKey.toString one of { "", "timeout" }
+itemValue.toString one of { "100", "1001" }
+return != null
+return.namespaceId == 1
+return.key != null
+return.type == 0
+return.value != null
+return.comment == null
+return.lineNum has only one value
+return.lineNum != null
+return.isDeleted == false
+return.dataChangeCreatedTime == null
+itemKey.toString != itemValue.toString
+
+
+
+====================================================================================================
+SAMPLE 3/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: apollo
+METHOD: com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.getTargetClass()
+####################################################################################################
+
+===========================================================================
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.getTargetClass():::ENTER
+
+===========================================================================
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.getTargetClass():::EXIT
+this.CGLIB$BOUND == orig(this.CGLIB$BOUND)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$FACTORY_DATA == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$FACTORY_DATA)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$FACTORY_DATA.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$FACTORY_DATA.getClass().getName())
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$THREAD_CALLBACKS == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$THREAD_CALLBACKS)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$STATIC_CALLBACKS == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$STATIC_CALLBACKS)
+this.CGLIB$CALLBACK_0 == orig(this.CGLIB$CALLBACK_0)
+this.CGLIB$CALLBACK_0.getClass().getName() == orig(this.CGLIB$CALLBACK_0.getClass().getName())
+this.CGLIB$CALLBACK_1 == orig(this.CGLIB$CALLBACK_1)
+this.CGLIB$CALLBACK_1.getClass().getName() == orig(this.CGLIB$CALLBACK_1.getClass().getName())
+this.CGLIB$CALLBACK_2 == orig(this.CGLIB$CALLBACK_2)
+this.CGLIB$CALLBACK_2.getClass().getName() == orig(this.CGLIB$CALLBACK_2.getClass().getName())
+this.CGLIB$CALLBACK_3 == orig(this.CGLIB$CALLBACK_3)
+this.CGLIB$CALLBACK_3.getClass().getName() == orig(this.CGLIB$CALLBACK_3.getClass().getName())
+this.CGLIB$CALLBACK_4 == orig(this.CGLIB$CALLBACK_4)
+this.CGLIB$CALLBACK_4.getClass().getName() == orig(this.CGLIB$CALLBACK_4.getClass().getName())
+this.CGLIB$CALLBACK_5 == orig(this.CGLIB$CALLBACK_5)
+this.CGLIB$CALLBACK_5.getClass().getName() == orig(this.CGLIB$CALLBACK_5.getClass().getName())
+this.CGLIB$CALLBACK_6 == orig(this.CGLIB$CALLBACK_6)
+this.CGLIB$CALLBACK_6.getClass().getName() == orig(this.CGLIB$CALLBACK_6.getClass().getName())
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$CALLBACK_FILTER == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$CALLBACK_FILTER)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$CALLBACK_FILTER.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$CALLBACK_FILTER.getClass().getName())
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$update$0$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$update$0$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$update$0$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$update$0$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$emptyArgs == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$emptyArgs)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$emptyArgs.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$emptyArgs.getClass().getName())
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$emptyArgs[] == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$emptyArgs[])
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findOne$1$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findOne$1$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findOne$1$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findOne$1$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findByAppId$2$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findByAppId$2$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findByAppId$2$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findByAppId$2$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$batchDelete$3$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$batchDelete$3$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$batchDelete$3$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$batchDelete$3$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$createDefaultAppNamespace$4$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$createDefaultAppNamespace$4$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$createDefaultAppNamespace$4$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$createDefaultAppNamespace$4$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findPublicNamespaceByName$5$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findPublicNamespaceByName$5$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findPublicNamespaceByName$5$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findPublicNamespaceByName$5$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findPrivateAppNamespace$6$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findPrivateAppNamespace$6$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findPrivateAppNamespace$6$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findPrivateAppNamespace$6$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findByAppIdAndNamespaces$7$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findByAppIdAndNamespaces$7$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findByAppIdAndNamespaces$7$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findByAppIdAndNamespaces$7$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$createAppNamespace$8$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$createAppNamespace$8$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$createAppNamespace$8$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$createAppNamespace$8$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$deleteAppNamespace$9$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$deleteAppNamespace$9$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$deleteAppNamespace$9$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$deleteAppNamespace$9$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$isAppNamespaceNameUnique$10$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$isAppNamespaceNameUnique$10$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$isAppNamespaceNameUnique$10$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$isAppNamespaceNameUnique$10$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$createNamespaceForAppNamespaceInAllCluster$11$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$createNamespaceForAppNamespaceInAllCluster$11$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$createNamespaceForAppNamespaceInAllCluster$11$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$createNamespaceForAppNamespaceInAllCluster$11$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findPublicNamespacesByNames$12$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findPublicNamespacesByNames$12$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findPublicNamespacesByNames$12$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$findPublicNamespacesByNames$12$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$equals$13$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$equals$13$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$equals$13$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$equals$13$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$toString$14$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$toString$14$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$toString$14$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$toString$14$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$hashCode$15$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$hashCode$15$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$hashCode$15$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$hashCode$15$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$clone$16$Method == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$clone$16$Method)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$clone$16$Proxy == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService$$SpringCGLIB$$1.CGLIB$clone$16$Proxy)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger)
+com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger.getClass().getName())
+com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger.getClass().getName() == orig(com.ctrip.framework.apollo.biz.config.BizConfig.logger.getClass().getName())
+com.ctrip.framework.apollo.biz.service.AppNamespaceService.logger.getClass().getName() == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.logger.getClass().getName())
+this.appNamespaceRepository == orig(this.appNamespaceRepository)
+this.namespaceService == orig(this.namespaceService)
+com.ctrip.framework.apollo.biz.service.NamespaceService.GSON == orig(com.ctrip.framework.apollo.biz.service.NamespaceService.GSON)
+com.ctrip.framework.apollo.biz.service.ItemService.clusterPattern == orig(com.ctrip.framework.apollo.biz.service.ItemService.clusterPattern)
+com.ctrip.framework.apollo.biz.service.ReleaseService.TIMESTAMP_FORMAT == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.TIMESTAMP_FORMAT)
+com.ctrip.framework.apollo.biz.service.ReleaseService.GSON == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.GSON)
+com.ctrip.framework.apollo.biz.service.ReleaseService.BRANCH_RELEASE_OPERATIONS == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.BRANCH_RELEASE_OPERATIONS)
+com.ctrip.framework.apollo.biz.service.ReleaseService.BRANCH_RELEASE_OPERATIONS.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.BRANCH_RELEASE_OPERATIONS.getClass().getName())
+com.ctrip.framework.apollo.biz.service.ReleaseService.FIRST_ITEM == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.FIRST_ITEM)
+com.ctrip.framework.apollo.biz.service.ReleaseService.FIRST_ITEM.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.FIRST_ITEM.getClass().getName())
+com.ctrip.framework.apollo.biz.service.ReleaseService.OPERATION_CONTEXT_TYPE_REFERENCE == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.OPERATION_CONTEXT_TYPE_REFERENCE)
+com.ctrip.framework.apollo.biz.service.ReleaseService.OPERATION_CONTEXT_TYPE_REFERENCE.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.ReleaseService.OPERATION_CONTEXT_TYPE_REFERENCE.getClass().getName())
+com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.logger == orig(com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.logger)
+com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.logger.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.logger.getClass().getName())
+com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.GSON == orig(com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.GSON)
+com.ctrip.framework.apollo.biz.config.BizConfig.logger == orig(com.ctrip.framework.apollo.biz.config.BizConfig.logger)
+com.ctrip.framework.apollo.biz.config.BizConfig.GSON == orig(com.ctrip.framework.apollo.biz.config.BizConfig.GSON)
+com.ctrip.framework.apollo.biz.config.BizConfig.INTERVAL_TIME_UNIT == orig(com.ctrip.framework.apollo.biz.config.BizConfig.INTERVAL_TIME_UNIT)
+com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference == orig(com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference)
+com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference.getClass().getName() == orig(com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference.getClass().getName())
+com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference.getClass().getName() == orig(com.ctrip.framework.apollo.biz.config.BizConfig.namespaceValueLengthOverrideTypeReference.getClass().getName())
+com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference.getClass().getName() == orig(com.ctrip.framework.apollo.biz.config.BizConfig.releaseHistoryRetentionSizeOverrideTypeReference.getClass().getName())
+com.ctrip.framework.apollo.biz.config.BizConfig.namespaceValueLengthOverrideTypeReference == orig(com.ctrip.framework.apollo.biz.config.BizConfig.namespaceValueLengthOverrideTypeReference)
+com.ctrip.framework.apollo.biz.config.BizConfig.releaseHistoryRetentionSizeOverrideTypeReference == orig(com.ctrip.framework.apollo.biz.config.BizConfig.releaseHistoryRetentionSizeOverrideTypeReference)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.logger == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.logger)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.LIST_SEPARATOR == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.LIST_SEPARATOR)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.LIST_SEPARATOR.toString == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.LIST_SEPARATOR.toString)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY.getClass().getName() == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY.getClass().getName())
+com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY[] == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY[])
+this.clusterService == orig(this.clusterService)
+this.auditService == orig(this.auditService)
+return has only one value
+
+
+
+====================================================================================================
+SAMPLE 4/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: apollo
+METHOD: com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.setMockitoInterceptor(org.mockito.internal.creation.bytebuddy.access.MockMethodInterceptor)
+####################################################################################################
+
+===========================================================================
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.setMockitoInterceptor(org.mockito.internal.creation.bytebuddy.access.MockMethodInterceptor):::ENTER
+this.mockitoInterceptor == null
+
+===========================================================================
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.setMockitoInterceptor(org.mockito.internal.creation.bytebuddy.access.MockMethodInterceptor):::EXIT
+this.mockitoInterceptor == orig(arg0)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$j67p190 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$j67p190)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$4v1ml40 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$4v1ml40)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$d0je2m1 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$d0je2m1)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$jh9nhg1 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$jh9nhg1)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$3f11ml2 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$3f11ml2)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$mk39331 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$mk39331)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$ku8f982 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$ku8f982)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$9os4543 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$9os4543)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$67uvia3 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$67uvia3)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$stg5jm1 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$stg5jm1)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$aumcj90 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$aumcj90)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$e3eogl0 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$e3eogl0)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$4cscpe1 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$4cscpe1)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$d4qslf2 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$d4qslf2)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$69aq8p1 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$69aq8p1)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$5f4g0g0 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$5f4g0g0)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$rm31hd3 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$rm31hd3)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$388m821 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$388m821)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$omfr5r3 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$omfr5r3)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$5p2ojn2 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$5p2ojn2)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$p41uod1 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$p41uod1)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$7muqof1 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$7muqof1)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$ppqt2e2 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$ppqt2e2)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$d9brbe3 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$d9brbe3)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$7m9oaq0 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$7m9oaq0)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$shm9540 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$shm9540)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$d3h2bs1 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$d3h2bs1)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$ako7gf3 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$ako7gf3)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$dm4ft02 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$dm4ft02)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$n7tq2u0 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$n7tq2u0)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$t3vrbt3 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$t3vrbt3)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$k5cnu53 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$k5cnu53)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$797ejp2 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$797ejp2)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$379ao90 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$379ao90)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$f0umhs3 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$f0umhs3)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$r78ll61 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$r78ll61)
+com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$4ec8q12 == orig(com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.cachedValue$AWmMTDaF$4ec8q12)
+
+
+
+====================================================================================================
+SAMPLE 5/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: apollo
+METHOD: com.ctrip.framework.apollo.biz.repository.ReleaseHistoryRepositoryTest.testFindFirst100ByAppIdAndClusterNameAndNamespaceNameAndBranchNameAndIdLessThanEqualOrderByIdAsc()
+####################################################################################################
+
+===========================================================================
+com.ctrip.framework.apollo.biz.repository.ReleaseHistoryRepositoryTest.testFindFirst100ByAppIdAndClusterNameAndNamespaceNameAndBranchNameAndIdLessThanEqualOrderByIdAsc():::ENTER
+this has only one value
+this.releaseHistoryRepository has only one value
+
+===========================================================================
+com.ctrip.framework.apollo.biz.repository.ReleaseHistoryRepositoryTest.testFindFirst100ByAppIdAndClusterNameAndNamespaceNameAndBranchNameAndIdLessThanEqualOrderByIdAsc():::EXIT
+this.releaseHistoryRepository == orig(this.releaseHistoryRepository)
+this.releaseHistoryRepository.getClass().getName() == orig(this.releaseHistoryRepository.getClass().getName())
+com.ctrip.framework.apollo.biz.AbstractIntegrationTest.APP_ID == orig(com.ctrip.framework.apollo.biz.AbstractIntegrationTest.APP_ID)
+com.ctrip.framework.apollo.biz.AbstractIntegrationTest.APP_ID.toString == orig(com.ctrip.framework.apollo.biz.AbstractIntegrationTest.APP_ID.toString)
+com.ctrip.framework.apollo.biz.AbstractIntegrationTest.CLUSTER_NAME == orig(com.ctrip.framework.apollo.biz.AbstractIntegrationTest.CLUSTER_NAME)
+com.ctrip.framework.apollo.biz.AbstractIntegrationTest.CLUSTER_NAME == orig(com.ctrip.framework.apollo.biz.AbstractIntegrationTest.BRANCH_NAME)
+com.ctrip.framework.apollo.biz.AbstractIntegrationTest.CLUSTER_NAME.toString == orig(com.ctrip.framework.apollo.biz.AbstractIntegrationTest.CLUSTER_NAME.toString)
+com.ctrip.framework.apollo.biz.AbstractIntegrationTest.CLUSTER_NAME.toString == orig(com.ctrip.framework.apollo.biz.AbstractIntegrationTest.BRANCH_NAME.toString)
+com.ctrip.framework.apollo.biz.AbstractIntegrationTest.NAMESPACE_NAME == orig(com.ctrip.framework.apollo.biz.AbstractIntegrationTest.NAMESPACE_NAME)
+com.ctrip.framework.apollo.biz.AbstractIntegrationTest.NAMESPACE_NAME.toString == orig(com.ctrip.framework.apollo.biz.AbstractIntegrationTest.NAMESPACE_NAME.toString)
+this.releaseHistoryRepository has only one value
+
+
+
+====================================================================================================
+SAMPLE 6/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: apollo
+METHOD: com.ctrip.framework.apollo.biz.message.DatabaseMessageSender.cleanMessage(java.lang.Long)
+####################################################################################################
+
+===========================================================================
+com.ctrip.framework.apollo.biz.message.DatabaseMessageSender.cleanMessage(java.lang.Long):::ENTER
+this.releaseMessageRepository.getClass().getName() == jdk.proxy2.$Proxy248.class
+
+===========================================================================
+com.ctrip.framework.apollo.biz.message.DatabaseMessageSender.cleanMessage(java.lang.Long):::EXIT108
+
+===========================================================================
+com.ctrip.framework.apollo.biz.message.DatabaseMessageSender.cleanMessage(java.lang.Long):::EXIT
+com.ctrip.framework.apollo.biz.message.DatabaseMessageSender.logger == orig(com.ctrip.framework.apollo.biz.message.DatabaseMessageSender.logger)
+com.ctrip.framework.apollo.biz.message.DatabaseMessageSender.logger.getClass().getName() == orig(com.ctrip.framework.apollo.biz.message.DatabaseMessageSender.logger.getClass().getName())
+this.toClean == orig(this.toClean)
+this.toClean.getClass().getName() == orig(this.toClean.getClass().getName())
+this.cleanExecutorService == orig(this.cleanExecutorService)
+this.cleanExecutorService.getClass().getName() == orig(this.cleanExecutorService.getClass().getName())
+this.cleanStopped == orig(this.cleanStopped)
+this.releaseMessageRepository == orig(this.releaseMessageRepository)
+this.releaseMessageRepository.getClass().getName() == orig(this.releaseMessageRepository.getClass().getName())
+this.releaseMessageRepository.getClass().getName() == jdk.proxy2.$Proxy248.class
+
+
+
+====================================================================================================
+SAMPLE 7/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: apollo
+METHOD: com.ctrip.framework.apollo.biz.entity.ReleaseHistory.setNamespaceName(java.lang.String)
+####################################################################################################
+
+===========================================================================
+com.ctrip.framework.apollo.biz.entity.ReleaseHistory.setNamespaceName(java.lang.String):::ENTER
+this.namespaceName == this.operationContext
+this.namespaceName == this.dataChangeCreatedBy
+this.namespaceName == this.dataChangeLastModifiedBy
+this.releaseId == this.previousReleaseId
+this.releaseId == this.operation
+this.releaseId == this.id
+this.releaseId == this.deletedAt
+this.dataChangeCreatedTime == this.dataChangeLastModifiedTime
+this.appId.toString one of { "test", "testApp" }
+this.namespaceName == null
+this.branchName.toString == "default"
+this.releaseId == 0
+this.dataChangeCreatedTime == null
+namespaceName has only one value
+namespaceName != null
+namespaceName.toString == "application"
+this.appId.toString > namespaceName.toString
+this.clusterName.toString > namespaceName.toString
+this.branchName.toString > namespaceName.toString
+
+===========================================================================
+com.ctrip.framework.apollo.biz.entity.ReleaseHistory.setNamespaceName(java.lang.String):::EXIT
+this.appId == orig(this.appId)
+this.appId.toString == orig(this.appId.toString)
+this.clusterName == orig(this.clusterName)
+this.clusterName.toString == orig(this.clusterName.toString)
+this.namespaceName == orig(namespaceName)
+this.namespaceName.toString == namespaceName.toString
+this.branchName == orig(this.branchName)
+this.branchName.toString == orig(this.branchName.toString)
+this.releaseId == this.previousReleaseId
+this.releaseId == this.operation
+this.releaseId == this.id
+this.releaseId == this.deletedAt
+this.releaseId == orig(this.releaseId)
+this.releaseId == orig(this.previousReleaseId)
+this.releaseId == orig(this.operation)
+this.releaseId == orig(this.id)
+this.releaseId == orig(this.deletedAt)
+this.operationContext == this.dataChangeCreatedBy
+this.operationContext == this.dataChangeLastModifiedBy
+this.operationContext == orig(this.namespaceName)
+this.operationContext == orig(this.operationContext)
+this.operationContext == orig(this.dataChangeCreatedBy)
+this.operationContext == orig(this.dataChangeLastModifiedBy)
+this.isDeleted == orig(this.isDeleted)
+this.dataChangeCreatedTime == this.dataChangeLastModifiedTime
+this.dataChangeCreatedTime == orig(this.dataChangeCreatedTime)
+this.dataChangeCreatedTime == orig(this.dataChangeLastModifiedTime)
+namespaceName.toString == orig(namespaceName.toString)
+this.appId.toString one of { "test", "testApp" }
+this.namespaceName has only one value
+this.namespaceName != null
+this.branchName.toString == "default"
+this.releaseId == 0
+this.operationContext == null
+this.dataChangeCreatedTime == null
+namespaceName.toString == "application"
+this.appId.toString > namespaceName.toString
+this.clusterName.toString > namespaceName.toString
+this.branchName.toString > namespaceName.toString
+
+
+
+====================================================================================================
+SAMPLE 8/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: apollo
+METHOD: com.ctrip.framework.apollo.common.entity.BaseEntity.getDataChangeLastModifiedBy()
+####################################################################################################
+
+===========================================================================
+com.ctrip.framework.apollo.common.entity.BaseEntity.getDataChangeLastModifiedBy():::ENTER
+this.id >= 0
+this.deletedAt one of { 0, 1789082188062L }
+this.dataChangeCreatedBy == null
+this.dataChangeLastModifiedBy.toString == "user-test"
+
+===========================================================================
+com.ctrip.framework.apollo.common.entity.BaseEntity.getDataChangeLastModifiedBy():::EXIT
+this.id == orig(this.id)
+this.isDeleted == orig(this.isDeleted)
+this.deletedAt == orig(this.deletedAt)
+this.dataChangeCreatedBy == orig(this.dataChangeCreatedBy)
+this.dataChangeCreatedTime == orig(this.dataChangeCreatedTime)
+this.dataChangeLastModifiedBy == return
+this.dataChangeLastModifiedBy.toString == return.toString
+this.dataChangeLastModifiedTime == orig(this.dataChangeLastModifiedTime)
+return == orig(this.dataChangeLastModifiedBy)
+return.toString == orig(this.dataChangeLastModifiedBy.toString)
+this.id >= 0
+this.deletedAt one of { 0, 1789082188062L }
+this.dataChangeCreatedBy == null
+return.toString == "user-test"
+
+
+
+====================================================================================================
+SAMPLE 9/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: apollo
+METHOD: com.ctrip.framework.apollo.biz.entity.Namespace.setClusterName(java.lang.String)
+####################################################################################################
+
+===========================================================================
+com.ctrip.framework.apollo.biz.entity.Namespace.setClusterName(java.lang.String):::ENTER
+this.clusterName == this.dataChangeCreatedBy
+this.clusterName == this.dataChangeLastModifiedBy
+this.dataChangeCreatedTime == this.dataChangeLastModifiedTime
+this.appId != null
+this.clusterName == null
+this.namespaceName.toString == "application"
+this.isDeleted == false
+this.deletedAt == 0
+this.dataChangeCreatedTime == null
+clusterName != null
+this.appId.toString > this.namespaceName.toString
+this.appId.toString != clusterName.toString
+this.namespaceName.toString < clusterName.toString
+this.id >= this.deletedAt
+
+===========================================================================
+com.ctrip.framework.apollo.biz.entity.Namespace.setClusterName(java.lang.String):::EXIT
+this.appId == orig(this.appId)
+this.appId.toString == orig(this.appId.toString)
+this.clusterName == orig(clusterName)
+this.clusterName.toString == clusterName.toString
+this.namespaceName == orig(this.namespaceName)
+this.namespaceName.toString == orig(this.namespaceName.toString)
+this.id == orig(this.id)
+this.isDeleted == orig(this.isDeleted)
+this.deletedAt == orig(this.deletedAt)
+this.dataChangeCreatedBy == this.dataChangeLastModifiedBy
+this.dataChangeCreatedBy == orig(this.clusterName)
+this.dataChangeCreatedBy == orig(this.dataChangeCreatedBy)
+this.dataChangeCreatedBy == orig(this.dataChangeLastModifiedBy)
+this.dataChangeCreatedTime == this.dataChangeLastModifiedTime
+this.dataChangeCreatedTime == orig(this.dataChangeCreatedTime)
+this.dataChangeCreatedTime == orig(this.dataChangeLastModifiedTime)
+clusterName.toString == orig(clusterName.toString)
+this.appId != null
+this.clusterName != null
+this.namespaceName.toString == "application"
+this.isDeleted == false
+this.deletedAt == 0
+this.dataChangeCreatedBy == null
+this.dataChangeCreatedTime == null
+this.appId.toString > this.namespaceName.toString
+this.appId.toString != clusterName.toString
+this.namespaceName.toString < clusterName.toString
+this.id >= this.deletedAt
+
+
+
+====================================================================================================
+SAMPLE 10/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: apollo
+METHOD: com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.initialize()
+####################################################################################################
+
+===========================================================================
+com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.initialize():::ENTER
+this.releaseRepository.getClass().getName() == jdk.proxy2.$Proxy260.class
+
+===========================================================================
+com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.initialize():::EXIT
+com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.logger == orig(com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.logger)
+com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.logger.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.logger.getClass().getName())
+com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.logger.getClass().getName() == orig(com.ctrip.framework.apollo.biz.config.BizConfig.logger.getClass().getName())
+com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.logger.getClass().getName() == orig(com.ctrip.framework.apollo.biz.service.BizDBPropertySource.logger.getClass().getName())
+com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.logger.getClass().getName() == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.logger.getClass().getName())
+com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.GSON == orig(com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.GSON)
+this.releaseClearQueue == orig(this.releaseClearQueue)
+this.releaseClearQueue.getClass().getName() == orig(this.releaseClearQueue.getClass().getName())
+this.cleanExecutorService == orig(this.cleanExecutorService)
+this.cleanExecutorService.getClass().getName() == orig(this.cleanExecutorService.getClass().getName())
+this.cleanStopped == orig(this.cleanStopped)
+this.releaseHistoryRepository == orig(this.releaseHistoryRepository)
+this.releaseHistoryRepository.getClass().getName() == orig(this.releaseHistoryRepository.getClass().getName())
+this.releaseRepository == orig(this.releaseRepository)
+this.releaseRepository.getClass().getName() == orig(this.releaseRepository.getClass().getName())
+this.auditService == orig(this.auditService)
+this.auditService.auditRepository == orig(this.auditService.auditRepository)
+this.bizConfig == orig(this.bizConfig)
+com.ctrip.framework.apollo.biz.config.BizConfig.logger == orig(com.ctrip.framework.apollo.biz.config.BizConfig.logger)
+com.ctrip.framework.apollo.biz.config.BizConfig.GSON == orig(com.ctrip.framework.apollo.biz.config.BizConfig.GSON)
+com.ctrip.framework.apollo.biz.config.BizConfig.INTERVAL_TIME_UNIT == orig(com.ctrip.framework.apollo.biz.config.BizConfig.INTERVAL_TIME_UNIT)
+com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference == orig(com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference)
+com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference.getClass().getName() == orig(com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference.getClass().getName())
+com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference.getClass().getName() == orig(com.ctrip.framework.apollo.biz.config.BizConfig.namespaceValueLengthOverrideTypeReference.getClass().getName())
+com.ctrip.framework.apollo.biz.config.BizConfig.appIdValueLengthOverrideTypeReference.getClass().getName() == orig(com.ctrip.framework.apollo.biz.config.BizConfig.releaseHistoryRetentionSizeOverrideTypeReference.getClass().getName())
+com.ctrip.framework.apollo.biz.config.BizConfig.namespaceValueLengthOverrideTypeReference == orig(com.ctrip.framework.apollo.biz.config.BizConfig.namespaceValueLengthOverrideTypeReference)
+com.ctrip.framework.apollo.biz.config.BizConfig.releaseHistoryRetentionSizeOverrideTypeReference == orig(com.ctrip.framework.apollo.biz.config.BizConfig.releaseHistoryRetentionSizeOverrideTypeReference)
+this.bizConfig.propertySource == orig(this.bizConfig.propertySource)
+com.ctrip.framework.apollo.biz.service.BizDBPropertySource.logger == orig(com.ctrip.framework.apollo.biz.service.BizDBPropertySource.logger)
+this.bizConfig.propertySource.serverConfigRepository == orig(this.bizConfig.propertySource.serverConfigRepository)
+this.bizConfig.propertySource.serverConfigRepository.getClass().getName() == orig(this.bizConfig.propertySource.serverConfigRepository.getClass().getName())
+this.bizConfig.propertySource.dataSource == orig(this.bizConfig.propertySource.dataSource)
+this.bizConfig.propertySource.dataSource.getClass().getName() == orig(this.bizConfig.propertySource.dataSource.getClass().getName())
+this.bizConfig.propertySource.env == orig(this.bizConfig.propertySource.env)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.logger == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.logger)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.LIST_SEPARATOR == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.LIST_SEPARATOR)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.LIST_SEPARATOR.toString == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.LIST_SEPARATOR.toString)
+this.bizConfig.splitter == orig(this.bizConfig.splitter)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY)
+com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY.getClass().getName() == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY.getClass().getName())
+com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY[] == orig(com.ctrip.framework.apollo.common.config.RefreshableConfig.EMPTY_STRING_ARRAY[])
+this.bizConfig.environment == orig(this.bizConfig.environment)
+this.bizConfig.environment.getClass().getName() == orig(this.bizConfig.propertySource.env.getClass().getName())
+this.bizConfig.environment.getClass().getName() == orig(this.bizConfig.environment.getClass().getName())
+this.bizConfig.propertySources == orig(this.bizConfig.propertySources)
+this.bizConfig.propertySources[] == orig(this.bizConfig.propertySources[])
+this.bizConfig.propertySources.getClass().getName() == orig(this.bizConfig.propertySources.getClass().getName())
+this.bizConfig.executorService == orig(this.bizConfig.executorService)
+this.bizConfig.executorService.getClass().getName() == orig(this.bizConfig.executorService.getClass().getName())
+this.transactionManager == orig(this.transactionManager)
+this.releaseRepository.getClass().getName() == jdk.proxy2.$Proxy260.class
+

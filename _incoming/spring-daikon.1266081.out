@@ -1,0 +1,13 @@
+[TIMING] === spring-full daikon run started 2026-09-11T00:23:10-04:00 ===
+========================================
+Spring (full) Daikon invariant detection
+========================================
+JAVA:   /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+TRACE:  /scratch/mjk76/ea442/promptstudy/spring-full-chicory-out/1259757/spring-full.dtrace
+JAR:    /project/mjk76/ea442/promptstudy/daikon.jar
+OUTPUT: /project/mjk76/ea442/promptstudy/spring-daikon-out
+
+>>> Trace size:
+-rw-r--r--+ 1 ea442 ea442 329M Sep 10 18:35 /scratch/mjk76/ea442/promptstudy/spring-full-chicory-out/1259757/spring-full.dtrace
+
+>>> Starting Daikon at 2026-09-11T00:23:10-04:00

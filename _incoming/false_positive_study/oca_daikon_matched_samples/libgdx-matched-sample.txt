@@ -1,0 +1,670 @@
+==============================================================================================================
+SAMPLE 1/10
+==============================================================================================================
+PROJECT: libgdx
+
+OCA METHOD: com.badlogic.gdx.utils.CharArray#add(char,char):void
+DAIKON METHOD: com.badlogic.gdx.utils.CharArray.add(char, char)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_EXIT] Character.isValidCodePoint(value2)
+ID: d0c62bd0-6e88-493a-b904-090166714e6a
+Rationale: value2 is a char and must be a valid Unicode code point.
+Source file: com/badlogic/gdx/utils/CharArray.java
+
+[METHOD_EXIT] Character.isValidCodePoint(value1)
+ID: 5d221539-5dfe-48f7-96a6-a812de23fa7b
+Rationale: value1 is a char, so it must be a valid Unicode code point within the char range.
+Source file: com/badlogic/gdx/utils/CharArray.java
+
+[METHOD_EXIT] value1 != value2
+ID: e3a318f1-fd6c-49e0-bdfa-b34339956859
+Rationale: No explicit method contracts indicate values must differ, but added values may be distinct.
+Source file: com/badlogic/gdx/utils/CharArray.java
+
+[METHOD_ENTRY] Character.isDefined(value2)
+ID: f76d6a43-f798-41aa-9039-8310ed1e336c
+Rationale: value2 should be a valid defined Unicode character.
+Source file: com/badlogic/gdx/utils/CharArray.java
+
+[METHOD_ENTRY] Character.isDefined(value1)
+ID: ea00f8e8-fa2d-4e6c-868c-5190c6ad1973
+Rationale: value1 should be a valid defined Unicode character.
+Source file: com/badlogic/gdx/utils/CharArray.java
+
+[METHOD_ENTRY] value1 != value2
+ID: 7655ed1b-a449-4fde-bf52-eb5854ee8763
+Rationale: It is plausible that value1 and value2 are not equal, capturing a non-equality relationship.
+Source file: com/badlogic/gdx/utils/CharArray.java
+
+[METHOD_EXIT] !(value1 < 0)
+ID: 6e68152e-0dac-4cca-8f5d-3e9af775c2df
+Rationale: char type is non-negative by Java definition.
+Source file: com/badlogic/gdx/utils/CharArray.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+com.badlogic.gdx.utils.CharArray.add(char, char):::ENTER
+this has only one value
+this.items has only one value
+this.items[] == [97, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+this.items[] elements one of { 0, 97 }
+this.size == 1
+this.ordered == true
+value1 == 98
+value2 == 99
+
+===========================================================================
+com.badlogic.gdx.utils.CharArray.add(char, char):::EXIT
+com.badlogic.gdx.utils.CharArray.NULL == orig(com.badlogic.gdx.utils.CharArray.NULL)
+com.badlogic.gdx.utils.CharArray.NULL.toString == orig(com.badlogic.gdx.utils.CharArray.NULL.toString)
+com.badlogic.gdx.utils.CharArray.DIGITS == orig(com.badlogic.gdx.utils.CharArray.DIGITS)
+com.badlogic.gdx.utils.CharArray.DIGITS[] == orig(com.badlogic.gdx.utils.CharArray.DIGITS[])
+this.items == orig(this.items)
+this.ordered == orig(this.ordered)
+this.items has only one value
+this.items[] == [97, 98, 99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+this.size == 3
+this.ordered == true
+orig(value1) in this.items[]
+orig(value2) in this.items[]
+
+
+==============================================================================================================
+SAMPLE 2/10
+==============================================================================================================
+PROJECT: libgdx
+
+OCA METHOD: com.badlogic.gdx.utils.JsonValue#getString(String,String):String
+DAIKON METHOD: com.badlogic.gdx.utils.JsonValue.getString(java.lang.String, java.lang.String)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_EXIT] (result == defaultValue) || (result != null && !result.isEmpty())
+ID: b82dfa8c-857c-4322-b8a3-bd7678f6fa28
+Rationale: If result is not defaultValue, it must be a string value of the child JsonValue that is neither null nor empty.
+Source file: com/badlogic/gdx/utils/JsonValue.java
+
+[METHOD_ENTRY] defaultValue == null || true
+ID: 4754ffc4-543b-43bb-b411-b935f00d9aa8
+Rationale: defaultValue is annotated @Null, so it may be null or non-null.
+Source file: com/badlogic/gdx/utils/JsonValue.java
+
+[METHOD_EXIT] defaultValue == null || result != null
+ID: 5fa07b53-835d-438c-a72b-82de0a15c1e1
+Rationale: If defaultValue is non-null, result cannot be null due to return logic.
+Source file: com/badlogic/gdx/utils/JsonValue.java
+
+[METHOD_ENTRY] name.trim().length() > 0
+ID: 29ba8bc9-b591-48e1-9dab-07516d4cf12f
+Rationale: Name string keys for JSON must have some content after trimming whitespace.
+Source file: com/badlogic/gdx/utils/JsonValue.java
+
+[METHOD_ENTRY] defaultValue == null || defaultValue.length() >= 0
+ID: 46387b98-b4d8-47da-951d-b3f9e256166b
+Rationale: If defaultValue is non-null, it is a valid string with a non-negative length.
+Source file: com/badlogic/gdx/utils/JsonValue.java
+
+[METHOD_ENTRY] name != null
+ID: 2bc97220-9c13-4c47-b806-465082cd9d76
+Rationale: The parameter name must be non-null for get(name) to work properly.
+Source file: com/badlogic/gdx/utils/JsonValue.java
+
+[METHOD_EXIT] result == defaultValue || (result != null && !result.isEmpty())
+ID: 17717268-a849-489f-8d59-22fe2967e942
+Rationale: If a child JsonValue is found, result is its string representation; otherwise, it's the defaultValue. Thus, result equals defaultValue or a non-null string.
+Source file: com/badlogic/gdx/utils/JsonValue.java
+
+[METHOD_ENTRY] !name.isEmpty()
+ID: d7e1e9be-978c-4e95-b07e-5e348d5cb15f
+Rationale: It's likely that name is expected to be a non-empty string as a key in JSON.
+Source file: com/badlogic/gdx/utils/JsonValue.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+com.badlogic.gdx.utils.JsonValue.getString(java.lang.String, java.lang.String):::ENTER
+this.stringValue == this.name
+this.stringValue == defaultValue
+this.parent == this.next
+this.parent == this.prev
+this.type has only one value
+this.stringValue == null
+this.doubleValue == 0.0
+this.longValue == 0
+this.parent == null
+this.size == 2
+name has only one value
+name.toString == "class"
+
+===========================================================================
+com.badlogic.gdx.utils.JsonValue.getString(java.lang.String, java.lang.String):::EXIT
+this.type == orig(this.type)
+this.stringValue == return
+this.doubleValue == orig(this.doubleValue)
+this.longValue == orig(this.longValue)
+this.name == return
+this.child == orig(this.child)
+this.last == orig(this.last)
+this.parent == this.next
+this.parent == this.prev
+this.parent == orig(this.parent)
+this.parent == orig(this.next)
+this.parent == orig(this.prev)
+this.size == orig(this.size)
+name.toString == orig(name.toString)
+return == orig(this.stringValue)
+return == orig(this.name)
+return == orig(defaultValue)
+this.type has only one value
+this.doubleValue == 0.0
+this.longValue == 0
+this.parent == null
+this.size == 2
+name.toString == "class"
+return == null
+
+
+==============================================================================================================
+SAMPLE 3/10
+==============================================================================================================
+PROJECT: libgdx
+
+OCA METHOD: com.badlogic.gdx.utils.CharArray#incr(int,char):void
+DAIKON METHOD: com.badlogic.gdx.utils.CharArray.incr(int, char)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_ENTRY] value >= 0
+ID: c0e19344-2458-4348-ae0a-f3255268f4e1
+Rationale: The value is a char, which is unsigned 16-bit, so it must be >= 0.
+Source file: com/badlogic/gdx/utils/CharArray.java
+
+[METHOD_ENTRY] index >= 0
+ID: a91c8272-7f74-4088-ba87-11a6681685f0
+Rationale: The index should be non-negative as it is used to access elements in the array.
+Source file: com/badlogic/gdx/utils/CharArray.java
+
+[METHOD_ENTRY] value <= Character.MAX_VALUE
+ID: b6c05956-4d8c-4740-9040-3c088519255b
+Rationale: The value is a char, so it cannot exceed Character.MAX_VALUE.
+Source file: com/badlogic/gdx/utils/CharArray.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+com.badlogic.gdx.utils.CharArray.incr(int, char):::ENTER
+com.badlogic.gdx.utils.CharArray.FALSE_STRING_SIZE == this.size
+this has only one value
+this.items has only one value
+this.items[] == [65, 98, 90, 100, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+this.ordered == true
+index == 0
+value == 1
+index in this.items[]
+
+===========================================================================
+com.badlogic.gdx.utils.CharArray.incr(int, char):::EXIT
+com.badlogic.gdx.utils.CharArray.FALSE_STRING_SIZE == this.size
+com.badlogic.gdx.utils.CharArray.NULL == orig(com.badlogic.gdx.utils.CharArray.NULL)
+com.badlogic.gdx.utils.CharArray.NULL.toString == orig(com.badlogic.gdx.utils.CharArray.NULL.toString)
+com.badlogic.gdx.utils.CharArray.DIGITS == orig(com.badlogic.gdx.utils.CharArray.DIGITS)
+com.badlogic.gdx.utils.CharArray.DIGITS[] == orig(com.badlogic.gdx.utils.CharArray.DIGITS[])
+this.items == orig(this.items)
+this.ordered == orig(this.ordered)
+this.items has only one value
+this.items[] == [66, 98, 90, 100, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+this.ordered == true
+orig(index) in this.items[]
+
+
+==============================================================================================================
+SAMPLE 4/10
+==============================================================================================================
+PROJECT: libgdx
+
+OCA METHOD: com.badlogic.gdx.utils.CharArray#substring(int,int):String
+DAIKON METHOD: com.badlogic.gdx.utils.CharArray.substring(int, int)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_ENTRY] start >= 0
+ID: aa6b71cc-6e66-4405-ae58-00f36ff13fd0
+Rationale: start is used as the start index of substring, must be non-negative
+Source file: com/badlogic/gdx/utils/CharArray.java
+
+[METHOD_ENTRY] end >= start
+ID: a707093f-cbf1-436e-bddd-afe09932fe84
+Rationale: end index must be at least start index to form a valid substring range
+Source file: com/badlogic/gdx/utils/CharArray.java
+
+[METHOD_EXIT] result.length() == end - start
+ID: 4d543aa2-9728-454d-b694-da6c267ff9fd
+Rationale: The substring method constructs a new String from items from start with length (end - start). Thus the result length matches end - start.
+Source file: com/badlogic/gdx/utils/CharArray.java
+
+[METHOD_EXIT] start >= 0 && end >= start && result != null
+ID: 8f1bf9f9-0c60-4da7-9b0f-d1834f9c06f6
+Rationale: Since the method returns a new String, result should never be null and indices are validated.
+Source file: com/badlogic/gdx/utils/CharArray.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+com.badlogic.gdx.utils.CharArray.substring(int, int):::ENTER
+this.items[] one of { [72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100, 33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [105, 72, 55357, 56832, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] }
+this.size one of { 4, 12 }
+this.ordered == true
+start one of { 0, 6 }
+
+===========================================================================
+com.badlogic.gdx.utils.CharArray.substring(int, int):::EXIT
+com.badlogic.gdx.utils.CharArray.NULL == orig(com.badlogic.gdx.utils.CharArray.NULL)
+com.badlogic.gdx.utils.CharArray.NULL.toString == orig(com.badlogic.gdx.utils.CharArray.NULL.toString)
+com.badlogic.gdx.utils.CharArray.DIGITS == orig(com.badlogic.gdx.utils.CharArray.DIGITS)
+com.badlogic.gdx.utils.CharArray.DIGITS[] == orig(com.badlogic.gdx.utils.CharArray.DIGITS[])
+this.items == orig(this.items)
+this.items[] == orig(this.items[])
+this.size == orig(this.size)
+this.ordered == orig(this.ordered)
+this.items[] one of { [72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100, 33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [105, 72, 55357, 56832, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] }
+this.size one of { 4, 12 }
+this.ordered == true
+
+
+==============================================================================================================
+SAMPLE 5/10
+==============================================================================================================
+PROJECT: libgdx
+
+OCA METHOD: com.badlogic.gdx.utils.LongArray#incr(int,long):void
+DAIKON METHOD: com.badlogic.gdx.utils.LongArray.incr(int, long)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_ENTRY] index >= 0
+ID: b2a2b3df-6dce-4917-970f-524b7ebbf317
+Rationale: The index used for array access must be non-negative.
+Source file: com/badlogic/gdx/utils/LongArray.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+com.badlogic.gdx.utils.LongArray.incr(int, long):::ENTER
+this has only one value
+this.items has only one value
+this.items[] == [3, 4, 5, 1, 56, 32]
+this.size == 6
+this.ordered == true
+index == 3
+value == 45
+index in this.items[]
+
+===========================================================================
+com.badlogic.gdx.utils.LongArray.incr(int, long):::EXIT
+this.items == orig(this.items)
+this.size == orig(this.size)
+this.ordered == orig(this.ordered)
+this.items has only one value
+this.items[] == [3, 4, 5, 46, 56, 32]
+this.size == 6
+this.ordered == true
+orig(index) in this.items[]
+
+
+==============================================================================================================
+SAMPLE 6/10
+==============================================================================================================
+PROJECT: libgdx
+
+OCA METHOD: com.badlogic.gdx.utils.JsonReader#parse(char[],int,int):JsonValue
+DAIKON METHOD: com.badlogic.gdx.utils.JsonReader.parse(char[], int, int)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_ENTRY] length >= offset
+ID: 5ea7e90b-b120-477a-b4f9-2b419ea011f2
+Rationale: Length should be greater or equal to offset as it represents an end index or length of data slice.
+Source file: com/badlogic/gdx/utils/JsonReader.java
+
+[METHOD_ENTRY] data.length >= 0
+ID: 673ec0ca-e2a2-4098-96ea-bc8aa356dfdf
+Rationale: Data array length is always non-negative.
+Source file: com/badlogic/gdx/utils/JsonReader.java
+
+[METHOD_ENTRY] data != null
+ID: 03f54e1d-212e-4ca6-83dd-a86da90203bd
+Rationale: Data array must be non-null for parsing JSON characters from it.
+Source file: com/badlogic/gdx/utils/JsonReader.java
+
+[METHOD_ENTRY] length <= data.length
+ID: 279c5299-4e9a-498f-8fe5-abbc39cf18d5
+Rationale: Length must be within data array bounds to avoid out-of-range access.
+Source file: com/badlogic/gdx/utils/JsonReader.java
+
+[METHOD_ENTRY] offset >= 0
+ID: d4d1ad03-d7e9-462c-81d3-ebd6bc7b46ef
+Rationale: Offset must be non-negative as it denotes a position in the data array.
+Source file: com/badlogic/gdx/utils/JsonReader.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+com.badlogic.gdx.utils.JsonReader.parse(char[], int, int):::ENTER
+com.badlogic.gdx.utils.JsonReader.json_error == offset
+this.root == this.current
+this.root == null
+data[] elements >= 0
+
+===========================================================================
+com.badlogic.gdx.utils.JsonReader.parse(char[], int, int):::EXIT
+com.badlogic.gdx.utils.JsonReader._json_actions == orig(com.badlogic.gdx.utils.JsonReader._json_actions)
+com.badlogic.gdx.utils.JsonReader._json_actions[] == orig(com.badlogic.gdx.utils.JsonReader._json_actions[])
+com.badlogic.gdx.utils.JsonReader._json_key_offsets == orig(com.badlogic.gdx.utils.JsonReader._json_key_offsets)
+com.badlogic.gdx.utils.JsonReader._json_key_offsets[] == orig(com.badlogic.gdx.utils.JsonReader._json_key_offsets[])
+com.badlogic.gdx.utils.JsonReader._json_trans_keys == orig(com.badlogic.gdx.utils.JsonReader._json_trans_keys)
+com.badlogic.gdx.utils.JsonReader._json_trans_keys[] == orig(com.badlogic.gdx.utils.JsonReader._json_trans_keys[])
+com.badlogic.gdx.utils.JsonReader._json_single_lengths == orig(com.badlogic.gdx.utils.JsonReader._json_single_lengths)
+com.badlogic.gdx.utils.JsonReader._json_single_lengths[] == orig(com.badlogic.gdx.utils.JsonReader._json_single_lengths[])
+com.badlogic.gdx.utils.JsonReader._json_range_lengths == orig(com.badlogic.gdx.utils.JsonReader._json_range_lengths)
+com.badlogic.gdx.utils.JsonReader._json_range_lengths[] == orig(com.badlogic.gdx.utils.JsonReader._json_range_lengths[])
+com.badlogic.gdx.utils.JsonReader._json_index_offsets == orig(com.badlogic.gdx.utils.JsonReader._json_index_offsets)
+com.badlogic.gdx.utils.JsonReader._json_index_offsets[] == orig(com.badlogic.gdx.utils.JsonReader._json_index_offsets[])
+com.badlogic.gdx.utils.JsonReader._json_indicies == orig(com.badlogic.gdx.utils.JsonReader._json_indicies)
+com.badlogic.gdx.utils.JsonReader._json_indicies[] == orig(com.badlogic.gdx.utils.JsonReader._json_indicies[])
+com.badlogic.gdx.utils.JsonReader._json_trans_targs == orig(com.badlogic.gdx.utils.JsonReader._json_trans_targs)
+com.badlogic.gdx.utils.JsonReader._json_trans_targs[] == orig(com.badlogic.gdx.utils.JsonReader._json_trans_targs[])
+com.badlogic.gdx.utils.JsonReader._json_trans_actions == orig(com.badlogic.gdx.utils.JsonReader._json_trans_actions)
+com.badlogic.gdx.utils.JsonReader._json_trans_actions[] == orig(com.badlogic.gdx.utils.JsonReader._json_trans_actions[])
+com.badlogic.gdx.utils.JsonReader._json_eof_actions == orig(com.badlogic.gdx.utils.JsonReader._json_eof_actions)
+com.badlogic.gdx.utils.JsonReader._json_eof_actions[] == orig(com.badlogic.gdx.utils.JsonReader._json_eof_actions[])
+this.elements == orig(this.elements)
+this.root == this.current
+this.root == orig(this.root)
+this.root == orig(this.current)
+this.stop == orig(this.stop)
+data[] == orig(data[])
+this.root == null
+data[] elements >= 0
+
+
+==============================================================================================================
+SAMPLE 7/10
+==============================================================================================================
+PROJECT: libgdx
+
+OCA METHOD: com.badlogic.gdx.utils.LongQueue#equals(Object):boolean
+DAIKON METHOD: com.badlogic.gdx.utils.LongQueue.equals(java.lang.Object)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_ENTRY] o != null
+ID: b057b2bf-512e-4665-92b0-67de49911496
+Rationale: Safe to check for instanceof only if o is not null
+Source file: com/badlogic/gdx/utils/LongQueue.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+com.badlogic.gdx.utils.LongQueue.equals(java.lang.Object):::ENTER
+this has only one value
+o has only one value
+o != null
+o.getClass().getName() == com.badlogic.gdx.utils.LongQueue.class
+this.values[] elements <= this.size
+
+===========================================================================
+com.badlogic.gdx.utils.LongQueue.equals(java.lang.Object):::EXIT336
+this.values has only one value
+this.values[] elements one of { 0, 1, 2 }
+this.values[] one of { [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1] }
+this.head one of { 1, 15 }
+this.tail one of { 0, 4 }
+this.size one of { 1, 3 }
+return == false
+
+===========================================================================
+com.badlogic.gdx.utils.LongQueue.equals(java.lang.Object):::EXIT336;condition="not(return == true)"
+
+===========================================================================
+com.badlogic.gdx.utils.LongQueue.equals(java.lang.Object):::EXIT352
+return == true
+
+===========================================================================
+com.badlogic.gdx.utils.LongQueue.equals(java.lang.Object):::EXIT352;condition="return == true"
+
+===========================================================================
+com.badlogic.gdx.utils.LongQueue.equals(java.lang.Object):::EXIT
+this.values == orig(this.values)
+this.values[] == orig(this.values[])
+this.head == orig(this.head)
+this.tail == orig(this.tail)
+this.size == orig(this.size)
+(return == false)  ==>  (this.head one of { 1, 15 })
+(return == false)  ==>  (this.size one of { 1, 3 })
+(return == false)  ==>  (this.tail one of { 0, 4 })
+(return == false)  ==>  (this.values has only one value)
+(return == false)  ==>  (this.values[] elements one of { 0, 1, 2 })
+(return == false)  ==>  (this.values[] one of { [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1] })
+this.values[] elements <= this.size
+
+===========================================================================
+com.badlogic.gdx.utils.LongQueue.equals(java.lang.Object):::EXIT;condition="return == true"
+return == true
+
+===========================================================================
+com.badlogic.gdx.utils.LongQueue.equals(java.lang.Object):::EXIT;condition="not(return == true)"
+this.values has only one value
+this.values[] elements one of { 0, 1, 2 }
+this.values[] one of { [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1] }
+this.head one of { 1, 15 }
+this.tail one of { 0, 4 }
+this.size one of { 1, 3 }
+return == false
+
+
+==============================================================================================================
+SAMPLE 8/10
+==============================================================================================================
+PROJECT: libgdx
+
+OCA METHOD: com.badlogic.gdx.utils.CharArray#append(char[]):CharArray
+DAIKON METHOD: com.badlogic.gdx.utils.CharArray.append(char[])
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_ENTRY] ch == null || ch.getClass().isArray()
+ID: 35831913-d624-4dd1-9c43-e34fffa0f3a0
+Rationale: The parameter ch is declared as a char array, so if not null, it is an array.
+Source file: com/badlogic/gdx/utils/CharArray.java
+
+[METHOD_EXIT] (ch == null) || (ch.length == 0) || (result.size >= ch.length)
+ID: 58008470-0cd0-4ea6-b2ec-27f18d301225
+Rationale: If input array is null, appendNull() is called; else if non-empty, size increases to accommodate ch.length.
+Source file: com/badlogic/gdx/utils/CharArray.java
+
+[METHOD_EXIT] ch == null || result.items != null
+ID: 75c2e392-3af1-4f93-b9bc-c94a708d9325
+Rationale: After appending, the internal items array remains non-null if input array is not null.
+Source file: com/badlogic/gdx/utils/CharArray.java
+
+[METHOD_ENTRY] ch == null || ch.length == (ch.length)
+ID: ff9d178a-cadb-4fac-8871-42836f34b808
+Rationale: Property of arrays: length is fixed and consistent.
+Source file: com/badlogic/gdx/utils/CharArray.java
+
+[METHOD_ENTRY] ch == null || ch.length >= 0
+ID: 0705446e-acdd-4b5a-8381-e855e69dd849
+Rationale: In Java, arrays have non-negative lengths; ch can be null or a char array with length >= 0.
+Source file: com/badlogic/gdx/utils/CharArray.java
+
+[METHOD_EXIT] ch != null || result != null
+ID: cbef1b69-fa4e-4799-b548-5b9ab5010db4
+Rationale: The method returns a non-null CharArray regardless of the input.
+Source file: com/badlogic/gdx/utils/CharArray.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+com.badlogic.gdx.utils.CharArray.append(char[]):::ENTER
+this.items[] one of { [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [84, 101, 115, 116, 32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] }
+this.size one of { 0, 5 }
+this.ordered == true
+ch[] one of { [49, 50, 51], [55357, 56832] }
+
+===========================================================================
+com.badlogic.gdx.utils.CharArray.append(char[]):::EXIT512
+
+===========================================================================
+com.badlogic.gdx.utils.CharArray.append(char[]):::EXIT
+com.badlogic.gdx.utils.CharArray.NULL == orig(com.badlogic.gdx.utils.CharArray.NULL)
+com.badlogic.gdx.utils.CharArray.NULL.toString == orig(com.badlogic.gdx.utils.CharArray.NULL.toString)
+com.badlogic.gdx.utils.CharArray.DIGITS == orig(com.badlogic.gdx.utils.CharArray.DIGITS)
+com.badlogic.gdx.utils.CharArray.DIGITS[] == orig(com.badlogic.gdx.utils.CharArray.DIGITS[])
+this.items == orig(this.items)
+this.ordered == orig(this.ordered)
+ch[] == orig(ch[])
+return == orig(this)
+this.items[] one of { [84, 101, 115, 116, 32, 49, 50, 51, 0, 0, 0, 0, 0, 0, 0, 0], [55357, 56832, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] }
+this.size one of { 2, 8 }
+this.ordered == true
+ch[] one of { [49, 50, 51], [55357, 56832] }
+
+
+==============================================================================================================
+SAMPLE 9/10
+==============================================================================================================
+PROJECT: libgdx
+
+OCA METHOD: com.badlogic.gdx.utils.reflect.Field#getType():Class
+DAIKON METHOD: com.badlogic.gdx.utils.reflect.Field.getType()
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_EXIT] result.isAssignableFrom(result)
+ID: ef94dd8a-3b01-4441-80f8-f2e49a3babbc
+Rationale: Reflexive property of Class objects.
+Source file: com/badlogic/gdx/utils/reflect/Field.java
+
+[METHOD_EXIT] result != null
+ID: ac72e14a-184f-4517-bc9b-b18655b63274
+Rationale: The method returns the Class of the field's declared type, which is always a valid Class instance (non-null).
+Source file: com/badlogic/gdx/utils/reflect/Field.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+com.badlogic.gdx.utils.reflect.Field.getType():::ENTER
+
+===========================================================================
+com.badlogic.gdx.utils.reflect.Field.getType():::EXIT
+this.field == orig(this.field)
+
+
+==============================================================================================================
+SAMPLE 10/10
+==============================================================================================================
+PROJECT: libgdx
+
+OCA METHOD: com.badlogic.gdx.math.Polygon#setVertices(float[]):void
+DAIKON METHOD: com.badlogic.gdx.math.Polygon.setVertices(float[])
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_ENTRY] vertices != null
+ID: 92dcc2bf-a34c-4bbd-8ab8-9fc9cb647278
+Rationale: The vertices parameter should not be null to represent polygon points.
+Source file: com/badlogic/gdx/math/Polygon.java
+
+[METHOD_EXIT] vertices.length >= 6
+ID: 6a06891d-4907-495c-837a-0655daa79dc2
+Rationale: Polygon must have at least 3 points, which means 6 floats (x,y pairs).
+Source file: com/badlogic/gdx/math/Polygon.java
+
+[METHOD_EXIT] vertices.length % 2 == 0
+ID: 5b61ed37-1d1c-47dc-b557-a74a033fcddb
+Rationale: Vertices array length must be even to represent x,y pairs.
+Source file: com/badlogic/gdx/math/Polygon.java
+
+[METHOD_ENTRY] vertices.length >= 6
+ID: ee54bba4-f198-4ec5-a454-d96e75ed5325
+Rationale: The vertices array must have length at least 6 representing at least 3 points.
+Source file: com/badlogic/gdx/math/Polygon.java
+
+[METHOD_ENTRY] (vertices.length % 2) == 0
+ID: c20dbbb6-d8ec-4f85-8ed6-b4c1a04b0639
+Rationale: The vertices array length is an even number because points are stored as pairs of floats (x,y).
+Source file: com/badlogic/gdx/math/Polygon.java
+
+[METHOD_EXIT] vertices != null
+ID: ec3d7181-6615-4fb8-b2b5-d52485c66b51
+Rationale: The method requires a valid array of vertices, and null would cause an exception or invalid state.
+Source file: com/badlogic/gdx/math/Polygon.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+com.badlogic.gdx.math.Polygon.setVertices(float[]):::ENTER
+this.x == this.originX
+this.x == this.originY
+this.x == this.rotation
+this has only one value
+this.localVertices has only one value
+this.localVertices[] == []
+this.worldVertices == null
+this.x == 0.0
+this.scaleX == 1.0
+this.dirty == true
+vertices has only one value
+vertices[] == [1.0, -2.0, 1.0, -1.5, 1.5, -1.5, 1.5, -2.0]
+this.scaleX in vertices[]
+
+===========================================================================
+com.badlogic.gdx.math.Polygon.setVertices(float[]):::EXIT
+this.localVertices == orig(vertices)
+this.localVertices[] == vertices[]
+this.worldVertices == orig(this.worldVertices)
+this.x == this.originX
+this.x == this.originY
+this.x == this.rotation
+this.x == orig(this.x)
+this.x == orig(this.y)
+this.x == orig(this.originX)
+this.x == orig(this.originY)
+this.x == orig(this.rotation)
+this.scaleX == orig(this.scaleX)
+this.scaleX == orig(this.scaleY)
+this.dirty == orig(this.dirty)
+this.bounds == orig(this.bounds)
+vertices[] == orig(vertices[])
+this.localVertices has only one value
+this.worldVertices == null
+this.x == 0.0
+this.scaleX == 1.0
+this.dirty == true
+vertices[] == [1.0, -2.0, 1.0, -1.5, 1.5, -1.5, 1.5, -2.0]
+this.scaleX in vertices[]
+
+

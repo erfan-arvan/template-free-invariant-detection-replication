@@ -1,0 +1,14 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+CLASSES: rxjava-classes21
+SRC: rxjava/src/main/java
+[callsite-tool] classes=rxjava-classes21
+[callsite-tool] src=rxjava/src/main/java
+[callsite-tool] out=rxjava_callsites.json
+[callsite-tool] classpath entries skipped=1
+[callsite-tool] entrypoints=10387
+[callsite-tool] CG nodes=24481
+[callsite-tool] application call edges=183295
+[callsite-tool] methods with recorded callers=3528
+[callsite-tool] wrote rxjava_callsites.json
+>>> Wrote rxjava_callsites.json
+721961 rxjava_callsites.json

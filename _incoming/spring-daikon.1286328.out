@@ -1,0 +1,77 @@
+[TIMING] === spring-full daikon run started 2026-09-15T00:41:41-04:00 ===
+========================================
+Spring (full) Daikon invariant detection
+========================================
+JAVA:        /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+TRACE:       /scratch/mjk76/ea442/promptstudy/spring-full-chicory-out/latest/spring-full.dtrace.gz
+JAR:         /project/mjk76/ea442/promptstudy/daikon.jar
+CONFIG:      daikon.derive.Derivation.disable_derived_variables=true
+OUTPUT:      /project/mjk76/ea442/promptstudy/spring-daikon-out
+
+>>> Trace size:
+lrwxrwxrwx 1 ea442 ea442 73 Sep 15 00:41 /scratch/mjk76/ea442/promptstudy/spring-full-chicory-out/latest/spring-full.dtrace.gz -> /scratch/mjk76/ea442/promptstudy/spring-full-chicory-out/latest/dtrace.gz
+
+>>> Starting Daikon at 2026-09-15T00:41:41-04:00
+[TIMING] daikon.Daikon invariant detection 11s  (00:41:41 -> 00:41:52)
+
+>>> Daikon finished at 2026-09-15T00:41:53-04:00
+
+>>> Output files:
+-rw-r--r--+ 1 ea442 ea442 960K Sep 15 00:41 /project/mjk76/ea442/promptstudy/spring-daikon-out/spring-invariants.txt
+-rw-r--r--+ 1 ea442 ea442 5.9M Sep 15 00:41 /project/mjk76/ea442/promptstudy/spring-daikon-out/spring.inv.gz
+
+>>> First 50 lines of inferred invariants:
+Daikon version 5.8.24, released May 6, 2026; http://plse.cs.washington.edu/daikon.
+Reading declaration files Processing trace data; reading 1 dtrace file:
+
+No return from procedure observed 164 times.  Unmatched entries are ignored!
+Unterminated calls:
+  org.springframework.core.convert.PropertyTests.writeProperty(java.lang.String) : 3 invocations
+  org.springframework.core.convert.Property.Property(java.lang.Class, java.lang.reflect.Method, java.lang.reflect.Method) : 3 invocations
+  org.springframework.core.convert.Property.Property(java.lang.Class, java.lang.reflect.Method, java.lang.reflect.Method, java.lang.String) : 3 invocations
+  org.springframework.core.convert.Property.resolveName() : 3 invocations
+  org.springframework.core.convert.TypeDescriptor.nested(org.springframework.core.MethodParameter, int) : 2 invocations
+  org.springframework.core.convert.TypeDescriptor.upcast(java.lang.Class) : 1 invocation
+  org.springframework.core.convert.converter.Converter.andThen(org.springframework.core.convert.converter.Converter) : 1 invocation
+  org.springframework.core.convert.converter.ConvertingComparator.ConvertingComparator(java.util.Comparator, org.springframework.core.convert.converter.Converter) : 2 invocations
+  org.springframework.core.convert.converter.ConvertingComparator.ConvertingComparator(java.util.Comparator, org.springframework.core.convert.ConversionService, java.lang.Class) : 2 invocations
+  org.springframework.core.convert.converter.ConvertingComparator$ConversionServiceConverter.ConversionServiceConverter(org.springframework.core.convert.ConversionService, java.lang.Class) : 2 invocations
+  org.springframework.core.convert.support.GenericConversionService.convert(java.lang.Object, java.lang.Class) : 18 invocations
+  org.springframework.core.convert.support.GenericConversionService.convert(java.lang.Object, org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor) : 42 invocations
+  org.springframework.core.convert.support.ConversionUtils.invokeConverter(org.springframework.core.convert.converter.GenericConverter, java.lang.Object, org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor) : 18 invocations
+  org.springframework.core.convert.support.ArrayToCollectionConverter.convert(java.lang.Object, org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor) : 1 invocation
+  org.springframework.core.convert.support.ArrayToCollectionConverter.createCollection(java.lang.Class, java.lang.Class, int) : 1 invocation
+  org.springframework.core.convert.support.GenericConversionService$ConverterAdapter.convert(java.lang.Object, org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor) : 7 invocations
+  org.springframework.core.convert.support.NumberToDataSizeConverter.convert(java.lang.Number) : 2 invocations
+  org.springframework.core.convert.support.CollectionToStringConverter.convert(java.lang.Object, org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor) : 1 invocation
+  org.springframework.core.convert.support.GenericConversionService.handleConverterNotFound(java.lang.Object, org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor) : 20 invocations
+  org.springframework.core.convert.support.StringToBooleanConverter.convert(java.lang.String) : 1 invocation
+  org.springframework.core.convert.support.StringToCharacterConverter.convert(java.lang.String) : 1 invocation
+  org.springframework.core.convert.support.DateToInstantConverter.convert(java.util.Date) : 2 invocations
+  org.springframework.core.convert.support.StringToDataSizeConverter.convert(java.lang.String) : 1 invocation
+  org.springframework.core.convert.support.GenericConversionService$ConverterFactoryAdapter.convert(java.lang.Object, org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor) : 2 invocations
+  org.springframework.core.convert.support.NumberToNumberConverterFactory$NumberToNumber.convert(java.lang.Number) : 1 invocation
+  org.springframework.core.convert.support.CollectionToCollectionConverter.convert(java.lang.Object, org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor) : 2 invocations
+  org.springframework.core.convert.support.GenericConversionService.addConverter(org.springframework.core.convert.converter.Converter) : 1 invocation
+  org.springframework.core.convert.support.GenericConversionService.addConverter(org.springframework.core.convert.converter.GenericConverter) : 1 invocation
+  org.springframework.core.convert.support.GenericConversionService$Converters.add(org.springframework.core.convert.converter.GenericConverter) : 1 invocation
+  org.springframework.core.convert.support.GenericConversionService.assertNotPrimitiveTargetType(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor) : 2 invocations
+  org.springframework.core.convert.support.GenericConversionService.canConvert(java.lang.Class, java.lang.Class) : 2 invocations
+  org.springframework.core.convert.support.GenericConversionService.handleResult(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor, java.lang.Object) : 1 invocation
+  org.springframework.core.convert.support.GenericConversionService.canConvert(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor) : 2 invocations
+  org.springframework.core.convert.support.StringToNumberConverterFactory$StringToNumber.convert(java.lang.String) : 1 invocation
+  org.springframework.core.convert.support.MapToMapConverter.convert(java.lang.Object, org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor) : 3 invocations
+  org.springframework.core.convert.support.MapToMapConverter.convertKey(java.lang.Object, org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor) : 3 invocations
+  org.springframework.core.convert.support.StreamConverter.convert(java.lang.Object, org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor) : 2 invocations
+  org.springframework.core.convert.ConversionService.convert(java.lang.Object, org.springframework.core.convert.TypeDescriptor) : 1 invocation
+  org.springframework.core.convert.support.StreamConverter.convertFromStream(java.util.stream.Stream, org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor) : 1 invocation
+  org.springframework.core.convert.support.CollectionToArrayConverter.convert(java.lang.Object, org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor) : 1 invocation
+End of report for procedures not returned from.  Unmatched entries are ignored!
+
+===========================================================================
+org.springframework.core.convert.ConversionException:::OBJECT
+===========================================================================
+[TIMING] TOTAL (spring-full)          12s  (00:41:41 -> 00:41:53)
+[TIMING] === spring-full daikon run finished 2026-09-15T00:41:53-04:00 ===
+
+>>> Done.

@@ -1,0 +1,1496 @@
+========================================================================================================================
+METHOD 1/10
+PROJECT: apollo
+REQUESTED KEY: com.ctrip.framework.apollo.biz.entity.InstanceConfig#setInstanceId(long):void
+========================================================================================================================
+
+### IO EXAMPLES
+Matched key: com.ctrip.framework.apollo.biz.entity.InstanceConfig#setInstanceId(long):void
+Number of examples: 8
+[
+  {
+    "args": {
+      "this": "1122484286",
+      "this.id": "0",
+      "this.instanceId": "0",
+      "this.configAppId": "1271958666",
+      "this.configAppId.toString": "\"appId\"",
+      "this.configClusterName": "null",
+      "this.configClusterName.toString": "nonsensical",
+      "this.configNamespaceName": "null",
+      "this.configNamespaceName.toString": "nonsensical",
+      "this.releaseKey": "null",
+      "this.releaseKey.toString": "nonsensical",
+      "this.releaseDeliveryTime": "null",
+      "this.dataChangeCreatedTime": "null",
+      "this.dataChangeLastModifiedTime": "null",
+      "instanceId": "1"
+    },
+    "return": null
+  },
+  {
+    "args": {
+      "this": "354364951",
+      "this.id": "0",
+      "this.instanceId": "0",
+      "this.configAppId": "1271958666",
+      "this.configAppId.toString": "\"appId\"",
+      "this.configClusterName": "null",
+      "this.configClusterName.toString": "nonsensical",
+      "this.configNamespaceName": "null",
+      "this.configNamespaceName.toString": "nonsensical",
+      "this.releaseKey": "null",
+      "this.releaseKey.toString": "nonsensical",
+      "this.releaseDeliveryTime": "null",
+      "this.dataChangeCreatedTime": "null",
+      "this.dataChangeLastModifiedTime": "null",
+      "instanceId": "2"
+    },
+    "return": null
+  },
+  {
+    "args": {
+      "this": "1508408101",
+      "this.id": "0",
+      "this.instanceId": "0",
+      "this.configAppId": "1271958666",
+      "this.configAppId.toString": "\"appId\"",
+      "this.configClusterName": "null",
+      "this.configClusterName.toString": "nonsensical",
+      "this.configNamespaceName": "null",
+      "this.configNamespaceName.toString": "nonsensical",
+      "this.releaseKey": "null",
+      "this.releaseKey.toString": "nonsensical",
+      "this.releaseDeliveryTime": "null",
+      "this.dataChangeCreatedTime": "null",
+      "this.dataChangeLastModifiedTime": "null",
+      "instanceId": "3"
+    },
+    "return": null
+  },
+  {
+    "args": {
+      "this": "1247484455",
+      "this.id": "0",
+      "this.instanceId": "0",
+      "this.configAppId": "1271958666",
+      "this.configAppId.toString": "\"appId\"",
+      "this.configClusterName": "null",
+      "this.configClusterName.toString": "nonsensical",
+      "this.configNamespaceName": "null",
+      "this.configNamespaceName.toString": "nonsensical",
+      "this.releaseKey": "null",
+      "this.releaseKey.toString": "nonsensical",
+      "this.releaseDeliveryTime": "null",
+      "this.dataChangeCreatedTime": "null",
+      "this.dataChangeLastModifiedTime": "null",
+      "instanceId": "4"
+    },
+    "return": null
+  },
+  {
+    "args": {
+      "this": "1060273173",
+      "this.id": "0",
+      "this.instanceId": "0",
+      "this.configAppId": "1271958666",
+      "this.configAppId.toString": "\"appId\"",
+      "this.configClusterName": "null",
+      "this.configClusterName.toString": "nonsensical",
+      "this.configNamespaceName": "null",
+      "this.configNamespaceName.toString": "nonsensical",
+      "this.releaseKey": "null",
+      "this.releaseKey.toString": "nonsensical",
+      "this.releaseDeliveryTime": "null",
+      "this.dataChangeCreatedTime": "null",
+      "this.dataChangeLastModifiedTime": "null",
+      "instanceId": "5"
+    },
+    "return": null
+  },
+  {
+    "args": {
+      "this": "1276093672",
+      "this.id": "0",
+      "this.instanceId": "0",
+      "this.configAppId": "1271958666",
+      "this.configAppId.toString": "\"appId\"",
+      "this.configClusterName": "null",
+      "this.configClusterName.toString": "nonsensical",
+      "this.configNamespaceName": "null",
+      "this.configNamespaceName.toString": "nonsensical",
+      "this.releaseKey": "null",
+      "this.releaseKey.toString": "nonsensical",
+      "this.releaseDeliveryTime": "null",
+      "this.dataChangeCreatedTime": "null",
+      "this.dataChangeLastModifiedTime": "null",
+      "instanceId": "10"
+    },
+    "return": null
+  },
+  {
+    "args": {
+      "this": "45422147",
+      "this.id": "0",
+      "this.instanceId": "0",
+      "this.configAppId": "1271958666",
+      "this.configAppId.toString": "\"appId\"",
+      "this.configClusterName": "null",
+      "this.configClusterName.toString": "nonsensical",
+      "this.configNamespaceName": "null",
+      "this.configNamespaceName.toString": "nonsensical",
+      "this.releaseKey": "null",
+      "this.releaseKey.toString": "nonsensical",
+      "this.releaseDeliveryTime": "null",
+      "this.dataChangeCreatedTime": "null",
+      "this.dataChangeLastModifiedTime": "null",
+      "instanceId": "20"
+    },
+    "return": null
+  },
+  {
+    "args": {
+      "this": "749350340",
+      "this.id": "0",
+      "this.instanceId": "0",
+      "this.configAppId": "null",
+      "this.configAppId.toString": "nonsensical",
+      "this.configClusterName": "null",
+      "this.configClusterName.toString": "nonsensical",
+      "this.configNamespaceName": "null",
+      "this.configNamespaceName.toString": "nonsensical",
+      "this.releaseKey": "null",
+      "this.releaseKey.toString": "nonsensical",
+      "this.releaseDeliveryTime": "null",
+      "this.dataChangeCreatedTime": "null",
+      "this.dataChangeLastModifiedTime": "null",
+      "instanceId": "1"
+    },
+    "return": null
+  }
+]
+
+
+### CALL SITES
+NO MATCHING CALL-SITE KEY FOUND
+
+
+========================================================================================================================
+METHOD 2/10
+PROJECT: dubbo
+REQUESTED KEY: org.apache.dubbo.common.URLBuilder#removeParameters(String):URLBuilder
+========================================================================================================================
+
+### IO EXAMPLES
+NO MATCHING IO-EXAMPLE KEY FOUND
+
+
+### CALL SITES
+Matched key: org.apache.dubbo.common.URLBuilder#removeParameters(Collection<String>):URLBuilder
+Number of call sites: 4
+
+--- CALL SITE 1/4 ---
+{
+  "callerKey": "org.apache.dubbo.common.URLBuilder#removeParameter(String):URLBuilder",
+  "callerJavadoc": "",
+  "callSite": "10 = invokevirtual < Application, Lorg/apache/dubbo/common/URLBuilder, removeParameters([Ljava/lang/String;)Lorg/apache/dubbo/common/URLBuilder; > 1,8 @18 exception:9"
+}
+
+CALLER KEY: org.apache.dubbo.common.URLBuilder#removeParameter(String):URLBuilder
+CALLER FILE: /mmfs1/project/mjk76/ea442/promptstudy/dubbo/dubbo-common/src/main/java/org/apache/dubbo/common/URLBuilder.java
+
+CALLER IMPLEMENTATION:
+    @Override
+    public URLBuilder removeParameter(String key) {
+        if (StringUtils.isEmpty(key)) {
+            return this;
+        }
+        return removeParameters(key);
+    }
+
+--- CALL SITE 2/4 ---
+{
+  "callerKey": "org.apache.dubbo.common.URLBuilder#removeParameters(Collection<String>):URLBuilder",
+  "callerJavadoc": "",
+  "callSite": "12 = invokevirtual < Application, Lorg/apache/dubbo/common/URLBuilder, removeParameters([Ljava/lang/String;)Lorg/apache/dubbo/common/URLBuilder; > 1,10 @23 exception:11"
+}
+
+CALLER KEY: org.apache.dubbo.common.URLBuilder#removeParameters(Collection<String>):URLBuilder
+CALLER FILE: /mmfs1/project/mjk76/ea442/promptstudy/dubbo/dubbo-common/src/main/java/org/apache/dubbo/common/URLBuilder.java
+
+CALLER IMPLEMENTATION:
+    @Override
+    public URLBuilder removeParameters(Collection<String> keys) {
+        if (CollectionUtils.isEmpty(keys)) {
+            return this;
+        }
+        return removeParameters(keys.toArray(new String[0]));
+    }
+
+--- CALL SITE 3/4 ---
+{
+  "callerKey": "org.apache.dubbo.common.URLBuilder#removeParameters(Collection<String>):URLBuilder",
+  "callerJavadoc": "",
+  "callSite": "5 = invokevirtual < Application, Lorg/apache/dubbo/common/URLBuilder, removeParameters([Ljava/lang/String;)Lorg/apache/dubbo/common/URLBuilder; > 1,2 @2 exception:4"
+}
+
+CALLER KEY: org.apache.dubbo.common.URLBuilder#removeParameters(Collection<String>):URLBuilder
+CALLER FILE: /mmfs1/project/mjk76/ea442/promptstudy/dubbo/dubbo-common/src/main/java/org/apache/dubbo/common/URLBuilder.java
+
+CALLER IMPLEMENTATION:
+    @Override
+    public URLBuilder removeParameters(Collection<String> keys) {
+        if (CollectionUtils.isEmpty(keys)) {
+            return this;
+        }
+        return removeParameters(keys.toArray(new String[0]));
+    }
+
+--- CALL SITE 4/4 ---
+{
+  "callerKey": "org.apache.dubbo.common.URLBuilder#removeParameters(Collection<String>):URLBuilder",
+  "callerJavadoc": "",
+  "callSite": "5 = invokevirtual < Application, Lorg/apache/dubbo/common/URLBuilder, removeParameters(Ljava/util/Collection;)Lorg/apache/dubbo/common/URLBuilder; > 1,2 @2 exception:4"
+}
+
+CALLER KEY: org.apache.dubbo.common.URLBuilder#removeParameters(Collection<String>):URLBuilder
+CALLER FILE: /mmfs1/project/mjk76/ea442/promptstudy/dubbo/dubbo-common/src/main/java/org/apache/dubbo/common/URLBuilder.java
+
+CALLER IMPLEMENTATION:
+    @Override
+    public URLBuilder removeParameters(Collection<String> keys) {
+        if (CollectionUtils.isEmpty(keys)) {
+            return this;
+        }
+        return removeParameters(keys.toArray(new String[0]));
+    }
+
+
+========================================================================================================================
+METHOD 3/10
+PROJECT: hudi
+REQUESTED KEY: org.apache.hudi.table.action.deltacommit.JavaInsertDeltaCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>
+========================================================================================================================
+
+### IO EXAMPLES
+Matched key: org.apache.hudi.table.action.deltacommit.JavaInsertDeltaCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>
+Number of examples: 10
+[
+  {
+    "args": {
+      "this": "1244860050",
+      "this.inputRecords": "301121578",
+      "this.inputRecords[..]": "[1397363817 1234381275 296829429 612990494 138277427 557639906 283902400 1505232216 1582067157 37810601 418505990 1751324121 1902665544 1282913909 1538896680 730114139 405090428 1762720019 2141595626 1654923112 1911459381 1090123428 785340361 1620622477 1694636429 1782685535 1046801601 457003860 1845952463 741172881 140193335 297851161 1612091270 968359116 1758218075 2144555850 728598921 767185332 658914759 1894617440 1122661222 84708211 2059685271 1820000013 2107297959 481074036 1155319171 2137376898 1422991393 1785197771 752772852 235687473 1610397354 49370460 1573354032 836164223 195388169 58104980 1703309360 1652837341 1117372847 1975281492 594382371 1668805424 1869595208 2046791222 917244860 1780387882 2071093923 2121915845 685693021 920621740 1582336430 1861742676 817218023 2050322351 544375998 1901503924 1878190208 1047247558 176721601 1312289057 913946255 1428653836 462939631 1784197445 292466511 2023249289 1543794664 1945714612 394912339 763877686 1375967297 1748830506 813622532 597939284 1831633393 1842913575 717827933 1178725278]",
+      "this.inputRecords[..].getClass().getName()": "[\"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\"]",
+      "this.inputRecords.getClass().getName()": "\"java.util.ArrayList\"",
+      "org.apache.hudi.table.action.deltacommit.BaseJavaDeltaCommitActionExecutor.log": "1441494169",
+      "org.apache.hudi.table.action.deltacommit.BaseJavaDeltaCommitActionExecutor.log.getClass().getName()": "\"org.apache.logging.slf4j.Log4jLogger\"",
+      "this.partitioner": "null",
+      "org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log": "375564671",
+      "org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log.getClass().getName()": "\"org.apache.logging.slf4j.Log4jLogger\"",
+      "org.apache.hudi.table.action.commit.BaseCommitActionExecutor.log": "1997120117",
+      "org.apache.hudi.table.action.commit.BaseCommitActionExecutor.log.getClass().getName()": "\"org.apache.logging.slf4j.Log4jLogger\"",
+      "this.extraMetadata": "1375235316",
+      "this.operationType": "1130629818",
+      "this.taskContextSupplier": "166658328",
+      "this.taskContextSupplier.getClass().getName()": "\"org.apache.hudi.testutils.HoodieJavaClientTestHarness$TestJavaTaskContextSupplier\"",
+      "this.txnManagerOption": "1375235316",
+      "this.lastCompletedTxn": "1375235316",
+      "this.pendingInflightAndRequestedInstants": "1850414569",
+      "this.pendingInflightAndRequestedInstants.getClass().getName()": "\"java.util.Collections$EmptySet\"",
+      "this.context": "1613392942",
+      "this.context.getClass().getName()": "\"org.apache.hudi.client.common.HoodieJavaEngineContext\"",
+      "this.storageConf": "470615877",
+      "this.storageConf.getClass().getName()": "\"org.apache.hudi.storage.hadoop.HadoopStorageConfiguration\"",
+      "this.config": "1088995607",
+      "this.table": "1699426004",
+      "this.table.getClass().getName()": "\"org.apache.hudi.table.HoodieJavaMergeOnReadTable\"",
+      "this.instantGenerator": "449690446",
+      "this.instantGenerator.getClass().getName()": "\"org.apache.hudi.common.table.timeline.versioning.v2.InstantGeneratorV2\"",
+      "this.instantFileNameParser": "1922046989",
+      "this.instantFileNameParser.getClass().getName()": "\"org.apache.hudi.common.table.timeline.versioning.v2.InstantFileNameParserV2\"",
+      "this.instantFileNameGenerator": "621155607",
+      "this.instantFileNameGenerator.getClass().getName()": "\"org.apache.hudi.common.table.timeline.versioning.v2.InstantFileNameGeneratorV2\"",
+      "this.instantTime": "1276318001",
+      "this.instantTime.toString": "\"20260914050427555\""
+    },
+    "return": "2011820656"
+  },
+  {
+    "args": {
+      "this": "384713701",
+      "this.inputRecords": "1890125896",
+      "this.inputRecords[..]": "[186223278 506032057 1153272171 2087592700 996514597 1852075863 1178223905 1263462104 1558573095 297148987 95514209 963977257 1256360936 1785057141 1688827454 1951233770 707661376 1861509655 1094971761 1587950997 69237775 1225343558 387967599 2029682564 2134746256 2091242051 335610666 1059866737 757555744 2135067149 1673977500 1047821653 684998361 1127074604 374005739 197756578 39994356 800824383 1875819428 687201385 949507936 1269923368 1371074401 1470658475 770775401 1844540097 2065976313 1873112601 1253705941 750459961 1964630484 831032520 737068684 1598049564 1701642337 276184776 1307656428 268750051 501725322 1019626880 2079818964 1294089373 1830940251 1665489978 609461666 2018091873 452512005 1393947372 1783767961 1597359897 64589083 2133298462 68302728 1970152732 982573055 2031942350 1822895122 1751491167 1412888459 1247980873 535879595 1514336592 967561020 1727804837 2137563990 846009754 1431895748 1376696535 1749472211 845011588 543276245 126775310 1493754727 98409272 678889538 1544356674 1107345535 736991068 994619259 258714691]",
+      "this.inputRecords[..].getClass().getName()": "[\"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\"]",
+      "this.inputRecords.getClass().getName()": "\"java.util.ArrayList\"",
+      "org.apache.hudi.table.action.deltacommit.BaseJavaDeltaCommitActionExecutor.log": "1441494169",
+      "org.apache.hudi.table.action.deltacommit.BaseJavaDeltaCommitActionExecutor.log.getClass().getName()": "\"org.apache.logging.slf4j.Log4jLogger\"",
+      "this.partitioner": "null",
+      "org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log": "375564671",
+      "org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log.getClass().getName()": "\"org.apache.logging.slf4j.Log4jLogger\"",
+      "org.apache.hudi.table.action.commit.BaseCommitActionExecutor.log": "1997120117",
+      "org.apache.hudi.table.action.commit.BaseCommitActionExecutor.log.getClass().getName()": "\"org.apache.logging.slf4j.Log4jLogger\"",
+      "this.extraMetadata": "1375235316",
+      "this.operationType": "1130629818",
+      "this.taskContextSupplier": "417433520",
+      "this.taskContextSupplier.getClass().getName()": "\"org.apache.hudi.testutils.HoodieJavaClientTestHarness$TestJavaTaskContextSupplier\"",
+      "this.txnManagerOption": "1375235316",
+      "this.lastCompletedTxn": "1375235316",
+      "this.pendingInflightAndRequestedInstants": "1850414569",
+      "this.pendingInflightAndRequestedInstants.getClass().getName()": "\"java.util.Collections$EmptySet\"",
+      "this.context": "1362854896",
+      "this.context.getClass().getName()": "\"org.apache.hudi.client.common.HoodieJavaEngineContext\"",
+      "this.storageConf": "545327376",
+      "this.storageConf.getClass().getName()": "\"org.apache.hudi.storage.hadoop.HadoopStorageConfiguration\"",
+      "this.config": "1976509040",
+      "this.table": "1067357658",
+      "this.table.getClass().getName()": "\"org.apache.hudi.table.HoodieJavaMergeOnReadTable\"",
+      "this.instantGenerator": "449690446",
+      "this.instantGenerator.getClass().getName()": "\"org.apache.hudi.common.table.timeline.versioning.v2.InstantGeneratorV2\"",
+      "this.instantFileNameParser": "1922046989",
+      "this.instantFileNameParser.getClass().getName()": "\"org.apache.hudi.common.table.timeline.versioning.v2.InstantFileNameParserV2\"",
+      "this.instantFileNameGenerator": "621155607",
+      "this.instantFileNameGenerator.getClass().getName()": "\"org.apache.hudi.common.table.timeline.versioning.v2.InstantFileNameGeneratorV2\"",
+      "this.instantTime": "99146549",
+      "this.instantTime.toString": "\"20260914050437561\""
+    },
+    "return": "1443551024"
+  },
+  {
+    "args": {
+      "this": "1248539702",
+      "this.inputRecords": "2099784059",
+      "this.inputRecords[..]": "[118214851 185210165 2044114902 1166617190 484272092 1202023119 184618474 131587318 1883482199 484202370 523335598 641214674 1272200530 902431725 567451389 1179344045 740284315 1227848862 2092901936 1619895102 846988219 8733414 84830816 144158124 1512314590 1889332494 112706583 871949216 1234211303 1584652614 1725698531 315427707 1604304748 514268168 418530614 1646134144 1087943792 1723447103 1827177771 2121828661 2064046526 1345161646 2026147677 1120895057 264862367 857072177 1870081385 1359275486 358441187 155524115 1603236919 693321741 1467447228 1987267781 1383702768 1629082010 230654098 1632039044 2124919420 1369254195 551000194 1992527564 901051962 223905038 299306927 2072532663 1772055258 547811858 161823710 807528883 586845399 895208696 352352838 718497060 1547294877 938406894 556428575 283235931 34478570 1111485382 806302731 776105823 1559355956 1630360503 684428533 365835812 1191020267 1304876392 966673409 1560619520 2003117461 217305988 1199976535 858212237 1831900657 2135757856 155158294 11379347 1767579754 2116081013]",
+      "this.inputRecords[..].getClass().getName()": "[\"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\"]",
+      "this.inputRecords.getClass().getName()": "\"java.util.ArrayList\"",
+      "org.apache.hudi.table.action.deltacommit.BaseJavaDeltaCommitActionExecutor.log": "1441494169",
+      "org.apache.hudi.table.action.deltacommit.BaseJavaDeltaCommitActionExecutor.log.getClass().getName()": "\"org.apache.logging.slf4j.Log4jLogger\"",
+      "this.partitioner": "null",
+      "org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log": "375564671",
+      "org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log.getClass().getName()": "\"org.apache.logging.slf4j.Log4jLogger\"",
+      "org.apache.hudi.table.action.commit.BaseCommitActionExecutor.log": "1997120117",
+      "org.apache.hudi.table.action.commit.BaseCommitActionExecutor.log.getClass().getName()": "\"org.apache.logging.slf4j.Log4jLogger\"",
+      "this.extraMetadata": "1375235316",
+      "this.operationType": "1130629818",
+      "this.taskContextSupplier": "924464820",
+      "this.taskContextSupplier.getClass().getName()": "\"org.apache.hudi.testutils.HoodieJavaClientTestHarness$TestJavaTaskContextSupplier\"",
+      "this.txnManagerOption": "1375235316",
+      "this.lastCompletedTxn": "1375235316",
+      "this.pendingInflightAndRequestedInstants": "1850414569",
+      "this.pendingInflightAndRequestedInstants.getClass().getName()": "\"java.util.Collections$EmptySet\"",
+      "this.context": "1744974012",
+      "this.context.getClass().getName()": "\"org.apache.hudi.client.common.HoodieJavaEngineContext\"",
+      "this.storageConf": "322934438",
+      "this.storageConf.getClass().getName()": "\"org.apache.hudi.storage.hadoop.HadoopStorageConfiguration\"",
+      "this.config": "2144050830",
+      "this.table": "561757144",
+      "this.table.getClass().getName()": "\"org.apache.hudi.table.HoodieJavaMergeOnReadTable\"",
+      "this.instantGenerator": "449690446",
+      "this.instantGenerator.getClass().getName()": "\"org.apache.hudi.common.table.timeline.versioning.v2.InstantGeneratorV2\"",
+      "this.instantFileNameParser": "1922046989",
+      "this.instantFileNameParser.getClass().getName()": "\"org.apache.hudi.common.table.timeline.versioning.v2.InstantFileNameParserV2\"",
+      "this.instantFileNameGenerator": "621155607",
+      "this.instantFileNameGenerator.getClass().getName()": "\"org.apache.hudi.common.table.timeline.versioning.v2.InstantFileNameGeneratorV2\"",
+      "this.instantTime": "402205855",
+      "this.instantTime.toString": "\"20260914050438831\""
+    },
+    "return": "1081217418"
+  },
+  {
+    "args": {
+      "this": "1839412696",
+      "this.inputRecords": "467479279",
+      "this.inputRecords[..]": "[832438517 1608471376 1433940991 654373357 1725482064 1136156168 1464564299 2011457238 1472124478 1450679007 1524771704 241443876 793382128 1157745316 250839191 563728489 1590388006 357875889 129043892 1757712307]",
+      "this.inputRecords[..].getClass().getName()": "[\"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\"]",
+      "this.inputRecords.getClass().getName()": "\"java.util.ArrayList\"",
+      "org.apache.hudi.table.action.deltacommit.BaseJavaDeltaCommitActionExecutor.log": "1441494169",
+      "org.apache.hudi.table.action.deltacommit.BaseJavaDeltaCommitActionExecutor.log.getClass().getName()": "\"org.apache.logging.slf4j.Log4jLogger\"",
+      "this.partitioner": "null",
+      "org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log": "375564671",
+      "org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log.getClass().getName()": "\"org.apache.logging.slf4j.Log4jLogger\"",
+      "org.apache.hudi.table.action.commit.BaseCommitActionExecutor.log": "1997120117",
+      "org.apache.hudi.table.action.commit.BaseCommitActionExecutor.log.getClass().getName()": "\"org.apache.logging.slf4j.Log4jLogger\"",
+      "this.extraMetadata": "1375235316",
+      "this.operationType": "1130629818",
+      "this.taskContextSupplier": "712542972",
+      "this.taskContextSupplier.getClass().getName()": "\"org.apache.hudi.client.common.JavaTaskContextSupplier\"",
+      "this.txnManagerOption": "1375235316",
+      "this.lastCompletedTxn": "1375235316",
+      "this.pendingInflightAndRequestedInstants": "1850414569",
+      "this.pendingInflightAndRequestedInstants.getClass().getName()": "\"java.util.Collections$EmptySet\"",
+      "this.context": "845309888",
+      "this.context.getClass().getName()": "\"org.apache.hudi.client.common.HoodieJavaEngineContext\"",
+      "this.storageConf": "506207423",
+      "this.storageConf.getClass().getName()": "\"org.apache.hudi.storage.hadoop.HadoopStorageConfiguration\"",
+      "this.config": "556286722",
+      "this.table": "1621616529",
+      "this.table.getClass().getName()": "\"org.apache.hudi.table.HoodieJavaMergeOnReadTable\"",
+      "this.instantGenerator": "449690446",
+      "this.instantGenerator.getClass().getName()": "\"org.apache.hudi.common.table.timeline.versioning.v2.InstantGeneratorV2\"",
+      "this.instantFileNameParser": "1922046989",
+      "this.instantFileNameParser.getClass().getName()": "\"org.apache.hudi.common.table.timeline.versioning.v2.InstantFileNameParserV2\"",
+      "this.instantFileNameGenerator": "621155607",
+      "this.instantFileNameGenerator.getClass().getName()": "\"org.apache.hudi.common.table.timeline.versioning.v2.InstantFileNameGeneratorV2\"",
+      "this.instantTime": "885658029",
+      "this.instantTime.toString": "\"0000001\""
+    },
+    "return": "1041529697"
+  },
+  {
+    "args": {
+      "this": "782240094",
+      "this.inputRecords": "1034866372",
+      "this.inputRecords[..]": "[122833640 1687949824 229514012 1186802819 1403861942 1470447569 716089538 89673760 1066580918 1094144034 503322750 1503564494 1937497408 146158925 376115149 1003419436 376618184 794296086 1636599894 766997724]",
+      "this.inputRecords[..].getClass().getName()": "[\"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\"]",
+      "this.inputRecords.getClass().getName()": "\"java.util.ArrayList\"",
+      "org.apache.hudi.table.action.deltacommit.BaseJavaDeltaCommitActionExecutor.log": "1441494169",
+      "org.apache.hudi.table.action.deltacommit.BaseJavaDeltaCommitActionExecutor.log.getClass().getName()": "\"org.apache.logging.slf4j.Log4jLogger\"",
+      "this.partitioner": "null",
+      "org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log": "375564671",
+      "org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log.getClass().getName()": "\"org.apache.logging.slf4j.Log4jLogger\"",
+      "org.apache.hudi.table.action.commit.BaseCommitActionExecutor.log": "1997120117",
+      "org.apache.hudi.table.action.commit.BaseCommitActionExecutor.log.getClass().getName()": "\"org.apache.logging.slf4j.Log4jLogger\"",
+      "this.extraMetadata": "1375235316",
+      "this.operationType": "1130629818",
+      "this.taskContextSupplier": "1718304953",
+      "this.taskContextSupplier.getClass().getName()": "\"org.apache.hudi.client.common.JavaTaskContextSupplier\"",
+      "this.txnManagerOption": "1375235316",
+      "this.lastCompletedTxn": "1375235316",
+      "this.pendingInflightAndRequestedInstants": "1850414569",
+      "this.pendingInflightAndRequestedInstants.getClass().getName()": "\"java.util.Collections$EmptySet\"",
+      "this.context": "652285594",
+      "this.context.getClass().getName()": "\"org.apache.hudi.client.common.HoodieJavaEngineContext\"",
+      "this.storageConf": "1680026495",
+      "this.storageConf.getClass().getName()": "\"org.apache.hudi.storage.hadoop.HadoopStorageConfiguration\"",
+      "this.config": "1898510920",
+      "this.table": "1041533241",
+      "this.table.getClass().getName()": "\"org.apache.hudi.table.HoodieJavaMergeOnReadTable\"",
+      "this.instantGenerator": "449690446",
+      "this.instantGenerator.getClass().getName()": "\"org.apache.hudi.common.table.timeline.versioning.v2.InstantGeneratorV2\"",
+      "this.instantFileNameParser": "1922046989",
+      "this.instantFileNameParser.getClass().getName()": "\"org.apache.hudi.common.table.timeline.versioning.v2.InstantFileNameParserV2\"",
+      "this.instantFileNameGenerator": "621155607",
+      "this.instantFileNameGenerator.getClass().getName()": "\"org.apache.hudi.common.table.timeline.versioning.v2.InstantFileNameGeneratorV2\"",
+      "this.instantTime": "669632065",
+      "this.instantTime.toString": "\"20260914051248589\""
+    },
+    "return": "48090784"
+  },
+  {
+    "args": {
+      "this": "356247101",
+      "this.inputRecords": "355877477",
+      "this.inputRecords[..]": "[919329950 1408334735 2091459489 1537962811 862743548 1805206301 1587069412 1579832231 239726613 803851114 937863314 1004368546 2060842132 461820479 421944293 1228825089 479878886 824205408 443743442 543603703 1858452595 1549066923 1364005279 1155641666 117746569 2092847224 1170630553 207922626 773721892 539866895 1453454908 2135036831 561730684 1814235795 904532285 1515922164 561530231 1442559065 821896226 858975307 1342330023 1490250626 30836878 631405643 1741136692 613112629 288105938 668619672 2103347796 66200633 1929413408 112416843 255225571 502747344 1788463565 1995748821 1242139806 1843344607 1236029192 438637045 483263315 136553945 593264602 298088701 2113676557 1759791622 671500911 448257026 117397012 1275173047 1448015466 1916626797 244240584 1309287822 1876322179 1984525083 247063946 285247366 1303777370 1884971868 831409512 614973544 1500393574 2056120468 959123360 596978797 198231417 504124895 2134581169 1967633023 2024884899 82791111 588123004 1804763432 428092075 1740890670 876953665 1268849696 1934145165 191035480]",
+      "this.inputRecords[..].getClass().getName()": "[\"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\"]",
+      "this.inputRecords.getClass().getName()": "\"java.util.ArrayList\"",
+      "org.apache.hudi.table.action.deltacommit.BaseJavaDeltaCommitActionExecutor.log": "1441494169",
+      "org.apache.hudi.table.action.deltacommit.BaseJavaDeltaCommitActionExecutor.log.getClass().getName()": "\"org.apache.logging.slf4j.Log4jLogger\"",
+      "this.partitioner": "null",
+      "org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log": "375564671",
+      "org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log.getClass().getName()": "\"org.apache.logging.slf4j.Log4jLogger\"",
+      "org.apache.hudi.table.action.commit.BaseCommitActionExecutor.log": "1997120117",
+      "org.apache.hudi.table.action.commit.BaseCommitActionExecutor.log.getClass().getName()": "\"org.apache.logging.slf4j.Log4jLogger\"",
+      "this.extraMetadata": "1375235316",
+      "this.operationType": "1130629818",
+      "this.taskContextSupplier": "1202175605",
+      "this.taskContextSupplier.getClass().getName()": "\"org.apache.hudi.testutils.HoodieJavaClientTestHarness$TestJavaTaskContextSupplier\"",
+      "this.txnManagerOption": "1375235316",
+      "this.lastCompletedTxn": "1375235316",
+      "this.pendingInflightAndRequestedInstants": "1850414569",
+      "this.pendingInflightAndRequestedInstants.getClass().getName()": "\"java.util.Collections$EmptySet\"",
+      "this.context": "925523622",
+      "this.context.getClass().getName()": "\"org.apache.hudi.client.common.HoodieJavaEngineContext\"",
+      "this.storageConf": "1728225556",
+      "this.storageConf.getClass().getName()": "\"org.apache.hudi.storage.hadoop.HadoopStorageConfiguration\"",
+      "this.config": "494864327",
+      "this.table": "1538900158",
+      "this.table.getClass().getName()": "\"org.apache.hudi.table.HoodieJavaMergeOnReadTable\"",
+      "this.instantGenerator": "449690446",
+      "this.instantGenerator.getClass().getName()": "\"org.apache.hudi.common.table.timeline.versioning.v2.InstantGeneratorV2\"",
+      "this.instantFileNameParser": "1922046989",
+      "this.instantFileNameParser.getClass().getName()": "\"org.apache.hudi.common.table.timeline.versioning.v2.InstantFileNameParserV2\"",
+      "this.instantFileNameGenerator": "621155607",
+      "this.instantFileNameGenerator.getClass().getName()": "\"org.apache.hudi.common.table.timeline.versioning.v2.InstantFileNameGeneratorV2\"",
+      "this.instantTime": "1872236021",
+      "this.instantTime.toString": "\"20260914051711167\""
+    },
+    "return": "51658633"
+  },
+  {
+    "args": {
+      "this": "1303620610",
+      "this.inputRecords": "1130942782",
+      "this.inputRecords[..]": "[76920282 1921573686 1415708537 1367680490 2014798181]",
+      "this.inputRecords[..].getClass().getName()": "[\"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\"]",
+      "this.inputRecords.getClass().getName()": "\"java.util.ArrayList\"",
+      "org.apache.hudi.table.action.deltacommit.BaseJavaDeltaCommitActionExecutor.log": "1441494169",
+      "org.apache.hudi.table.action.deltacommit.BaseJavaDeltaCommitActionExecutor.log.getClass().getName()": "\"org.apache.logging.slf4j.Log4jLogger\"",
+      "this.partitioner": "null",
+      "org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log": "375564671",
+      "org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log.getClass().getName()": "\"org.apache.logging.slf4j.Log4jLogger\"",
+      "org.apache.hudi.table.action.commit.BaseCommitActionExecutor.log": "1997120117",
+      "org.apache.hudi.table.action.commit.BaseCommitActionExecutor.log.getClass().getName()": "\"org.apache.logging.slf4j.Log4jLogger\"",
+      "this.extraMetadata": "1375235316",
+      "this.operationType": "1130629818",
+      "this.taskContextSupplier": "813692854",
+      "this.taskContextSupplier.getClass().getName()": "\"org.apache.hudi.testutils.HoodieJavaClientTestHarness$TestJavaTaskContextSupplier\"",
+      "this.txnManagerOption": "1375235316",
+      "this.lastCompletedTxn": "1375235316",
+      "this.pendingInflightAndRequestedInstants": "1850414569",
+      "this.pendingInflightAndRequestedInstants.getClass().getName()": "\"java.util.Collections$EmptySet\"",
+      "this.context": "2134975811",
+      "this.context.getClass().getName()": "\"org.apache.hudi.client.common.HoodieJavaEngineContext\"",
+      "this.storageConf": "1728225556",
+      "this.storageConf.getClass().getName()": "\"org.apache.hudi.storage.hadoop.HadoopStorageConfiguration\"",
+      "this.config": "833162046",
+      "this.table": "309632696",
+      "this.table.getClass().getName()": "\"org.apache.hudi.table.HoodieJavaMergeOnReadTable\"",
+      "this.instantGenerator": "449690446",
+      "this.instantGenerator.getClass().getName()": "\"org.apache.hudi.common.table.timeline.versioning.v2.InstantGeneratorV2\"",
+      "this.instantFileNameParser": "1922046989",
+      "this.instantFileNameParser.getClass().getName()": "\"org.apache.hudi.common.table.timeline.versioning.v2.InstantFileNameParserV2\"",
+      "this.instantFileNameGenerator": "621155607",
+      "this.instantFileNameGenerator.getClass().getName()": "\"org.apache.hudi.common.table.timeline.versioning.v2.InstantFileNameGeneratorV2\"",
+      "this.instantTime": "207963459",
+      "this.instantTime.toString": "\"20260914051723802\""
+    },
+    "return": "944138750"
+  },
+  {
+    "args": {
+      "this": "1471166532",
+      "this.inputRecords": "1207082258",
+      "this.inputRecords[..]": "[2129293772 1534366664 629907505 1992467359 1527498906 614398688 1558994026 1070711347 983274059 1761682946]",
+      "this.inputRecords[..].getClass().getName()": "[\"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\"]",
+      "this.inputRecords.getClass().getName()": "\"java.util.ArrayList\"",
+      "org.apache.hudi.table.action.deltacommit.BaseJavaDeltaCommitActionExecutor.log": "1441494169",
+      "org.apache.hudi.table.action.deltacommit.BaseJavaDeltaCommitActionExecutor.log.getClass().getName()": "\"org.apache.logging.slf4j.Log4jLogger\"",
+      "this.partitioner": "null",
+      "org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log": "375564671",
+      "org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log.getClass().getName()": "\"org.apache.logging.slf4j.Log4jLogger\"",
+      "org.apache.hudi.table.action.commit.BaseCommitActionExecutor.log": "1997120117",
+      "org.apache.hudi.table.action.commit.BaseCommitActionExecutor.log.getClass().getName()": "\"org.apache.logging.slf4j.Log4jLogger\"",
+      "this.extraMetadata": "1375235316",
+      "this.operationType": "1130629818",
+      "this.taskContextSupplier": "2123414055",
+      "this.taskContextSupplier.getClass().getName()": "\"org.apache.hudi.testutils.HoodieJavaClientTestHarness$TestJavaTaskContextSupplier\"",
+      "this.txnManagerOption": "1375235316",
+      "this.lastCompletedTxn": "1375235316",
+      "this.pendingInflightAndRequestedInstants": "1850414569",
+      "this.pendingInflightAndRequestedInstants.getClass().getName()": "\"java.util.Collections$EmptySet\"",
+      "this.context": "1481621151",
+      "this.context.getClass().getName()": "\"org.apache.hudi.client.common.HoodieJavaEngineContext\"",
+      "this.storageConf": "1728225556",
+      "this.storageConf.getClass().getName()": "\"org.apache.hudi.storage.hadoop.HadoopStorageConfiguration\"",
+      "this.config": "1389889898",
+      "this.table": "1241494178",
+      "this.table.getClass().getName()": "\"org.apache.hudi.table.HoodieJavaMergeOnReadTable\"",
+      "this.instantGenerator": "449690446",
+      "this.instantGenerator.getClass().getName()": "\"org.apache.hudi.common.table.timeline.versioning.v2.InstantGeneratorV2\"",
+      "this.instantFileNameParser": "1922046989",
+      "this.instantFileNameParser.getClass().getName()": "\"org.apache.hudi.common.table.timeline.versioning.v2.InstantFileNameParserV2\"",
+      "this.instantFileNameGenerator": "621155607",
+      "this.instantFileNameGenerator.getClass().getName()": "\"org.apache.hudi.common.table.timeline.versioning.v2.InstantFileNameGeneratorV2\"",
+      "this.instantTime": "1011374398",
+      "this.instantTime.toString": "\"20260914051730943\""
+    },
+    "return": "1950351345"
+  },
+  {
+    "args": {
+      "this": "812761178",
+      "this.inputRecords": "710458482",
+      "this.inputRecords[..]": "[1160097211 1763085665 575632421 1302066994 624677711 2023436044 564953702 865911558 1220988817 1761901258 754870846 2041514068 132905655 1307775658 302198448 334457100 1258887044 515516941 365425092 2097700217 2118045803 823879651 460913109 614763606 739360033 1189077823 448076896 443802972 992652166 47538631 808532961 904749502 1534433822 1921455086 1271971948 367962169 1656514032 686686762 1701864699 96450316 70111662 1544186963 976981141 1111776009 672027214 661249000 1104196788 556544916 2070579677 305511363 1451546661 376758770 973059712 111933919 1981701343 1196710047 64728387 1516755430 1578864337 997106989 1702995638 21883657 52592887 1294666355 636985718 1267471202 1555957724 1238623914 1370948343 2055933088 1453814986 9907714 1767777373 1259527130 645855062 530590373 130324928 1523932905 197183138 355151997 906142081 1179685822 1269348352 122470864 610362897 1718537280 1745354805 153820837 643149951 919168057 510182269 1332164643 1153085432 959439866 1636088969 391390906 100703943 1081515470 80871869 847611499]",
+      "this.inputRecords[..].getClass().getName()": "[\"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\"]",
+      "this.inputRecords.getClass().getName()": "\"java.util.ArrayList\"",
+      "org.apache.hudi.table.action.deltacommit.BaseJavaDeltaCommitActionExecutor.log": "1441494169",
+      "org.apache.hudi.table.action.deltacommit.BaseJavaDeltaCommitActionExecutor.log.getClass().getName()": "\"org.apache.logging.slf4j.Log4jLogger\"",
+      "this.partitioner": "null",
+      "org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log": "375564671",
+      "org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log.getClass().getName()": "\"org.apache.logging.slf4j.Log4jLogger\"",
+      "org.apache.hudi.table.action.commit.BaseCommitActionExecutor.log": "1997120117",
+      "org.apache.hudi.table.action.commit.BaseCommitActionExecutor.log.getClass().getName()": "\"org.apache.logging.slf4j.Log4jLogger\"",
+      "this.extraMetadata": "1375235316",
+      "this.operationType": "1130629818",
+      "this.taskContextSupplier": "2063675695",
+      "this.taskContextSupplier.getClass().getName()": "\"org.apache.hudi.testutils.HoodieJavaClientTestHarness$TestJavaTaskContextSupplier\"",
+      "this.txnManagerOption": "1375235316",
+      "this.lastCompletedTxn": "1375235316",
+      "this.pendingInflightAndRequestedInstants": "1850414569",
+      "this.pendingInflightAndRequestedInstants.getClass().getName()": "\"java.util.Collections$EmptySet\"",
+      "this.context": "669085657",
+      "this.context.getClass().getName()": "\"org.apache.hudi.client.common.HoodieJavaEngineContext\"",
+      "this.storageConf": "1154741603",
+      "this.storageConf.getClass().getName()": "\"org.apache.hudi.storage.hadoop.HadoopStorageConfiguration\"",
+      "this.config": "851042417",
+      "this.table": "615556821",
+      "this.table.getClass().getName()": "\"org.apache.hudi.table.HoodieJavaMergeOnReadTable\"",
+      "this.instantGenerator": "449690446",
+      "this.instantGenerator.getClass().getName()": "\"org.apache.hudi.common.table.timeline.versioning.v2.InstantGeneratorV2\"",
+      "this.instantFileNameParser": "1922046989",
+      "this.instantFileNameParser.getClass().getName()": "\"org.apache.hudi.common.table.timeline.versioning.v2.InstantFileNameParserV2\"",
+      "this.instantFileNameGenerator": "621155607",
+      "this.instantFileNameGenerator.getClass().getName()": "\"org.apache.hudi.common.table.timeline.versioning.v2.InstantFileNameGeneratorV2\"",
+      "this.instantTime": "1487037952",
+      "this.instantTime.toString": "\"20260914051737012\""
+    },
+    "return": "1232792157"
+  },
+  {
+    "args": {
+      "this": "1795578444",
+      "this.inputRecords": "1010672637",
+      "this.inputRecords[..]": "[1236632602 1020798578 1204526423 381217816 1934114689 249461804 358902149 1156423453 1995117622 195635675 1035424106 361374902 997120149 2035010002 2121329552 974901116 2013008602 1348354222 688594270 1301235500 1517479557 2014025301 152798695 1050285519 1938922071 1468797774 40730853 1823987978 319530473 615174821 1252918397 411298731 1458123199 606400061 504597288 424343026 112286637 99031104 128944415 1225005437 1164206019 2029812279 65069894 1791413686 230366570 370008872 309577852 1317276921 461441038 1659677941 1859168508 14520859 328149878 344176374 2139057106 333341548 2044739322 1893532470 1954076420 350031844 1823663211 1961791096 1176286998 985805342 1093146769 1102431106 1655859365 1238098991 1210482967 660660802 1457934667 1083845924 1011360281 471508256 2014495713 1777349322 349539591 1563367704 869057687 1531102790 1665652124 1174791989 330853150 1577451481 62073520 1785092540 987119477 1264379073 1361097136 156477841 41222745 774079546 2061110655 1859202196 1151114461 1982648864 1555535983 996518625 457155364 194170801]",
+      "this.inputRecords[..].getClass().getName()": "[\"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\" \"org.apache.hudi.common.model.HoodieAvroIndexedRecord\"]",
+      "this.inputRecords.getClass().getName()": "\"java.util.ArrayList\"",
+      "org.apache.hudi.table.action.deltacommit.BaseJavaDeltaCommitActionExecutor.log": "1441494169",
+      "org.apache.hudi.table.action.deltacommit.BaseJavaDeltaCommitActionExecutor.log.getClass().getName()": "\"org.apache.logging.slf4j.Log4jLogger\"",
+      "this.partitioner": "null",
+      "org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log": "375564671",
+      "org.apache.hudi.table.action.commit.BaseJavaCommitActionExecutor.log.getClass().getName()": "\"org.apache.logging.slf4j.Log4jLogger\"",
+      "org.apache.hudi.table.action.commit.BaseCommitActionExecutor.log": "1997120117",
+      "org.apache.hudi.table.action.commit.BaseCommitActionExecutor.log.getClass().getName()": "\"org.apache.logging.slf4j.Log4jLogger\"",
+      "this.extraMetadata": "1375235316",
+      "this.operationType": "1130629818",
+      "this.taskContextSupplier": "1488517668",
+      "this.taskContextSupplier.getClass().getName()": "\"org.apache.hudi.testutils.HoodieJavaClientTestHarness$TestJavaTaskContextSupplier\"",
+      "this.txnManagerOption": "1375235316",
+      "this.lastCompletedTxn": "1375235316",
+      "this.pendingInflightAndRequestedInstants": "1850414569",
+      "this.pendingInflightAndRequestedInstants.getClass().getName()": "\"java.util.Collections$EmptySet\"",
+      "this.context": "1330072573",
+      "this.context.getClass().getName()": "\"org.apache.hudi.client.common.HoodieJavaEngineContext\"",
+      "this.storageConf": "1154741603",
+      "this.storageConf.getClass().getName()": "\"org.apache.hudi.storage.hadoop.HadoopStorageConfiguration\"",
+      "this.config": "1567377554",
+      "this.table": "786482186",
+      "this.table.getClass().getName()": "\"org.apache.hudi.table.HoodieJavaMergeOnReadTable\"",
+      "this.instantGenerator": "449690446",
+      "this.instantGenerator.getClass().getName()": "\"org.apache.hudi.common.table.timeline.versioning.v2.InstantGeneratorV2\"",
+      "this.instantFileNameParser": "1922046989",
+      "this.instantFileNameParser.getClass().getName()": "\"org.apache.hudi.common.table.timeline.versioning.v2.InstantFileNameParserV2\"",
+      "this.instantFileNameGenerator": "621155607",
+      "this.instantFileNameGenerator.getClass().getName()": "\"org.apache.hudi.common.table.timeline.versioning.v2.InstantFileNameGeneratorV2\"",
+      "this.instantTime": "600511610",
+      "this.instantTime.toString": "\"20260914051746902\""
+    },
+    "return": "680015993"
+  }
+]
+
+
+### CALL SITES
+Matched key: org.apache.hudi.table.action.deltacommit.JavaInsertDeltaCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>
+Number of call sites: 2
+
+--- CALL SITE 1/2 ---
+{
+  "callerKey": "org.apache.hudi.table.HoodieJavaMergeOnReadTable#insert(HoodieEngineContext,String,List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>",
+  "callerJavadoc": "",
+  "callSite": "11 = invokevirtual < Application, Lorg/apache/hudi/table/action/deltacommit/JavaInsertDeltaCommitActionExecutor, execute()Lorg/apache/hudi/table/action/HoodieWriteMetadata; > 6 @18 exception:10"
+}
+
+CALLER KEY: org.apache.hudi.table.HoodieJavaMergeOnReadTable#insert(HoodieEngineContext,String,List<HoodieRecord<T>>):HoodieWriteMetadata<List<WriteStatus>>
+CALLER FILE: /mmfs1/project/mjk76/ea442/promptstudy/hudi/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/HoodieJavaMergeOnReadTable.java
+
+CALLER IMPLEMENTATION:
+  @Override
+  public HoodieWriteMetadata<List<WriteStatus>> insert(HoodieEngineContext context, String instantTime, List<HoodieRecord<T>> hoodieRecords) {
+    return new JavaInsertDeltaCommitActionExecutor<>((HoodieJavaEngineContext) context, config, this, instantTime, hoodieRecords).execute();
+  }
+
+--- CALL SITE 2/2 ---
+{
+  "callerKey": "org.apache.hudi.table.action.deltacommit.JavaInsertDeltaCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>",
+  "callerJavadoc": "",
+  "callSite": "4 = invokevirtual < Application, Lorg/apache/hudi/table/action/deltacommit/JavaInsertDeltaCommitActionExecutor, execute()Lorg/apache/hudi/table/action/HoodieWriteMetadata; > 1 @1 exception:3"
+}
+
+CALLER KEY: org.apache.hudi.table.action.deltacommit.JavaInsertDeltaCommitActionExecutor#execute():HoodieWriteMetadata<List<WriteStatus>>
+CALLER FILE: /mmfs1/project/mjk76/ea442/promptstudy/hudi/hudi-client/hudi-java-client/src/main/java/org/apache/hudi/table/action/deltacommit/JavaInsertDeltaCommitActionExecutor.java
+
+CALLER IMPLEMENTATION:
+  @Override
+  public HoodieWriteMetadata<List<WriteStatus>> execute() {
+    return JavaWriteHelper.newInstance().write(instantTime, inputRecords, context, table,
+        config.shouldCombineBeforeUpsert(), config.getUpsertShuffleParallelism(),this, operationType);
+  }
+
+
+========================================================================================================================
+METHOD 4/10
+PROJECT: netty
+REQUESTED KEY: io.netty.util.concurrent.UnorderedThreadPoolEventExecutor#shutdownGracefully():Future<?>
+========================================================================================================================
+
+### IO EXAMPLES
+Matched key: io.netty.util.concurrent.UnorderedThreadPoolEventExecutor#shutdownGracefully():Future<?>
+Number of examples: 6
+[
+  {
+    "args": {
+      "this": "296624948",
+      "io.netty.util.concurrent.UnorderedThreadPoolEventExecutor.logger": "352110648",
+      "io.netty.util.concurrent.UnorderedThreadPoolEventExecutor.logger.getClass().getName()": "\"io.netty.util.internal.logging.LocationAwareSlf4JLogger\"",
+      "this.terminationFuture": "1483664882",
+      "this.terminationFuture.getClass().getName()": "\"io.netty.util.concurrent.DefaultPromise\"",
+      "this.executorSet": "1744624994",
+      "this.executorSet.getClass().getName()": "\"java.util.Collections$SingletonSet\"",
+      "this.eventLoopThreads": "1703627281",
+      "this.eventLoopThreads.getClass().getName()": "\"java.util.concurrent.ConcurrentHashMap$KeySetView\""
+    },
+    "return": "1483664882"
+  },
+  {
+    "args": {
+      "this": "1699279380",
+      "io.netty.util.concurrent.UnorderedThreadPoolEventExecutor.logger": "352110648",
+      "io.netty.util.concurrent.UnorderedThreadPoolEventExecutor.logger.getClass().getName()": "\"io.netty.util.internal.logging.LocationAwareSlf4JLogger\"",
+      "this.terminationFuture": "1939560848",
+      "this.terminationFuture.getClass().getName()": "\"io.netty.util.concurrent.DefaultPromise\"",
+      "this.executorSet": "1278636276",
+      "this.executorSet.getClass().getName()": "\"java.util.Collections$SingletonSet\"",
+      "this.eventLoopThreads": "1024377865",
+      "this.eventLoopThreads.getClass().getName()": "\"java.util.concurrent.ConcurrentHashMap$KeySetView\""
+    },
+    "return": "1939560848"
+  },
+  {
+    "args": {
+      "this": "25618890",
+      "io.netty.util.concurrent.UnorderedThreadPoolEventExecutor.logger": "352110648",
+      "io.netty.util.concurrent.UnorderedThreadPoolEventExecutor.logger.getClass().getName()": "\"io.netty.util.internal.logging.LocationAwareSlf4JLogger\"",
+      "this.terminationFuture": "1268405937",
+      "this.terminationFuture.getClass().getName()": "\"io.netty.util.concurrent.DefaultPromise\"",
+      "this.executorSet": "414193813",
+      "this.executorSet.getClass().getName()": "\"java.util.Collections$SingletonSet\"",
+      "this.eventLoopThreads": "1144095017",
+      "this.eventLoopThreads.getClass().getName()": "\"java.util.concurrent.ConcurrentHashMap$KeySetView\""
+    },
+    "return": "1268405937"
+  },
+  {
+    "args": {
+      "this": "933472041",
+      "io.netty.util.concurrent.UnorderedThreadPoolEventExecutor.logger": "352110648",
+      "io.netty.util.concurrent.UnorderedThreadPoolEventExecutor.logger.getClass().getName()": "\"io.netty.util.internal.logging.LocationAwareSlf4JLogger\"",
+      "this.terminationFuture": "1740369819",
+      "this.terminationFuture.getClass().getName()": "\"io.netty.util.concurrent.DefaultPromise\"",
+      "this.executorSet": "266097009",
+      "this.executorSet.getClass().getName()": "\"java.util.Collections$SingletonSet\"",
+      "this.eventLoopThreads": "1125739047",
+      "this.eventLoopThreads.getClass().getName()": "\"java.util.concurrent.ConcurrentHashMap$KeySetView\""
+    },
+    "return": "1740369819"
+  },
+  {
+    "args": {
+      "this": "1505630727",
+      "io.netty.util.concurrent.UnorderedThreadPoolEventExecutor.logger": "352110648",
+      "io.netty.util.concurrent.UnorderedThreadPoolEventExecutor.logger.getClass().getName()": "\"io.netty.util.internal.logging.LocationAwareSlf4JLogger\"",
+      "this.terminationFuture": "1689300121",
+      "this.terminationFuture.getClass().getName()": "\"io.netty.util.concurrent.DefaultPromise\"",
+      "this.executorSet": "948679117",
+      "this.executorSet.getClass().getName()": "\"java.util.Collections$SingletonSet\"",
+      "this.eventLoopThreads": "1446325581",
+      "this.eventLoopThreads.getClass().getName()": "\"java.util.concurrent.ConcurrentHashMap$KeySetView\""
+    },
+    "return": "1689300121"
+  },
+  {
+    "args": {
+      "this": "1421348671",
+      "io.netty.util.concurrent.UnorderedThreadPoolEventExecutor.logger": "352110648",
+      "io.netty.util.concurrent.UnorderedThreadPoolEventExecutor.logger.getClass().getName()": "\"io.netty.util.internal.logging.LocationAwareSlf4JLogger\"",
+      "this.terminationFuture": "2123218043",
+      "this.terminationFuture.getClass().getName()": "\"io.netty.util.concurrent.DefaultPromise\"",
+      "this.executorSet": "1444890078",
+      "this.executorSet.getClass().getName()": "\"java.util.Collections$SingletonSet\"",
+      "this.eventLoopThreads": "1423940776",
+      "this.eventLoopThreads.getClass().getName()": "\"java.util.concurrent.ConcurrentHashMap$KeySetView\""
+    },
+    "return": "2123218043"
+  }
+]
+
+
+### CALL SITES
+Matched key: io.netty.util.concurrent.UnorderedThreadPoolEventExecutor#shutdownGracefully():Future<?>
+Number of call sites: 2
+
+--- CALL SITE 1/2 ---
+{
+  "callerKey": null,
+  "callerJavadoc": "",
+  "callSite": "31 = invokeinterface < Application, Lio/netty/util/concurrent/EventExecutor, shutdownGracefully()Lio/netty/util/concurrent/Future; > 29 @111 exception:30"
+}
+
+CALLER IMPLEMENTATION: unavailable (callerKey is null)
+
+--- CALL SITE 2/2 ---
+{
+  "callerKey": null,
+  "callerJavadoc": "",
+  "callSite": "88 = invokeinterface < Application, Lio/netty/util/concurrent/EventExecutor, shutdownGracefully()Lio/netty/util/concurrent/Future; > 86 @230 exception:87"
+}
+
+CALLER IMPLEMENTATION: unavailable (callerKey is null)
+
+
+========================================================================================================================
+METHOD 5/10
+PROJECT: spring
+REQUESTED KEY: org.springframework.core.annotation.PackagesAnnotationFilter#matches(String):boolean
+========================================================================================================================
+
+### IO EXAMPLES
+Matched key: org.springframework.core.annotation.PackagesAnnotationFilter#matches(String):boolean
+Number of examples: 20
+[
+  {
+    "args": {
+      "this": "2056318458",
+      "this.prefixes": "1397591095",
+      "this.prefixes.getClass().getName()": "\"java.lang.String[]\"",
+      "this.prefixes[..]": "[961652759 1735826234]",
+      "this.prefixes[..].getClass().getName()": "[\"java.lang.String\" \"java.lang.String\"]",
+      "this.prefixes[..].toString": "[\"java.lang.\" \"org.springframework.lang.\"]",
+      "this.hashCode": "-1430236186",
+      "annotationType": "626496993",
+      "annotationType.toString": "\"com.fasterxml.jackson.annotation.JsonProperty\""
+    },
+    "return": "false"
+  },
+  {
+    "args": {
+      "this": "2056318458",
+      "this.prefixes": "1397591095",
+      "this.prefixes.getClass().getName()": "\"java.lang.String[]\"",
+      "this.prefixes[..]": "[961652759 1735826234]",
+      "this.prefixes[..].getClass().getName()": "[\"java.lang.String\" \"java.lang.String\"]",
+      "this.prefixes[..].toString": "[\"java.lang.\" \"org.springframework.lang.\"]",
+      "this.hashCode": "-1430236186",
+      "annotationType": "1826802219",
+      "annotationType.toString": "\"com.fasterxml.jackson.databind.annotation.JsonDeserialize\""
+    },
+    "return": "false"
+  },
+  {
+    "args": {
+      "this": "2056318458",
+      "this.prefixes": "1397591095",
+      "this.prefixes.getClass().getName()": "\"java.lang.String[]\"",
+      "this.prefixes[..]": "[961652759 1735826234]",
+      "this.prefixes[..].getClass().getName()": "[\"java.lang.String\" \"java.lang.String\"]",
+      "this.prefixes[..].toString": "[\"java.lang.\" \"org.springframework.lang.\"]",
+      "this.hashCode": "-1430236186",
+      "annotationType": "626496993",
+      "annotationType.toString": "\"com.fasterxml.jackson.annotation.JsonProperty\""
+    },
+    "return": "false"
+  },
+  {
+    "args": {
+      "this": "2056318458",
+      "this.prefixes": "1397591095",
+      "this.prefixes.getClass().getName()": "\"java.lang.String[]\"",
+      "this.prefixes[..]": "[961652759 1735826234]",
+      "this.prefixes[..].getClass().getName()": "[\"java.lang.String\" \"java.lang.String\"]",
+      "this.prefixes[..].toString": "[\"java.lang.\" \"org.springframework.lang.\"]",
+      "this.hashCode": "-1430236186",
+      "annotationType": "1826802219",
+      "annotationType.toString": "\"com.fasterxml.jackson.databind.annotation.JsonDeserialize\""
+    },
+    "return": "false"
+  },
+  {
+    "args": {
+      "this": "2056318458",
+      "this.prefixes": "1397591095",
+      "this.prefixes.getClass().getName()": "\"java.lang.String[]\"",
+      "this.prefixes[..]": "[961652759 1735826234]",
+      "this.prefixes[..].getClass().getName()": "[\"java.lang.String\" \"java.lang.String\"]",
+      "this.prefixes[..].toString": "[\"java.lang.\" \"org.springframework.lang.\"]",
+      "this.hashCode": "-1430236186",
+      "annotationType": "1995881616",
+      "annotationType.toString": "\"java.lang.annotation.Target\""
+    },
+    "return": "true"
+  },
+  {
+    "args": {
+      "this": "2056318458",
+      "this.prefixes": "1397591095",
+      "this.prefixes.getClass().getName()": "\"java.lang.String[]\"",
+      "this.prefixes[..]": "[961652759 1735826234]",
+      "this.prefixes[..].getClass().getName()": "[\"java.lang.String\" \"java.lang.String\"]",
+      "this.prefixes[..].toString": "[\"java.lang.\" \"org.springframework.lang.\"]",
+      "this.hashCode": "-1430236186",
+      "annotationType": "1995881616",
+      "annotationType.toString": "\"java.lang.annotation.Target\""
+    },
+    "return": "true"
+  },
+  {
+    "args": {
+      "this": "2056318458",
+      "this.prefixes": "1397591095",
+      "this.prefixes.getClass().getName()": "\"java.lang.String[]\"",
+      "this.prefixes[..]": "[961652759 1735826234]",
+      "this.prefixes[..].getClass().getName()": "[\"java.lang.String\" \"java.lang.String\"]",
+      "this.prefixes[..].toString": "[\"java.lang.\" \"org.springframework.lang.\"]",
+      "this.hashCode": "-1430236186",
+      "annotationType": "1431852857",
+      "annotationType.toString": "\"com.fasterxml.jackson.annotation.JacksonAnnotation\""
+    },
+    "return": "false"
+  },
+  {
+    "args": {
+      "this": "2056318458",
+      "this.prefixes": "1397591095",
+      "this.prefixes.getClass().getName()": "\"java.lang.String[]\"",
+      "this.prefixes[..]": "[961652759 1735826234]",
+      "this.prefixes[..].getClass().getName()": "[\"java.lang.String\" \"java.lang.String\"]",
+      "this.prefixes[..].toString": "[\"java.lang.\" \"org.springframework.lang.\"]",
+      "this.hashCode": "-1430236186",
+      "annotationType": "1431852857",
+      "annotationType.toString": "\"com.fasterxml.jackson.annotation.JacksonAnnotation\""
+    },
+    "return": "false"
+  },
+  {
+    "args": {
+      "this": "2056318458",
+      "this.prefixes": "1397591095",
+      "this.prefixes.getClass().getName()": "\"java.lang.String[]\"",
+      "this.prefixes[..]": "[961652759 1735826234]",
+      "this.prefixes[..].getClass().getName()": "[\"java.lang.String\" \"java.lang.String\"]",
+      "this.prefixes[..].toString": "[\"java.lang.\" \"org.springframework.lang.\"]",
+      "this.hashCode": "-1430236186",
+      "annotationType": "626496993",
+      "annotationType.toString": "\"com.fasterxml.jackson.annotation.JsonProperty\""
+    },
+    "return": "false"
+  },
+  {
+    "args": {
+      "this": "2056318458",
+      "this.prefixes": "1397591095",
+      "this.prefixes.getClass().getName()": "\"java.lang.String[]\"",
+      "this.prefixes[..]": "[961652759 1735826234]",
+      "this.prefixes[..].getClass().getName()": "[\"java.lang.String\" \"java.lang.String\"]",
+      "this.prefixes[..].toString": "[\"java.lang.\" \"org.springframework.lang.\"]",
+      "this.hashCode": "-1430236186",
+      "annotationType": "1431852857",
+      "annotationType.toString": "\"com.fasterxml.jackson.annotation.JacksonAnnotation\""
+    },
+    "return": "false"
+  },
+  {
+    "args": {
+      "this": "2056318458",
+      "this.prefixes": "1397591095",
+      "this.prefixes.getClass().getName()": "\"java.lang.String[]\"",
+      "this.prefixes[..]": "[961652759 1735826234]",
+      "this.prefixes[..].getClass().getName()": "[\"java.lang.String\" \"java.lang.String\"]",
+      "this.prefixes[..].toString": "[\"java.lang.\" \"org.springframework.lang.\"]",
+      "this.hashCode": "-1430236186",
+      "annotationType": "2060731512",
+      "annotationType.toString": "\"org.springframework.aot.hint.annotation.Reflective\""
+    },
+    "return": "false"
+  },
+  {
+    "args": {
+      "this": "2056318458",
+      "this.prefixes": "1397591095",
+      "this.prefixes.getClass().getName()": "\"java.lang.String[]\"",
+      "this.prefixes[..]": "[961652759 1735826234]",
+      "this.prefixes[..].getClass().getName()": "[\"java.lang.String\" \"java.lang.String\"]",
+      "this.prefixes[..].toString": "[\"java.lang.\" \"org.springframework.lang.\"]",
+      "this.hashCode": "-1430236186",
+      "annotationType": "2060731512",
+      "annotationType.toString": "\"org.springframework.aot.hint.annotation.Reflective\""
+    },
+    "return": "false"
+  },
+  {
+    "args": {
+      "this": "2056318458",
+      "this.prefixes": "1397591095",
+      "this.prefixes.getClass().getName()": "\"java.lang.String[]\"",
+      "this.prefixes[..]": "[961652759 1735826234]",
+      "this.prefixes[..].getClass().getName()": "[\"java.lang.String\" \"java.lang.String\"]",
+      "this.prefixes[..].toString": "[\"java.lang.\" \"org.springframework.lang.\"]",
+      "this.hashCode": "-1430236186",
+      "annotationType": "908540959",
+      "annotationType.toString": "\"jakarta.annotation.Priority\""
+    },
+    "return": "false"
+  },
+  {
+    "args": {
+      "this": "2056318458",
+      "this.prefixes": "1397591095",
+      "this.prefixes.getClass().getName()": "\"java.lang.String[]\"",
+      "this.prefixes[..]": "[961652759 1735826234]",
+      "this.prefixes[..].getClass().getName()": "[\"java.lang.String\" \"java.lang.String\"]",
+      "this.prefixes[..].toString": "[\"java.lang.\" \"org.springframework.lang.\"]",
+      "this.hashCode": "-1430236186",
+      "annotationType": "2548047",
+      "annotationType.toString": "\"org.springframework.core.testfixture.stereotype.Component\""
+    },
+    "return": "false"
+  },
+  {
+    "args": {
+      "this": "2056318458",
+      "this.prefixes": "1397591095",
+      "this.prefixes.getClass().getName()": "\"java.lang.String[]\"",
+      "this.prefixes[..]": "[961652759 1735826234]",
+      "this.prefixes[..].getClass().getName()": "[\"java.lang.String\" \"java.lang.String\"]",
+      "this.prefixes[..].toString": "[\"java.lang.\" \"org.springframework.lang.\"]",
+      "this.hashCode": "-1430236186",
+      "annotationType": "234843240",
+      "annotationType.toString": "\"org.springframework.core.annotation.AnnotatedElementUtilsTests$TestComponentScan\""
+    },
+    "return": "false"
+  },
+  {
+    "args": {
+      "this": "2056318458",
+      "this.prefixes": "1397591095",
+      "this.prefixes.getClass().getName()": "\"java.lang.String[]\"",
+      "this.prefixes[..]": "[961652759 1735826234]",
+      "this.prefixes[..].getClass().getName()": "[\"java.lang.String\" \"java.lang.String\"]",
+      "this.prefixes[..].toString": "[\"java.lang.\" \"org.springframework.lang.\"]",
+      "this.hashCode": "-1430236186",
+      "annotationType": "1894316381",
+      "annotationType.toString": "\"org.springframework.core.annotation.AnnotatedElementUtilsTests$Transactional\""
+    },
+    "return": "false"
+  },
+  {
+    "args": {
+      "this": "2056318458",
+      "this.prefixes": "1397591095",
+      "this.prefixes.getClass().getName()": "\"java.lang.String[]\"",
+      "this.prefixes[..]": "[961652759 1735826234]",
+      "this.prefixes[..].getClass().getName()": "[\"java.lang.String\" \"java.lang.String\"]",
+      "this.prefixes[..].toString": "[\"java.lang.\" \"org.springframework.lang.\"]",
+      "this.hashCode": "-1430236186",
+      "annotationType": "1941118127",
+      "annotationType.toString": "\"java.lang.annotation.Retention\""
+    },
+    "return": "true"
+  },
+  {
+    "args": {
+      "this": "2056318458",
+      "this.prefixes": "1397591095",
+      "this.prefixes.getClass().getName()": "\"java.lang.String[]\"",
+      "this.prefixes[..]": "[961652759 1735826234]",
+      "this.prefixes[..].getClass().getName()": "[\"java.lang.String\" \"java.lang.String\"]",
+      "this.prefixes[..].toString": "[\"java.lang.\" \"org.springframework.lang.\"]",
+      "this.hashCode": "-1430236186",
+      "annotationType": "277508851",
+      "annotationType.toString": "\"org.springframework.core.annotation.MergedAnnotationsComposedOnSingleAnnotatedElementTests$Cacheable\""
+    },
+    "return": "false"
+  },
+  {
+    "args": {
+      "this": "2056318458",
+      "this.prefixes": "1397591095",
+      "this.prefixes.getClass().getName()": "\"java.lang.String[]\"",
+      "this.prefixes[..]": "[961652759 1735826234]",
+      "this.prefixes[..].getClass().getName()": "[\"java.lang.String\" \"java.lang.String\"]",
+      "this.prefixes[..].toString": "[\"java.lang.\" \"org.springframework.lang.\"]",
+      "this.hashCode": "-1430236186",
+      "annotationType": "2548047",
+      "annotationType.toString": "\"org.springframework.core.testfixture.stereotype.Component\""
+    },
+    "return": "false"
+  },
+  {
+    "args": {
+      "this": "2056318458",
+      "this.prefixes": "1397591095",
+      "this.prefixes.getClass().getName()": "\"java.lang.String[]\"",
+      "this.prefixes[..]": "[961652759 1735826234]",
+      "this.prefixes[..].getClass().getName()": "[\"java.lang.String\" \"java.lang.String\"]",
+      "this.prefixes[..].toString": "[\"java.lang.\" \"org.springframework.lang.\"]",
+      "this.hashCode": "-1430236186",
+      "annotationType": "311994995",
+      "annotationType.toString": "\"org.springframework.core.convert.TypeDescriptorTests$MethodAnnotation1\""
+    },
+    "return": "false"
+  }
+]
+
+
+### CALL SITES
+Matched key: org.springframework.core.annotation.PackagesAnnotationFilter#matches(String):boolean
+Number of call sites: 7
+
+--- CALL SITE 1/7 ---
+{
+  "callerKey": null,
+  "callerJavadoc": "",
+  "callSite": "14 = invokeinterface < Application, Lorg/springframework/core/annotation/AnnotationFilter, matches(Ljava/lang/String;)Z > 12,11 @20 exception:13"
+}
+
+CALLER IMPLEMENTATION: unavailable (callerKey is null)
+
+--- CALL SITE 2/7 ---
+{
+  "callerKey": null,
+  "callerJavadoc": "",
+  "callSite": "6 = invokeinterface < Application, Lorg/springframework/core/annotation/AnnotationFilter, matches(Ljava/lang/String;)Z > 4,1 @8 exception:5"
+}
+
+CALLER IMPLEMENTATION: unavailable (callerKey is null)
+
+--- CALL SITE 3/7 ---
+{
+  "callerKey": "org.springframework.core.annotation.AnnotationFilter#matches(Annotation):boolean",
+  "callerJavadoc": "",
+  "callSite": "7 = invokeinterface < Application, Lorg/springframework/core/annotation/AnnotationFilter, matches(Ljava/lang/String;)Z > 1,5 @5 exception:6"
+}
+
+CALLER KEY: org.springframework.core.annotation.AnnotationFilter#matches(Annotation):boolean
+CALLER FILE: /mmfs1/project/mjk76/ea442/promptstudy/spring-framework/spring-core/src/main/java/org/springframework/core/annotation/AnnotationFilter.java
+
+CALLER IMPLEMENTATION:
+		@Override
+		public boolean matches(Annotation annotation) {
+			return true;
+		}
+
+--- CALL SITE 4/7 ---
+{
+  "callerKey": "org.springframework.core.annotation.TypeMappedAnnotations#isPresent(Class<A>):boolean",
+  "callerJavadoc": "",
+  "callSite": "6 = invokeinterface < Application, Lorg/springframework/core/annotation/AnnotationFilter, matches(Ljava/lang/String;)Z > 4,2 @5 exception:5"
+}
+
+CALLER KEY: org.springframework.core.annotation.TypeMappedAnnotations#isPresent(Class<A>):boolean
+CALLER FILE: /mmfs1/project/mjk76/ea442/promptstudy/spring-framework/spring-core/src/main/java/org/springframework/core/annotation/TypeMappedAnnotations.java
+
+CALLER IMPLEMENTATION:
+	@Override
+	public <A extends Annotation> boolean isPresent(Class<A> annotationType) {
+		if (this.annotationFilter.matches(annotationType)) {
+			return false;
+		}
+		return Boolean.TRUE.equals(scan(annotationType,
+				IsPresent.get(this.repeatableContainers, this.annotationFilter, false)));
+	}
+
+--- CALL SITE 5/7 ---
+{
+  "callerKey": "org.springframework.core.annotation.TypeMappedAnnotations#isDirectlyPresent(Class<A>):boolean",
+  "callerJavadoc": "",
+  "callSite": "6 = invokeinterface < Application, Lorg/springframework/core/annotation/AnnotationFilter, matches(Ljava/lang/String;)Z > 4,2 @5 exception:5"
+}
+
+CALLER KEY: org.springframework.core.annotation.TypeMappedAnnotations#isDirectlyPresent(Class<A>):boolean
+CALLER FILE: /mmfs1/project/mjk76/ea442/promptstudy/spring-framework/spring-core/src/main/java/org/springframework/core/annotation/TypeMappedAnnotations.java
+
+CALLER IMPLEMENTATION:
+	@Override
+	public <A extends Annotation> boolean isDirectlyPresent(Class<A> annotationType) {
+		if (this.annotationFilter.matches(annotationType)) {
+			return false;
+		}
+		return Boolean.TRUE.equals(scan(annotationType,
+				IsPresent.get(this.repeatableContainers, this.annotationFilter, true)));
+	}
+
+--- CALL SITE 6/7 ---
+{
+  "callerKey": "org.springframework.core.annotation.TypeMappedAnnotations#get(Class<A>,Predicate<? super MergedAnnotation<A>>,MergedAnnotationSelector<A>):MergedAnnotation<A>",
+  "callerJavadoc": "",
+  "callSite": "8 = invokeinterface < Application, Lorg/springframework/core/annotation/AnnotationFilter, matches(Ljava/lang/String;)Z > 6,2 @5 exception:7"
+}
+
+CALLER KEY: org.springframework.core.annotation.TypeMappedAnnotations#get(Class<A>,Predicate<? super MergedAnnotation<A>>,MergedAnnotationSelector<A>):MergedAnnotation<A>
+CALLER FILE: /mmfs1/project/mjk76/ea442/promptstudy/spring-framework/spring-core/src/main/java/org/springframework/core/annotation/TypeMappedAnnotations.java
+
+CALLER IMPLEMENTATION:
+	@Override
+	public <A extends Annotation> MergedAnnotation<A> get(Class<A> annotationType) {
+		return get(annotationType, null, null);
+	}
+
+--- CALL SITE 7/7 ---
+{
+  "callerKey": null,
+  "callerJavadoc": "",
+  "callSite": "11 = invokeinterface < Application, Lorg/springframework/core/annotation/AnnotationFilter, matches(Ljava/lang/String;)Z > 9,8 @12 exception:10"
+}
+
+CALLER IMPLEMENTATION: unavailable (callerKey is null)
+
+
+========================================================================================================================
+METHOD 6/10
+PROJECT: dubbo
+REQUESTED KEY: org.apache.dubbo.common.utils.UrlUtils#isMatchGlobPattern(String,String,URL):boolean
+========================================================================================================================
+
+### IO EXAMPLES
+Matched key: org.apache.dubbo.common.utils.UrlUtils#isMatchGlobPattern(String,String):boolean
+Number of examples: 1
+[
+  {
+    "args": {
+      "org.apache.dubbo.common.utils.UrlUtils.URL_PARAM_STARTING_SYMBOL": "331319862",
+      "org.apache.dubbo.common.utils.UrlUtils.URL_PARAM_STARTING_SYMBOL.toString": "\"?\"",
+      "pattern": "1770527602",
+      "pattern.toString": "\"*\"",
+      "value": "1732398722",
+      "value.toString": "\"value\""
+    },
+    "return": "true"
+  }
+]
+
+
+### CALL SITES
+Matched key: org.apache.dubbo.common.utils.UrlUtils#isMatchGlobPattern(String,String):boolean
+Number of call sites: 1
+
+--- CALL SITE 1/1 ---
+{
+  "callerKey": "org.apache.dubbo.common.utils.UrlUtils#isMatchGlobPattern(String,String,URL):boolean",
+  "callerJavadoc": "",
+  "callSite": "17 = invokestatic < Application, Lorg/apache/dubbo/common/utils/UrlUtils, isMatchGlobPattern(Ljava/lang/String;Ljava/lang/String;)Z > 15,2 @26 exception:16"
+}
+
+CALLER KEY: org.apache.dubbo.common.utils.UrlUtils#isMatchGlobPattern(String,String,URL):boolean
+CALLER FILE: /mmfs1/project/mjk76/ea442/promptstudy/dubbo/dubbo-common/src/main/java/org/apache/dubbo/common/utils/UrlUtils.java
+
+CALLER IMPLEMENTATION:
+    public static boolean isMatchGlobPattern(String pattern, String value, URL param) {
+        if (param != null && pattern.startsWith("$")) {
+            pattern = param.getRawParameter(pattern.substring(1));
+        }
+        return isMatchGlobPattern(pattern, value);
+    }
+
+
+========================================================================================================================
+METHOD 7/10
+PROJECT: dubbo
+REQUESTED KEY: org.apache.dubbo.common.resource.GlobalResourcesRepository#getInstance():GlobalResourcesRepository
+========================================================================================================================
+
+### IO EXAMPLES
+NO MATCHING IO-EXAMPLE KEY FOUND
+
+
+### CALL SITES
+Matched key: org.apache.dubbo.common.resource.GlobalResourcesRepository#getInstance():GlobalResourcesRepository
+Number of call sites: 4
+
+--- CALL SITE 1/4 ---
+{
+  "callerKey": "org.apache.dubbo.common.resource.GlobalResourcesRepository#getGlobalExecutorService():ExecutorService",
+  "callerJavadoc": "",
+  "callSite": "3 = invokestatic < Application, Lorg/apache/dubbo/common/resource/GlobalResourcesRepository, getInstance()Lorg/apache/dubbo/common/resource/GlobalResourcesRepository; > @0 exception:2"
+}
+
+CALLER KEY: org.apache.dubbo.common.resource.GlobalResourcesRepository#getGlobalExecutorService():ExecutorService
+CALLER FILE: /mmfs1/project/mjk76/ea442/promptstudy/dubbo/dubbo-common/src/main/java/org/apache/dubbo/common/resource/GlobalResourcesRepository.java
+
+CALLER IMPLEMENTATION:
+    public static ExecutorService getGlobalExecutorService() {
+        return getInstance().getExecutorService();
+    }
+
+--- CALL SITE 2/4 ---
+{
+  "callerKey": "org.apache.dubbo.common.resource.GlobalResourceInitializer#initialize():T",
+  "callerJavadoc": "",
+  "callSite": "13 = invokestatic < Application, Lorg/apache/dubbo/common/resource/GlobalResourcesRepository, getInstance()Lorg/apache/dubbo/common/resource/GlobalResourcesRepository; > @12 exception:12"
+}
+
+CALLER KEY: org.apache.dubbo.common.resource.GlobalResourceInitializer#initialize():T
+CALLER FILE: /mmfs1/project/mjk76/ea442/promptstudy/dubbo/dubbo-common/src/main/java/org/apache/dubbo/common/resource/GlobalResourceInitializer.java
+
+CALLER IMPLEMENTATION:
+    @Override
+    protected T initialize() {
+        T value = super.initialize();
+        // register disposable to release automatically
+        if (this.disposable != null) {
+            GlobalResourcesRepository.getInstance().registerDisposable(this.disposable);
+        } else {
+            GlobalResourcesRepository.getInstance().registerDisposable(() -> this.remove(disposeAction));
+        }
+        return value;
+    }
+
+--- CALL SITE 3/4 ---
+{
+  "callerKey": "org.apache.dubbo.common.resource.GlobalResourceInitializer#initialize():T",
+  "callerJavadoc": "",
+  "callSite": "8 = invokestatic < Application, Lorg/apache/dubbo/common/resource/GlobalResourcesRepository, getInstance()Lorg/apache/dubbo/common/resource/GlobalResourcesRepository; > @25 exception:7"
+}
+
+CALLER KEY: org.apache.dubbo.common.resource.GlobalResourceInitializer#initialize():T
+CALLER FILE: /mmfs1/project/mjk76/ea442/promptstudy/dubbo/dubbo-common/src/main/java/org/apache/dubbo/common/resource/GlobalResourceInitializer.java
+
+CALLER IMPLEMENTATION:
+    @Override
+    protected T initialize() {
+        T value = super.initialize();
+        // register disposable to release automatically
+        if (this.disposable != null) {
+            GlobalResourcesRepository.getInstance().registerDisposable(this.disposable);
+        } else {
+            GlobalResourcesRepository.getInstance().registerDisposable(() -> this.remove(disposeAction));
+        }
+        return value;
+    }
+
+--- CALL SITE 4/4 ---
+{
+  "callerKey": "org.apache.dubbo.rpc.model.FrameworkModel#destroyGlobalResources():void",
+  "callerJavadoc": "",
+  "callSite": "9 = invokestatic < Application, Lorg/apache/dubbo/common/resource/GlobalResourcesRepository, getInstance()Lorg/apache/dubbo/common/resource/GlobalResourcesRepository; > @17 exception:8"
+}
+
+CALLER KEY: org.apache.dubbo.rpc.model.FrameworkModel#destroyGlobalResources():void
+CALLER FILE: /mmfs1/project/mjk76/ea442/promptstudy/dubbo/dubbo-common/src/main/java/org/apache/dubbo/rpc/model/FrameworkModel.java
+
+CALLER IMPLEMENTATION:
+    private void destroyGlobalResources() {
+        synchronized (globalLock) {
+            if (allInstances.isEmpty()) {
+                GlobalResourcesRepository.getInstance().destroy();
+            }
+        }
+    }
+
+
+========================================================================================================================
+METHOD 8/10
+PROJECT: dubbo
+REQUESTED KEY: org.apache.dubbo.common.extension.ExtensionLoader#setLoadingStrategies(LoadingStrategy):void
+========================================================================================================================
+
+### IO EXAMPLES
+NO MATCHING IO-EXAMPLE KEY FOUND
+
+
+### CALL SITES
+NO MATCHING CALL-SITE KEY FOUND
+
+
+========================================================================================================================
+METHOD 9/10
+PROJECT: dubbo
+REQUESTED KEY: org.apache.dubbo.common.convert.Converter#getSourceType():Class<S>
+========================================================================================================================
+
+### IO EXAMPLES
+NO MATCHING IO-EXAMPLE KEY FOUND
+
+
+### CALL SITES
+NO MATCHING CALL-SITE KEY FOUND
+
+
+========================================================================================================================
+METHOD 10/10
+PROJECT: spring
+REQUESTED KEY: org.springframework.core.convert.support.CollectionToObjectConverter#convert(Object,TypeDescriptor,TypeDescriptor):Object
+========================================================================================================================
+
+### IO EXAMPLES
+Matched key: org.springframework.core.convert.support.CollectionToObjectConverter#convert(Object,TypeDescriptor,TypeDescriptor):Object
+Number of examples: 4
+[
+  {
+    "args": {
+      "this": "1735427246",
+      "this.conversionService": "1883076045",
+      "this.conversionService.getClass().getName()": "\"org.springframework.core.convert.support.DefaultConversionService\"",
+      "source": "905540548",
+      "source.getClass().getName()": "\"java.util.Collections$SingletonList\"",
+      "sourceType": "626133026",
+      "targetType": "215840400"
+    },
+    "return": "1094191563"
+  },
+  {
+    "args": {
+      "this": "14873135",
+      "this.conversionService": "1150240874",
+      "this.conversionService.getClass().getName()": "\"org.springframework.core.convert.support.DefaultConversionService\"",
+      "source": "1466446827",
+      "source.getClass().getName()": "\"java.util.Collections$SingletonList\"",
+      "sourceType": "1049638465",
+      "targetType": "1260726422"
+    },
+    "return": "461505403"
+  },
+  {
+    "args": {
+      "this": "1305286442",
+      "this.conversionService": "439475214",
+      "this.conversionService.getClass().getName()": "\"org.springframework.core.convert.support.DefaultConversionService\"",
+      "source": "1115735274",
+      "source.getClass().getName()": "\"java.util.ImmutableCollections$List12\"",
+      "sourceType": "593016997",
+      "targetType": "1455792408"
+    },
+    "return": "1115735274"
+  },
+  {
+    "args": {
+      "this": "1646667929",
+      "this.conversionService": "793820583",
+      "this.conversionService.getClass().getName()": "\"org.springframework.core.convert.support.GenericConversionService\"",
+      "source": "34875463",
+      "source.getClass().getName()": "\"java.util.ArrayList\"",
+      "sourceType": "757775792",
+      "targetType": "215840400"
+    },
+    "return": "null"
+  }
+]
+
+
+### CALL SITES
+Matched key: org.springframework.core.convert.support.CollectionToObjectConverter#convert(Object,TypeDescriptor,TypeDescriptor):Object
+Number of call sites: 1
+
+--- CALL SITE 1/1 ---
+{
+  "callerKey": "org.springframework.core.convert.support.ConversionUtils#invokeConverter(GenericConverter,Object,TypeDescriptor,TypeDescriptor):Object",
+  "callerJavadoc": "",
+  "callSite": "7 = invokeinterface < Application, Lorg/springframework/core/convert/converter/GenericConverter, convert(Ljava/lang/Object;Lorg/springframework/core/convert/TypeDescriptor;Lorg/springframework/core/convert/TypeDescriptor;)Ljava/lang/Object; > 1,2,3,4 @4 exception:6"
+}
+
+CALLER KEY: org.springframework.core.convert.support.ConversionUtils#invokeConverter(GenericConverter,Object,TypeDescriptor,TypeDescriptor):Object
+CALLER FILE: /mmfs1/project/mjk76/ea442/promptstudy/spring-framework/spring-core/src/main/java/org/springframework/core/convert/support/ConversionUtils.java
+
+CALLER IMPLEMENTATION:
+	public static @Nullable Object invokeConverter(GenericConverter converter, @Nullable Object source,
+			TypeDescriptor sourceType, TypeDescriptor targetType) {
+
+		try {
+			return converter.convert(source, sourceType, targetType);
+		}
+		catch (ConversionFailedException ex) {
+			throw ex;
+		}
+		catch (Throwable ex) {
+			throw new ConversionFailedException(sourceType, targetType, source, ex);
+		}
+	}
+

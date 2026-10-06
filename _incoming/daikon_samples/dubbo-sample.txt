@@ -1,0 +1,371 @@
+
+
+====================================================================================================
+SAMPLE 1/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: dubbo
+METHOD: org.apache.dubbo.common.model.person.Dgeneric.getT()
+####################################################################################################
+
+===========================================================================
+org.apache.dubbo.common.model.person.Dgeneric.getT():::ENTER
+this.t has only one value
+this.y has only one value
+this.z has only one value
+
+===========================================================================
+org.apache.dubbo.common.model.person.Dgeneric.getT():::EXIT
+org.apache.dubbo.common.model.person.Dgeneric.NAME == orig(org.apache.dubbo.common.model.person.Dgeneric.NAME)
+org.apache.dubbo.common.model.person.Dgeneric.NAME == orig(this.name)
+org.apache.dubbo.common.model.person.Dgeneric.NAME.toString == orig(org.apache.dubbo.common.model.person.Dgeneric.NAME.toString)
+org.apache.dubbo.common.model.person.Dgeneric.NAME.toString == orig(this.name.toString)
+this.t == return
+this.t.getClass().getName() == return.getClass().getName()
+this.y == orig(this.y)
+this.y.getClass().getName() == orig(this.y.getClass().getName())
+this.z == orig(this.z)
+this.z.getClass().getName() == orig(this.z.getClass().getName())
+return == orig(this.t)
+return.getClass().getName() == orig(this.t.getClass().getName())
+this.y has only one value
+this.z has only one value
+return has only one value
+return.getClass().getName() == org.apache.dubbo.common.model.person.Ageneric.class
+
+
+
+====================================================================================================
+SAMPLE 2/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: dubbo
+METHOD: org.apache.dubbo.common.compiler.support.CtClassBuilder.setClassName(java.lang.String)
+####################################################################################################
+
+===========================================================================
+org.apache.dubbo.common.compiler.support.CtClassBuilder.setClassName(java.lang.String):::ENTER
+this.imports[] == this.ifaces[]
+this.imports[] == this.constructors[]
+this.imports[] == this.fields[]
+this.imports[] == this.methods[]
+this.className == null
+this.superClassName has only one value
+this.superClassName.toString == "java.lang.Object"
+this.imports[] == []
+this.imports[].getClass().getName() == []
+className.toString one of { "org.apache.dubbo.common.compiler.support.HelloServiceImpl10", "org.apache.dubbo.common.compiler.support.HelloServiceImpl29", "org.apache.dubbo.common.compiler.support.HelloServiceImpl8" }
+
+===========================================================================
+org.apache.dubbo.common.compiler.support.CtClassBuilder.setClassName(java.lang.String):::EXIT
+this.className == orig(className)
+this.className.toString == className.toString
+this.superClassName == orig(this.superClassName)
+this.superClassName.toString == orig(this.superClassName.toString)
+this.imports == orig(this.imports)
+this.imports[] == this.ifaces[]
+this.imports[] == this.constructors[]
+this.imports[] == this.fields[]
+this.imports[] == this.methods[]
+this.imports[] == orig(this.imports[])
+this.imports[] == orig(this.ifaces[])
+this.imports[] == orig(this.constructors[])
+this.imports[] == orig(this.fields[])
+this.imports[] == orig(this.methods[])
+this.imports.getClass().getName() == orig(this.imports.getClass().getName())
+this.imports.getClass().getName() == orig(this.ifaces.getClass().getName())
+this.imports.getClass().getName() == orig(this.constructors.getClass().getName())
+this.imports.getClass().getName() == orig(this.fields.getClass().getName())
+this.imports.getClass().getName() == orig(this.methods.getClass().getName())
+this.fullNames == orig(this.fullNames)
+this.fullNames.getClass().getName() == orig(this.fullNames.getClass().getName())
+this.ifaces == orig(this.ifaces)
+this.constructors == orig(this.constructors)
+this.fields == orig(this.fields)
+this.methods == orig(this.methods)
+className.toString == orig(className.toString)
+this.superClassName has only one value
+this.superClassName.toString == "java.lang.Object"
+this.imports[] == []
+this.imports[].getClass().getName() == []
+className.toString one of { "org.apache.dubbo.common.compiler.support.HelloServiceImpl10", "org.apache.dubbo.common.compiler.support.HelloServiceImpl29", "org.apache.dubbo.common.compiler.support.HelloServiceImpl8" }
+
+
+
+====================================================================================================
+SAMPLE 3/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: dubbo
+METHOD: org.apache.dubbo.common.logger.support.FailsafeLogger.info(java.lang.String, java.lang.Throwable)
+####################################################################################################
+
+===========================================================================
+org.apache.dubbo.common.logger.support.FailsafeLogger.info(java.lang.String, java.lang.Throwable):::ENTER
+msg has only one value
+msg.toString == "info"
+
+===========================================================================
+org.apache.dubbo.common.logger.support.FailsafeLogger.info(java.lang.String, java.lang.Throwable):::EXIT145
+
+===========================================================================
+org.apache.dubbo.common.logger.support.FailsafeLogger.info(java.lang.String, java.lang.Throwable):::EXIT151
+
+===========================================================================
+org.apache.dubbo.common.logger.support.FailsafeLogger.info(java.lang.String, java.lang.Throwable):::EXIT
+this.logger == orig(this.logger)
+this.logger.getClass().getName() == orig(this.logger.getClass().getName())
+org.apache.dubbo.common.logger.support.FailsafeLogger.disabled == orig(org.apache.dubbo.common.logger.support.FailsafeLogger.disabled)
+msg.toString == orig(msg.toString)
+msg.toString == "info"
+
+
+
+====================================================================================================
+SAMPLE 4/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: dubbo
+METHOD: org.apache.dubbo.common.logger.slf4j.Slf4jLogger.warn(java.lang.Throwable)
+####################################################################################################
+
+===========================================================================
+org.apache.dubbo.common.logger.slf4j.Slf4jLogger.warn(java.lang.Throwable):::ENTER
+this has only one value
+this.logger has only one value
+this.logger.getClass().getName() == org.slf4j.spi.LocationAwareLogger$MockitoMock$Zm5XmKJW.class
+this.locationAwareLogger has only one value
+e has only one value
+
+===========================================================================
+org.apache.dubbo.common.logger.slf4j.Slf4jLogger.warn(java.lang.Throwable):::EXIT195
+
+===========================================================================
+org.apache.dubbo.common.logger.slf4j.Slf4jLogger.warn(java.lang.Throwable):::EXIT
+this.fqcn == orig(this.fqcn)
+this.fqcn.toString == orig(this.fqcn.toString)
+this.logger == orig(this.logger)
+this.logger.getClass().getName() == orig(this.logger.getClass().getName())
+this.logger.getClass().getName() == orig(this.locationAwareLogger.getClass().getName())
+this.locationAwareLogger == orig(this.locationAwareLogger)
+this.logger has only one value
+this.logger.getClass().getName() == org.slf4j.spi.LocationAwareLogger$MockitoMock$Zm5XmKJW.class
+this.locationAwareLogger has only one value
+
+
+
+====================================================================================================
+SAMPLE 5/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: dubbo
+METHOD: org.apache.dubbo.common.utils.LFUCache$CacheDeque.pollFirst()
+####################################################################################################
+
+===========================================================================
+org.apache.dubbo.common.utils.LFUCache$CacheDeque.pollFirst():::ENTER
+this == this.last.next.owner
+this.last.prev == this.nextDeque.first.next
+this.last.key == this.nextDeque.last.value
+this.last.key == this.nextDeque.first.key
+this.last.key == this.nextDeque.first.value
+this.last.owner == this.nextDeque.first.owner
+this has only one value
+this.last has only one value
+this.last.next has only one value
+this.last.next.key has only one value
+this.last.next.value has only one value
+this.last.next.owner has only one value
+this.first has only one value
+this.nextDeque has only one value
+this.nextDeque.last has only one value
+this.nextDeque.last.next has only one value
+this.nextDeque.first has only one value
+this.nextDeque.first.prev has only one value
+this.nextDeque.nextDeque has only one value
+this.nextDeque.nextDeque.last has only one value
+this.nextDeque.nextDeque.first has only one value
+this.nextDeque.nextDeque.nextDeque has only one value
+
+===========================================================================
+org.apache.dubbo.common.utils.LFUCache$CacheDeque.pollFirst():::EXIT
+this.last == return.owner.last
+this.last == orig(this.last)
+this.last == orig(this.last.next.prev)
+this.last.prev == return.prev
+this.last.next.key.getClass().getName() == return.key.getClass().getName()
+this.last.next.value.getClass().getName() == return.value.getClass().getName()
+this.last.key == this.nextDeque.last.value
+this.last.key == this.nextDeque.first.key
+this.last.key == this.nextDeque.first.value
+this.last.key == return.prev
+this.last.key == orig(this.last.key)
+this.last.key == orig(this.last.value)
+this.last.key == orig(this.first.key)
+this.last.key == orig(this.first.value)
+this.last.key == orig(this.nextDeque.last.key)
+this.last.key == orig(this.nextDeque.last.value)
+this.last.key == orig(this.nextDeque.first.key)
+this.last.key == orig(this.nextDeque.first.value)
+this.last.owner == this.nextDeque.first.owner
+this.last.owner == orig(this.last.owner)
+this.last.owner == orig(this.first.owner)
+this.last.owner == orig(this.nextDeque.last.owner)
+this.last.owner == orig(this.nextDeque.first.owner)
+this.first == return.owner.first
+this.first == orig(this.first)
+this.first == orig(this.first.prev.next)
+this.first.prev == orig(this.first.prev.prev)
+this.first.next == return.prev
+this.nextDeque == return.owner.nextDeque
+this.nextDeque == orig(this.nextDeque)
+this.nextDeque.last == orig(this.nextDeque.last)
+this.nextDeque.last.prev == return.prev
+this.nextDeque.last.next == orig(this.nextDeque.last.next)
+this.nextDeque.first == orig(this.nextDeque.first)
+this.nextDeque.first.prev == orig(this.nextDeque.first.prev)
+this.nextDeque.first.next == return.prev
+this.nextDeque.nextDeque == orig(this.nextDeque.nextDeque)
+this.nextDeque.nextDeque.last == orig(this.nextDeque.nextDeque.last)
+this.nextDeque.nextDeque.first == orig(this.nextDeque.nextDeque.first)
+this.nextDeque.nextDeque.nextDeque == orig(this.nextDeque.nextDeque.nextDeque)
+return == orig(this.first.prev)
+return.prev == return.next
+return.prev == orig(this.last.prev)
+return.prev == orig(this.first.next)
+return.prev == orig(this.nextDeque.last.prev)
+return.prev == orig(this.nextDeque.first.next)
+return.key == orig(this.first.prev.key)
+return.key.getClass().getName() == orig(this.last.next.key.getClass().getName())
+return.key.getClass().getName() == orig(this.first.prev.key.getClass().getName())
+return.value == orig(this.first.prev.value)
+return.value.getClass().getName() == orig(this.last.next.value.getClass().getName())
+return.value.getClass().getName() == orig(this.first.prev.value.getClass().getName())
+return.owner == orig(this)
+return.owner == orig(this.last.next.owner)
+return.owner == orig(this.first.prev.owner)
+this.last has only one value
+this.first has only one value
+this.nextDeque has only one value
+this.nextDeque.last has only one value
+this.nextDeque.last.next has only one value
+this.nextDeque.first has only one value
+this.nextDeque.first.prev has only one value
+this.nextDeque.nextDeque has only one value
+this.nextDeque.nextDeque.last has only one value
+this.nextDeque.nextDeque.first has only one value
+this.nextDeque.nextDeque.nextDeque has only one value
+return.prev == null
+return.key.getClass().getName() == java.lang.String.class
+return.value.getClass().getName() == java.lang.Integer.class
+return.owner has only one value
+
+
+
+====================================================================================================
+SAMPLE 6/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: dubbo
+METHOD: org.apache.dubbo.common.json.impl.FastJson2ImplTest.FastJson2ImplTest()
+####################################################################################################
+
+===========================================================================
+org.apache.dubbo.common.json.impl.FastJson2ImplTest.FastJson2ImplTest():::EXIT
+
+
+
+====================================================================================================
+SAMPLE 7/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: dubbo
+METHOD: org.apache.dubbo.common.bytecode.Bean$Builder5d0fde73-936a-4f7e-8e70-490e82138f2a.Bean$Builder5d0fde73-936a-4f7e-8e70-490e82138f2a()
+####################################################################################################
+
+===========================================================================
+org.apache.dubbo.common.bytecode.Bean$Builder5d0fde73-936a-4f7e-8e70-490e82138f2a.Bean$Builder5d0fde73-936a-4f7e-8e70-490e82138f2a():::EXIT
+
+
+
+====================================================================================================
+SAMPLE 8/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: dubbo
+METHOD: org.apache.dubbo.common.utils.Stack.isEmpty()
+####################################################################################################
+
+===========================================================================
+org.apache.dubbo.common.utils.Stack.isEmpty():::ENTER
+
+===========================================================================
+org.apache.dubbo.common.utils.Stack.isEmpty():::EXIT
+this.mSize == orig(this.mSize)
+this.mElements == orig(this.mElements)
+this.mElements[] == orig(this.mElements[])
+this.mElements.getClass().getName() == orig(this.mElements.getClass().getName())
+(this.mSize == 0)  <==>  (return == true)
+(this.mSize == 0)  <==>  (this.mElements[] elements == null)
+(this.mSize == 0)  <==>  (this.mElements[].getClass().getName() elements == null)
+(this.mSize == 0)  <==>  (this.mElements[].getClass().getName() one of { [], [null] })
+(this.mSize one of { 1, 2 })  <==>  (return == false)
+(this.mSize one of { 1, 2 })  <==>  (this.mElements[].getClass().getName() elements == java.lang.String.class)
+(this.mSize one of { 1, 2 })  <==>  (this.mElements[].getClass().getName() one of { [java.lang.String], [java.lang.String, java.lang.String] })
+
+===========================================================================
+org.apache.dubbo.common.utils.Stack.isEmpty():::EXIT;condition="return == true"
+this.mSize == 0
+this.mElements[] elements == null
+this.mElements[].getClass().getName() elements == null
+this.mElements[].getClass().getName() one of { [], [null] }
+return == true
+
+===========================================================================
+org.apache.dubbo.common.utils.Stack.isEmpty():::EXIT;condition="not(return == true)"
+this.mSize one of { 1, 2 }
+this.mElements[].getClass().getName() elements == java.lang.String.class
+this.mElements[].getClass().getName() one of { [java.lang.String], [java.lang.String, java.lang.String] }
+return == false
+
+
+
+====================================================================================================
+SAMPLE 9/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: dubbo
+METHOD: org.apache.dubbo.common.threadpool.event.ThreadPoolExhaustedEventListenerTest.ThreadPoolExhaustedEventListenerTest()
+####################################################################################################
+
+===========================================================================
+org.apache.dubbo.common.threadpool.event.ThreadPoolExhaustedEventListenerTest.ThreadPoolExhaustedEventListenerTest():::EXIT
+this.listener == null
+
+
+
+====================================================================================================
+SAMPLE 10/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: dubbo
+METHOD: org.apache.dubbo.common.utils.ClassUtilsTest.testForName1()
+####################################################################################################
+
+===========================================================================
+org.apache.dubbo.common.utils.ClassUtilsTest.testForName1():::ENTER
+this has only one value
+
+===========================================================================
+org.apache.dubbo.common.utils.ClassUtilsTest.testForName1():::EXIT
+

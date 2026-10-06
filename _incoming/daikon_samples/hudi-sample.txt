@@ -1,0 +1,396 @@
+
+
+====================================================================================================
+SAMPLE 1/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: hudi
+METHOD: org.apache.hudi.avro.model.HoodieArchivedMetaEntry.setActionState(java.lang.String)
+####################################################################################################
+
+===========================================================================
+org.apache.hudi.avro.model.HoodieArchivedMetaEntry.setActionState(java.lang.String):::ENTER
+this.hoodieCommitMetadata == this.HoodieInflightReplaceMetadata
+this.actionType == this.actionState
+this.actionType == this.stateTransitionTime
+this.hoodieCommitMetadata == null
+this.actionType == null
+value has only one value
+value.toString == "COMPLETED"
+this.commitTime.toString < value.toString
+
+===========================================================================
+org.apache.hudi.avro.model.HoodieArchivedMetaEntry.setActionState(java.lang.String):::EXIT
+org.apache.hudi.avro.model.HoodieArchivedMetaEntry.SCHEMA$ == orig(org.apache.hudi.avro.model.HoodieArchivedMetaEntry.SCHEMA$)
+org.apache.hudi.avro.model.HoodieArchivedMetaEntry.SCHEMA$.getClass().getName() == orig(org.apache.hudi.avro.model.HoodieArchivedMetaEntry.SCHEMA$.getClass().getName())
+org.apache.hudi.avro.model.HoodieArchivedMetaEntry.MODEL$ == orig(org.apache.hudi.avro.model.HoodieArchivedMetaEntry.MODEL$)
+org.apache.hudi.avro.model.HoodieArchivedMetaEntry.ENCODER == orig(org.apache.hudi.avro.model.HoodieArchivedMetaEntry.ENCODER)
+org.apache.hudi.avro.model.HoodieArchivedMetaEntry.DECODER == orig(org.apache.hudi.avro.model.HoodieArchivedMetaEntry.DECODER)
+this.hoodieCommitMetadata == this.HoodieInflightReplaceMetadata
+this.hoodieCommitMetadata == orig(this.hoodieCommitMetadata)
+this.hoodieCommitMetadata == orig(this.HoodieInflightReplaceMetadata)
+this.hoodieCleanMetadata == orig(this.hoodieCleanMetadata)
+this.hoodieCompactionMetadata == orig(this.hoodieCompactionMetadata)
+this.hoodieRollbackMetadata == orig(this.hoodieRollbackMetadata)
+this.hoodieSavePointMetadata == orig(this.hoodieSavePointMetadata)
+this.commitTime == orig(this.commitTime)
+this.commitTime.toString == orig(this.commitTime.toString)
+this.actionType == this.stateTransitionTime
+this.actionType == orig(this.actionType)
+this.actionType == orig(this.actionState)
+this.actionType == orig(this.stateTransitionTime)
+this.version == orig(this.version)
+this.hoodieCompactionPlan == orig(this.hoodieCompactionPlan)
+this.hoodieCleanerPlan == orig(this.hoodieCleanerPlan)
+this.actionState == orig(value)
+this.actionState.toString == value.toString
+this.hoodieReplaceCommitMetadata == orig(this.hoodieReplaceCommitMetadata)
+this.hoodieRequestedReplaceMetadata == orig(this.hoodieRequestedReplaceMetadata)
+this.hoodieIndexCommitMetadata == orig(this.hoodieIndexCommitMetadata)
+org.apache.hudi.avro.model.HoodieArchivedMetaEntry.WRITER$ == orig(org.apache.hudi.avro.model.HoodieArchivedMetaEntry.WRITER$)
+org.apache.hudi.avro.model.HoodieArchivedMetaEntry.WRITER$.getClass().getName() == orig(org.apache.hudi.avro.model.HoodieArchivedMetaEntry.WRITER$.getClass().getName())
+org.apache.hudi.avro.model.HoodieArchivedMetaEntry.READER$ == orig(org.apache.hudi.avro.model.HoodieArchivedMetaEntry.READER$)
+org.apache.hudi.avro.model.HoodieArchivedMetaEntry.READER$.getClass().getName() == orig(org.apache.hudi.avro.model.HoodieArchivedMetaEntry.READER$.getClass().getName())
+value.toString == orig(value.toString)
+this.hoodieCommitMetadata == null
+this.actionType == null
+this.actionState has only one value
+value.toString == "COMPLETED"
+this.commitTime.toString < value.toString
+
+
+
+====================================================================================================
+SAMPLE 2/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: hudi
+METHOD: org.apache.hudi.avro.model.FloatWrapper.FloatWrapper()
+####################################################################################################
+
+===========================================================================
+org.apache.hudi.avro.model.FloatWrapper.FloatWrapper():::EXIT
+this.value == 0.0
+
+
+
+====================================================================================================
+SAMPLE 3/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: hudi
+METHOD: org.apache.hudi.client.BaseHoodieWriteClient.scheduleAndGetRestorePlan(java.lang.String, org.apache.hudi.table.HoodieTable)
+####################################################################################################
+
+===========================================================================
+org.apache.hudi.client.BaseHoodieWriteClient.scheduleAndGetRestorePlan(java.lang.String, org.apache.hudi.table.HoodieTable):::ENTER
+this.lastCompletedTxnAndMetadata == this.timelineServer
+this.getClass().getName() == org.apache.hudi.client.HoodieJavaWriteClient.class
+this.index.getClass().getName() == org.apache.hudi.index.simple.HoodieSimpleIndex.class
+this.operationType == null
+this.writeTimer == null
+this.lastCompletedTxnAndMetadata has only one value
+this.pendingInflightAndRequestedInstants has only one value
+this.pendingInflightAndRequestedInstants.getClass().getName() == java.util.Collections$EmptySet.class
+this.shouldStopTimelineServer == true
+savepointToRestoreTimestamp.toString one of { "004", "20260910232655776" }
+
+===========================================================================
+org.apache.hudi.client.BaseHoodieWriteClient.scheduleAndGetRestorePlan(java.lang.String, org.apache.hudi.table.HoodieTable):::EXIT957
+
+===========================================================================
+org.apache.hudi.client.BaseHoodieWriteClient.scheduleAndGetRestorePlan(java.lang.String, org.apache.hudi.table.HoodieTable):::EXIT
+org.apache.hudi.client.BaseHoodieWriteClient.log == orig(org.apache.hudi.client.BaseHoodieWriteClient.log)
+org.apache.hudi.client.BaseHoodieWriteClient.log.getClass().getName() == orig(org.apache.hudi.client.BaseHoodieWriteClient.log.getClass().getName())
+org.apache.hudi.client.BaseHoodieWriteClient.log.getClass().getName() == orig(org.apache.hudi.client.BaseHoodieClient.log.getClass().getName())
+org.apache.hudi.client.BaseHoodieWriteClient.LOOKUP_STR == orig(org.apache.hudi.client.BaseHoodieWriteClient.LOOKUP_STR)
+org.apache.hudi.client.BaseHoodieWriteClient.LOOKUP_STR.toString == orig(org.apache.hudi.client.BaseHoodieWriteClient.LOOKUP_STR.toString)
+this.index == orig(this.index)
+this.index.getClass().getName() == orig(this.index.getClass().getName())
+this.upgradeDowngradeHelper == orig(this.upgradeDowngradeHelper)
+this.upgradeDowngradeHelper.getClass().getName() == orig(this.upgradeDowngradeHelper.getClass().getName())
+this.operationType == orig(this.operationType)
+this.commitCallback == orig(this.commitCallback)
+this.writeTimer == orig(this.writeTimer)
+this.lastCompletedTxnAndMetadata == this.timelineServer
+this.lastCompletedTxnAndMetadata == orig(this.lastCompletedTxnAndMetadata)
+this.lastCompletedTxnAndMetadata == orig(this.timelineServer)
+this.pendingInflightAndRequestedInstants == orig(this.pendingInflightAndRequestedInstants)
+this.pendingInflightAndRequestedInstants.getClass().getName() == orig(this.pendingInflightAndRequestedInstants.getClass().getName())
+this.tableServiceClient == orig(this.tableServiceClient)
+this.tableServiceClient.getClass().getName() == orig(this.tableServiceClient.getClass().getName())
+org.apache.hudi.client.BaseHoodieClient.log == orig(org.apache.hudi.client.BaseHoodieClient.log)
+this.storage == orig(this.storage)
+this.storage.getClass().getName() == orig(this.storage.getClass().getName())
+this.context == orig(this.context)
+this.context.getClass().getName() == orig(this.context.getClass().getName())
+this.storageConf == orig(this.storageConf)
+this.storageConf.getClass().getName() == orig(this.storageConf.getClass().getName())
+this.metrics == orig(this.metrics)
+this.config == orig(this.config)
+this.basePath == orig(this.basePath)
+this.basePath.toString == orig(this.basePath.toString)
+this.heartbeatClient == orig(this.heartbeatClient)
+this.txnManager == orig(this.txnManager)
+this.timeGenerator == orig(this.timeGenerator)
+this.timeGenerator.getClass().getName() == orig(this.timeGenerator.getClass().getName())
+this.shouldStopTimelineServer == orig(this.shouldStopTimelineServer)
+savepointToRestoreTimestamp.toString == orig(savepointToRestoreTimestamp.toString)
+this.index.getClass().getName() == org.apache.hudi.index.simple.HoodieSimpleIndex.class
+this.operationType == null
+this.writeTimer == null
+this.lastCompletedTxnAndMetadata has only one value
+this.pendingInflightAndRequestedInstants has only one value
+this.pendingInflightAndRequestedInstants.getClass().getName() == java.util.Collections$EmptySet.class
+this.shouldStopTimelineServer == true
+savepointToRestoreTimestamp.toString one of { "004", "20260910232655776" }
+return.getClass().getName() == org.apache.hudi.common.util.collection.ImmutablePair.class
+
+
+
+====================================================================================================
+SAMPLE 4/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: hudi
+METHOD: org.apache.hudi.common.model.CompactionOperation.getBaseInstantTime()
+####################################################################################################
+
+===========================================================================
+org.apache.hudi.common.model.CompactionOperation.getBaseInstantTime():::ENTER
+this.bootstrapFilePath has only one value
+size(this.deltaFileNames[]) one of { 1, 2, 4 }
+
+===========================================================================
+org.apache.hudi.common.model.CompactionOperation.getBaseInstantTime():::EXIT
+this.baseInstantTime == return
+this.baseInstantTime.toString == return.toString
+this.dataFileCommitTime == orig(this.dataFileCommitTime)
+this.deltaFileNames == orig(this.deltaFileNames)
+this.deltaFileNames[] == orig(this.deltaFileNames[])
+this.deltaFileNames.getClass().getName() == orig(this.deltaFileNames.getClass().getName())
+this.dataFileName == orig(this.dataFileName)
+this.fileGroupId == orig(this.fileGroupId)
+this.metrics == orig(this.metrics)
+this.metrics.getClass().getName() == orig(this.metrics.getClass().getName())
+this.bootstrapFilePath == orig(this.bootstrapFilePath)
+return == orig(this.baseInstantTime)
+return.toString == orig(this.baseInstantTime.toString)
+this.bootstrapFilePath has only one value
+size(this.deltaFileNames[]) one of { 1, 2, 4 }
+
+
+
+====================================================================================================
+SAMPLE 5/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: hudi
+METHOD: org.apache.hudi.common.model.HoodieCommitMetadata.fetchTotalBytesWritten()
+####################################################################################################
+
+===========================================================================
+org.apache.hudi.common.model.HoodieCommitMetadata.fetchTotalBytesWritten():::ENTER
+
+===========================================================================
+org.apache.hudi.common.model.HoodieCommitMetadata.fetchTotalBytesWritten():::EXIT
+org.apache.hudi.common.model.HoodieCommitMetadata.log == orig(org.apache.hudi.common.model.HoodieCommitMetadata.log)
+org.apache.hudi.common.model.HoodieCommitMetadata.log.getClass().getName() == orig(org.apache.hudi.common.model.HoodieCommitMetadata.log.getClass().getName())
+org.apache.hudi.common.model.HoodieCommitMetadata.SCHEMA_KEY == orig(org.apache.hudi.common.model.HoodieCommitMetadata.SCHEMA_KEY)
+org.apache.hudi.common.model.HoodieCommitMetadata.SCHEMA_KEY.toString == orig(org.apache.hudi.common.model.HoodieCommitMetadata.SCHEMA_KEY.toString)
+this.partitionToWriteStats == orig(this.partitionToWriteStats)
+this.partitionToWriteStats.getClass().getName() == orig(this.partitionToWriteStats.getClass().getName())
+this.partitionToWriteStats.getClass().getName() == orig(this.extraMetadata.getClass().getName())
+this.compacted == orig(this.compacted)
+this.extraMetadata == orig(this.extraMetadata)
+this.operationType == orig(this.operationType)
+
+
+
+====================================================================================================
+SAMPLE 6/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: hudi
+METHOD: org.apache.hudi.common.util.CompactionUtils.getDeltaCommitsSinceLatestCompaction(org.apache.hudi.common.table.timeline.HoodieActiveTimeline)
+####################################################################################################
+
+===========================================================================
+org.apache.hudi.common.util.CompactionUtils.getDeltaCommitsSinceLatestCompaction(org.apache.hudi.common.table.timeline.HoodieActiveTimeline):::ENTER
+activeTimeline != null
+org.apache.hudi.common.util.CompactionUtils.LOG.getClass().getName() != activeTimeline.getClass().getName()
+
+===========================================================================
+org.apache.hudi.common.util.CompactionUtils.getDeltaCommitsSinceLatestCompaction(org.apache.hudi.common.table.timeline.HoodieActiveTimeline):::EXIT328
+return has only one value
+orig(activeTimeline) has only one value
+orig(activeTimeline.getClass().getName()) == org.apache.hudi.common.table.timeline.versioning.v2.ActiveTimelineV2.class
+
+===========================================================================
+org.apache.hudi.common.util.CompactionUtils.getDeltaCommitsSinceLatestCompaction(org.apache.hudi.common.table.timeline.HoodieActiveTimeline):::EXIT333
+
+===========================================================================
+org.apache.hudi.common.util.CompactionUtils.getDeltaCommitsSinceLatestCompaction(org.apache.hudi.common.table.timeline.HoodieActiveTimeline):::EXIT
+org.apache.hudi.common.util.CompactionUtils.LOG == orig(org.apache.hudi.common.util.CompactionUtils.LOG)
+org.apache.hudi.common.util.CompactionUtils.LOG.getClass().getName() == orig(org.apache.hudi.common.util.CompactionUtils.LOG.getClass().getName())
+org.apache.hudi.common.util.CompactionUtils.COMPACTION_METADATA_VERSION_1 == orig(org.apache.hudi.common.util.CompactionUtils.COMPACTION_METADATA_VERSION_1)
+org.apache.hudi.common.util.CompactionUtils.COMPACTION_METADATA_VERSION_2 == orig(org.apache.hudi.common.util.CompactionUtils.COMPACTION_METADATA_VERSION_2)
+org.apache.hudi.common.util.CompactionUtils.COMPACTION_METADATA_VERSION_2 == orig(org.apache.hudi.common.util.CompactionUtils.LATEST_COMPACTION_METADATA_VERSION)
+return != null
+org.apache.hudi.common.util.CompactionUtils.LOG.getClass().getName() != orig(activeTimeline.getClass().getName())
+
+
+
+====================================================================================================
+SAMPLE 7/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: hudi
+METHOD: org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.newBuilder()
+####################################################################################################
+
+===========================================================================
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.newBuilder():::ENTER
+
+===========================================================================
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.newBuilder():::EXIT
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_PREFIX == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_PREFIX)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_PREFIX.toString == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_PREFIX.toString)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.REPORT_PERIOD_IN_SECONDS == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.REPORT_PERIOD_IN_SECONDS)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.API_SITE_VALUE == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.API_SITE_VALUE)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.API_KEY == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.API_KEY)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.API_KEY_SKIP_VALIDATION == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.API_KEY_SKIP_VALIDATION)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.API_KEY_SUPPLIER == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.API_KEY_SUPPLIER)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.API_TIMEOUT_IN_SECONDS == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.API_TIMEOUT_IN_SECONDS)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.METRIC_PREFIX_VALUE == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.METRIC_PREFIX_VALUE)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.METRIC_HOST_NAME == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.METRIC_HOST_NAME)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.METRIC_TAG_VALUES == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.METRIC_TAG_VALUES)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_REPORT_PERIOD_SECONDS == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_REPORT_PERIOD_SECONDS)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_REPORT_PERIOD_SECONDS.toString == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_REPORT_PERIOD_SECONDS.toString)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DEFAULT_DATADOG_REPORT_PERIOD_SECONDS == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DEFAULT_DATADOG_REPORT_PERIOD_SECONDS)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_SITE == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_SITE)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_SITE.toString == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_SITE.toString)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_KEY == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_KEY)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_KEY.toString == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_KEY.toString)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_KEY_SKIP_VALIDATION == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_KEY_SKIP_VALIDATION)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_KEY_SKIP_VALIDATION.toString == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_KEY_SKIP_VALIDATION.toString)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DEFAULT_DATADOG_API_KEY_SKIP_VALIDATION == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DEFAULT_DATADOG_API_KEY_SKIP_VALIDATION)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_KEY_SUPPLIER == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_KEY_SUPPLIER)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_KEY_SUPPLIER.toString == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_KEY_SUPPLIER.toString)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_TIMEOUT_SECONDS == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_TIMEOUT_SECONDS)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_TIMEOUT_SECONDS.toString == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_API_TIMEOUT_SECONDS.toString)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DEFAULT_DATADOG_API_TIMEOUT_SECONDS == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DEFAULT_DATADOG_API_TIMEOUT_SECONDS)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_METRIC_PREFIX == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_METRIC_PREFIX)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_METRIC_PREFIX.toString == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_METRIC_PREFIX.toString)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_METRIC_HOST == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_METRIC_HOST)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_METRIC_HOST.toString == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_METRIC_HOST.toString)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_METRIC_TAGS == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_METRIC_TAGS)
+org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_METRIC_TAGS.toString == orig(org.apache.hudi.config.metrics.HoodieMetricsDatadogConfig.DATADOG_METRIC_TAGS.toString)
+org.apache.hudi.common.config.HoodieConfig.LOG == orig(org.apache.hudi.common.config.HoodieConfig.LOG)
+org.apache.hudi.common.config.HoodieConfig.LOG.getClass().getName() == orig(org.apache.hudi.common.config.HoodieConfig.LOG.getClass().getName())
+org.apache.hudi.common.config.HoodieConfig.CONFIG_VALUES_DELIMITER == orig(org.apache.hudi.common.config.HoodieConfig.CONFIG_VALUES_DELIMITER)
+org.apache.hudi.common.config.HoodieConfig.CONFIG_VALUES_DELIMITER.toString == orig(org.apache.hudi.common.config.HoodieConfig.CONFIG_VALUES_DELIMITER.toString)
+return != null
+
+
+
+====================================================================================================
+SAMPLE 8/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: hudi
+METHOD: org.apache.hudi.avro.model.BooleanWrapper.getValue()
+####################################################################################################
+
+===========================================================================
+org.apache.hudi.avro.model.BooleanWrapper.getValue():::ENTER
+
+===========================================================================
+org.apache.hudi.avro.model.BooleanWrapper.getValue():::EXIT
+org.apache.hudi.avro.model.BooleanWrapper.SCHEMA$ == orig(org.apache.hudi.avro.model.BooleanWrapper.SCHEMA$)
+org.apache.hudi.avro.model.BooleanWrapper.SCHEMA$.getClass().getName() == orig(org.apache.hudi.avro.model.BooleanWrapper.SCHEMA$.getClass().getName())
+org.apache.hudi.avro.model.BooleanWrapper.MODEL$ == orig(org.apache.hudi.avro.model.BooleanWrapper.MODEL$)
+org.apache.hudi.avro.model.BooleanWrapper.ENCODER == orig(org.apache.hudi.avro.model.BooleanWrapper.ENCODER)
+org.apache.hudi.avro.model.BooleanWrapper.DECODER == orig(org.apache.hudi.avro.model.BooleanWrapper.DECODER)
+this.value == return
+org.apache.hudi.avro.model.BooleanWrapper.WRITER$ == orig(org.apache.hudi.avro.model.BooleanWrapper.WRITER$)
+org.apache.hudi.avro.model.BooleanWrapper.WRITER$.getClass().getName() == orig(org.apache.hudi.avro.model.BooleanWrapper.WRITER$.getClass().getName())
+org.apache.hudi.avro.model.BooleanWrapper.READER$ == orig(org.apache.hudi.avro.model.BooleanWrapper.READER$)
+org.apache.hudi.avro.model.BooleanWrapper.READER$.getClass().getName() == orig(org.apache.hudi.avro.model.BooleanWrapper.READER$.getClass().getName())
+return == orig(this.value)
+return == false
+
+===========================================================================
+org.apache.hudi.avro.model.BooleanWrapper.getValue():::EXIT;condition="not(return == true)"
+
+
+
+====================================================================================================
+SAMPLE 9/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: hudi
+METHOD: org.apache.hudi.config.HoodieIndexConfig$Builder.withIndexType(org.apache.hudi.index.HoodieIndex$IndexType)
+####################################################################################################
+
+===========================================================================
+org.apache.hudi.config.HoodieIndexConfig$Builder.withIndexType(org.apache.hudi.index.HoodieIndex$IndexType):::ENTER
+this.engineType has only one value
+indexType != null
+
+===========================================================================
+org.apache.hudi.config.HoodieIndexConfig$Builder.withIndexType(org.apache.hudi.index.HoodieIndex$IndexType):::EXIT
+this.engineType == orig(this.engineType)
+this.hoodieIndexConfig == orig(this.hoodieIndexConfig)
+return == orig(this)
+this.engineType has only one value
+return != null
+
+
+
+====================================================================================================
+SAMPLE 10/10
+====================================================================================================
+
+####################################################################################################
+PROJECT: hudi
+METHOD: org.apache.hudi.common.engine.RecordContext.isDeleteRecord(java.lang.Object, org.apache.hudi.common.table.read.DeleteContext)
+####################################################################################################
+
+===========================================================================
+org.apache.hudi.common.engine.RecordContext.isDeleteRecord(java.lang.Object, org.apache.hudi.common.table.read.DeleteContext):::ENTER
+this.recordKeyExtractor != null
+record != null
+deleteContext != null
+this.getClass().getName() != record.getClass().getName()
+this.recordKeyExtractor.getClass().getName() != record.getClass().getName()
+this.typeConverter.getClass().getName() != record.getClass().getName()
+
+===========================================================================
+org.apache.hudi.common.engine.RecordContext.isDeleteRecord(java.lang.Object, org.apache.hudi.common.table.read.DeleteContext):::EXIT
+this.recordKeyExtractor == orig(this.recordKeyExtractor)
+this.recordKeyExtractor.getClass().getName() == orig(this.recordKeyExtractor.getClass().getName())
+this.localSchemaCache == orig(this.localSchemaCache)
+this.typeConverter == orig(this.typeConverter)
+this.typeConverter.getClass().getName() == orig(this.typeConverter.getClass().getName())
+this.partitionPath == orig(this.partitionPath)
+this.partitionPath.toString == orig(this.partitionPath.toString)
+this.recordKeyExtractor != null
+return == false
+this.recordKeyExtractor.getClass().getName() != orig(this.getClass().getName())
+this.recordKeyExtractor.getClass().getName() != orig(record.getClass().getName())
+this.typeConverter.getClass().getName() != orig(this.getClass().getName())
+this.typeConverter.getClass().getName() != orig(record.getClass().getName())
+
+===========================================================================
+org.apache.hudi.common.engine.RecordContext.isDeleteRecord(java.lang.Object, org.apache.hudi.common.table.read.DeleteContext):::EXIT;condition="not(return == true)"
+

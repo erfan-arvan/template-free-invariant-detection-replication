@@ -1,0 +1,16 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+[io-examples-tool] dtrace=/scratch/mjk76/ea442/promptstudy/netty-s5-chicory-out/latest/dtrace.gz
+[io-examples-tool] src=/scratch/mjk76/ea442/promptstudy/netty-s5-chicory/common/src/main/java
+[io-examples-tool] out=/scratch/mjk76/ea442/promptstudy/netty-s5_io_examples.json
+[io-examples-tool] ENTER records=464259
+[io-examples-tool] paired ENTER/EXIT examples=15718
+[io-examples-tool] truncated lines=48
+[io-examples-tool] distinct program points=2712
+[io-examples-tool] scanning source tree to build forward index...
+[io-examples-tool] forward index built: 2406 declared members
+[io-examples-tool] resolved program points=947
+[io-examples-tool] unresolved program points=1765
+[io-examples-tool] wrote /scratch/mjk76/ea442/promptstudy/netty-s5_io_examples.json
+[TIMING] io-examples-tool extract (netty-s5) 16s  (00:09:28 -> 00:09:44)
+>>> Wrote /scratch/mjk76/ea442/promptstudy/netty-s5_io_examples.json
+261997 /scratch/mjk76/ea442/promptstudy/netty-s5_io_examples.json

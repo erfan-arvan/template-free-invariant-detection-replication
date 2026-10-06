@@ -1,0 +1,362 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/23.0.2/bin/java
+MVN: /scratch/mjk76/ea442/apache-maven-3.9.9/bin/mvn
+######################################
+FEWSHOT CONTEXT STUDY STARTED
+Prompt strategy (fixed): fewshot
+Results base: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot
+Start time: 2026-09-09 23:23:48 EDT
+######################################
+>>> Building Daikon++ (once)
+======================================
+>>> CONTEXT CONFIG: method_javadoc
+>>> Prompt strategy: fewshot
+>>> DP_CONTEXTS: METHOD_BODY,SCOPE,METHOD_JAVADOC
+>>> Start time: 2026-09-09 23:24:41 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: apollo
+>>> Context config: method_javadoc
+>>> Prompt strategy: fewshot
+>>> Start time: 2026-09-09 23:24:41 EDT
+--------------------------------------
+>>> Finished apollo (context_config=method_javadoc, prompt=fewshot)
+>>> Finish time: 2026-09-09 23:27:50 EDT
+>>> Duration: 00h:03m:09s
+>>> Duration in seconds: 189
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/method_javadoc/apollo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/method_javadoc/apollo/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: dubbo
+>>> Context config: method_javadoc
+>>> Prompt strategy: fewshot
+>>> Start time: 2026-09-09 23:27:50 EDT
+--------------------------------------
+>>> Finished dubbo (context_config=method_javadoc, prompt=fewshot)
+>>> Finish time: 2026-09-10 00:00:06 EDT
+>>> Duration: 00h:32m:16s
+>>> Duration in seconds: 1936
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/method_javadoc/dubbo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/method_javadoc/dubbo/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: netty
+>>> Context config: method_javadoc
+>>> Prompt strategy: fewshot
+>>> Start time: 2026-09-10 00:00:06 EDT
+--------------------------------------
+>>> Finished netty (context_config=method_javadoc, prompt=fewshot)
+>>> Finish time: 2026-09-10 00:26:45 EDT
+>>> Duration: 00h:26m:39s
+>>> Duration in seconds: 1599
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/method_javadoc/netty/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/method_javadoc/netty/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: hudi
+>>> Context config: method_javadoc
+>>> Prompt strategy: fewshot
+>>> Start time: 2026-09-10 00:26:45 EDT
+--------------------------------------
+>>> Finished hudi (context_config=method_javadoc, prompt=fewshot)
+>>> Finish time: 2026-09-10 00:35:14 EDT
+>>> Duration: 00h:08m:29s
+>>> Duration in seconds: 509
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/method_javadoc/hudi/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/method_javadoc/hudi/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: spring
+>>> Context config: method_javadoc
+>>> Prompt strategy: fewshot
+>>> Start time: 2026-09-10 00:35:14 EDT
+--------------------------------------
+>>> Finished spring (context_config=method_javadoc, prompt=fewshot)
+>>> Finish time: 2026-09-10 01:36:29 EDT
+>>> Duration: 01h:01m:15s
+>>> Duration in seconds: 3675
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/method_javadoc/spring/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/method_javadoc/spring/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: libgdx
+>>> Context config: method_javadoc
+>>> Prompt strategy: fewshot
+>>> Start time: 2026-09-10 01:36:29 EDT
+--------------------------------------
+>>> Finished libgdx (context_config=method_javadoc, prompt=fewshot)
+>>> Finish time: 2026-09-10 02:47:19 EDT
+>>> Duration: 01h:10m:50s
+>>> Duration in seconds: 4250
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/method_javadoc/libgdx/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/method_javadoc/libgdx/daikonpp_registry.jsonl
+======================================
+DONE context config: method_javadoc
+Prompt strategy: fewshot
+Finish time: 2026-09-10 02:47:19 EDT
+Duration: 03h:22m:38s
+Duration in seconds: 12158
+Results in: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/method_javadoc
+======================================
+======================================
+>>> CONTEXT CONFIG: class_doc
+>>> Prompt strategy: fewshot
+>>> DP_CONTEXTS: METHOD_BODY,SCOPE,CLASS_DOC
+>>> Start time: 2026-09-10 02:47:19 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: apollo
+>>> Context config: class_doc
+>>> Prompt strategy: fewshot
+>>> Start time: 2026-09-10 02:47:19 EDT
+--------------------------------------
+>>> Finished apollo (context_config=class_doc, prompt=fewshot)
+>>> Finish time: 2026-09-10 03:01:48 EDT
+>>> Duration: 00h:14m:29s
+>>> Duration in seconds: 869
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/class_doc/apollo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/class_doc/apollo/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: dubbo
+>>> Context config: class_doc
+>>> Prompt strategy: fewshot
+>>> Start time: 2026-09-10 03:01:48 EDT
+--------------------------------------
+>>> Finished dubbo (context_config=class_doc, prompt=fewshot)
+>>> Finish time: 2026-09-10 05:11:48 EDT
+>>> Duration: 02h:10m:00s
+>>> Duration in seconds: 7800
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/class_doc/dubbo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/class_doc/dubbo/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: netty
+>>> Context config: class_doc
+>>> Prompt strategy: fewshot
+>>> Start time: 2026-09-10 05:11:48 EDT
+--------------------------------------
+>>> Finished netty (context_config=class_doc, prompt=fewshot)
+>>> Finish time: 2026-09-10 06:11:54 EDT
+>>> Duration: 01h:00m:06s
+>>> Duration in seconds: 3606
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/class_doc/netty/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/class_doc/netty/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: hudi
+>>> Context config: class_doc
+>>> Prompt strategy: fewshot
+>>> Start time: 2026-09-10 06:11:54 EDT
+--------------------------------------
+>>> Finished hudi (context_config=class_doc, prompt=fewshot)
+>>> Finish time: 2026-09-10 06:29:30 EDT
+>>> Duration: 00h:17m:36s
+>>> Duration in seconds: 1056
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/class_doc/hudi/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/class_doc/hudi/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: spring
+>>> Context config: class_doc
+>>> Prompt strategy: fewshot
+>>> Start time: 2026-09-10 06:29:30 EDT
+--------------------------------------
+>>> Finished spring (context_config=class_doc, prompt=fewshot)
+>>> Finish time: 2026-09-10 08:00:36 EDT
+>>> Duration: 01h:31m:05s
+>>> Duration in seconds: 5465
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/class_doc/spring/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/class_doc/spring/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: libgdx
+>>> Context config: class_doc
+>>> Prompt strategy: fewshot
+>>> Start time: 2026-09-10 08:00:36 EDT
+--------------------------------------
+>>> Finished libgdx (context_config=class_doc, prompt=fewshot)
+>>> Finish time: 2026-09-10 09:24:34 EDT
+>>> Duration: 01h:23m:58s
+>>> Duration in seconds: 5038
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/class_doc/libgdx/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/class_doc/libgdx/daikonpp_registry.jsonl
+======================================
+DONE context config: class_doc
+Prompt strategy: fewshot
+Finish time: 2026-09-10 09:24:34 EDT
+Duration: 06h:37m:15s
+Duration in seconds: 23835
+Results in: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/class_doc
+======================================
+======================================
+>>> CONTEXT CONFIG: type_doc
+>>> Prompt strategy: fewshot
+>>> DP_CONTEXTS: METHOD_BODY,SCOPE,TYPE_DOC
+>>> Start time: 2026-09-10 09:24:34 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: apollo
+>>> Context config: type_doc
+>>> Prompt strategy: fewshot
+>>> Start time: 2026-09-10 09:24:34 EDT
+--------------------------------------
+>>> Finished apollo (context_config=type_doc, prompt=fewshot)
+>>> Finish time: 2026-09-10 09:26:56 EDT
+>>> Duration: 00h:02m:22s
+>>> Duration in seconds: 142
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/type_doc/apollo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/type_doc/apollo/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: dubbo
+>>> Context config: type_doc
+>>> Prompt strategy: fewshot
+>>> Start time: 2026-09-10 09:26:56 EDT
+--------------------------------------
+>>> Finished dubbo (context_config=type_doc, prompt=fewshot)
+>>> Finish time: 2026-09-10 09:48:18 EDT
+>>> Duration: 00h:21m:22s
+>>> Duration in seconds: 1282
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/type_doc/dubbo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/type_doc/dubbo/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: netty
+>>> Context config: type_doc
+>>> Prompt strategy: fewshot
+>>> Start time: 2026-09-10 09:48:18 EDT
+--------------------------------------
+>>> Finished netty (context_config=type_doc, prompt=fewshot)
+>>> Finish time: 2026-09-10 09:58:59 EDT
+>>> Duration: 00h:10m:41s
+>>> Duration in seconds: 641
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/type_doc/netty/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/type_doc/netty/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: hudi
+>>> Context config: type_doc
+>>> Prompt strategy: fewshot
+>>> Start time: 2026-09-10 09:58:59 EDT
+--------------------------------------
+>>> Finished hudi (context_config=type_doc, prompt=fewshot)
+>>> Finish time: 2026-09-10 10:03:38 EDT
+>>> Duration: 00h:04m:39s
+>>> Duration in seconds: 279
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/type_doc/hudi/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/type_doc/hudi/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: spring
+>>> Context config: type_doc
+>>> Prompt strategy: fewshot
+>>> Start time: 2026-09-10 10:03:39 EDT
+--------------------------------------
+>>> Finished spring (context_config=type_doc, prompt=fewshot)
+>>> Finish time: 2026-09-10 10:20:30 EDT
+>>> Duration: 00h:16m:51s
+>>> Duration in seconds: 1011
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/type_doc/spring/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/type_doc/spring/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: libgdx
+>>> Context config: type_doc
+>>> Prompt strategy: fewshot
+>>> Start time: 2026-09-10 10:20:30 EDT
+--------------------------------------
+>>> Finished libgdx (context_config=type_doc, prompt=fewshot)
+>>> Finish time: 2026-09-10 10:28:43 EDT
+>>> Duration: 00h:08m:13s
+>>> Duration in seconds: 493
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/type_doc/libgdx/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/type_doc/libgdx/daikonpp_registry.jsonl
+======================================
+DONE context config: type_doc
+Prompt strategy: fewshot
+Finish time: 2026-09-10 10:28:43 EDT
+Duration: 01h:04m:09s
+Duration in seconds: 3849
+Results in: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/type_doc
+======================================
+======================================
+>>> CONTEXT CONFIG: call_site
+>>> Prompt strategy: fewshot
+>>> DP_CONTEXTS: METHOD_BODY,SCOPE,CALL_SITE
+>>> Start time: 2026-09-10 10:28:43 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: apollo
+>>> Context config: call_site
+>>> Prompt strategy: fewshot
+>>> Start time: 2026-09-10 10:28:43 EDT
+--------------------------------------
+>>> Finished apollo (context_config=call_site, prompt=fewshot)
+>>> Finish time: 2026-09-10 10:38:14 EDT
+>>> Duration: 00h:09m:31s
+>>> Duration in seconds: 571
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/call_site/apollo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/call_site/apollo/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: dubbo
+>>> Context config: call_site
+>>> Prompt strategy: fewshot
+>>> Start time: 2026-09-10 10:38:14 EDT
+--------------------------------------
+>>> Finished dubbo (context_config=call_site, prompt=fewshot)
+>>> Finish time: 2026-09-10 11:35:49 EDT
+>>> Duration: 00h:57m:35s
+>>> Duration in seconds: 3455
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/call_site/dubbo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/call_site/dubbo/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: netty
+>>> Context config: call_site
+>>> Prompt strategy: fewshot
+>>> Start time: 2026-09-10 11:35:49 EDT
+--------------------------------------
+>>> Finished netty (context_config=call_site, prompt=fewshot)
+>>> Finish time: 2026-09-10 12:05:35 EDT
+>>> Duration: 00h:29m:46s
+>>> Duration in seconds: 1786
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/call_site/netty/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/call_site/netty/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: hudi
+>>> Context config: call_site
+>>> Prompt strategy: fewshot
+>>> Start time: 2026-09-10 12:05:35 EDT
+--------------------------------------
+>>> Finished hudi (context_config=call_site, prompt=fewshot)
+>>> Finish time: 2026-09-10 12:12:04 EDT
+>>> Duration: 00h:06m:29s
+>>> Duration in seconds: 389
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/call_site/hudi/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/call_site/hudi/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: spring
+>>> Context config: call_site
+>>> Prompt strategy: fewshot
+>>> Start time: 2026-09-10 12:12:04 EDT
+--------------------------------------
+>>> Finished spring (context_config=call_site, prompt=fewshot)
+>>> Finish time: 2026-09-10 13:02:33 EDT
+>>> Duration: 00h:50m:29s
+>>> Duration in seconds: 3029
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/call_site/spring/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/call_site/spring/daikonpp_registry.jsonl
+--------------------------------------
+>>> Running benchmark: libgdx
+>>> Context config: call_site
+>>> Prompt strategy: fewshot
+>>> Start time: 2026-09-10 13:02:33 EDT
+--------------------------------------
+>>> Finished libgdx (context_config=call_site, prompt=fewshot)
+>>> Finish time: 2026-09-10 13:49:54 EDT
+>>> Duration: 00h:47m:21s
+>>> Duration in seconds: 2841
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/call_site/libgdx/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/call_site/libgdx/daikonpp_registry.jsonl
+======================================
+DONE context config: call_site
+Prompt strategy: fewshot
+Finish time: 2026-09-10 13:49:54 EDT
+Duration: 03h:21m:11s
+Duration in seconds: 12071
+Results in: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot/call_site
+======================================
+######################################
+ALL FEWSHOT CONTEXT CONFIGS DONE
+Prompt strategy: fewshot
+Start time: 2026-09-09 23:23:48 EDT
+Finish time: 2026-09-10 13:49:54 EDT
+Total duration: 14h:26m:06s
+Total duration in seconds: 51966
+Results base: /project/mjk76/ea442/promptstudy/resultsOfContextStudyFewshot
+######################################

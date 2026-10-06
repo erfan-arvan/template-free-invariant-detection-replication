@@ -1,0 +1,12 @@
+========================================
+Dubbo Daikon invariant detection
+========================================
+JAVA:   /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+TRACE:  /project/mjk76/ea442/promptstudy/dubbo-chicory-out/dubbo.dtrace.gz
+JAR:    /project/mjk76/ea442/promptstudy/daikon.jar
+OUTPUT: /project/mjk76/ea442/promptstudy/dubbo-daikon-out
+
+>>> Trace size:
+lrwxrwxrwx 1 ea442 ea442 60 Sep  3 01:16 /project/mjk76/ea442/promptstudy/dubbo-chicory-out/dubbo.dtrace.gz -> /project/mjk76/ea442/promptstudy/dubbo-chicory-out/dtrace.gz
+
+>>> Starting Daikon at 2026-09-03T01:20:33-04:00

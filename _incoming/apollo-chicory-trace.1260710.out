@@ -1,0 +1,1296 @@
+============================================================
+apollo Chicory trace
+============================================================
+RUN ID:             1260710
+JAVA:               /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+MVN:                /scratch/mjk76/ea442/apache-maven-3.9.9/bin/mvn
+PROJECT:            /project/mjk76/ea442/promptstudy/apollo
+MODULE:             apollo-biz
+WORK DIR:           /scratch/mjk76/ea442/promptstudy/apollo-chicory
+TRACE BASE DIR:     /scratch/mjk76/ea442/promptstudy/apollo-chicory-out
+TRACE OUTPUT DIR:   /scratch/mjk76/ea442/promptstudy/apollo-chicory-out/1260710
+COMBINED TRACE:     /scratch/mjk76/ea442/promptstudy/apollo-chicory-out/1260710/apollo.dtrace
+============================================================
+
+[TIMING] === apollo chicory trace run started 2026-09-10T19:15:18-04:00 ===
+[TIMING] rsync copy                   0s  (19:15:18 -> 19:15:18)
+
+>>> No CHICORY_PKG_PREFIX supplied.
+>>> Auto-detecting package prefix under:
+>>> /scratch/mjk76/ea442/promptstudy/apollo-chicory/apollo-biz/src/main/java
+[TIMING] detect package prefix        1s  (19:15:18 -> 19:15:19)
+>>> Auto-detected package prefix: com.ctrip
+
+>>> Chicory configuration:
+>>> package prefix:     com.ctrip
+>>> select pattern:     ^com\.ctrip\..*
+>>> omit pattern:       com\.google\.protobuf
+>>> boot classes:       ^(?!com\.ctrip\.).*
+
+>>> Patching pom.xml argLine...
+Patched 1 argLine element(s) in /scratch/mjk76/ea442/promptstudy/apollo-chicory/pom.xml (real checkout untouched -- this is an rsync copy)
+[TIMING] pom.xml argLine patch        0s  (19:15:19 -> 19:15:19)
+
+>>> mvn compile (-am, warms build with compatibility compiler flag)
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Apollo                                                             [pom]
+[INFO] Apollo Audit                                                       [pom]
+[INFO] apollo-audit-annotation                                            [jar]
+[INFO] apollo-audit-api                                                   [jar]
+[INFO] Apollo Common                                                      [jar]
+[INFO] apollo-audit-impl                                                  [jar]
+[INFO] apollo-audit-spring-boot-starter                                   [jar]
+[INFO] Apollo Biz                                                         [jar]
+[INFO] 
+[INFO] -----------------< com.ctrip.framework.apollo:apollo >------------------
+[INFO] Building Apollo 3.0.0-SNAPSHOT                                     [1/8]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- git-commit-id:2.2.6:revision (default) @ apollo ---
+[INFO] isPomProject is true and skipPoms is true, return
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ apollo ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ apollo ---
+[INFO] Generating flattened POM of project com.ctrip.framework.apollo:apollo:pom:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --------------< com.ctrip.framework.apollo:apollo-audit >---------------
+[INFO] Building Apollo Audit 3.0.0-SNAPSHOT                               [2/8]
+[INFO]   from apollo-audit/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- git-commit-id:2.2.6:revision (default) @ apollo-audit ---
+[INFO] isPomProject is true and skipPoms is true, return
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ apollo-audit ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ apollo-audit ---
+[INFO] Generating flattened POM of project com.ctrip.framework.apollo:apollo-audit:pom:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] ---------< com.ctrip.framework.apollo:apollo-audit-annotation >---------
+[INFO] Building apollo-audit-annotation 3.0.0-SNAPSHOT                    [3/8]
+[INFO]   from apollo-audit/apollo-audit-annotation/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- git-commit-id:2.2.6:revision (default) @ apollo-audit-annotation ---
+[INFO] dotGitDirectory is null, aborting execution!
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ apollo-audit-annotation ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ apollo-audit-annotation ---
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-chicory/apollo-audit/apollo-audit-annotation/src/main/resources
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-chicory/apollo-audit/apollo-audit-annotation/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ apollo-audit-annotation ---
+[INFO] Generating flattened POM of project com.ctrip.framework.apollo:apollo-audit-annotation:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ apollo-audit-annotation ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] ------------< com.ctrip.framework.apollo:apollo-audit-api >-------------
+[INFO] Building apollo-audit-api 3.0.0-SNAPSHOT                           [4/8]
+[INFO]   from apollo-audit/apollo-audit-api/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- git-commit-id:2.2.6:revision (default) @ apollo-audit-api ---
+[INFO] dotGitDirectory is null, aborting execution!
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ apollo-audit-api ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ apollo-audit-api ---
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-chicory/apollo-audit/apollo-audit-api/src/main/resources
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-chicory/apollo-audit/apollo-audit-api/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ apollo-audit-api ---
+[INFO] Generating flattened POM of project com.ctrip.framework.apollo:apollo-audit-api:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ apollo-audit-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --------------< com.ctrip.framework.apollo:apollo-common >--------------
+[INFO] Building Apollo Common 3.0.0-SNAPSHOT                              [5/8]
+[INFO]   from apollo-common/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- git-commit-id:2.2.6:revision (default) @ apollo-common ---
+[INFO] dotGitDirectory is null, aborting execution!
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ apollo-common ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ apollo-common ---
+[INFO] Copying 4 resources from src/main/resources to target/classes
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ apollo-common ---
+[INFO] Generating flattened POM of project com.ctrip.framework.apollo:apollo-common:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ apollo-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] ------------< com.ctrip.framework.apollo:apollo-audit-impl >------------
+[INFO] Building apollo-audit-impl 3.0.0-SNAPSHOT                          [6/8]
+[INFO]   from apollo-audit/apollo-audit-impl/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- git-commit-id:2.2.6:revision (default) @ apollo-audit-impl ---
+[INFO] dotGitDirectory is null, aborting execution!
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ apollo-audit-impl ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ apollo-audit-impl ---
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-chicory/apollo-audit/apollo-audit-impl/src/main/resources
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-chicory/apollo-audit/apollo-audit-impl/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ apollo-audit-impl ---
+[INFO] Generating flattened POM of project com.ctrip.framework.apollo:apollo-audit-impl:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ apollo-audit-impl ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] ----< com.ctrip.framework.apollo:apollo-audit-spring-boot-starter >-----
+[INFO] Building apollo-audit-spring-boot-starter 3.0.0-SNAPSHOT           [7/8]
+[INFO]   from apollo-audit/apollo-audit-spring-boot-starter/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- git-commit-id:2.2.6:revision (default) @ apollo-audit-spring-boot-starter ---
+[INFO] dotGitDirectory is null, aborting execution!
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ apollo-audit-spring-boot-starter ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ apollo-audit-spring-boot-starter ---
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] Copying 2 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ apollo-audit-spring-boot-starter ---
+[INFO] Generating flattened POM of project com.ctrip.framework.apollo:apollo-audit-spring-boot-starter:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ apollo-audit-spring-boot-starter ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] ---------------< com.ctrip.framework.apollo:apollo-biz >----------------
+[INFO] Building Apollo Biz 3.0.0-SNAPSHOT                                 [8/8]
+[INFO]   from apollo-biz/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- git-commit-id:2.2.6:revision (default) @ apollo-biz ---
+[INFO] dotGitDirectory is null, aborting execution!
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ apollo-biz ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ apollo-biz ---
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-chicory/apollo-biz/src/main/resources
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-chicory/apollo-biz/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ apollo-biz ---
+[INFO] Generating flattened POM of project com.ctrip.framework.apollo:apollo-biz:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ apollo-biz ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Apollo 3.0.0-SNAPSHOT:
+[INFO] 
+[INFO] Apollo ............................................. SUCCESS [  0.918 s]
+[INFO] Apollo Audit ....................................... SUCCESS [  0.092 s]
+[INFO] apollo-audit-annotation ............................ SUCCESS [  0.252 s]
+[INFO] apollo-audit-api ................................... SUCCESS [  0.084 s]
+[INFO] Apollo Common ...................................... SUCCESS [  0.381 s]
+[INFO] apollo-audit-impl .................................. SUCCESS [  0.143 s]
+[INFO] apollo-audit-spring-boot-starter ................... SUCCESS [  0.095 s]
+[INFO] Apollo Biz ......................................... SUCCESS [  0.324 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.649 s
+[INFO] Finished at: 2026-09-10T19:15:23-04:00
+[INFO] ------------------------------------------------------------------------
+[TIMING] mvn compile (-am, no tests)  4s  (19:15:19 -> 19:15:23)
+
+>>> mvn test
+>>> Chicory javaagent is attached through patched argLine
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Apollo                                                             [pom]
+[INFO] Apollo Audit                                                       [pom]
+[INFO] apollo-audit-annotation                                            [jar]
+[INFO] apollo-audit-api                                                   [jar]
+[INFO] Apollo Common                                                      [jar]
+[INFO] apollo-audit-impl                                                  [jar]
+[INFO] apollo-audit-spring-boot-starter                                   [jar]
+[INFO] Apollo Biz                                                         [jar]
+[INFO] 
+[INFO] -----------------< com.ctrip.framework.apollo:apollo >------------------
+[INFO] Building Apollo 3.0.0-SNAPSHOT                                     [1/8]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- git-commit-id:2.2.6:revision (default) @ apollo ---
+[INFO] isPomProject is true and skipPoms is true, return
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ apollo ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ apollo ---
+[INFO] Generating flattened POM of project com.ctrip.framework.apollo:apollo:pom:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --------------< com.ctrip.framework.apollo:apollo-audit >---------------
+[INFO] Building Apollo Audit 3.0.0-SNAPSHOT                               [2/8]
+[INFO]   from apollo-audit/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- git-commit-id:2.2.6:revision (default) @ apollo-audit ---
+[INFO] isPomProject is true and skipPoms is true, return
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ apollo-audit ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ apollo-audit ---
+[INFO] Generating flattened POM of project com.ctrip.framework.apollo:apollo-audit:pom:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] ---------< com.ctrip.framework.apollo:apollo-audit-annotation >---------
+[INFO] Building apollo-audit-annotation 3.0.0-SNAPSHOT                    [3/8]
+[INFO]   from apollo-audit/apollo-audit-annotation/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- git-commit-id:2.2.6:revision (default) @ apollo-audit-annotation ---
+[INFO] dotGitDirectory is null, aborting execution!
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ apollo-audit-annotation ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ apollo-audit-annotation ---
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-chicory/apollo-audit/apollo-audit-annotation/src/main/resources
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-chicory/apollo-audit/apollo-audit-annotation/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ apollo-audit-annotation ---
+[INFO] Generating flattened POM of project com.ctrip.framework.apollo:apollo-audit-annotation:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ apollo-audit-annotation ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ apollo-audit-annotation ---
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-chicory/apollo-audit/apollo-audit-annotation/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ apollo-audit-annotation ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ apollo-audit-annotation ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] ------------< com.ctrip.framework.apollo:apollo-audit-api >-------------
+[INFO] Building apollo-audit-api 3.0.0-SNAPSHOT                           [4/8]
+[INFO]   from apollo-audit/apollo-audit-api/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- git-commit-id:2.2.6:revision (default) @ apollo-audit-api ---
+[INFO] dotGitDirectory is null, aborting execution!
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ apollo-audit-api ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ apollo-audit-api ---
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-chicory/apollo-audit/apollo-audit-api/src/main/resources
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-chicory/apollo-audit/apollo-audit-api/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ apollo-audit-api ---
+[INFO] Generating flattened POM of project com.ctrip.framework.apollo:apollo-audit-api:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ apollo-audit-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ apollo-audit-api ---
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-chicory/apollo-audit/apollo-audit-api/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ apollo-audit-api ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ apollo-audit-api ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --------------< com.ctrip.framework.apollo:apollo-common >--------------
+[INFO] Building Apollo Common 3.0.0-SNAPSHOT                              [5/8]
+[INFO]   from apollo-common/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- git-commit-id:2.2.6:revision (default) @ apollo-common ---
+[INFO] dotGitDirectory is null, aborting execution!
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ apollo-common ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ apollo-common ---
+[INFO] Copying 4 resources from src/main/resources to target/classes
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ apollo-common ---
+[INFO] Generating flattened POM of project com.ctrip.framework.apollo:apollo-common:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ apollo-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ apollo-common ---
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-chicory/apollo-common/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ apollo-common ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ apollo-common ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.ctrip.framework.apollo.common.exception.NotFoundExceptionTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.242 s -- in com.ctrip.framework.apollo.common.exception.NotFoundExceptionTest
+[INFO] Running com.ctrip.framework.apollo.common.controller.HttpMessageConverterConfigurationTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.136 s -- in com.ctrip.framework.apollo.common.controller.HttpMessageConverterConfigurationTest
+[INFO] Running com.ctrip.framework.apollo.common.dto.ItemInfoDTOTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s -- in com.ctrip.framework.apollo.common.dto.ItemInfoDTOTest
+[INFO] Running com.ctrip.framework.apollo.common.exception.BadRequestExceptionTest
+[INFO] Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 s -- in com.ctrip.framework.apollo.common.exception.BadRequestExceptionTest
+[INFO] Running com.ctrip.framework.apollo.common.conditional.ConditionalOnProfileTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.244 s -- in com.ctrip.framework.apollo.common.conditional.ConditionalOnProfileTest
+[INFO] Running com.ctrip.framework.apollo.common.utils.BeanUtilsTest
+[INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.059 s -- in com.ctrip.framework.apollo.common.utils.BeanUtilsTest
+[INFO] Running com.ctrip.framework.apollo.common.utils.InputValidatorTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s -- in com.ctrip.framework.apollo.common.utils.InputValidatorTest
+[INFO] Running com.ctrip.framework.apollo.common.utils.WebUtilsTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.204 s -- in com.ctrip.framework.apollo.common.utils.WebUtilsTest
+[INFO] Running com.ctrip.framework.apollo.common.http.SearchResponseEntityTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.092 s -- in com.ctrip.framework.apollo.common.http.SearchResponseEntityTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 55, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] ------------< com.ctrip.framework.apollo:apollo-audit-impl >------------
+[INFO] Building apollo-audit-impl 3.0.0-SNAPSHOT                          [6/8]
+[INFO]   from apollo-audit/apollo-audit-impl/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- git-commit-id:2.2.6:revision (default) @ apollo-audit-impl ---
+[INFO] dotGitDirectory is null, aborting execution!
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ apollo-audit-impl ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ apollo-audit-impl ---
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-chicory/apollo-audit/apollo-audit-impl/src/main/resources
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-chicory/apollo-audit/apollo-audit-impl/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ apollo-audit-impl ---
+[INFO] Generating flattened POM of project com.ctrip.framework.apollo:apollo-audit-impl:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ apollo-audit-impl ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ apollo-audit-impl ---
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-chicory/apollo-audit/apollo-audit-impl/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ apollo-audit-impl ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ apollo-audit-impl ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.ctrip.framework.apollo.audit.component.ApolloAuditScopeManagerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.5)
+
+2026-09-10T23:15:35.327Z  INFO 399988 --- [           main] c.c.f.a.a.c.ApolloAuditScopeManagerTest  : Starting ApolloAuditScopeManagerTest using Java 17.0.15 with PID 399988 (started by ea442 in /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-chicory/apollo-audit/apollo-audit-impl)
+2026-09-10T23:15:35.331Z  INFO 399988 --- [           main] c.c.f.a.a.c.ApolloAuditScopeManagerTest  : No active profile set, falling back to 1 default profile: "default"
+2026-09-10T23:15:36.291Z  INFO 399988 --- [           main] c.c.f.a.a.c.ApolloAuditScopeManagerTest  : Started ApolloAuditScopeManagerTest in 1.309 seconds (process running for 3.742)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.288 s -- in com.ctrip.framework.apollo.audit.component.ApolloAuditScopeManagerTest
+[INFO] Running com.ctrip.framework.apollo.audit.component.ApolloAuditLogApiJpaImplTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.5)
+
+2026-09-10T23:15:36.562Z  INFO 399988 --- [           main] c.c.f.a.a.c.ApolloAuditLogApiJpaImplTest : Starting ApolloAuditLogApiJpaImplTest using Java 17.0.15 with PID 399988 (started by ea442 in /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-chicory/apollo-audit/apollo-audit-impl)
+2026-09-10T23:15:36.562Z  INFO 399988 --- [           main] c.c.f.a.a.c.ApolloAuditLogApiJpaImplTest : No active profile set, falling back to 1 default profile: "default"
+2026-09-10T23:15:36.729Z  INFO 399988 --- [           main] c.c.f.a.a.c.ApolloAuditLogApiJpaImplTest : Started ApolloAuditLogApiJpaImplTest in 0.202 seconds (process running for 4.18)
+[INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.588 s -- in com.ctrip.framework.apollo.audit.component.ApolloAuditLogApiJpaImplTest
+[INFO] Running com.ctrip.framework.apollo.audit.component.ApolloAuditHttpInterceptorTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.5)
+
+2026-09-10T23:15:37.094Z  INFO 399988 --- [           main] c.f.a.a.c.ApolloAuditHttpInterceptorTest : Starting ApolloAuditHttpInterceptorTest using Java 17.0.15 with PID 399988 (started by ea442 in /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-chicory/apollo-audit/apollo-audit-impl)
+2026-09-10T23:15:37.094Z  INFO 399988 --- [           main] c.f.a.a.c.ApolloAuditHttpInterceptorTest : No active profile set, falling back to 1 default profile: "default"
+2026-09-10T23:15:37.159Z  INFO 399988 --- [           main] c.f.a.a.c.ApolloAuditHttpInterceptorTest : Started ApolloAuditHttpInterceptorTest in 0.091 seconds (process running for 4.609)
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.237 s -- in com.ctrip.framework.apollo.audit.component.ApolloAuditHttpInterceptorTest
+[INFO] Running com.ctrip.framework.apollo.audit.context.ApolloAuditTraceContextTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.5)
+
+2026-09-10T23:15:37.339Z  INFO 399988 --- [           main] c.c.f.a.a.c.ApolloAuditTraceContextTest  : Starting ApolloAuditTraceContextTest using Java 17.0.15 with PID 399988 (started by ea442 in /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-chicory/apollo-audit/apollo-audit-impl)
+2026-09-10T23:15:37.340Z  INFO 399988 --- [           main] c.c.f.a.a.c.ApolloAuditTraceContextTest  : No active profile set, falling back to 1 default profile: "default"
+2026-09-10T23:15:37.409Z  INFO 399988 --- [           main] c.c.f.a.a.c.ApolloAuditTraceContextTest  : Started ApolloAuditTraceContextTest in 0.097 seconds (process running for 4.859)
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.186 s -- in com.ctrip.framework.apollo.audit.context.ApolloAuditTraceContextTest
+[INFO] Running com.ctrip.framework.apollo.audit.context.ApolloAuditTracerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.5)
+
+2026-09-10T23:15:37.524Z  INFO 399988 --- [           main] c.c.f.a.a.context.ApolloAuditTracerTest  : Starting ApolloAuditTracerTest using Java 17.0.15 with PID 399988 (started by ea442 in /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-chicory/apollo-audit/apollo-audit-impl)
+2026-09-10T23:15:37.525Z  INFO 399988 --- [           main] c.c.f.a.a.context.ApolloAuditTracerTest  : No active profile set, falling back to 1 default profile: "default"
+2026-09-10T23:15:37.533Z  INFO 399988 --- [           main] c.c.f.a.a.context.ApolloAuditTracerTest  : Started ApolloAuditTracerTest in 0.034 seconds (process running for 4.984)
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.273 s -- in com.ctrip.framework.apollo.audit.context.ApolloAuditTracerTest
+[INFO] Running com.ctrip.framework.apollo.audit.aop.ApolloAuditSpanAspectTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.5)
+
+2026-09-10T23:15:37.796Z  INFO 399988 --- [           main] c.c.f.a.a.aop.ApolloAuditSpanAspectTest  : Starting ApolloAuditSpanAspectTest using Java 17.0.15 with PID 399988 (started by ea442 in /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-chicory/apollo-audit/apollo-audit-impl)
+2026-09-10T23:15:37.797Z  INFO 399988 --- [           main] c.c.f.a.a.aop.ApolloAuditSpanAspectTest  : No active profile set, falling back to 1 default profile: "default"
+2026-09-10T23:15:37.872Z  INFO 399988 --- [           main] c.c.f.a.a.aop.ApolloAuditSpanAspectTest  : Started ApolloAuditSpanAspectTest in 0.095 seconds (process running for 5.322)
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.249 s -- in com.ctrip.framework.apollo.audit.aop.ApolloAuditSpanAspectTest
+[INFO] Running com.ctrip.framework.apollo.audit.controller.ApolloAuditControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.5)
+
+2026-09-10T23:15:38.075Z  INFO 399988 --- [           main] c.c.f.a.a.c.ApolloAuditControllerTest    : Starting ApolloAuditControllerTest using Java 17.0.15 with PID 399988 (started by ea442 in /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-chicory/apollo-audit/apollo-audit-impl)
+2026-09-10T23:15:38.076Z  INFO 399988 --- [           main] c.c.f.a.a.c.ApolloAuditControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2026-09-10T23:15:38.675Z  INFO 399988 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-09-10T23:15:38.676Z  INFO 399988 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-09-10T23:15:38.678Z  INFO 399988 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-09-10T23:15:38.692Z  INFO 399988 --- [           main] c.c.f.a.a.c.ApolloAuditControllerTest    : Started ApolloAuditControllerTest in 0.639 seconds (process running for 6.143)
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.955 s -- in com.ctrip.framework.apollo.audit.controller.ApolloAuditControllerTest
+[INFO] Running com.ctrip.framework.apollo.audit.spi.ApolloAuditOperatorSupplierTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in com.ctrip.framework.apollo.audit.spi.ApolloAuditOperatorSupplierTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 43, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] ----< com.ctrip.framework.apollo:apollo-audit-spring-boot-starter >-----
+[INFO] Building apollo-audit-spring-boot-starter 3.0.0-SNAPSHOT           [7/8]
+[INFO]   from apollo-audit/apollo-audit-spring-boot-starter/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- git-commit-id:2.2.6:revision (default) @ apollo-audit-spring-boot-starter ---
+[INFO] dotGitDirectory is null, aborting execution!
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ apollo-audit-spring-boot-starter ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ apollo-audit-spring-boot-starter ---
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] Copying 2 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ apollo-audit-spring-boot-starter ---
+[INFO] Generating flattened POM of project com.ctrip.framework.apollo:apollo-audit-spring-boot-starter:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ apollo-audit-spring-boot-starter ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ apollo-audit-spring-boot-starter ---
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-chicory/apollo-audit/apollo-audit-spring-boot-starter/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ apollo-audit-spring-boot-starter ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ apollo-audit-spring-boot-starter ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] ---------------< com.ctrip.framework.apollo:apollo-biz >----------------
+[INFO] Building Apollo Biz 3.0.0-SNAPSHOT                                 [8/8]
+[INFO]   from apollo-biz/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- git-commit-id:2.2.6:revision (default) @ apollo-biz ---
+[INFO] dotGitDirectory is null, aborting execution!
+[INFO] 
+[INFO] --- jacoco:0.8.13:prepare-agent (prepare-agent) @ apollo-biz ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ apollo-biz ---
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-chicory/apollo-biz/src/main/resources
+[INFO] skip non existing resourceDirectory /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-chicory/apollo-biz/src/main/resources
+[INFO] 
+[INFO] --- flatten:1.1.0:flatten (flatten) @ apollo-biz ---
+[INFO] Generating flattened POM of project com.ctrip.framework.apollo:apollo-biz:jar:3.0.0-SNAPSHOT...
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ apollo-biz ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ apollo-biz ---
+[INFO] Copying 14 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ apollo-biz ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ apollo-biz ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.ctrip.framework.apollo.biz.repository.ReleaseHistoryRetentionMigrationSqlTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.268 s -- in com.ctrip.framework.apollo.biz.repository.ReleaseHistoryRetentionMigrationSqlTest
+[INFO] Running com.ctrip.framework.apollo.biz.registry.configuration.ApolloServiceRegistryAutoConfigurationNotEnabledTest
+     _                _ _
+    / \   _ __   ___ | | | ___
+   / _ \ | '_ \ / _ \| | |/ _ \
+  / ___ \| |_) | (_) | | | (_) |
+ /_/   \_\ .__/ \___/|_|_|\___/
+         |_|
+
+:: Spring Boot ::  (v4.0.5)
+
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.003 s -- in com.ctrip.framework.apollo.biz.registry.configuration.ApolloServiceRegistryAutoConfigurationNotEnabledTest
+[INFO] Running com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClientMemoryCacheDecoratorImplTest
+[ERROR] com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClientMemoryCacheDecoratorImpl - fail to read service instances from database
+java.lang.OutOfMemoryError
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.230 s -- in com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClientMemoryCacheDecoratorImplTest
+[INFO] Running com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClientAlwaysAddSelfInstanceDecoratorImplTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s -- in com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClientAlwaysAddSelfInstanceDecoratorImplTest
+[INFO] Running com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClientImplTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.180 s -- in com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClientImplTest
+[INFO] Running com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverterTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.060 s -- in com.ctrip.framework.apollo.biz.entity.JpaMapFieldJsonConverterTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.ItemServiceGrayNamespaceLimitTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.566 s -- in com.ctrip.framework.apollo.biz.service.ItemServiceGrayNamespaceLimitTest
+[INFO] Running com.ctrip.framework.apollo.biz.repository.AppRepositoryTest
+     _                _ _
+    / \   _ __   ___ | | | ___
+   / _ \ | '_ \ / _ \| | |/ _ \
+  / ___ \| |_) | (_) | | | (_) |
+ /_/   \_\ .__/ \___/|_|_|\___/
+         |_|
+
+:: Spring Boot ::  (v4.0.5)
+
+[WARN] com.ctrip.framework.foundation.internals.provider.DefaultApplicationProvider - app.id is not available from System Property and /META-INF/app.properties. It is set to null
+[WARN] com.ctrip.framework.foundation.internals.provider.DefaultApplicationProvider - app.label is not available from System Property and /META-INF/app.properties. It is set to null
+[WARN] org.springframework.boot.jpa.autoconfigure.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[WARN] org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 16.48 s -- in com.ctrip.framework.apollo.biz.repository.AppRepositoryTest
+[INFO] Running com.ctrip.framework.apollo.biz.repository.AccessKeyRepositoryTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.254 s -- in com.ctrip.framework.apollo.biz.repository.AccessKeyRepositoryTest
+[INFO] Running com.ctrip.framework.apollo.biz.repository.InstanceConfigRepositoryTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.093 s -- in com.ctrip.framework.apollo.biz.repository.InstanceConfigRepositoryTest
+[INFO] Running com.ctrip.framework.apollo.biz.repository.AppNamespaceRepositoryTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.053 s -- in com.ctrip.framework.apollo.biz.repository.AppNamespaceRepositoryTest
+[INFO] Running com.ctrip.framework.apollo.biz.repository.ReleaseHistoryRepositoryTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.083 s -- in com.ctrip.framework.apollo.biz.repository.ReleaseHistoryRepositoryTest
+[INFO] Running com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceRegistryClearApplicationRunnerIntegrationTest
+     _                _ _
+    / \   _ __   ___ | | | ___
+   / _ \ | '_ \ / _ \| | |/ _ \
+  / ___ \| |_) | (_) | | | (_) |
+ /_/   \_\ .__/ \___/|_|_|\___/
+         |_|
+
+:: Spring Boot ::  (v4.0.5)
+
+[WARN] org.springframework.boot.jpa.autoconfigure.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[WARN] org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.619 s -- in com.ctrip.framework.apollo.biz.registry.configuration.support.ApolloServiceRegistryClearApplicationRunnerIntegrationTest
+[INFO] Running com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryWithoutDecoratorIntegrationTest
+     _                _ _
+    / \   _ __   ___ | | | ___
+   / _ \ | '_ \ / _ \| | |/ _ \
+  / ___ \| |_) | (_) | | | (_) |
+ /_/   \_\ .__/ \___/|_|_|\___/
+         |_|
+
+:: Spring Boot ::  (v4.0.5)
+
+[WARN] org.springframework.boot.jpa.autoconfigure.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[WARN] org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.449 s -- in com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryWithoutDecoratorIntegrationTest
+[INFO] Running com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryIntegrationTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.128 s -- in com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryIntegrationTest
+[INFO] Running com.ctrip.framework.apollo.biz.grayReleaseRule.GrayReleaseRulesHolderTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.411 s -- in com.ctrip.framework.apollo.biz.grayReleaseRule.GrayReleaseRulesHolderTest
+[INFO] Running com.ctrip.framework.apollo.biz.utils.ConfigChangeContentBuilderTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.056 s -- in com.ctrip.framework.apollo.biz.utils.ConfigChangeContentBuilderTest
+[INFO] Running com.ctrip.framework.apollo.biz.utils.ReleaseKeyGeneratorTest
+[ERROR] com.ctrip.framework.apollo.biz.utils.ReleaseMessageKeyGenerator - message format invalid - appId+cluster
+[ERROR] Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 10.02 s <<< FAILURE! -- in com.ctrip.framework.apollo.biz.utils.ReleaseKeyGeneratorTest
+[ERROR] com.ctrip.framework.apollo.biz.utils.ReleaseKeyGeneratorTest.testGenerateReleaseKey -- Time elapsed: 10.01 s <<< FAILURE!
+java.lang.AssertionError: expected:<100000> but was:<22497>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:633)
+	at com.ctrip.framework.apollo.biz.utils.ReleaseKeyGeneratorTest.testGenerateReleaseKey(ReleaseKeyGeneratorTest.java:67)
+
+[INFO] Running com.ctrip.framework.apollo.biz.config.BizConfigTest
+[ERROR] Tests run: 11, Failures: 0, Errors: 11, Skipped: 0, Time elapsed: 0.317 s <<< FAILURE! -- in com.ctrip.framework.apollo.biz.config.BizConfigTest
+[ERROR] com.ctrip.framework.apollo.biz.config.BizConfigTest.testCheckInt -- Time elapsed: 0.300 s <<< ERROR!
+java.lang.RuntimeException: Traversal pattern not initialized at method setMockitoInterceptor
+	at daikon.chicory.DTraceWriter.methodEntry(DTraceWriter.java:74)
+	at daikon.chicory.Runtime.enter(Runtime.java:288)
+	at com.ctrip.framework.apollo.biz.repository.ServerConfigRepository$MockitoMock$MhEvYS90.setMockitoInterceptor(Unknown Source)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.doCreateMock(InlineDelegateByteBuddyMockMaker.java:416)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.createMock(InlineDelegateByteBuddyMockMaker.java:367)
+	at org.mockito.internal.creation.bytebuddy.InlineByteBuddyMockMaker.createMock(InlineByteBuddyMockMaker.java:56)
+	at org.mockito.internal.util.MockUtil.createMock(MockUtil.java:99)
+	at org.mockito.internal.MockitoCore.mock(MockitoCore.java:84)
+	at org.mockito.Mockito.mock(Mockito.java:2198)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.processAnnotationForMock(MockAnnotationProcessor.java:79)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:28)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:25)
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.createMockFor(IndependentAnnotationEngine.java:44)
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.process(IndependentAnnotationEngine.java:72)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.processIndependentAnnotations(InjectingAnnotationEngine.java:62)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.process(InjectingAnnotationEngine.java:47)
+	at org.mockito.MockitoAnnotations.openMocks(MockitoAnnotations.java:81)
+	at org.mockito.internal.runners.DefaultInternalRunner$1$1.evaluate(DefaultInternalRunner.java:50)
+	at org.mockito.internal.runners.DefaultInternalRunner$1.run(DefaultInternalRunner.java:100)
+	at org.mockito.internal.runners.DefaultInternalRunner.run(DefaultInternalRunner.java:107)
+	at org.mockito.internal.runners.StrictRunner.run(StrictRunner.java:42)
+	at org.mockito.junit.MockitoJUnitRunner.run(MockitoJUnitRunner.java:163)
+
+[ERROR] com.ctrip.framework.apollo.biz.config.BizConfigTest.testNamespaceNumLimitWhite_filtersEmptyItems -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.RuntimeException: Traversal pattern not initialized at method setMockitoInterceptor
+	at daikon.chicory.DTraceWriter.methodEntry(DTraceWriter.java:74)
+	at daikon.chicory.Runtime.enter(Runtime.java:288)
+	at com.ctrip.framework.apollo.biz.repository.ServerConfigRepository$MockitoMock$MhEvYS90.setMockitoInterceptor(Unknown Source)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.doCreateMock(InlineDelegateByteBuddyMockMaker.java:416)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.createMock(InlineDelegateByteBuddyMockMaker.java:367)
+	at org.mockito.internal.creation.bytebuddy.InlineByteBuddyMockMaker.createMock(InlineByteBuddyMockMaker.java:56)
+	at org.mockito.internal.util.MockUtil.createMock(MockUtil.java:99)
+	at org.mockito.internal.MockitoCore.mock(MockitoCore.java:84)
+	at org.mockito.Mockito.mock(Mockito.java:2198)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.processAnnotationForMock(MockAnnotationProcessor.java:79)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:28)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:25)
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.createMockFor(IndependentAnnotationEngine.java:44)
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.process(IndependentAnnotationEngine.java:72)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.processIndependentAnnotations(InjectingAnnotationEngine.java:62)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.process(InjectingAnnotationEngine.java:47)
+	at org.mockito.MockitoAnnotations.openMocks(MockitoAnnotations.java:81)
+	at org.mockito.internal.runners.DefaultInternalRunner$1$1.evaluate(DefaultInternalRunner.java:50)
+	at org.mockito.internal.runners.DefaultInternalRunner$1.run(DefaultInternalRunner.java:100)
+	at org.mockito.internal.runners.DefaultInternalRunner.run(DefaultInternalRunner.java:107)
+	at org.mockito.internal.runners.StrictRunner.run(StrictRunner.java:42)
+	at org.mockito.junit.MockitoJUnitRunner.run(MockitoJUnitRunner.java:163)
+
+[ERROR] com.ctrip.framework.apollo.biz.config.BizConfigTest.testAppIdValueLengthLimitOverride -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.RuntimeException: Traversal pattern not initialized at method setMockitoInterceptor
+	at daikon.chicory.DTraceWriter.methodEntry(DTraceWriter.java:74)
+	at daikon.chicory.Runtime.enter(Runtime.java:288)
+	at com.ctrip.framework.apollo.biz.repository.ServerConfigRepository$MockitoMock$MhEvYS90.setMockitoInterceptor(Unknown Source)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.doCreateMock(InlineDelegateByteBuddyMockMaker.java:416)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.createMock(InlineDelegateByteBuddyMockMaker.java:367)
+	at org.mockito.internal.creation.bytebuddy.InlineByteBuddyMockMaker.createMock(InlineByteBuddyMockMaker.java:56)
+	at org.mockito.internal.util.MockUtil.createMock(MockUtil.java:99)
+	at org.mockito.internal.MockitoCore.mock(MockitoCore.java:84)
+	at org.mockito.Mockito.mock(Mockito.java:2198)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.processAnnotationForMock(MockAnnotationProcessor.java:79)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:28)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:25)
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.createMockFor(IndependentAnnotationEngine.java:44)
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.process(IndependentAnnotationEngine.java:72)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.processIndependentAnnotations(InjectingAnnotationEngine.java:62)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.process(InjectingAnnotationEngine.java:47)
+	at org.mockito.MockitoAnnotations.openMocks(MockitoAnnotations.java:81)
+	at org.mockito.internal.runners.DefaultInternalRunner$1$1.evaluate(DefaultInternalRunner.java:50)
+	at org.mockito.internal.runners.DefaultInternalRunner$1.run(DefaultInternalRunner.java:100)
+	at org.mockito.internal.runners.DefaultInternalRunner.run(DefaultInternalRunner.java:107)
+	at org.mockito.internal.runners.StrictRunner.run(StrictRunner.java:42)
+	at org.mockito.junit.MockitoJUnitRunner.run(MockitoJUnitRunner.java:163)
+
+[ERROR] com.ctrip.framework.apollo.biz.config.BizConfigTest.testReleaseHistoryRetentionSize -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.RuntimeException: Traversal pattern not initialized at method setMockitoInterceptor
+	at daikon.chicory.DTraceWriter.methodEntry(DTraceWriter.java:74)
+	at daikon.chicory.Runtime.enter(Runtime.java:288)
+	at com.ctrip.framework.apollo.biz.repository.ServerConfigRepository$MockitoMock$MhEvYS90.setMockitoInterceptor(Unknown Source)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.doCreateMock(InlineDelegateByteBuddyMockMaker.java:416)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.createMock(InlineDelegateByteBuddyMockMaker.java:367)
+	at org.mockito.internal.creation.bytebuddy.InlineByteBuddyMockMaker.createMock(InlineByteBuddyMockMaker.java:56)
+	at org.mockito.internal.util.MockUtil.createMock(MockUtil.java:99)
+	at org.mockito.internal.MockitoCore.mock(MockitoCore.java:84)
+	at org.mockito.Mockito.mock(Mockito.java:2198)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.processAnnotationForMock(MockAnnotationProcessor.java:79)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:28)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:25)
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.createMockFor(IndependentAnnotationEngine.java:44)
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.process(IndependentAnnotationEngine.java:72)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.processIndependentAnnotations(InjectingAnnotationEngine.java:62)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.process(InjectingAnnotationEngine.java:47)
+	at org.mockito.MockitoAnnotations.openMocks(MockitoAnnotations.java:81)
+	at org.mockito.internal.runners.DefaultInternalRunner$1$1.evaluate(DefaultInternalRunner.java:50)
+	at org.mockito.internal.runners.DefaultInternalRunner$1.run(DefaultInternalRunner.java:100)
+	at org.mockito.internal.runners.DefaultInternalRunner.run(DefaultInternalRunner.java:107)
+	at org.mockito.internal.runners.StrictRunner.run(StrictRunner.java:42)
+	at org.mockito.junit.MockitoJUnitRunner.run(MockitoJUnitRunner.java:163)
+
+[ERROR] com.ctrip.framework.apollo.biz.config.BizConfigTest.testReleaseMessageNotificationBatch -- Time elapsed: 0 s <<< ERROR!
+java.lang.RuntimeException: Traversal pattern not initialized at method setMockitoInterceptor
+	at daikon.chicory.DTraceWriter.methodEntry(DTraceWriter.java:74)
+	at daikon.chicory.Runtime.enter(Runtime.java:288)
+	at com.ctrip.framework.apollo.biz.repository.ServerConfigRepository$MockitoMock$MhEvYS90.setMockitoInterceptor(Unknown Source)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.doCreateMock(InlineDelegateByteBuddyMockMaker.java:416)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.createMock(InlineDelegateByteBuddyMockMaker.java:367)
+	at org.mockito.internal.creation.bytebuddy.InlineByteBuddyMockMaker.createMock(InlineByteBuddyMockMaker.java:56)
+	at org.mockito.internal.util.MockUtil.createMock(MockUtil.java:99)
+	at org.mockito.internal.MockitoCore.mock(MockitoCore.java:84)
+	at org.mockito.Mockito.mock(Mockito.java:2198)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.processAnnotationForMock(MockAnnotationProcessor.java:79)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:28)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:25)
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.createMockFor(IndependentAnnotationEngine.java:44)
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.process(IndependentAnnotationEngine.java:72)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.processIndependentAnnotations(InjectingAnnotationEngine.java:62)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.process(InjectingAnnotationEngine.java:47)
+	at org.mockito.MockitoAnnotations.openMocks(MockitoAnnotations.java:81)
+	at org.mockito.internal.runners.DefaultInternalRunner$1$1.evaluate(DefaultInternalRunner.java:50)
+	at org.mockito.internal.runners.DefaultInternalRunner$1.run(DefaultInternalRunner.java:100)
+	at org.mockito.internal.runners.DefaultInternalRunner.run(DefaultInternalRunner.java:107)
+	at org.mockito.internal.runners.StrictRunner.run(StrictRunner.java:42)
+	at org.mockito.junit.MockitoJUnitRunner.run(MockitoJUnitRunner.java:163)
+
+[ERROR] com.ctrip.framework.apollo.biz.config.BizConfigTest.testReleaseMessageNotificationBatchWithInvalidNumber -- Time elapsed: 0 s <<< ERROR!
+java.lang.RuntimeException: Traversal pattern not initialized at method setMockitoInterceptor
+	at daikon.chicory.DTraceWriter.methodEntry(DTraceWriter.java:74)
+	at daikon.chicory.Runtime.enter(Runtime.java:288)
+	at com.ctrip.framework.apollo.biz.repository.ServerConfigRepository$MockitoMock$MhEvYS90.setMockitoInterceptor(Unknown Source)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.doCreateMock(InlineDelegateByteBuddyMockMaker.java:416)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.createMock(InlineDelegateByteBuddyMockMaker.java:367)
+	at org.mockito.internal.creation.bytebuddy.InlineByteBuddyMockMaker.createMock(InlineByteBuddyMockMaker.java:56)
+	at org.mockito.internal.util.MockUtil.createMock(MockUtil.java:99)
+	at org.mockito.internal.MockitoCore.mock(MockitoCore.java:84)
+	at org.mockito.Mockito.mock(Mockito.java:2198)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.processAnnotationForMock(MockAnnotationProcessor.java:79)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:28)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:25)
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.createMockFor(IndependentAnnotationEngine.java:44)
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.process(IndependentAnnotationEngine.java:72)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.processIndependentAnnotations(InjectingAnnotationEngine.java:62)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.process(InjectingAnnotationEngine.java:47)
+	at org.mockito.MockitoAnnotations.openMocks(MockitoAnnotations.java:81)
+	at org.mockito.internal.runners.DefaultInternalRunner$1$1.evaluate(DefaultInternalRunner.java:50)
+	at org.mockito.internal.runners.DefaultInternalRunner$1.run(DefaultInternalRunner.java:100)
+	at org.mockito.internal.runners.DefaultInternalRunner.run(DefaultInternalRunner.java:107)
+	at org.mockito.internal.runners.StrictRunner.run(StrictRunner.java:42)
+	at org.mockito.junit.MockitoJUnitRunner.run(MockitoJUnitRunner.java:163)
+
+[ERROR] com.ctrip.framework.apollo.biz.config.BizConfigTest.testReleaseMessageNotificationBatchWithNAN -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.RuntimeException: Traversal pattern not initialized at method setMockitoInterceptor
+	at daikon.chicory.DTraceWriter.methodEntry(DTraceWriter.java:74)
+	at daikon.chicory.Runtime.enter(Runtime.java:288)
+	at com.ctrip.framework.apollo.biz.repository.ServerConfigRepository$MockitoMock$MhEvYS90.setMockitoInterceptor(Unknown Source)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.doCreateMock(InlineDelegateByteBuddyMockMaker.java:416)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.createMock(InlineDelegateByteBuddyMockMaker.java:367)
+	at org.mockito.internal.creation.bytebuddy.InlineByteBuddyMockMaker.createMock(InlineByteBuddyMockMaker.java:56)
+	at org.mockito.internal.util.MockUtil.createMock(MockUtil.java:99)
+	at org.mockito.internal.MockitoCore.mock(MockitoCore.java:84)
+	at org.mockito.Mockito.mock(Mockito.java:2198)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.processAnnotationForMock(MockAnnotationProcessor.java:79)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:28)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:25)
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.createMockFor(IndependentAnnotationEngine.java:44)
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.process(IndependentAnnotationEngine.java:72)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.processIndependentAnnotations(InjectingAnnotationEngine.java:62)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.process(InjectingAnnotationEngine.java:47)
+	at org.mockito.MockitoAnnotations.openMocks(MockitoAnnotations.java:81)
+	at org.mockito.internal.runners.DefaultInternalRunner$1$1.evaluate(DefaultInternalRunner.java:50)
+	at org.mockito.internal.runners.DefaultInternalRunner$1.run(DefaultInternalRunner.java:100)
+	at org.mockito.internal.runners.DefaultInternalRunner.run(DefaultInternalRunner.java:107)
+	at org.mockito.internal.runners.StrictRunner.run(StrictRunner.java:42)
+	at org.mockito.junit.MockitoJUnitRunner.run(MockitoJUnitRunner.java:163)
+
+[ERROR] com.ctrip.framework.apollo.biz.config.BizConfigTest.testReleaseHistoryRetentionSizeOverride -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.RuntimeException: Traversal pattern not initialized at method setMockitoInterceptor
+	at daikon.chicory.DTraceWriter.methodEntry(DTraceWriter.java:74)
+	at daikon.chicory.Runtime.enter(Runtime.java:288)
+	at com.ctrip.framework.apollo.biz.repository.ServerConfigRepository$MockitoMock$MhEvYS90.setMockitoInterceptor(Unknown Source)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.doCreateMock(InlineDelegateByteBuddyMockMaker.java:416)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.createMock(InlineDelegateByteBuddyMockMaker.java:367)
+	at org.mockito.internal.creation.bytebuddy.InlineByteBuddyMockMaker.createMock(InlineByteBuddyMockMaker.java:56)
+	at org.mockito.internal.util.MockUtil.createMock(MockUtil.java:99)
+	at org.mockito.internal.MockitoCore.mock(MockitoCore.java:84)
+	at org.mockito.Mockito.mock(Mockito.java:2198)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.processAnnotationForMock(MockAnnotationProcessor.java:79)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:28)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:25)
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.createMockFor(IndependentAnnotationEngine.java:44)
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.process(IndependentAnnotationEngine.java:72)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.processIndependentAnnotations(InjectingAnnotationEngine.java:62)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.process(InjectingAnnotationEngine.java:47)
+	at org.mockito.MockitoAnnotations.openMocks(MockitoAnnotations.java:81)
+	at org.mockito.internal.runners.DefaultInternalRunner$1$1.evaluate(DefaultInternalRunner.java:50)
+	at org.mockito.internal.runners.DefaultInternalRunner$1.run(DefaultInternalRunner.java:100)
+	at org.mockito.internal.runners.DefaultInternalRunner.run(DefaultInternalRunner.java:107)
+	at org.mockito.internal.runners.StrictRunner.run(StrictRunner.java:42)
+	at org.mockito.junit.MockitoJUnitRunner.run(MockitoJUnitRunner.java:163)
+
+[ERROR] com.ctrip.framework.apollo.biz.config.BizConfigTest.testReleaseMessageNotificationBatchWithDefaultValue -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.RuntimeException: Traversal pattern not initialized at method setMockitoInterceptor
+	at daikon.chicory.DTraceWriter.methodEntry(DTraceWriter.java:74)
+	at daikon.chicory.Runtime.enter(Runtime.java:288)
+	at com.ctrip.framework.apollo.biz.repository.ServerConfigRepository$MockitoMock$MhEvYS90.setMockitoInterceptor(Unknown Source)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.doCreateMock(InlineDelegateByteBuddyMockMaker.java:416)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.createMock(InlineDelegateByteBuddyMockMaker.java:367)
+	at org.mockito.internal.creation.bytebuddy.InlineByteBuddyMockMaker.createMock(InlineByteBuddyMockMaker.java:56)
+	at org.mockito.internal.util.MockUtil.createMock(MockUtil.java:99)
+	at org.mockito.internal.MockitoCore.mock(MockitoCore.java:84)
+	at org.mockito.Mockito.mock(Mockito.java:2198)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.processAnnotationForMock(MockAnnotationProcessor.java:79)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:28)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:25)
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.createMockFor(IndependentAnnotationEngine.java:44)
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.process(IndependentAnnotationEngine.java:72)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.processIndependentAnnotations(InjectingAnnotationEngine.java:62)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.process(InjectingAnnotationEngine.java:47)
+	at org.mockito.MockitoAnnotations.openMocks(MockitoAnnotations.java:81)
+	at org.mockito.internal.runners.DefaultInternalRunner$1$1.evaluate(DefaultInternalRunner.java:50)
+	at org.mockito.internal.runners.DefaultInternalRunner$1.run(DefaultInternalRunner.java:100)
+	at org.mockito.internal.runners.DefaultInternalRunner.run(DefaultInternalRunner.java:107)
+	at org.mockito.internal.runners.StrictRunner.run(StrictRunner.java:42)
+	at org.mockito.junit.MockitoJUnitRunner.run(MockitoJUnitRunner.java:163)
+
+[ERROR] com.ctrip.framework.apollo.biz.config.BizConfigTest.testIsConfigServiceCacheKeyIgnoreCase -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.RuntimeException: Traversal pattern not initialized at method setMockitoInterceptor
+	at daikon.chicory.DTraceWriter.methodEntry(DTraceWriter.java:74)
+	at daikon.chicory.Runtime.enter(Runtime.java:288)
+	at com.ctrip.framework.apollo.biz.repository.ServerConfigRepository$MockitoMock$MhEvYS90.setMockitoInterceptor(Unknown Source)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.doCreateMock(InlineDelegateByteBuddyMockMaker.java:416)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.createMock(InlineDelegateByteBuddyMockMaker.java:367)
+	at org.mockito.internal.creation.bytebuddy.InlineByteBuddyMockMaker.createMock(InlineByteBuddyMockMaker.java:56)
+	at org.mockito.internal.util.MockUtil.createMock(MockUtil.java:99)
+	at org.mockito.internal.MockitoCore.mock(MockitoCore.java:84)
+	at org.mockito.Mockito.mock(Mockito.java:2198)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.processAnnotationForMock(MockAnnotationProcessor.java:79)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:28)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:25)
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.createMockFor(IndependentAnnotationEngine.java:44)
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.process(IndependentAnnotationEngine.java:72)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.processIndependentAnnotations(InjectingAnnotationEngine.java:62)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.process(InjectingAnnotationEngine.java:47)
+	at org.mockito.MockitoAnnotations.openMocks(MockitoAnnotations.java:81)
+	at org.mockito.internal.runners.DefaultInternalRunner$1$1.evaluate(DefaultInternalRunner.java:50)
+	at org.mockito.internal.runners.DefaultInternalRunner$1.run(DefaultInternalRunner.java:100)
+	at org.mockito.internal.runners.DefaultInternalRunner.run(DefaultInternalRunner.java:107)
+	at org.mockito.internal.runners.StrictRunner.run(StrictRunner.java:42)
+	at org.mockito.junit.MockitoJUnitRunner.run(MockitoJUnitRunner.java:163)
+
+[ERROR] com.ctrip.framework.apollo.biz.config.BizConfigTest.testIsAccessKeyAutoProvisionEnabled -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.RuntimeException: Traversal pattern not initialized at method setMockitoInterceptor
+	at daikon.chicory.DTraceWriter.methodEntry(DTraceWriter.java:74)
+	at daikon.chicory.Runtime.enter(Runtime.java:288)
+	at com.ctrip.framework.apollo.biz.repository.ServerConfigRepository$MockitoMock$MhEvYS90.setMockitoInterceptor(Unknown Source)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.doCreateMock(InlineDelegateByteBuddyMockMaker.java:416)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.createMock(InlineDelegateByteBuddyMockMaker.java:367)
+	at org.mockito.internal.creation.bytebuddy.InlineByteBuddyMockMaker.createMock(InlineByteBuddyMockMaker.java:56)
+	at org.mockito.internal.util.MockUtil.createMock(MockUtil.java:99)
+	at org.mockito.internal.MockitoCore.mock(MockitoCore.java:84)
+	at org.mockito.Mockito.mock(Mockito.java:2198)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.processAnnotationForMock(MockAnnotationProcessor.java:79)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:28)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:25)
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.createMockFor(IndependentAnnotationEngine.java:44)
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.process(IndependentAnnotationEngine.java:72)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.processIndependentAnnotations(InjectingAnnotationEngine.java:62)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.process(InjectingAnnotationEngine.java:47)
+	at org.mockito.MockitoAnnotations.openMocks(MockitoAnnotations.java:81)
+	at org.mockito.internal.runners.DefaultInternalRunner$1$1.evaluate(DefaultInternalRunner.java:50)
+	at org.mockito.internal.runners.DefaultInternalRunner$1.run(DefaultInternalRunner.java:100)
+	at org.mockito.internal.runners.DefaultInternalRunner.run(DefaultInternalRunner.java:107)
+	at org.mockito.internal.runners.StrictRunner.run(StrictRunner.java:42)
+	at org.mockito.junit.MockitoJUnitRunner.run(MockitoJUnitRunner.java:163)
+
+[INFO] Running com.ctrip.framework.apollo.biz.message.ReleaseMessageScannerTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.922 s -- in com.ctrip.framework.apollo.biz.message.ReleaseMessageScannerTest
+[INFO] Running com.ctrip.framework.apollo.biz.message.DatabaseMessageSenderTest
+[WARN] com.ctrip.framework.apollo.biz.message.DatabaseMessageSender - Channel some-invalid-topic not supported by DatabaseMessageSender!
+[ERROR] com.ctrip.framework.apollo.biz.message.DatabaseMessageSender - Sending message to database failed
+java.lang.RuntimeException
+	at com.ctrip.framework.apollo.biz.message.DatabaseMessageSender.sendMessage(DatabaseMessageSender.java:72)
+	at com.ctrip.framework.apollo.biz.message.DatabaseMessageSenderTest.testSendMessageFailed(DatabaseMessageSenderTest.java:75)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.mockito.internal.runners.DefaultInternalRunner$1$1.evaluate(DefaultInternalRunner.java:55)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.mockito.internal.runners.DefaultInternalRunner$1.run(DefaultInternalRunner.java:100)
+	at org.mockito.internal.runners.DefaultInternalRunner.run(DefaultInternalRunner.java:107)
+	at org.mockito.internal.runners.StrictRunner.run(StrictRunner.java:42)
+	at org.mockito.junit.MockitoJUnitRunner.run(MockitoJUnitRunner.java:163)
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:52)
+	at org.junit.vintage.engine.execution.VintageExecutor.executeClassesAndMethodsSequentially(VintageExecutor.java:92)
+	at org.junit.vintage.engine.execution.VintageExecutor.executeAllChildren(VintageExecutor.java:72)
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:74)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.executeEngine(EngineExecutionOrchestrator.java:246)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.failOrExecuteEngine(EngineExecutionOrchestrator.java:218)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:179)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:66)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:157)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:65)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:125)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:93)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:48)
+	at org.junit.platform.launcher.core.InterceptingLauncher.lambda$execute$0(InterceptingLauncher.java:41)
+	at org.junit.platform.launcher.core.ClasspathAlignmentCheckingLauncherInterceptor.intercept(ClasspathAlignmentCheckingLauncherInterceptor.java:25)
+	at org.junit.platform.launcher.core.InterceptingLauncher.execute(InterceptingLauncher.java:40)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:48)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.124 s -- in com.ctrip.framework.apollo.biz.message.DatabaseMessageSenderTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.AdminServiceTransactionTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.120 s -- in com.ctrip.framework.apollo.biz.service.AdminServiceTransactionTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.InstanceServiceTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.253 s -- in com.ctrip.framework.apollo.biz.service.InstanceServiceTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.ItemServiceTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.312 s -- in com.ctrip.framework.apollo.biz.service.ItemServiceTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.NamespacePublishInfoTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.618 s -- in com.ctrip.framework.apollo.biz.service.NamespacePublishInfoTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.NamespaceServiceTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.140 s -- in com.ctrip.framework.apollo.biz.service.NamespaceServiceTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.ReleaseHistoryServiceTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.801 s -- in com.ctrip.framework.apollo.biz.service.ReleaseHistoryServiceTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.AdminServiceUnitTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.147 s -- in com.ctrip.framework.apollo.biz.service.AdminServiceUnitTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.BizDBPropertySourceTest
+[ERROR] Tests run: 4, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 0.005 s <<< FAILURE! -- in com.ctrip.framework.apollo.biz.service.BizDBPropertySourceTest
+[ERROR] com.ctrip.framework.apollo.biz.service.BizDBPropertySourceTest.testGetDefaultConfig -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.RuntimeException: Traversal pattern not initialized at method setMockitoInterceptor
+	at daikon.chicory.DTraceWriter.methodEntry(DTraceWriter.java:74)
+	at daikon.chicory.Runtime.enter(Runtime.java:288)
+	at com.ctrip.framework.apollo.biz.repository.ServerConfigRepository$MockitoMock$MhEvYS90.setMockitoInterceptor(Unknown Source)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.doCreateMock(InlineDelegateByteBuddyMockMaker.java:416)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.createMock(InlineDelegateByteBuddyMockMaker.java:367)
+	at org.mockito.internal.creation.bytebuddy.InlineByteBuddyMockMaker.createMock(InlineByteBuddyMockMaker.java:56)
+	at org.mockito.internal.util.MockUtil.createMock(MockUtil.java:99)
+	at org.mockito.internal.MockitoCore.mock(MockitoCore.java:84)
+	at org.mockito.Mockito.mock(Mockito.java:2198)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.processAnnotationForMock(MockAnnotationProcessor.java:79)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:28)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:25)
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.createMockFor(IndependentAnnotationEngine.java:44)
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.process(IndependentAnnotationEngine.java:72)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.processIndependentAnnotations(InjectingAnnotationEngine.java:62)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.process(InjectingAnnotationEngine.java:47)
+	at org.mockito.MockitoAnnotations.openMocks(MockitoAnnotations.java:81)
+	at org.mockito.internal.runners.DefaultInternalRunner$1$1.evaluate(DefaultInternalRunner.java:50)
+	at org.mockito.internal.runners.DefaultInternalRunner$1.run(DefaultInternalRunner.java:100)
+	at org.mockito.internal.runners.DefaultInternalRunner.run(DefaultInternalRunner.java:107)
+	at org.mockito.internal.runners.StrictRunner.run(StrictRunner.java:42)
+	at org.mockito.junit.MockitoJUnitRunner.run(MockitoJUnitRunner.java:163)
+
+[ERROR] com.ctrip.framework.apollo.biz.service.BizDBPropertySourceTest.testGetDcConfig -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.RuntimeException: Traversal pattern not initialized at method setMockitoInterceptor
+	at daikon.chicory.DTraceWriter.methodEntry(DTraceWriter.java:74)
+	at daikon.chicory.Runtime.enter(Runtime.java:288)
+	at com.ctrip.framework.apollo.biz.repository.ServerConfigRepository$MockitoMock$MhEvYS90.setMockitoInterceptor(Unknown Source)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.doCreateMock(InlineDelegateByteBuddyMockMaker.java:416)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.createMock(InlineDelegateByteBuddyMockMaker.java:367)
+	at org.mockito.internal.creation.bytebuddy.InlineByteBuddyMockMaker.createMock(InlineByteBuddyMockMaker.java:56)
+	at org.mockito.internal.util.MockUtil.createMock(MockUtil.java:99)
+	at org.mockito.internal.MockitoCore.mock(MockitoCore.java:84)
+	at org.mockito.Mockito.mock(Mockito.java:2198)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.processAnnotationForMock(MockAnnotationProcessor.java:79)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:28)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:25)
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.createMockFor(IndependentAnnotationEngine.java:44)
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.process(IndependentAnnotationEngine.java:72)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.processIndependentAnnotations(InjectingAnnotationEngine.java:62)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.process(InjectingAnnotationEngine.java:47)
+	at org.mockito.MockitoAnnotations.openMocks(MockitoAnnotations.java:81)
+	at org.mockito.internal.runners.DefaultInternalRunner$1$1.evaluate(DefaultInternalRunner.java:50)
+	at org.mockito.internal.runners.DefaultInternalRunner$1.run(DefaultInternalRunner.java:100)
+	at org.mockito.internal.runners.DefaultInternalRunner.run(DefaultInternalRunner.java:107)
+	at org.mockito.internal.runners.StrictRunner.run(StrictRunner.java:42)
+	at org.mockito.junit.MockitoJUnitRunner.run(MockitoJUnitRunner.java:163)
+
+[ERROR] com.ctrip.framework.apollo.biz.service.BizDBPropertySourceTest.testGetNull -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.RuntimeException: Traversal pattern not initialized at method setMockitoInterceptor
+	at daikon.chicory.DTraceWriter.methodEntry(DTraceWriter.java:74)
+	at daikon.chicory.Runtime.enter(Runtime.java:288)
+	at com.ctrip.framework.apollo.biz.repository.ServerConfigRepository$MockitoMock$MhEvYS90.setMockitoInterceptor(Unknown Source)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.doCreateMock(InlineDelegateByteBuddyMockMaker.java:416)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.createMock(InlineDelegateByteBuddyMockMaker.java:367)
+	at org.mockito.internal.creation.bytebuddy.InlineByteBuddyMockMaker.createMock(InlineByteBuddyMockMaker.java:56)
+	at org.mockito.internal.util.MockUtil.createMock(MockUtil.java:99)
+	at org.mockito.internal.MockitoCore.mock(MockitoCore.java:84)
+	at org.mockito.Mockito.mock(Mockito.java:2198)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.processAnnotationForMock(MockAnnotationProcessor.java:79)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:28)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:25)
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.createMockFor(IndependentAnnotationEngine.java:44)
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.process(IndependentAnnotationEngine.java:72)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.processIndependentAnnotations(InjectingAnnotationEngine.java:62)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.process(InjectingAnnotationEngine.java:47)
+	at org.mockito.MockitoAnnotations.openMocks(MockitoAnnotations.java:81)
+	at org.mockito.internal.runners.DefaultInternalRunner$1$1.evaluate(DefaultInternalRunner.java:50)
+	at org.mockito.internal.runners.DefaultInternalRunner$1.run(DefaultInternalRunner.java:100)
+	at org.mockito.internal.runners.DefaultInternalRunner.run(DefaultInternalRunner.java:107)
+	at org.mockito.internal.runners.StrictRunner.run(StrictRunner.java:42)
+	at org.mockito.junit.MockitoJUnitRunner.run(MockitoJUnitRunner.java:163)
+
+[ERROR] com.ctrip.framework.apollo.biz.service.BizDBPropertySourceTest.testGetClusterConfig -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.RuntimeException: Traversal pattern not initialized at method setMockitoInterceptor
+	at daikon.chicory.DTraceWriter.methodEntry(DTraceWriter.java:74)
+	at daikon.chicory.Runtime.enter(Runtime.java:288)
+	at com.ctrip.framework.apollo.biz.repository.ServerConfigRepository$MockitoMock$MhEvYS90.setMockitoInterceptor(Unknown Source)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.doCreateMock(InlineDelegateByteBuddyMockMaker.java:416)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.createMock(InlineDelegateByteBuddyMockMaker.java:367)
+	at org.mockito.internal.creation.bytebuddy.InlineByteBuddyMockMaker.createMock(InlineByteBuddyMockMaker.java:56)
+	at org.mockito.internal.util.MockUtil.createMock(MockUtil.java:99)
+	at org.mockito.internal.MockitoCore.mock(MockitoCore.java:84)
+	at org.mockito.Mockito.mock(Mockito.java:2198)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.processAnnotationForMock(MockAnnotationProcessor.java:79)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:28)
+	at org.mockito.internal.configuration.MockAnnotationProcessor.process(MockAnnotationProcessor.java:25)
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.createMockFor(IndependentAnnotationEngine.java:44)
+	at org.mockito.internal.configuration.IndependentAnnotationEngine.process(IndependentAnnotationEngine.java:72)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.processIndependentAnnotations(InjectingAnnotationEngine.java:62)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.process(InjectingAnnotationEngine.java:47)
+	at org.mockito.MockitoAnnotations.openMocks(MockitoAnnotations.java:81)
+	at org.mockito.internal.runners.DefaultInternalRunner$1$1.evaluate(DefaultInternalRunner.java:50)
+	at org.mockito.internal.runners.DefaultInternalRunner$1.run(DefaultInternalRunner.java:100)
+	at org.mockito.internal.runners.DefaultInternalRunner.run(DefaultInternalRunner.java:107)
+	at org.mockito.internal.runners.StrictRunner.run(StrictRunner.java:42)
+	at org.mockito.junit.MockitoJUnitRunner.run(MockitoJUnitRunner.java:163)
+
+[INFO] Running com.ctrip.framework.apollo.biz.service.AdminServiceTest
+     _                _ _
+    / \   _ __   ___ | | | ___
+   / _ \ | '_ \ / _ \| | |/ _ \
+  / ___ \| |_) | (_) | | | (_) |
+ /_/   \_\ .__/ \___/|_|_|\___/
+         |_|
+
+:: Spring Boot ::  (v4.0.5)
+
+[WARN] org.springframework.boot.jpa.autoconfigure.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[WARN] org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.610 s -- in com.ctrip.framework.apollo.biz.service.AdminServiceTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.NamespaceServiceIntegrationTest
+     _                _ _
+    / \   _ __   ___ | | | ___
+   / _ \ | '_ \ / _ \| | |/ _ \
+  / ___ \| |_) | (_) | | | (_) |
+ /_/   \_\ .__/ \___/|_|_|\___/
+         |_|
+
+:: Spring Boot ::  (v4.0.5)
+
+[WARN] org.springframework.boot.jpa.autoconfigure.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[WARN] org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.678 s -- in com.ctrip.framework.apollo.biz.service.NamespaceServiceIntegrationTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.AccessKeyServiceTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.072 s -- in com.ctrip.framework.apollo.biz.service.AccessKeyServiceTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.ServerConfigServiceTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.157 s -- in com.ctrip.framework.apollo.biz.service.ServerConfigServiceTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.NamespaceBranchServiceTest
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.409 s -- in com.ctrip.framework.apollo.biz.service.NamespaceBranchServiceTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.ClusterServiceTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.058 s -- in com.ctrip.framework.apollo.biz.service.ClusterServiceTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.ItemSetServiceTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.246 s -- in com.ctrip.framework.apollo.biz.service.ItemSetServiceTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.ReleaseServiceTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.496 s -- in com.ctrip.framework.apollo.biz.service.ReleaseServiceTest
+[INFO] Running com.ctrip.framework.apollo.biz.service.ReleaseCreationTest
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[WARN] com.ctrip.framework.apollo.common.config.RefreshableConfig - Configuration value '-1' is out of bounds [1 - 2147483647]. Using default value '-1'.
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.793 s -- in com.ctrip.framework.apollo.biz.service.ReleaseCreationTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   ReleaseKeyGeneratorTest.testGenerateReleaseKey:67 expected:<100000> but was:<22497>
+[ERROR] Errors: 
+[ERROR]   BizConfigTest.testAppIdValueLengthLimitOverride » Runtime Traversal pattern not initialized at method setMockitoInterceptor
+[ERROR]   BizConfigTest.testCheckInt » Runtime Traversal pattern not initialized at method setMockitoInterceptor
+[ERROR]   BizConfigTest.testIsAccessKeyAutoProvisionEnabled » Runtime Traversal pattern not initialized at method setMockitoInterceptor
+[ERROR]   BizConfigTest.testIsConfigServiceCacheKeyIgnoreCase » Runtime Traversal pattern not initialized at method setMockitoInterceptor
+[ERROR]   BizConfigTest.testNamespaceNumLimitWhite_filtersEmptyItems » Runtime Traversal pattern not initialized at method setMockitoInterceptor
+[ERROR]   BizConfigTest.testReleaseHistoryRetentionSize » Runtime Traversal pattern not initialized at method setMockitoInterceptor
+[ERROR]   BizConfigTest.testReleaseHistoryRetentionSizeOverride » Runtime Traversal pattern not initialized at method setMockitoInterceptor
+[ERROR]   BizConfigTest.testReleaseMessageNotificationBatch » Runtime Traversal pattern not initialized at method setMockitoInterceptor
+[ERROR]   BizConfigTest.testReleaseMessageNotificationBatchWithDefaultValue » Runtime Traversal pattern not initialized at method setMockitoInterceptor
+[ERROR]   BizConfigTest.testReleaseMessageNotificationBatchWithInvalidNumber » Runtime Traversal pattern not initialized at method setMockitoInterceptor
+[ERROR]   BizConfigTest.testReleaseMessageNotificationBatchWithNAN » Runtime Traversal pattern not initialized at method setMockitoInterceptor
+[ERROR]   BizDBPropertySourceTest.testGetClusterConfig » Runtime Traversal pattern not initialized at method setMockitoInterceptor
+[ERROR]   BizDBPropertySourceTest.testGetDcConfig » Runtime Traversal pattern not initialized at method setMockitoInterceptor
+[ERROR]   BizDBPropertySourceTest.testGetDefaultConfig » Runtime Traversal pattern not initialized at method setMockitoInterceptor
+[ERROR]   BizDBPropertySourceTest.testGetNull » Runtime Traversal pattern not initialized at method setMockitoInterceptor
+[INFO] 
+[ERROR] Tests run: 144, Failures: 1, Errors: 15, Skipped: 0
+[INFO] 
+[ERROR] There are test failures.
+
+Please refer to /mmfs1/scratch/mjk76/ea442/promptstudy/apollo-chicory/apollo-biz/target/surefire-reports for the individual test results.
+Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for Apollo 3.0.0-SNAPSHOT:
+[INFO] 
+[INFO] Apollo ............................................. SUCCESS [  0.795 s]
+[INFO] Apollo Audit ....................................... SUCCESS [  0.104 s]
+[INFO] apollo-audit-annotation ............................ SUCCESS [  0.475 s]
+[INFO] apollo-audit-api ................................... SUCCESS [  0.126 s]
+[INFO] Apollo Common ...................................... SUCCESS [  5.535 s]
+[INFO] apollo-audit-impl .................................. SUCCESS [  6.688 s]
+[INFO] apollo-audit-spring-boot-starter ................... SUCCESS [  0.110 s]
+[INFO] Apollo Biz ......................................... SUCCESS [ 50.446 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:04 min
+[INFO] Finished at: 2026-09-10T23:16:29Z
+[INFO] ------------------------------------------------------------------------
+[TIMING] mvn test (Chicory instrumented) 66s  (19:15:23 -> 19:16:29)
+
+============================================================
+>>> Chicory trace output directory:
+/scratch/mjk76/ea442/promptstudy/apollo-chicory-out/1260710
+============================================================
+
+>>> Complete directory listing:
+total 49M
+drwxr-xr-x+ 2 ea442 ea442 4.0K Sep 10 19:15 .
+drwxr-xr-x+ 6 ea442 ea442 4.0K Sep 10 19:15 ..
+-rw-r--r--+ 1 ea442 ea442  26M Sep 10 19:16 dtrace.gz
+
+>>> Individual Chicory-generated trace files:
+-rw-r--r--+ 1 ea442 ea442 26M Sep 10 19:16 /scratch/mjk76/ea442/promptstudy/apollo-chicory-out/1260710/dtrace.gz
+
+>>> Number of original Chicory trace files: 1
+
+>>> Combining this run's dtrace files into:
+>>> /scratch/mjk76/ea442/promptstudy/apollo-chicory-out/1260710/apollo.dtrace
+>>> Adding compressed trace:
+>>> /scratch/mjk76/ea442/promptstudy/apollo-chicory-out/1260710/dtrace.gz
+[TIMING] combine dtrace files         3s  (19:16:29 -> 19:16:32)
+
+============================================================
+>>> Combined trace:
+/scratch/mjk76/ea442/promptstudy/apollo-chicory-out/1260710/apollo.dtrace
+============================================================
+-rw-r--r--+ 1 ea442 ea442 773M Sep 10 19:16 /scratch/mjk76/ea442/promptstudy/apollo-chicory-out/1260710/apollo.dtrace
+
+>>> Combined trace line count:
+32840304 /scratch/mjk76/ea442/promptstudy/apollo-chicory-out/1260710/apollo.dtrace
+
+>>> Latest-run symlink:
+lrwxrwxrwx 1 ea442 ea442 59 Sep 10 19:16 /scratch/mjk76/ea442/promptstudy/apollo-chicory-out/latest -> /scratch/mjk76/ea442/promptstudy/apollo-chicory-out/1260710
+
+>>> Final contents of this run:
+total 1.5G
+drwxr-xr-x+ 2 ea442 ea442 4.0K Sep 10 19:16 .
+drwxr-xr-x+ 6 ea442 ea442 4.0K Sep 10 19:16 ..
+-rw-r--r--+ 1 ea442 ea442 773M Sep 10 19:16 apollo.dtrace
+-rw-r--r--+ 1 ea442 ea442  26M Sep 10 19:16 dtrace.gz
+
+>>> Original Chicory-generated files are preserved in:
+>>> /scratch/mjk76/ea442/promptstudy/apollo-chicory-out/1260710
+
+>>> Combined trace:
+>>> /scratch/mjk76/ea442/promptstudy/apollo-chicory-out/1260710/apollo.dtrace
+
+>>> Convenient newest-run path:
+>>> /scratch/mjk76/ea442/promptstudy/apollo-chicory-out/latest
+[TIMING] TOTAL (apollo)               75s  (19:15:18 -> 19:16:33)
+
+[TIMING] === apollo chicory trace run finished 2026-09-10T19:16:33-04:00 ===

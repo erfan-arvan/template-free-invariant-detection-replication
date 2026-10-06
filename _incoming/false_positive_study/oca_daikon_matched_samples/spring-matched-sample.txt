@@ -1,0 +1,511 @@
+==============================================================================================================
+SAMPLE 1/10
+==============================================================================================================
+PROJECT: spring
+
+OCA METHOD: org.springframework.core.convert.support.NumberToDataSizeConverter#convert(Number):DataSize
+DAIKON METHOD: org.springframework.core.convert.support.NumberToDataSizeConverter.convert(java.lang.Number)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_EXIT] result.toBytes() >= 0 || source.longValue() < 0
+ID: 7e0647c4-e83b-4475-8463-2ddc2d2d1dd5
+Rationale: If source.longValue is negative, result.toBytes matches it; otherwise result.toBytes is non-negative.
+Source file: org/springframework/core/convert/support/NumberToDataSizeConverter.java
+
+[METHOD_ENTRY] source != null
+ID: 496c853a-b263-4380-a771-eb6a697fbc7d
+Rationale: The method expects a non-null Number as input.
+Source file: org/springframework/core/convert/support/NumberToDataSizeConverter.java
+
+[METHOD_EXIT] result.toBytes() == source.longValue()
+ID: 65553fd0-0db0-4ec5-ab22-9bb48adf11ae
+Rationale: This invariant confirms the DataSize's internal byte count matches the source's longValue.
+Source file: org/springframework/core/convert/support/NumberToDataSizeConverter.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+org.springframework.core.convert.support.NumberToDataSizeConverter.convert(java.lang.Number):::ENTER
+this has only one value
+
+===========================================================================
+org.springframework.core.convert.support.NumberToDataSizeConverter.convert(java.lang.Number):::EXIT
+
+
+==============================================================================================================
+SAMPLE 2/10
+==============================================================================================================
+PROJECT: spring
+
+OCA METHOD: org.springframework.core.convert.support.StringToArrayConverter#matches(TypeDescriptor,TypeDescriptor):boolean
+DAIKON METHOD: org.springframework.core.convert.support.StringToArrayConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_ENTRY] sourceType != null
+ID: 145e5a41-ca22-4486-abb2-80ad65ad0513
+Rationale: The sourceType must be non-null to attempt any conversion.
+Source file: org/springframework/core/convert/support/StringToArrayConverter.java
+
+[METHOD_EXIT] !result || targetType.getElementTypeDescriptor() != null
+ID: cf67e802-7b27-431f-94c6-4a2b3b7b6e43
+Rationale: If result is true, then the targetType must have a non-null element type descriptor.
+Source file: org/springframework/core/convert/support/StringToArrayConverter.java
+
+[METHOD_ENTRY] targetType.getElementTypeDescriptor() != null
+ID: 11909d00-9ba1-47b2-8528-71a6f631f1ed
+Rationale: The target type should be an array type, so getElementTypeDescriptor returns non-null.
+Source file: org/springframework/core/convert/support/StringToArrayConverter.java
+
+[METHOD_ENTRY] targetType.isArray()
+ID: 95dce833-5891-4363-904c-210c8b2d389c
+Rationale: For conversion to succeed, the target type should be an array.
+Source file: org/springframework/core/convert/support/StringToArrayConverter.java
+
+[METHOD_ENTRY] targetType != null
+ID: 5dd729fb-22c1-45a6-a4c3-916da91c7139
+Rationale: The targetType must be non-null to appropriately handle conversion.
+Source file: org/springframework/core/convert/support/StringToArrayConverter.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+org.springframework.core.convert.support.StringToArrayConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor):::ENTER
+sourceType has only one value
+
+===========================================================================
+org.springframework.core.convert.support.StringToArrayConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor):::EXIT
+this.conversionService == orig(this.conversionService)
+this.conversionService.getClass().getName() == orig(this.conversionService.getClass().getName())
+(return == false)  ==>  (orig(targetType) has only one value)
+(return == false)  ==>  (orig(this) has only one value)
+(return == false)  ==>  (this.conversionService has only one value)
+(return == false)  ==>  (this.conversionService.getClass().getName() == org.springframework.core.convert.support.GenericConversionService.class)
+
+===========================================================================
+org.springframework.core.convert.support.StringToArrayConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor):::EXIT;condition="return == true"
+return == true
+
+===========================================================================
+org.springframework.core.convert.support.StringToArrayConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor):::EXIT;condition="not(return == true)"
+this.conversionService has only one value
+this.conversionService.getClass().getName() == org.springframework.core.convert.support.GenericConversionService.class
+return == false
+orig(this) has only one value
+orig(targetType) has only one value
+
+
+==============================================================================================================
+SAMPLE 3/10
+==============================================================================================================
+PROJECT: spring
+
+OCA METHOD: org.springframework.core.convert.ConversionService#convert(Object,TypeDescriptor):Object
+DAIKON METHOD: org.springframework.core.convert.ConversionService.convert(java.lang.Object, org.springframework.core.convert.TypeDescriptor)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_ENTRY] targetType != null
+ID: 3ec6fb5f-16ad-469a-846b-c3ffdc9a0e9c
+Rationale: The target type descriptor must be non-null for any conversion to proceed.
+Source file: org/springframework/core/convert/ConversionService.java
+
+[METHOD_EXIT] (source == null && result == null) || (source != null)
+ID: e12f934f-21ed-4201-903e-04464777c260
+Rationale: If the source is null, conversion may yield null result; otherwise source is non-null.
+Source file: org/springframework/core/convert/ConversionService.java
+
+[METHOD_EXIT] (result == null) || (!targetType.getObjectType().isPrimitive())
+ID: 168c04e2-9b95-4ff7-b292-e68891d70756
+Rationale: If the target type is primitive, null result is invalid since primitives cannot be null.
+Source file: org/springframework/core/convert/ConversionService.java
+
+[METHOD_ENTRY] (source == null) || source.getClass() != null
+ID: d94e5ac3-138c-486b-a4cf-d7b7ee629755
+Rationale: If source is not null, its class can be retrieved to infer source type descriptor.
+Source file: org/springframework/core/convert/ConversionService.java
+
+[METHOD_EXIT] (result == null) || targetType.getObjectType().isInstance(result)
+ID: a7c36d55-5a64-484d-a7b1-7fba7aa82e0e
+Rationale: The converted result, if not null, should be an instance of the target type as per conversion contract.
+Source file: org/springframework/core/convert/ConversionService.java
+
+[METHOD_ENTRY] !((source != null) && (targetType.getObjectType() == null))
+ID: c3fe7f12-7941-42ac-930e-61768cc927f4
+Rationale: TargetType's object type must be non-null if source is non-null, because conversion to a meaningful target type is expected.
+Source file: org/springframework/core/convert/ConversionService.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+org.springframework.core.convert.ConversionService.convert(java.lang.Object, org.springframework.core.convert.TypeDescriptor):::ENTER
+source != null
+targetType != null
+this.getClass().getName() != source.getClass().getName()
+
+===========================================================================
+org.springframework.core.convert.ConversionService.convert(java.lang.Object, org.springframework.core.convert.TypeDescriptor):::EXIT
+return != null
+return.getClass().getName() != orig(this.getClass().getName())
+
+
+==============================================================================================================
+SAMPLE 4/10
+==============================================================================================================
+PROJECT: spring
+
+OCA METHOD: org.springframework.core.convert.support.StringToPropertiesConverter#convert(String):Properties
+DAIKON METHOD: org.springframework.core.convert.support.StringToPropertiesConverter.convert(java.lang.String)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_EXIT] result.size() <= source.length()
+ID: 8b6dde30-4676-4966-864a-e4fc48c9f76b
+Rationale: Each property requires at least one character in source, so size is upper bounded by source length.
+Source file: org/springframework/core/convert/support/StringToPropertiesConverter.java
+
+[METHOD_EXIT] result != null
+ID: cf732a4e-5fae-43f9-9cc5-45eb0c6f9492
+Rationale: The method creates and returns a new Properties object loaded from the source string.
+Source file: org/springframework/core/convert/support/StringToPropertiesConverter.java
+
+[METHOD_ENTRY] source.trim().length() > 0
+ID: efff9d93-ab4f-4ac8-8441-372c0dd41193
+Rationale: Properties.load expects meaningful content, so source should not be just whitespace.
+Source file: org/springframework/core/convert/support/StringToPropertiesConverter.java
+
+[METHOD_EXIT] result.isEmpty() == (source.isEmpty())
+ID: 5d6b9490-3a16-4c5a-81e1-f153b849a999
+Rationale: If source is empty, no properties can be loaded, so result is empty; otherwise, result may have entries.
+Source file: org/springframework/core/convert/support/StringToPropertiesConverter.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+org.springframework.core.convert.support.StringToPropertiesConverter.convert(java.lang.String):::ENTER
+source.toString one of { "   foo=bar\n    bar=baz\n     baz=boo", "a=b\nc=2\nd=" }
+
+===========================================================================
+org.springframework.core.convert.support.StringToPropertiesConverter.convert(java.lang.String):::EXIT
+source.toString == orig(source.toString)
+source.toString one of { "   foo=bar\n    bar=baz\n     baz=boo", "a=b\nc=2\nd=" }
+
+
+==============================================================================================================
+SAMPLE 5/10
+==============================================================================================================
+PROJECT: spring
+
+OCA METHOD: org.springframework.core.convert.support.StreamConverter#convertToStream(Object,TypeDescriptor,TypeDescriptor):Object
+DAIKON METHOD: org.springframework.core.convert.support.StreamConverter.convertToStream(java.lang.Object, org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_ENTRY] sourceType != null
+ID: 8bdfa35c-87bb-494e-ba3d-a3cd2dfc53ac
+Rationale: The sourceType parameter describes the type of the source object, so it should not be null since conversion depends on it.
+Source file: org/springframework/core/convert/support/StreamConverter.java
+
+[METHOD_ENTRY] !streamType.isCollection()
+ID: 2dee54c1-d452-43ad-aecf-a0d7127ff11e
+Rationale: The method converts to a stream, so the streamType should not be a collection type.
+Source file: org/springframework/core/convert/support/StreamConverter.java
+
+[METHOD_EXIT] result != null
+ID: 1aaf9c84-140b-4ae2-aa2c-46341e509a56
+Rationale: The method ensures target is never null, so result is never null.
+Source file: org/springframework/core/convert/support/StreamConverter.java
+
+[METHOD_EXIT] !result.equals(null)
+ID: 5eddddff-c443-44d6-aec2-97de7c86ffa3
+Rationale: The method returns a stream from a non-null List (emptyList if null), so result is never null.
+Source file: org/springframework/core/convert/support/StreamConverter.java
+
+[METHOD_ENTRY] streamType != null
+ID: d1d9350b-263a-4817-8037-725eef4ff51c
+Rationale: streamType is the TypeDescriptor for the stream target; it must be non-null to define element and collection types.
+Source file: org/springframework/core/convert/support/StreamConverter.java
+
+[METHOD_ENTRY] streamType.getElementTypeDescriptor() != null
+ID: 3a830c42-fe9f-44c8-bf0c-b1250af77e2b
+Rationale: The streamType's element type descriptor is used in constructing the target collection type descriptor.
+Source file: org/springframework/core/convert/support/StreamConverter.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+org.springframework.core.convert.support.StreamConverter.convertToStream(java.lang.Object, org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor):::ENTER
+
+===========================================================================
+org.springframework.core.convert.support.StreamConverter.convertToStream(java.lang.Object, org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor):::EXIT
+org.springframework.core.convert.support.StreamConverter.STREAM_TYPE == orig(org.springframework.core.convert.support.StreamConverter.STREAM_TYPE)
+org.springframework.core.convert.support.StreamConverter.CONVERTIBLE_TYPES == orig(org.springframework.core.convert.support.StreamConverter.CONVERTIBLE_TYPES)
+org.springframework.core.convert.support.StreamConverter.CONVERTIBLE_TYPES.getClass().getName() == orig(org.springframework.core.convert.support.StreamConverter.CONVERTIBLE_TYPES.getClass().getName())
+this.conversionService == orig(this.conversionService)
+this.conversionService.getClass().getName() == orig(this.conversionService.getClass().getName())
+return.getClass().getName() == java.util.stream.ReferencePipeline$Head.class
+
+
+==============================================================================================================
+SAMPLE 6/10
+==============================================================================================================
+PROJECT: spring
+
+OCA METHOD: org.springframework.core.convert.support.ObjectToCollectionConverter#getConvertibleTypes():Set<ConvertiblePair>
+DAIKON METHOD: org.springframework.core.convert.support.ObjectToCollectionConverter.getConvertibleTypes()
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_EXIT] result.size() == 1
+ID: 03244b36-ff2d-4ef3-9933-ac31ac8ce0df
+Rationale: Collections.singleton creates a Set with exactly one element.
+Source file: org/springframework/core/convert/support/ObjectToCollectionConverter.java
+
+[METHOD_EXIT] !result.isEmpty()
+ID: e59cfba8-22f7-450f-82f6-f106bb2673df
+Rationale: The result always contains exactly one ConvertiblePair, thus cannot be empty.
+Source file: org/springframework/core/convert/support/ObjectToCollectionConverter.java
+
+[METHOD_EXIT] result != null
+ID: 16d9a685-ae74-4d63-a956-aa4c57096ac5
+Rationale: Since the result is populated using Collections.singleton, it is guaranteed non-null.
+Source file: org/springframework/core/convert/support/ObjectToCollectionConverter.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+org.springframework.core.convert.support.ObjectToCollectionConverter.getConvertibleTypes():::ENTER
+
+===========================================================================
+org.springframework.core.convert.support.ObjectToCollectionConverter.getConvertibleTypes():::EXIT
+this.conversionService == orig(this.conversionService)
+this.conversionService.getClass().getName() == orig(this.conversionService.getClass().getName())
+return != null
+return.getClass().getName() == java.util.Collections$SingletonSet.class
+this.conversionService.getClass().getName() != return.getClass().getName()
+
+
+==============================================================================================================
+SAMPLE 7/10
+==============================================================================================================
+PROJECT: spring
+
+OCA METHOD: org.springframework.core.convert.support.IdToEntityConverter#getEntityName(Class<?>):String
+DAIKON METHOD: org.springframework.core.convert.support.IdToEntityConverter.getEntityName(java.lang.Class)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_EXIT] result.indexOf('.') == -1
+ID: ec6fbd55-0b50-4300-9919-88650fc914e7
+Rationale: Because result is the substring of shortName after the last dot, it cannot contain any dots.
+Source file: org/springframework/core/convert/support/IdToEntityConverter.java
+
+[METHOD_ENTRY] entityClass != null
+ID: 4b2c7b9c-0b0e-468f-a1e6-d3e6bb3a0c3e
+Rationale: The method relies on entityClass to get its short name, so it must be non-null.
+Source file: org/springframework/core/convert/support/IdToEntityConverter.java
+
+[METHOD_EXIT] result != null
+ID: 11f450bd-3355-41e3-9c66-cb5beace7aed
+Rationale: Because ClassUtils.getShortName(entityClass) returns a non-null string, and result is either a substring or the full short name, result cannot be null.
+Source file: org/springframework/core/convert/support/IdToEntityConverter.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+org.springframework.core.convert.support.IdToEntityConverter.getEntityName(java.lang.Class):::ENTER
+entityClass != null
+
+===========================================================================
+org.springframework.core.convert.support.IdToEntityConverter.getEntityName(java.lang.Class):::EXIT106
+this.conversionService.getClass().getName() == org.springframework.core.convert.support.DefaultConversionService.class
+
+===========================================================================
+org.springframework.core.convert.support.IdToEntityConverter.getEntityName(java.lang.Class):::EXIT109
+
+===========================================================================
+org.springframework.core.convert.support.IdToEntityConverter.getEntityName(java.lang.Class):::EXIT
+this.conversionService == orig(this.conversionService)
+this.conversionService.getClass().getName() == orig(this.conversionService.getClass().getName())
+return != null
+
+
+==============================================================================================================
+SAMPLE 8/10
+==============================================================================================================
+PROJECT: spring
+
+OCA METHOD: org.springframework.core.convert.support.AbstractConditionalEnumConverter#matches(TypeDescriptor,TypeDescriptor):boolean
+DAIKON METHOD: org.springframework.core.convert.support.AbstractConditionalEnumConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_ENTRY] sourceType != null
+ID: 67553617-6576-4b08-9fbf-e06cb2e832b3
+Rationale: The method accesses sourceType.getType(), so sourceType must not be null.
+Source file: org/springframework/core/convert/support/AbstractConditionalEnumConverter.java
+
+[METHOD_EXIT] result == true || (sourceType != null && targetType != null)
+ID: 161bd64f-3db2-4d76-a630-d8ee62fba70f
+Rationale: If result is false, then conversionService.canConvert returned true for some interface of sourceType.
+Source file: org/springframework/core/convert/support/AbstractConditionalEnumConverter.java
+
+[METHOD_ENTRY] sourceType.getType() != null
+ID: 0c421615-e095-4842-bdb3-b32bec77f129
+Rationale: The method calls ClassUtils.getAllInterfacesForClassAsSet on sourceType.getType(), so sourceType.getType() must be non-null.
+Source file: org/springframework/core/convert/support/AbstractConditionalEnumConverter.java
+
+[METHOD_ENTRY] targetType != null
+ID: bc640ddf-a1d4-4b44-af52-a2173210d4b8
+Rationale: Target type is used for conversion checks and should not be null.
+Source file: org/springframework/core/convert/support/AbstractConditionalEnumConverter.java
+
+[METHOD_EXIT] result == false || sourceType.getType().isEnum()
+ID: 5b2d09ea-5298-4589-b31d-2a70cffb2502
+Rationale: If method returns true, then sourceType must be an enum type (since the converter is enum-based).
+Source file: org/springframework/core/convert/support/AbstractConditionalEnumConverter.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+org.springframework.core.convert.support.AbstractConditionalEnumConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor):::ENTER
+
+===========================================================================
+org.springframework.core.convert.support.AbstractConditionalEnumConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor):::EXIT47
+
+===========================================================================
+org.springframework.core.convert.support.AbstractConditionalEnumConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor):::EXIT47;condition="return == true"
+
+===========================================================================
+org.springframework.core.convert.support.AbstractConditionalEnumConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor):::EXIT
+this.conversionService == orig(this.conversionService)
+this.conversionService.getClass().getName() == orig(this.conversionService.getClass().getName())
+return == true
+
+===========================================================================
+org.springframework.core.convert.support.AbstractConditionalEnumConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor):::EXIT;condition="return == true"
+
+
+==============================================================================================================
+SAMPLE 9/10
+==============================================================================================================
+PROJECT: spring
+
+OCA METHOD: org.springframework.core.convert.support.ObjectToCollectionConverter#matches(TypeDescriptor,TypeDescriptor):boolean
+DAIKON METHOD: org.springframework.core.convert.support.ObjectToCollectionConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_ENTRY] targetType != null
+ID: 19866ef5-c119-4d03-8020-b939dd59bc95
+Rationale: The method call on targetType requires it to be not null to avoid NullPointerException.
+Source file: org/springframework/core/convert/support/ObjectToCollectionConverter.java
+
+[METHOD_EXIT] !result || (sourceType != null)
+ID: cdfc94bf-02c6-43cd-af00-5c27ccd1603c
+Rationale: If matches returns true, sourceType is expected to be non-null.
+Source file: org/springframework/core/convert/support/ObjectToCollectionConverter.java
+
+[METHOD_ENTRY] sourceType != null
+ID: 36dba803-cc9d-43e7-9890-a7409b525ea9
+Rationale: sourceType is used to determine convertibility of its elements.
+Source file: org/springframework/core/convert/support/ObjectToCollectionConverter.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+org.springframework.core.convert.support.ObjectToCollectionConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor):::ENTER
+
+===========================================================================
+org.springframework.core.convert.support.ObjectToCollectionConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor):::EXIT
+this.conversionService == orig(this.conversionService)
+this.conversionService.getClass().getName() == orig(this.conversionService.getClass().getName())
+return == true
+
+===========================================================================
+org.springframework.core.convert.support.ObjectToCollectionConverter.matches(org.springframework.core.convert.TypeDescriptor, org.springframework.core.convert.TypeDescriptor):::EXIT;condition="return == true"
+
+
+==============================================================================================================
+SAMPLE 10/10
+==============================================================================================================
+PROJECT: spring
+
+OCA METHOD: org.springframework.core.convert.support.EnumToStringConverter#convert(Enum<?>):String
+DAIKON METHOD: org.springframework.core.convert.support.EnumToStringConverter.convert(java.lang.Enum)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_ENTRY] source != null
+ID: 5884b4eb-b6a2-4bb6-a3de-bb46ba9305f8
+Rationale: The method directly calls source.name(); source must be non-null to avoid NullPointerException.
+Source file: org/springframework/core/convert/support/EnumToStringConverter.java
+
+[METHOD_ENTRY] source.name() != null
+ID: af12f573-ec20-4b4e-9e46-d5f374a512cc
+Rationale: The name() method of Enum returns a non-null String that names the enum constant.
+Source file: org/springframework/core/convert/support/EnumToStringConverter.java
+
+[METHOD_EXIT] result.equals(source.name())
+ID: 1680d128-f49d-4d41-bd0a-4d23ac20739a
+Rationale: The method returns source.name(), so result equals source.name()
+Source file: org/springframework/core/convert/support/EnumToStringConverter.java
+
+[METHOD_EXIT] result != null
+ID: fb5f7822-3e85-45a9-abd8-d52899bf48f5
+Rationale: Enum.name() never returns null, so result is non-null
+Source file: org/springframework/core/convert/support/EnumToStringConverter.java
+
+[METHOD_EXIT] result.length() > 0
+ID: dde913a6-b77c-4d98-b5cf-aaca9b87e975
+Rationale: Enum names are identifiers so the returned string is non-empty
+Source file: org/springframework/core/convert/support/EnumToStringConverter.java
+
+[METHOD_ENTRY] source.name().equals(source.toString())
+ID: 8823b06f-7c3c-4e3b-9a84-1bb1aea34cc8
+Rationale: By default, the enum constant's toString() returns the same value as name().
+Source file: org/springframework/core/convert/support/EnumToStringConverter.java
+
+[METHOD_ENTRY] source.name().length() > 0
+ID: 922624df-2479-4bc1-9719-98e66e53d2ed
+Rationale: Enum constant names are guaranteed to be non-empty strings.
+Source file: org/springframework/core/convert/support/EnumToStringConverter.java
+
+[METHOD_ENTRY] Character.isUpperCase(source.name().charAt(0))
+ID: 590a6649-6f22-4a02-8713-9273fdc69e1c
+Rationale: Enum constant names typically follow Java naming conventions, starting with uppercase.
+Source file: org/springframework/core/convert/support/EnumToStringConverter.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+org.springframework.core.convert.support.EnumToStringConverter.convert(java.lang.Enum):::ENTER
+
+===========================================================================
+org.springframework.core.convert.support.EnumToStringConverter.convert(java.lang.Enum):::EXIT
+this.conversionService == orig(this.conversionService)
+this.conversionService.getClass().getName() == orig(this.conversionService.getClass().getName())
+return.toString one of { "A", "BAR", "FIRST" }
+
+

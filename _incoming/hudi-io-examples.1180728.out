@@ -1,0 +1,12 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+[io-examples-tool] dtrace=hudi.dtrace
+[io-examples-tool] src=hudi/hudi-client/hudi-java-client/src/main/java
+[io-examples-tool] out=hudi_io_examples.json
+[io-examples-tool] ENTER records=149136
+[io-examples-tool] paired ENTER/EXIT examples=95187
+[io-examples-tool] distinct program points=7516
+[io-examples-tool] resolved program points=157
+[io-examples-tool] unresolved program points=7359
+[io-examples-tool] wrote hudi_io_examples.json
+>>> Wrote hudi_io_examples.json
+44603 hudi_io_examples.json

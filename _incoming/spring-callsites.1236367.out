@@ -1,0 +1,14 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+CLASSES: spring-framework/spring-core/build/classes/java/main
+SRC: spring-framework/spring-core/src/main/java
+[callsite-tool] classes=spring-framework/spring-core/build/classes/java/main
+[callsite-tool] src=spring-framework/spring-core/src/main/java
+[callsite-tool] out=spring_callsites.json
+[callsite-tool] classpath entries skipped=1
+[callsite-tool] entrypoints=7966
+[callsite-tool] CG nodes=50989
+[callsite-tool] application call edges=14735
+[callsite-tool] methods with recorded callers=1624
+[callsite-tool] wrote spring_callsites.json
+>>> Wrote spring_callsites.json
+29205 spring_callsites.json

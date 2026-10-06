@@ -1,0 +1,5 @@
+
+The following have been reloaded with a version change:
+  1) Java/17.0.15 => Java/23.0.2
+
+/project/mjk76/ea442/promptstudy/run_prompt_study_relaxedAll.sh: line 114: ./gradlew: Permission denied

@@ -1,0 +1,76 @@
+[TIMING] === apollo daikon run started 2026-09-11T00:23:10-04:00 ===
+========================================
+Apollo Daikon invariant detection
+========================================
+JAVA:   /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+TRACE:  /scratch/mjk76/ea442/promptstudy/apollo-chicory-out/1260710/apollo.dtrace
+JAR:    /project/mjk76/ea442/promptstudy/daikon.jar
+OUTPUT: /project/mjk76/ea442/promptstudy/apollo-daikon-out
+
+>>> Trace size:
+-rw-r--r--+ 1 ea442 ea442 773M Sep 10 19:16 /scratch/mjk76/ea442/promptstudy/apollo-chicory-out/1260710/apollo.dtrace
+
+>>> Starting Daikon at 2026-09-11T00:23:11-04:00
+[TIMING] daikon.Daikon invariant detection 398s  (00:23:11 -> 00:29:49)
+
+>>> Daikon finished at 2026-09-11T00:29:49-04:00
+
+>>> Output files:
+-rw-r--r--+ 1 ea442 ea442 7.9M Sep 11 00:29 /project/mjk76/ea442/promptstudy/apollo-daikon-out/apollo-invariants.txt
+-rw-r--r--+ 1 ea442 ea442 262M Sep 11 00:29 /project/mjk76/ea442/promptstudy/apollo-daikon-out/apollo.inv.gz
+
+>>> First 50 lines of inferred invariants:
+Daikon version 5.8.24, released May 6, 2026; http://plse.cs.washington.edu/daikon.
+Reading declaration files Processing trace data; reading 1 dtrace file:
+
+No return from procedure observed 49 times.  Unmatched entries are ignored!
+Unterminated calls:
+  com.ctrip.framework.apollo.biz.repository.ReleaseHistoryRetentionMigrationSqlTest.executeScript(java.lang.String) : 1 invocation
+  com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClientMemoryCacheDecoratorImpl.readFromDatabase(java.lang.String) : 3 invocations
+  com.ctrip.framework.apollo.biz.registry.DatabaseDiscoveryClient$MockitoMock$Z2myLEBH.getInstances(java.lang.String) : 4 invocations
+  com.ctrip.framework.apollo.biz.utils.ReleaseKeyGeneratorTest.testGenerateReleaseKey() : 1 invocation
+  com.ctrip.framework.apollo.biz.utils.ReleaseKeyGenerator.generateReleaseKey(com.ctrip.framework.apollo.biz.entity.Namespace) : 2 invocations
+  com.ctrip.framework.apollo.common.utils.UniqueKeyGenerator.generate(java.lang.Object[]) : 1 invocation
+  com.ctrip.framework.apollo.common.utils.UniqueKeyGenerator.toByteArray(int, int, int) : 1 invocation
+  com.ctrip.framework.apollo.biz.entity.Namespace.getAppId() : 1 invocation
+  com.ctrip.framework.apollo.biz.message.DatabaseMessageSenderTest.testSendMessageFailed() : 1 invocation
+  com.ctrip.framework.apollo.biz.message.DatabaseMessageSender.sendMessage(java.lang.String, java.lang.String) : 1 invocation
+  com.ctrip.framework.apollo.biz.repository.ReleaseMessageRepository$MockitoMock$LDDw0VeU.save(com.ctrip.framework.apollo.biz.entity.ReleaseMessage) : 1 invocation
+  com.ctrip.framework.apollo.biz.service.ItemService$$SpringCGLIB$$0.save(com.ctrip.framework.apollo.biz.entity.Item) : 1 invocation
+  com.ctrip.framework.apollo.biz.service.ItemService.save(com.ctrip.framework.apollo.biz.entity.Item) : 3 invocations
+  com.ctrip.framework.apollo.biz.service.ItemService.checkItemType(int) : 1 invocation
+  com.ctrip.framework.apollo.biz.service.ItemService.checkItemValueLength(long, java.lang.String) : 2 invocations
+  com.ctrip.framework.apollo.biz.service.NamespaceServiceTest.testFindPublicAppNamespaceWithWrongNamespace() : 1 invocation
+  com.ctrip.framework.apollo.biz.service.NamespaceService.findPublicAppNamespaceAllNamespaces(java.lang.String, org.springframework.data.domain.Pageable) : 1 invocation
+  com.ctrip.framework.apollo.biz.service.ReleaseHistoryService.cleanReleaseHistory(com.ctrip.framework.apollo.biz.entity.ReleaseHistory) : 1 invocation
+  com.ctrip.framework.apollo.biz.service.ReleaseHistoryService$1.doInTransactionWithoutResult(org.springframework.transaction.TransactionStatus) : 1 invocation
+  com.ctrip.framework.apollo.biz.repository.ReleaseRepository$MockitoMock$DPNviDQi.deletePhysicallyIfUnreferencedByIdIn(java.util.Collection) : 1 invocation
+  com.ctrip.framework.apollo.biz.service.AdminServiceTest.testCreateDuplicateApp() : 1 invocation
+  com.ctrip.framework.apollo.biz.service.AdminService$$SpringCGLIB$$0.createNewApp(com.ctrip.framework.apollo.common.entity.App) : 1 invocation
+  com.ctrip.framework.apollo.biz.service.AdminService.createNewApp(com.ctrip.framework.apollo.common.entity.App) : 1 invocation
+  com.ctrip.framework.apollo.biz.service.AppService$$SpringCGLIB$$0.save(com.ctrip.framework.apollo.common.entity.App) : 1 invocation
+  com.ctrip.framework.apollo.biz.service.AppService.save(com.ctrip.framework.apollo.common.entity.App) : 1 invocation
+  com.ctrip.framework.apollo.biz.service.NamespaceService$$SpringCGLIB$$1.save(com.ctrip.framework.apollo.biz.entity.Namespace) : 1 invocation
+  com.ctrip.framework.apollo.biz.service.NamespaceService.save(com.ctrip.framework.apollo.biz.entity.Namespace) : 1 invocation
+  com.ctrip.framework.apollo.biz.service.AccessKeyServiceTest.testCreateWithException() : 1 invocation
+  com.ctrip.framework.apollo.biz.service.AccessKeyService$$SpringCGLIB$$0.create(java.lang.String, com.ctrip.framework.apollo.biz.entity.AccessKey) : 1 invocation
+  com.ctrip.framework.apollo.biz.service.AccessKeyService.create(java.lang.String, com.ctrip.framework.apollo.biz.entity.AccessKey) : 1 invocation
+  com.ctrip.framework.apollo.biz.service.ClusterServiceTest.testCreateDuplicateCluster() : 1 invocation
+  com.ctrip.framework.apollo.biz.service.ClusterService$$SpringCGLIB$$1.createDefaultCluster(java.lang.String, java.lang.String) : 1 invocation
+  com.ctrip.framework.apollo.biz.service.ClusterService.createDefaultCluster(java.lang.String, java.lang.String) : 1 invocation
+  com.ctrip.framework.apollo.biz.service.ItemSetService$$SpringCGLIB$$0.updateSet(com.ctrip.framework.apollo.biz.entity.Namespace, com.ctrip.framework.apollo.common.dto.ItemChangeSets) : 1 invocation
+  com.ctrip.framework.apollo.biz.service.ItemSetService.updateSet(com.ctrip.framework.apollo.biz.entity.Namespace, com.ctrip.framework.apollo.common.dto.ItemChangeSets) : 1 invocation
+  com.ctrip.framework.apollo.biz.service.ItemSetService.updateSet(java.lang.String, java.lang.String, java.lang.String, com.ctrip.framework.apollo.common.dto.ItemChangeSets) : 1 invocation
+  com.ctrip.framework.apollo.biz.service.ReleaseServiceTest.testNamespaceNotExist() : 1 invocation
+  com.ctrip.framework.apollo.biz.service.ReleaseService.rollback(long, java.lang.String) : 2 invocations
+  com.ctrip.framework.apollo.biz.service.ReleaseServiceTest.testHasNoRelease() : 1 invocation
+End of report for procedures not returned from.  Unmatched entries are ignored!
+
+===========================================================================
+com.ctrip.framework.apollo.audit.ApolloAuditProperties:::OBJECT
+this.enabled == false
+===========================================================================
+[TIMING] TOTAL (apollo)               399s  (00:23:10 -> 00:29:49)
+[TIMING] === apollo daikon run finished 2026-09-11T00:29:49-04:00 ===
+
+>>> Done.

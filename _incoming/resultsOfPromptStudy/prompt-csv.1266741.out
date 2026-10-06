@@ -1,0 +1,77 @@
+Host: n0006
+Start time: Fri Sep 11 05:32:44 AM EDT 2026
+Python: /usr/bin/python
+Python 3.9.25
+Working directory: /mmfs1/project/mjk76/ea442/promptstudy/resultsOfPromptStudy
+Created: /mmfs1/project/mjk76/ea442/promptstudy/resultsOfPromptStudy/prompt_study_results.csv
+Created: /mmfs1/project/mjk76/ea442/promptstudy/resultsOfPromptStudy/prompt_study_results_compact.csv
+Strategies: 6
+Projects: apollo, dubbo, hudi, libgdx, netty, springReal
+
+Observed-held totals by strategy across all projects:
+  1. fewshot: 19273
+  2. baseline: 17643
+  3. cot: 16912
+  4. self_refine: 16691
+  5. stepwise: 16384
+  6. multi_sample: 8654
+
+Best strategy across all projects: fewshot (19273)
+
+Observed-held rankings per project:
+
+apollo:
+  1. baseline: 1515
+  2. cot: 1404
+  3. fewshot: 1396
+  4. stepwise: 1378
+  5. self_refine: 1169
+  6. multi_sample: 638
+  Best for apollo: baseline (1515)
+
+dubbo:
+  1. fewshot: 9017
+  2. stepwise: 8328
+  3. cot: 8256
+  4. baseline: 8119
+  5. self_refine: 7584
+  6. multi_sample: 3972
+  Best for dubbo: fewshot (9017)
+
+hudi:
+  1. stepwise: 580
+  2. cot: 561
+  3. self_refine: 549
+  4. baseline: 316
+  5. multi_sample: 271
+  6. fewshot: 257
+  Best for hudi: stepwise (580)
+
+libgdx:
+  1. fewshot: 1673
+  2. self_refine: 1624
+  3. multi_sample: 978
+  4. baseline: 711
+  5. stepwise: 672
+  6. cot: 635
+  Best for libgdx: fewshot (1673)
+
+netty:
+  1. self_refine: 1095
+  2. baseline: 1045
+  3. fewshot: 909
+  4. cot: 837
+  5. stepwise: 453
+  6. multi_sample: 440
+  Best for netty: self_refine (1095)
+
+springReal:
+  1. fewshot: 6021
+  2. baseline: 5937
+  3. cot: 5219
+  4. stepwise: 4973
+  5. self_refine: 4670
+  6. multi_sample: 2355
+  Best for springReal: fewshot (6021)
+Created: /mmfs1/project/mjk76/ea442/promptstudy/resultsOfPromptStudy/prompt_study_results.csv
+End time: Fri Sep 11 05:32:46 AM EDT 2026

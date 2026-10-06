@@ -1,0 +1,7 @@
+project	methods	oca_original_invariants	daikon_original_invariants	balanced_oca_invariants	balanced_daikon_invariants	balanced_total
+apollo	10	45	505	45	45	90
+dubbo	10	50	100	35	35	70
+hudi	10	45	369	45	45	90
+libgdx	10	43	224	42	42	84
+netty	10	42	240	37	37	74
+spring	10	46	47	35	35	70

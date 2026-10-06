@@ -1,0 +1,590 @@
+==============================================================================================================
+SAMPLE 1/10
+==============================================================================================================
+PROJECT: dubbo
+
+OCA METHOD: org.apache.dubbo.common.utils.IOUtils#readLines(File):String[]
+DAIKON METHOD: org.apache.dubbo.common.utils.IOUtils.readLines(java.io.File)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_ENTRY] file.canRead()
+ID: 8d5b9eb7-0cc0-4443-a831-996a108dda76
+Rationale: The method only proceeds with reading if the file is readable, so canRead() being true is an expected invariant at this point.
+Source file: org/apache/dubbo/common/utils/IOUtils.java
+
+[METHOD_EXIT] file == null || !file.exists() || !file.canRead() || result.length >= 0
+ID: c62eedbf-27e8-4587-adce-f0880bc5bb8a
+Rationale: If the file is invalid, the method returns an empty array which implies result.length == 0.
+Source file: org/apache/dubbo/common/utils/IOUtils.java
+
+[METHOD_ENTRY] file != null
+ID: a7b45348-31bd-45fa-bae7-97ed83e30518
+Rationale: The method immediately returns an empty array if file is null, indicating file should be non-null for meaningful reading.
+Source file: org/apache/dubbo/common/utils/IOUtils.java
+
+[METHOD_EXIT] !file.exists() || result.length == 0 || file.canRead()
+ID: 32ea2361-622d-4b54-b01e-a161ca64d5aa
+Rationale: This follows from the method’s early return condition that returns empty array if !file.canRead().
+Source file: org/apache/dubbo/common/utils/IOUtils.java
+
+[METHOD_EXIT] file != null || result.length == 0
+ID: 4a3fa174-6fde-4b6b-ab8b-2d851e686125
+Rationale: The method returns empty array when the file parameter is null.
+Source file: org/apache/dubbo/common/utils/IOUtils.java
+
+[METHOD_EXIT] result != null
+ID: 05ede4c0-1a96-4ff8-94e8-7b485259414b
+Rationale: The method never returns null; it returns an empty array if file is null or unreadable.
+Source file: org/apache/dubbo/common/utils/IOUtils.java
+
+[METHOD_ENTRY] !file.isDirectory()
+ID: 55d09b2a-9e58-4c28-b786-585b13c00048
+Rationale: Since the method reads lines from a file, the file argument should not be a directory.
+Source file: org/apache/dubbo/common/utils/IOUtils.java
+
+[METHOD_EXIT] result.length >= 0
+ID: 9a4ff411-1e8d-4afd-bc49-f079449e5ed2
+Rationale: Array length cannot be negative by Java definition.
+Source file: org/apache/dubbo/common/utils/IOUtils.java
+
+[METHOD_ENTRY] file.exists()
+ID: 12fd70d5-6bcd-4e75-ad92-b4b796b43e09
+Rationale: The method returns an empty array if the file does not exist, so logically this should be true at the entry point for reading lines.
+Source file: org/apache/dubbo/common/utils/IOUtils.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+org.apache.dubbo.common.utils.IOUtils.readLines(java.io.File):::ENTER
+
+===========================================================================
+org.apache.dubbo.common.utils.IOUtils.readLines(java.io.File):::EXIT171
+
+===========================================================================
+org.apache.dubbo.common.utils.IOUtils.readLines(java.io.File):::EXIT
+return.getClass().getName() == java.lang.String[].class
+return[].toString one of { [ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890], [a, b, c] }
+
+
+==============================================================================================================
+SAMPLE 2/10
+==============================================================================================================
+PROJECT: dubbo
+
+OCA METHOD: org.apache.dubbo.common.utils.ReflectUtils#getName(Method):String
+DAIKON METHOD: org.apache.dubbo.common.utils.ReflectUtils.getName(java.lang.reflect.Method)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_ENTRY] m.getParameterTypes() != null
+ID: 5cc99032-a9db-4b7b-a6ea-21d1501ef682
+Rationale: The parameter types array returned by Method m is never null.
+Source file: org/apache/dubbo/common/utils/ReflectUtils.java
+
+[METHOD_ENTRY] m.getParameterTypes().length >= 0
+ID: 52133e61-174e-45cd-90ed-63389e88cb33
+Rationale: Parameter types array length is always zero or more.
+Source file: org/apache/dubbo/common/utils/ReflectUtils.java
+
+[METHOD_EXIT] result.endsWith(")")
+ID: 664f58ec-f0db-4b8d-b72e-d8058a2924e3
+Rationale: The result string ends with the closing parenthesis after parameters list.
+Source file: org/apache/dubbo/common/utils/ReflectUtils.java
+
+[METHOD_ENTRY] m != null
+ID: 8bc86658-85d9-445d-940f-5e8ebd4e1639
+Rationale: The input Method object 'm' must be non-null for the method to operate.
+Source file: org/apache/dubbo/common/utils/ReflectUtils.java
+
+[METHOD_EXIT] result != null
+ID: efbc4075-a26c-46f8-819f-d5a78e7cc75e
+Rationale: The returned String result is a constructed method signature, which should never be null.
+Source file: org/apache/dubbo/common/utils/ReflectUtils.java
+
+[METHOD_ENTRY] m.getName() != null
+ID: 0ec7e000-cbfd-4814-a868-cff577f09f18
+Rationale: The method name string returned by Method m is never null.
+Source file: org/apache/dubbo/common/utils/ReflectUtils.java
+
+[METHOD_EXIT] result.contains(m.getName())
+ID: 30346aa9-64c3-4d56-b2d5-28415c2bd3d2
+Rationale: The method name is appended directly after the return type and space.
+Source file: org/apache/dubbo/common/utils/ReflectUtils.java
+
+[METHOD_ENTRY] m.getReturnType() != null
+ID: aa22c214-d6c5-4315-a60e-55d0ba38d9ca
+Rationale: The return type Class object from Method m is never null.
+Source file: org/apache/dubbo/common/utils/ReflectUtils.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+org.apache.dubbo.common.utils.ReflectUtils.getName(java.lang.reflect.Method):::ENTER
+m has only one value
+
+===========================================================================
+org.apache.dubbo.common.utils.ReflectUtils.getName(java.lang.reflect.Method):::EXIT
+org.apache.dubbo.common.utils.ReflectUtils.EMPTY_CLASS_ARRAY == orig(org.apache.dubbo.common.utils.ReflectUtils.EMPTY_CLASS_ARRAY)
+org.apache.dubbo.common.utils.ReflectUtils.EMPTY_CLASS_ARRAY.getClass().getName() == orig(org.apache.dubbo.common.utils.ReflectUtils.EMPTY_CLASS_ARRAY.getClass().getName())
+org.apache.dubbo.common.utils.ReflectUtils.EMPTY_CLASS_ARRAY[] == orig(org.apache.dubbo.common.utils.ReflectUtils.EMPTY_CLASS_ARRAY[])
+org.apache.dubbo.common.utils.ReflectUtils.JAVA_IDENT_REGEX == orig(org.apache.dubbo.common.utils.ReflectUtils.JAVA_IDENT_REGEX)
+org.apache.dubbo.common.utils.ReflectUtils.JAVA_IDENT_REGEX.toString == orig(org.apache.dubbo.common.utils.ReflectUtils.JAVA_IDENT_REGEX.toString)
+org.apache.dubbo.common.utils.ReflectUtils.JAVA_NAME_REGEX == orig(org.apache.dubbo.common.utils.ReflectUtils.JAVA_NAME_REGEX)
+org.apache.dubbo.common.utils.ReflectUtils.JAVA_NAME_REGEX.toString == orig(org.apache.dubbo.common.utils.ReflectUtils.JAVA_NAME_REGEX.toString)
+org.apache.dubbo.common.utils.ReflectUtils.CLASS_DESC == orig(org.apache.dubbo.common.utils.ReflectUtils.CLASS_DESC)
+org.apache.dubbo.common.utils.ReflectUtils.CLASS_DESC.toString == orig(org.apache.dubbo.common.utils.ReflectUtils.CLASS_DESC.toString)
+org.apache.dubbo.common.utils.ReflectUtils.ARRAY_DESC == orig(org.apache.dubbo.common.utils.ReflectUtils.ARRAY_DESC)
+org.apache.dubbo.common.utils.ReflectUtils.ARRAY_DESC.toString == orig(org.apache.dubbo.common.utils.ReflectUtils.ARRAY_DESC.toString)
+org.apache.dubbo.common.utils.ReflectUtils.DESC_REGEX == orig(org.apache.dubbo.common.utils.ReflectUtils.DESC_REGEX)
+org.apache.dubbo.common.utils.ReflectUtils.DESC_REGEX.toString == orig(org.apache.dubbo.common.utils.ReflectUtils.DESC_REGEX.toString)
+org.apache.dubbo.common.utils.ReflectUtils.DESC_PATTERN == orig(org.apache.dubbo.common.utils.ReflectUtils.DESC_PATTERN)
+org.apache.dubbo.common.utils.ReflectUtils.METHOD_DESC_REGEX == orig(org.apache.dubbo.common.utils.ReflectUtils.METHOD_DESC_REGEX)
+org.apache.dubbo.common.utils.ReflectUtils.METHOD_DESC_REGEX.toString == orig(org.apache.dubbo.common.utils.ReflectUtils.METHOD_DESC_REGEX.toString)
+org.apache.dubbo.common.utils.ReflectUtils.METHOD_DESC_PATTERN == orig(org.apache.dubbo.common.utils.ReflectUtils.METHOD_DESC_PATTERN)
+org.apache.dubbo.common.utils.ReflectUtils.GETTER_METHOD_DESC_PATTERN == orig(org.apache.dubbo.common.utils.ReflectUtils.GETTER_METHOD_DESC_PATTERN)
+org.apache.dubbo.common.utils.ReflectUtils.SETTER_METHOD_DESC_PATTERN == orig(org.apache.dubbo.common.utils.ReflectUtils.SETTER_METHOD_DESC_PATTERN)
+org.apache.dubbo.common.utils.ReflectUtils.IS_HAS_CAN_METHOD_DESC_PATTERN == orig(org.apache.dubbo.common.utils.ReflectUtils.IS_HAS_CAN_METHOD_DESC_PATTERN)
+org.apache.dubbo.common.utils.ReflectUtils.primitiveDefaults == orig(org.apache.dubbo.common.utils.ReflectUtils.primitiveDefaults)
+org.apache.dubbo.common.utils.ReflectUtils.primitiveDefaults.getClass().getName() == orig(org.apache.dubbo.common.utils.ReflectUtils.primitiveDefaults.getClass().getName())
+return has only one value
+return.toString == "java.util.List hello(int[])"
+
+
+==============================================================================================================
+SAMPLE 3/10
+==============================================================================================================
+PROJECT: dubbo
+
+OCA METHOD: org.apache.dubbo.common.utils.FieldUtils#getFieldValue(Object,String):Object
+DAIKON METHOD: org.apache.dubbo.common.utils.FieldUtils.getFieldValue(java.lang.Object, java.lang.String)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_EXIT] result == null || object != null
+ID: 1b35d4a7-29fa-4169-831d-7be46e733551
+Rationale: Non-null result requires a non-null object.
+Source file: org/apache/dubbo/common/utils/FieldUtils.java
+
+[METHOD_EXIT] fieldName != null || result == null
+ID: 20c0bfb2-5a7a-40ec-a7e4-e61ff7c93ddb
+Rationale: If there is no valid field name, method returns null for field value.
+Source file: org/apache/dubbo/common/utils/FieldUtils.java
+
+[METHOD_ENTRY] (object == null) || (!fieldName.isEmpty())
+ID: 972f8069-bb94-413e-a598-8a7c6a93bcde
+Rationale: If the object is null, fieldName's emptiness is irrelevant; otherwise, fieldName should be non-empty.
+Source file: org/apache/dubbo/common/utils/FieldUtils.java
+
+[METHOD_EXIT] result == null || fieldName != null
+ID: b10c32d0-97b2-4f5e-9f6a-3257fffba5d1
+Rationale: If a field value is returned, then fieldName must be non-null.
+Source file: org/apache/dubbo/common/utils/FieldUtils.java
+
+[METHOD_EXIT] object != null || result == null
+ID: 5cf3517e-08d8-46de-b0ab-f8eae63d5d1f
+Rationale: Ensures that if object is null, then result is null; otherwise method attempts to get field from a non-null object.
+Source file: org/apache/dubbo/common/utils/FieldUtils.java
+
+[METHOD_ENTRY] object == null || object.getClass() != null
+ID: 2928a7f4-d510-402c-8c0b-ff6417783fd2
+Rationale: If object is not null, it must have a non-null class.
+Source file: org/apache/dubbo/common/utils/FieldUtils.java
+
+[METHOD_ENTRY] fieldName != null
+ID: 0db5eeea-3a40-4504-bcbb-8a706c3183e2
+Rationale: The method expects a valid field name string to find the field.
+Source file: org/apache/dubbo/common/utils/FieldUtils.java
+
+[METHOD_ENTRY] fieldName.length() > 0
+ID: ccc8c37a-b162-4b4a-a7bb-9d790f588a8d
+Rationale: Field name should be a non-empty string to identify a field.
+Source file: org/apache/dubbo/common/utils/FieldUtils.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+org.apache.dubbo.common.utils.FieldUtils.getFieldValue(java.lang.Object, java.lang.String):::ENTER
+fieldName.toString one of { "a", "b" }
+
+===========================================================================
+org.apache.dubbo.common.utils.FieldUtils.getFieldValue(java.lang.Object, java.lang.String):::EXIT
+fieldName.toString == orig(fieldName.toString)
+return == orig(fieldName)
+fieldName.toString one of { "a", "b" }
+return.getClass().getName() == java.lang.String.class
+
+
+==============================================================================================================
+SAMPLE 4/10
+==============================================================================================================
+PROJECT: dubbo
+
+OCA METHOD: org.apache.dubbo.common.utils.CollectionUtils#isEmptyMap(Map):boolean
+DAIKON METHOD: org.apache.dubbo.common.utils.CollectionUtils.isEmptyMap(java.util.Map)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_EXIT] map == null || map.isEmpty() || !result
+ID: 04db74e4-adc5-4b6a-bb06-8a8a3183a6db
+Rationale: One of the reasons result is true is because either the map is null or empty.
+Source file: org/apache/dubbo/common/utils/CollectionUtils.java
+
+[METHOD_EXIT] result || (map != null && !map.isEmpty())
+ID: 86c8f4ca-85ce-4529-82b7-198964f3080c
+Rationale: The negation condition of result matches map not being null and not empty.
+Source file: org/apache/dubbo/common/utils/CollectionUtils.java
+
+[METHOD_EXIT] result == (map == null || map.isEmpty())
+ID: 2731ec36-5638-4946-af7e-e14abc69fbd9
+Rationale: The method implementation returns true if the map is null or empty, so result should equal this condition.
+Source file: org/apache/dubbo/common/utils/CollectionUtils.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+org.apache.dubbo.common.utils.CollectionUtils.isEmptyMap(java.util.Map):::ENTER
+map.getClass().getName() == java.util.HashMap.class
+
+===========================================================================
+org.apache.dubbo.common.utils.CollectionUtils.isEmptyMap(java.util.Map):::EXIT
+org.apache.dubbo.common.utils.CollectionUtils.SIMPLE_NAME_COMPARATOR == orig(org.apache.dubbo.common.utils.CollectionUtils.SIMPLE_NAME_COMPARATOR)
+org.apache.dubbo.common.utils.CollectionUtils.SIMPLE_NAME_COMPARATOR.getClass().getName() == orig(org.apache.dubbo.common.utils.CollectionUtils.SIMPLE_NAME_COMPARATOR.getClass().getName())
+
+===========================================================================
+org.apache.dubbo.common.utils.CollectionUtils.isEmptyMap(java.util.Map):::EXIT;condition="return == true"
+return == true
+
+===========================================================================
+org.apache.dubbo.common.utils.CollectionUtils.isEmptyMap(java.util.Map):::EXIT;condition="not(return == true)"
+return == false
+
+
+==============================================================================================================
+SAMPLE 5/10
+==============================================================================================================
+PROJECT: dubbo
+
+OCA METHOD: org.apache.dubbo.common.utils.MethodUtils#excludedDeclaredClass(Class<?>):Predicate<Method>
+DAIKON METHOD: org.apache.dubbo.common.utils.MethodUtils.excludedDeclaredClass(java.lang.Class)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_ENTRY] declaredClass.getName() != null
+ID: f4197640-a9c9-46b2-9ab7-459eb5468ca8
+Rationale: The class must have a valid non-null name.
+Source file: org/apache/dubbo/common/utils/MethodUtils.java
+
+[METHOD_ENTRY] declaredClass.getPackage() != null
+ID: 1231a27e-fe30-41f4-b61c-b5fb480091c0
+Rationale: declaredClass may or may not be in a named package, but getPackage() call is safe.
+Source file: org/apache/dubbo/common/utils/MethodUtils.java
+
+[METHOD_ENTRY] declaredClass != null
+ID: 86810556-f01c-4586-ba2c-21a202c4ce3f
+Rationale: The method expects a Predicate to exclude methods declared by a specific non-null class.
+Source file: org/apache/dubbo/common/utils/MethodUtils.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+org.apache.dubbo.common.utils.MethodUtils.excludedDeclaredClass(java.lang.Class):::ENTER
+declaredClass has only one value
+
+===========================================================================
+org.apache.dubbo.common.utils.MethodUtils.excludedDeclaredClass(java.lang.Class):::EXIT
+return has only one value
+return.getClass().getName() == org.apache.dubbo.common.utils.MethodUtils$$Lambda$1023/0x00001548a54c6bf0.class
+
+
+==============================================================================================================
+SAMPLE 6/10
+==============================================================================================================
+PROJECT: dubbo
+
+OCA METHOD: org.apache.dubbo.common.compiler.support.ClassUtils#getSize(Object):int
+DAIKON METHOD: org.apache.dubbo.common.compiler.support.ClassUtils.getSize(java.lang.Object)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_EXIT] result == 0 || result > 0 || result == -1
+ID: be817705-fb20-4e04-af69-d3f6a8e9b887
+Rationale: The result represents size which is either 0, a positive integer, or -1.
+Source file: org/apache/dubbo/common/compiler/support/ClassUtils.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+org.apache.dubbo.common.compiler.support.ClassUtils.getSize(java.lang.Object):::ENTER
+
+===========================================================================
+org.apache.dubbo.common.compiler.support.ClassUtils.getSize(java.lang.Object):::EXIT238
+return == 0
+orig(object) == null
+
+===========================================================================
+org.apache.dubbo.common.compiler.support.ClassUtils.getSize(java.lang.Object):::EXIT241
+return == 1
+orig(object) has only one value
+orig(object.getClass().getName()) == java.util.ArrayList.class
+
+===========================================================================
+org.apache.dubbo.common.compiler.support.ClassUtils.getSize(java.lang.Object):::EXIT243
+return == 1
+orig(object) has only one value
+orig(object.getClass().getName()) == java.util.HashMap.class
+
+===========================================================================
+org.apache.dubbo.common.compiler.support.ClassUtils.getSize(java.lang.Object):::EXIT245
+return == 1
+orig(object) has only one value
+orig(object.getClass().getName()) == int[].class
+
+===========================================================================
+org.apache.dubbo.common.compiler.support.ClassUtils.getSize(java.lang.Object):::EXIT247
+return == -1
+orig(object) has only one value
+orig(object.getClass().getName()) == java.lang.Object.class
+
+===========================================================================
+org.apache.dubbo.common.compiler.support.ClassUtils.getSize(java.lang.Object):::EXIT
+org.apache.dubbo.common.compiler.support.ClassUtils.CLASS_EXTENSION == orig(org.apache.dubbo.common.compiler.support.ClassUtils.CLASS_EXTENSION)
+org.apache.dubbo.common.compiler.support.ClassUtils.CLASS_EXTENSION.toString == orig(org.apache.dubbo.common.compiler.support.ClassUtils.CLASS_EXTENSION.toString)
+org.apache.dubbo.common.compiler.support.ClassUtils.JAVA_EXTENSION == orig(org.apache.dubbo.common.compiler.support.ClassUtils.JAVA_EXTENSION)
+org.apache.dubbo.common.compiler.support.ClassUtils.JAVA_EXTENSION.toString == orig(org.apache.dubbo.common.compiler.support.ClassUtils.JAVA_EXTENSION.toString)
+return one of { -1, 0, 1 }
+
+
+==============================================================================================================
+SAMPLE 7/10
+==============================================================================================================
+PROJECT: dubbo
+
+OCA METHOD: org.apache.dubbo.common.io.UnsafeByteArrayOutputStream#toString():String
+DAIKON METHOD: org.apache.dubbo.common.io.UnsafeByteArrayOutputStream.toString()
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_EXIT] result != null
+ID: cebc4b47-3f3d-4aec-a5f1-93546eb4f9f4
+Rationale: The toString() method constructs a new String from a byte array and count, so the result is always non-null.
+Source file: org/apache/dubbo/common/io/UnsafeByteArrayOutputStream.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+org.apache.dubbo.common.io.UnsafeByteArrayOutputStream.toString():::ENTER
+this has only one value
+this.mBuffer has only one value
+this.mBuffer[] == [97, 98, 99]
+this.mBuffer[] elements one of { 97, 98, 99 }
+this.mCount == 3
+
+===========================================================================
+org.apache.dubbo.common.io.UnsafeByteArrayOutputStream.toString():::EXIT
+this.mBuffer == orig(this.mBuffer)
+this.mBuffer[] == orig(this.mBuffer[])
+this.mCount == orig(this.mCount)
+this.mBuffer has only one value
+this.mBuffer[] == [97, 98, 99]
+this.mBuffer[] elements one of { 97, 98, 99 }
+this.mCount == 3
+return has only one value
+return.toString == "abc"
+
+
+==============================================================================================================
+SAMPLE 8/10
+==============================================================================================================
+PROJECT: dubbo
+
+OCA METHOD: org.apache.dubbo.common.utils.ArrayUtils#isEmpty(Object[]):boolean
+DAIKON METHOD: org.apache.dubbo.common.utils.ArrayUtils.isEmpty(java.lang.Object[])
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_EXIT] result == (array == null || array.length == 0)
+ID: ea827388-2c07-4d04-a69c-d6cf69b9755f
+Rationale: The method returns true if the array is null or has zero length.
+Source file: org/apache/dubbo/common/utils/ArrayUtils.java
+
+[METHOD_ENTRY] array == null || array.length == 0 || array.length > 0
+ID: 5d4fb6b2-d75b-4cd3-bdbc-2b37ad09e2b5
+Rationale: If array is not null, length can be zero or positive.
+Source file: org/apache/dubbo/common/utils/ArrayUtils.java
+
+[METHOD_EXIT] !result || array == null || array.length == 0
+ID: 93ea9ea8-bc2c-452e-9ae6-07e8f77031f2
+Rationale: If result is true, then array is either null or empty.
+Source file: org/apache/dubbo/common/utils/ArrayUtils.java
+
+[METHOD_EXIT] result || (array != null && array.length > 0)
+ID: e62de2f6-3319-4ce0-a315-ba4ac2e2f842
+Rationale: If result is false, then array must be non-null and non-empty.
+Source file: org/apache/dubbo/common/utils/ArrayUtils.java
+
+[METHOD_ENTRY] array == null || array.length != -1
+ID: 1cf899d3-9143-4f77-a8ea-7265f988a222
+Rationale: Array length is never negative.
+Source file: org/apache/dubbo/common/utils/ArrayUtils.java
+
+[METHOD_ENTRY] array == null || array.length >= 0
+ID: bb6df285-4329-4b51-b32e-9296ef8b7b4f
+Rationale: If array is not null, its length is always >= 0.
+Source file: org/apache/dubbo/common/utils/ArrayUtils.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+org.apache.dubbo.common.utils.ArrayUtils.isEmpty(java.lang.Object[]):::ENTER
+array[] == []
+
+===========================================================================
+org.apache.dubbo.common.utils.ArrayUtils.isEmpty(java.lang.Object[]):::EXIT
+array[] == orig(array[])
+array[] == []
+return == true
+
+===========================================================================
+org.apache.dubbo.common.utils.ArrayUtils.isEmpty(java.lang.Object[]):::EXIT;condition="return == true"
+
+
+==============================================================================================================
+SAMPLE 9/10
+==============================================================================================================
+PROJECT: dubbo
+
+OCA METHOD: org.apache.dubbo.common.utils.Stack#peek():E
+DAIKON METHOD: org.apache.dubbo.common.utils.Stack.peek()
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_EXIT] result != null
+ID: 6c9a7977-1ca2-4a3c-a9e5-646ab6e55a9b
+Rationale: Result is very likely non-null because it is an element returned from the stack.
+Source file: org/apache/dubbo/common/utils/Stack.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+org.apache.dubbo.common.utils.Stack.peek():::ENTER
+this has only one value
+this.mSize one of { 1, 2 }
+this.mElements has only one value
+this.mElements[].getClass().getName() elements == java.lang.String.class
+this.mElements[].getClass().getName() one of { [java.lang.String], [java.lang.String, java.lang.String] }
+
+===========================================================================
+org.apache.dubbo.common.utils.Stack.peek():::EXIT
+this.mSize == orig(this.mSize)
+this.mElements == orig(this.mElements)
+this.mElements[] == orig(this.mElements[])
+this.mElements.getClass().getName() == orig(this.mElements.getClass().getName())
+this.mSize one of { 1, 2 }
+this.mElements has only one value
+this.mElements[].getClass().getName() elements == java.lang.String.class
+this.mElements[].getClass().getName() one of { [java.lang.String], [java.lang.String, java.lang.String] }
+return.getClass().getName() == java.lang.String.class
+return in this.mElements[]
+return.getClass().getName() in this.mElements[].getClass().getName()
+
+
+==============================================================================================================
+SAMPLE 10/10
+==============================================================================================================
+PROJECT: dubbo
+
+OCA METHOD: org.apache.dubbo.common.utils.LogHelper#error(Logger,String,Throwable):void
+DAIKON METHOD: org.apache.dubbo.common.utils.LogHelper.error(org.apache.dubbo.common.logger.Logger, java.lang.String, java.lang.Throwable)
+
+--------------------------------------------------------------------------------------------------------------
+OCA OBSERVED-HELD INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+[METHOD_EXIT] logger == null || logger.isErrorEnabled()
+ID: 272fc480-ad68-4b45-a855-bd9634d1208c
+Rationale: Because the method returns early if logger is null, and logs error only if isErrorEnabled() is true.
+Source file: org/apache/dubbo/common/utils/LogHelper.java
+
+[METHOD_ENTRY] e != null || e == null
+ID: e99287a0-f0bd-4a4e-b67d-a930528c94eb
+Rationale: Throwable e can be null or not; no explicit requirement.
+Source file: org/apache/dubbo/common/utils/LogHelper.java
+
+[METHOD_EXIT] logger != null || (msg == null && e == null)
+ID: 74a78e7c-c19f-47bf-a49b-f9593729199d
+Rationale: If logger is null then msg and e are both null or irrelevant.
+Source file: org/apache/dubbo/common/utils/LogHelper.java
+
+[METHOD_EXIT] logger == null || msg != null || e != null
+ID: 5d65191a-9d5d-43ad-8e65-be80921aac91
+Rationale: At least one of the message or throwable should be non-null to have meaningful log entry.
+Source file: org/apache/dubbo/common/utils/LogHelper.java
+
+[METHOD_ENTRY] logger != null
+ID: d41c96a3-7ddc-4ea3-8944-c2ac8e24af75
+Rationale: Method immediately returns if logger is null, so logger is expected to be non-null when proceeding.
+Source file: org/apache/dubbo/common/utils/LogHelper.java
+
+[METHOD_ENTRY] msg != null || msg == null
+ID: 5b7689d8-df0b-4da0-8b90-6dc2fcaaf9bf
+Rationale: No explicit check or assumption on msg nullness, so msg can be null or not.
+Source file: org/apache/dubbo/common/utils/LogHelper.java
+
+[METHOD_EXIT] logger != null && logger.isErrorEnabled() || logger == null
+ID: d8ea94b0-4e95-45b8-8234-cf5e3e8000a9
+Rationale: Reiterates conditional logging guard logic.
+Source file: org/apache/dubbo/common/utils/LogHelper.java
+
+[METHOD_EXIT] logger == null || (msg != null || e != null)
+ID: 4d5a53ac-a810-4618-bb06-177cb8945e80
+Rationale: This invariant expresses that if logger is non-null then either message or throwable is provided.
+Source file: org/apache/dubbo/common/utils/LogHelper.java
+
+[METHOD_ENTRY] logger.isErrorEnabled() == true || msg != null || e != null
+ID: 4ccd6bb7-345b-4fa6-8352-966c751fd7ef
+Rationale: When error is logged, isErrorEnabled must be true, but message or exception may be null.
+Source file: org/apache/dubbo/common/utils/LogHelper.java
+
+[METHOD_ENTRY] logger.isErrorEnabled() == true || logger.isErrorEnabled() == false
+ID: 1cc6715a-3d9d-47f3-8a5b-42c606ffb27d
+Rationale: logger.isErrorEnabled() can be either true or false before method call.
+Source file: org/apache/dubbo/common/utils/LogHelper.java
+
+--------------------------------------------------------------------------------------------------------------
+DAIKON INVARIANTS
+--------------------------------------------------------------------------------------------------------------
+===========================================================================
+org.apache.dubbo.common.utils.LogHelper.error(org.apache.dubbo.common.logger.Logger, java.lang.String, java.lang.Throwable):::ENTER
+logger has only one value
+logger.getClass().getName() == org.apache.dubbo.common.logger.Logger$MockitoMock$jZMOTlpe.class
+msg has only one value
+msg.toString == "error"
+e has only one value
+
+===========================================================================
+org.apache.dubbo.common.utils.LogHelper.error(org.apache.dubbo.common.logger.Logger, java.lang.String, java.lang.Throwable):::EXIT173
+
+===========================================================================
+org.apache.dubbo.common.utils.LogHelper.error(org.apache.dubbo.common.logger.Logger, java.lang.String, java.lang.Throwable):::EXIT
+msg.toString == orig(msg.toString)
+msg.toString == "error"
+
+

@@ -1,0 +1,14 @@
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/17.0.15/bin/java
+CLASSES: netty/common/target/classes
+SRC: netty/common/src/main/java
+[callsite-tool] classes=netty/common/target/classes
+[callsite-tool] src=netty/common/src/main/java
+[callsite-tool] out=netty_callsites.json
+[callsite-tool] classpath entries skipped=6
+[callsite-tool] entrypoints=3605
+[callsite-tool] CG nodes=23120
+[callsite-tool] application call edges=5222
+[callsite-tool] methods with recorded callers=1038
+[callsite-tool] wrote netty_callsites.json
+>>> Wrote netty_callsites.json
+16383 netty_callsites.json

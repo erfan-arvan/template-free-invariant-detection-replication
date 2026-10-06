@@ -1,0 +1,621 @@
+======================================
+SLURM JOB ID: 1364459
+HOST: n0015
+START TIME: Fri Oct  2 01:27:37 AM EDT 2026
+ROOT: /project/mjk76/ea442/promptstudy
+DPP_DIR: /scratch/mjk76/ea442/daikonplusplus-relaxedAll
+JAVA: /apps/easybuild/el9_5.x86_64/software/Java/23.0.2/bin/java
+MVN: /scratch/mjk76/ea442/apache-maven-3.9.9/bin/mvn
+======================================
+>>> Building isolated Daikon++ worktree
+>>> DPP_DIR: /scratch/mjk76/ea442/daikonplusplus-relaxedAll
+>>> Commit:  d7ea9f07b95233a46137b2b4b98faba03cb23dd8
+######################################
+PROMPT STUDY RELAXEDALL STARTED
+Start time: 2026-10-02 01:28:16 EDT
+Strategies: 6
+Benchmarks: 6
+Total planned runs: 36
+Results base: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll
+Scratch base: /scratch/mjk76/ea442/promptstudy_relaxedAll
+Daikon++ dir: /scratch/mjk76/ea442/daikonplusplus-relaxedAll
+Daikon++ jar: /scratch/mjk76/ea442/daikonplusplus-relaxedAll/build/libs/daikonplusplus.jar
+Daikon++ commit: d7ea9f07b95233a46137b2b4b98faba03cb23dd8
+Cassette dir: /project/mjk76/ea442/promptstudy/daikonplusplus/src/test/cassettes
+######################################
+======================================
+>>> STRATEGY: baseline
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 01:28:16 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: apollo
+>>> Strategy: baseline
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 01:28:16 EDT
+--------------------------------------
+>>> Finished apollo (strategy=baseline)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 01:31:09 EDT
+>>> Duration: 00h:02m:53s
+>>> Duration in seconds: 173
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/baseline/apollo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/baseline/apollo/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/baseline/apollo/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: dubbo
+>>> Strategy: baseline
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 01:31:09 EDT
+--------------------------------------
+>>> Finished dubbo (strategy=baseline)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 02:06:41 EDT
+>>> Duration: 00h:35m:32s
+>>> Duration in seconds: 2132
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/baseline/dubbo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/baseline/dubbo/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/baseline/dubbo/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: netty
+>>> Strategy: baseline
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 02:06:41 EDT
+--------------------------------------
+>>> Finished netty (strategy=baseline)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 02:43:23 EDT
+>>> Duration: 00h:36m:42s
+>>> Duration in seconds: 2202
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/baseline/netty/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/baseline/netty/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/baseline/netty/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: hudi
+>>> Strategy: baseline
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 02:43:23 EDT
+--------------------------------------
+>>> Finished hudi (strategy=baseline)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 03:05:25 EDT
+>>> Duration: 00h:22m:02s
+>>> Duration in seconds: 1322
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/baseline/hudi/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/baseline/hudi/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/baseline/hudi/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: spring
+>>> Strategy: baseline
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 03:05:25 EDT
+--------------------------------------
+>>> Finished spring (strategy=baseline)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 04:06:15 EDT
+>>> Duration: 01h:00m:50s
+>>> Duration in seconds: 3650
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/baseline/spring/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/baseline/spring/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/baseline/spring/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: libgdx
+>>> Strategy: baseline
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 04:06:15 EDT
+--------------------------------------
+>>> Finished libgdx (strategy=baseline)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 05:27:12 EDT
+>>> Duration: 01h:20m:57s
+>>> Duration in seconds: 4857
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/baseline/libgdx/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/baseline/libgdx/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/baseline/libgdx/daikonpp_outcomes.jsonl
+
+======================================
+DONE strategy: baseline
+Finish time: 2026-10-02 05:27:12 EDT
+Duration: 03h:58m:56s
+Duration in seconds: 14336
+Results in: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/baseline
+======================================
+======================================
+>>> STRATEGY: fewshot
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 05:27:12 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: apollo
+>>> Strategy: fewshot
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 05:27:12 EDT
+--------------------------------------
+>>> Finished apollo (strategy=fewshot)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 05:29:42 EDT
+>>> Duration: 00h:02m:30s
+>>> Duration in seconds: 150
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/fewshot/apollo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/fewshot/apollo/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/fewshot/apollo/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: dubbo
+>>> Strategy: fewshot
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 05:29:42 EDT
+--------------------------------------
+>>> Finished dubbo (strategy=fewshot)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 06:13:13 EDT
+>>> Duration: 00h:43m:31s
+>>> Duration in seconds: 2611
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/fewshot/dubbo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/fewshot/dubbo/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/fewshot/dubbo/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: netty
+>>> Strategy: fewshot
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 06:13:13 EDT
+--------------------------------------
+>>> Finished netty (strategy=fewshot)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 06:48:44 EDT
+>>> Duration: 00h:35m:31s
+>>> Duration in seconds: 2131
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/fewshot/netty/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/fewshot/netty/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/fewshot/netty/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: hudi
+>>> Strategy: fewshot
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 06:48:44 EDT
+--------------------------------------
+>>> Finished hudi (strategy=fewshot)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 07:06:10 EDT
+>>> Duration: 00h:17m:26s
+>>> Duration in seconds: 1046
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/fewshot/hudi/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/fewshot/hudi/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/fewshot/hudi/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: spring
+>>> Strategy: fewshot
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 07:06:10 EDT
+--------------------------------------
+>>> Finished spring (strategy=fewshot)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 07:57:43 EDT
+>>> Duration: 00h:51m:33s
+>>> Duration in seconds: 3093
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/fewshot/spring/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/fewshot/spring/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/fewshot/spring/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: libgdx
+>>> Strategy: fewshot
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 07:57:43 EDT
+--------------------------------------
+>>> Finished libgdx (strategy=fewshot)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 09:13:49 EDT
+>>> Duration: 01h:16m:06s
+>>> Duration in seconds: 4566
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/fewshot/libgdx/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/fewshot/libgdx/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/fewshot/libgdx/daikonpp_outcomes.jsonl
+
+======================================
+DONE strategy: fewshot
+Finish time: 2026-10-02 09:13:49 EDT
+Duration: 03h:46m:37s
+Duration in seconds: 13597
+Results in: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/fewshot
+======================================
+======================================
+>>> STRATEGY: cot
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 09:13:49 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: apollo
+>>> Strategy: cot
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 09:13:49 EDT
+--------------------------------------
+>>> Finished apollo (strategy=cot)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 09:16:03 EDT
+>>> Duration: 00h:02m:14s
+>>> Duration in seconds: 134
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/cot/apollo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/cot/apollo/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/cot/apollo/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: dubbo
+>>> Strategy: cot
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 09:16:03 EDT
+--------------------------------------
+>>> Finished dubbo (strategy=cot)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 09:55:01 EDT
+>>> Duration: 00h:38m:58s
+>>> Duration in seconds: 2338
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/cot/dubbo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/cot/dubbo/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/cot/dubbo/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: netty
+>>> Strategy: cot
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 09:55:01 EDT
+--------------------------------------
+>>> Finished netty (strategy=cot)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 10:35:34 EDT
+>>> Duration: 00h:40m:33s
+>>> Duration in seconds: 2433
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/cot/netty/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/cot/netty/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/cot/netty/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: hudi
+>>> Strategy: cot
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 10:35:34 EDT
+--------------------------------------
+>>> Finished hudi (strategy=cot)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 10:59:20 EDT
+>>> Duration: 00h:23m:46s
+>>> Duration in seconds: 1426
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/cot/hudi/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/cot/hudi/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/cot/hudi/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: spring
+>>> Strategy: cot
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 10:59:20 EDT
+--------------------------------------
+>>> Finished spring (strategy=cot)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 11:49:56 EDT
+>>> Duration: 00h:50m:36s
+>>> Duration in seconds: 3036
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/cot/spring/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/cot/spring/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/cot/spring/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: libgdx
+>>> Strategy: cot
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 11:49:56 EDT
+--------------------------------------
+>>> Finished libgdx (strategy=cot)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 13:19:17 EDT
+>>> Duration: 01h:29m:21s
+>>> Duration in seconds: 5361
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/cot/libgdx/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/cot/libgdx/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/cot/libgdx/daikonpp_outcomes.jsonl
+
+======================================
+DONE strategy: cot
+Finish time: 2026-10-02 13:19:17 EDT
+Duration: 04h:05m:28s
+Duration in seconds: 14728
+Results in: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/cot
+======================================
+======================================
+>>> STRATEGY: stepwise
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 13:19:17 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: apollo
+>>> Strategy: stepwise
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 13:19:17 EDT
+--------------------------------------
+>>> Finished apollo (strategy=stepwise)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 13:21:55 EDT
+>>> Duration: 00h:02m:38s
+>>> Duration in seconds: 158
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/stepwise/apollo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/stepwise/apollo/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/stepwise/apollo/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: dubbo
+>>> Strategy: stepwise
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 13:21:55 EDT
+--------------------------------------
+>>> Finished dubbo (strategy=stepwise)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 13:52:31 EDT
+>>> Duration: 00h:30m:36s
+>>> Duration in seconds: 1836
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/stepwise/dubbo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/stepwise/dubbo/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/stepwise/dubbo/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: netty
+>>> Strategy: stepwise
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 13:52:31 EDT
+--------------------------------------
+>>> Finished netty (strategy=stepwise)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 14:26:43 EDT
+>>> Duration: 00h:34m:12s
+>>> Duration in seconds: 2052
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/stepwise/netty/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/stepwise/netty/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/stepwise/netty/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: hudi
+>>> Strategy: stepwise
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 14:26:43 EDT
+--------------------------------------
+>>> Finished hudi (strategy=stepwise)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 14:50:10 EDT
+>>> Duration: 00h:23m:27s
+>>> Duration in seconds: 1407
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/stepwise/hudi/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/stepwise/hudi/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/stepwise/hudi/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: spring
+>>> Strategy: stepwise
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 14:50:10 EDT
+--------------------------------------
+>>> Finished spring (strategy=stepwise)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 15:37:42 EDT
+>>> Duration: 00h:47m:32s
+>>> Duration in seconds: 2852
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/stepwise/spring/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/stepwise/spring/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/stepwise/spring/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: libgdx
+>>> Strategy: stepwise
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 15:37:42 EDT
+--------------------------------------
+>>> Finished libgdx (strategy=stepwise)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 17:03:30 EDT
+>>> Duration: 01h:25m:48s
+>>> Duration in seconds: 5148
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/stepwise/libgdx/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/stepwise/libgdx/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/stepwise/libgdx/daikonpp_outcomes.jsonl
+
+======================================
+DONE strategy: stepwise
+Finish time: 2026-10-02 17:03:30 EDT
+Duration: 03h:44m:13s
+Duration in seconds: 13453
+Results in: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/stepwise
+======================================
+======================================
+>>> STRATEGY: self_refine
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 17:03:30 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: apollo
+>>> Strategy: self_refine
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 17:03:30 EDT
+--------------------------------------
+>>> Finished apollo (strategy=self_refine)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 17:05:56 EDT
+>>> Duration: 00h:02m:26s
+>>> Duration in seconds: 146
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/self_refine/apollo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/self_refine/apollo/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/self_refine/apollo/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: dubbo
+>>> Strategy: self_refine
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 17:05:56 EDT
+--------------------------------------
+>>> Finished dubbo (strategy=self_refine)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 17:40:44 EDT
+>>> Duration: 00h:34m:48s
+>>> Duration in seconds: 2088
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/self_refine/dubbo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/self_refine/dubbo/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/self_refine/dubbo/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: netty
+>>> Strategy: self_refine
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 17:40:44 EDT
+--------------------------------------
+>>> Finished netty (strategy=self_refine)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 18:17:01 EDT
+>>> Duration: 00h:36m:17s
+>>> Duration in seconds: 2177
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/self_refine/netty/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/self_refine/netty/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/self_refine/netty/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: hudi
+>>> Strategy: self_refine
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 18:17:01 EDT
+--------------------------------------
+>>> Finished hudi (strategy=self_refine)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 18:42:43 EDT
+>>> Duration: 00h:25m:42s
+>>> Duration in seconds: 1542
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/self_refine/hudi/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/self_refine/hudi/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/self_refine/hudi/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: spring
+>>> Strategy: self_refine
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 18:42:43 EDT
+--------------------------------------
+>>> Finished spring (strategy=self_refine)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 19:36:15 EDT
+>>> Duration: 00h:53m:32s
+>>> Duration in seconds: 3212
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/self_refine/spring/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/self_refine/spring/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/self_refine/spring/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: libgdx
+>>> Strategy: self_refine
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 19:36:15 EDT
+--------------------------------------
+>>> Finished libgdx (strategy=self_refine)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 21:00:20 EDT
+>>> Duration: 01h:24m:05s
+>>> Duration in seconds: 5045
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/self_refine/libgdx/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/self_refine/libgdx/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/self_refine/libgdx/daikonpp_outcomes.jsonl
+
+======================================
+DONE strategy: self_refine
+Finish time: 2026-10-02 21:00:20 EDT
+Duration: 03h:56m:50s
+Duration in seconds: 14210
+Results in: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/self_refine
+======================================
+======================================
+>>> STRATEGY: multi_sample
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 21:00:20 EDT
+======================================
+--------------------------------------
+>>> Running benchmark: apollo
+>>> Strategy: multi_sample
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 21:00:20 EDT
+--------------------------------------
+>>> Finished apollo (strategy=multi_sample)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 21:02:35 EDT
+>>> Duration: 00h:02m:15s
+>>> Duration in seconds: 135
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/multi_sample/apollo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/multi_sample/apollo/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/multi_sample/apollo/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: dubbo
+>>> Strategy: multi_sample
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 21:02:35 EDT
+--------------------------------------
+>>> Finished dubbo (strategy=multi_sample)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 21:16:49 EDT
+>>> Duration: 00h:14m:14s
+>>> Duration in seconds: 854
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/multi_sample/dubbo/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/multi_sample/dubbo/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/multi_sample/dubbo/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: netty
+>>> Strategy: multi_sample
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 21:16:49 EDT
+--------------------------------------
+>>> Finished netty (strategy=multi_sample)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 21:31:38 EDT
+>>> Duration: 00h:14m:49s
+>>> Duration in seconds: 889
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/multi_sample/netty/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/multi_sample/netty/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/multi_sample/netty/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: hudi
+>>> Strategy: multi_sample
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 21:31:39 EDT
+--------------------------------------
+>>> Finished hudi (strategy=multi_sample)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 22:00:56 EDT
+>>> Duration: 00h:29m:17s
+>>> Duration in seconds: 1757
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/multi_sample/hudi/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/multi_sample/hudi/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/multi_sample/hudi/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: spring
+>>> Strategy: multi_sample
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 22:00:56 EDT
+--------------------------------------
+>>> Finished spring (strategy=multi_sample)
+>>> Exit status: 0
+>>> Finish time: 2026-10-02 22:36:47 EDT
+>>> Duration: 00h:35m:51s
+>>> Duration in seconds: 2151
+>>> Log: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/multi_sample/spring/run.log
+>>> Registry: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/multi_sample/spring/daikonpp_registry.jsonl
+>>> Outcomes: /project/mjk76/ea442/promptstudy/resultsOfPromptStudyRelaxedAll/multi_sample/spring/daikonpp_outcomes.jsonl
+
+--------------------------------------
+>>> Running benchmark: libgdx
+>>> Strategy: multi_sample
+>>> Contexts: METHOD_BODY,SCOPE
+>>> Start time: 2026-10-02 22:36:47 EDT
+--------------------------------------
