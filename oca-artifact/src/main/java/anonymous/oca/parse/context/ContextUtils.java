@@ -296,8 +296,8 @@ public final class ContextUtils {
    *
    * <p>The index is a JSON object mapping a callee's key (in the same {@code
    * pkg.Class#name(paramTypes):returnType} format produced by {@link
-   * anonymous.oca.model.ProgramElementId#toString()}) to a list of caller records,
-   * each with {@code callerKey}, {@code callerJavadoc}, and {@code callSite} fields.
+   * anonymous.oca.model.ProgramElementId#toString()}) to a list of caller records, each with
+   * {@code callerKey}, {@code callerJavadoc}, and {@code callSite} fields.
    *
    * @param path path to the call-site index JSON file
    * @return parsed index, or an empty map if the file is missing or unparsable
@@ -424,9 +424,9 @@ public final class ContextUtils {
    *
    * <p>The index is a JSON object mapping a method's key (in the same {@code
    * pkg.Class#name(paramTypes):returnType} format produced by {@link
-   * anonymous.oca.model.ProgramElementId#toString()}) to a list of example records,
-   * each with an {@code args} object (parameter name to observed value) and a {@code return} value,
-   * as captured by Daikon's Chicory front end from a real test run.
+   * anonymous.oca.model.ProgramElementId#toString()}) to a list of example records, each with
+   * an {@code args} object (parameter name to observed value) and a {@code return} value, as
+   * captured by Daikon's Chicory front end from a real test run.
    *
    * @param path path to the I/O-examples index JSON file
    * @return parsed index, or an empty map if the file is missing or unparsable

@@ -884,8 +884,8 @@ public final class TestInvariantFilter {
   /**
    * On an inconclusive (stale/hard-timeout) kill, identifies the invariant that was mid-evaluation
    * from {@code shmDir}'s {@code current/} marker — written before eval, deleted after, so it
-   * survives the SIGKILL — the exact same mechanism {@link anonymous.oca.App}'s own
-   * recovery loop uses to find a stuck invariant. If found, it is disabled in two places: {@code
+   * survives the SIGKILL — the exact same mechanism {@link anonymous.oca.App}'s own recovery
+   * loop uses to find a stuck invariant. If found, it is disabled in two places: {@code
    * disabledFile} (so an immediate retry of this same trial excludes it) and {@code globalDisabled}
    * — the one set shared across every trial and round in this {@link #run} call — so it stays
    * excluded from every later trial too, in this round and any round after it, instead of being
@@ -1147,8 +1147,8 @@ public final class TestInvariantFilter {
   }
 
   /**
-   * Marker {@link anonymous.oca.JavaRunner} appends to a run log, once, only when
-   * the external runner exits with a non-zero code (see {@code JavaRunner.runExternalScript}).
+   * Marker {@link anonymous.oca.JavaRunner} appends to a run log, once, only when the external
+   * runner exits with a non-zero code (see {@code JavaRunner.runExternalScript}).
    */
   private static final String NON_ZERO_EXIT_MARKER = "[DP] External runner exited with code";
 

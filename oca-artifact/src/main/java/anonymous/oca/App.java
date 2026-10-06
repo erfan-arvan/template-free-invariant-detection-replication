@@ -948,8 +948,7 @@ public final class App {
     final Set<UUID> nonCompiled = LogParser.readNonCompiledIds(mainSrcRoot);
     final Set<UUID> disabledByStale = readDisabledIds(disabledFile);
 
-    final Map<UUID, anonymous.oca.App.RecordLite> all =
-        parseRegistryLite(cfg.registryPath());
+    final Map<UUID, anonymous.oca.App.RecordLite> all = parseRegistryLite(cfg.registryPath());
 
     final Set<UUID> compiledIds = new HashSet<>(all.keySet());
     compiledIds.removeAll(nonCompiled);
@@ -986,13 +985,10 @@ public final class App {
 
     Map<String, List<anonymous.oca.App.RecordLite>> heldByMethod = new TreeMap<>();
     Map<String, List<anonymous.oca.App.RecordLite>> falsByMethod = new TreeMap<>();
-    Map<String, List<anonymous.oca.App.RecordLite>> neverExecByMethod =
-        new TreeMap<>();
+    Map<String, List<anonymous.oca.App.RecordLite>> neverExecByMethod = new TreeMap<>();
     Map<String, List<anonymous.oca.App.RecordLite>> execByMethod = new TreeMap<>();
-    Map<String, List<anonymous.oca.App.RecordLite>> compiledByMethod =
-        new TreeMap<>();
-    Map<String, List<anonymous.oca.App.RecordLite>> failedCompileByMethod =
-        new TreeMap<>();
+    Map<String, List<anonymous.oca.App.RecordLite>> compiledByMethod = new TreeMap<>();
+    Map<String, List<anonymous.oca.App.RecordLite>> failedCompileByMethod = new TreeMap<>();
 
     int disabledStaleNeverExecCount = 0;
 
