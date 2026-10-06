@@ -1,0 +1,7 @@
+project,trace,entry,exit,n_d
+apollo,full,9641,49675,59316
+dubbo,sampled,4734,14996,19730
+netty,sampled,18105,57651,75756
+hudi,full,52227,260380,312607
+libgdx,sampled,5489,15612,21101
+spring,full,2111,7479,9590

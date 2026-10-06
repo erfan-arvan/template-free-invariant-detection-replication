@@ -8,12 +8,12 @@ instead of a fixed template grammar, together with the data and scripts for ever
 | Directory | Paper | Contents |
 |---|---|---|
 | [`oca-artifact/`](oca-artifact/) | Sections 2 and 4 | Source code, tests, and documentation of Oca (also as `oca-artifact.zip`). |
-| [`prompt_context_study_rq1_rq2/`](prompt_context_study_rq1_rq2/) | Section 3, Tables 1–4 | Prompt templates and the scripts of the prompt-strategy (RQ1) and context-configuration (RQ2) studies. |
+| [`prompt_context_study_rq1_rq2/`](prompt_context_study_rq1_rq2/) | Section 3, Tables 1–4 | Prompt templates, scripts, and results of the prompt-strategy (RQ1) and context-configuration (RQ2) studies. |
 | [`open_coding_rq2/`](open_coding_rq2/) | Section 3.3.1, Fig. 3 | Literature review of the context given to LLMs: screening, codes, codebook, and the script that rebuilds the taxonomy. |
-| [`expressiveness_study_rq3/`](expressiveness_study_rq3/) | Section 5.2, Table 5 | Scripts that run Oca and Daikon on the Defects4J projects. |
+| [`expressiveness_study_rq3/`](expressiveness_study_rq3/) | Section 5.2, Table 5 | Daikon invariant counts, the script that prints Table 5, and the Defects4J runs. |
 | [`false_positive_study_rq4/`](false_positive_study_rq4/) | Section 5.3, Table 6 | The 100 manually reviewed invariants and the script that computes Table 6 and the inter-rater agreement. |
 | [`usefulness_study_rq5/`](usefulness_study_rq5/) | Section 5.4, Table 7 | Simulated property-based testing on 25 Defects4J bugs: pipeline, exposing invariants, and the script that prints Table 7. |
-| [`performance_study_rq6/`](performance_study_rq6/) | Section 5.5 | LLM token usage and cost of Oca. |
+| [`performance_study_rq6/`](performance_study_rq6/) | Section 5.5, Table 8 | Time and disk usage of both tools, and LLM token usage and cost of Oca. |
 
 Each directory has its own README describing its files and how to run them.
 
@@ -28,9 +28,12 @@ Each directory has its own README describing its files and how to run them.
 
 ```bash
 cd oca-artifact && ./gradlew shadowJar
+cd ../prompt_context_study_rq1_rq2 && python3 summarize_studies.py --check
 cd ../open_coding_rq2 && python3 build_taxonomy.py --check
+cd ../expressiveness_study_rq3 && python3 summarize_expressiveness.py --check
 cd ../false_positive_study_rq4 && python3 analyze_reviews.py --check
 cd ../usefulness_study_rq5 && python3 summarize_hits.py --check
+cd ../performance_study_rq6 && python3 summarize_performance.py --check
 ```
 
 ## Configuration Used in the Paper
