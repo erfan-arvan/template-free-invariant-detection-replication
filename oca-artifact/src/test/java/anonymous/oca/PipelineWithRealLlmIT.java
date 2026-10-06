@@ -14,9 +14,9 @@ import org.junit.jupiter.api.Timeout;
 import org.junit.jupiter.api.io.TempDir;
 
 /**
- * End-to-end integration test that runs the full Oca pipeline using the real OpenAI API
- * through {@link LlmInvariantGenerator}. The test exercises all major phases, including LLM
- * invariant generation, injection, compilation, execution, and reporting.
+ * End-to-end integration test that runs the full Oca pipeline using the real OpenAI API through
+ * {@link LlmInvariantGenerator}. The test exercises all major phases, including LLM invariant
+ * generation, injection, compilation, execution, and reporting.
  *
  * <p>This test is disabled by default. To enable it, set the following environment variables:
  *

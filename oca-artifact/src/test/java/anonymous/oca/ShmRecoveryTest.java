@@ -367,8 +367,7 @@ public class ShmRecoveryTest {
         new anonymous.oca.model.ProgramPointImpl(
             peid, anonymous.oca.model.ProgramPointKind.METHOD_ENTRY);
     anonymous.oca.model.InvariantSpec spec =
-        new anonymous.oca.model.InvariantSpec(
-            "Checker2.evalAndCheck(n)", "", Map.of());
+        new anonymous.oca.model.InvariantSpec("Checker2.evalAndCheck(n)", "", Map.of());
     UUID invId = UUID.randomUUID();
     anonymous.oca.model.InvariantRecord rec =
         new anonymous.oca.model.InvariantRecord(
